@@ -342,9 +342,9 @@
       </div>
 
       <div class="remote-showcase">
+        <!-- Left: 5 Interactive Feature Tabs -->
         <div class="remote-nav" role="tablist" aria-label="Remote control mode selector">
           <button class="remote-nav-item is-active" type="button" role="tab" aria-selected="true" aria-controls="remote-panel" id="remote-tab-studio"
-            data-remote-img="../assets/screens/release-1.3.1/store-01-studio.webp"
             data-remote-tag="Studio View"
             data-remote-title="Studio View · View &amp; Control"
             data-remote-desc="View live Mac desktop while controlling with trackpad, scroll wheel, and quick keys on a single screen.">
@@ -359,10 +359,9 @@
           </button>
 
           <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-fullscreen"
-            data-remote-img="../assets/screens/v1.2.0/remote-fullscreen.webp"
             data-remote-tag="Ultra-Clear"
             data-remote-title="Fullscreen Remote Desktop"
-            data-remote-desc="Crisp low-latency streaming with two-finger pan &amp; zoom to monitor builds and workflows from afar.">
+            data-remote-desc="Crisp low-latency streaming with floating action bar and seamless multi-app switching.">
             <div class="remote-nav-header">
               <div class="remote-nav-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
@@ -374,7 +373,6 @@
           </button>
 
           <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-voice"
-            data-remote-img="../assets/screens/v1.2.0/remote-text-voice.webp"
             data-remote-tag="Pre-edit &amp; Send"
             data-remote-title="Text Keyboard &amp; Voice Input"
             data-remote-desc="Dictate or polish text on your phone first, then inject directly into your Mac cursor with one tap.">
@@ -389,25 +387,23 @@
           </button>
 
           <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-keyboard"
-            data-remote-img="../assets/screens/v1.2.0/remote-keyboard.webp"
             data-remote-tag="Low-Latency"
             data-remote-title="Virtual Keyboard &amp; Modifiers"
-            data-remote-desc="Common function keys, Command, Option, Control, and Shift sent with instant tactile response.">
+            data-remote-desc="Full macOS modifier matrix and function keys with instant tactile feedback.">
             <div class="remote-nav-header">
               <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/><line x1="18" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M6 12h.001M10 12h.001M14 12h.001M18 12h.001M7 16h10"/></svg>
               </div>
               <strong>Virtual Keyboard &amp; Modifiers</strong>
-              <span class="remote-nav-badge">Tactile</span>
+              <span class="remote-nav-badge">Zero Lag</span>
             </div>
             <p>Fast-response modifier keys and shortcuts</p>
           </button>
 
           <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-mic"
-            data-remote-img="../assets/screens/v1.2.0/remote-microphone.webp"
             data-remote-tag="Wireless HD"
-            data-remote-title="Wireless Microphone"
-            data-remote-desc="Stream your iPhone microphone audio wirelessly to Mac over low-latency channel for crisp conference calls.">
+            data-remote-title="Wireless Microphone &amp; Console"
+            data-remote-desc="Turn your iPhone into a studio-grade low-noise mic and tactile controller for your Mac.">
             <div class="remote-nav-header">
               <div class="remote-nav-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
@@ -419,242 +415,382 @@
           </button>
         </div>
 
+        <!-- Right: Authentic CreamDeck Interactive Phone Simulator -->
         <div class="remote-display" id="remote-panel" role="tabpanel" aria-labelledby="remote-tab-studio" tabindex="0">
-          <!-- Interactive Mac Remote Simulator Widget (No Static Screenshot) -->
-          <div class="remote-simulator-phone" id="remote-sim">
-            <!-- Dynamic Island / Status Bar -->
-            <div class="sim-phone-header">
-              <span class="sim-time" id="sim-clock">09:41</span>
-              <div class="sim-island">
-                <span class="sim-island-dot"></span>
-                <span class="sim-island-text">NinoPad Connected</span>
+          <div class="remote-phone-chassis" id="remote-sim">
+            <!-- iOS Status Bar & Dynamic Island -->
+            <div class="sim-ios-header">
+              <span class="sim-ios-time">09:41</span>
+              <div class="sim-dynamic-island">
+                <span class="sim-island-indicator"></span>
+                <span class="sim-island-title">CreamDeck</span>
               </div>
-              <div class="sim-signals">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
-                <span class="sim-battery">100%</span>
+              <div class="sim-ios-icons">
+                <svg width="15" height="11" viewBox="0 0 17 11" fill="currentColor"><path d="M1 9.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z"/></svg>
+                <svg width="14" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.5C9.8 2.5 11.9 3.4 13.5 4.9L15 3.3C13.1 1.4 10.4.3 7.5.3 4.6.3 1.9 1.4 0 3.3L1.5 4.9C3.1 3.4 5.2 2.5 7.5 2.5zm0 4c1.3 0 2.5.5 3.4 1.4L12.4 6.4C11.1 5.2 9.4 4.5 7.5 4.5s-3.6.7-4.9 1.9L4.1 7.9C5 7 6.2 6.5 7.5 6.5zm0 4c.8 0 1.5-.7 1.5-1.5S8.3 7.5 7.5 7.5 6 8.2 6 9s.7 1.5 1.5 1.5z"/></svg>
+                <div class="sim-battery-pill"><span class="sim-battery-level"></span></div>
               </div>
             </div>
 
-            <!-- Viewport Container for 5 Live Interactive Modes -->
-            <div class="sim-view-viewport">
+            <!-- Viewport Stage -->
+            <div class="sim-viewport">
               
-              <!-- 1. Studio View Mode (Live Mac Desktop + Virtual Trackpad + Scroll + Keys) -->
-              <div class="sim-view-stage is-active" data-sim-mode="studio">
-                <div class="sim-mac-screen" id="sim-studio-mac">
-                  <div class="sim-mac-menubar">
-                    <div class="sim-mac-menu-left">
-                      <span class="sim-apple-logo"></span>
-                      <span>Notes</span>
-                      <span>Edit</span>
+              <!-- 1. Studio Mode -->
+              <div class="sim-stage is-active" data-sim-mode="studio">
+                <div class="sim-panda-holder">
+                  <img class="sim-panda-mascot" src="../assets/mascot-look-v2.webp" alt="Panda peeking over screen" width="240" height="200" loading="lazy">
+                </div>
+
+                <div class="sim-mac-display" id="sim-studio-mac">
+                  <div class="sim-mac-topbar">
+                    <div class="sim-mac-dots">
+                      <span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span>
                     </div>
-                    <div class="sim-mac-menu-right">
-                      <span>4K 60fps</span>
-                      <span>WiFi</span>
-                    </div>
+                    <span class="sim-mac-apptitle"> Safari — atlasobscura.com</span>
+                    <span class="sim-mac-fps">60 FPS</span>
                   </div>
-                  <div class="sim-mac-workspace">
-                    <div class="sim-mac-window" id="sim-studio-window">
-                      <div class="sim-win-header">
-                        <span class="sim-win-dot red"></span>
-                        <span class="sim-win-dot yellow"></span>
-                        <span class="sim-win-dot green"></span>
-                        <span class="sim-win-title">Notes — Mac Studio</span>
-                      </div>
-                      <div class="sim-win-body" id="sim-studio-notes">
-                        <p class="sim-note-line">🚀 NinoPad Studio View Active</p>
-                        <p class="sim-note-line muted">Drag on the trackpad below to move cursor live...</p>
-                        <div class="sim-doc-items">
-                          <span class="sim-doc-badge">⌘ Space Spotlight</span>
-                          <span class="sim-doc-badge">Smooth Scroll</span>
-                        </div>
+                  <div class="sim-mac-viewport">
+                    <div class="sim-mac-webpage" id="sim-mac-webpage">
+                      <div class="sim-web-hero">
+                        <span class="sim-web-tag">INDIA · HISTORY &amp; CULTURE</span>
+                        <h4 class="sim-web-title">Delhi and Rajasthan: Colors of India</h4>
+                        <div class="sim-web-btn">Show 7 Photos</div>
                       </div>
                     </div>
-                    <!-- Live Moving Mac Cursor -->
-                    <div class="sim-mac-cursor" id="sim-mac-cursor">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff" stroke="#111827" stroke-width="1.5">
+                    <div class="sim-mac-pointer" id="sim-mac-cursor">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#1e1b4b" stroke="#ffffff" stroke-width="1.8">
                         <path d="M3 3l7 18 3-7 7-3L3 3z"/>
                       </svg>
                     </div>
-                    <!-- Feedback Toast -->
-                    <div class="sim-mac-toast" id="sim-mac-toast">⌘+Space Spotlight Triggered</div>
+                    <div class="sim-hud-toast" id="sim-mac-toast">Ready to Control</div>
                   </div>
                 </div>
 
-                <!-- Bottom Controller Area: Interactive Trackpad & Toolpad -->
-                <div class="sim-controller-area">
-                  <div class="sim-pad-row">
-                    <div class="sim-trackpad" id="sim-trackpad" title="Drag or tap on trackpad">
-                      <span class="sim-pad-hint">Trackpad · Drag cursor / Tap to click</span>
-                      <div class="sim-touch-ripple" id="sim-touch-ripple"></div>
+                <div class="sim-deck-panel">
+                  <div class="sim-deck-row upper-row">
+                    <div class="sim-trackpad-box" id="sim-trackpad" title="Drag to move Mac cursor, tap to click">
+                      <div class="sim-trackpad-dots"></div>
+                      <span class="sim-trackpad-label">Trackpad · Drag to move cursor</span>
+                      <div class="sim-touch-glow" id="sim-touch-ripple"></div>
                     </div>
-                    <div class="sim-scroll-bar" id="sim-scroll-bar" title="Drag scroll wheel">
-                      <span class="sim-scroll-track"></span>
-                      <span class="sim-scroll-thumb" id="sim-scroll-thumb"></span>
+
+                    <div class="sim-jog-wheel" id="sim-scroll-bar" title="Scroll wheel">
+                      <div class="sim-wheel-ridges"></div>
+                      <div class="sim-wheel-indicator" id="sim-scroll-thumb"></div>
+                    </div>
+
+                    <div class="sim-deck-mini-col">
+                      <button class="sim-3d-btn mini-btn" type="button" data-hud-action="keyboard" title="Live Keyboard">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>
+                        <span>Keyboard</span>
+                      </button>
+                      <div class="sim-mini-knob" title="Rotary Dial">
+                        <div class="sim-mini-knob-dial"></div>
+                      </div>
                     </div>
                   </div>
-                  <!-- Quick Modifier Keys -->
-                  <div class="sim-quick-keys">
-                    <button class="sim-key-btn" type="button" data-sim-action="esc">Esc</button>
-                    <button class="sim-key-btn" type="button" data-sim-action="spotlight">⌘ Space</button>
-                    <button class="sim-key-btn" type="button" data-sim-action="copy">⌘ C</button>
-                    <button class="sim-key-btn" type="button" data-sim-action="paste">⌘ V</button>
-                    <button class="sim-key-btn" type="button" data-sim-action="enter">↵ Enter</button>
+
+                  <div class="sim-3d-keys-grid">
+                    <button class="sim-3d-btn cream" type="button" data-hud-action="copy">Copy</button>
+                    <button class="sim-3d-btn peach" type="button" data-hud-action="paste">Paste</button>
+                    <button class="sim-3d-btn cream" type="button" data-hud-action="undo">Undo</button>
+                    <button class="sim-3d-btn cream" type="button" data-hud-action="redo">Redo</button>
+                    <button class="sim-3d-btn yellow" type="button" data-hud-action="switch-app">App Switch</button>
+                    <button class="sim-3d-btn blue" type="button" data-hud-action="mission-control">Mission Ctrl</button>
+                    <button class="sim-3d-btn cream" type="button" data-hud-action="window-overview">Overview</button>
+                    <button class="sim-3d-btn coral" type="button" data-hud-action="lock">Lock Mac</button>
+                  </div>
+
+                  <div class="sim-deck-controls-bottom">
+                    <div class="sim-dial-widget">
+                      <div class="sim-dial-ring">
+                        <div class="sim-dial-ticks"></div>
+                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
+                      </div>
+                      <span class="sim-dial-text">Vol 45</span>
+                    </div>
+
+                    <div class="sim-dial-widget">
+                      <div class="sim-dial-ring">
+                        <div class="sim-dial-ticks"></div>
+                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
+                      </div>
+                      <span class="sim-dial-text">Bright 64</span>
+                    </div>
+
+                    <div class="sim-slider-widget">
+                      <div class="sim-slider-header">
+                        <span>Zoom</span>
+                        <span id="sim-zoom-val">50%</span>
+                      </div>
+                      <div class="sim-slider-track" id="sim-zoom-track">
+                        <div class="sim-slider-fill" id="sim-zoom-fill"></div>
+                        <div class="sim-slider-thumb" id="sim-zoom-thumb"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sim-bottom-tabs">
+                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                    <div class="sim-btab-item is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="sim-btab-dot"></span></div>
+                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
                   </div>
                 </div>
+
               </div>
 
-              <!-- 2. Fullscreen Desktop Stream Mode -->
-              <div class="sim-view-stage" data-sim-mode="fullscreen">
-                <div class="sim-mac-screen is-fullscreen" id="sim-fs-mac">
-                  <div class="sim-mac-menubar">
-                    <div class="sim-mac-menu-left">
-                      <span class="sim-apple-logo"></span>
-                      <span id="sim-fs-appname">Safari</span>
-                    </div>
-                    <div class="sim-mac-menu-right">
-                      <span class="sim-stream-badge">Ultra-HD Stream</span>
+              <!-- 2. Fullscreen Mode -->
+              <div class="sim-stage" data-sim-mode="fullscreen">
+                <div class="sim-fullscreen-mac" id="sim-fs-mac">
+                  <div class="sim-fs-header">
+                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
+                    <span class="sim-fs-url" id="sim-fs-appname">atlasobscura.com</span>
+                    <span class="sim-fs-stream-badge">Ultra-HD Stream</span>
+                  </div>
+                  <div class="sim-fs-body" id="sim-fs-body">
+                    <div class="sim-fs-window-content" id="sim-fs-content">
+                      <div class="sim-fs-hero-art">
+                        <span class="sim-fs-tag">INDIA · RAJASTHAN</span>
+                        <h3>Hawa Mahal — Palace of Winds</h3>
+                        <p>Low-latency stream with smooth pan, zoom, and live desktop control.</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="sim-mac-workspace">
-                    <div class="sim-mac-window is-large" id="sim-fs-window">
-                      <div class="sim-win-header">
-                        <span class="sim-win-dot red"></span>
-                        <span class="sim-win-dot yellow"></span>
-                        <span class="sim-win-dot green"></span>
-                        <span class="sim-win-title" id="sim-fs-title">Safari — cream-deck.com</span>
-                      </div>
-                      <div class="sim-win-body" id="sim-fs-content">
-                        <div class="sim-safari-bar">
-                          <span class="sim-safari-url">https://ninopad.app</span>
-                        </div>
-                        <p class="sim-fs-text">Click dock icons below to switch apps</p>
-                      </div>
-                    </div>
-                    <div class="sim-mac-dock">
-                      <button class="sim-dock-icon is-active" type="button" data-dock="safari" title="Safari">🌐</button>
-                      <button class="sim-dock-icon" type="button" data-dock="code" title="Code Editor">💻</button>
-                      <button class="sim-dock-icon" type="button" data-dock="music" title="Music">🎵</button>
-                      <button class="sim-dock-icon" type="button" data-dock="terminal" title="Terminal">⌨️</button>
-                    </div>
+                  <div class="sim-fs-floating-bar">
+                    <button class="sim-fs-pill-btn" type="button" data-fs-action="close" title="Close">✕</button>
+                    <button class="sim-fs-pill-btn is-active" type="button" data-fs-action="touch" title="Touch Mode">👆</button>
+                    <button class="sim-fs-pill-btn" type="button" data-fs-action="mouse" title="Mouse Pointer">🖱️</button>
+                    <button class="sim-fs-pill-btn" type="button" data-fs-action="keyboard" title="Keyboard">⌨️</button>
+                    <button class="sim-fs-pill-btn" type="button" data-fs-action="windows" title="Overview">🗂️</button>
+                  </div>
+                  <div class="sim-fs-dock">
+                    <button class="sim-dock-app is-active" type="button" data-dock="safari" title="Safari">🌐</button>
+                    <button class="sim-dock-app" type="button" data-dock="code" title="VS Code">💻</button>
+                    <button class="sim-dock-app" type="button" data-dock="music" title="Music">🎵</button>
+                    <button class="sim-dock-app" type="button" data-dock="terminal" title="Terminal">⌨️</button>
                   </div>
                 </div>
               </div>
 
               <!-- 3. Text & Voice Pre-Edit Mode -->
-              <div class="sim-view-stage" data-sim-mode="voice">
-                <div class="sim-mac-screen is-compact">
-                  <div class="sim-mac-menubar">
-                    <div class="sim-mac-menu-left">
-                      <span class="sim-apple-logo"></span>
-                      <span>Notes</span>
-                    </div>
+              <div class="sim-stage" data-sim-mode="voice">
+                <div class="sim-seg-control">
+                  <span class="sim-seg-item is-active">Text</span>
+                  <span class="sim-seg-item">Realtime</span>
+                  <span class="sim-seg-done">Done</span>
+                </div>
+
+                <div class="sim-voice-mac-preview">
+                  <div class="sim-mac-topbar mini">
+                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
+                    <span>Mac Notes — Target Focus</span>
                   </div>
-                  <div class="sim-mac-workspace">
-                    <div class="sim-mac-window">
-                      <div class="sim-win-header">
-                        <span class="sim-win-dot red"></span>
-                        <span class="sim-win-dot yellow"></span>
-                        <span class="sim-win-dot green"></span>
-                        <span class="sim-win-title">Mac Target Cursor</span>
-                      </div>
-                      <div class="sim-win-body sim-target-editor" id="sim-voice-mac-target">
-                        <span class="sim-target-text" id="sim-injected-text">Mac Cursor Ready |</span>
-                      </div>
-                    </div>
+                  <div class="sim-mac-doc-body" id="sim-voice-target">
+                    <p class="sim-doc-received-text" id="sim-injected-text">Waiting for text injection...</p>
                   </div>
                 </div>
-                <!-- Pre-edit text box on phone -->
-                <div class="sim-voice-deck">
-                  <div class="sim-voice-input-wrap">
-                    <textarea class="sim-voice-textarea" id="sim-voice-input" rows="2" placeholder="Compose on mobile or tap quick phrases..."></textarea>
+
+                <div class="sim-voice-card">
+                  <textarea class="sim-voice-input-area" id="sim-voice-input" rows="3">Wrap up today's edit review and dispatch by 3:00 PM</textarea>
+                  <div class="sim-voice-chips-row">
+                    <button class="sim-vchip" type="button" data-text="Color grade and audio pass completed.">Edit Status</button>
+                    <button class="sim-vchip" type="button" data-text="git commit -m 'feat: interactive remote deck'">Git Commit</button>
+                    <button class="sim-vchip" type="button" data-text="Product sync in Conference Room A at 3 PM.">Meeting</button>
                   </div>
-                  <div class="sim-phrase-chips">
-                    <button class="sim-chip" type="button" data-phrase="Looks great, deploying to prod!">Quick Reply</button>
-                    <button class="sim-chip" type="button" data-phrase="git commit -m 'feat: live update'">Git Commit</button>
-                    <button class="sim-chip" type="button" data-phrase="Standup meeting at 10:00 AM.">Reminder</button>
-                  </div>
-                  <div class="sim-voice-actions">
-                    <button class="sim-mic-wave-btn" id="sim-dictate-btn" type="button">
-                      <span class="sim-mic-icon">🎙️</span>
-                      <span class="sim-wave-bars"><i></i><i></i><i></i><i></i></span>
-                      <span class="sim-dictate-label">Dictate</span>
-                    </button>
-                    <button class="sim-send-btn" id="sim-send-text-btn" type="button">
-                      Send to Mac ↵
-                    </button>
+                  <div class="sim-voice-bottom-actions">
+                    <div class="sim-action-icons-left">
+                      <button class="sim-ico-btn" type="button" title="Attach">📎</button>
+                      <button class="sim-ico-btn" type="button" title="Settings">🎛️</button>
+                      <button class="sim-ico-btn" type="button" title="History">🕒</button>
+                    </div>
+                    <div class="sim-action-btns-right">
+                      <button class="sim-red-mic-btn" id="sim-dictate-btn" type="button" title="Voice Dictation">
+                        <span class="sim-wave-bars"><i></i><i></i><i></i><i></i></span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22" stroke="white" stroke-width="2"/></svg>
+                      </button>
+                      <button class="sim-black-send-btn" id="sim-send-text-btn" type="button" title="Inject to Mac">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <!-- 4. Virtual Keyboard & Shortcuts Mode -->
-              <div class="sim-view-stage" data-sim-mode="keyboard">
-                <div class="sim-mac-screen is-compact">
-                  <div class="sim-mac-menubar">
-                    <div class="sim-mac-menu-left"><span class="sim-apple-logo"></span><span>System</span></div>
-                    <div class="sim-mac-menu-right"><span id="sim-key-hud">Waiting for input...</span></div>
+              <!-- 4. Virtual Keyboard Mode -->
+              <div class="sim-stage" data-sim-mode="keyboard">
+                <div class="sim-seg-control">
+                  <span class="sim-seg-item">Text</span>
+                  <span class="sim-seg-item is-active">Realtime</span>
+                  <span class="sim-seg-done">Done</span>
+                </div>
+
+                <div class="sim-kb-mac-hud">
+                  <div class="sim-mac-topbar mini">
+                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
+                    <span>Mac Keyboard HUD</span>
                   </div>
-                  <div class="sim-mac-workspace sim-keys-display">
-                    <div class="sim-key-feedback" id="sim-key-feedback">
-                      <span class="sim-key-combo" id="sim-key-combo">⌘ + Tab</span>
-                      <span class="sim-key-desc" id="sim-key-desc">Mac Shortcut Triggered</span>
-                    </div>
+                  <div class="sim-hud-display-box">
+                    <span class="sim-hud-key-val" id="sim-key-combo">⌘ + Space</span>
+                    <span class="sim-hud-key-desc" id="sim-key-desc">Spotlight Search / Quick Look</span>
                   </div>
                 </div>
-                <!-- Interactive Keyboard Keys -->
-                <div class="sim-touch-keyboard">
-                  <div class="sim-kb-row">
-                    <button class="sim-kb-key fn" type="button" data-key="Esc">Esc</button>
-                    <button class="sim-kb-key fn" type="button" data-key="F1">F1</button>
-                    <button class="sim-kb-key fn" type="button" data-key="F2">F2</button>
-                    <button class="sim-kb-key fn" type="button" data-key="F11">F11</button>
-                    <button class="sim-kb-key fn" type="button" data-key="⌫">⌫</button>
+
+                <div class="sim-full-keyboard" id="sim-full-kb">
+                  <div class="kb-row">
+                    <button class="k-key sm fn" type="button" data-k="esc">esc</button>
+                    <button class="k-key sm fn" type="button" data-k="F1">F1</button>
+                    <button class="k-key sm fn" type="button" data-k="F2">F2</button>
+                    <button class="k-key sm fn" type="button" data-k="F3">F3</button>
+                    <button class="k-key sm fn" type="button" data-k="F4">F4</button>
+                    <button class="k-key sm fn" type="button" data-k="F5">F5</button>
+                    <button class="k-key sm fn" type="button" data-k="F6">F6</button>
+                    <button class="k-key sm fn" type="button" data-k="F7">F7</button>
+                    <button class="k-key sm fn" type="button" data-k="F8">F8</button>
+                    <button class="k-key sm fn" type="button" data-k="F9">F9</button>
+                    <button class="k-key sm fn" type="button" data-k="F10">F10</button>
+                    <button class="k-key sm fn" type="button" data-k="F11">F11</button>
+                    <button class="k-key sm fn" type="button" data-k="F12">F12</button>
                   </div>
-                  <div class="sim-kb-row">
-                    <button class="sim-kb-key mod" type="button" data-key="⌃ Ctrl">⌃</button>
-                    <button class="sim-kb-key mod" type="button" data-key="⌥ Option">⌥</button>
-                    <button class="sim-kb-key mod is-active" type="button" data-key="⌘ Command">⌘</button>
-                    <button class="sim-kb-key space" type="button" data-key="Space">Space</button>
-                    <button class="sim-kb-key ret" type="button" data-key="Return">↵</button>
+                  <div class="kb-row">
+                    <button class="k-key" type="button" data-k="1">1</button>
+                    <button class="k-key" type="button" data-k="2">2</button>
+                    <button class="k-key" type="button" data-k="3">3</button>
+                    <button class="k-key" type="button" data-k="4">4</button>
+                    <button class="k-key" type="button" data-k="5">5</button>
+                    <button class="k-key" type="button" data-k="6">6</button>
+                    <button class="k-key" type="button" data-k="7">7</button>
+                    <button class="k-key" type="button" data-k="8">8</button>
+                    <button class="k-key" type="button" data-k="9">9</button>
+                    <button class="k-key" type="button" data-k="0">0</button>
+                    <button class="k-key" type="button" data-k="-">-</button>
+                    <button class="k-key" type="button" data-k="=">=</button>
+                    <button class="k-key med del" type="button" data-k="⌫">⌫</button>
                   </div>
-                  <div class="sim-kb-row arrows">
-                    <button class="sim-kb-key" type="button" data-key="←">←</button>
-                    <button class="sim-kb-key" type="button" data-key="↑">↑</button>
-                    <button class="sim-kb-key" type="button" data-key="↓">↓</button>
-                    <button class="sim-kb-key" type="button" data-key="→">→</button>
+                  <div class="kb-row">
+                    <button class="k-key med" type="button" data-k="tab">tab</button>
+                    <button class="k-key" type="button" data-k="Q">Q</button>
+                    <button class="k-key" type="button" data-k="W">W</button>
+                    <button class="k-key" type="button" data-k="E">E</button>
+                    <button class="k-key" type="button" data-k="R">R</button>
+                    <button class="k-key" type="button" data-k="T">T</button>
+                    <button class="k-key" type="button" data-k="Y">Y</button>
+                    <button class="k-key" type="button" data-k="U">U</button>
+                    <button class="k-key" type="button" data-k="I">I</button>
+                    <button class="k-key" type="button" data-k="O">O</button>
+                    <button class="k-key" type="button" data-k="P">P</button>
+                    <button class="k-key" type="button" data-k="[">[</button>
+                    <button class="k-key" type="button" data-k="]">]</button>
+                  </div>
+                  <div class="kb-row">
+                    <button class="k-key med" type="button" data-k="caps">caps</button>
+                    <button class="k-key" type="button" data-k="A">A</button>
+                    <button class="k-key" type="button" data-k="S">S</button>
+                    <button class="k-key" type="button" data-k="D">D</button>
+                    <button class="k-key" type="button" data-k="F">F</button>
+                    <button class="k-key" type="button" data-k="G">G</button>
+                    <button class="k-key" type="button" data-k="H">H</button>
+                    <button class="k-key" type="button" data-k="J">J</button>
+                    <button class="k-key" type="button" data-k="K">K</button>
+                    <button class="k-key" type="button" data-k="L">L</button>
+                    <button class="k-key" type="button" data-k=";">;</button>
+                    <button class="k-key wide ret" type="button" data-k="return">return</button>
+                  </div>
+                  <div class="kb-row">
+                    <button class="k-key wide" type="button" data-k="⇧">⇧</button>
+                    <button class="k-key" type="button" data-k="Z">Z</button>
+                    <button class="k-key" type="button" data-k="X">X</button>
+                    <button class="k-key" type="button" data-k="C">C</button>
+                    <button class="k-key" type="button" data-k="V">V</button>
+                    <button class="k-key" type="button" data-k="B">B</button>
+                    <button class="k-key" type="button" data-k="N">N</button>
+                    <button class="k-key" type="button" data-k="M">M</button>
+                    <button class="k-key" type="button" data-k=",">,</button>
+                    <button class="k-key" type="button" data-k=".">.</button>
+                    <button class="k-key" type="button" data-k="↑">↑</button>
+                    <button class="k-key wide" type="button" data-k="⇧">⇧</button>
+                  </div>
+                  <div class="kb-row">
+                    <button class="k-key mod" type="button" data-k="^">^</button>
+                    <button class="k-key mod" type="button" data-k="⌥">⌥</button>
+                    <button class="k-key mod is-active" type="button" data-k="⌘">⌘</button>
+                    <button class="k-key space" type="button" data-k="space">space</button>
+                    <button class="k-key arrow" type="button" data-k="←">←</button>
+                    <button class="k-key arrow" type="button" data-k="↓">↓</button>
+                    <button class="k-key arrow" type="button" data-k="→">→</button>
                   </div>
                 </div>
               </div>
 
-              <!-- 5. Wireless Microphone Mode -->
-              <div class="sim-view-stage" data-sim-mode="mic">
-                <div class="sim-mac-screen is-compact">
-                  <div class="sim-mac-menubar">
-                    <div class="sim-mac-menu-left"><span class="sim-apple-logo"></span><span>Audio In</span></div>
-                    <div class="sim-mac-menu-right"><span class="sim-audio-stat">48kHz · 24-bit</span></div>
-                  </div>
-                  <div class="sim-mac-workspace sim-mic-mac-view">
-                    <div class="sim-audio-card">
-                      <span class="sim-audio-dot is-live"></span>
-                      <strong id="sim-mic-status-text">Wireless Mic Connected</strong>
-                      <p>Active as Mac Default Input Device</p>
+              <!-- 5. Wireless Mic & Tactile Console Mode -->
+              <div class="sim-stage" data-sim-mode="mic">
+                <div class="sim-mic-deck-console">
+                  <div class="sim-mdeck-row">
+                    <button class="sim-3d-btn green-btn" type="button" data-hud-action="link">Link Key</button>
+                    <button class="sim-3d-btn peach-wide-btn" type="button" data-hud-action="shift">Hold Shift</button>
+                    <div class="sim-toggle-widget">
+                      <div class="sim-toggle-pill is-on" id="sim-bool-switch">
+                        <span class="sim-toggle-knob"></span>
+                      </div>
+                      <span class="sim-toggle-label">Toggle</span>
                     </div>
                   </div>
-                </div>
-                <!-- Big Touch-to-Talk Mic -->
-                <div class="sim-mic-deck">
-                  <button class="sim-big-mic-btn is-active" id="sim-big-mic-btn" type="button">
-                    <div class="sim-mic-halo"></div>
-                    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                      <line x1="12" y1="19" x2="12" y2="22"/>
-                    </svg>
-                    <span class="sim-mic-state" id="sim-mic-state-label">LIVE STREAMING</span>
-                  </button>
-                  <div class="sim-audio-visualizer">
-                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+
+                  <div class="sim-mdeck-row">
+                    <div class="sim-dial-widget">
+                      <div class="sim-dial-ring">
+                        <div class="sim-dial-ticks"></div>
+                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
+                      </div>
+                      <span class="sim-dial-text">Volume 50</span>
+                    </div>
+
+                    <div class="sim-slider-widget flex-1">
+                      <div class="sim-slider-header">
+                        <span>Brightness</span>
+                        <span>50%</span>
+                      </div>
+                      <div class="sim-slider-track">
+                        <div class="sim-slider-fill" style="width: 50%;"></div>
+                        <div class="sim-slider-thumb" style="left: 50%;"></div>
+                      </div>
+                    </div>
+
+                    <button class="sim-3d-btn yellow-sq-btn" type="button" data-hud-action="encoder">
+                      <span>Encoder<br>Press</span>
+                      <span class="sim-btn-sub">↔</span>
+                    </button>
                   </div>
-                  <span class="sim-mic-footer-hint">Tap to toggle mute / 48kHz audio stream</span>
+
+                  <div class="sim-mdeck-row dpad-mic-row">
+                    <div class="sim-dpad-cross">
+                      <button class="sim-dpad-btn up" type="button" data-hud-action="dpad-up">▲</button>
+                      <button class="sim-dpad-btn left" type="button" data-hud-action="dpad-left">◀</button>
+                      <button class="sim-dpad-btn center" type="button" data-hud-action="dpad-ok">●</button>
+                      <button class="sim-dpad-btn right" type="button" data-hud-action="dpad-right">▶</button>
+                      <button class="sim-dpad-btn down" type="button" data-hud-action="dpad-down">▼</button>
+                    </div>
+
+                    <button class="sim-3d-btn white-card-btn" type="button" data-hud-action="keyboard">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>
+                      <span>Keyboard</span>
+                    </button>
+
+                    <div class="sim-metal-mic-wrapper">
+                      <button class="sim-metal-mic-btn is-recording" id="sim-big-mic-btn" type="button" title="Toggle Mic Stream">
+                        <div class="sim-mic-glow-ring"></div>
+                        <div class="sim-mic-metal-mesh">
+                          <div class="sim-mesh-texture"></div>
+                        </div>
+                      </button>
+                      <span class="sim-mic-status-tag" id="sim-mic-state-label">RECORDING</span>
+                    </div>
+                  </div>
+
+                  <div class="sim-bottom-tabs">
+                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                    <div class="sim-btab-item is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="sim-btab-dot"></span></div>
+                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                  </div>
                 </div>
               </div>
 

@@ -191,14 +191,17 @@ section[id], section {
 .remote-display-caption strong { font-size: 1.05rem; font-weight: 900; color: var(--ink); }
 .remote-display-caption p { color: var(--muted); font-size: .84rem; line-height: 1.55; margin: 0; }
 
-/* Interactive Mac Remote Phone Simulator */
-.remote-simulator-phone {
+/* ==========================================================================
+   Remote Control Section & Authentic CreamDeck Phone Simulator
+   ========================================================================== */
+
+.remote-phone-chassis {
   width: min(100%, 21.5rem);
-  height: clamp(28rem, 52svh, 32rem);
-  background: #090a0f;
-  border-radius: 2.2rem;
-  border: 4px solid #232632;
-  box-shadow: 0 1.75rem 4.5rem rgba(48, 38, 23, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  height: clamp(34rem, 64svh, 40rem);
+  background: #f7f4ee;
+  border-radius: 2.75rem;
+  border: 7px solid #232733;
+  box-shadow: 0 2rem 5rem rgba(48, 38, 23, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -207,32 +210,34 @@ section[id], section {
   -webkit-user-select: none;
 }
 
-.sim-phone-header {
+/* iOS Top Bar & Dynamic Island */
+.sim-ios-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.65rem;
-  color: #94a3b8;
-  font-weight: 700;
-  background: rgba(15, 17, 23, 0.9);
-  backdrop-filter: blur(8px);
-  z-index: 10;
+  padding: 0.55rem 1rem 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #1e293b;
+  background: #f7f4ee;
+  z-index: 20;
+  flex-shrink: 0;
 }
 
-.sim-island {
-  background: #000;
-  padding: 0.2rem 0.55rem;
+.sim-dynamic-island {
+  background: #000000;
+  padding: 0.22rem 0.65rem;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  color: #ffffff;
   font-size: 0.58rem;
-  color: #e2e8f0;
-  font-weight: 700;
+  font-weight: 750;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.sim-island-dot {
+.sim-island-indicator {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -240,13 +245,45 @@ section[id], section {
   box-shadow: 0 0 6px #10b981;
 }
 
-.sim-signals {
+.sim-ios-icons {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
+  color: #334155;
 }
 
-.sim-view-viewport {
+.sim-battery-pill {
+  width: 1.15rem;
+  height: 0.62rem;
+  border: 1.5px solid #334155;
+  border-radius: 3px;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sim-battery-pill::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5px;
+  height: 3px;
+  background: #334155;
+  border-radius: 0 1px 1px 0;
+}
+
+.sim-battery-level {
+  width: 80%;
+  height: 100%;
+  background: #10b981;
+  border-radius: 1px;
+}
+
+/* Viewport for 5 Stages */
+.sim-viewport {
   flex: 1;
   position: relative;
   overflow: hidden;
@@ -254,213 +291,219 @@ section[id], section {
   flex-direction: column;
 }
 
-.sim-view-stage {
+.sim-stage {
   position: absolute;
   inset: 0;
   display: none;
   flex-direction: column;
-  opacity: 0;
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  background: #f7f4ee;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
-.sim-view-stage.is-active {
+.sim-stage::-webkit-scrollbar {
+  display: none;
+}
+
+.sim-stage.is-active {
   display: flex;
-  opacity: 1;
 }
 
-/* Mac Desktop Screen Simulation */
-.sim-mac-screen {
+/* --------------------------------------------------------------------------
+   1. Studio Mode Components
+   -------------------------------------------------------------------------- */
+.sim-panda-holder {
+  height: 2.2rem;
   position: relative;
-  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 10;
+  margin-top: -0.2rem;
+}
+
+.sim-panda-mascot {
+  width: 4.8rem;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+  transform: translateY(0.45rem);
+  pointer-events: none;
+}
+
+/* Mac Display Window */
+.sim-mac-display {
+  margin: 0 0.65rem 0.5rem;
+  background: linear-gradient(135deg, #181c2f 0%, #29335c 50%, #3e4c82 100%);
+  border: 2px solid #dfcfb7;
+  border-radius: 0.85rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 7.2rem;
+  position: relative;
+  flex-shrink: 0;
 }
 
-.sim-mac-screen:not(.is-fullscreen):not(.is-compact) {
-  height: 48%;
-}
-
-.sim-mac-screen.is-fullscreen {
-  height: 100%;
-}
-
-.sim-mac-screen.is-compact {
-  height: 38%;
-}
-
-.sim-mac-menubar {
-  height: 1.3rem;
+.sim-mac-topbar {
+  height: 1.25rem;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.55rem;
-  font-size: 0.55rem;
-  color: rgba(255, 255, 255, 0.88);
-  font-weight: 600;
+  padding: 0 0.5rem;
+  font-size: 0.52rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
 }
 
-.sim-mac-menu-left {
+.sim-mac-topbar.mini {
+  background: #e8e2d5;
+  color: #475569;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sim-mac-dots {
   display: flex;
-  align-items: center;
-  gap: 0.45rem;
+  gap: 3px;
 }
 
-.sim-apple-logo {
-  font-size: 0.68rem;
-}
-
-.sim-mac-menu-right {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: #a5b4fc;
-}
-
-.sim-mac-workspace {
-  flex: 1;
-  position: relative;
-  padding: 0.5rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.sim-mac-window {
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 0.45rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.sim-mac-window.is-large {
-  flex: 1;
-}
-
-.sim-win-header {
-  height: 1.15rem;
-  background: #e2e8f0;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0 0.45rem;
-}
-
-.sim-win-dot {
+.m-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
 }
+.m-dot.r { background: #ef4444; }
+.m-dot.y { background: #f59e0b; }
+.m-dot.g { background: #10b981; }
 
-.sim-win-dot.red { background: #ef4444; }
-.sim-win-dot.yellow { background: #f59e0b; }
-.sim-win-dot.green { background: #10b981; }
-
-.sim-win-title {
-  font-size: 0.56rem;
-  color: #334155;
-  font-weight: 700;
-  margin-left: 0.2rem;
-}
-
-.sim-win-body {
-  padding: 0.45rem;
-  font-size: 0.62rem;
-  line-height: 1.45;
-  color: #1e293b;
-  overflow-y: auto;
-}
-
-.sim-note-line {
-  margin: 0 0 0.2rem;
-  font-weight: 700;
-}
-
-.sim-note-line.muted {
-  color: #64748b;
-  font-weight: 500;
-  font-size: 0.58rem;
-}
-
-.sim-doc-items {
-  display: flex;
-  gap: 0.3rem;
-  margin-top: 0.3rem;
-}
-
-.sim-doc-badge {
+.sim-mac-apptitle {
   font-size: 0.52rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+}
+
+.sim-mac-fps {
+  font-size: 0.48rem;
+  color: #38bdf8;
+  font-weight: 800;
+}
+
+.sim-mac-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-mac-webpage {
+  flex: 1;
+  background: radial-gradient(circle at 50% 30%, #a23838 0%, #4a151b 100%);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sim-web-tag {
+  font-size: 0.44rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffd6a5;
+  text-transform: uppercase;
+}
+
+.sim-web-title {
+  font-size: 0.66rem;
+  font-weight: 800;
+  margin: 0.2rem 0 0.35rem;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.sim-web-btn {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 0.48rem;
   font-weight: 700;
-  background: #e0e7ff;
-  color: #4338ca;
-  padding: 0.08rem 0.3rem;
-  border-radius: 3px;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
 }
 
-/* Moving Cursor & Feedback Toast */
-.sim-mac-cursor {
+/* Moving Cursor & HUD Toast on Mac Screen */
+.sim-mac-pointer {
   position: absolute;
-  top: 35%;
-  left: 45%;
+  top: 0;
+  left: 0;
+  transform: translate(50px, 40px);
   pointer-events: none;
-  z-index: 10;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
-  transition: transform 0.04s linear;
+  z-index: 15;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  transition: transform 0.05s linear;
 }
 
-.sim-mac-toast {
+.sim-hud-toast {
   position: absolute;
-  bottom: 0.45rem;
+  bottom: 0.4rem;
   left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  transform: translateX(-50%) translateY(16px);
   opacity: 0;
-  background: rgba(17, 24, 39, 0.92);
+  background: rgba(15, 23, 42, 0.94);
   backdrop-filter: blur(6px);
   color: #ffffff;
-  font-size: 0.56rem;
+  font-size: 0.52rem;
   font-weight: 700;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.55rem;
   border-radius: 999px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 20;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   white-space: nowrap;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
 }
 
-.sim-mac-toast.is-shown {
+.sim-hud-toast.is-shown {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
 
-/* Controller Bay in Studio View */
-.sim-controller-area {
+/* CreamDeck Hardware Controller Board */
+.sim-deck-panel {
   flex: 1;
-  background: #10131a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.5rem;
+  background: #f4eee2;
+  border-top: 1px solid rgba(33, 31, 26, 0.08);
+  padding: 0.5rem 0.65rem 0.35rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
   justify-content: space-between;
 }
 
-.sim-pad-row {
-  display: grid;
-  grid-template-columns: 1fr 1.8rem;
-  gap: 0.4rem;
-  flex: 1;
-  min-height: 0;
+.sim-deck-row {
+  display: flex;
+  gap: 0.45rem;
 }
 
-.sim-trackpad {
-  background: linear-gradient(180deg, #1f232e 0%, #151821 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.sim-deck-row.upper-row {
+  align-items: stretch;
+  height: 4.8rem;
+}
+
+/* Dotted Trackpad */
+.sim-trackpad-box {
+  flex: 1.4;
+  background: #ebe4d5;
+  border: 1px solid rgba(33, 31, 26, 0.08);
   border-radius: 0.75rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
   cursor: crosshair;
@@ -468,204 +511,600 @@ section[id], section {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.06);
 }
 
-.sim-pad-hint {
-  font-size: 0.56rem;
-  color: #64748b;
-  font-weight: 700;
+.sim-trackpad-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#bcaf97 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.sim-trackpad-label {
+  font-size: 0.5rem;
+  font-weight: 750;
+  color: #92836f;
   pointer-events: none;
   text-align: center;
-  padding: 0 0.5rem;
+  padding: 0 0.4rem;
+  z-index: 2;
 }
 
-.sim-touch-ripple {
+.sim-touch-glow {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.65) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(100, 85, 223, 0.55) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
 }
 
-.sim-scroll-bar {
-  background: #171a23;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.55rem;
+/* Jog Wheel / Scroll Wheel */
+.sim-jog-wheel {
+  width: 2.1rem;
+  background: linear-gradient(180deg, #d3cbba 0%, #ede8dc 50%, #c4bbab 100%);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.65rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.06);
   position: relative;
   cursor: ns-resize;
   touch-action: none;
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.sim-scroll-thumb {
+.sim-wheel-ridges {
   position: absolute;
-  top: 30%;
-  width: 1.1rem;
-  height: 1.8rem;
+  inset: 0;
+  background: repeating-linear-gradient(180deg, transparent, transparent 3px, rgba(0, 0, 0, 0.12) 3px, rgba(0, 0, 0, 0.12) 5px);
+  pointer-events: none;
+}
+
+.sim-wheel-indicator {
+  position: absolute;
+  top: 35%;
+  left: 3px;
+  right: 3px;
+  height: 1.2rem;
+  background: linear-gradient(180deg, #fdfbf7 0%, #e2dcd0 100%);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.35rem;
-  background: linear-gradient(180deg, #6366f1 0%, #4338ca 100%);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.sim-quick-keys {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.25rem;
-}
-
-.sim-key-btn {
-  background: #232734;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  font-size: 0.6rem;
-  font-weight: 800;
-  padding: 0.38rem 0.15rem;
-  border-radius: 0.38rem;
-  cursor: pointer;
-  transition: all 0.12s ease;
-}
-
-.sim-key-btn:active {
-  background: #6366f1;
-  color: #ffffff;
-  transform: scale(0.94);
-}
-
-/* Fullscreen Mode Elements */
-.sim-safari-bar {
-  background: #f1f5f9;
-  border-radius: 0.25rem;
-  padding: 0.2rem 0.4rem;
-  margin-bottom: 0.35rem;
-}
-
-.sim-safari-url {
-  font-size: 0.54rem;
-  color: #64748b;
-}
-
-.sim-fs-text {
-  margin: 0.4rem 0 0;
-  font-size: 0.58rem;
-  color: #334155;
-  font-weight: 600;
-}
-
-.sim-mac-dock {
+.sim-deck-mini-col {
+  width: 3.2rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: space-between;
+}
+
+.sim-mini-knob {
+  flex: 1;
+  background: #2b2f3a;
+  border-radius: 50%;
+  border: 2px solid #1a1c24;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 2px 3px rgba(255, 255, 255, 0.15);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.sim-mini-knob-dial {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3b404e 0%, #1f222b 100%);
+  position: relative;
+}
+
+.sim-mini-knob-dial::after {
+  content: '';
   position: absolute;
-  bottom: 0.5rem;
+  top: 3px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(10px);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 2px;
+  height: 5px;
+  background: #60a5fa;
+  border-radius: 1px;
 }
 
-.sim-dock-icon {
-  width: 1.6rem;
-  height: 1.6rem;
-  font-size: 0.9rem;
-  border-radius: 0.35rem;
+/* 3D Skeuomorphic Tactile Keycaps */
+.sim-3d-keys-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+}
+
+.sim-3d-btn {
+  height: 2.1rem;
+  border-radius: 0.55rem;
   border: none;
-  background: transparent;
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 850;
   cursor: pointer;
-  transition: transform 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  user-select: none;
+}
+
+.sim-3d-btn:active {
+  transform: translateY(3px) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.sim-3d-btn.cream {
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 3.5px 0 #d1c8b8, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-3d-btn.peach {
+  background: #fcd9c4;
+  color: #7c2d12;
+  box-shadow: 0 3.5px 0 #e4b297, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-3d-btn.yellow {
+  background: #ffe682;
+  color: #78350f;
+  box-shadow: 0 3.5px 0 #dfbe4a, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-3d-btn.blue {
+  background: #6ba3fa;
+  color: #ffffff;
+  box-shadow: 0 3.5px 0 #467bc9, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-3d-btn.coral {
+  background: #fca5a5;
+  color: #7f1d1d;
+  box-shadow: 0 3.5px 0 #db7575, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-3d-btn.mini-btn {
+  height: 2.1rem;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.48rem;
+  gap: 0.1rem;
+  box-shadow: 0 3px 0 #d1c8b8, 0 3px 5px rgba(0, 0, 0, 0.06);
+}
+
+/* Bottom Controls (2 Dials + 1 Slider) */
+.sim-deck-controls-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-top: 0.1rem;
+}
+
+.sim-dial-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.sim-dial-ring {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: #ede6d8;
+  border: 1px solid rgba(33, 31, 26, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  position: relative;
   display: grid;
   place-items: center;
 }
 
-.sim-dock-icon:hover, .sim-dock-icon.is-active {
-  transform: translateY(-3px) scale(1.18);
+.sim-dial-ticks {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  border: 2px dotted #a89a85;
 }
 
-/* Text & Voice Mode */
-.sim-target-editor {
-  min-height: 2.2rem;
+.sim-dial-core {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #e5ded0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.sim-dial-dot {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+.sim-dial-text {
+  font-size: 0.46rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.sim-slider-widget {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sim-slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.sim-slider-track {
+  height: 0.8rem;
+  background: #e2dbcc;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+}
+
+.sim-slider-fill {
+  width: 50%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #818cf8, #6366f1);
+}
+
+.sim-slider-thumb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
   background: #ffffff;
-  font-family: ui-monospace, "SF Mono", monospace;
-  font-size: 0.62rem;
-  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom Tab Bar */
+.sim-bottom-tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.25rem 0 0.15rem;
+  border-top: 1px solid rgba(33, 31, 26, 0.06);
+}
+
+.sim-btab-item {
+  color: #94a3b8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sim-btab-item.is-active {
+  color: #1e293b;
+}
+
+.sim-btab-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #10b981;
+  position: absolute;
+  bottom: -4px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Fullscreen Mode
+   -------------------------------------------------------------------------- */
+.sim-fullscreen-mac {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 50% 30%, #a23838 0%, #4a151b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sim-fs-header {
+  height: 1.4rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.6rem;
+  font-size: 0.54rem;
+  color: #ffffff;
   font-weight: 700;
 }
 
-.sim-voice-deck {
+.sim-fs-stream-badge {
+  font-size: 0.46rem;
+  color: #38bdf8;
+  font-weight: 800;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.sim-fs-body {
   flex: 1;
-  background: #10131a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.55rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  justify-content: space-between;
-}
-
-.sim-voice-textarea {
-  width: 100%;
-  height: 2.8rem;
-  background: #1a1e29;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0.55rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
   color: #ffffff;
-  font-size: 0.66rem;
-  padding: 0.4rem;
-  resize: none;
-  outline: none;
-  font-family: inherit;
 }
 
-.sim-phrase-chips {
+.sim-fs-hero-art {
+  max-width: 15rem;
+}
+
+.sim-fs-tag {
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffd6a5;
+}
+
+.sim-fs-hero-art h3 {
+  font-size: 1rem;
+  margin: 0.35rem 0 0.5rem;
+  font-weight: 900;
+}
+
+.sim-fs-hero-art p {
+  font-size: 0.62rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Floating Action Pill */
+.sim-fs-floating-bar {
+  position: absolute;
+  bottom: 3.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  gap: 0.35rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+.sim-fs-pill-btn {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.72rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sim-fs-pill-btn:hover, .sim-fs-pill-btn.is-active {
+  background: #6366f1;
+  transform: scale(1.1);
+}
+
+.sim-fs-dock {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.65rem;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.sim-dock-app {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 0.4rem;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s ease;
+}
+
+.sim-dock-app:hover, .sim-dock-app.is-active {
+  transform: translateY(-4px) scale(1.2);
+}
+
+/* --------------------------------------------------------------------------
+   3. Text & Voice Pre-Edit Mode
+   -------------------------------------------------------------------------- */
+.sim-seg-control {
+  background: #e2dcce;
+  margin: 0.35rem 0.65rem;
+  border-radius: 0.45rem;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #64748b;
+  position: relative;
+}
+
+.sim-seg-item {
+  flex: 1;
+  text-align: center;
+  padding: 0.25rem 0;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.sim-seg-item.is-active {
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sim-seg-done {
+  position: absolute;
+  right: 0.5rem;
+  color: #6366f1;
+  font-size: 0.58rem;
+}
+
+.sim-voice-mac-preview {
+  margin: 0.2rem 0.65rem 0.45rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.65rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sim-mac-doc-body {
+  padding: 0.55rem;
+  min-height: 3rem;
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sim-voice-card {
+  margin: 0 0.65rem;
+  background: #ffffff;
+  border-radius: 0.85rem;
+  padding: 0.65rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.sim-voice-input-area {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.45;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+.sim-voice-chips-row {
   display: flex;
   gap: 0.25rem;
   overflow-x: auto;
+  scrollbar-width: none;
   padding-bottom: 2px;
 }
 
-.sim-chip {
-  background: #232734;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
-  font-size: 0.56rem;
-  font-weight: 700;
-  padding: 0.2rem 0.45rem;
+.sim-voice-chips-row::-webkit-scrollbar { display: none; }
+
+.sim-vchip {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.54rem;
+  font-weight: 750;
+  padding: 0.18rem 0.45rem;
   border-radius: 999px;
   white-space: nowrap;
   cursor: pointer;
 }
 
-.sim-voice-actions {
+.sim-vchip:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.sim-voice-bottom-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sim-action-icons-left {
   display: flex;
   gap: 0.35rem;
 }
 
-.sim-mic-wave-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  background: #232734;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 0.6rem;
-  font-weight: 800;
-  padding: 0.38rem 0.55rem;
-  border-radius: 0.45rem;
+.sim-ico-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.85rem;
   cursor: pointer;
+  padding: 0.15rem;
+}
+
+.sim-action-btns-right {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sim-red-mic-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: #ef4444;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+  position: relative;
 }
 
 .sim-wave-bars {
-  display: inline-flex;
+  position: absolute;
+  inset: 0;
+  display: none;
   align-items: center;
+  justify-content: center;
   gap: 2px;
 }
 
@@ -673,209 +1112,319 @@ section[id], section {
   display: block;
   width: 2px;
   height: 8px;
-  background: #38bdf8;
+  background: #ffffff;
   border-radius: 1px;
 }
 
-.sim-mic-wave-btn.is-listening .sim-wave-bars i {
+.sim-red-mic-btn.is-active .sim-wave-bars {
+  display: flex;
+}
+
+.sim-red-mic-btn.is-active .sim-wave-bars i {
   animation: sim-wave 0.6s ease-in-out infinite alternate;
 }
 
-.sim-send-btn {
-  flex: 1;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  color: #ffffff;
+.sim-red-mic-btn.is-active svg {
+  display: none;
+}
+
+.sim-black-send-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: #0f172a;
   border: none;
-  font-size: 0.66rem;
-  font-weight: 800;
-  padding: 0.38rem 0.55rem;
-  border-radius: 0.45rem;
+  display: grid;
+  place-items: center;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.35);
   transition: transform 0.15s ease;
 }
 
-.sim-send-btn:active {
-  transform: scale(0.96);
+.sim-black-send-btn:active {
+  transform: scale(0.92);
 }
 
-/* Keyboard Mode */
-.sim-keys-display {
-  display: grid;
-  place-items: center;
+/* --------------------------------------------------------------------------
+   4. Virtual Keyboard Mode
+   -------------------------------------------------------------------------- */
+.sim-kb-mac-hud {
+  margin: 0.2rem 0.65rem 0.45rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.65rem;
+  overflow: hidden;
 }
 
-.sim-key-feedback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.sim-key-combo {
-  font-size: 0.95rem;
-  font-weight: 900;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0.2rem 0.65rem;
-  border-radius: 0.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.sim-key-desc {
-  font-size: 0.58rem;
-  color: #cbd5e1;
-  font-weight: 600;
-}
-
-.sim-touch-keyboard {
-  flex: 1;
-  background: #10131a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+.sim-hud-display-box {
   padding: 0.55rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 }
 
-.sim-kb-row {
-  display: flex;
-  gap: 0.22rem;
-  justify-content: center;
-}
-
-.sim-kb-key {
-  flex: 1;
-  background: #242836;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
-  font-size: 0.64rem;
-  font-weight: 800;
-  padding: 0.45rem 0.15rem;
+.sim-hud-key-val {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 0.2rem 0.75rem;
   border-radius: 0.35rem;
-  cursor: pointer;
-  transition: all 0.12s ease;
 }
 
-.sim-kb-key:active, .sim-kb-key.is-active {
+.sim-hud-key-desc {
+  font-size: 0.56rem;
+  font-weight: 750;
+  color: #64748b;
+}
+
+.sim-full-keyboard {
+  background: #d6d0c4;
+  padding: 0.45rem 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.kb-row {
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.k-key {
+  flex: 1;
+  height: 1.95rem;
+  background: #ffffff;
+  border: none;
+  border-radius: 0.35rem;
+  box-shadow: 0 2px 0 #b3aba0, 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+
+.k-key:active, .k-key.is-active {
+  transform: translateY(2px);
+  box-shadow: 0 0.5px 0 #b3aba0;
   background: #6366f1;
   color: #ffffff;
-  transform: translateY(1px);
 }
 
-.sim-kb-key.space {
-  flex: 2.5;
+.k-key.sm { font-size: 0.46rem; height: 1.45rem; }
+.k-key.fn { background: #e5ded2; }
+.k-key.med { flex: 1.4; }
+.k-key.wide { flex: 1.6; }
+.k-key.mod { flex: 1.2; background: #e5ded2; }
+.k-key.space { flex: 3.8; }
+.k-key.del, .k-key.ret { background: #e5ded2; }
+
+/* --------------------------------------------------------------------------
+   5. Wireless Mic Mode
+   -------------------------------------------------------------------------- */
+.sim-mic-deck-console {
+  flex: 1;
+  padding: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  justify-content: space-between;
 }
 
-/* Wireless Mic Mode */
-.sim-mic-mac-view {
+.sim-mdeck-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sim-3d-btn.green-btn {
+  flex: 1;
+  background: #34d399;
+  color: #064e3b;
+  box-shadow: 0 3.5px 0 #10b981, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-3d-btn.peach-wide-btn {
+  flex: 1.4;
+  background: #fcd9c4;
+  color: #7c2d12;
+  box-shadow: 0 3.5px 0 #e4b297, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-toggle-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.sim-toggle-pill {
+  width: 2.2rem;
+  height: 1.3rem;
+  background: #cbd5e1;
+  border-radius: 999px;
+  padding: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sim-toggle-pill.is-on {
+  background: #34d399;
+  justify-content: flex-end;
+}
+
+.sim-toggle-knob {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sim-toggle-label {
+  font-size: 0.46rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.sim-3d-btn.yellow-sq-btn {
+  width: 3.2rem;
+  height: 2.8rem;
+  background: #ffe682;
+  color: #78350f;
+  box-shadow: 0 3.5px 0 #dfbe4a, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.sim-btn-sub {
+  font-size: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+/* D-Pad Cross */
+.sim-mdeck-row.dpad-mic-row {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sim-dpad-cross {
+  width: 4.8rem;
+  height: 4.8rem;
+  position: relative;
+}
+
+.sim-dpad-btn {
+  position: absolute;
+  background: #2b2f3a;
+  border: 1px solid #1a1c24;
+  color: #94a3b8;
+  font-size: 0.6rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sim-dpad-btn:active {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.sim-dpad-btn.up { top: 0; left: 1.6rem; width: 1.6rem; height: 1.6rem; border-radius: 0.35rem 0.35rem 0 0; }
+.sim-dpad-btn.left { top: 1.6rem; left: 0; width: 1.6rem; height: 1.6rem; border-radius: 0.35rem 0 0 0.35rem; }
+.sim-dpad-btn.center { top: 1.6rem; left: 1.6rem; width: 1.6rem; height: 1.6rem; }
+.sim-dpad-btn.right { top: 1.6rem; left: 3.2rem; width: 1.6rem; height: 1.6rem; border-radius: 0 0.35rem 0.35rem 0; }
+.sim-dpad-btn.down { top: 3.2rem; left: 1.6rem; width: 1.6rem; height: 1.6rem; border-radius: 0 0 0.35rem 0.35rem; }
+
+.sim-3d-btn.white-card-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.52rem;
+  gap: 0.2rem;
+  box-shadow: 0 3.5px 0 #d1c8b8, 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Metal Microphone with Glowing Red Ring */
+.sim-metal-mic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sim-metal-mic-btn {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  background: #f7f4ee;
+  border: none;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sim-mic-glow-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 3px solid #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.65);
+  animation: sim-mic-pulse 1.8s infinite alternate;
+}
+
+.sim-metal-mic-btn.is-muted .sim-mic-glow-ring {
+  border-color: #94a3b8;
+  box-shadow: none;
+  animation: none;
+}
+
+.sim-mic-metal-mesh {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e2e8f0 0%, #94a3b8 100%);
+  border: 2px solid #cbd5e1;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
   display: grid;
   place-items: center;
 }
 
-.sim-audio-card {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0.65rem;
-  padding: 0.55rem 0.85rem;
-  text-align: center;
-  color: #ffffff;
-}
-
-.sim-audio-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
+.sim-mesh-texture {
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  margin-right: 0.3rem;
+  background-image: radial-gradient(#475569 1px, transparent 1px);
+  background-size: 4px 4px;
 }
 
-.sim-audio-card strong {
-  font-size: 0.68rem;
-}
-
-.sim-audio-card p {
-  font-size: 0.54rem;
-  color: #94a3b8;
-  margin: 0.15rem 0 0;
-}
-
-.sim-mic-deck {
-  flex: 1;
-  background: #10131a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.sim-big-mic-btn {
-  width: 4.6rem;
-  height: 4.6rem;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #6366f1, #4f46e5);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
-}
-
-.sim-big-mic-btn:active {
-  transform: scale(0.94);
-}
-
-.sim-big-mic-btn.is-muted {
-  background: #334155;
-  box-shadow: none;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.sim-mic-state {
+.sim-mic-status-tag {
   font-size: 0.48rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
-  margin-top: 0.15rem;
+  color: #ef4444;
+  letter-spacing: 0.05em;
 }
 
-.sim-audio-visualizer {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 1.1rem;
+.sim-metal-mic-btn.is-muted + .sim-mic-status-tag {
+  color: #64748b;
 }
 
-.sim-audio-visualizer span {
-  width: 3px;
-  height: 35%;
-  background: #818cf8;
-  border-radius: 2px;
-  animation: sim-wave 0.8s ease-in-out infinite alternate;
-}
-
-.sim-audio-visualizer span:nth-child(2) { animation-delay: 0.1s; }
-.sim-audio-visualizer span:nth-child(3) { animation-delay: 0.2s; }
-.sim-audio-visualizer span:nth-child(4) { animation-delay: 0.3s; }
-.sim-audio-visualizer span:nth-child(5) { animation-delay: 0.4s; }
-.sim-audio-visualizer span:nth-child(6) { animation-delay: 0.3s; }
-.sim-audio-visualizer span:nth-child(7) { animation-delay: 0.2s; }
-.sim-audio-visualizer span:nth-child(8) { animation-delay: 0.1s; }
-
-.sim-big-mic-btn.is-muted + .sim-audio-visualizer span {
-  animation: none;
-  height: 15% !important;
-  background: #475569;
+@keyframes sim-mic-pulse {
+  0% { transform: scale(0.98); opacity: 0.75; }
+  100% { transform: scale(1.04); opacity: 1; }
 }
 
 @keyframes sim-wave {
@@ -883,11 +1432,6 @@ section[id], section {
   100% { height: 100%; }
 }
 
-.sim-mic-footer-hint {
-  font-size: 0.56rem;
-  color: #64748b;
-  font-weight: 600;
-}
 
 
 .product-section { display: grid; grid-template-columns: minmax(16rem, .82fr) minmax(0, 1.18fr); gap: clamp(3rem, 8vw, 6.5rem); align-items: center; background: var(--sand); }
@@ -1374,12 +1918,9 @@ footer small { grid-column: 1 / -1; margin-top: 1rem; color: rgba(33,31,26,.48);
   .remote-section { gap: 2.25rem; padding-top: 3.9rem; padding-bottom: 3.9rem; }
   .remote-intro { grid-template-columns: 1fr; gap: .9rem; text-align: center; }
   .remote-intro p { margin-right: auto; margin-left: auto; }
-  .remote-showcase { grid-template-columns: 1fr; gap: 2rem; }
-  .remote-display { order: 1; }
-  .remote-display-img { width: auto; height: min(48svh, 27rem); max-width: 72vw; }
-  .remote-display-caption { align-items: center; text-align: center; }
+  .remote-showcase { grid-template-columns: 1fr; gap: 1.75rem; }
   .remote-nav {
-    order: 2;
+    order: 1;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
@@ -1400,6 +1941,9 @@ footer small { grid-column: 1 / -1; margin-top: 1rem; color: rgba(33,31,26,.48);
     scroll-snap-align: start;
   }
   .remote-nav-item:hover, .remote-nav-item.is-active { transform: none; }
+  .remote-display { order: 2; width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .remote-phone-chassis { width: min(100%, 20.5rem); height: 35rem; }
+  .remote-display-caption { align-items: center; text-align: center; }
   .product-section { gap: 2.5rem; }
   .product-shot { order: 2; margin-top: .5rem; }
   .product-feature-list { margin-top: 1.5rem; text-align: left; }

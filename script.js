@@ -457,7 +457,19 @@ const initRemoteShowcase = () => {
   if (!tabs.length || !panel) return;
 
   // Update clock on phone simulator
-  const simClock = document.querySelector('#sim-clock');
+const initRemoteShowcase = () => {
+  const showcase = document.querySelector('#remote');
+  if (!showcase) return;
+
+  const tabs = document.querySelectorAll('.remote-nav-item');
+  const panel = document.querySelector('#remote-panel');
+  const tag = document.querySelector('[data-remote-display-tag]');
+  const title = document.querySelector('[data-remote-display-title]');
+  const desc = document.querySelector('[data-remote-display-desc]');
+  const simStages = document.querySelectorAll('.sim-stage');
+  const isEn = document.documentElement.lang === 'en';
+
+  const simClock = document.querySelector('.sim-ios-time');
   if (simClock) {
     const now = new Date();
     const h = String(now.getHours()).padStart(2, '0');
@@ -476,19 +488,19 @@ const initRemoteShowcase = () => {
       t.tabIndex = isCurrent ? 0 : -1;
     });
 
-    const targetStage = document.querySelector(`.sim-view-stage[data-sim-mode="${mode}"]`);
+    const targetStage = document.querySelector(`.sim-stage[data-sim-mode="${mode}"]`);
 
     if (tag) tag.innerHTML = `<span class="badge-dot"></span> ${tab.dataset.remoteTag || ''}`;
     if (title) title.textContent = tab.dataset.remoteTitle || '';
     if (desc) desc.textContent = tab.dataset.remoteDesc || '';
-    panel.setAttribute('aria-labelledby', tab.id);
+    if (panel) panel.setAttribute('aria-labelledby', tab.id);
 
     simStages.forEach((stage) => {
       const match = stage === targetStage;
       if (match) {
         stage.style.display = 'flex';
         if (window.gsap && !prefersReducedMotion) {
-          window.gsap.fromTo(stage, { autoAlpha: 0, scale: 0.98 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: 'power2.out' });
+          window.gsap.fromTo(stage, { autoAlpha: 0, scale: 0.98 }, { autoAlpha: 1, scale: 1, duration: 0.22, ease: 'power2.out' });
         } else {
           stage.classList.add('is-active');
         }
@@ -514,131 +526,232 @@ const initRemoteShowcase = () => {
     });
   });
 
-  // ==========================================
-  // Interactive Simulator Event Handlers
-  // ==========================================
+  // Global Toast Helper for Mac HUD
+  const macToast = document.querySelector('#sim-mac-toast');
+  const showToast = (text) => {
+    if (!macToast) return;
+    macToast.textContent = text;
+    macToast.classList.add('is-shown');
+    clearTimeout(macToast._tId);
+    macToast._tId = setTimeout(() => {
+      macToast.classList.remove('is-shown');
+    }, 1800);
+  };
 
-  // 1. Studio View Trackpad & Cursor
+  // 1. Studio View Mode: Trackpad, Jog-Wheel, 3D Keys, Dials & Slider
   const trackpad = document.querySelector('#sim-trackpad');
   const cursor = document.querySelector('#sim-mac-cursor');
   const studioMac = document.querySelector('#sim-studio-mac');
   const ripple = document.querySelector('#sim-touch-ripple');
-  const macToast = document.querySelector('#sim-mac-toast');
 
   if (trackpad && cursor && studioMac) {
-    let isTracking = false;
-
-    const showToast = (text) => {
-      if (!macToast) return;
-      macToast.textContent = text;
-      macToast.classList.add('is-shown');
-      clearTimeout(macToast._tId);
-      macToast._tId = setTimeout(() => {
-        macToast.classList.remove('is-shown');
-      }, 1800);
-    };
-
     const updateCursor = (e) => {
       const padRect = trackpad.getBoundingClientRect();
       const macRect = studioMac.getBoundingClientRect();
       const relX = Math.max(0, Math.min(1, (e.clientX - padRect.left) / padRect.width));
       const relY = Math.max(0, Math.min(1, (e.clientY - padRect.top) / padRect.height));
 
-      const targetX = relX * (macRect.width - 24) + 12;
-      const targetY = relY * (macRect.height - 24) + 12;
+      const targetX = relX * (macRect.width - 24) + 6;
+      const targetY = relY * (macRect.height - 32) + 18;
 
       cursor.style.transform = `translate(${targetX}px, ${targetY}px)`;
 
       if (ripple) {
-        ripple.style.left = `${(e.clientX - padRect.left)}px`;
-        ripple.style.top = `${(e.clientY - padRect.top)}px`;
+        ripple.style.left = `${e.clientX - padRect.left}px`;
+        ripple.style.top = `${e.clientY - padRect.top}px`;
         ripple.style.opacity = '1';
       }
     };
 
     trackpad.addEventListener('pointerdown', (e) => {
-      isTracking = true;
       trackpad.setPointerCapture?.(e.pointerId);
       updateCursor(e);
       window.addEventListener('pointermove', updateCursor);
       window.addEventListener('pointerup', () => {
-        isTracking = false;
         if (ripple) ripple.style.opacity = '0';
         window.removeEventListener('pointermove', updateCursor);
       }, { once: true });
     });
 
     trackpad.addEventListener('click', () => {
-      showToast(isEn ? 'Clicked on Mac active window' : '已在 Mac 前台窗口完成点击选取');
+      showToast(isEn ? 'Clicked Mac active window' : '已在 Mac 前台窗口完成点击选取');
     });
 
-    // Quick Keys
-    document.querySelectorAll('.sim-quick-keys .sim-key-btn').forEach((btn) => {
+    // Metallic Jog-Wheel Scroll
+    const scrollBar = document.querySelector('#sim-scroll-bar');
+    const scrollThumb = document.querySelector('#sim-scroll-thumb');
+    const macWebpage = document.querySelector('#sim-mac-webpage');
+
+    if (scrollBar && scrollThumb) {
+      let scrollRatio = 0.35;
+      const handleScroll = (clientY) => {
+        const barRect = scrollBar.getBoundingClientRect();
+        scrollRatio = Math.max(0.1, Math.min(0.8, (clientY - barRect.top) / barRect.height));
+        scrollThumb.style.top = `${scrollRatio * (barRect.height - 24)}px`;
+        if (macWebpage) {
+          macWebpage.style.transform = `translateY(${-(scrollRatio - 0.35) * 40}px)`;
+        }
+      };
+
+      scrollBar.addEventListener('pointerdown', (e) => {
+        scrollBar.setPointerCapture?.(e.pointerId);
+        handleScroll(e.clientY);
+        const onMove = (ev) => handleScroll(ev.clientY);
+        window.addEventListener('pointermove', onMove);
+        window.addEventListener('pointerup', () => window.removeEventListener('pointermove', onMove), { once: true });
+      });
+
+      scrollBar.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        scrollRatio = Math.max(0.1, Math.min(0.8, scrollRatio + e.deltaY * 0.002));
+        scrollThumb.style.top = `${scrollRatio * (scrollBar.clientHeight - 24)}px`;
+        if (macWebpage) macWebpage.style.transform = `translateY(${-(scrollRatio - 0.35) * 40}px)`;
+      }, { passive: false });
+    }
+
+    // 3D Buttons Click Handlers
+    document.querySelectorAll('[data-hud-action]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        const action = btn.dataset.simAction;
-        if (action === 'spotlight') showToast(isEn ? '⌘+Space Spotlight search open' : '⌘+Space 聚焦搜索已唤起');
-        else if (action === 'copy') showToast(isEn ? '⌘+C Copied text to Mac clipboard' : '⌘+C 已复制选中文本到剪贴板');
-        else if (action === 'paste') showToast(isEn ? '⌘+V Pasted into Mac document' : '⌘+V 已粘贴内容到当前光标');
-        else if (action === 'esc') showToast(isEn ? 'Esc Dismiss active modal' : 'Esc 已关闭当前弹窗');
-        else if (action === 'enter') showToast(isEn ? '↵ Enter Command executed' : '↵ Enter 回车指令已发送');
+        const action = btn.dataset.hudAction;
+        const mapZh = {
+          'copy': '⌘C 已复制选中文本到剪贴板',
+          'paste': '⌘V 已粘贴至当前 Mac 光标',
+          'undo': '⌘Z 已撤销上一步操作',
+          'redo': '⇧⌘Z 已重做操作',
+          'switch-app': '⌘Tab 切换前台活动应用',
+          'mission-control': '调度中心 · 展开全景多任务',
+          'window-overview': 'App Exposé · 当前应用窗口总览',
+          'lock': '⌃⌘Q 已锁定 Mac 屏幕',
+          'keyboard': '实时键盘就绪',
+          'link': '链路按键已触发',
+          'shift': '⇧ Shift 修饰键已按下',
+          'encoder': '编码器按压指令已执行',
+          'dpad-up': '▲ 上移',
+          'dpad-down': '▼ 下移',
+          'dpad-left': '◀ 左移',
+          'dpad-right': '▶ 右移',
+          'dpad-ok': '● 确认选择'
+        };
+        const mapEn = {
+          'copy': '⌘C Copied text to Mac clipboard',
+          'paste': '⌘V Pasted to Mac cursor',
+          'undo': '⌘Z Undo completed',
+          'redo': '⇧⌘Z Redo completed',
+          'switch-app': '⌘Tab Switched active application',
+          'mission-control': 'Mission Control overview active',
+          'window-overview': 'App Exposé window switcher',
+          'lock': '⌃⌘Q Mac screen locked',
+          'keyboard': 'Live keyboard ready',
+          'link': 'Link key triggered',
+          'shift': '⇧ Shift modifier active',
+          'encoder': 'Encoder press sent',
+          'dpad-up': '▲ Up',
+          'dpad-down': '▼ Down',
+          'dpad-left': '◀ Left',
+          'dpad-right': '▶ Right',
+          'dpad-ok': '● OK Selected'
+        };
+        showToast(isEn ? (mapEn[action] || 'Command sent') : (mapZh[action] || '指令已发送'));
       });
     });
 
-    // Scroll bar
-    const scrollBar = document.querySelector('#sim-scroll-bar');
-    const scrollThumb = document.querySelector('#sim-scroll-thumb');
-    const studioNotes = document.querySelector('#sim-studio-notes');
-    if (scrollBar && scrollThumb && studioNotes) {
-      scrollBar.addEventListener('pointerdown', (e) => {
-        const barRect = scrollBar.getBoundingClientRect();
-        const onMove = (ev) => {
-          const ratio = Math.max(0, Math.min(1, (ev.clientY - barRect.top) / barRect.height));
-          scrollThumb.style.top = `${ratio * (barRect.height - 30)}px`;
-          studioNotes.scrollTop = ratio * (studioNotes.scrollHeight - studioNotes.clientHeight);
-        };
-        onMove(e);
+    // Zoom Slider
+    const zoomTrack = document.querySelector('#sim-zoom-track');
+    const zoomFill = document.querySelector('#sim-zoom-fill');
+    const zoomThumb = document.querySelector('#sim-zoom-thumb');
+    const zoomVal = document.querySelector('#sim-zoom-val');
+
+    if (zoomTrack && zoomFill && zoomThumb && zoomVal) {
+      const updateZoom = (clientX) => {
+        const rect = zoomTrack.getBoundingClientRect();
+        const pct = Math.max(10, Math.min(100, Math.round(((clientX - rect.left) / rect.width) * 100)));
+        zoomFill.style.width = `${pct}%`;
+        zoomThumb.style.left = `${pct}%`;
+        zoomVal.textContent = `${pct}%`;
+        if (macWebpage) {
+          macWebpage.style.transform = `scale(${0.7 + (pct / 100) * 0.6})`;
+        }
+      };
+
+      zoomTrack.addEventListener('pointerdown', (e) => {
+        zoomTrack.setPointerCapture?.(e.pointerId);
+        updateZoom(e.clientX);
+        const onMove = (ev) => updateZoom(ev.clientX);
         window.addEventListener('pointermove', onMove);
         window.addEventListener('pointerup', () => window.removeEventListener('pointermove', onMove), { once: true });
       });
     }
+
+    // Boolean switch toggle
+    const boolSwitch = document.querySelector('#sim-bool-switch');
+    if (boolSwitch) {
+      boolSwitch.addEventListener('click', () => {
+        boolSwitch.classList.toggle('is-on');
+        const state = boolSwitch.classList.contains('is-on') ? 'ON' : 'OFF';
+        showToast(isEn ? `Toggle Switch: ${state}` : `布尔开关已切换: ${state}`);
+      });
+    }
   }
 
-  // 2. Fullscreen Dock Switching
-  const dockIcons = document.querySelectorAll('.sim-dock-icon');
-  const fsTitle = document.querySelector('#sim-fs-title');
+  // 2. Fullscreen Mode Dock & Floating Pill Bar
+  const dockApps = document.querySelectorAll('.sim-dock-app');
   const fsAppName = document.querySelector('#sim-fs-appname');
   const fsContent = document.querySelector('#sim-fs-content');
 
-  const appData = {
-    safari: { name: 'Safari', title: 'Safari — cream-deck.com', html: '<div class="sim-safari-bar"><span class="sim-safari-url">https://ninopad.app</span></div><p class="sim-fs-text">点击下方 Mac Dock 图标自由切换应用窗口</p>' },
-    code: { name: 'VS Code', title: 'Code — workspace.ts', html: '<p class="sim-note-line">const deck = new NinoPad();</p><p class="sim-note-line muted">// Stream latency: 12ms</p><p class="sim-note-line">deck.bindKey("⌘S", save);</p>' },
-    music: { name: 'Music', title: 'Music — Lo-Fi Chill Beats', html: '<p class="sim-note-line">🎵 Now Playing: Midnight Lo-Fi</p><p class="sim-note-line muted">Volume: 85% · AirPlay Active</p>' },
-    terminal: { name: 'Terminal', title: 'Terminal — zsh (80x24)', html: '<p class="sim-note-line" style="font-family:monospace; color:#10b981;">➜ mac-studio ~ git status</p><p class="sim-note-line muted" style="font-family:monospace;">On branch main (up to date)</p>' }
+  const fsAppData = {
+    safari: {
+      url: 'atlasobscura.com',
+      html: '<div class="sim-fs-hero-art"><span class="sim-fs-tag">INDIA · RAJASTHAN</span><h3>Hawa Mahal — Palace of Winds</h3><p>低延迟画面串流，支持双指自由缩放与多任务应用窗口直接切换。</p></div>'
+    },
+    code: {
+      url: 'workspace.ts — VS Code',
+      html: '<div class="sim-fs-hero-art" style="font-family:monospace; text-align:left;"><span class="sim-fs-tag" style="color:#60a5fa;">TYPESCRIPT</span><h3 style="font-size:0.8rem; margin:0.3rem 0;">const deck = new CreamDeck();</h3><p style="color:#a5b4fc; font-size:0.55rem;">deck.on("drag", moveMacCursor);<br>deck.connect("4K-60FPS");</p></div>'
+    },
+    music: {
+      url: 'Apple Music — Lo-Fi Chill',
+      html: '<div class="sim-fs-hero-art"><span class="sim-fs-tag" style="color:#f43f5e;">NOW PLAYING</span><h3 style="font-size:0.85rem;">Midnight Ambient Chill</h3><p>AirPlay 低延迟音频串流中 · 音量 85%</p></div>'
+    },
+    terminal: {
+      url: 'zsh — 80x24',
+      html: '<div class="sim-fs-hero-art" style="font-family:monospace; text-align:left;"><span class="sim-fs-tag" style="color:#10b981;">TERMINAL</span><p style="color:#34d399; font-size:0.58rem; margin:0.3rem 0;">➜ cream-deck git:(main) git status</p><p style="color:#94a3b8; font-size:0.52rem;">Working tree clean · Remote sync 100%</p></div>'
+    }
   };
 
-  dockIcons.forEach((btn) => {
+  dockApps.forEach((btn) => {
     btn.addEventListener('click', () => {
-      dockIcons.forEach((d) => d.classList.remove('is-active'));
+      dockApps.forEach((d) => d.classList.remove('is-active'));
       btn.classList.add('is-active');
       const key = btn.dataset.dock;
-      if (appData[key]) {
-        if (fsAppName) fsAppName.textContent = appData[key].name;
-        if (fsTitle) fsTitle.textContent = appData[key].title;
-        if (fsContent) fsContent.innerHTML = appData[key].html;
+      if (fsAppData[key]) {
+        if (fsAppName) fsAppName.textContent = fsAppData[key].url;
+        if (fsContent) fsContent.innerHTML = fsAppData[key].html;
       }
     });
   });
 
-  // 3. Text & Voice Input Simulation
+  document.querySelectorAll('.sim-fs-pill-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sim-fs-pill-btn').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const act = btn.dataset.fsAction;
+      if (act === 'touch') showToast(isEn ? 'Touch Gesture Mode Active' : '已开启触控手势模式');
+      else if (act === 'mouse') showToast(isEn ? 'Mouse Pointer Mode Active' : '已开启精准鼠标指针模式');
+      else if (act === 'keyboard') showToast(isEn ? 'Keyboard Overlay Toggled' : '虚拟键盘浮层已唤起');
+      else if (act === 'windows') showToast(isEn ? 'Window Switcher Active' : '多任务窗口管理已展开');
+      else if (act === 'close') showToast(isEn ? 'Resetting view' : '视图已复位');
+    });
+  });
+
+  // 3. Text & Voice Mode: Pre-edit & Live Typing Injection
   const voiceInput = document.querySelector('#sim-voice-input');
   const sendBtn = document.querySelector('#sim-send-text-btn');
   const injectedText = document.querySelector('#sim-injected-text');
   const dictateBtn = document.querySelector('#sim-dictate-btn');
 
-  document.querySelectorAll('.sim-phrase-chips .sim-chip').forEach((chip) => {
+  document.querySelectorAll('.sim-vchip').forEach((chip) => {
     chip.addEventListener('click', () => {
       if (voiceInput) {
-        voiceInput.value = chip.dataset.phrase;
+        voiceInput.value = chip.dataset.text;
         voiceInput.focus();
       }
     });
@@ -646,61 +759,68 @@ const initRemoteShowcase = () => {
 
   if (sendBtn && voiceInput && injectedText) {
     sendBtn.addEventListener('click', () => {
-      const text = voiceInput.value.trim() || (isEn ? 'Confirmed! Ready to deploy.' : '已确认，准备上线发布！');
+      const text = voiceInput.value.trim() || (isEn ? 'Review completed! Ready to publish.' : '把今天的剪辑进度整理好，下午三点发给大家');
       injectedText.textContent = '';
       let charIdx = 0;
       clearInterval(injectedText._tId);
       injectedText._tId = setInterval(() => {
         if (charIdx < text.length) {
-          injectedText.textContent = text.slice(0, charIdx + 1) + ' |';
+          injectedText.textContent = text.slice(0, charIdx + 1) + ' ▌';
           charIdx++;
         } else {
           injectedText.textContent = text + ' ↵';
           clearInterval(injectedText._tId);
         }
-      }, 40);
+      }, 35);
+      showToast(isEn ? 'Text injected to Mac Notes' : '文本已实时注入 Mac 备忘录');
     });
   }
 
   if (dictateBtn && voiceInput) {
     dictateBtn.addEventListener('click', () => {
-      dictateBtn.classList.toggle('is-listening');
-      if (dictateBtn.classList.contains('is-listening')) {
-        voiceInput.value = isEn ? 'Speech recognized: Standup meeting started.' : '语音识别中：今晚 8 点进行产品联调测试。';
+      dictateBtn.classList.toggle('is-active');
+      const listening = dictateBtn.classList.contains('is-active');
+      if (listening) {
+        voiceInput.value = isEn ? 'Speech recognized: Standup meeting at 10:00 AM.' : '语音识别中：下午 3:00 准时在会议室进行产品评审。';
+        showToast(isEn ? 'Listening to voice...' : '正在语音识别录入...');
+      } else {
+        showToast(isEn ? 'Voice dictation paused' : '语音听写已暂停');
       }
     });
   }
 
-  // 4. Keyboard Shortcuts
+  // 4. Virtual Keyboard Mode
   const keyCombo = document.querySelector('#sim-key-combo');
   const keyDesc = document.querySelector('#sim-key-desc');
-  const keyHud = document.querySelector('#sim-key-hud');
 
-  document.querySelectorAll('.sim-touch-keyboard .sim-kb-key').forEach((keyBtn) => {
+  document.querySelectorAll('.k-key').forEach((keyBtn) => {
     keyBtn.addEventListener('click', () => {
-      const val = keyBtn.dataset.key;
+      const val = keyBtn.dataset.k;
       if (keyCombo) keyCombo.textContent = val;
-      if (keyHud) keyHud.textContent = `${val} Pressed`;
       if (keyDesc) {
-        if (val.includes('⌘')) keyDesc.textContent = isEn ? 'Triggered Mac system modifier' : '触发 Mac 系统快捷指令';
-        else if (val === 'Space') keyDesc.textContent = isEn ? 'Quick Look / Spotlight' : '快速预览 / 聚焦搜索';
-        else if (val === 'Esc') keyDesc.textContent = isEn ? 'Dismiss modal / Cancel' : '取消当前操作 / 退出全屏';
+        if (val === 'esc') keyDesc.textContent = isEn ? 'Dismiss modal / Exit fullscreen' : '取消当前弹窗 / 退出全屏';
+        else if (val === '⌘') keyDesc.textContent = isEn ? 'Command modifier key' : 'Command 系统修饰键';
+        else if (val === '⌥') keyDesc.textContent = isEn ? 'Option / Alt modifier key' : 'Option 扩展修饰键';
+        else if (val === '^') keyDesc.textContent = isEn ? 'Control modifier key' : 'Control 控制修饰键';
+        else if (val === 'space') keyDesc.textContent = isEn ? 'Spotlight / Quick Look' : '聚焦搜索 / 快速预览';
+        else if (val === 'return') keyDesc.textContent = isEn ? 'Send Return keycode' : '发送回车指令';
         else keyDesc.textContent = isEn ? `Sent [${val}] keycode to Mac` : `已向 Mac 发送 [${val}] 按键指令`;
       }
     });
   });
 
-  // 5. Wireless Microphone
+  // 5. Wireless Microphone Mode
   const bigMicBtn = document.querySelector('#sim-big-mic-btn');
   const micStateLabel = document.querySelector('#sim-mic-state-label');
-  const micStatusText = document.querySelector('#sim-mic-status-text');
 
   if (bigMicBtn) {
     bigMicBtn.addEventListener('click', () => {
       bigMicBtn.classList.toggle('is-muted');
       const isMuted = bigMicBtn.classList.contains('is-muted');
-      if (micStateLabel) micStateLabel.textContent = isMuted ? 'MUTED' : 'LIVE STREAMING';
-      if (micStatusText) micStatusText.textContent = isMuted ? (isEn ? 'Microphone Muted' : '无线麦克风已静音') : (isEn ? 'Wireless Mic Connected' : '无线麦克风已连接');
+      if (micStateLabel) {
+        micStateLabel.textContent = isMuted ? (isEn ? 'MUTED' : '已静音') : (isEn ? 'RECORDING' : '识别中');
+      }
+      showToast(isMuted ? (isEn ? 'Microphone Muted' : '麦克风已静音') : (isEn ? 'Low-Latency HD Streaming' : '高保真音频实时传输中'));
     });
   }
 };
