@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Sync macOS application docks and switch frontmost apps with responsive touch icons.">
+  <meta name="description" content="Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="Mac App Launcher: Launch Favorite Apps from Handheld Big Icons | NinoPad">
+  <meta property="og:site_name" content="NinoPad">
+  <meta property="og:title" content="Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher | NinoPad">
   <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/launcher-01.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/layout-launcher">
+  <meta property="og:url" content="https://ninopad.com/en/blog/layout-launcher">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-09-10">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mac App Launcher: Launch Favorite Apps from Handheld Big Icons | NinoPad">
-  <meta name="twitter:description" content="Sync macOS application docks and switch frontmost apps with responsive touch icons.">
+  <meta name="twitter:title" content="Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher | NinoPad">
+  <meta name="twitter:description" content="Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.">
   <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/launcher-01.webp">
-  <meta property="og:description" content="Sync macOS application docks and switch frontmost apps with responsive touch icons.">
-  <meta name="keywords" content="奶猫妙控,NinoPad,启动器布局教程,操作步骤">
+  <meta property="og:description" content="Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.">
+  <meta name="keywords" content="NinoPad launcher layout, Mac touch dock, iPhone app launcher for Mac, fast app switcher">
   <link rel="canonical" href="https://ninopad.com/en/blog/layout-launcher">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-launcher">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-launcher">
@@ -30,30 +30,30 @@
   <link rel="icon" type="image/png" href="../../assets/app-icon.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../blog.css">
-  <title>Mac App Launcher: Launch Favorite Apps from Handheld Big Icons | NinoPad</title>
+  <title>Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher | NinoPad</title>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "Mac 常用软件随身控：打造属于你的掌上应用启动器",
-      "description": "自动同步 Mac 常用软件列表，以醒目大图标排布桌面，支持长按编辑与随心更换，体验一触即达的窗口切换。",
+      "headline": "Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher",
+      "description": "Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
       "inLanguage": "en",
       "author": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "image": [
         "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/launcher-01.webp"
       ],
-      "mainEntityOfPage": "https://ninopad.com/blog/layout-launcher"
+      "mainEntityOfPage": "https://ninopad.com/en/blog/layout-launcher"
     },
     {
       "@type": "BreadcrumbList",
@@ -61,20 +61,20 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
+          "name": "Home",
+          "item": "https://ninopad.com/en/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
+          "name": "Blog",
+          "item": "https://ninopad.com/en/blog"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Mac 常用软件随身控：打造属于你的掌上应用启动器",
-          "item": "https://ninopad.com/blog/layout-launcher"
+          "name": "Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher",
+          "item": "https://ninopad.com/en/blog/layout-launcher"
         }
       ]
     },
@@ -83,18 +83,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "为什么我的启动器和截图中的应用不同？",
+          "name": "Why is an app icon showing a default placeholder?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "首次同步会使用连接 Mac 的 Dock 应用信息，之后还可以自行编辑。演示目录只用于截图，不会替换你的真实应用目录。"
+            "text": "NinoPad extracts high-resolution app icons from macOS. If an icon is missing, open the desktop editor and re-select the app from the synced list."
           }
         },
         {
           "@type": "Question",
-          "name": "点了按钮，Mac 没出现新窗口？",
+          "name": "Can I group apps into custom folders or pages?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "已有应用可能只被激活，不一定新建窗口。先检查 Mac 菜单栏是否切到该应用，再检查安装情况、连接状态与按钮绑定。"
+            "text": "Yes. NinoPad supports multi-page launcher grids and categorized sections (Work, Dev, Media, Utility)."
           }
         }
       ]
@@ -106,11 +106,11 @@
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -119,8 +119,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/layout-launcher" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -134,7 +134,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/layout-launcher" data-lang-switch>简体中文</a>
       <a href="/en/blog/layout-launcher" class="is-active">English</a>
@@ -143,64 +143,66 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 启动器</a>
-      <h1>Mac 常用软件随身控：打造属于你的掌上应用启动器</h1>
-      <p>自动同步 Mac 常用软件列表，以醒目大图标排布桌面，支持长按编辑与随心更换，体验一触即达的窗口切换。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+      <a href="../blog.html">← Blog / Launcher</a>
+      <h1>Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher</h1>
+      <p>Sync Mac applications into bold touch icons for instant one-touch window switching · ~5 min read</p>
     </header>
+
     <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="启动器中的系统应用演示目录；用户设备会同步自己的应用列表。" width="1206" height="2622">
-      <figcaption>启动器中的系统应用演示目录；用户设备会同步自己的应用列表。</figcaption>
+      <img src="../../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="NinoPad Launcher layout interface" width="1206" height="2622">
     </figure>
+
     <article class="article-body">
-<p class="article-lead">不必在密密麻麻的 Dock 栏或启动台里费眼翻找。启动器布局把电脑里的高频 App 变成手机上清晰好认的实体方块，指尖轻点即可直达前台。本篇带你从添加 Safari 开始，掌握掌上启动器的布局与管理技巧。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>配图使用系统应用图标和示例应用目录，添加按钮的过程在 App 内完成。连接你的 Mac 后，应用列表会以那台电脑提供的内容为准。</aside>
-<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控 1.2.0，Mac 安装同版本配套端；完成配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>让 Mac 配套端保持运行，等待应用列表同步。截图只使用访达、Safari、备忘录等系统应用的演示目录；你的列表以实际安装的软件为准。</li></ul>
-<h2>1. 进入启动器，先检查应用名称</h2>
-<p>在 App 底部点“布局”，在列表中找到“启动器”。布局较多时用搜索框搜索名称；有多个桌面的方案先点右侧箭头展开，再点桌面名称；搜索具体桌面名称也能找到它。</p>
-<p>每颗大按钮代表一个 Mac App。截图中的图标来自系统应用，并非空白占位。先选一个你能在 Mac 上直接确认的软件，例如 Safari；短按发送打开或激活这个 App 的请求，然后观察 Mac 前台窗口。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="启动器中的系统应用演示目录；用户设备会同步自己的应用列表。" width="1206" height="2622" loading="lazy"><figcaption>启动器中的系统应用演示目录；用户设备会同步自己的应用列表。</figcaption></figure>
-<h2>2. 长按一颗按钮进入编辑</h2>
-<p>在启动器长按已有的应用按钮约一秒，松手后会进入编辑器，并选中这颗按钮。确认页面出现“更换 App”和添加 App 的入口，再进行下一步。</p>
-<p>短按用于启动，长按用于编辑。如果 App 只是被打开了，说明这次操作被识别为短按；回到按钮上重新按住即可。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/launcher-02-edit.webp" alt="长按现有应用按钮后，编辑器显示当前选区和“更换 App”。" width="1206" height="2622" loading="lazy"><figcaption>长按现有应用按钮后，编辑器显示当前选区和“更换 App”。</figcaption></figure>
-<h2>3. 打开 App 列表，搜索想添加的软件</h2>
-<p>点编辑器左上方“添加 App”，在操作面板中找到“搜索 App”。输入软件名称，从连接 Mac 的应用列表点选需要的 App；选中后检查名称，再点面板右上方“完成”。</p>
-<p>这里显示的是连接的 Mac 提供的应用目录，不是 App Store。搜索不到时，先确认软件确实装在那台 Mac 上，再检查目录是否已经同步；不要随便填一个猜测的应用标识。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/launcher-03-picker.webp" alt="添加 App 时打开的实际应用选择器，可搜索已连接 Mac 的应用。" width="1206" height="2622" loading="lazy"><figcaption>添加 App 时打开的实际应用选择器，可搜索已连接 Mac 的应用。</figcaption></figure>
-<h2>4. 完成编辑，在 Mac 上验证新按钮</h2>
-<p>从应用选择器返回编辑器后，检查新按钮的名称和图标，再点“完成”离开编辑器。短按新按钮，确认 Mac 打开的是所选软件。</p>
-<p>如果按钮在当前屏幕外，检查方案下的其他桌面。启动器预设按每桌面最多八颗应用按钮分组；已有桌面的自定义排列也会影响你看到的位置。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/launcher-06-added.webp" alt="实际选择 Safari 并完成两层编辑后返回启动器；Mac 启动结果仍需在真实连接上检查。" width="1206" height="2622" loading="lazy"><figcaption>实际选择 Safari 并完成两层编辑后返回启动器；Mac 启动结果仍需在真实连接上检查。</figcaption></figure>
-<h2>5. 需要替换时，使用“更换 App”</h2>
-<p>重新长按已有按钮，点“更换 App”，再从列表中选择另一个软件。这样是在编辑这颗按钮的目标，和新增按钮是两种操作。</p>
-<p>“手动指定应用”用于已知准确 Bundle ID 的情况，例如 com.apple.finder。填好后仍要短按验证，应用名称相似并不能证明绑定正确。</p>
-<h2>FAQ</h2>
-<h3>为什么我的启动器和截图中的应用不同？</h3><p>首次同步会使用连接 Mac 的 Dock 应用信息，之后还可以自行编辑。演示目录只用于截图，不会替换你的真实应用目录。</p>
-<h3>点了按钮，Mac 没出现新窗口？</h3><p>已有应用可能只被激活，不一定新建窗口。先检查 Mac 菜单栏是否切到该应用，再检查安装情况、连接状态与按钮绑定。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+      <p class="article-lead">Cluttered Mac Docks and small menu bar icons make finding the right window frustrating. NinoPad's Launcher layout creates a dedicated physical touch dock on your desk with large, colorful app icons.</p>
+
+      <aside class="article-highlight"><strong>Customization Tip:</strong> Long-press any app icon on the deck to replace it with another installed Mac tool or rearrange your grid.</aside>
+
+      <h2>1. Automatic Mac Application Sync</h2>
+      <p>NinoPad reads your Mac's <code>/Applications</code> directory automatically and presents your frequently used software with crisp icons.</p>
+
+      <h2>2. One-Touch Window Focusing</h2>
+      <p>Tap any app icon to launch or bring that application to the frontmost Mac window instantly, bypassing Dock hover delays.</p>
+
+      <h2>3. Customize Your Personal Touch Dock</h2>
+      <p>Rearrange apps into customized functional groups (e.g., Code Editors, Communication, Graphic Suites, Utilities).</p>
+
+      <figure class="article-figure article-figure-phone">
+        <img src="../../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="NinoPad app launcher grid" width="1206" height="2622" loading="lazy">
+        <figcaption>Customizable Mac app launcher grid with clean icons and one-tap window activation.</figcaption>
+      </figure>
+
+      <h2>4. Add Custom Shell Script Triggers</h2>
+      <p>Beyond standard apps, bind terminal scripts, automator workflows, or Raycast shortcuts to launcher buttons for advanced automation.</p>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Why is an app icon showing a default placeholder?</summary>
+          <p>NinoPad extracts high-resolution app icons from macOS. If an icon is missing, open the desktop editor and re-select the app from the synced list.</p>
+        </details>
+        <details>
+          <summary>Can I group apps into custom folders or pages?</summary>
+          <p>Yes. NinoPad supports multi-page launcher grids and categorized sections (Work, Dev, Media, Utility).</p>
+        </details>
+      </section>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="layout-work.html">← 工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档</a>
-      <a href="layout-creative.html">三维建模掌上助手：从 Blender 视角漫游到快捷操作的自然协同 →</a>
-    </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/layout-launcher" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

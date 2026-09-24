@@ -4,20 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Configure custom action buttons, step macros, tactile dials, and custom wallpapers on NinoPad.">
+  <meta name="description" content="Enter the layout editor from any preset, add custom buttons, bind actions, configure grid dimensions and styles, and test with Mac.">
+  <meta name="keywords" content="NinoPad, custom keypad, Mac shortcut keypad, tactile buttons, layout editor">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
+  <meta property="og:site_name" content="NinoPad">
   <meta property="og:title" content="Start from One Button: Customizing Your Mac Deck | NinoPad">
+  <meta property="og:description" content="Enter the layout editor from any preset, add custom buttons, bind actions, configure grid dimensions and styles, and test with Mac.">
   <meta property="og:image" content="https://ninopad.com/assets/screens/v1.2.0/layout-editor.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/custom-keypad">
+  <meta property="og:url" content="https://ninopad.com/en/blog/custom-keypad">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-08-31">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Start from One Button: Customizing Your Mac Deck | NinoPad">
-  <meta name="twitter:description" content="Configure custom action buttons, step macros, tactile dials, and custom wallpapers on NinoPad.">
+  <meta name="twitter:description" content="Enter the layout editor from any preset, add custom buttons, bind actions, configure grid dimensions and styles, and test with Mac.">
   <meta name="twitter:image" content="https://ninopad.com/assets/screens/v1.2.0/layout-editor.webp">
-  <meta property="og:description" content="Configure custom action buttons, step macros, tactile dials, and custom wallpapers on NinoPad.">
   <link rel="canonical" href="https://ninopad.com/en/blog/custom-keypad">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/custom-keypad">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/custom-keypad">
@@ -31,34 +32,35 @@
   <link rel="stylesheet" href="../../blog.css">
   <title>Start from One Button: Customizing Your Mac Deck | NinoPad</title>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "从一颗按键开始，定制你的 Mac 副控",
-  "description": "从工作布局进入编辑器，添加按键、绑定操作、调整尺寸与外观，再连接 Mac 试用，逐步做出适合自己的桌面。",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-09-10",
-  "author": {
-    "@type": "Organization",
-    "name": "奶猫妙控"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "奶猫妙控"
-  },
-  "image": "https://ninopad.com/assets/screens/v1.2.0/layout-editor.webp",
-  "mainEntityOfPage": "https://ninopad.com/blog/custom-keypad"
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Start from One Button: Customizing Your Mac Deck",
+    "description": "Enter the layout editor from any preset, add custom buttons, bind actions, configure grid dimensions and styles, and test with Mac.",
+    "datePublished": "2026-08-31",
+    "dateModified": "2026-09-10",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Organization",
+      "name": "NinoPad"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NinoPad"
+    },
+    "image": "https://ninopad.com/assets/screens/v1.2.0/layout-editor.webp",
+    "mainEntityOfPage": "https://ninopad.com/en/blog/custom-keypad"
+  }
   </script>
 </head>
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -67,8 +69,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/custom-keypad" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -82,7 +84,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/custom-keypad" data-lang-switch>简体中文</a>
       <a href="/en/blog/custom-keypad" class="is-active">English</a>
@@ -91,89 +93,88 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 基础定制</a>
-      <h1>从一颗按键开始，定制你的 Mac 副控</h1>
-      <p>从预设布局开始，掌握网格尺寸、操作绑定与外观调节 · 阅读约 6 分钟</p>
+      <a href="../blog.html">← Blog / Basic Customization</a>
+      <h1>Start from One Button: Customizing Your Mac Deck</h1>
+      <p>From preset layouts to mastering grid size, action bindings, and appearance tweaks · ~6 min read</p>
     </header>
 
     <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/v1.2.0/layout-editor.webp" alt="奶猫妙控小键盘编辑器" width="1206" height="2622">
+      <img src="../../assets/screens/v1.2.0/layout-editor.webp" alt="NinoPad keypad editor interface" width="1206" height="2622">
     </figure>
 
     <article class="article-body">
-      <p class="article-lead">奶猫妙控允许你将闲置的 iPhone 或 iPad 打造为趁手的 Mac 专属副控台。无论你需要快速发送常用文案、一键触发高频快捷键，还是通过“应用创作台”适配专业软件，都可以通过可视化的桌面编辑器自由定制。</p>
-      <p>本文将带你从一个基础预设出发，逐步掌握进入编辑模式、添加按键、配置宽高尺寸、绑定具体动作以及调整外观样式的完整流程。</p>
+      <p class="article-lead">NinoPad transforms your spare iPhone or iPad into a versatile, tactile Mac control deck. Whether you need to send frequent snippets, trigger complex shortcuts with a single tap, or adapt to professional creative suites via "Studio View", you can customize everything visually in the on-device desktop editor.</p>
+      <p>This guide walks you through the entire workflow: starting from a built-in preset, entering edit mode, adding buttons, resizing grid spans, binding specific actions, and customizing visual styles.</p>
 
       <aside class="article-highlight">
-        <strong>新手建议：</strong>初次使用时，建议先从内置的“工作”或“启动器”等预设布局开始体验，熟悉基础交互后再按需增删按键。
+        <strong>Beginner Tip:</strong> We recommend starting with built-in presets like "Work" or "Launcher". Explore their default layout first, then add or remove buttons according to your daily habits.
       </aside>
 
-      <h2>一、从预设布局开始探索</h2>
-      <p>奶猫妙控内置了覆盖日常办公、浏览器管理、多媒体播控、代码开发与设计创作的多种场景预设。在 App 底部的“布局”列表中，你可以直接点击进入任意方案试用。</p>
+      <h2>1. Explore from Built-in Preset Layouts</h2>
+      <p>NinoPad includes dozens of presets covering office productivity, web browsing, media control, coding, and creative suites. In the "Layouts" tab at the bottom of the app, simply tap any preset to start using it immediately.</p>
 
-      <h2>二、进入当前桌面编辑模式</h2>
-      <p>在 App 底部点<strong>“布局 → 编辑当前桌面”</strong>，进入桌面编辑器。先选择要调整的组件，再修改它的位置、外观或操作。</p>
+      <h2>2. Enter Desktop Edit Mode</h2>
+      <p>Tap <strong>"Layouts → Edit Current Desktop"</strong> at the bottom of the screen to open the desktop editor. Select any widget to modify its position, appearance, or assigned action.</p>
       <ul>
-        <li>可以长按并拖拽按键调整其在网格中的摆放位置；</li>
-        <li>点<strong>“添加组件”</strong>，选择“按键”，再为新按钮配置操作。</li>
-        <li>轻点已有按键，可打开外观与属性配置面板。</li>
+        <li>Long press and drag any button to reposition it across the grid;</li>
+        <li>Tap <strong>"Add Widget"</strong>, choose "Button", and assign your desired action to the new control;</li>
+        <li>Tap an existing button to open its appearance and property configuration sheet.</li>
       </ul>
 
       <figure class="article-figure article-figure-phone">
-        <img src="../../assets/screens/v1.2.0/layout-switcher.webp" alt="奶猫妙控显示多块软件小键盘" width="1206" height="2622" loading="lazy">
-        <figcaption>从布局列表选择一个预设，再进入当前桌面的编辑器。</figcaption>
+        <img src="../../assets/screens/v1.2.0/layout-switcher.webp" alt="NinoPad switching between software keypads" width="1206" height="2622" loading="lazy">
+        <figcaption>Select a preset from the layout list, then enter the current desktop editor.</figcaption>
       </figure>
 
-      <h2>三、添加按键并设置尺寸宽高</h2>
-      <p>奶猫妙控支持自由调节每个组件的占用网格大小。在外观设置的“尺寸”区域中：</p>
+      <h2>3. Add Buttons and Adjust Grid Dimensions</h2>
+      <p>NinoPad allows flexible resizing of every component's grid footprint. In the "Dimensions" section of appearance settings:</p>
       <ul>
-        <li><strong>宽度调节：</strong>横屏握持下支持 1 到 8 格宽度，竖屏握持下支持 1 到 4 格宽度；</li>
-        <li><strong>高度调节：</strong>支持 1 到 8 格高度。</li>
+        <li><strong>Width Adjustment:</strong> Supports 1 to 8 grid columns in landscape mode, and 1 to 4 grid columns in portrait mode;</li>
+        <li><strong>Height Adjustment:</strong> Supports 1 to 8 grid rows.</li>
       </ul>
-      <p>你可以根据按键的高频程度，将其设置为小巧的单格图标，或设置为宽幅的大按键与多行显示面板。</p>
+      <p>Depending on usage frequency, configure items as compact single-cell icons or expansive multi-line display panels.</p>
 
-      <h2>四、绑定动作与快捷指令</h2>
-      <p>在组件动作配置面板中，你可以为按键指定具体的执行逻辑：</p>
+      <h2>4. Bind Actions and Shortcuts</h2>
+      <p>In the action configuration panel, assign specific execution logic to each button:</p>
       <ul>
-        <li><strong>发送文字：</strong>输入常用回复、客服文案或常用代码段，并可设置输入后是否追加回车；</li>
-        <li><strong>系统快捷键：</strong>录入如 <code>⌘C</code>、<code>⌘V</code>、<code>^Tab</code> 等单键或组合快捷键；</li>
-        <li><strong>启动 Mac App：</strong>搜索并绑定 Mac 上安装的常用软件，实现一键唤起；</li>
-        <li><strong>多步骤自动化：</strong>将文字输入、延时等待与快捷键组合串联执行。</li>
-      </ul>
-
-      <h2>五、调整配色、形状与图标外观</h2>
-      <p>为了让控制面板一目了然，你可以为按键设置丰富的视觉样式：</p>
-      <ul>
-        <li><strong>颜色：</strong>为按钮选择容易区分的颜色。启动器的应用按钮还可使用“跟随 App”配色。</li>
-        <li><strong>形状轮廓：</strong>支持圆角方形、圆形与圆角菱形等多种轮廓切换；</li>
-        <li><strong>图标符号：</strong>从内置图标库中挑选符合功能的符号，或保持纯文本展示。</li>
+        <li><strong>Send Text:</strong> Inject boilerplate replies, customer service templates, or code snippets, with an option to append Return/Enter automatically;</li>
+        <li><strong>System Shortcuts:</strong> Record single or combination hotkeys like <code>⌘C</code>, <code>⌘V</code>, <code>^Tab</code>, and more;</li>
+        <li><strong>Launch Mac App:</strong> Search and bind any installed Mac application to bring it frontmost with a single tap;</li>
+        <li><strong>Multi-Step Macros:</strong> Chain multiple keypresses, delays, and text inputs into an automated sequence.</li>
       </ul>
 
-      <h2>六、保存并在 Mac 上试用</h2>
-      <p>完成编辑后，点击右上角<strong>“完成”</strong>保存配置。在 Mac 端打开目标文档或软件，轻点手机上的按键测试响应。</p>
-      <p>需要针对专业软件进行精细控制时，可以进入<strong>“应用创作台”</strong>——在识别到已支持的前台应用后，创作台会自动切换为针对该软件的专属操作面板。</p>
+      <h2>5. Customize Icons, Colors, and Wallpapers</h2>
+      <p>Give your keypad a distinct personality with visual customization:</p>
+      <ul>
+        <li><strong>Button Palette:</strong> Choose from retro cream, mint green, lilac, coral, and midnight themes;</li>
+        <li><strong>Haptic Feedback:</strong> Enable crisp tactile clicks on every touch for satisfying physical feedback;</li>
+        <li><strong>Dynamic Wallpapers:</strong> Set animated video backgrounds or custom camera roll wallpapers.</li>
+      </ul>
+
+      <h2>6. Test with Mac and Enjoy Your Setup</h2>
+      <p>Exit edit mode and connect to your Mac over local Wi-Fi. Press your newly created buttons to verify that Mac shortcuts trigger seamlessly. Your custom deck is now ready to boost your daily workflow!</p>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="editing-keypad.html">← 用手机辅助剪辑：从浏览时间线到分割与撤销</a>
-      <a href="presentation-tools.html">用手机辅助演讲：翻页、设置浮窗与分段计时 →</a>
+
+    <nav class="article-next" aria-label="Continue reading">
+      <a href="editing-keypad.html">Video Editing with Mobile: From Timeline Scrubbing to Blade & Undo →</a>
     </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/custom-keypad" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

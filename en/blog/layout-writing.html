@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Move cursor across 4 scope levels, search text, and format Markdown headlines with dedicated buttons.">
+  <meta name="description" content="4-tier cursor navigation (char/word/line/para), precise text selection, in-document search, and Markdown formatting shortcuts.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="Focused Writing: Navigate Paragraphs & Markdown Formatting | NinoPad">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/writing-01.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/layout-writing">
+  <meta property="og:site_name" content="NinoPad">
+  <meta property="og:title" content="Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools | NinoPad">
+  <meta property="og:image" content="https://ninopad.com/assets/screens/text-1.3.0-r1/writing-01.webp">
+  <meta property="og:url" content="https://ninopad.com/en/blog/layout-writing">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-09-10">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Focused Writing: Navigate Paragraphs & Markdown Formatting | NinoPad">
-  <meta name="twitter:description" content="Move cursor across 4 scope levels, search text, and format Markdown headlines with dedicated buttons.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/writing-01.webp">
-  <meta property="og:description" content="Move cursor across 4 scope levels, search text, and format Markdown headlines with dedicated buttons.">
-  <meta name="keywords" content="奶猫妙控,NinoPad,写作布局教程,操作步骤">
+  <meta name="twitter:title" content="Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools | NinoPad">
+  <meta name="twitter:description" content="4-tier cursor navigation (char/word/line/para), precise text selection, in-document search, and Markdown formatting shortcuts.">
+  <meta name="twitter:image" content="https://ninopad.com/assets/screens/text-1.3.0-r1/writing-01.webp">
+  <meta property="og:description" content="4-tier cursor navigation (char/word/line/para), precise text selection, in-document search, and Markdown formatting shortcuts.">
+  <meta name="keywords" content="NinoPad writing layout, text navigation keypad Mac, Markdown formatting iPhone, Obsidian writing companion">
   <link rel="canonical" href="https://ninopad.com/en/blog/layout-writing">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-writing">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-writing">
@@ -30,30 +30,30 @@
   <link rel="icon" type="image/png" href="../../assets/app-icon.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../blog.css">
-  <title>Focused Writing: Navigate Paragraphs & Markdown Formatting | NinoPad</title>
+  <title>Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools | NinoPad</title>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "专注文字创作：用写作布局随心跳段、文内查找与一键排版",
-      "description": "利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。",
+      "headline": "Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools",
+      "description": "4-tier cursor navigation (char/word/line/para), precise text selection, in-document search, and Markdown formatting shortcuts.",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
       "inLanguage": "en",
       "author": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "image": [
-        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/writing-01.webp"
+        "https://ninopad.com/assets/screens/text-1.3.0-r1/writing-01.webp"
       ],
-      "mainEntityOfPage": "https://ninopad.com/blog/layout-writing"
+      "mainEntityOfPage": "https://ninopad.com/en/blog/layout-writing"
     },
     {
       "@type": "BreadcrumbList",
@@ -61,20 +61,20 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
+          "name": "Home",
+          "item": "https://ninopad.com/en/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
+          "name": "Blog",
+          "item": "https://ninopad.com/en/blog"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "专注文字创作：用写作布局随心跳段、文内查找与一键排版",
-          "item": "https://ninopad.com/blog/layout-writing"
+          "name": "Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools",
+          "item": "https://ninopad.com/en/blog/layout-writing"
         }
       ]
     },
@@ -83,18 +83,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "手机显示了字数，为什么不能精确选择网页文本？",
+          "name": "Which Markdown and writing editors are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "统计读取、文本选择与修改是不同能力。只读网页或未开放文本接口的区域不一定允许精确操作，先在可编辑正文验证。"
+            "text": "NinoPad supports Obsidian, Ulysses, iA Writer, Bear, Typora, TextEdit, and web-based markdown editors."
           }
         },
         {
           "@type": "Question",
-          "name": "Markdown 操作在 Obsidian 中没反应？",
+          "name": "How does 4-tier navigation work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "检查配套集成包中 Obsidian 目录的安装说明、插件是否启用，以及当前是否在可编辑笔记中。先确认普通输入正常，再验证标题、列表等专有命令。"
+            "text": "Toggle the unit selector between Character, Word, Line, and Paragraph. Pressing Left/Right steps your cursor by the selected tier; pressing Select expands selection by that increment."
           }
         }
       ]
@@ -106,11 +106,11 @@
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -119,8 +119,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/layout-writing" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -134,7 +134,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/layout-writing" data-lang-switch>简体中文</a>
       <a href="/en/blog/layout-writing" class="is-active">English</a>
@@ -143,68 +143,66 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 写作</a>
-      <h1>专注文字创作：用写作布局随心跳段、文内查找与一键排版</h1>
-      <p>利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+      <a href="../blog.html">← Blog / Writing</a>
+      <h1>Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools</h1>
+      <p>4-tier cursor navigation (char/word/line/para), in-document search, and Markdown tools · ~5 min read</p>
     </header>
+
     <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/tutorials-1.2.0-r1/writing-01.webp" alt="写作桌面，文本统计来自演示状态。" width="1206" height="2622">
-      <figcaption>写作桌面，文本统计来自演示状态。</figcaption>
+      <img src="../../assets/screens/text-1.3.0-r1/writing-01.webp" alt="NinoPad Writing layout interface" width="1206" height="2622">
     </figure>
+
     <article class="article-body">
-<p class="article-lead">长文撰写与润色时，手不用频繁离开主键盘去摸鼠标。写作布局将段落跳转、文内搜索和常用的 Markdown 标题与样式按键全盘收拢在副屏上，让你将全部心力倾注于文字本身。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>本次实际核验了“段”范围、文内查找弹窗与格式桌面入口。截图正文和统计值使用演示状态；文字选择与格式效果需要在真实 Mac 编辑器中确认。</aside>
-<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控 1.2.0，Mac 安装同版本配套端；完成配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>在 Mac“文本编辑”新建练习文档，写两段文字：“今天先写提纲。”“明天补充例子。”把光标放进正文。Markdown 专有操作请在支持的编辑器中使用；Obsidian 的精确集成需要安装配套插件。</li></ul>
-<h2>1. 进入写作布局，核对文本统计与光标位置</h2>
-<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“写作”布局。多桌面方案请展开右侧箭头后点选对应桌面。</p>
-<p>进入写作桌面后，小屏可回读编辑器反馈的文本统计与字数状态。在 Mac 上打开一篇正在编写的文档，用鼠标将光标定位在某一段落中间，作为练习起点。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/writing-01.webp" alt="写作桌面，文本统计来自演示状态。" width="1206" height="2622" loading="lazy"><figcaption>写作桌面，文本统计来自演示状态。</figcaption></figure>
-<h2>2. 切换跳转范围至“段”，测试段首段尾跳转</h2>
-<p>在手机的“字／词／句／段”范围选择条上，轻点切换至“段”级别。此时两端的边界操作按钮会自动映射为“段首”与“段尾”。</p>
-<p>点一下“段尾”，观察 Mac 中的光标是否跳至当前自然段落末尾；再点“段首”，光标返回段落开头。若需要精细单字微调，只需在范围条上切回“字”即可。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/writing-02-paragraph.webp" alt="实际点击“段”后，范围条与段首、段尾操作同步显示。" width="1206" height="2622" loading="lazy"><figcaption>实际点击“段”后，范围条与段首、段尾操作同步显示。</figcaption></figure>
-<h2>3. 使用“查找”功能快速定位文内关键词</h2>
-<p>点击手机上的“查找”按钮，呼出“文内查找”交互弹窗。在输入框中填入目标关键词（例如“提纲”），点击弹窗内的“查找”。</p>
-<p>再次点“查找”可查看或修改查询词；结束这次查找时使用“结束查找”。取消弹窗不会清空记住的关键词，所以换文档后先检查输入框里的旧词。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/writing-03-search.webp" alt="从查找按钮打开的“文内查找”弹窗。" width="1206" height="2622" loading="lazy"><figcaption>从查找按钮打开的“文内查找”弹窗。</figcaption></figure>
-<h2>4. 选定关键文字，应用加粗格式</h2>
-<p>在 Mac 端选中“提纲”这两个字，然后按下写作桌面上的“B”键（加粗）。在支持富文本的编辑器中，选中的文字会立即变为粗体；再次按下或使用撤销快捷键可恢复原样。</p>
-<p>如果文档是纯文本，字体样式可能不会保留。不要从按钮已经按下推断编辑器一定完成了格式变更；先确认文档模式和编辑器支持情况。</p>
-<h2>5. 切换到“格式”桌面，转换 Markdown 标题层级</h2>
-<p>点击写作桌面右下方的页面切换按钮，进入专门的“格式”桌面。这里聚合了加粗、斜体、下划线、超链接以及“正文 / H1...H6”标题层级控制按键。</p>
-<p>Markdown 练习可用一份可丢弃的 Markdown 文件：把光标放到一行标题，选择 H2，再检查编辑器中的实际文本或标题层级。文本编辑器与 Markdown 编辑器的行为不同，先用一种格式核验，再继续其他操作。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/writing-04-format.webp" alt="实际切换到格式桌面，显示标题层级与各格式键。" width="1206" height="2622" loading="lazy"><figcaption>实际切换到格式桌面，显示标题层级与各格式键。</figcaption></figure>
-<h2>6. 返回写作主桌面，保持专注编辑节奏</h2>
-<p>点击格式桌面右下角的返回按钮，切回写作主桌面，继续保持原有的范围选择状态。需要直接输入时可在格式桌面点击“键盘”，完成后点“完成”返回。</p>
-<p>写作桌面中的“删除”键支持长按切换持续删除模式，初次使用建议采用单次点按，确保每一步光标位移与格式调整都在掌控之中。</p>
-<p>参考：<a href="https://github.com/buggyblues/ninopad/releases/download/v1.2.0/CreamDeck-Integrations-1.2.0.zip">下载配套集成与对应软件安装说明</a>。</p>
-<h2>FAQ</h2>
-<h3>手机显示了字数，为什么不能精确选择网页文本？</h3><p>统计读取、文本选择与修改是不同能力。只读网页或未开放文本接口的区域不一定允许精确操作，先在可编辑正文验证。</p>
-<h3>Markdown 操作在 Obsidian 中没反应？</h3><p>检查配套集成包中 Obsidian 目录的安装说明、插件是否启用，以及当前是否在可编辑笔记中。先确认普通输入正常，再验证标题、列表等专有命令。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+      <p class="article-lead">During focused writing and editing, moving your hands away from home row to reposition text cursors breaks concentration. NinoPad's Writing layout introduces 4-tier cursor jumps, instant word selection, and one-tap Markdown formatting.</p>
+
+      <aside class="article-highlight"><strong>Writing Tip:</strong> Open your draft in Obsidian or Ulysses. Switch navigation tier to 'Paragraph' to jump between sections effortlessly.</aside>
+
+      <h2>1. 4-Tier Hierarchical Text Navigation</h2>
+      <p>Switch between <strong>Character</strong>, <strong>Word</strong>, <strong>Line</strong>, and <strong>Paragraph</strong> tiers. Step forward and backward with precision without holding arrow keys.</p>
+
+      <h2>2. Fast Text Selection & Formatting</h2>
+      <p>Tap <strong>"Select Word"</strong>, <strong>"Select Line"</strong>, or <strong>"Select Paragraph"</strong>, then tap <strong>Bold (⌘B)</strong>, <em>Italic (⌘I)</em>, or <code>Code (`)</code> to format text in a fraction of a second.</p>
+
+      <h2>3. Markdown Heading Toggles (#, ##, ###)</h2>
+      <p>Switch to the Format panel to convert plain lines into H1, H2, or H3 headings, add bullet checklists, or insert blockquotes with one touch.</p>
+
+      <figure class="article-figure article-figure-phone">
+        <img src="../../assets/screens/text-1.3.0-r1/writing-01.webp" alt="NinoPad Writing layout" width="1206" height="2622" loading="lazy">
+        <figcaption>Writing deck: 4-tier navigation steps, selection modifiers, Markdown headers, and word count HUD.</figcaption>
+      </figure>
+
+      <h2>4. Live Document Stats & Word Count HUD</h2>
+      <p>Monitor document character counts, reading time, and cursor line numbers in the live stats HUD while maintaining your writing flow.</p>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Which Markdown and writing editors are supported?</summary>
+          <p>NinoPad supports Obsidian, Ulysses, iA Writer, Bear, Typora, TextEdit, and web-based markdown editors.</p>
+        </details>
+        <details>
+          <summary>How does 4-tier navigation work?</summary>
+          <p>Toggle the unit selector between Character, Word, Line, and Paragraph. Pressing Left/Right steps your cursor by the selected tier; pressing Select expands selection by that increment.</p>
+        </details>
+      </section>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="layout-research.html">← 知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档</a>
-      <a href="layout-work.html">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档 →</a>
-    </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/layout-writing" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

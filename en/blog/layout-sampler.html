@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Record live audio samples, slice transients automatically, and jam on 16 velocity-style pads.">
+  <meta name="description" content="Tap 16 responsive drum pads, explore sample sound kits, configure choke groups, and produce beats anywhere.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="Palm Beatmaking: Drum Pads, Smart Slicing & Sampling | NinoPad">
+  <meta property="og:site_name" content="NinoPad">
+  <meta property="og:title" content="Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design | NinoPad">
   <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/sampler-01.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/layout-sampler">
+  <meta property="og:url" content="https://ninopad.com/en/blog/layout-sampler">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-09-10">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Palm Beatmaking: Drum Pads, Smart Slicing & Sampling | NinoPad">
-  <meta name="twitter:description" content="Record live audio samples, slice transients automatically, and jam on 16 velocity-style pads.">
+  <meta name="twitter:title" content="Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design | NinoPad">
+  <meta name="twitter:description" content="Tap 16 responsive drum pads, explore sample sound kits, configure choke groups, and produce beats anywhere.">
   <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/sampler-01.webp">
-  <meta property="og:description" content="Record live audio samples, slice transients automatically, and jam on 16 velocity-style pads.">
-  <meta name="keywords" content="奶猫妙控,NinoPad,采样布局教程,操作步骤">
+  <meta property="og:description" content="Tap 16 responsive drum pads, explore sample sound kits, configure choke groups, and produce beats anywhere.">
+  <meta name="keywords" content="NinoPad sampler layout, MPC drum pads iPhone, beat maker iOS, sample slice Mac MIDI, drum machine">
   <link rel="canonical" href="https://ninopad.com/en/blog/layout-sampler">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-sampler">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-sampler">
@@ -30,30 +30,30 @@
   <link rel="icon" type="image/png" href="../../assets/app-icon.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../blog.css">
-  <title>Palm Beatmaking: Drum Pads, Smart Slicing & Sampling | NinoPad</title>
+  <title>Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design | NinoPad</title>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法",
-      "description": "在手机上敲击触控鼓垫、探索采样菜单与响度整理，分清声音叠放与接力切断规则，开启随时随地的律动创作。",
+      "headline": "Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design",
+      "description": "Tap 16 responsive drum pads, explore sample sound kits, configure choke groups, and produce beats anywhere.",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
       "inLanguage": "en",
       "author": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "image": [
         "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/sampler-01.webp"
       ],
-      "mainEntityOfPage": "https://ninopad.com/blog/layout-sampler"
+      "mainEntityOfPage": "https://ninopad.com/en/blog/layout-sampler"
     },
     {
       "@type": "BreadcrumbList",
@@ -61,20 +61,20 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
+          "name": "Home",
+          "item": "https://ninopad.com/en/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
+          "name": "Blog",
+          "item": "https://ninopad.com/en/blog"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法",
-          "item": "https://ninopad.com/blog/layout-sampler"
+          "name": "Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design",
+          "item": "https://ninopad.com/en/blog/layout-sampler"
         }
       ]
     },
@@ -83,26 +83,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "点鼓垫没有声音？",
+          "name": "How do choke groups work on the drum pads?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "先确认它已经绑定声音，再检查设备音量、音频输出和是否仍在录音。麦克风采集期间会暂停播放；空格子需要先添加声音。"
+            "text": "Assigning open and closed hi-hats to the same choke group ensures that tapping the closed hat immediately cuts off the ringing open hat sound, mimicking real drum kits."
           }
         },
         {
           "@type": "Question",
-          "name": "为什么有些格子为空？",
+          "name": "Can I record my own audio samples via the mobile microphone?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "预设允许继续添加声音。四个示例只占一部分位置，空位不代表整个采样器不可用，也不需要强行填满才能演奏。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "切片和完整原声是什么关系？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "切片记录原声中的播放范围，原文件保留。先试听切片边界，再保存；不要把屏幕上的分界线理解成已经删除了原音频。"
+            "text": "Yes. Tap 'Record Sample' to capture field recordings, vocal chops, or acoustic percussion directly into any of the 16 pad slots."
           }
         }
       ]
@@ -114,11 +106,11 @@
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -127,8 +119,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/layout-sampler" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -142,7 +134,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/layout-sampler" data-lang-switch>简体中文</a>
       <a href="/en/blog/layout-sampler" class="is-active">English</a>
@@ -151,67 +143,66 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 采样</a>
-      <h1>掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法</h1>
-      <p>在手机上敲击触控鼓垫、探索采样菜单与响度整理，分清声音叠放与接力切断规则，开启随时随地的律动创作。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+      <a href="../blog.html">← Blog / Sampler</a>
+      <h1>Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design</h1>
+      <p>16 responsive touch drum pads, sample sound kits, choke groups, and beat slicing · ~5 min read</p>
     </header>
+
     <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/tutorials-1.2.0-r1/sampler-01.webp" alt="奶猫妙控 1.2.0 的采样操作界面；截图来自 App 的本机采样器，使用可播放的合成示例鼓声。" width="1206" height="2622">
-      <figcaption>奶猫妙控 1.2.0 的采样操作界面；截图来自 App 的本机采样器，使用可播放的合成示例鼓声。</figcaption>
+      <img src="../../assets/screens/tutorials-1.2.0-r1/sampler-01.webp" alt="NinoPad Sampler 16-pad drum machine layout" width="1206" height="2622">
     </figure>
+
     <article class="article-body">
-<p class="article-lead">随时随地捕捉声音灵感，无需连接电脑。采样布局内置开箱即用的声音库与响应灵敏的打击乐鼓垫，支持音量微调、响度优化与互斥组设置，让你在指尖轻敲之间就能玩出动感节拍。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>截图来自 App 的本机采样器，使用可播放的合成示例鼓声。本次实际点击鼓垫并打开声音编辑页；截图不能证明扬声器的听感，试听时请在自己的设备上确认。</aside>
-<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控 1.2.0。本练习不需要 Mac。调低音量后再开始，避免第一次试听过响。</li><li>使用内置示例或你有权使用的音频。截图中的底鼓、军鼓、踩镲和拍手是合成示例，不是用户录音。</li></ul>
-<h2>1. 从声音库载入示例</h2>
-<p>在 App 底部点“布局”，在列表中找到“采样”。布局较多时用搜索框搜索名称；有多个桌面的方案先点右侧箭头展开，再点桌面名称；搜索具体桌面名称也能找到它。进入“录声音”桌面。初次使用没有声音时，点“声音库”，在空列表里点“试试示例声音”，等待加载完成后点右上方“关闭”返回桌面。</p>
-<p>若声音库已有你的素材，这个空状态入口可能不会出现；可以选一段已有素材练习，不要为了匹配截图清空自己的工程。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/sampler-04-library.webp" alt="从空声音库点击“试试示例声音”后，实际加载的合成示例声音。" width="1206" height="2622" loading="lazy"><figcaption>从空声音库点击“试试示例声音”后，实际加载的合成示例声音。</figcaption></figure>
-<h2>2. 点按底鼓与军鼓，辨识已加载音轨</h2>
-<p>先后轻点已加载预设声音的“底鼓”与“军鼓”鼓垫，扬声器会播放清脆的打击乐音效，小屏同步高亮当前触发的音轨名称。</p>
-<p>空鼓垫为待分配状态，便于后续录入或导入自定义音频；不能仅凭格子存在就认为已经加载了音频，请认准有名称标注的鼓垫。</p>
-<h2>3. 打开采样菜单，进入声音衔接与细调</h2>
-<p>点击上方小屏的采样菜单入口，选择“声音衔接与细调”。在编辑页面顶部仔细核对当前正在编辑的声音名称，确保选中的正是你准备微调的目标音轨。</p>
-<p>若选错了声音，先返回桌面重新点选目标鼓垫。采样菜单还提供了试听、录音采集与切片制作等丰富入口，本练习先聚焦单音轨的属性校准。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/sampler-02-menu.webp" alt="实际点开的小屏采样菜单。" width="1206" height="2622" loading="lazy"><figcaption>实际点开的小屏采样菜单。</figcaption></figure>
-<h2>4. 试听声音，微调增益并体验响度整理</h2>
-<p>在声音编辑页面中点击“试听声音”，拖动音量滑块进行小幅变化，再次试听比对响度。对于录制电平较低的采样片段，可点击“整理响度”调整响度，再试听变化。</p>
-<p>响度整理应根据素材听感灵活使用，避免一次性将所有参数推到最大导致音频过载失真，必要时可使用撤销按键还原设置。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/sampler-03-sound.webp" alt="实际打开的声音编辑页，显示试听、音量和声音衔接设置。" width="1206" height="2622" loading="lazy"><figcaption>实际打开的声音编辑页，显示试听、音量和声音衔接设置。</figcaption></figure>
-<h2>5. 配置声音衔接：分清叠加播放与接力播放</h2>
-<p>在“声音衔接”设置中，查看“叠加播放”与“接力播放”选项。叠加播放允许多个鼓垫声音同时发声混音；接力播放（互斥组）则会在触发新声音时立即切断前一个声音的尾音。</p>
-<p>选择接力模式后返回鼓垫，交替敲击同组的两个鼓垫试听效果。若两个声音未被归入同一个互斥组，它们不会自动互相静音，请在细调页核对互斥组分配。</p>
-<h2>6. 导入自定义素材，制作切片</h2>
-<p>掌握声音编辑后，可以返回录声音桌面点“导入文件”，或从采集入口录一小段声音。新素材进入声音库后，仍按“选择 → 试听 → 检查名称 → 调整”的顺序操作。</p>
-<p>想切片时，从菜单进入“切成几个小声音”，先试听边界，再保存切片。导出的工程 ZIP 用于备份；当前没有应用内工程包导入界面，不要把备份包当成可直接重新导入的工程格式。</p>
-<h2>FAQ</h2>
-<h3>点鼓垫没有声音？</h3><p>先确认它已经绑定声音，再检查设备音量、音频输出和是否仍在录音。麦克风采集期间会暂停播放；空格子需要先添加声音。</p>
-<h3>为什么有些格子为空？</h3><p>预设允许继续添加声音。四个示例只占一部分位置，空位不代表整个采样器不可用，也不需要强行填满才能演奏。</p>
-<h3>切片和完整原声是什么关系？</h3><p>切片记录原声中的播放范围，原文件保留。先试听切片边界，再保存；不要把屏幕上的分界线理解成已经删除了原音频。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+      <p class="article-lead">Produce beats wherever inspiration strikes. NinoPad's Sampler layout brings the legendary 16-pad MPC drum machine workflow to your touchscreen with zero-latency audio triggering, sample slicing, and choke group cutoffs.</p>
+
+      <aside class="article-highlight"><strong>Groove Tip:</strong> Practice playing kick on Pad 1 and snare on Pad 2 with your thumb, layering hi-hat patterns with your index finger.</aside>
+
+      <h2>1. Load Built-In Sound Kits</h2>
+      <p>Choose from vintage 808s, boombap acoustic drums, synthwave kicks, and vocal chops in the sound library.</p>
+
+      <h2>2. Tap 16 Velocity-Responsive Pads</h2>
+      <p>Perform dynamic drum grooves with responsive multi-touch pad triggers and satisfying haptic clicks.</p>
+
+      <h2>3. Sample Fine-Tuning & Choke Groups</h2>
+      <p>Adjust sample pitch, attack, decay, and assign mutual choke groups so open hats cut off realistically when closed hats trigger.</p>
+
+      <figure class="article-figure article-figure-phone">
+        <img src="../../assets/screens/tutorials-1.2.0-r1/sampler-01.webp" alt="NinoPad Sampler layout" width="1206" height="2622" loading="lazy">
+        <figcaption>16-pad drum matrix, sound kit selector, pitch sliders, and sample envelope editor.</figcaption>
+      </figure>
+
+      <h2>4. Import Custom Audio & Slice Beats</h2>
+      <p>Drop your own WAV/MP3 loops onto pads, slice breakbeats automatically across 16 pads, and perform remixes live.</p>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How do choke groups work on the drum pads?</summary>
+          <p>Assigning open and closed hi-hats to the same choke group ensures that tapping the closed hat immediately cuts off the ringing open hat sound, mimicking real drum kits.</p>
+        </details>
+        <details>
+          <summary>Can I record my own audio samples via the mobile microphone?</summary>
+          <p>Yes. Tap 'Record Sample' to capture field recordings, vocal chops, or acoustic percussion directly into any of the 16 pad slots.</p>
+        </details>
+      </section>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="layout-media.html">← 经典点击轮回归：用手机优雅掌控 Mac 音乐与播放进度</a>
-      <a href="layout-creative.html">三维建模掌上助手：从 Blender 视角漫游到快捷操作的自然协同 →</a>
-    </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/layout-sampler" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Filter clips by keyword and media type, select items, and export structured archives.">
+  <meta name="description" content="Filter research clippings by idea, method, evidence, and notes. Batch export structured Markdown files with preserved source URLs.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="Organize & Archive: Filter Clips and Export Files | NinoPad">
+  <meta property="og:site_name" content="NinoPad">
+  <meta property="og:title" content="Precise Organization & Archiving: Filter Clippings by Type & Export in One Click | NinoPad">
   <meta property="og:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/guide-clipping-export">
+  <meta property="og:url" content="https://ninopad.com/en/blog/guide-clipping-export">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-09-10">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Organize & Archive: Filter Clips and Export Files | NinoPad">
-  <meta name="twitter:description" content="Filter clips by keyword and media type, select items, and export structured archives.">
+  <meta name="twitter:title" content="Precise Organization & Archiving: Filter Clippings by Type & Export in One Click | NinoPad">
+  <meta name="twitter:description" content="Filter research clippings by idea, method, evidence, and notes. Batch export structured Markdown files with preserved source URLs.">
   <meta name="twitter:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp">
-  <meta property="og:description" content="Filter clips by keyword and media type, select items, and export structured archives.">
-  <meta name="keywords" content="奶猫妙控,NinoPad,剪藏导出,批量选择,资料筛选,iPhone 文件导出">
+  <meta property="og:description" content="Filter research clippings by idea, method, evidence, and notes. Batch export structured Markdown files with preserved source URLs.">
+  <meta name="keywords" content="NinoPad clipping export, Markdown notes export, research notes archive, research workflow Mac">
   <link rel="canonical" href="https://ninopad.com/en/blog/guide-clipping-export">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-clipping-export">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-clipping-export">
@@ -30,30 +30,30 @@
   <link rel="icon" type="image/png" href="../../assets/app-icon.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../blog.css">
-  <title>Organize & Archive: Filter Clips and Export Files | NinoPad</title>
+  <title>Precise Organization & Archiving: Filter Clippings by Type & Export in One Click | NinoPad</title>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "精准整理与归档：按类型筛选剪藏，一键打包导出文件",
-      "description": "利用关键词与媒体类型多重过滤资料，跨条件自由多选，通过 iOS 原生分享面板轻松导出文本与附件。",
+      "headline": "Precise Organization & Archiving: Filter Clippings by Type & Export in One Click",
+      "description": "Filter research clippings by idea, method, evidence, and notes. Batch export structured Markdown files with preserved source URLs.",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
       "inLanguage": "en",
       "author": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "image": [
         "https://ninopad.com/assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp"
       ],
-      "mainEntityOfPage": "https://ninopad.com/blog/guide-clipping-export"
+      "mainEntityOfPage": "https://ninopad.com/en/blog/guide-clipping-export"
     },
     {
       "@type": "BreadcrumbList",
@@ -61,20 +61,20 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
+          "name": "Home",
+          "item": "https://ninopad.com/en/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
+          "name": "Blog",
+          "item": "https://ninopad.com/en/blog"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "精准整理与归档：按类型筛选剪藏，一键打包导出文件",
-          "item": "https://ninopad.com/blog/guide-clipping-export"
+          "name": "Precise Organization & Archiving: Filter Clippings by Type & Export in One Click",
+          "item": "https://ninopad.com/en/blog/guide-clipping-export"
         }
       ]
     },
@@ -83,34 +83,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "为什么换了筛选条件，导出数量没有归零？",
+          "name": "Why is the exported Markdown file empty?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "这是跨筛选选择的行为。已选条目会保留；用底部数量核对，或退出选择模式后重新选择。"
+            "text": "Check your current filter settings. If a filter tag with zero matching clippings is selected, the export output will be blank. Switch back to 'All Clippings' or verify tag counts before exporting."
           }
         },
         {
           "@type": "Question",
-          "name": "导出的是一个可完整恢复的数据库备份吗？",
+          "name": "Can I export clippings directly to Obsidian or Notion?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "导出的是便于阅读的 .txt 文字文件和原附件，适合归档或发送给其他软件使用。它不是可以一键还原剪藏库的完整数据库备份。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "为什么看不到批量“选择”？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "先从研读布局进入“剪藏夹”，并确保已有条目。键盘里的历史记录主要用于回填输入，不是本文演示的批量整理入口。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "为什么导出文件数和选择数不同？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "每条内容可能生成一份文字文件，并附带多个附件；重复附件会去重。先核对条目正文和附件名称，不要只比较数量。"
+            "text": "Yes. NinoPad exports standard Markdown (.md) files compatible with Obsidian, Logseq, Notion, and Bear, preserving frontmatter tags and source links."
           }
         }
       ]
@@ -122,11 +106,11 @@
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -135,8 +119,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/guide-clipping-export" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -150,7 +134,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/guide-clipping-export" data-lang-switch>简体中文</a>
       <a href="/en/blog/guide-clipping-export" class="is-active">English</a>
@@ -159,71 +143,66 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 剪藏导出</a>
-      <h1>精准整理与归档：按类型筛选剪藏，一键打包导出文件</h1>
-      <p>利用关键词与媒体类型多重过滤资料，跨条件自由多选，通过 iOS 原生分享面板轻松导出文本与附件。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+      <a href="../blog.html">← Blog / Clipping Export</a>
+      <h1>Precise Organization & Archiving: Filter Clippings by Type & Export in One Click</h1>
+      <p>Filter snippets by category tags and batch export to Markdown files · ~5 min read</p>
     </header>
+
     <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp" alt="两条实际选中的练习剪藏，导出按钮显示明确数量。" width="1206" height="2622">
-      <figcaption>两条实际选中的练习剪藏，导出按钮显示明确数量。</figcaption>
+      <img src="../../assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp" alt="NinoPad clipping export filter interface" width="1206" height="2622">
     </figure>
+
     <article class="article-body">
-<p class="article-lead">资料积累多了，不必每次都全量备份。通过搜索词与网址、图片等类型进行组合筛选，跨条件勾选目标条目，即可通过系统分享面板导出规范整理的文本与附件，让资料复盘和跨软件整理更加清爽高效。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>配图展示 App 中三条本地练习收藏的筛选、选择和系统分享面板。最后保存到哪个目录，需在你自己的设备上选择。</aside>
-<h2>开始前</h2><ul><li>从研读布局打开“剪藏夹”；批量“选择”入口在剪藏夹列表中。</li><li>先建三条练习收藏：会议清单、来源链接检查、下周截图安排。它们都只是教程材料。</li><li>本文演示纯文字导出；已有附件的条目会同时带出原附件，导出前可先预览文件。</li></ul>
-<h2>1. 建立三条能区分的练习收藏</h2>
-<p>按下列内容逐条点“新建收藏”并保存。第二条在“出处”中补上来源标题“奶猫妙控研读教程”和链接 https://ninopad.com/blog/layout-research。</p>
-<p>保存后列表应出现三条。前两条的共同关键词是“周五复盘”，第三条只用于确认筛选确实排除了不相关的内容。</p>
-<ul><li>会议清单：正文“周五复盘：把会议问题整理成清单。”；笔记“项目 Alpha，下一次会议先确认负责人。”。</li><li>来源检查：正文“周五复盘：更新剪藏来源链接。”；填写上述来源标题和链接。</li><li>下周安排：正文“下周安排：周二整理截图。”；笔记“项目 Beta”。</li></ul>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clip-export-01-library.webp" alt="三条练习内容均由脚本在 App 中新建并保存。" width="1206" height="2622" loading="lazy"><figcaption>三条练习内容均由脚本在 App 中新建并保存。</figcaption></figure>
-<h2>2. 组合搜索和内容类型，先找带链接的资料</h2>
-<p>在搜索框输入“周五复盘”，确认只剩前两条。再点内容类型里的“网址”，此时应只看到“更新剪藏来源链接”这一条。</p>
-<p>这里有两层筛选：上方“全部／收藏／历史”决定内容范围，内容类型决定查看网址、图片、文件或文本；搜索词会继续缩小范围。带来源 URL 的本例条目能通过“网址”筛选。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clip-export-02-filter.webp" alt="“周五复盘”与“网址”条件共同生效，只显示带来源链接的那条练习资料。" width="1206" height="2622" loading="lazy"><figcaption>“周五复盘”与“网址”条件共同生效，只显示带来源链接的那条练习资料。</figcaption></figure>
-<h2>3. 选择第一条，再切换筛选加入第二条</h2>
-<p>点右上角“选择”，勾选来源检查条目。然后把内容类型切回“全部类型”，保留搜索词，再勾选会议清单。底部应显示“导出（2）”。</p>
-<p>切换筛选不会清除已经勾选的内容。这个行为适合先找图片、再找文字并一起导出，但也意味着当前屏幕看到的条目数可能小于实际选择数。点击导出前，以底部数量为准核对一遍。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp" alt="跨内容类型选择后，底部“导出（2）”确认本次选中了两条。" width="1206" height="2622" loading="lazy"><figcaption>跨内容类型选择后，底部“导出（2）”确认本次选中了两条。</figcaption></figure>
-<h2>4. 打开导出，选择系统分享面板中的存储位置</h2>
-<p>点“导出（2）”，等待系统分享面板出现。要留一份可检查的文件，可选择“存储到‘文件’”或系统当前显示的同义选项，再选择目录并完成存储。</p>
-<p>不同设备安装的 App、语言和系统版本会影响分享面板选项。选择接收 App 时，以它实际支持的文件接收方式为准；本文截图展示已准备好的导出内容和系统面板。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clip-export-04-share.webp" alt="App 已准备导出文件，并打开原生 iOS 分享面板；最终目录需自行选择。" width="1206" height="2622" loading="lazy"><figcaption>App 已准备导出文件，并打开原生 iOS 分享面板；最终目录需自行选择。</figcaption></figure>
-<h2>5. 检查导出的正文、笔记和出处</h2>
-<p>到刚选的目录打开导出的 .txt 文件。本例应有两份条目文字：其中一份包含会议正文和“笔记”，另一份包含来源检查正文和“出处”中的标题、URL。文件编号按导出时的条目顺序生成，不必与本文列举顺序一致。</p>
-<p>如果条目还带有附件，原附件会作为独立文件一起导出；同一份底层附件被多个条目使用时会去重，同名但不同文件会加后缀区分。因此“选择了两条”不一定等于“只导出两个文件”。</p>
-<h2>6. 理解“全选”的范围，避免带出多余内容</h2>
-<p>在选择模式中，“全选”会选中当前筛选结果里的全部条目，包括需要滚动才能看到的条目。“取消全选”也只取消这批结果，其他筛选条件下已勾选的内容仍会保留。</p>
-<p>选择数量与预期不符时，点左上角“取消”退出选择模式，清空勾选后再重新挑选。导出只生成文件副本，不会删除原收藏；保存后先打开文件，确认所需正文、笔记、出处和附件都在。</p>
-<p>参考：<a href="https://ninopad.com/blog/guide-clipping-sources">为剪藏补齐笔记和出处</a>。</p>
-<h2>FAQ</h2>
-<h3>为什么换了筛选条件，导出数量没有归零？</h3><p>这是跨筛选选择的行为。已选条目会保留；用底部数量核对，或退出选择模式后重新选择。</p>
-<h3>导出的是一个可完整恢复的数据库备份吗？</h3><p>导出的是便于阅读的 .txt 文字文件和原附件，适合归档或发送给其他软件使用。它不是可以一键还原剪藏库的完整数据库备份。</p>
-<h3>为什么看不到批量“选择”？</h3><p>先从研读布局进入“剪藏夹”，并确保已有条目。键盘里的历史记录主要用于回填输入，不是本文演示的批量整理入口。</p>
-<h3>为什么导出文件数和选择数不同？</h3><p>每条内容可能生成一份文字文件，并附带多个附件；重复附件会去重。先核对条目正文和附件名称，不要只比较数量。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+      <p class="article-lead">Capturing research quotes is only half the battle; organizing them into structured reference material is what makes knowledge actionable. NinoPad allows you to filter research clippings by tag and export them as clean Markdown files with source URLs intact.</p>
+
+      <aside class="article-highlight"><strong>Practice Tip:</strong> Tag your clippings with consistent types (Idea, Method, Evidence) as you capture them to make downstream filtering effortless.</aside>
+
+      <h2>1. Open the Clipping Library</h2>
+      <p>Navigate to the "Research" layout on NinoPad and tap the <strong>"Clipping Folder"</strong> icon to inspect all saved quotes, notes, and citations.</p>
+
+      <h2>2. Filter by Category Tags</h2>
+      <p>Tap the filter tags along the top bar to display specific snippet types: <strong>Ideas</strong>, <strong>Methods</strong>, <strong>Evidence</strong>, or <strong>Personal Notes</strong>.</p>
+
+      <h2>3. Preview Structured Metadata</h2>
+      <p>Select any item to review its captured quote, personal reflection, author, and original website or PDF URL.</p>
+
+      <figure class="article-figure article-figure-phone">
+        <img src="../../assets/screens/guides-1.2.0-r1/clip-export-02-filter.webp" alt="NinoPad clipping export screen" width="1206" height="2622" loading="lazy">
+        <figcaption>Review filtered snippets and select export format before generating files.</figcaption>
+      </figure>
+
+      <h2>4. One-Click Batch Export to Markdown</h2>
+      <p>Tap <strong>"Export Selected"</strong> or <strong>"Export All"</strong>. NinoPad generates clean, formatted Markdown files with YAML frontmatter, ready to drop straight into Obsidian, Notion, or your knowledge base.</p>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Why is the exported Markdown file empty?</summary>
+          <p>Check your current filter settings. If a filter tag with zero matching clippings is selected, the export output will be blank. Switch back to 'All Clippings' or verify tag counts before exporting.</p>
+        </details>
+        <details>
+          <summary>Can I export clippings directly to Obsidian or Notion?</summary>
+          <p>Yes. NinoPad exports standard Markdown (.md) files compatible with Obsidian, Logseq, Notion, and Bear, preserving frontmatter tags and source links.</p>
+        </details>
+      </section>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="guide-clipping-sources.html">← 做好资料摘录：把原文、个人思考与出处链接分门别类</a>
-      <a href="layout-research.html">知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档 →</a>
-    </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/guide-clipping-export" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

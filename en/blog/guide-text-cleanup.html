@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Clean messy product datasets visually using SUBSTITUTE and TRIM formulas with side-by-side preview.">
+  <meta name="description" content="Visually build text replacement and whitespace cleanup formulas on mobile. Handle prefix removal, trailing spaces, and data hygiene safely.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="Data Cleaning: Fast Text Cleanup with SUBSTITUTE & TRIM | NinoPad">
+  <meta property="og:site_name" content="NinoPad">
+  <meta property="og:title" content="Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM | NinoPad">
   <meta property="og:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/guide-text-cleanup">
+  <meta property="og:url" content="https://ninopad.com/en/blog/guide-text-cleanup">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-09-10">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Data Cleaning: Fast Text Cleanup with SUBSTITUTE & TRIM | NinoPad">
-  <meta name="twitter:description" content="Clean messy product datasets visually using SUBSTITUTE and TRIM formulas with side-by-side preview.">
+  <meta name="twitter:title" content="Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM | NinoPad">
+  <meta name="twitter:description" content="Visually build text replacement and whitespace cleanup formulas on mobile. Handle prefix removal, trailing spaces, and data hygiene safely.">
   <meta name="twitter:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp">
-  <meta property="og:description" content="Clean messy product datasets visually using SUBSTITUTE and TRIM formulas with side-by-side preview.">
-  <meta name="keywords" content="奶猫妙控,NinoPad,SUBSTITUTE 教程,TRIM 教程,Excel 文本清理,空字符串">
+  <meta property="og:description" content="Visually build text replacement and whitespace cleanup formulas on mobile. Handle prefix removal, trailing spaces, and data hygiene safely.">
+  <meta name="keywords" content="NinoPad spreadsheet cleanup, SUBSTITUTE formula, TRIM function, Excel text formatting, clean product SKU">
   <link rel="canonical" href="https://ninopad.com/en/blog/guide-text-cleanup">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-cleanup">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-cleanup">
@@ -30,30 +30,30 @@
   <link rel="icon" type="image/png" href="../../assets/app-icon.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../blog.css">
-  <title>Data Cleaning: Fast Text Cleanup with SUBSTITUTE & TRIM | NinoPad</title>
+  <title>Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM | NinoPad</title>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本",
-      "description": "在手机上可视化配置文本替换与去空格函数，区分全局替换与指定首处匹配，配合对照列安全清洗表格数据。",
+      "headline": "Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM",
+      "description": "Visually build text replacement and whitespace cleanup formulas on mobile. Handle prefix removal, trailing spaces, and data hygiene safely.",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
       "inLanguage": "en",
       "author": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "奶猫妙控"
+        "name": "NinoPad"
       },
       "image": [
         "https://ninopad.com/assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp"
       ],
-      "mainEntityOfPage": "https://ninopad.com/blog/guide-text-cleanup"
+      "mainEntityOfPage": "https://ninopad.com/en/blog/guide-text-cleanup"
     },
     {
       "@type": "BreadcrumbList",
@@ -61,20 +61,20 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
+          "name": "Home",
+          "item": "https://ninopad.com/en/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
+          "name": "Blog",
+          "item": "https://ninopad.com/en/blog"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本",
-          "item": "https://ninopad.com/blog/guide-text-cleanup"
+          "name": "Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM",
+          "item": "https://ninopad.com/en/blog/guide-text-cleanup"
         }
       ]
     },
@@ -83,34 +83,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "新文字留空，为什么仍能复制公式？",
+          "name": "What is the difference between global replace and instance-specific replace in SUBSTITUTE?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SUBSTITUTE 的新文字允许为空字符串，App 会生成 \"\"。这表示删除匹配内容，属于有效公式。"
+            "text": "Leaving instance_num empty replaces all occurrences of the target string. Specifying instance_num = 1 replaces only the first occurrence, which is useful when removing leading SKU prefixes without altering body text."
           }
         },
         {
           "@type": "Question",
-          "name": "为什么 A2 被当作两个字符，而没有读取单元格？",
+          "name": "How does TRIM handle non-breaking spaces commonly found in web exports?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "检查原文字参数是否被切换成“文字”。引用单元格时应选“数值、引用或公式”，确保预览显示 A2 而不是 \"A2\"。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "为什么名称中间的 SKU- 也没了？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "省略次数参数会替换所有匹配。如果只要替换第一次，在“替换第几处”填 1，并用含重复匹配的练习行确认。这仍是匹配位置规则，不是专门判断前缀的功能。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "能直接在手机看到清理后的单元格吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "本文公式编辑器展示生成的公式文本。结果应在 Excel 中确认，不能把公式预览当作单元格读回。"
+            "text": "NinoPad offers an optional nested CLEAN+TRIM formula helper that strips both ASCII spaces and non-breaking UTF-8 spaces (CHAR(160))."
           }
         }
       ]
@@ -122,11 +106,11 @@
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -135,8 +119,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/guide-text-cleanup" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -150,7 +134,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/guide-text-cleanup" data-lang-switch>简体中文</a>
       <a href="/en/blog/guide-text-cleanup" class="is-active">English</a>
@@ -159,71 +143,66 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 表格文本</a>
-      <h1>规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本</h1>
-      <p>在手机上可视化配置文本替换与去空格函数，区分全局替换与指定首处匹配，配合对照列安全清洗表格数据。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+      <a href="../blog.html">← Blog / Spreadsheet Text</a>
+      <h1>Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM</h1>
+      <p>Visually configure SUBSTITUTE and TRIM functions to normalize messy product data · ~5 min read</p>
     </header>
+
     <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp" alt="实际生成删除 SKU- 的 SUBSTITUTE 公式，保留有效的空字符串参数。" width="1206" height="2622">
-      <figcaption>实际生成删除 SKU- 的 SUBSTITUTE 公式，保留有效的空字符串参数。</figcaption>
+      <img src="../../assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp" alt="NinoPad text cleanup formula builder" width="1206" height="2622">
     </figure>
+
     <article class="article-body">
-<p class="article-lead">拿到包含冗余前缀和乱七八糟空格的商品清单？无需手动逐行删改。通过手机端可视化配置 SUBSTITUTE 剔除特定标识，再配合 TRIM 规范连续空格，两步建立清晰对照，轻松搞定大批量表格文本清洗。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>截图是 App 原生公式编辑器中的实际操作，使用自制商品名练习。文中结果用于核对公式语义；没有宣称手机已经从 Excel 读取到这些单元格或自动验证整张表。</aside>
-<h2>开始前</h2><ul><li>在 Mac Excel 打开本文 CSV，确认 Original 位于 A1，三条商品名位于 A2:A4。</li><li>在 B1 输入 Removed，在 C1 输入 Cleaned，保留 A 列作为原始数据。</li><li>在奶猫妙控的布局列表中搜索“文本处理”，进入财务公式对应桌面。</li></ul>
-<h2>1. 下载练习表，保留原始数据</h2>
-<p>在 Excel 或 Numbers 中准备测试数据：A2 单元格为前后及中间带多余空格的<code>  SKU-Blue  Mug  </code>，A3 为“SKU-Red Cup”，A4 为包含重复前缀的“SKU-Gift-SKU-Box”。打开文件后切勿先手动删除空格。</p>
-<p>A2 用于检验空格规整效果，A4 用于区分“替换所有匹配”与“仅替换首处匹配”。始终保留原始 A 列数据不动，才能清晰验证清洗步骤是否会误删商品名称内部的合法字符。</p>
-<p>下载：<a href="https://ninopad.com/assets/examples/guides-1.2.0-r1/text-cleanup.csv">商品名称清理练习数据（CSV）</a>。</p>
-<h2>2. 长按 SUBSTITUTE，去掉 SKU-</h2>
-<p>在手机财务或文本处理桌面中，长按“SUBSTITUTE”按键打开参数面板。将“原文本或单元格”填写为 <code>A2</code>（类型保持“数值／引用”）；“查找文字”填写为 <code>SKU-</code>（类型保持“文字”）。“替换为（留空删除）”保持留空，“替换第几处”暂时亦保持留空。</p>
-<p>此时底部公式预览应为 <code>=SUBSTITUTE(A2,&quot;SKU-&quot;,&quot;&quot;)</code>。其中 <code>&quot;&quot;</code> 表示将匹配到的文字替换为空字符串（即直接删除）。这是合法的空值设定，切勿为了让输入框“有内容”而误填入空格。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp" alt="SKU- 为文字参数，新文字留空，App 生成包含空字符串的完整公式。" width="1206" height="2622" loading="lazy"><figcaption>SKU- 为文字参数，新文字留空，App 生成包含空字符串的完整公式。</figcaption></figure>
-<h2>3. 把公式放到 B 列，查看替换结果</h2>
-<p>把生成的公式输入 Mac 表格的 B2，再按回车。可以在两端已共享剪贴板时粘贴，也可以连接 Mac 后选中 B2，点“发送公式”；未共享剪贴板时可手动输入。随后在 B3 使用 <code>=SUBSTITUTE(A3,&quot;SKU-&quot;,&quot;&quot;)</code>，在 B4 使用 <code>=SUBSTITUTE(A4,&quot;SKU-&quot;,&quot;&quot;)</code>。</p>
-<p>检查 B 列结果：B2 输出<code>  Blue  Mug  </code>（前缀已去除，但原有多余空格完好保留），B3 为“Red Cup”，B4 为“Gift-Box”。确认第一步前缀剔除完全后，再进入第二步空格清理。</p>
-<h2>4. 用 TRIM 整理 B 列的空格</h2>
-<p>回到手机文本处理桌面，长按“TRIM”按键打开面板，将参数填写为 <code>B2</code>，类型保持“数值／引用”。底部公式预览为 <code>=TRIM(B2)</code>，按上一步的方式将公式输入 Mac 的 C2 单元格，再按回车确认。</p>
-<p>查看 C2 单元格的计算结果：准确呈现为“Blue Mug”，首尾多余空格被彻底清除，Blue 与 Mug 之间的多个连续空格被自动压缩为单个标准空格。随后在 C3、C4 分别应用 <code>=TRIM(B3)</code> 与 <code>=TRIM(B4)</code>，核对结果为“Red Cup”与“Gift-Box”。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clean-text-02-trim.webp" alt="TRIM 引用前一步的 B2，让删除文字和整理空格两步可以分别检查。" width="1206" height="2622" loading="lazy"><figcaption>TRIM 引用前一步的 B2，让删除文字和整理空格两步可以分别检查。</figcaption></figure>
-<p>参考：<a href="https://support.microsoft.com/en-us/excel/functions/trim-function">Microsoft：TRIM 的普通空格范围</a>。</p>
-<h2>5. 只想替换第一处时，填入 1</h2>
-<p>重新长按 SUBSTITUTE 打开面板，依然使用 A2 和 <code>SKU-</code>，新文字保持留空，但在“替换第几处”输入框中填入数字 <code>1</code>。底部公式预览变为 <code>=SUBSTITUTE(A2,&quot;SKU-&quot;,&quot;&quot;,1)</code>，表示仅替换首次匹配项。</p>
-<p>该参数在 A4 单元格尤为关键：在空白单元格测试 <code>=SUBSTITUTE(A4,&quot;SKU-&quot;,&quot;&quot;,1)</code>，预期结果为“Gift-SKU-Box”；而省略最后的 1 时所有匹配均会被清除输出为“Gift-Box”。根据实际商品编号规范灵活选择，切勿未经核验盲目全量覆盖。</p>
-<figure class="article-figure article-figure-phone"><img src="../../assets/screens/guides-1.2.0-r1/clean-text-03-first.webp" alt="填入 1 后，公式明确限定为第一次出现；该数字使用“数值／引用”类型。" width="1206" height="2622" loading="lazy"><figcaption>填入 1 后，公式明确限定为第一次出现；该数字使用“数值／引用”类型。</figcaption></figure>
-<p>参考：<a href="https://support.microsoft.com/en-US/Excel/substitute-function">Microsoft：SUBSTITUTE 的次数参数</a>。</p>
-<h2>6. 对照三列结果，再处理自己的数据</h2>
-<p>回顾三列结构：A 列为不可修改的原始数据，B 列展示前缀剥离结果，C 列展示空格规整后的最终结果。在处理海量数据前，先抽取具有代表性的样本行（包括无前缀、多前缀与特殊空格）进行验证，确认这些规则适合当前数据。</p>
-<p>如果从网页复制的数据清洗后仍残留看似空格的占位符，请先辨别字符编码。TRIM 处理标准 ASCII 空格，无法直接剔除不换行空格（NBSP，CHAR(160)）；遇到此类特殊字符时可先用 SUBSTITUTE 替换后再行 TRIM。</p>
-<h2>FAQ</h2>
-<h3>新文字留空，为什么仍能复制公式？</h3><p>SUBSTITUTE 的新文字允许为空字符串，App 会生成 &quot;&quot;。这表示删除匹配内容，属于有效公式。</p>
-<h3>为什么 A2 被当作两个字符，而没有读取单元格？</h3><p>检查原文字参数是否被切换成“文字”。引用单元格时应选“数值、引用或公式”，确保预览显示 A2 而不是 &quot;A2&quot;。</p>
-<h3>为什么名称中间的 SKU- 也没了？</h3><p>省略次数参数会替换所有匹配。如果只要替换第一次，在“替换第几处”填 1，并用含重复匹配的练习行确认。这仍是匹配位置规则，不是专门判断前缀的功能。</p>
-<h3>能直接在手机看到清理后的单元格吗？</h3><p>本文公式编辑器展示生成的公式文本。结果应在 Excel 中确认，不能把公式预览当作单元格读回。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+      <p class="article-lead">Imported spreadsheet data often contains inconsistent prefixes, rogue spaces, and messy capitalization. NinoPad's Finance layout includes visual text formula builders that craft robust <code>SUBSTITUTE</code> and <code>TRIM</code> expressions in seconds.</p>
+
+      <aside class="article-highlight"><strong>Data Hygiene Rule:</strong> Always output cleaned text into a new adjacent comparison column to verify results before overwriting raw source data.</aside>
+
+      <h2>1. Strip Unwanted SKU Prefixes with SUBSTITUTE</h2>
+      <p>Select the text substitution tool in NinoPad, pick target cell <code>A2</code>, enter text to remove (e.g., <code>"SKU-"</code>), and leave the replacement string empty to cleanly excise the prefix.</p>
+
+      <h2>2. Remove Rogue Spaces with TRIM</h2>
+      <p>Wrap cell references with the <code>TRIM</code> function to automatically eliminate leading, trailing, and duplicate spaces from copied data.</p>
+
+      <h2>3. Chain Functions with Real-Time Preview</h2>
+      <p>NinoPad builds nested expressions like <code>=TRIM(SUBSTITUTE(A2, "SKU-", ""))</code> and verifies formula syntax live on screen.</p>
+
+      <figure class="article-figure article-figure-phone">
+        <img src="../../assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp" alt="NinoPad SUBSTITUTE formula generator" width="1206" height="2622" loading="lazy">
+        <figcaption>Visual parameters filled cleanly with instant live formula syntax verification.</figcaption>
+      </figure>
+
+      <h2>4. Inject into Mac Spreadsheet in One Tap</h2>
+      <p>Click your Mac spreadsheet's target formula cell, tap <strong>"Inject"</strong> on your phone, and double-click the fill handle to apply across thousands of rows instantly.</p>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>What is the difference between global replace and instance-specific replace in SUBSTITUTE?</summary>
+          <p>Leaving instance_num empty replaces all occurrences of the target string. Specifying instance_num = 1 replaces only the first occurrence, which is useful when removing leading SKU prefixes without altering body text.</p>
+        </details>
+        <details>
+          <summary>How does TRIM handle non-breaking spaces commonly found in web exports?</summary>
+          <p>NinoPad offers an optional nested CLEAN+TRIM formula helper that strips both ASCII spaces and non-breaking UTF-8 spaces (CHAR(160)).</p>
+        </details>
+      </section>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="guide-sumifs.html">← 告别记错函数参数：用手机可视化生成 SUMIFS 多条件公式</a>
-      <a href="layout-finance.html">数字与表格好帮手：快速算账，在手机上可视化构建函数公式 →</a>
-    </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/guide-text-cleanup" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

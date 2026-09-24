@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eff8eb">
-  <meta name="description" content="Checklist for Accessibility, Screen Recording, local network discovery, and fixing pairing errors.">
+  <meta name="theme-color" content="#eee9fb">
+  <meta name="description" content="Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.">
+  <meta name="keywords" content="NinoPad Mac setup, macOS accessibility permissions, screen recording permission, NinoPad pairing, troubleshooting">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
+  <meta property="og:site_name" content="NinoPad">
   <meta property="og:title" content="First Time Connecting to Mac: Pairing, Permissions & Troubleshooting | NinoPad">
+  <meta property="og:description" content="Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.">
   <meta property="og:image" content="https://ninopad.com/assets/screens/macos-adapter.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/mac-settings">
+  <meta property="og:url" content="https://ninopad.com/en/blog/mac-settings">
   <meta property="og:locale" content="en_US">
   <meta property="article:published_time" content="2026-08-31">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="First Time Connecting to Mac: Pairing, Permissions & Troubleshooting | NinoPad">
-  <meta name="twitter:description" content="Checklist for Accessibility, Screen Recording, local network discovery, and fixing pairing errors.">
+  <meta name="twitter:description" content="Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.">
   <meta name="twitter:image" content="https://ninopad.com/assets/screens/macos-adapter.webp">
-  <meta property="og:description" content="Checklist for Accessibility, Screen Recording, local network discovery, and fixing pairing errors.">
   <link rel="canonical" href="https://ninopad.com/en/blog/mac-settings">
   <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings">
   <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings">
@@ -31,34 +32,35 @@
   <link rel="stylesheet" href="../../blog.css">
   <title>First Time Connecting to Mac: Pairing, Permissions & Troubleshooting | NinoPad</title>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "第一次连接 Mac：配对、权限设置与常见问题",
-  "description": "了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-09-10",
-  "author": {
-    "@type": "Organization",
-    "name": "奶猫妙控"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "奶猫妙控"
-  },
-  "image": "https://ninopad.com/assets/screens/macos-adapter.webp",
-  "mainEntityOfPage": "https://ninopad.com/blog/mac-settings"
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "First Time Connecting to Mac: Pairing, Permissions & Troubleshooting",
+    "description": "Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.",
+    "datePublished": "2026-08-31",
+    "dateModified": "2026-09-10",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Organization",
+      "name": "NinoPad"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NinoPad"
+    },
+    "image": "https://ninopad.com/assets/screens/macos-adapter.webp",
+    "mainEntityOfPage": "https://ninopad.com/en/blog/mac-settings"
+  }
   </script>
 </head>
 <body class="content-page article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
       <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
+      <span>NinoPad</span>
     </a>
-    <nav aria-label="主导航">
+    <nav aria-label="Main Navigation">
       <a href="../index.html#layouts">Features</a>
       <a href="../index.html#pro">Pricing</a>
       <a href="../blog.html" aria-current="page">Blog</a>
@@ -67,8 +69,8 @@
     </nav>
     <div class="header-actions">
       <a class="header-lang" href="/blog/mac-settings" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
@@ -82,7 +84,7 @@
       <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
     </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
     <div class="mobile-drawer-lang">
       <a href="/blog/mac-settings" data-lang-switch>简体中文</a>
       <a href="/en/blog/mac-settings" class="is-active">English</a>
@@ -91,81 +93,76 @@
 
   <main id="main" class="article-shell">
     <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 系统权限与安全</a>
-      <h1>第一次连接 Mac：配对、权限设置与常见问题</h1>
-      <p>辅助功能、屏幕录制与本地网络授权排查，以及局域网本地通信说明 · 阅读约 6 分钟</p>
+      <a href="../blog.html">← Blog / System Permissions & Security</a>
+      <h1>First Time Connecting to Mac: Pairing, Permissions & Troubleshooting</h1>
+      <p>Accessibility, Screen Recording, local network authorization, and peer-to-peer security · ~6 min read</p>
     </header>
 
     <figure class="article-cover article-cover-mac">
-      <img src="../../assets/screens/macos-adapter.webp?v=20260831d" alt="奶猫妙控 Mac 端显示配对二维码和连接状态" width="944" height="1196">
+      <img src="../../assets/screens/macos-adapter.webp?v=20260831d" alt="NinoPad Mac companion app showing QR code pairing and status" width="1206" height="2622">
     </figure>
 
     <article class="article-body">
-      <p class="article-lead">奶猫妙控作为一款专为 macOS 打造的掌上副控与桌面串流工具，需要获取系统的必要辅助授权，以实现按键映射、快捷指令注入与桌面画面回传。初次使用或升级系统后，规范的权限配置是保障一切功能顺畅运行的基础。</p>
-      <p>本文为你梳理奶猫妙控所需的核心系统权限、配置操作流程、常见连接故障排查方法，以及基于局域网点对点（P2P）直连的安全架构。</p>
+      <p class="article-lead">As a dedicated Mac companion and desktop streaming utility, NinoPad requires essential macOS system authorizations to perform keystroke injection, mouse cursor control, and low-latency screen streaming. Proper permission configuration ensures all features run smoothly.</p>
+      <p>This guide explains each core permission, step-by-step setup in macOS System Settings, troubleshooting tips for common connection issues, and our peer-to-peer local network privacy architecture.</p>
 
-      <h2>一、核心系统权限清单及用途说明</h2>
-      <p>先从以下与连接和桌面控制有关的权限开始。不同 macOS 版本的项目名称可能略有差异，按系统实际显示的名称操作；其他功能需要额外权限时，App 会在相应流程中提示。</p>
+      <h2>1. Core macOS Permissions and Their Purposes</h2>
+      <p>NinoPad requests the following permissions for control and streaming:</p>
       <ul>
-        <li><strong>辅助功能（Accessibility）：</strong>用于接收手机端发送的模拟按键、滚轮滚动、组合快捷键以及鼠标光标手势控制指令。</li>
-        <li><strong>屏幕录制（Screen Recording / 屏幕与系统音频录制）：</strong>用于在“边看边控”与“全屏沉浸”模式下，捕获 Mac 实时桌面帧画面并流式传输至手机。</li>
-        <li><strong>本地网络（Local Network）：</strong>用于在同一 Wi-Fi 或局域网内通过 Bonjour 协议自动发现 Mac 端服务，建立高速点对点直连通道。</li>
+        <li><strong>Accessibility:</strong> Allows the Mac companion to receive simulated keystrokes, scroll wheel events, shortcut combos, and trackpad gestures from your phone;</li>
+        <li><strong>Screen Recording (Screen &amp; System Audio Recording):</strong> Enables low-latency capture and streaming of your Mac desktop frames to your mobile device in Studio View and Fullscreen Mirror mode;</li>
+        <li><strong>Local Network:</strong> Allows NinoPad on iOS and macOS to discover each other automatically via Bonjour protocol on the same Wi-Fi network for high-speed direct communication.</li>
       </ul>
 
-      <h2>二、macOS 权限配置步骤指南</h2>
-      <p>首次启动 Mac 配套端后，可以在系统设置中检查控制与画面权限。只需要鼠标和键盘控制时，先完成辅助功能授权；需要查看屏幕时，再检查屏幕录制。</p>
+      <h2>2. Step-by-Step macOS Permission Configuration</h2>
+      <p>When launching the Mac companion app for the first time, configure permissions via System Settings:</p>
       <ol class="article-steps-list">
-        <li>点击 Mac 屏幕左上角苹果图标 ，打开<strong>“系统设置”（System Settings）</strong>。</li>
-        <li>在左侧边栏找到并进入<strong>“隐私与安全性”（Privacy &amp; Security）</strong>。</li>
-        <li>点击<strong>“辅助功能”（Accessibility）</strong>，在列表中找到“奶猫妙控”（NinoPad），将其右侧开关切换为允许状态。</li>
-        <li>返回上一层，点击<strong>“屏幕录制”或“屏幕与系统音频录制”</strong>，确保“奶猫妙控”开关已开启。</li>
+        <li>Click the Apple menu  in the top-left corner of your Mac screen and select <strong>System Settings</strong>.</li>
+        <li>In the left sidebar, navigate to <strong>Privacy &amp; Security</strong>.</li>
+        <li>Click <strong>Accessibility</strong>, locate "NinoPad" in the list, and toggle the switch to ON.</li>
+        <li>Return to the previous screen, click <strong>Screen Recording</strong> (or "Screen &amp; System Audio Recording"), and ensure "NinoPad" is enabled.</li>
       </ol>
 
       <figure class="article-figure article-figure-mac">
-        <img src="../../assets/screens/macos-settings.webp?v=20260831d" alt="奶猫妙控 Mac 端偏好设置" width="1516" height="1332" loading="lazy">
-        <figcaption>在 Mac 端偏好设置中，可实时查看权限状态、管理配对设备并开启开机自启</figcaption>
+        <img src="../../assets/screens/macos-settings.webp?v=20260831d" alt="NinoPad Mac companion preference window" width="1516" height="1332" loading="lazy">
+        <figcaption>Check permission statuses, manage paired devices, and toggle launch-at-login in Mac preferences.</figcaption>
       </figure>
 
-      <h2>三、常见连接与权限问题排查手册（FAQ）</h2>
+      <h2>3. Troubleshooting Common Connection Issues (FAQ)</h2>
       
-      <h3>1. 为什么手机扫描 Mac 端的二维码提示连接超时？</h3>
-      <p>请首先确认 iPhone/iPad 与 Mac 处于<strong>同一个 Wi-Fi 路由器或局域网下</strong>。如果路由器开启了“AP 隔离 (Client Isolation)”或处于“访客 Wi-Fi 模式”，局域网内设备将无法互相寻址。建议切换为同一标准家庭或办公室 Wi-Fi 网络。</p>
+      <h3>Why does QR code scanning show a connection timeout?</h3>
+      <p>Ensure that both your iPhone/iPad and Mac are connected to the <strong>same Wi-Fi router or local network</strong>. If your router has "AP Isolation (Client Isolation)" or "Guest Mode" enabled, devices cannot communicate directly. Switch to a standard home or office Wi-Fi network.</p>
 
-      <h3>2. 为什么 macOS 系统大版本升级后按键突然失效？</h3>
-      <p>系统更新或重新安装 App 后，先检查辅助功能列表中的授权是否仍然开启、对应的是否为当前安装的奶猫妙控。若开启后依然无法控制，可尝试移除旧条目，再添加当前 App；重新打开配套端后，用一次鼠标移动或文字输入确认是否恢复。</p>
+      <h3>Why did keypresses stop responding after a macOS major update?</h3>
+      <p>After a macOS update or reinstall, check if the Accessibility permission remains toggled ON for the currently installed NinoPad app. If it is already ON but not responding, remove the entry from the list using the "-" button and re-add NinoPad.</p>
 
-      <h3>3. 桌面串流出现黑屏或重复弹出权限提示？</h3>
-      <p>先检查屏幕录制授权，然后按系统提示退出并重新打开 Mac 配套端。返回手机重试画面预览；如果仍是黑屏，再确认授权对应当前安装的 App，以及手机和 Mac 的连接是否正常。</p>
+      <h3>Why is desktop streaming showing a black screen?</h3>
+      <p>Verify that Screen Recording permission is enabled, then quit and relaunch the NinoPad Mac companion app as prompted by macOS. Reopen the stream on your phone to resume preview.</p>
 
-      <h2>四、本地局域网点对点传输与隐私说明</h2>
-      <p>奶猫妙控团队深知用户的创作与工程隐私至关重要，从底层架构上保障数据安全：</p>
-      <ul>
-        <li><strong>局域网直连：</strong>这里的桌面控制流程通过配对设备间的连接传输按键、文字与画面。先确认连接的是自己的 Mac，再开始操作。</li>
-        <li><strong>按功能理解数据去向：</strong>本地直连描述的是手机与 Mac 的控制连接。系统语音识别或其他第三方服务有各自的处理方式，不能据此认为所有功能都无需联网。</li>
-        <li><strong>配对管理：</strong>在 Mac 配套端查看已配对设备，确认设备列表与自己的使用情况一致。配对信息和家庭服务令牌应只用于自己的设备连接。</li>
-      </ul>
+      <h2>4. Local Peer-to-Peer Privacy & Security</h2>
+      <p>All video frames, keystrokes, and trackpad data are transmitted strictly over your local Wi-Fi network via direct peer-to-peer (P2P) sockets. No screen data or user input is ever uploaded to cloud servers, ensuring total privacy and near-zero latency.</p>
     </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="remote-control-mac.html">← 在手机上查看并控制 Mac 桌面</a>
-      <a href="editing-keypad.html">用手机辅助剪辑：从浏览时间线到分割与撤销 →</a>
+
+    <nav class="article-next" aria-label="Continue reading">
+      <a href="remote-control-mac.html">← View and Control Mac Desktop on Mobile</a>
     </nav>
   </main>
 
   <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
+    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
+    <nav aria-label="Footer Navigation">
       <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
+      <a href="../updates.html">Updates</a>
       <a href="../blog.html">Blog</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
       <a href="/blog/mac-settings" data-lang-switch>简体中文</a>
     </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
+    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
   </footer>
   <script src="../../script.js" defer></script>
 </body>

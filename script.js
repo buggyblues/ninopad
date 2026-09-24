@@ -133,11 +133,12 @@ const initLayoutTabs = () => {
       item.tabIndex = selected ? 0 : -1;
     });
     if (moveFocus) tab.focus();
+    const isEn = document.documentElement.lang === 'en';
     tutorialLinks.forEach((link) => {
       link.href = tab.dataset.blogHref;
-      link.setAttribute('aria-label', `阅读${tab.dataset.name}布局教程`);
+      link.setAttribute('aria-label', isEn ? `Read ${tab.dataset.name} Layout Guide` : `阅读${tab.dataset.name}布局教程`);
       if (link.hasAttribute('data-layout-guide-label')) {
-        link.textContent = `阅读${tab.dataset.name}布局教程 →`;
+        link.textContent = isEn ? `Read ${tab.dataset.name} Layout Tutorial →` : `阅读${tab.dataset.name}布局教程 →`;
       }
     });
 
@@ -175,7 +176,11 @@ const initLayoutTabs = () => {
     filters.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
     tabs.forEach((tab) => { tab.hidden = tab.dataset.layoutGroup !== button.dataset.layoutFilter; });
     const visible = tabs.filter((tab) => !tab.hidden);
-    if (results) results.textContent = `${button.childNodes[0].textContent.trim()} · ${visible.length} 套布局`;
+    if (results) {
+      const isEn = document.documentElement.lang === 'en';
+      const suffix = isEn ? (visible.length === 1 ? '1 Layout' : `${visible.length} Layouts`) : `${visible.length} 套布局`;
+      results.textContent = `${button.childNodes[0].textContent.trim()} · ${suffix}`;
+    }
     const selected = visible.find((tab) => tab.getAttribute('aria-selected') === 'true');
     select(selected || visible[0]);
   };
@@ -284,7 +289,14 @@ const initTypewriter = (gsap) => {
   const caret = document.querySelector('.type-caret');
   if (!target) return;
 
-  const phrases = [
+  const isEn = document.documentElement.lang === 'en';
+  const phrases = isEn ? [
+    'Your Mac Control Deck,',
+    'Adaptive Video Editing,',
+    'Low-Latency Screen Mirror,',
+    'Voice & Text Injection,',
+    'Custom Tactile Dials,'
+  ] : [
     '随心全能小键盘，',
     '剪辑调色自适应，',
     '桌面镜像低延迟，',
