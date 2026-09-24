@@ -78,6 +78,7 @@ initPlatformDownloads();
 const initMobileNav = () => {
   const toggle = document.querySelector('[data-mobile-nav-toggle]');
   const drawer = document.querySelector('[data-mobile-drawer]');
+  const backdrop = document.querySelector('[data-mobile-drawer-backdrop]');
   const links = document.querySelectorAll('[data-mobile-nav-link]');
   if (!toggle || !drawer) return;
 
@@ -85,6 +86,7 @@ const initMobileNav = () => {
     document.body.classList.toggle('nav-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     drawer.setAttribute('aria-hidden', String(!open));
+    if (backdrop) backdrop.setAttribute('aria-hidden', String(!open));
   };
 
   toggle.addEventListener('click', () => {
@@ -92,21 +94,60 @@ const initMobileNav = () => {
     setOpen(!isOpen);
   });
 
+  if (backdrop) {
+    backdrop.addEventListener('click', () => setOpen(false));
+  }
+
   links.forEach((link) => {
     link.addEventListener('click', () => setOpen(false));
   });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && document.body.classList.contains('nav-open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && document.body.classList.contains('nav-open')) {
+      setOpen(false);
+    }
+  }, { passive: true });
 };
 initMobileNav();
 
 const initLayoutTabs = () => {
-  const tabs = Array.from(document.querySelectorAll('[role="tab"][data-image]'));
+  const tabs = Array.from(document.querySelectorAll('.knob-tick[data-image]'));
+  const nodeItems = Array.from(document.querySelectorAll('.knob-node-item'));
   const panel = document.querySelector('#layout-panel');
   const preview = document.querySelector('[data-layout-image]');
   const name = document.querySelector('[data-layout-name]');
   const description = document.querySelector('[data-layout-description]');
   const tutorialLinks = document.querySelectorAll('[data-layout-guide]');
+  const ledIndex = document.querySelector('[data-led-index]');
+  const ledBody = document.querySelector('.led-screen-body');
   const caption = preview?.nextElementSibling;
+  const animTargets = [preview, ledBody, caption].filter(Boolean);
+
+  const knob = document.querySelector('#layout-knob');
+  const knobBody = knob?.querySelector('.knob-dial-body');
+  const knobMount = document.querySelector('.knob-rotary-mount');
+  const knobIcon = document.querySelector('[data-knob-icon]');
+  const knobHubName = document.querySelector('[data-knob-hub-name]');
+
   if (!tabs.length || !panel || !preview || !name || !description) return;
+
+  const isEn = document.documentElement.lang === 'en';
+
+  const dismissInvitation = () => {
+    if (knob && knob.classList.contains('is-inviting')) {
+      knob.classList.remove('is-inviting');
+      if (knobBody) {
+        knobBody.style.animation = 'none';
+      }
+    }
+  };
 
   const preload = () => {
     [...new Set(tabs.map((tab) => tab.dataset.image))].forEach((src) => {
@@ -117,6 +158,27 @@ const initLayoutTabs = () => {
   if ('requestIdleCallback' in window) window.requestIdleCallback(preload);
   else window.setTimeout(preload, 500);
 
+  const getAngleForIndex = (index, total = tabs.length) => {
+    if (total <= 1) return 0;
+    return -135 + (index / (total - 1)) * 270;
+  };
+
+  const layoutPerimeterNodes = () => {
+    if (!knobMount || !nodeItems.length) return;
+    const mountWidth = knobMount.clientWidth;
+    const radius = Math.max(68, mountWidth / 2 - (mountWidth < 260 ? 10 : 14));
+
+    nodeItems.forEach((item, index) => {
+      const angle = getAngleForIndex(index, tabs.length);
+      const tick = item.querySelector('.knob-tick');
+      if (tick) {
+        tick.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translate(0, -${radius}px)`;
+      }
+    });
+  };
+
+  layoutPerimeterNodes();
+
   const commit = (tab) => {
     preview.src = tab.dataset.image;
     preview.alt = tab.dataset.alt;
@@ -125,15 +187,41 @@ const initLayoutTabs = () => {
     panel.setAttribute('aria-labelledby', tab.id);
   };
 
-  const select = (tab, moveFocus = false) => {
+  const updateKnobReadout = (tab, index, total) => {
+    if (knobIcon && tab.dataset.icon) {
+      knobIcon.src = tab.dataset.icon;
+    }
+    if (knobHubName) knobHubName.textContent = tab.dataset.name;
+    if (ledIndex) {
+      const cur = String(index + 1).padStart(2, '0');
+      const tot = String(total).padStart(2, '0');
+      ledIndex.textContent = `${cur} / ${tot}`;
+    }
+    if (knob) {
+      knob.setAttribute('aria-valuenow', String(index + 1));
+      knob.setAttribute('aria-valuemax', String(total));
+      knob.setAttribute('aria-valuetext', tab.dataset.name);
+    }
+    nodeItems.forEach((node, i) => {
+      node.classList.toggle('is-active', i === index);
+    });
+  };
+
+  const select = (tab, animateKnob = true, moveFocus = false) => {
     if (!tab) return;
+    const index = tabs.indexOf(tab);
+    if (index === -1) return;
+
+    dismissInvitation();
+
     tabs.forEach((item) => {
       const selected = item === tab;
       item.setAttribute('aria-selected', String(selected));
       item.tabIndex = selected ? 0 : -1;
     });
+
     if (moveFocus) tab.focus();
-    const isEn = document.documentElement.lang === 'en';
+
     tutorialLinks.forEach((link) => {
       link.href = tab.dataset.blogHref;
       link.setAttribute('aria-label', isEn ? `Read ${tab.dataset.name} Layout Guide` : `阅读${tab.dataset.name}布局教程`);
@@ -142,27 +230,43 @@ const initLayoutTabs = () => {
       }
     });
 
+    updateKnobReadout(tab, index, tabs.length);
+
+    const targetAngle = getAngleForIndex(index, tabs.length);
+    if (knobBody) {
+      if (animateKnob && window.gsap && !prefersReducedMotion) {
+        window.gsap.killTweensOf(knobBody);
+        window.gsap.to(knobBody, {
+          rotation: targetAngle,
+          duration: 0.35,
+          ease: 'back.out(1.4)'
+        });
+      } else {
+        knobBody.style.transform = `rotate(${targetAngle}deg)`;
+      }
+    }
+
     if (!window.gsap || prefersReducedMotion) {
       commit(tab);
       return;
     }
 
-    window.gsap.killTweensOf([preview, caption]);
-    window.gsap.to([preview, caption], {
+    window.gsap.killTweensOf(animTargets);
+    window.gsap.to(animTargets, {
       autoAlpha: 0,
-      y: 12,
-      duration: .16,
+      y: 8,
+      duration: .14,
       ease: 'power2.in',
       onComplete: () => {
         commit(tab);
-        window.gsap.fromTo([preview, caption], {
+        window.gsap.fromTo(animTargets, {
           autoAlpha: 0,
-          y: 16
+          y: 10
         }, {
           autoAlpha: 1,
           y: 0,
-          duration: .38,
-          stagger: .04,
+          duration: .3,
+          stagger: .02,
           ease: 'power3.out',
           clearProps: 'transform'
         });
@@ -170,38 +274,175 @@ const initLayoutTabs = () => {
     });
   };
 
-  const filters = Array.from(document.querySelectorAll('[data-layout-filter]'));
-  const results = document.querySelector('[data-layout-results]');
-  const filter = (button) => {
-    filters.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-    tabs.forEach((tab) => { tab.hidden = tab.dataset.layoutGroup !== button.dataset.layoutFilter; });
-    const visible = tabs.filter((tab) => !tab.hidden);
-    if (results) {
-      const isEn = document.documentElement.lang === 'en';
-      const suffix = isEn ? (visible.length === 1 ? '1 Layout' : `${visible.length} Layouts`) : `${visible.length} 套布局`;
-      results.textContent = `${button.childNodes[0].textContent.trim()} · ${suffix}`;
-    }
-    const selected = visible.find((tab) => tab.getAttribute('aria-selected') === 'true');
-    select(selected || visible[0]);
+  const step = (delta) => {
+    const currentSelected = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+    const currentIndex = tabs.indexOf(currentSelected);
+    const nextIndex = (currentIndex + delta + tabs.length) % tabs.length;
+    select(tabs[nextIndex], true);
+    if (navigator.vibrate) navigator.vibrate(8);
   };
-  filters.forEach((button) => button.addEventListener('click', () => filter(button)));
-  if (filters.length) filter(filters.find((button) => button.getAttribute('aria-pressed') === 'true') || filters[0]);
+
+  // Knob Drag & Tap Interaction
+  if (knob && knobBody) {
+    let isDragging = false;
+    let didDragMove = false;
+    let startX = 0;
+    let startY = 0;
+    let pointerDownTime = 0;
+
+    const onPointerDown = (e) => {
+      dismissInvitation();
+      isDragging = true;
+      didDragMove = false;
+      startX = e.clientX;
+      startY = e.clientY;
+      pointerDownTime = Date.now();
+      knob.setPointerCapture?.(e.pointerId);
+      window.addEventListener('pointermove', onPointerMove, { passive: false });
+      window.addEventListener('pointerup', onPointerUp, { once: true });
+      window.addEventListener('pointercancel', onPointerUp, { once: true });
+    };
+
+    const updateDrag = (e) => {
+      if (!isDragging) return;
+      const rect = knob.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const rad = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+      let deg = rad * (180 / Math.PI) + 90;
+      while (deg > 180) deg -= 360;
+      while (deg < -180) deg += 360;
+
+      const clampedDeg = Math.max(-135, Math.min(135, deg));
+      const progress = (clampedDeg + 135) / 270;
+      const targetIndex = Math.max(0, Math.min(tabs.length - 1, Math.round(progress * (tabs.length - 1))));
+      const targetTab = tabs[targetIndex];
+
+      knobBody.style.transform = `rotate(${clampedDeg}deg)`;
+
+      if (targetTab && targetTab.getAttribute('aria-selected') !== 'true') {
+        select(targetTab, false);
+        if (navigator.vibrate) navigator.vibrate(6);
+      }
+    };
+
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      const dist = Math.hypot(e.clientX - startX, e.clientY - startY);
+      if (dist > 6) {
+        didDragMove = true;
+        e.preventDefault();
+        updateDrag(e);
+      }
+    };
+
+    const onPointerUp = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      window.removeEventListener('pointermove', onPointerMove);
+
+      const duration = Date.now() - pointerDownTime;
+      if (!didDragMove && duration < 500) {
+        // Tapped on the knob without dragging -> switch to next layout!
+        step(1);
+        return;
+      }
+
+      const currentSelected = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+      const currentIndex = tabs.indexOf(currentSelected);
+      const snapAngle = getAngleForIndex(currentIndex, tabs.length);
+
+      if (window.gsap && !prefersReducedMotion) {
+        window.gsap.to(knobBody, {
+          rotation: snapAngle,
+          duration: 0.28,
+          ease: 'back.out(1.5)'
+        });
+      } else {
+        knobBody.style.transform = `rotate(${snapAngle}deg)`;
+      }
+    };
+
+    knob.addEventListener('pointerdown', onPointerDown);
+
+    // Mouse wheel on knob
+    const onWheel = (e) => {
+      dismissInvitation();
+      e.preventDefault();
+      step(e.deltaY > 0 ? 1 : -1);
+    };
+    knob.addEventListener('wheel', onWheel, { passive: false });
+    knob.addEventListener('mouseenter', dismissInvitation, { once: true });
+  }
+
+  // Keyboard navigation on knob & tabs
+  knob?.addEventListener('keydown', (event) => {
+    dismissInvitation();
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      step(1);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      step(-1);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      if (tabs.length) select(tabs[0], true);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      if (tabs.length) select(tabs[tabs.length - 1], true);
+    }
+  });
+
+  // Swipe gesture on preview frame
+  const previewFrame = document.querySelector('.layout-preview-frame');
+  if (previewFrame) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    previewFrame.addEventListener('touchstart', (e) => {
+      dismissInvitation();
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    previewFrame.addEventListener('touchend', (e) => {
+      if (e.changedTouches.length === 1) {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+          step(dx < 0 ? 1 : -1);
+        }
+      }
+    }, { passive: true });
+  }
 
   tabs.forEach((tab) => {
-    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('click', () => {
+      dismissInvitation();
+      select(tab, true);
+    });
     tab.addEventListener('keydown', (event) => {
-      const visible = tabs.filter((item) => !item.hidden);
-      const index = visible.indexOf(tab);
+      dismissInvitation();
+      const index = tabs.indexOf(tab);
       let nextIndex = index;
-      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % visible.length;
-      else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + visible.length) % visible.length;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + tabs.length) % tabs.length;
       else if (event.key === 'Home') nextIndex = 0;
-      else if (event.key === 'End') nextIndex = visible.length - 1;
+      else if (event.key === 'End') nextIndex = tabs.length - 1;
       else return;
       event.preventDefault();
-      select(visible[nextIndex], true);
+      select(tabs[nextIndex], true, true);
     });
   });
+
+  // Select initial tab
+  const initial = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+  select(initial, false);
+
+  window.addEventListener('resize', () => {
+    layoutPerimeterNodes();
+  }, { passive: true });
 };
 
 const initRemoteShowcase = () => {
@@ -618,7 +859,7 @@ const initMotion = () => {
     if (!motion) return undefined;
 
     const cleanups = [];
-    const reveal = { duration: .72, ease: 'power3.out', autoAlpha: 0, y: 36 };
+    const reveal = { duration: .72, ease: 'power3.out', autoAlpha: 0, y: 36, clearProps: 'transform,opacity,visibility' };
 
     gsap.timeline({ defaults: { ease: 'power3.out' } })
       .from('.site-header', { autoAlpha: 0, y: -18, duration: .5 })
@@ -699,7 +940,7 @@ const initMotion = () => {
 
     gsap.timeline({ scrollTrigger: { trigger: '.scenarios-section', start: 'top 76%', once: true } })
       .from('.role-tabs', { ...reveal, y: 18 })
-      .from('.role-panel.is-active > *', { ...reveal, y: 23, stagger: .07 }, '-=.34')
+      .from('.role-panels', { ...reveal, y: 23 }, '-=.34')
       .from('.role-stage', { autoAlpha: 0, xPercent: desktop ? 12 : 0, y: 38, rotation: 5, scale: .9, duration: .72, ease: 'back.out(1.45)' }, '-=.48');
 
     gsap.timeline({ scrollTrigger: { trigger: '.pro-section', start: 'top 76%', once: true } })
@@ -865,6 +1106,8 @@ const initMotion = () => {
     return () => cleanups.forEach((cleanup) => cleanup());
   });
 
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+  window.addEventListener('hashchange', () => ScrollTrigger.refresh());
 };
 
 const initBlogFilter = () => {

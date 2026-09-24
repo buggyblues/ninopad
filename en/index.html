@@ -214,106 +214,125 @@
     </section>
 
     <section class="layouts-section" id="layouts">
-      <div class="layout-copy">
-        <p class="eyebrow">INTELLIGENT WORKSPACES</p>
+      <div class="layouts-header">
         <h2>Ready-made Layouts, Easily Customized</h2>
-        <p>Connect instantly over local Wi-Fi. Preset setups for editing, music, presentation, coding, and writing with intuitive tactile knobs and keys. <a href="blog.html">View user guides →</a></p>
-        <div class="layout-filters" role="group" aria-label="Browse layouts by category">
-          <button type="button" data-layout-filter="daily" aria-pressed="true" aria-controls="layout-options">Productivity <span>4</span></button>
-          <button type="button" data-layout-filter="reading" aria-pressed="false" aria-controls="layout-options">Writing <span>3</span></button>
-          <button type="button" data-layout-filter="development" aria-pressed="false" aria-controls="layout-options">Dev Tools <span>3</span></button>
-          <button type="button" data-layout-filter="creative" aria-pressed="false" aria-controls="layout-options">Creative <span>2</span></button>
-          <button type="button" data-layout-filter="music" aria-pressed="false" aria-controls="layout-options">Audio &amp; Fun <span>5</span></button>
-          <button type="button" data-layout-filter="home" aria-pressed="false" aria-controls="layout-options">Smart Home <span>1</span></button>
+        <p>18 ready-made layouts for your Mac workflow. Turn the dial to switch. <a href="blog.html">View user guides →</a></p>
+      </div>
+
+      <!-- Unified Hardware Console Deck -->
+      <div class="deck-hardware-chassis" id="layout-panel" role="tabpanel" aria-labelledby="layout-tab-work">
+        
+        <!-- Left Hardware Bay: Retro LCD Screen on Top, Rotary Knob Below -->
+        <div class="deck-controls-bay">
+          
+          <!-- Clean Retro LCD Status Screen (No outer decorations) -->
+          <div class="deck-lcd-screen" aria-live="polite">
+            <div class="lcd-screen-glass">
+              <div class="lcd-screen-header">
+                <div class="lcd-header-tags">
+                  <span class="lcd-tag is-active">AUTO</span>
+                  <span class="lcd-tag is-active">PRESET</span>
+                </div>
+                <span class="lcd-screen-index" data-led-index>01 / 18</span>
+              </div>
+
+              <div class="lcd-screen-body led-screen-body">
+                <strong class="lcd-screen-name" data-layout-name>Work</strong>
+                <p class="lcd-screen-desc" data-layout-description>macOS Desktop &amp; Apps · Trackpad, scroll wheel, and vital shortcuts on one screen.</p>
+              </div>
+
+              <div class="lcd-screen-footer">
+                <a class="lcd-screen-link" data-layout-guide data-layout-guide-label href="blog/layout-work.html">Read Tutorial →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rotary Dial Unit (Below LCD screen, Clean Minimalist Knob) -->
+          <div class="deck-dial-unit">
+            <div class="knob-rotary-mount">
+              <!-- Preset Data Store / Accessible Tablist -->
+              <div class="knob-items-ring" id="knob-ring" role="tablist" aria-label="Preset Layouts" style="display:none;">
+                <div class="knob-node-item is-active" data-index="0">
+                  <button id="layout-tab-work" class="knob-tick" type="button" role="tab" aria-selected="true" aria-controls="layout-panel" tabindex="0" data-image="../assets/screens/release-1.3.1/store-01-studio.webp" data-name="Work" data-icon="../assets/layouts/work.svg" data-description="macOS Desktop &amp; Apps · Trackpad, scroll wheel, and vital shortcuts on one screen." data-alt="NinoPad Work Layout UI demo" data-blog-href="blog/layout-work.html" aria-label="Work" title="Work"></button>
+                </div>
+                <div class="knob-node-item" data-index="1">
+                  <button id="layout-tab-launcher" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-launcher.webp" data-name="Launcher" data-icon="../assets/layouts/launcher.svg" data-description="Dock &amp; App Switcher · Favorite Mac apps as large touch icons to bring frontmost instantly." data-alt="NinoPad Launcher Layout UI demo" data-blog-href="blog/layout-launcher.html" aria-label="Launcher" title="Launcher"></button>
+                </div>
+                <div class="knob-node-item" data-index="2">
+                  <button id="layout-tab-browser" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-browser.webp" data-name="Browser" data-icon="../assets/layouts/browser.svg" data-description="Safari &amp; Chrome · Direct bookmark shortcuts, tab slider, and in-page search." data-alt="NinoPad Browser Layout UI demo" data-blog-href="blog/layout-browser.html" aria-label="Browser" title="Browser"></button>
+                </div>
+                <div class="knob-node-item" data-index="3">
+                  <button id="layout-tab-finance" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-finance.webp" data-name="Finance" data-icon="../assets/layouts/finance.svg" data-description="Excel &amp; Sheets · Numeric keypad, instant calculator, and frequent formula helpers." data-alt="NinoPad Finance Layout UI demo" data-blog-href="blog/layout-finance.html" aria-label="Finance" title="Finance"></button>
+                </div>
+                <div class="knob-node-item" data-index="4">
+                  <button id="layout-tab-writing" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/text-1.3.0-r1/writing-01.webp" data-name="Writing" data-icon="../assets/layouts/writing.svg" data-description="Markdown &amp; Editors · Multi-tier cursor nav, precise selection, and quick formatting." data-alt="NinoPad Writing Layout UI demo" data-blog-href="blog/layout-writing.html" aria-label="Writing" title="Writing"></button>
+                </div>
+                <div class="knob-node-item" data-index="5">
+                  <button id="layout-tab-research" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/text-1.3.0-r1/research-01.webp" data-name="Research" data-icon="../assets/layouts/research.svg" data-description="PDF &amp; Web Clipping · Clip quotes, methods, and evidence with source URLs preserved." data-alt="NinoPad Research Layout UI demo" data-blog-href="blog/layout-research.html" aria-label="Research" title="Research"></button>
+                </div>
+                <div class="knob-node-item" data-index="6">
+                  <button id="layout-tab-reading" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-reading.webp" data-name="Reading" data-icon="../assets/layouts/reading.svg" data-description="Books &amp; PDFs · Rotary page turning, smooth scrolling, and chapter jump." data-alt="NinoPad Reading Layout UI demo" data-blog-href="blog/layout-reading.html" aria-label="Reading" title="Reading"></button>
+                </div>
+                <div class="knob-node-item" data-index="7">
+                  <button id="layout-tab-coding-lab" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.1/store-14-coding-lab.webp" data-name="AI Coding" data-icon="../assets/layouts/coding-lab.svg" data-description="Claude Code &amp; Codex · Live generation status, session switcher, and queue approval." data-alt="NinoPad AI Coding Layout UI demo" data-blog-href="blog/layout-codex.html" aria-label="AI Coding" title="AI Coding"></button>
+                </div>
+                <div class="knob-node-item" data-index="8">
+                  <button id="layout-tab-codex" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.1/store-09-codex.webp" data-name="Codex" data-icon="../assets/layouts/codex.svg" data-description="Codex App · Live slot status inspection with rotary reasoning effort dial." data-alt="NinoPad Codex Layout UI demo" data-blog-href="blog/layout-codex.html" aria-label="Codex" title="Codex"></button>
+                </div>
+                <div class="knob-node-item" data-index="9">
+                  <button id="layout-tab-terminal" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-terminal.webp" data-name="Terminal" data-icon="../assets/layouts/terminal.svg" data-description="Mac Terminal &amp; SSH · Live status monitor, full keyboard, and shell control keys." data-alt="NinoPad Terminal Layout UI demo" data-blog-href="blog/layout-terminal.html" aria-label="Terminal" title="Terminal"></button>
+                </div>
+                <div class="knob-node-item" data-index="10">
+                  <button id="layout-tab-creative" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-resolve.webp" data-name="Studio" data-icon="../assets/layouts/creative.svg" data-description="DaVinci, Premiere &amp; CapCut · Auto-adapts to active app with timeline jog &amp; color wheels." data-alt="NinoPad Studio Layout UI demo" data-blog-href="blog/layout-creative.html" aria-label="Studio" title="Studio"></button>
+                </div>
+                <div class="knob-node-item" data-index="11">
+                  <button id="layout-tab-presentation" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-presentation-assist.webp" data-name="Present" data-icon="../assets/layouts/presentation.svg" data-description="Keynote &amp; PowerPoint · Slide remote, presenter notes, and stage timer in one view." data-alt="NinoPad Presentation Layout UI demo" data-blog-href="blog/layout-presentation.html" aria-label="Present" title="Present"></button>
+                </div>
+                <div class="knob-node-item" data-index="12">
+                  <button id="layout-tab-media" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-media.webp" data-name="Media" data-icon="../assets/layouts/media.svg" data-description="Apple Music &amp; Spotify · Classic click wheel for track browsing and volume tuning." data-alt="NinoPad Media Layout UI demo" data-blog-href="blog/layout-media.html" aria-label="Media" title="Media"></button>
+                </div>
+                <div class="knob-node-item" data-index="13">
+                  <button id="layout-tab-sampler" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-sampler.webp" data-name="Sampler" data-icon="../assets/layouts/sampler.svg" data-description="Audio Sampler · Instant recording, auto-slicing, and 16 velocity drum pads." data-alt="NinoPad Sampler Layout UI demo" data-blog-href="blog/layout-sampler.html" aria-label="Sampler" title="Sampler"></button>
+                </div>
+                <div class="knob-node-item" data-index="14">
+                  <button id="layout-tab-synthesizer" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.0/synth-01-chord.webp" data-name="Synthesizer" data-icon="../assets/layouts/synthesizer.svg" data-description="Synth Engine &amp; MIDI · Diatonic chords, filter knobs, and 6-track looper." data-alt="NinoPad Synthesizer Layout UI demo" data-blog-href="blog/guide-synthesizer.html" aria-label="Synthesizer" title="Synthesizer"></button>
+                </div>
+                <div class="knob-node-item" data-index="15">
+                  <button id="layout-tab-guitar" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.0/guitar-01-play.webp" data-name="Guitar" data-icon="../assets/layouts/guitar.svg" data-description="Acoustic Guitar · Strum strings, change chords with joystick, with 100 interactive lessons." data-alt="NinoPad Guitar Layout UI demo" data-blog-href="blog/guide-guitar.html" aria-label="Guitar" title="Guitar"></button>
+                </div>
+                <div class="knob-node-item" data-index="16">
+                  <button id="layout-tab-arcade" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-arcade.webp" data-name="Arcade" data-icon="../assets/layouts/arcade.svg" data-description="Gamepad Mode · D-pad, ABXY, and shoulder triggers for Mac gaming." data-alt="NinoPad Arcade Layout UI demo" data-blog-href="blog/layout-arcade.html" aria-label="Arcade" title="Arcade"></button>
+                </div>
+                <div class="knob-node-item" data-index="17">
+                  <button id="layout-tab-smart-home" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-smart-home.webp" data-name="Smart Home" data-icon="../assets/layouts/smart-home.svg" data-description="Home Assistant &amp; Apple Home · Physical dials for lights, climate, and scenes." data-alt="NinoPad Smart Home Layout UI demo" data-blog-href="blog/layout-smart-home.html" aria-label="Smart Home" title="Smart Home"></button>
+                </div>
+              </div>
+
+              <!-- Sleek Hardware Knob Dial (Tap / Drag to change) -->
+              <div class="knob-dial is-inviting" id="layout-knob" role="slider" aria-label="Preset layout rotary dial" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1" aria-valuetext="Work" tabindex="0">
+                <div class="knob-dial-body">
+                  <div class="knob-grooves"></div>
+                  <div class="knob-pointer-needle"></div>
+                </div>
+                <div class="knob-center-hub">
+                  <img class="knob-hub-icon" data-knob-icon src="../assets/layouts/work.svg" alt="" width="36" height="36">
+                  <strong class="knob-hub-name" data-knob-hub-name>Work</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <p class="layout-results" data-layout-results aria-live="polite">Productivity · 4 Layouts</p>
-        <div class="layout-tabs" id="layout-options" role="tablist" aria-label="Preset Layouts">
-          <button id="layout-tab-work" class="layout-tab" type="button" role="tab" aria-selected="true" aria-controls="layout-panel" tabindex="0" data-layout-group="daily" data-image="../assets/screens/release-1.3.1/store-01-studio.webp" data-name="Work" data-description="macOS desktop & active window · Full overview, precision trackpad, smooth scroll wheel and frequent shortcuts on one screen." data-alt="NinoPad Work Layout UI demo" data-blog-href="blog/layout-work.html">
-            <img src="../assets/layouts/work.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Work</strong><span class="layout-tab-tag">Productivity</span></div>
-          </button>
-          <button id="layout-tab-launcher" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="daily" data-image="../assets/screens/v1.2.0/control-launcher.webp" data-name="Launcher" data-description="Installed Mac apps & Dock · Turn favorite desktop apps into accessible touch icons to bring them frontmost instantly." data-alt="NinoPad Launcher Layout UI demo" data-blog-href="blog/layout-launcher.html">
-            <img src="../assets/layouts/launcher.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Launcher</strong><span class="layout-tab-tag">Productivity</span></div>
-          </button>
-          <button id="layout-tab-browser" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="daily" data-image="../assets/screens/v1.2.0/control-browser.webp" data-name="Browser" data-description="Default browser, Safari, Chrome · Navigate to URLs, switch tabs with tactile slider, and trigger in-page search." data-alt="NinoPad Browser Layout UI demo" data-blog-href="blog/layout-browser.html">
-            <img src="../assets/layouts/browser.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Browser</strong><span class="layout-tab-tag">Productivity</span></div>
-          </button>
-          <button id="layout-tab-finance" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="daily" data-image="../assets/screens/v1.2.0/control-finance.webp" data-name="Finance" data-description="Excel, Numbers, Google Sheets · Numeric keypad, local calculator, and 64 formula helpers for quick data entry." data-alt="NinoPad Finance Layout UI demo" data-blog-href="blog/layout-finance.html">
-            <img src="../assets/layouts/finance.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Finance</strong><span class="layout-tab-tag">Productivity</span></div>
-          </button>
-          <button id="layout-tab-writing" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="reading" data-image="../assets/screens/text-1.3.0-r1/writing-01.webp" data-name="Writing" data-description="TextEdit, Obsidian, Markdown editors · 4-tier navigation (char/word/line/para), precise text selection, and formatting shortcuts." data-alt="NinoPad Writing Layout UI demo" data-blog-href="blog/layout-writing.html">
-            <img src="../assets/layouts/writing.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Writing</strong><span class="layout-tab-tag">Writing</span></div>
-          </button>
-          <button id="layout-tab-research" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="reading" data-image="../assets/screens/text-1.3.0-r1/research-01.webp" data-name="Research" data-description="PDF reader & browser clipping · Categorize clips by idea, method, evidence with source URL preserved." data-alt="NinoPad Research Layout UI demo" data-blog-href="blog/layout-research.html">
-            <img src="../assets/layouts/research.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Research</strong><span class="layout-tab-tag">Writing</span></div>
-          </button>
-          <button id="layout-tab-reading" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="reading" data-image="../assets/screens/v1.2.0/control-reading.webp" data-name="Reading" data-description="Preview, Apple Books, Skim, Safari · Turn pages with dual-direction knob, smooth scrolling, and chapter navigation." data-alt="NinoPad Reading Layout UI demo" data-blog-href="blog/layout-reading.html">
-            <img src="../assets/layouts/reading.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Reading</strong><span class="layout-tab-tag">Writing</span></div>
-          </button>
-          <button id="layout-tab-coding-lab" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="development" data-image="../assets/screens/release-1.3.1/store-14-coding-lab.webp" data-name="AI Coding" data-description="Claude Code, Codex, Antigravity · Switch project sessions, read status, inspect queue and approve AI changes." data-alt="NinoPad AI Coding Layout UI demo" data-blog-href="blog/layout-codex.html">
-            <img src="../assets/layouts/coding-lab.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>AI Coding<span class="layout-new">New</span></strong><span class="layout-tab-tag">Dev Tools</span></div>
-          </button>
-          <button id="layout-tab-codex" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="development" data-image="../assets/screens/release-1.3.1/store-09-codex.webp" data-name="Codex" data-description="Codex desktop app · Real-time slot status inspection, click to preview, double-click to focus, knob for reasoning effort." data-alt="NinoPad Codex Layout UI demo" data-blog-href="blog/layout-codex.html">
-            <img src="../assets/layouts/codex.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Codex</strong><span class="layout-tab-tag">Dev Tools</span></div>
-          </button>
-          <button id="layout-tab-terminal" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="development" data-image="../assets/screens/v1.2.0/control-terminal.webp" data-name="Terminal" data-description="Mac Login Shell, vim, top, ssh · Directly manage Shell sessions with status display, full-screen keyboard and control keys." data-alt="NinoPad Terminal Layout UI demo" data-blog-href="blog/layout-terminal.html">
-            <img src="../assets/layouts/terminal.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Terminal</strong><span class="layout-tab-tag">Dev Tools</span></div>
-          </button>
-          <button id="layout-tab-creative" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="creative" data-image="../assets/screens/v1.2.0/control-resolve.webp" data-name="Studio" data-description="DaVinci Resolve, Premiere Pro, Final Cut Pro, CapCut · Automatically adapts buttons to foreground apps." data-alt="NinoPad Studio Layout UI demo" data-blog-href="blog/layout-creative.html">
-            <img src="../assets/layouts/creative.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Studio</strong><span class="layout-tab-tag">Creative</span></div>
-          </button>
-          <button id="layout-tab-presentation" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="creative" data-image="../assets/screens/v1.2.0/control-presentation-assist.webp" data-name="Present" data-description="Keynote, PowerPoint, Screen Share · Combines presentation notes, slide remote, timer, and camera overlay." data-alt="NinoPad Presentation Layout UI demo" data-blog-href="blog/layout-presentation.html">
-            <img src="../assets/layouts/presentation.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Present</strong><span class="layout-tab-tag">Creative</span></div>
-          </button>
-          <button id="layout-tab-media" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="../assets/screens/v1.2.0/control-media.webp" data-name="Media" data-description="Apple Music, Spotify, audio players · Classic click wheel for track selection, volume scrub and playback control." data-alt="NinoPad Media Layout UI demo" data-blog-href="blog/layout-media.html">
-            <img src="../assets/layouts/media.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Media</strong><span class="layout-tab-tag">Audio</span></div>
-          </button>
-          <button id="layout-tab-sampler" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="../assets/screens/v1.2.0/control-sampler.webp" data-name="Sampler" data-description="Local audio on iPhone/iPad & Mac input · Record, auto-slice, and perform with 16 responsive drum pads." data-alt="NinoPad Sampler Layout UI demo" data-blog-href="blog/layout-sampler.html">
-            <img src="../assets/layouts/sampler.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Sampler</strong><span class="layout-tab-tag">Audio</span></div>
-          </button>
-          <button id="layout-tab-synthesizer" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="../assets/screens/release-1.3.0/synth-01-chord.webp" data-name="Synthesizer" data-description="On-device sound engine with Mac MIDI output · Diatonic chord keys, filter knobs, drum beats, and 6-track looper." data-alt="NinoPad Synthesizer Layout UI demo" data-blog-href="blog/guide-synthesizer.html">
-            <img src="../assets/layouts/synthesizer.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Synthesizer<span class="layout-new">New</span></strong><span class="layout-tab-tag">Audio</span></div>
-          </button>
-          <button id="layout-tab-guitar" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="../assets/screens/release-1.3.0/guitar-01-play.webp" data-name="Guitar" data-description="Strum 6 capacitive strings, change chords with joystick, and practice with 100 built-in interactive song lessons." data-alt="NinoPad Guitar Layout UI demo" data-blog-href="blog/guide-guitar.html">
-            <img src="../assets/layouts/guitar.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Guitar<span class="layout-new">New</span></strong><span class="layout-tab-tag">Audio</span></div>
-          </button>
-          <button id="layout-tab-arcade" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="../assets/screens/v1.2.0/control-arcade.webp" data-name="Arcade" data-description="NinoPad Game Hall & Mac gaming · D-pad, ABXY, and shoulder buttons on your touchscreen gamepad." data-alt="NinoPad Arcade Layout UI demo" data-blog-href="blog/layout-arcade.html">
-            <img src="../assets/layouts/arcade.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Arcade</strong><span class="layout-tab-tag">Games</span></div>
-          </button>
-          <button id="layout-tab-smart-home" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="home" data-image="../assets/screens/v1.2.0/control-smart-home.webp" data-name="Smart Home" data-description="Home Assistant, Apple Home, Matter · Seamlessly control room lights, scenes, and dimmers via physical-style dials." data-alt="NinoPad Smart Home Layout UI demo" data-blog-href="blog/layout-smart-home.html">
-            <img src="../assets/layouts/smart-home.svg" alt="" width="128" height="128">
-            <div class="layout-tab-info"><strong>Smart Home</strong><span class="layout-tab-tag">Home</span></div>
-          </button>
+
+        <!-- Right Hardware Bay: Device Screen Mockup -->
+        <div class="deck-screen-bay">
+          <div class="deck-screen-bezel">
+            <a class="layout-preview-frame" data-layout-guide href="blog/layout-work.html" aria-label="Read Work Layout Guide">
+              <img data-layout-image src="../assets/screens/release-1.3.1/store-01-studio.webp" alt="NinoPad Work Layout UI demo" width="1206" height="2622" loading="lazy" decoding="async">
+            </a>
+          </div>
         </div>
       </div>
-      <figure class="layout-preview" id="layout-panel" role="tabpanel" aria-labelledby="layout-tab-work" tabindex="0">
-        <a class="layout-preview-frame" data-layout-guide href="blog/layout-work.html" aria-label="Read Work Layout Guide">
-          <img data-layout-image src="../assets/screens/release-1.3.1/store-01-studio.webp" alt="NinoPad Work Layout UI demo" width="1206" height="2622" loading="lazy" decoding="async">
-        </a>
-        <figcaption>
-          <div class="layout-preview-badge"><span class="badge-dot"></span> App Interface · Live Demo</div>
-          <strong data-layout-name>Work</strong>
-          <span data-layout-description>macOS desktop & active window · Full overview, precision trackpad, smooth scroll wheel and frequent shortcuts on one screen.</span>
-          <a class="blog-read-btn" data-layout-guide data-layout-guide-label href="blog/layout-work.html">Read Work Layout Tutorial →</a>
-        </figcaption>
-      </figure>
-    </section>
 
     <section class="remote-section" id="remote">
       <div class="remote-intro">

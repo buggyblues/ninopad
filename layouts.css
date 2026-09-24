@@ -1,19 +1,547 @@
-/* Layout discovery only. Keep the site's established cards, palette and preview. */
-.layout-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
-.layout-filters button { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.65rem; padding: .5rem .8rem; border: 1px solid rgba(33,31,26,.1); border-radius: 999px; background: transparent; color: var(--muted); font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; }
-.layout-filters button span { font-size: .7rem; opacity: .72; }
-.layout-filters button[aria-pressed="true"] { color: var(--purple); border-color: var(--purple); background: #eeeaff; }
-.layout-filters button:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
-.layout-copy > .layout-results { margin-top: .9rem; font-size: .78rem; }
-.layout-results + .layout-tabs { margin-top: .7rem; }
-.layout-tabs .layout-tab[hidden] { display: none; }
-.layout-new { display: inline-block; margin-left: .4rem; color: #9a4a22; font-size: .65rem; padding: .1rem .3rem; border-radius: .3rem; background: #f8e1cc; vertical-align: .1em; }
+/* Layouts Section - Integrated Hardware Deck Console & Clean Retro LCD Styles */
+
+.layouts-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--paper);
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.layouts-header {
+  width: 100%;
+  max-width: 54rem;
+  text-align: center;
+}
+
+.layouts-header h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.layouts-header p {
+  margin-top: .65rem;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
+.layouts-header p a {
+  color: var(--purple);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Unified Hardware Console Chassis */
+.deck-hardware-chassis {
+  position: relative;
+  width: 100%;
+  max-width: 58rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.85fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: center;
+  background: linear-gradient(155deg, #fbf9f5 0%, #ece5d7 55%, #ded3be 100%);
+  border: 1px solid rgba(185, 172, 153, 0.6);
+  border-radius: clamp(1.5rem, 3vw, 2.25rem);
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  box-shadow:
+    0 28px 65px -14px rgba(45, 35, 20, 0.22),
+    0 10px 24px -6px rgba(45, 35, 20, 0.1),
+    inset 0 2px 3px rgba(255, 255, 255, 0.95),
+    inset 0 -3px 6px rgba(45, 35, 20, 0.15);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Left Hardware Bay: Retro LCD on Top, Knob Below */
+.deck-controls-bay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2.2vw, 1.45rem);
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   CLEAN RETRO DIGITAL LCD STATUS SCREEN (NO OUTER BEZEL DECORATIONS)
+   ========================================================= */
+
+.deck-lcd-screen {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.lcd-screen-glass {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 25%, #9db698 0%, #8ca686 60%, #7d9677 100%);
+  border: 2px solid #242c22;
+  border-radius: 0.75rem;
+  padding: clamp(0.7rem, 1.5vw, 0.95rem) clamp(0.85rem, 1.8vw, 1.15rem);
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.4),
+    inset 0 0 1px rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  color: #101c10;
+  font-family: ui-monospace, "SF Mono", "Courier Prime", "Cascadia Code", "Lucida Console", monospace;
+  overflow: hidden;
+}
+
+/* Micro LCD pixel scanline texture overlay */
+.lcd-screen-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(18, 28, 17, 0.08) 2px,
+      rgba(18, 28, 17, 0.08) 3px
+    );
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.lcd-screen-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px dashed rgba(18, 30, 17, 0.35);
+  padding-bottom: 0.35rem;
+}
+
+.lcd-header-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lcd-tag {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.08rem 0.3rem;
+  border-radius: 2px;
+  color: #101c10;
+  background: rgba(18, 30, 17, 0.12);
+  border: 1px solid rgba(18, 30, 17, 0.4);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.lcd-screen-index {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #0c160b;
+  letter-spacing: 0.06em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.lcd-screen-body {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.lcd-screen-name {
+  font-size: 1.22rem;
+  font-weight: 900;
+  color: #081207;
+  letter-spacing: -0.01em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.lcd-screen-desc {
+  font-size: 0.81rem;
+  line-height: 1.46;
+  color: #121f11;
+  font-weight: 600;
+  margin-top: 0.12rem;
+  text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.06);
+}
+
+.lcd-screen-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.48rem;
+  display: flex;
+  align-items: center;
+}
+
+.lcd-screen-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 900;
+  color: #0d170c;
+  background: rgba(18, 30, 17, 0.08);
+  border: 1.5px solid #232b21;
+  padding: 0.22rem 0.65rem;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.18s ease;
+}
+
+.lcd-screen-link:hover {
+  background: #142013;
+  color: #9db698;
+  border-color: #142013;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ROTARY DIAL UNIT (CLEAN TACTILE KNOB DIRECTLY BELOW LCD)
+   ========================================================= */
+
+.deck-dial-unit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.knob-rotary-mount {
+  position: relative;
+  width: clamp(140px, 16vw, 175px);
+  height: clamp(140px, 16vw, 175px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Central Rotary Knob */
+.knob-dial {
+  position: relative;
+  width: clamp(125px, 14.5vw, 155px);
+  height: clamp(125px, 14.5vw, 155px);
+  border-radius: 50%;
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+  z-index: 2;
+  transition: transform .14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.knob-dial:active {
+  cursor: grabbing;
+  transform: scale(0.96);
+}
+
+.knob-dial:focus-visible {
+  box-shadow: 0 0 0 3px var(--purple), 0 10px 24px rgba(45, 35, 20, 0.2);
+}
+
+/* Inviting Twist Wiggle Animation */
+@keyframes knob-invite-wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  12% {
+    transform: rotate(-12deg);
+  }
+  24% {
+    transform: rotate(12deg);
+  }
+  36% {
+    transform: rotate(-6deg);
+  }
+  48% {
+    transform: rotate(6deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.knob-dial.is-inviting .knob-dial-body {
+  animation: knob-invite-wiggle 3.4s ease-in-out infinite;
+}
+
+/* Rotating Body with Needle Pointer */
+.knob-dial-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #ede7dc 55%, #cbc1af 100%);
+  box-shadow:
+    0 12px 24px rgba(45, 35, 20, 0.16),
+    0 3px 6px rgba(45, 35, 20, 0.08),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95),
+    inset 0 -3px 6px rgba(55, 45, 30, 0.25),
+    0 0 0 1px rgba(33, 31, 26, 0.12);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.knob-grooves {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 1px dashed rgba(33, 31, 26, 0.1);
+  pointer-events: none;
+}
+
+.knob-pointer-needle {
+  position: absolute;
+  top: 5px;
+  left: calc(50% - 2.5px);
+  width: 5px;
+  height: 18px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #6455df 0%, #4639ad 100%);
+  box-shadow: 0 2px 6px rgba(100, 85, 223, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+/* Center Hub (Stationary & Upright - NEVER ROTATES) */
+.knob-center-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62%;
+  height: 62%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 45% 38%, #fcfaf5 0%, #e6dfd4 100%);
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.95),
+    0 3px 9px rgba(45, 35, 20, 0.14),
+    inset 0 -1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(33, 31, 26, 0.09);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.knob-hub-icon {
+  width: 1.85rem;
+  height: 1.85rem;
+  object-fit: contain;
+  transition: transform .22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.knob-hub-name {
+  font-size: .88rem;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1.1;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   RIGHT HARDWARE BAY: DEVICE SCREEN BAY
+   ========================================================= */
+
+.deck-screen-bay {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  width: 100%;
+}
+
+.deck-screen-bezel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.5rem, 1.2vw, 0.85rem);
+  background: radial-gradient(circle at 50% 30%, #e2d8c7 0%, #cdbfab 100%);
+  border-radius: clamp(1.4rem, 2.5vw, 1.95rem);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.18),
+    inset 0 0 2px rgba(0, 0, 0, 0.25),
+    0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.layout-preview-frame {
+  position: relative;
+  display: block;
+  transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: pan-y;
+}
+
+.layout-preview-frame:hover {
+  transform: translateY(-.25rem);
+}
+
+.layout-preview-frame img {
+  width: auto;
+  height: auto;
+  max-height: min(52svh, 30rem);
+  max-width: 100%;
+  aspect-ratio: 1206 / 2622;
+  object-fit: contain;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+/* =========================================================
+   MOBILE & TABLET RESPONSIVE STYLES (SINGLE-FOLD COHESIVE DISPLAY)
+   ========================================================= */
+
 @media (max-width: 56.25rem) {
-  .layout-filters { justify-content: center; gap: .4rem; }
-  .layout-filters button { min-height: 2.75rem; padding: .45rem .65rem; }
-  .layout-results + .layout-tabs { width: 100%; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); margin: .7rem 0 0; padding: .25rem 0; overflow: visible; gap: .6rem; }
-  .layout-tabs .layout-tab { width: 100%; min-width: 0; grid-template-columns: 1.9rem minmax(0,1fr); gap: .5rem; padding: .6rem; }
-  .layout-tabs .layout-tab img { width: 1.9rem; height: 1.9rem; }
-  .layout-tab strong { font-size: .84rem; }
-  .layout-tab-tag { font-size: .63rem; }
+  .layouts-section {
+    gap: 1.25rem;
+    padding-top: 1.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .layouts-header h2 {
+    font-size: clamp(1.15rem, 4.2vw, 1.55rem);
+    line-height: 1.25;
+  }
+
+  .layouts-header p {
+    font-size: clamp(0.78rem, 2.6vw, 0.88rem);
+    line-height: 1.4;
+    margin-top: .35rem;
+  }
+
+  .deck-hardware-chassis {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(0.65rem, 2vw, 1.15rem);
+    padding: clamp(0.85rem, 2.5vw, 1.25rem);
+    border-radius: 1.35rem;
+  }
+
+  .deck-controls-bay {
+    gap: 0.65rem;
+  }
+
+  .deck-lcd-screen {
+    max-width: 100%;
+  }
+
+  .lcd-screen-glass {
+    padding: 0.45rem 0.65rem;
+    border-radius: 0.55rem;
+  }
+
+  .lcd-screen-header {
+    padding-bottom: 0.25rem;
+  }
+
+  .lcd-tag {
+    font-size: 0.52rem;
+    padding: 0.05rem 0.22rem;
+  }
+
+  .lcd-screen-index {
+    font-size: 0.72rem;
+  }
+
+  .lcd-screen-body {
+    margin-top: 0.28rem;
+    gap: 0.1rem;
+  }
+
+  .lcd-screen-name {
+    font-size: 0.96rem;
+  }
+
+  .lcd-screen-desc {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .lcd-screen-footer {
+    margin-top: 0.35rem;
+  }
+
+  .lcd-screen-link {
+    font-size: 0.65rem;
+    padding: 0.18rem 0.48rem;
+  }
+
+  .knob-rotary-mount {
+    width: clamp(95px, 24vw, 125px);
+    height: clamp(95px, 24vw, 125px);
+  }
+
+  .knob-dial {
+    width: clamp(82px, 21vw, 110px);
+    height: clamp(82px, 21vw, 110px);
+  }
+
+  .knob-pointer-needle {
+    top: 4px;
+    left: calc(50% - 1.5px);
+    width: 3.5px;
+    height: 13px;
+  }
+
+  .knob-hub-icon {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .knob-hub-name {
+    font-size: .76rem;
+  }
+
+  .deck-screen-bezel {
+    padding: 0.35rem;
+    border-radius: 1.15rem;
+  }
+
+  .layout-preview-frame img {
+    max-height: min(34svh, 235px);
+    border-radius: 0.85rem;
+  }
+}
+
+@media (max-width: 24rem) {
+  .deck-hardware-chassis {
+    gap: .5rem;
+    padding: .65rem;
+  }
+
+  .knob-rotary-mount {
+    width: 88px;
+    height: 88px;
+  }
+
+  .knob-dial {
+    width: 76px;
+    height: 76px;
+  }
+
+  .layout-preview-frame img {
+    max-height: min(26svh, 175px);
+  }
 }

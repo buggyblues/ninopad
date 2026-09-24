@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f6f0e6">
   <meta name="description" content="奶猫妙控（NinoPad）是专为 Mac 打造的掌上副控与全能小键盘。支持 氛围编程与 Codex、Mac 原生 Shell 终端、剪映/DaVinci/FCP 剪辑自适应、低延迟桌面画面镜像与虚拟触控板。局域网本地直连，安全顺手。">
   <meta name="keywords" content="奶猫妙控,NinoPad,Mac小键盘,Mac远程控制,氛围编程,Codex副控,Mac终端,Shell,剪辑小键盘,DaVinci Resolve副控,Final Cut Pro控制台,剪映快捷键,Mac触控板,无线麦克风,演讲提词器,虚拟激光笔,掌上副控,Stream Deck替代">
@@ -154,19 +154,20 @@
     <div class="header-actions">
       <a class="header-lang" href="/en/" aria-label="Switch to English" data-lang-switch>EN</a>
       <a class="header-download" href="#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" aria-controls="mobile-drawer" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
       </button>
     </div>
   </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
+  <div class="mobile-drawer-backdrop" data-mobile-drawer-backdrop aria-hidden="true"></div>
+  <div class="mobile-drawer" id="mobile-drawer" data-mobile-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-label="移动端导航菜单">
     <ul>
-      <li><a href="#layouts" data-mobile-nav-link>功能</a></li>
-      <li><a href="#pro" data-mobile-nav-link>价格</a></li>
-      <li><a href="blog.html" data-mobile-nav-link>博客</a></li>
-      <li><a href="#faq" data-mobile-nav-link>常见问题</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
+      <li><a href="#layouts" data-mobile-nav-link><span>功能</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#pro" data-mobile-nav-link><span>价格</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="blog.html" data-mobile-nav-link><span>博客</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#faq" data-mobile-nav-link><span>常见问题</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link><span>游戏大厅</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
     </ul>
     <a class="mobile-drawer-download" data-mobile-nav-link href="#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
     <div class="mobile-drawer-lang">
@@ -216,105 +217,125 @@
     </section>
 
     <section class="layouts-section" id="layouts">
-      <div class="layout-copy">
-        <p class="eyebrow">INTELLIGENT WORKSPACES</p>
+      <div class="layouts-header">
         <h2>现成布局开箱即用，按习惯随时调整</h2>
-        <p>同一局域网下快捷连上 Mac。内置剪辑、音乐、演讲等预设布局，旋钮与按键各司其职，上手就能用，也能按个人习惯微调。 <a href="blog.html">查看快速上手指南 →</a></p>
-        <div class="layout-filters" role="group" aria-label="按用途浏览布局">
-<button type="button" data-layout-filter="daily" aria-pressed="true" aria-controls="layout-options">日常效率 <span>4</span></button>
-<button type="button" data-layout-filter="reading" aria-pressed="false" aria-controls="layout-options">阅读写作 <span>3</span></button>
-<button type="button" data-layout-filter="development" aria-pressed="false" aria-controls="layout-options">开发工具 <span>3</span></button>
-<button type="button" data-layout-filter="creative" aria-pressed="false" aria-controls="layout-options">创作演示 <span>2</span></button>
-<button type="button" data-layout-filter="music" aria-pressed="false" aria-controls="layout-options">音乐娱乐 <span>5</span></button>
-<button type="button" data-layout-filter="home" aria-pressed="false" aria-controls="layout-options">智能家居 <span>1</span></button>
-</div>
-<p class="layout-results" data-layout-results aria-live="polite">日常效率 · 4 套布局</p>
-<div class="layout-tabs" id="layout-options" role="tablist" aria-label="预设布局">
-<button id="layout-tab-work" class="layout-tab" type="button" role="tab" aria-selected="true" aria-controls="layout-panel" tabindex="0" data-layout-group="daily" data-image="assets/screens/release-1.3.1/store-01-studio.webp" data-name="工作" data-description="macOS 桌面与当前应用 · 桌面全貌、精准触控板、平滑滚轮与高频按键汇于一屏，边看边控更省心。" data-alt="奶猫妙控工作布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-work.html">
-<img src="assets/layouts/work.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>工作</strong><span class="layout-tab-tag">日常效率</span></div>
-</button>
-<button id="layout-tab-launcher" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="daily" data-image="assets/screens/v1.2.0/control-launcher.webp" data-name="启动器" data-description="Mac 已安装应用与 Dock · 将常用的电脑应用化作触手可及的大图标，点按即可切至前台。" data-alt="奶猫妙控启动器布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-launcher.html">
-<img src="assets/layouts/launcher.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>启动器</strong><span class="layout-tab-tag">日常效率</span></div>
-</button>
-<button id="layout-tab-browser" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="daily" data-image="assets/screens/v1.2.0/control-browser.webp" data-name="浏览器" data-description="默认浏览器；Safari、Chrome 等 Mac 浏览器 · 掌上直达网址、双向滑块切换标签与页内查找，畅享自如浏览。" data-alt="奶猫妙控浏览器布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-browser.html">
-<img src="assets/layouts/browser.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>浏览器</strong><span class="layout-tab-tag">日常效率</span></div>
-</button>
-<button id="layout-tab-finance" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="daily" data-image="assets/screens/v1.2.0/control-finance.webp" data-name="财务" data-description="通用 Mac 键盘输入；公式由 Excel、Numbers、Google Sheets 等目标软件解释 · 数字小键盘、本地计算器与 64 个常用表格公式，录入核算井井有条。" data-alt="奶猫妙控财务布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-finance.html">
-<img src="assets/layouts/finance.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>财务</strong><span class="layout-tab-tag">日常效率</span></div>
-</button>
-<button id="layout-tab-writing" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="reading" data-image="assets/screens/text-1.3.0-r1/writing-01.webp" data-name="写作" data-description="TextEdit 等标准编辑器；Obsidian 需安装随附插件 · 字/词/句/段四级位移、精准框选与 Markdown 快捷排版，让改稿更专注。" data-alt="奶猫妙控写作布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-writing.html">
-<img src="assets/layouts/writing.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>写作</strong><span class="layout-tab-tag">阅读与写作</span></div>
-</button>
-<button id="layout-tab-research" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="reading" data-image="assets/screens/text-1.3.0-r1/research-01.webp" data-name="调研" data-description="Mac 可复制文本、浏览器与 PDF 阅读器；Wikipedia、Google Scholar 检索 · 选文按观点、方法、证据快速归档，连同原始出处完整留存。" data-alt="奶猫妙控调研布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-research.html">
-<img src="assets/layouts/research.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>调研</strong><span class="layout-tab-tag">阅读与写作</span></div>
-</button>
-<button id="layout-tab-reading" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="reading" data-image="assets/screens/v1.2.0/control-reading.webp" data-name="阅读" data-description="预览、Apple 图书、Skim、Safari、Chrome；另有多款阅读器专属适配 · 双向翻页旋钮、平滑滚轮与章节目录跳转，陪你轻松读透长文大作。" data-alt="奶猫妙控阅读布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-reading.html">
-<img src="assets/layouts/reading.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>阅读</strong><span class="layout-tab-tag">阅读与写作</span></div>
-</button>
-<button id="layout-tab-coding-lab" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="development" data-image="assets/screens/release-1.3.1/store-14-coding-lab.webp" data-name="氛围编程" data-description="Claude Code、Codex、Antigravity（Mac 本地助手） · 切换项目与会话、查看回复、管理任务队列，继续推进手边的灵感。" data-alt="奶猫妙控氛围编程布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-codex.html">
-<img src="assets/layouts/coding-lab.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>氛围编程<span class="layout-new">新</span></strong><span class="layout-tab-tag">开发工具</span></div>
-</button>
-<button id="layout-tab-codex" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="development" data-image="assets/screens/release-1.3.1/store-09-codex.webp" data-name="Codex" data-description="Codex 桌面应用（Mac） · 任务槽位状态实时回读、单击查看与双击聚焦，模型与推理强度旋钮调节。" data-alt="奶猫妙控Codex布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-codex.html">
-<img src="assets/layouts/codex.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>Codex</strong><span class="layout-tab-tag">开发工具</span></div>
-</button>
-<button id="layout-tab-terminal" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="development" data-image="assets/screens/v1.2.0/control-terminal.webp" data-name="终端" data-description="Mac 登录 shell；vim、top、ssh 等命令行程序 · 直连 Mac 原生 Shell 会话，搭配终端信息屏、全屏键盘与常用控制键。" data-alt="奶猫妙控终端布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-terminal.html">
-<img src="assets/layouts/terminal.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>终端</strong><span class="layout-tab-tag">开发工具</span></div>
-</button>
-<button id="layout-tab-creative" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="creative" data-image="assets/screens/v1.2.0/control-resolve.webp" data-name="应用创作台" data-description="DaVinci Resolve、Premiere Pro、Final Cut Pro、剪映／CapCut，以及图像与音乐应用适配 · 自动跟随前台软件变换按键映射，时间线穿梭与参数微调尽在掌心。" data-alt="奶猫妙控应用创作台布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-creative.html">
-<img src="assets/layouts/creative.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>应用创作台</strong><span class="layout-tab-tag">创作与演示</span></div>
-</button>
-<button id="layout-tab-presentation" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="creative" data-image="assets/screens/v1.2.0/control-presentation-assist.webp" data-name="演示" data-description="Keynote、Microsoft PowerPoint；Mac 屏幕演示 · 聚合演讲辅助、放映控制与分段计时三大桌面，台前演说更从容。" data-alt="奶猫妙控演示布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-presentation.html">
-<img src="assets/layouts/presentation.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>演示</strong><span class="layout-tab-tag">创作与演示</span></div>
-</button>
-<button id="layout-tab-media" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="assets/screens/v1.2.0/control-media.webp" data-name="媒体" data-description="Apple Music、Spotify；其他播放器提供系统媒体控制 · 拟物点击轮选歌、调音量与切换播放模式，听歌状态一目了然。" data-alt="奶猫妙控媒体布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-media.html">
-<img src="assets/layouts/media.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>媒体</strong><span class="layout-tab-tag">声音与娱乐</span></div>
-</button>
-<button id="layout-tab-sampler" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="assets/screens/v1.2.0/control-sampler.webp" data-name="采样" data-description="iPhone／iPad 本地音频；可选采集手机或 Mac 声音 · 录音、智能切片与 16 格鼓垫演奏，手机本地即可尽情玩转声音。" data-alt="奶猫妙控采样布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-sampler.html">
-<img src="assets/layouts/sampler.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>采样</strong><span class="layout-tab-tag">声音与娱乐</span></div>
-</button>
-<button id="layout-tab-synthesizer" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="assets/screens/release-1.3.0/synth-01-chord.webp" data-name="合成器" data-description="iPhone / iPad 本地发声；可选 Mac MIDI 输出 · 七级和弦键、旋钮调音与鼓点变体，手机独立录制 6 轨循环灵感。" data-alt="奶猫妙控合成器布局，App 实际界面，内容为演示数据" data-blog-href="blog/guide-synthesizer.html">
-<img src="assets/layouts/synthesizer.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>合成器<span class="layout-new">新</span></strong><span class="layout-tab-tag">声音与娱乐</span></div>
-</button>
-<button id="layout-tab-guitar" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="assets/screens/release-1.3.0/guitar-01-play.webp" data-name="吉他" data-description="iPhone / iPad 本地弹奏与学习；可选 Mac MIDI 输出 · 六根感应琴弦轻扫发声，摇杆换和弦，内置 100 首和声循序渐进练习。" data-alt="奶猫妙控吉他布局，App 实际界面，内容为演示数据" data-blog-href="blog/guide-guitar.html">
-<img src="assets/layouts/guitar.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>吉他<span class="layout-new">新</span></strong><span class="layout-tab-tag">声音与娱乐</span></div>
-</button>
-<button id="layout-tab-arcade" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="music" data-image="assets/screens/v1.2.0/control-arcade.webp" data-name="游戏" data-description="奶猫妙控游戏库及兼容的 Mac 游戏控制方式 · 十字方向键、ABXY 与肩键集中在触屏上；系统虚拟手柄需 Mac 端获得 Apple 授权支持。" data-alt="奶猫妙控游戏布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-arcade.html">
-<img src="assets/layouts/arcade.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>游戏</strong><span class="layout-tab-tag">声音与娱乐</span></div>
-</button>
-<button id="layout-tab-smart-home" class="layout-tab" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-layout-group="home" data-image="assets/screens/v1.2.0/control-smart-home.webp" data-name="智能家居" data-description="Home Assistant、Apple 家庭；经已有平台接入的 Matter 设备 · 接入已有家庭中枢，将灯光、窗帘与场景转化为优雅的旋钮与开关。" data-alt="奶猫妙控智能家居布局，App 实际界面，内容为演示数据" data-blog-href="blog/layout-smart-home.html">
-<img src="assets/layouts/smart-home.svg" alt="" width="128" height="128">
-<div class="layout-tab-info"><strong>智能家居</strong><span class="layout-tab-tag">智能家居</span></div>
-</button>
+        <p>内建 18 套高频预设布局，旋钮随心切换，上手就能用。 <a href="blog.html">查看快速上手指南 →</a></p>
+      </div>
+
+      <!-- Unified Hardware Console Deck -->
+      <div class="deck-hardware-chassis" id="layout-panel" role="tabpanel" aria-labelledby="layout-tab-work">
+        
+        <!-- Left Hardware Bay: Retro LCD Screen on Top, Rotary Knob Below -->
+        <div class="deck-controls-bay">
+          
+          <!-- Clean Retro LCD Status Screen (No outer decorations) -->
+          <div class="deck-lcd-screen" aria-live="polite">
+            <div class="lcd-screen-glass">
+              <div class="lcd-screen-header">
+                <div class="lcd-header-tags">
+                  <span class="lcd-tag is-active">AUTO</span>
+                  <span class="lcd-tag is-active">PRESET</span>
+                </div>
+                <span class="lcd-screen-index" data-led-index>01 / 18</span>
+              </div>
+
+              <div class="lcd-screen-body led-screen-body">
+                <strong class="lcd-screen-name" data-layout-name>工作</strong>
+                <p class="lcd-screen-desc" data-layout-description>macOS 桌面与当前应用 · 触控板、滚轮与高频按键汇于一屏，边看边控。</p>
+              </div>
+
+              <div class="lcd-screen-footer">
+                <a class="lcd-screen-link" data-layout-guide data-layout-guide-label href="blog/layout-work.html">阅读教程 →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rotary Dial Unit (Below LCD screen, Clean Minimalist Knob) -->
+          <div class="deck-dial-unit">
+            <div class="knob-rotary-mount">
+              <!-- Preset Data Store / Accessible Tablist -->
+              <div class="knob-items-ring" id="knob-ring" role="tablist" aria-label="预设布局" style="display:none;">
+                <div class="knob-node-item is-active" data-index="0">
+                  <button id="layout-tab-work" class="knob-tick" type="button" role="tab" aria-selected="true" aria-controls="layout-panel" tabindex="0" data-image="assets/screens/release-1.3.1/store-01-studio.webp" data-name="工作" data-icon="assets/layouts/work.svg" data-description="macOS 桌面与当前应用 · 触控板、滚轮与高频按键汇于一屏，边看边控。" data-alt="奶猫妙控工作布局" data-blog-href="blog/layout-work.html" aria-label="工作" title="工作"></button>
+                </div>
+                <div class="knob-node-item" data-index="1">
+                  <button id="layout-tab-launcher" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-launcher.webp" data-name="启动器" data-icon="assets/layouts/launcher.svg" data-description="Dock 与常用应用 · 将 Mac 常用应用化作触手可及的大图标，一键切至前台。" data-alt="奶猫妙控启动器布局" data-blog-href="blog/layout-launcher.html" aria-label="启动器" title="启动器"></button>
+                </div>
+                <div class="knob-node-item" data-index="2">
+                  <button id="layout-tab-browser" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-browser.webp" data-name="浏览器" data-icon="assets/layouts/browser.svg" data-description="Safari 与 Chrome · 常用网址直达与双向滑块切标签，网页浏览更流畅。" data-alt="奶猫妙控浏览器布局" data-blog-href="blog/layout-browser.html" aria-label="浏览器" title="浏览器"></button>
+                </div>
+                <div class="knob-node-item" data-index="3">
+                  <button id="layout-tab-finance" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-finance.webp" data-name="财务" data-icon="assets/layouts/finance.svg" data-description="Excel 与 Numbers · 数字小键盘、本地计算器与常用表格公式，录入核算井井有条。" data-alt="奶猫妙控财务布局" data-blog-href="blog/layout-finance.html" aria-label="财务" title="财务"></button>
+                </div>
+                <div class="knob-node-item" data-index="4">
+                  <button id="layout-tab-writing" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/text-1.3.0-r1/writing-01.webp" data-name="写作" data-icon="assets/layouts/writing.svg" data-description="Markdown 与文本编辑 · 字符/词/段多级光标移动与排版快捷键，改稿更专注。" data-alt="奶猫妙控写作布局" data-blog-href="blog/layout-writing.html" aria-label="写作" title="写作"></button>
+                </div>
+                <div class="knob-node-item" data-index="5">
+                  <button id="layout-tab-research" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/text-1.3.0-r1/research-01.webp" data-name="调研" data-icon="assets/layouts/research.svg" data-description="文献与网页摘录 · 观点、方法与证据快速归档，完整留存原始出处。" data-alt="奶猫妙控调研布局" data-blog-href="blog/layout-research.html" aria-label="调研" title="调研"></button>
+                </div>
+                <div class="knob-node-item" data-index="6">
+                  <button id="layout-tab-reading" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-reading.webp" data-name="阅读" data-icon="assets/layouts/reading.svg" data-description="图书与 PDF · 双向翻页旋钮、平滑滚轮与章节跳转，沉浸长篇阅读。" data-alt="奶猫妙控阅读布局" data-blog-href="blog/layout-reading.html" aria-label="阅读" title="阅读"></button>
+                </div>
+                <div class="knob-node-item" data-index="7">
+                  <button id="layout-tab-coding-lab" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.1/store-14-coding-lab.webp" data-name="氛围编程" data-icon="assets/layouts/coding-lab.svg" data-description="Claude Code / Codex · 实时查看 AI 生成状态与任务队列，灵感持续推进。" data-alt="奶猫妙控氛围编程布局" data-blog-href="blog/layout-codex.html" aria-label="氛围编程" title="氛围编程"></button>
+                </div>
+                <div class="knob-node-item" data-index="8">
+                  <button id="layout-tab-codex" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.1/store-09-codex.webp" data-name="Codex" data-icon="assets/layouts/codex.svg" data-description="Codex 桌面应用 · 任务状态实时回读，旋钮调节模型与推理深度。" data-alt="奶猫妙控Codex布局" data-blog-href="blog/layout-codex.html" aria-label="Codex" title="Codex"></button>
+                </div>
+                <div class="knob-node-item" data-index="9">
+                  <button id="layout-tab-terminal" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-terminal.webp" data-name="终端" data-icon="assets/layouts/terminal.svg" data-description="Mac 原生终端 (vim / top / ssh) · 状态屏、全屏键盘与常用控制键一触即达。" data-alt="奶猫妙控终端布局" data-blog-href="blog/layout-terminal.html" aria-label="终端" title="终端"></button>
+                </div>
+                <div class="knob-node-item" data-index="10">
+                  <button id="layout-tab-creative" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-resolve.webp" data-name="应用创作台" data-icon="assets/layouts/creative.svg" data-description="DaVinci / Premiere / 剪映 · 随前台应用自动切换映射，时间线与调色尽在掌心。" data-alt="奶猫妙控应用创作台布局" data-blog-href="blog/layout-creative.html" aria-label="应用创作台" title="应用创作台"></button>
+                </div>
+                <div class="knob-node-item" data-index="11">
+                  <button id="layout-tab-presentation" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-presentation-assist.webp" data-name="演示" data-icon="assets/layouts/presentation.svg" data-description="Keynote / PowerPoint · 演讲辅助、放映控制与分段计时，台前演说从容控场。" data-alt="奶猫妙控演示布局" data-blog-href="blog/layout-presentation.html" aria-label="演示" title="演示"></button>
+                </div>
+                <div class="knob-node-item" data-index="12">
+                  <button id="layout-tab-media" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-media.webp" data-name="媒体" data-icon="assets/layouts/media.svg" data-description="Apple Music 与 Spotify · 经典触控轮选歌、调音量与切换播放模式。" data-alt="奶猫妙控媒体布局" data-blog-href="blog/layout-media.html" aria-label="媒体" title="媒体"></button>
+                </div>
+                <div class="knob-node-item" data-index="13">
+                  <button id="layout-tab-sampler" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-sampler.webp" data-name="采样" data-icon="assets/layouts/sampler.svg" data-description="移动端音频采样 · 快速录音、智能切片与 16 格响应式鼓垫即兴演奏。" data-alt="奶猫妙控采样布局" data-blog-href="blog/layout-sampler.html" aria-label="采样" title="采样"></button>
+                </div>
+                <div class="knob-node-item" data-index="14">
+                  <button id="layout-tab-synthesizer" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.0/synth-01-chord.webp" data-name="合成器" data-icon="assets/layouts/synthesizer.svg" data-description="内建发声引擎与 MIDI · 顺阶和弦键、滤波器旋钮与 6 轨循环录音。" data-alt="奶猫妙控合成器布局" data-blog-href="blog/guide-synthesizer.html" aria-label="合成器" title="合成器"></button>
+                </div>
+                <div class="knob-node-item" data-index="15">
+                  <button id="layout-tab-guitar" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.0/guitar-01-play.webp" data-name="吉他" data-icon="assets/layouts/guitar.svg" data-description="六弦吉他弹唱与学习 · 感应扫弦、摇杆切和弦，内置 100 首进阶练习。" data-alt="奶猫妙控吉他布局" data-blog-href="blog/guide-guitar.html" aria-label="吉他" title="吉他"></button>
+                </div>
+                <div class="knob-node-item" data-index="16">
+                  <button id="layout-tab-arcade" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-arcade.webp" data-name="游戏" data-icon="assets/layouts/arcade.svg" data-description="触屏手柄模式 · 十字方向键、ABXY 与肩键，掌上畅享 Mac 经典游戏。" data-alt="奶猫妙控游戏布局" data-blog-href="blog/layout-arcade.html" aria-label="游戏" title="游戏"></button>
+                </div>
+                <div class="knob-node-item" data-index="17">
+                  <button id="layout-tab-smart-home" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-smart-home.webp" data-name="智能家居" data-icon="assets/layouts/smart-home.svg" data-description="Home Assistant 与 Apple 家庭 · 灯光、窗帘与场景转为直观旋钮与开关。" data-alt="奶猫妙控智能家居布局" data-blog-href="blog/layout-smart-home.html" aria-label="智能家居" title="智能家居"></button>
+                </div>
+              </div>
+
+              <!-- Sleek Hardware Knob Dial (Tap / Drag to change) -->
+              <div class="knob-dial is-inviting" id="layout-knob" role="slider" aria-label="预设布局调节旋钮" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1" aria-valuetext="工作" tabindex="0">
+                <div class="knob-dial-body">
+                  <div class="knob-grooves"></div>
+                  <div class="knob-pointer-needle"></div>
+                </div>
+                <div class="knob-center-hub">
+                  <img class="knob-hub-icon" data-knob-icon src="assets/layouts/work.svg" alt="" width="36" height="36">
+                  <strong class="knob-hub-name" data-knob-hub-name>工作</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hardware Bay: Device Screen Mockup -->
+        <div class="deck-screen-bay">
+          <div class="deck-screen-bezel">
+            <a class="layout-preview-frame" data-layout-guide href="blog/layout-work.html" aria-label="阅读工作布局教程">
+              <img data-layout-image src="assets/screens/release-1.3.1/store-01-studio.webp" alt="奶猫妙控工作布局" width="1206" height="2622" loading="lazy">
+            </a>
+          </div>
         </div>
       </div>
-      <figure class="layout-preview" id="layout-panel" role="tabpanel" aria-labelledby="layout-tab-work" tabindex="0">
-        <a class="layout-preview-frame" data-layout-guide href="blog/layout-work.html" aria-label="阅读工作布局教程">
-          <img data-layout-image src="assets/screens/release-1.3.1/store-01-studio.webp" alt="奶猫妙控工作布局，内容为演示数据" width="1206" height="2622" loading="lazy">
-        </a>
-        <figcaption>
-          <div class="layout-preview-badge"><span class="badge-dot"></span> App 界面 · 演示数据</div>
-          <strong data-layout-name>工作</strong>
-          <span data-layout-description>macOS 桌面与当前应用 · 桌面全貌、精准触控板、平滑滚轮与高频按键汇于一屏，边看边控更省心。</span>
-          <a class="blog-read-btn" data-layout-guide data-layout-guide-label href="blog/layout-work.html">阅读工作布局教程 →</a>
-        </figcaption>
-      </figure>
     </section>
 
     <section class="remote-section" id="remote">
