@@ -4,6 +4,17 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 if (year) year.textContent = new Date().getFullYear();
 
+// Language persistence
+document.querySelectorAll('[data-lang-switch]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const href = btn.getAttribute('href') || '';
+    const isEn = href.includes('/en');
+    try {
+      localStorage.setItem('ninopad_lang', isEn ? 'en' : 'zh');
+    } catch (_) {}
+  });
+});
+
 fetch('https://api.github.com/repos/buggyblues/ninopad/releases/latest', {
   headers: { Accept: 'application/vnd.github+json' }
 })

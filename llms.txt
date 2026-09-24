@@ -1,48 +1,66 @@
-# 奶猫妙控（NinoPad）
+# NinoPad (奶猫妙控)
 
-> iPhone / iPad 上的可编辑小键盘与 Mac 副控。
+> NinoPad (奶猫妙控) is a customizable Mac control deck and secondary keypad for iPhone and iPad.
+> It turns mobile devices into tactile control consoles with real-time desktop mirroring, trackpad, custom dials, AI coding companion (Codex / Claude Code / Antigravity), native Shell terminal, video editing shortcuts, and wireless microphone.
 
-版本：iPhone / iPad 正式版 1.3.2，Mac 配套端 1.3.4。要求：iOS / iPadOS 17+，macOS 13+。文中截图来自 App，使用演示数据。
+Website: https://ninopad.com
+English Site: https://ninopad.com/en/
+iOS App: https://apps.apple.com/app/id6805378609
+Mac App: https://github.com/buggyblues/ninopad/releases/latest
+Game Hall: https://arcade.ninopad.com/
 
-## 使用指南
+## System Requirements & Architecture
+- macOS: macOS 13 (Ventura) and later (Universal binary for Apple Silicon M1-M4 and Intel).
+- iOS / iPadOS: iOS 17.0+ and iPadOS 17.0+.
+- Connection: Pure local Wi-Fi peer-to-peer connection via Bonjour protocol. Zero cloud relay, zero account registration, privacy-first.
+- Permissions: Mac Accessibility for keystroke/mouse injection; macOS Screen Recording for optional screen stream.
 
-- [工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档](https://ninopad.com/blog/layout-work): 快速上手多功能工作桌面：用触控板随心导航、用实时键盘流畅打字，配合撤销、重做与一键剪贴，全面提速桌面日常。
-- [Mac 常用软件随身控：打造属于你的掌上应用启动器](https://ninopad.com/blog/layout-launcher): 自动同步 Mac 常用软件列表，以醒目大图标排布桌面，支持长按编辑与随心更换，体验一触即达的窗口切换。
-- [网页浏览利器：在手机上直达网址、轻滑切换标签页](https://ninopad.com/blog/layout-browser): 通过手机端快速输入并直达目标 URL，利用滑块控件自如切换标签页，结合页内搜索与自动化联动打造流畅冲浪流。
-- [经典点击轮回归：用手机优雅掌控 Mac 音乐与播放进度](https://ninopad.com/blog/layout-media): 重现经典点击轮与层级菜单手感，随时查看当前曲目与封面，平滑微调播放进度与切换播放模式。
-- [演讲从容掌控：无线遥控翻页、画中画浮窗与精准分段计时](https://ninopad.com/blog/layout-presentation): 配置前后翻页与画中画摄像头/投屏浮窗，利用分段计时器精准把控排练与演说节奏，从容驾驭每个演讲台。
-- [多 Agent 并行调度：用 Codex 布局从容切换任务](https://ninopad.com/blog/layout-codex): 掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。
-- [命令行随身监控：在手机上新建、切换与全屏管理终端会话](https://ninopad.com/blog/layout-terminal): 掌上管理 Mac 终端会话标签，运行只读命令验证链路，全屏展开沉浸输入，随时掌握后台编译与运维状态。
-- [专注文字创作：用写作布局随心跳段、文内查找与一键排版](https://ninopad.com/blog/layout-writing): 利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。
-- [知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档](https://ninopad.com/blog/layout-research): 无缝读取 Mac 选区或手动录入资料，为摘录补充专属思考与来源链接，在手机剪藏夹中建立条理分明的素材库。
-- [深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码](https://ninopad.com/blog/layout-reading): 同步读取文档书签与层级目录，支持关键词筛选章节、绝对页码跳转与正文查找，让大部头文献阅读更轻松。
-- [数字与表格好帮手：快速算账，在手机上可视化构建函数公式](https://ninopad.com/blog/layout-finance): 内置独立好用的本地计算器，支持长按 SUMIFS 逐项填充参数并生成规范公式，轻松搞定数据汇总与录入。
-- [三维建模掌上助手：从 Blender 视角漫游到快捷操作的自然协同](https://ninopad.com/blog/layout-creative): 随前台软件自动切换专用按键，配合 Blender 默认键位轻松完成物体全选、聚焦与视口环绕，支持横屏双手操控。
-- [掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法](https://ninopad.com/blog/layout-sampler): 在手机上敲击触控鼓垫、探索采样菜单与响度整理，分清声音叠放与接力切断规则，开启随时随地的律动创作。
-- [如何用手机作为手柄畅玩妙控游戏大厅](https://ninopad.com/blog/layout-arcade): 带你快速上手妙控游戏大厅。将已配对的手机作为触屏手柄，选择喜欢的派对或单人游戏，与朋友同屏开启趣味对战。
-- [全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感](https://ninopad.com/blog/layout-smart-home): 通过服务地址与访问令牌接入 Home Assistant，在手机桌面上添加智能灯具，体验顺滑的开关与无级明暗调光。
+## Core Feature Guides (English)
+- [Work Deck Starter](https://ninopad.com/en/blog/layout-work): Trackpad navigation, typing, and clipboard actions.
+- [AI Coding & Codex Deck](https://ninopad.com/en/blog/layout-codex): Multi-agent slot inspection, preview, and reasoning effort dials.
+- [Terminal Monitor](https://ninopad.com/en/blog/layout-terminal): Manage native macOS Shell sessions on mobile.
+- [Creative Studio](https://ninopad.com/en/blog/layout-creative): Timeline jog shuttle and hotkeys for DaVinci Resolve, FCP, CapCut.
+- [Synthesizer Starter](https://ninopad.com/en/blog/guide-synthesizer): 7 diatonic chord keys, filter knobs, drum beats, 6-track loops.
+- [Guitar Starter](https://ninopad.com/en/blog/guide-guitar): Capacitive strings, joystick chords, 100 interactive lessons.
+- [Arcade Gamepad](https://ninopad.com/en/blog/layout-arcade): Use mobile touchscreen as wireless gamepad for Mac party games.
+- [Smart Home Deck](https://ninopad.com/en/blog/layout-smart-home): Connect Home Assistant entities with physical-feel knobs.
+- [App Launcher](https://ninopad.com/en/blog/layout-launcher): Bring favorite Mac apps frontmost from phone icons.
+- [Web Browser Helper](https://ninopad.com/en/blog/layout-browser): Direct URL navigation, tab sliders, and in-page search.
+- [Finance & Formulas](https://ninopad.com/en/blog/layout-finance): Numeric keypad, local calculator, and 64 formula helpers.
+- [Focused Writing](https://ninopad.com/en/blog/layout-writing): 4-tier cursor navigation and Markdown formatting.
+- [Research Workflow](https://ninopad.com/en/blog/layout-research): Capture snippets, notes, and citations.
+- [Deep Reading](https://ninopad.com/en/blog/layout-reading): Turn PDF pages with dual knobs and jump chapters.
+- [Palm Sampler](https://ninopad.com/en/blog/layout-sampler): Live audio recording, auto-slicing, and 16 drum pads.
+- [Custom Keypad](https://ninopad.com/en/blog/custom-keypad): Build custom action buttons, step macros, and dials.
+- [Mac Pairing & Permissions](https://ninopad.com/en/blog/mac-settings): Step-by-step checklist for pairing and macOS permissions.
+- [Presentation Suite](https://ninopad.com/en/blog/presentation-tools): Motion laser pointer, teleprompter, and soundboard.
+- [Remote Mac Control](https://ninopad.com/en/blog/remote-control-mac): Stream desktop in native aspect ratio with trackpad.
+- [Voice & Text Input](https://ninopad.com/en/blog/voice-text-input): Dictate or pre-edit text on phone, send to Mac cursor.
 
-## 发布与支持
+## 中文核心功能指南 (Chinese Guides)
+- [工作台副控入门](https://ninopad.com/blog/layout-work): 触控板导航、打字与剪贴板操作。
+- [Codex 与氛围编程](https://ninopad.com/blog/layout-codex): 多 Agent 任务切换、回读与推理旋钮。
+- [终端会话随身控](https://ninopad.com/blog/layout-terminal): 管理 Mac 原生 Shell 终端会话。
+- [应用创作台](https://ninopad.com/blog/layout-creative): 剪映、DaVinci Resolve、Final Cut Pro 剪辑调色。
+- [合成器入门](https://ninopad.com/blog/guide-synthesizer): 七级和弦键、旋钮调音与鼓点变体。
+- [吉他入门](https://ninopad.com/blog/guide-guitar): 感应琴弦、摇杆和弦与 100 首互动曲谱。
+- [游戏大厅手柄](https://ninopad.com/blog/layout-arcade): 手机化身触屏手柄联机畅玩。
+- [智能家居副控](https://ninopad.com/blog/layout-smart-home): 接入 Home Assistant 实体旋钮调光。
+- [常用应用启动器](https://ninopad.com/blog/layout-launcher): 常用应用大图标快速切至前台。
+- [浏览器副控](https://ninopad.com/blog/layout-browser): 掌上直达网址与滑块切标签。
+- [财务与表格计算](https://ninopad.com/blog/layout-finance): 数字键盘与 64 个常用公式构建。
+- [专注文字写作](https://ninopad.com/blog/layout-writing): 四级光标范围与 Markdown 排版。
+- [知识摘录工作流](https://ninopad.com/blog/layout-research): 选区摘录、备忘与出处沉淀。
+- [深度阅读辅助](https://ninopad.com/blog/layout-reading): PDF 旋钮翻页与章节目录跳转。
+- [采样工作站](https://ninopad.com/blog/layout-sampler): 实时录音采样与 16 格鼓垫演奏。
+- [小键盘定制](https://ninopad.com/blog/custom-keypad): 自由定制按键、多步宏与旋钮。
+- [首次连接与权限排查](https://ninopad.com/blog/mac-settings): 辅助功能、屏幕录制与局域网排查。
+- [演示辅助利器](https://ninopad.com/blog/presentation-tools): 虚拟激光笔、智能提词器与音效。
+- [远程控制 Mac 桌面](https://ninopad.com/blog/remote-control-mac): 实时画面镜像与虚拟触控板。
+- [语音转文字与文本输入](https://ninopad.com/blog/voice-text-input): 手机口述预编辑，一键整段发送。
 
-- [iPhone / iPad 正式版 · App Store](https://apps.apple.com/app/id6805378609)
-- [Mac 配套端 · Universal 安装包](https://github.com/buggyblues/ninopad/releases/latest)
-
-- [更新日志](https://ninopad.com/updates)
-- [帮助](https://ninopad.com/support)
-- [隐私](https://ninopad.com/privacy)
-
-## 实用操作教程
-
-- [把高频短语做成实体按键：指尖轻触，一键输入到 Mac](https://ninopad.com/blog/guide-text-button): 在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。
-- [把操作连成一条流：打造“记录并自动保存”的多步宏](https://ninopad.com/blog/guide-automation-steps): 将基础文字按键扩展为自动化流程，串联文本输入、防冲突延时与 ⌘S 快捷键，并用实测与预览确保每步稳定执行。
-- [做好资料摘录：把原文、个人思考与出处链接分门别类](https://ninopad.com/blog/guide-clipping-sources): 在剪藏夹中建立结构化摘录条目，清晰拆分正文、笔记备忘与出处 URL，日后仅凭零碎记忆词即可精准检索。
-- [精准整理与归档：按类型筛选剪藏，一键打包导出文件](https://ninopad.com/blog/guide-clipping-export): 利用关键词与媒体类型多重过滤资料，跨条件自由多选，通过 iOS 原生分享面板轻松导出文本与附件。
-- [告别记错函数参数：用手机可视化生成 SUMIFS 多条件公式](https://ninopad.com/blog/guide-sumifs): 长按 SUMIFS 唤起可视化编辑面板，直观配置多组求和与筛选条件，即时生成标准公式并一键注入 Excel 表格。
-- [规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本](https://ninopad.com/blog/guide-text-cleanup): 在手机上可视化配置文本替换与去空格函数，区分全局替换与指定首处匹配，配合对照列安全清洗表格数据。
-- [合成器入门：弹奏动听和弦，为灵感加入鼓点节拍](https://ninopad.com/blog/guide-synthesizer): 从七级和弦键轻松起步，掌握延音技巧、开启音色编辑、生成丰富鼓点变体并随时掌控播放，带你全面认识合成器的四大功能桌面。
-- [吉他入门：扫响六根弦，跟着提示练一段和弦](https://ninopad.com/blog/guide-guitar): 认识吉他桌面的琴弦、和弦与控制台，再进入学习桌面选曲、听示范和逐步跟练。
-- [换一张会动的壁纸：从内置动物到自己的视频](https://ninopad.com/blog/guide-dynamic-wallpaper): 在主题与壁纸中搜索动物、应用动态壁纸，调整显示方式，并了解多选导入、保存与布局单独设置。
-
-1.3.1：原氛围编程更名 Codex；新增独立氛围编程布局，连接本地 Claude Code、Codex 与 Antigravity。两者的前提与操作见 /blog/layout-codex。
-
-2026-09-16：iPhone / iPad 已正式上架 App Store，无需 TestFlight；Mac 1.3.4 提供直接打开、扫码及复制 App Store 链接的入口。各端按独立版本更新。
+## Release Notes & Support
+- [更新日志 (Changelog)](https://ninopad.com/updates)
+- [支持中心 (Support)](https://ninopad.com/support)
+- [隐私政策 (Privacy)](https://ninopad.com/privacy)
+- [服务条款 (Terms)](https://ninopad.com/terms)

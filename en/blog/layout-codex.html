@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9fb">
+  <meta name="description" content="Inspect task slot status, click to preview, double-click to focus, and dial reasoning strength.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="奶猫妙控">
+  <meta property="og:title" content="Multi-Agent Orchestration: Switch AI Tasks with Codex Layout | NinoPad">
+  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/codex-01.webp">
+  <meta property="og:url" content="https://ninopad.com/blog/layout-codex">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-09-10">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Multi-Agent Orchestration: Switch AI Tasks with Codex Layout | NinoPad">
+  <meta name="twitter:description" content="Inspect task slot status, click to preview, double-click to focus, and dial reasoning strength.">
+  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/codex-01.webp">
+  <meta property="og:description" content="Inspect task slot status, click to preview, double-click to focus, and dial reasoning strength.">
+  <meta name="keywords" content="奶猫妙控,NinoPad,Codex布局教程,操作步骤">
+  <link rel="canonical" href="https://ninopad.com/en/blog/layout-codex">
+  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-codex">
+  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-codex">
+  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-codex">
+  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../blog.css">
+  <title>Multi-Agent Orchestration: Switch AI Tasks with Codex Layout | NinoPad</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "多 Agent 并行调度：用Codex布局从容切换 Codex 任务",
+      "description": "掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "image": [
+        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/codex-01.webp"
+      ],
+      "mainEntityOfPage": "https://ninopad.com/blog/layout-codex"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://ninopad.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "博客",
+          "item": "https://ninopad.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "多 Agent 并行调度：用Codex布局从容切换 Codex 任务",
+          "item": "https://ninopad.com/blog/layout-codex"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "任务名称没有更新？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "先确认 Mac Codex 正在运行，当前任务来源里确实有任务；再检查连接与版本。不要用截图里的演示标题判断自己是否连接成功。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "额度为空，是否代表没有剩余额度？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不代表。未读取到额度时不能按零余额理解。请查看 Codex 自身提供的用量信息，等状态读取恢复后再核对。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="content-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
+      <span>奶猫妙控</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="../index.html#layouts">Features</a>
+      <a href="../index.html#pro">Pricing</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-lang" href="/blog/layout-codex" aria-label="切换至中文" data-lang-switch>中文</a>
+      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
+    <ul>
+      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
+      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
+      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
+      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
+      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
+    </ul>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <div class="mobile-drawer-lang">
+      <a href="/blog/layout-codex" data-lang-switch>简体中文</a>
+      <a href="/en/blog/layout-codex" class="is-active">English</a>
+    </div>
+  </div>
+
+  <main id="main" class="article-shell">
+    <header class="article-header">
+      <a href="../blog.html">← 博客专栏 / Codex</a>
+      <h1>多 Agent 并行调度：用Codex布局从容切换 Codex 任务</h1>
+      <p>掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。</p>
+      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+    </header>
+    <figure class="article-cover article-cover-phone">
+      <img src="../../assets/screens/tutorials-1.2.0-r1/codex-01.webp" alt="Codex桌面，任务名称、状态与额度均为演示数据。" width="1206" height="2622">
+      <figcaption>Codex桌面，任务名称、状态与额度均为演示数据。</figcaption>
+    </figure>
+    <article class="article-body">
+<aside class="article-highlight"><strong>1.3.1 布局更名：</strong>原「氛围编程」已更名为「Codex」。本次还新增了独立的「氛围编程」布局，用于 Claude Code、Codex 和 Antigravity 等 Mac 本地助手。下面先说明两者如何选择，原有 Codex 操作教程继续保留。</aside>
+<h2>新增的氛围编程，从哪里开始</h2>
+<p>先将手机与 Mac 配套端一起更新到 1.3.1，在同一局域网完成配对。对应编程助手需要先在 Mac 上安装并登录，手机不会独立运行 AI 模型，奶猫妙控 Pro 也不包含第三方 AI 订阅。</p>
+<ol><li>在底部「布局」中选择「氛围编程」。主界面下方有「项目」「会话」「队列」和「设置」按键。</li><li>通过「项目」选择要继续的项目，通过「会话」查看会话；已有会话分配到按键后，点按对应按键即可切换。顶部小屏显示所选任务的回复。</li><li>在小屏的「工作」「交付物」「文件」「项目」「用量」之间切换，按需查看当前会话的信息。需要读长回复时，点击「展开」。新指令从「新任务」发起，等待中的任务在「队列」查看；权限请求要先核对内容，再决定是否允许。</li></ol>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/release-1.3.1/store-14-coding-lab.webp" alt="氛围编程实际主界面，显示旅行手账的模拟会话与回复" width="1284" height="2778" loading="lazy"><figcaption>真实 App 主界面，项目和回复为截图用模拟数据。可用助手、模型、用量及操作选项以 Mac 的实际安装和登录状态为准。</figcaption></figure>
+<p>如果你主要想查看 Codex 桌面任务的六个槽位、额度与推理档位，选择「Codex」，继续下面的操作。需要运行本地 Shell，则使用单独的「终端」布局。</p>
+<p class="article-lead">让 AI 编写代码时，多个任务同时跑往往需要频繁切屏盯进度。Codex布局为你提供掌上调度台：在手机上直观掌握各槽位任务进展，单击查看状态回读、双击将对应窗口聚焦前台，还可平滑调节模型推理强度与用量回读，多工作流调度游刃有余。</p>
+<aside class="article-highlight"><strong>配图说明：</strong>配图中的任务、模型和额度使用示例数据，键盘与设置页来自实际 App。练习前请核对自己的任务，模型可选项和额度以实际账号为准。</aside>
+<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控，Mac 安装对应配套端；完成局域网配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>Mac 上需预先安装并登录 Codex 桌面 App，并有处于活动中的编程任务。本布局面向 Mac 桌面端 Codex 的任务调度；命令行会话请使用终端布局。</li></ul>
+<h2>1. 进入Codex布局，查看任务槽位</h2>
+<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“Codex”布局。多桌面方案请展开右侧箭头后选择对应桌面。</p>
+<p>桌面中陈列着多个任务槽位按键，顶部小屏可回读当前选中的任务状态。若任务按键为空白，请先确认 Mac 端对应 Codex / Agent 开发环境已处于运行与连接状态。</p>
+<p>任务按键展示当前活动槽位，便于直观管理多条并发工作流，不代表账号仅能处理有限数量的任务。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/codex-01.webp" alt="Codex桌面，任务名称、状态与额度均为演示数据。" width="1206" height="2622" loading="lazy"><figcaption>Codex桌面，任务名称、状态与额度均为演示数据。</figcaption></figure>
+<h2>2. 掌握单击切换与双击前台聚焦逻辑</h2>
+<p>在默认设置下，单击任务键会在手机端后台选中该任务，便于查看其上下文与状态；双击任务键则会在切换的同时，自动将 Mac 上的对应窗口激活置于最前台。</p>
+<p>在 Mac 端打开多个窗口，分别尝试单击与双击操作，观察前台焦点的切换效果，确保在不打扰当前编写思路的同时自如调度任务。</p>
+<h2>3. 打开实时键盘，核准光标位置后输入指令</h2>
+<p>选定目标任务后，点击手机上的“实时键盘”，在顶部切换为“实时”输入模式（确保非本地草稿模式）。</p>
+<p>先在 Mac 端确认光标已位于目标任务的 Prompt 输入框内，然后在手机键盘输入准备好的指令内容，在 Mac 端核对文字输入完全正确后再执行发送。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/codex-02-keyboard.webp" alt="实际从Codex桌面打开的实时键盘；本次未向真实任务输入。" width="1206" height="2622" loading="lazy"><figcaption>实际从Codex桌面打开的实时键盘；本次未向真实任务输入。</figcaption></figure>
+<h2>4. 调节模型选择与推理强度旋钮</h2>
+<p>返回Codex主桌面，查看“模型”和“推理强度”旋钮下方的状态回读。若需调整推理强度，每次轻拨一个档位，等待手机与 Mac 上的当前任务参数同步完成。</p>
+<p>可用模型与推理档位取决于你绑定的具体服务与账号权限，额度面板提供可视化消耗参考，帮助你合理规划 Token 预算。</p>
+<h2>5. 进入设置页面，定制窗口聚焦习惯</h2>
+<p>点击底栏“设置”，进入“Codex”详细设置页面。在此处可以检查 Agent 服务来源，并根据个人操作习惯开启或关闭“单击时聚焦 ChatGPT”以及任务完成事件通知。</p>
+<p>配置完成后返回桌面，按需灵活管理后台任务。若希望保持静默后台处理，保持单击不聚焦即可。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/codex-04-preferences.webp" alt="Codex设置页，显示 Agent 来源与单击聚焦选项。" width="1206" height="2622" loading="lazy"><figcaption>Codex设置页，显示 Agent 来源与单击聚焦选项。</figcaption></figure>
+<h2>6. 处理关键审批请求，安全调度代码修改</h2>
+<p>当 Agent 执行涉及系统敏感操作（如文件修改或命令执行）弹出审批请求时，切记先在 Mac 屏幕上仔细阅读待审批的操作范围与 diff 内容，再在手机端点击“批准”或“拒绝”。</p>
+<p>需要开启全新探索时使用“新任务”，想在当前上下文分支讨论时使用“分叉任务”。完成操作后在 Mac 端核验新分支，避免在旧任务上混淆输入。</p>
+<h2>FAQ</h2>
+<h3>任务名称没有更新？</h3><p>先确认 Mac Codex 正在运行，当前任务来源里确实有任务；再检查连接与版本。不要用截图里的演示标题判断自己是否连接成功。</p>
+<h3>额度为空，是否代表没有剩余额度？</h3><p>不代表。未读取到额度时不能按零余额理解。请查看 Codex 自身提供的用量信息，等状态读取恢复后再核对。</p>
+<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+    </article>
+    <nav class="article-next" aria-label="继续阅读">
+      <a href="layout-terminal.html">← 命令行随身监控：在手机上新建、切换与全屏管理终端会话</a>
+      <a href="layout-work.html">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
+    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+    <nav aria-label="页脚导航">
+      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
+      <a href="../updates.html">更新</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../support.html">支持</a>
+      <a href="../privacy.html">隐私</a>
+      <a href="../terms.html">条款</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+      <a href="/blog/layout-codex" data-lang-switch>简体中文</a>
+    </nav>
+    <small>© <span data-year></span> 奶猫妙控</small>
+  </footer>
+  <script src="../../script.js" defer></script>
+</body>
+</html>

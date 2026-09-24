@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9fb">
+  <meta name="description" content="Connect Home Assistant entities to control lights, switches, and scenes via physical-feel dials.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="奶猫妙控">
+  <meta property="og:title" content="Smart Home at Your Fingertips: Home Assistant & Tactile Knobs | NinoPad">
+  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/smart-home-01.webp">
+  <meta property="og:url" content="https://ninopad.com/blog/layout-smart-home">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-09-10">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smart Home at Your Fingertips: Home Assistant & Tactile Knobs | NinoPad">
+  <meta name="twitter:description" content="Connect Home Assistant entities to control lights, switches, and scenes via physical-feel dials.">
+  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/smart-home-01.webp">
+  <meta property="og:description" content="Connect Home Assistant entities to control lights, switches, and scenes via physical-feel dials.">
+  <meta name="keywords" content="奶猫妙控,NinoPad,智能家居布局教程,操作步骤">
+  <link rel="canonical" href="https://ninopad.com/en/blog/layout-smart-home">
+  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-smart-home">
+  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-smart-home">
+  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-smart-home">
+  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../blog.css">
+  <title>Smart Home at Your Fingertips: Home Assistant & Tactile Knobs | NinoPad</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感",
+      "description": "通过服务地址与访问令牌接入 Home Assistant，在手机桌面上添加智能灯具，体验顺滑的开关与无级明暗调光。",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "image": [
+        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/smart-home-01.webp"
+      ],
+      "mainEntityOfPage": "https://ninopad.com/blog/layout-smart-home"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://ninopad.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "博客",
+          "item": "https://ninopad.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感",
+          "item": "https://ninopad.com/blog/layout-smart-home"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "连接成功，桌面却没有设备？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "先看家庭连接是否发现支持的设备，再返回布局添加并绑定家居设备组件。已有连接不会自动重排你之前编辑好的桌面。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "状态显示离线时，为什么按钮灰了？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "离线设备不能保证接收控制请求。先检查家庭平台中的在线状态和手机到服务地址的连接；恢复后等待新状态回读。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以改用 Apple 家庭吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以连接已有 Apple 家庭，并按系统提示允许访问。设备需要先在家庭平台加入并可用；相机、门锁等能力不在本文灯光练习的支持范围内。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="content-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
+      <span>奶猫妙控</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="../index.html#layouts">Features</a>
+      <a href="../index.html#pro">Pricing</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-lang" href="/blog/layout-smart-home" aria-label="切换至中文" data-lang-switch>中文</a>
+      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
+    <ul>
+      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
+      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
+      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
+      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
+      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
+    </ul>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <div class="mobile-drawer-lang">
+      <a href="/blog/layout-smart-home" data-lang-switch>简体中文</a>
+      <a href="/en/blog/layout-smart-home" class="is-active">English</a>
+    </div>
+  </div>
+
+  <main id="main" class="article-shell">
+    <header class="article-header">
+      <a href="../blog.html">← 博客专栏 / 智能家居</a>
+      <h1>全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感</h1>
+      <p>通过服务地址与访问令牌接入 Home Assistant，在手机桌面上添加智能灯具，体验顺滑的开关与无级明暗调光。</p>
+      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+    </header>
+    <figure class="article-cover article-cover-phone">
+      <img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-01.webp" alt="奶猫妙控 1.2.0 的智能家居操作界面；截图中的书桌灯、窗帘等由本地交互式演示服务提供。" width="1206" height="2622">
+      <figcaption>奶猫妙控 1.2.0 的智能家居操作界面；截图中的书桌灯、窗帘等由本地交互式演示服务提供。</figcaption>
+    </figure>
+    <article class="article-body">
+<p class="article-lead">把常用的家居控制从繁琐的 App 菜单中解放出来。通过智能家居布局绑定 Home Assistant，你可以将书桌灯或房间灯光做成带有细腻刻度的旋钮组件，开关与亮度调节尽在掌心。</p>
+<aside class="article-highlight"><strong>配图说明：</strong>配图中的设备由本地演示服务提供，开关操作会更新演示状态。连接真实家庭后，请同时检查手机回读、Home Assistant 状态和设备实际动作。</aside>
+<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控 1.2.0，本功能可独立使用，不要求连接 Mac。</li><li>准备已经运行的 Home Assistant，以及能在该平台正常控制的一盏灯。手机需要能访问其地址；先在 Home Assistant 自身验证开关正常。</li></ul>
+<h2>1. 进入智能家居布局，点击“连接家庭”入口</h2>
+<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“智能家居”布局。多桌面方案请展开右侧箭头后选择对应桌面。</p>
+<p>首次进入尚未配置连接时，桌面中心会显示“连接家庭”按钮。点击它进入“家庭连接”向导，选择添加 Home Assistant 服务。若此前已添加过设备，直接在已有连接上管理即可，无需重复建网。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-04-connections.webp" alt="家庭连接管理页；当前已有本地演示连接，可以继续添加 Home Assistant。" width="1206" height="2622" loading="lazy"><figcaption>家庭连接管理页；当前已有本地演示连接，可以继续添加 Home Assistant。</figcaption></figure>
+<h2>2. 填写 Home Assistant 服务地址与长期访问令牌</h2>
+<p>在连接表单的“服务地址”中填写你的 Home Assistant 地址。例如本地实例可能使用 homeassistant.local:8123，但必须替换成手机实际能访问的地址。</p>
+<p>在 Home Assistant 个人资料的“安全”页创建长期访问令牌，复制到 App 的“访问令牌”字段。不要把登录密码填成令牌。如果使用本地 HTTP，按页面提示确认“允许此本地 HTTP 连接”；令牌只用于你自己的连接，不要放进教程截图。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-05-form.webp" alt="实际打开的 Home Assistant 连接表单；教程截图不填入真实访问令牌。" width="1206" height="2622" loading="lazy"><figcaption>实际打开的 Home Assistant 连接表单；教程截图不填入真实访问令牌。</figcaption></figure>
+<p>参考：<a href="https://www.home-assistant.io/docs/configuration/user-configuration/">Home Assistant 官方个人资料与安全设置说明</a>。</p>
+<h2>3. 连接成功后，将智能灯光组件添加到桌面</h2>
+<p>点“连接”，等待明确的已连接状态和设备列表。点“返回布局，添加组件”，再从空布局的“添加设备组件”进入编辑器，选择家居设备组件并绑定刚才那盏灯。</p>
+<p>也可使用空桌面上的“自动添加…台在线设备”入口批量加入。连接成功与组件已添加是两步；只填完令牌，并不会让每个设备自动出现在已有桌面上。</p>
+<h2>4. 核对设备名称与房间，点击旋钮中心开关</h2>
+<p>保存桌面并返回主界面，核对卡片上的设备名称与所属房间（如“书桌灯／书房”）。轻点灯光旋钮中心区域发送通断指令，观察中心指示灯状态变化，并在现实房间中确认实体灯具已同步熄灭或点亮。</p>
+<p>手机会等待 Home Assistant 真实状态回读并更新 UI，按钮按下的瞬时动画仅为触控反馈，请以实际实体灯具或状态回读为准。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-02-off.webp" alt="实际点击书桌灯电源后，演示服务回读为关闭；不是实物灯具照片。" width="1206" height="2622" loading="lazy"><figcaption>实际点击书桌灯电源后，演示服务回读为关闭；不是实物灯具照片。</figcaption></figure>
+<h2>5. 按住旋钮外圈平滑调节灯光亮度</h2>
+<p>灯光旋钮中心负责电源通断，外圈则负责明暗调光。按住旋钮外圈顺时针慢速旋转增大亮度、逆时针旋转降低亮度，松手后等待状态数值回读。</p>
+<p>先做小幅调整，确认实体灯具的明暗变化与手机端显示的百分比数值一致。调光功能需要灯具硬件本身支持调光协议，普通通断插座仅支持开关操作。</p>
+<h2>6. 点按设备名称查看详情，拓展全屋智能生态</h2>
+<p>点卡片下方的设备名称区域，打开详情，查看设备提供的状态与更多控制。出现离线或错误时先在这里确认，再回到 Home Assistant 检查设备本身。</p>
+<p>当一盏灯的开关和回读都验证通过，再添加窗帘、插座等设备，并逐台检查它们的真实动作。Matter 设备先加入 Apple 家庭或 Home Assistant，本 App 不提供独立的 Matter 配网流程。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-03-detail.webp" alt="实际点设备名称进入书桌灯详情；数据来自本地演示服务。" width="1206" height="2622" loading="lazy"><figcaption>实际点设备名称进入书桌灯详情；数据来自本地演示服务。</figcaption></figure>
+<h2>FAQ</h2>
+<h3>连接成功，桌面却没有设备？</h3><p>先看家庭连接是否发现支持的设备，再返回布局添加并绑定家居设备组件。已有连接不会自动重排你之前编辑好的桌面。</p>
+<h3>状态显示离线时，为什么按钮灰了？</h3><p>离线设备不能保证接收控制请求。先检查家庭平台中的在线状态和手机到服务地址的连接；恢复后等待新状态回读。</p>
+<h3>可以改用 Apple 家庭吗？</h3><p>可以连接已有 Apple 家庭，并按系统提示允许访问。设备需要先在家庭平台加入并可用；相机、门锁等能力不在本文灯光练习的支持范围内。</p>
+<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+    </article>
+    <nav class="article-next" aria-label="继续阅读">
+      <a href="layout-work.html">← 工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档</a>
+      <a href="layout-launcher.html">Mac 常用软件随身控：打造属于你的掌上应用启动器 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
+    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+    <nav aria-label="页脚导航">
+      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
+      <a href="../updates.html">更新</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../support.html">支持</a>
+      <a href="../privacy.html">隐私</a>
+      <a href="../terms.html">条款</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+      <a href="/blog/layout-smart-home" data-lang-switch>简体中文</a>
+    </nav>
+    <small>© <span data-year></span> 奶猫妙控</small>
+  </footer>
+  <script src="../../script.js" defer></script>
+</body>
+</html>

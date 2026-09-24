@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9fb">
+  <meta name="description" content="Monitor background terminal tasks, open new Shell sessions, and type on full-screen mobile keyboard.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="奶猫妙控">
+  <meta property="og:title" content="Terminal Monitor: Manage Mac Shell Sessions on Mobile | NinoPad">
+  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/terminal-01.webp">
+  <meta property="og:url" content="https://ninopad.com/blog/layout-terminal">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-09-10">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terminal Monitor: Manage Mac Shell Sessions on Mobile | NinoPad">
+  <meta name="twitter:description" content="Monitor background terminal tasks, open new Shell sessions, and type on full-screen mobile keyboard.">
+  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/terminal-01.webp">
+  <meta property="og:description" content="Monitor background terminal tasks, open new Shell sessions, and type on full-screen mobile keyboard.">
+  <meta name="keywords" content="奶猫妙控,NinoPad,终端布局教程,操作步骤">
+  <link rel="canonical" href="https://ninopad.com/en/blog/layout-terminal">
+  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-terminal">
+  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-terminal">
+  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-terminal">
+  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../blog.css">
+  <title>Terminal Monitor: Manage Mac Shell Sessions on Mobile | NinoPad</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "命令行随身监控：在手机上新建、切换与全屏管理终端会话",
+      "description": "掌上管理 Mac 终端会话标签，运行只读命令验证链路，全屏展开沉浸输入，随时掌握后台编译与运维状态。",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "image": [
+        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/terminal-01.webp"
+      ],
+      "mainEntityOfPage": "https://ninopad.com/blog/layout-terminal"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://ninopad.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "博客",
+          "item": "https://ninopad.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "命令行随身监控：在手机上新建、切换与全屏管理终端会话",
+          "item": "https://ninopad.com/blog/layout-terminal"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "新建按钮不可用？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "先看是否提示“连接 Mac 后使用终端”或“请更新 Mac 端以使用终端”。连接成功后仍不可用时检查配套端版本与会话数量；每台移动设备最多八个会话。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "全屏后文字布局变了，是新开了一个终端吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不是。全屏改变终端窗口的行列尺寸，并继续使用同一个会话。交互式命令行程序可能按新尺寸重新绘制。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "手机断开后还能看旧输出吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "已接收的内容可以继续阅读和复制；新命令需要恢复连接。退出 Mac 配套端或主动关闭会话会结束对应会话。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="content-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
+      <span>奶猫妙控</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="../index.html#layouts">Features</a>
+      <a href="../index.html#pro">Pricing</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-lang" href="/blog/layout-terminal" aria-label="切换至中文" data-lang-switch>中文</a>
+      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
+    <ul>
+      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
+      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
+      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
+      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
+      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
+    </ul>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <div class="mobile-drawer-lang">
+      <a href="/blog/layout-terminal" data-lang-switch>简体中文</a>
+      <a href="/en/blog/layout-terminal" class="is-active">English</a>
+    </div>
+  </div>
+
+  <main id="main" class="article-shell">
+    <header class="article-header">
+      <a href="../blog.html">← 博客专栏 / 终端</a>
+      <h1>命令行随身监控：在手机上新建、切换与全屏管理终端会话</h1>
+      <p>掌上管理 Mac 终端会话标签，运行只读命令验证链路，全屏展开沉浸输入，随时掌握后台编译与运维状态。</p>
+      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+    </header>
+    <figure class="article-cover article-cover-phone">
+      <img src="../../assets/screens/tutorials-1.2.0-r1/terminal-01.webp" alt="终端紧凑界面：会话与输出均为明确的预览数据。" width="1206" height="2622">
+      <figcaption>终端紧凑界面：会话与输出均为明确的预览数据。</figcaption>
+    </figure>
+    <article class="article-body">
+<p class="article-lead">编译代码或监控服务时，无需时刻把终端窗口堆在主屏幕前。终端布局让你在手机上轻松建立与管理多个 Shell 标签，实时接收终端输出，全屏展开即可沉浸输入与翻阅历史，让后台任务的掌控更加轻盈随性。</p>
+<aside class="article-highlight"><strong>配图说明：</strong>本次在原生终端界面实际完成新建、改名和全屏操作。截图中的输出由终端预览模式提供，不是本次远程执行命令的日志；下面的只读命令需要在你的配对 Mac 会话中运行。</aside>
+<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控，Mac 安装对应配套端；完成局域网配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>Mac 配套端需处于运行状态以支持原生 Shell 会话。练习时建议先使用没有重要进程的临时会话，不要关闭正在运行耗时任务的会话。</li></ul>
+<h2>1. 进入终端布局，认识顶部会话标签栏</h2>
+<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“终端”布局。布局较多时可通过顶部搜索框快速检索。</p>
+<p>小屏上方是会话标签。截图中的“开发”“服务”来自演示模式；首次连接时，你可能还没有任何会话。不要把这两个名字当成必须提前创建的配置。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/terminal-01.webp" alt="终端紧凑界面：会话与输出均为明确的预览数据。" width="1206" height="2622" loading="lazy"><figcaption>终端紧凑界面：会话与输出均为明确的预览数据。</figcaption></figure>
+<h2>2. 点击加号新建会话，等待提示符就绪</h2>
+<p>点击会话栏右侧的“＋”号按钮，等待新终端会话标签创建并被高亮选中。Mac 端会同步分配并启动一个新的 Shell 实例。</p>
+<p>等待终端提示符（如 $ 或 %）稳定出现后再进行操作，避免因网络短暂波动连续快速点击加号堆积多余的空会话。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/terminal-02-new.webp" alt="实际点击新建后出现 Shell 3 标签；预览模式提供示例输出。" width="1206" height="2622" loading="lazy"><figcaption>实际点击新建后出现 Shell 3 标签；预览模式提供示例输出。</figcaption></figure>
+<h2>3. 打开终端菜单，将练习会话重命名为 Build</h2>
+<p>点击“终端菜单”，选择“重命名”选项。在弹出的编辑框中将默认的 Shell 1 替换为容易辨识的“Build”，点击“保存”确认。</p>
+<p>顶部标签会更新为 Build，该名称仅作为手机会话管理的友好标签，不会改动 Mac 本地的任何文件目录或执行任何后台命令。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/terminal-03-renamed.webp" alt="新建会话改名为 Build 后的实际界面。" width="1206" height="2622" loading="lazy"><figcaption>新建会话改名为 Build 后的实际界面。</figcaption></figure>
+<h2>4. 全屏展开终端，运行只读命令验证链路</h2>
+<p>点击终端组件的全屏展开按钮，随后在全屏界面中点开键盘图标。在手机键盘中输入只读检查命令 <code>pwd</code> 并按回车，查看 Mac 当前工作路径。</p>
+<p>接着输入 <code>printf &#x27;tutorial-ok\n&#x27;</code> 并按回车，在终端输出区确认下一行清晰回显出 <code>tutorial-ok</code>，验证双向字符传输链路完全正常且无乱码。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/terminal-04-fullscreen.webp" alt="全屏终端的实际界面；与紧凑页使用同一会话。" width="1206" height="2622" loading="lazy"><figcaption>全屏终端的实际界面；与紧凑页使用同一会话。</figcaption></figure>
+<h2>5. 切换会话标签，确认历史输出持久保留</h2>
+<p>收起手机键盘，点选顶部的其他会话标签进行切换，然后再切回“Build”会话，检查刚才执行命令的历史输出是否完好保留。</p>
+<p>点击右上角的“完成”退出全屏模式，小屏中的终端状态依然保持实时同步，离开终端布局时后台 Shell 进程不会被异常中断。</p>
+<h2>6. 安全结束练习会话，释放系统资源</h2>
+<p>练习结束后，若无需保留该临时会话，先确认会话中没有正在运行的耗时编译或服务进程，然后打开“终端菜单 → 关闭会话”，在二次确认面板中点击确认。</p>
+<p>此时 Build 标签被安全移除，Mac 端对应会话被妥善清理。如果只是想临时隐藏键盘，点击键盘收起或“完成”即可，无需关闭整个会话。</p>
+<h2>FAQ</h2>
+<h3>新建按钮不可用？</h3><p>先看是否提示“连接 Mac 后使用终端”或“请更新 Mac 端以使用终端”。连接成功后仍不可用时检查配套端版本与会话数量；每台移动设备最多八个会话。</p>
+<h3>全屏后文字布局变了，是新开了一个终端吗？</h3><p>不是。全屏改变终端窗口的行列尺寸，并继续使用同一个会话。交互式命令行程序可能按新尺寸重新绘制。</p>
+<h3>手机断开后还能看旧输出吗？</h3><p>已接收的内容可以继续阅读和复制；新命令需要恢复连接。退出 Mac 配套端或主动关闭会话会结束对应会话。</p>
+<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+    </article>
+    <nav class="article-next" aria-label="继续阅读">
+      <a href="layout-codex.html">← 多 Agent 并行调度：用 Codex 布局从容切换任务</a>
+      <a href="layout-finance.html">数字与表格好帮手：快速算账，在手机上可视化构建函数公式 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
+    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+    <nav aria-label="页脚导航">
+      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
+      <a href="../updates.html">更新</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../support.html">支持</a>
+      <a href="../privacy.html">隐私</a>
+      <a href="../terms.html">条款</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+      <a href="/blog/layout-terminal" data-lang-switch>简体中文</a>
+    </nav>
+    <small>© <span data-year></span> 奶猫妙控</small>
+  </footer>
+  <script src="../../script.js" defer></script>
+</body>
+</html>

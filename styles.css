@@ -51,6 +51,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .site-header nav a { color: rgba(33, 31, 26, 0.62); font-size: .875rem; font-weight: 600; letter-spacing: -.01em; transition: color .15s ease; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
 .header-actions { display: flex; align-items: center; gap: .75rem; }
+.header-lang { padding: .32rem .72rem; border-radius: 999px; background: rgba(33, 31, 26, 0.05); border: .0625rem solid rgba(33, 31, 26, 0.1); color: var(--ink); font-size: .8rem; font-weight: 750; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: .25rem; flex-shrink: 0; transition: all .18s ease; }
+.header-lang:hover { background: var(--purple); color: white; border-color: var(--purple); transform: translateY(-.05rem); }
 .header-download { padding: .45rem 1.15rem; border-radius: 999px; background: var(--ink); color: white; font-size: .8125rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background-color .18s ease, transform .18s ease; }
 .header-download:hover { background: var(--purple); transform: translateY(-.05rem); }
 
@@ -618,6 +620,30 @@ footer small { grid-column: 1 / -1; margin-top: 1rem; color: rgba(33,31,26,.48);
     justify-content: center;
     font-size: 1rem;
     font-weight: 800;
+  }
+  .mobile-drawer-lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: .0625rem solid rgba(33, 31, 26, 0.08);
+  }
+  .mobile-drawer-lang a {
+    padding: .45rem 1rem;
+    border-radius: 999px;
+    font-size: .92rem;
+    font-weight: 750;
+    color: var(--muted);
+    border: .0625rem solid rgba(33, 31, 26, 0.1);
+    background: transparent;
+    border-bottom: .0625rem solid rgba(33, 31, 26, 0.1);
+  }
+  .mobile-drawer-lang a.is-active {
+    color: var(--purple);
+    border-color: var(--purple);
+    background: rgba(100, 85, 223, 0.08);
   }
   .brand img { width: 1.95rem; height: 1.95rem; border-radius: .55rem; }
   .header-download { display: none; }

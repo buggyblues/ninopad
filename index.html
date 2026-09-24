@@ -23,6 +23,11 @@
   <meta name="twitter:description" content="在掌上实时查看 Mac 画面，用触控板、常用快捷键、文本键盘与语音流畅掌控一切。局域网本地直连，低延迟更安全。">
   <meta name="twitter:image" content="https://ninopad.com/assets/app-icon.png">
   <link rel="canonical" href="https://ninopad.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/">
+  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/">
+  <link rel="preload" as="image" href="assets/panda-paw-glyph-v1.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/app-icon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
@@ -41,6 +46,7 @@
         "@id": "https://ninopad.com/#website",
         "url": "https://ninopad.com/",
         "name": "奶猫妙控",
+        "alternateName": "NinoPad",
         "description": "Mac 随心全能小键盘与掌上远程控制台",
         "inLanguage": "zh-CN"
       },
@@ -48,10 +54,13 @@
         "@type": "Organization",
         "@id": "https://ninopad.com/#organization",
         "name": "奶猫妙控",
+        "alternateName": "NinoPad",
         "url": "https://ninopad.com/",
         "logo": "https://ninopad.com/assets/app-icon.png",
         "sameAs": [
-          "https://github.com/buggyblues/ninopad"
+          "https://github.com/buggyblues/ninopad",
+          "https://apps.apple.com/app/id6805378609",
+          "https://arcade.ninopad.com/"
         ]
       },
       {
@@ -60,11 +69,16 @@
         "name": "奶猫妙控",
         "alternateName": "NinoPad",
         "url": "https://ninopad.com/",
-        "downloadUrl": ["https://apps.apple.com/app/id6805378609", "https://github.com/buggyblues/ninopad/releases/latest"],
+        "downloadUrl": [
+          "https://apps.apple.com/app/id6805378609",
+          "https://github.com/buggyblues/ninopad/releases/latest"
+        ],
         "installUrl": "https://apps.apple.com/app/id6805378609",
         "image": "https://ninopad.com/assets/app-icon.png",
-        "applicationCategory": "UtilitiesApplication",
+        "applicationCategory": "UtilitiesApplication, ProductivityApplication",
         "operatingSystem": "macOS 13+, iOS 17+, iPadOS 17+",
+        "softwareVersion": "1.3.6",
+        "inLanguage": "zh-CN",
         "description": "专为 Mac 打造的随心全能掌上副控与小键盘，支持 氛围编程与 Codex、Mac 原生 Shell 终端、实时画面串流、触控板、文本键盘及专业软件专属控制台。",
         "offers": {
           "@type": "Offer",
@@ -138,6 +152,7 @@
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
     </nav>
     <div class="header-actions">
+      <a class="header-lang" href="/en/" aria-label="Switch to English" data-lang-switch>EN</a>
       <a class="header-download" href="#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
       <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -154,6 +169,10 @@
       <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
     </ul>
     <a class="mobile-drawer-download" data-mobile-nav-link href="#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
+    <div class="mobile-drawer-lang">
+      <a href="/" class="is-active">简体中文</a>
+      <a href="/en/" data-lang-switch>English</a>
+    </div>
   </div>
 
   <main id="main">
@@ -690,6 +709,7 @@
       <a href="privacy.html">隐私</a>
       <a href="terms.html">条款</a>
       <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
+      <a href="/en/" data-lang-switch>English</a>
     </nav>
     <small>© <span data-year></span> 奶猫妙控</small>
   </footer>

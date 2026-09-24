@@ -1,43 +1,580 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<!-- release-1.2.0:start -->
-  <url><loc>https://ninopad.com/blog/layout-work</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-launcher</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-browser</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-media</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-presentation</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-codex</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-terminal</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-writing</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-research</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-reading</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-finance</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-creative</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-sampler</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-arcade</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/layout-smart-home</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-<!-- release-1.2.0:end -->
-  <url><loc>https://ninopad.com/</loc><lastmod>2026-08-31</lastmod><priority>1.0</priority></url>
-  <url><loc>https://ninopad.com/updates</loc><lastmod>2026-09-16</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ninopad.com/blog</loc><lastmod>2026-09-16</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/editing-keypad</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://ninopad.com/blog/voice-text-input</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/presentation-tools</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/remote-control-mac</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/custom-keypad</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/mac-settings</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/privacy</loc><lastmod>2026-08-31</lastmod><priority>0.4</priority></url>
-  <url><loc>https://ninopad.com/terms</loc><lastmod>2026-08-31</lastmod><priority>0.4</priority></url>
-  <url><loc>https://ninopad.com/support</loc><lastmod>2026-09-16</lastmod><priority>0.6</priority></url>
-<!-- practical-guides:start -->
-  <url><loc>https://ninopad.com/blog/guide-text-button</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-automation-steps</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-clipping-sources</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-clipping-export</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-sumifs</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-text-cleanup</loc><lastmod>2026-09-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-synthesizer</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-guitar</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
-  <url><loc>https://ninopad.com/blog/guide-dynamic-wallpaper</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
-<!-- practical-guides:end -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ninopad.com/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/updates</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/updates"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/updates"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/updates"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/updates</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/updates"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/updates"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/updates"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/support</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/support"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/support"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/support</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/support"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/support"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/privacy"/>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/privacy"/>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/terms"/>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/terms"/>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-work</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-work"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-work"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-work"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-work</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-work"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-work"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-work"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-launcher</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-launcher"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-launcher"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-launcher"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-launcher</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-launcher"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-launcher"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-launcher"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-browser</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-browser"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-browser"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-browser"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-browser</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-browser"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-browser"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-browser"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-media</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-media"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-media"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-media"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-media</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-media"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-media"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-media"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-presentation</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-presentation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-presentation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-presentation"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-presentation</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-presentation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-presentation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-presentation"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-codex</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-codex"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-codex"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-codex"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-codex</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-codex"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-codex"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-codex"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-terminal</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-terminal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-terminal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-terminal"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-terminal</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-terminal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-terminal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-terminal"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-writing</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-writing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-writing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-writing"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-writing</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-writing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-writing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-writing"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-research</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-research"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-research"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-research"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-research</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-research"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-research"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-research"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-reading</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-reading"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-reading"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-reading"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-reading</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-reading"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-reading"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-reading"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-finance</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-finance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-finance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-finance"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-finance</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-finance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-finance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-finance"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-creative</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-creative"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-creative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-creative"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-creative</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-creative"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-creative"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-creative"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-sampler</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-sampler"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-sampler"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-sampler"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-sampler</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-sampler"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-sampler"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-sampler"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-arcade</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-arcade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-arcade"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-arcade"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-arcade</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-arcade"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-arcade"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-arcade"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/layout-smart-home</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-smart-home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-smart-home"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-smart-home"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/layout-smart-home</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-smart-home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-smart-home"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-smart-home"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/editing-keypad</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/editing-keypad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/editing-keypad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/editing-keypad"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/editing-keypad</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/editing-keypad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/editing-keypad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/editing-keypad"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/voice-text-input</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/voice-text-input"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/voice-text-input"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/voice-text-input"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/voice-text-input</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/voice-text-input"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/voice-text-input"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/voice-text-input"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/presentation-tools</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/presentation-tools"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/presentation-tools"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/presentation-tools"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/presentation-tools</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/presentation-tools"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/presentation-tools"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/presentation-tools"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/remote-control-mac</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/remote-control-mac"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/remote-control-mac"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/remote-control-mac"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/remote-control-mac</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/remote-control-mac"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/remote-control-mac"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/remote-control-mac"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/custom-keypad</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/custom-keypad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/custom-keypad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/custom-keypad"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/custom-keypad</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/custom-keypad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/custom-keypad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/custom-keypad"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/mac-settings</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/mac-settings"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/mac-settings</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/mac-settings"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-text-button</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-button"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-button"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-text-button"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-text-button</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-button"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-button"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-text-button"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-automation-steps</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-automation-steps"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-automation-steps"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-automation-steps"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-automation-steps</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-automation-steps"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-automation-steps"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-automation-steps"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-clipping-sources</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-clipping-sources"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-clipping-sources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-clipping-sources"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-clipping-sources</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-clipping-sources"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-clipping-sources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-clipping-sources"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-clipping-export</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-clipping-export"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-clipping-export"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-clipping-export"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-clipping-export</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-clipping-export"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-clipping-export"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-clipping-export"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-sumifs</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-sumifs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-sumifs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-sumifs"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-sumifs</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-sumifs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-sumifs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-sumifs"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-text-cleanup</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-cleanup"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-cleanup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-text-cleanup"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-text-cleanup</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-cleanup"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-cleanup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-text-cleanup"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-synthesizer</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-synthesizer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-synthesizer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-synthesizer"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-synthesizer</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-synthesizer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-synthesizer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-synthesizer"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-guitar</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-guitar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-guitar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-guitar"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-guitar</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-guitar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-guitar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-guitar"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/blog/guide-dynamic-wallpaper</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-dynamic-wallpaper"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-dynamic-wallpaper"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-dynamic-wallpaper"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ninopad.com/en/blog/guide-dynamic-wallpaper</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-dynamic-wallpaper"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-dynamic-wallpaper"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-dynamic-wallpaper"/>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>

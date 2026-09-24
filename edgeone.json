@@ -6,7 +6,13 @@
     { "source": "/privacy/", "destination": "/privacy", "permanent": true },
     { "source": "/terms/", "destination": "/terms", "permanent": true },
     { "source": "/support/", "destination": "/support", "permanent": true },
-    { "source": "/blog/(.*)/", "destination": "/blog/$1", "permanent": true }
+    { "source": "/blog/(.*)/", "destination": "/blog/$1", "permanent": true },
+    { "source": "/en/updates/", "destination": "/en/updates", "permanent": true },
+    { "source": "/en/blog/", "destination": "/en/blog", "permanent": true },
+    { "source": "/en/privacy/", "destination": "/en/privacy", "permanent": true },
+    { "source": "/en/terms/", "destination": "/en/terms", "permanent": true },
+    { "source": "/en/support/", "destination": "/en/support", "permanent": true },
+    { "source": "/en/blog/(.*)/", "destination": "/en/blog/$1", "permanent": true }
   ],
   "rewrites": [
     { "source": "/updates", "destination": "/updates.html" },
@@ -14,11 +20,31 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/support", "destination": "/support.html" },
-    { "source": "/blog/([^/.]+)", "destination": "/blog/$1.html" }
+    { "source": "/blog/([^/.]+)", "destination": "/blog/$1.html" },
+    { "source": "/en", "destination": "/en/index.html" },
+    { "source": "/en/", "destination": "/en/index.html" },
+    { "source": "/en/updates", "destination": "/en/updates.html" },
+    { "source": "/en/blog", "destination": "/en/blog.html" },
+    { "source": "/en/privacy", "destination": "/en/privacy.html" },
+    { "source": "/en/terms", "destination": "/en/terms.html" },
+    { "source": "/en/support", "destination": "/en/support.html" },
+    { "source": "/en/blog/([^/.]+)", "destination": "/en/blog/$1.html" }
   ],
   "headers": [
     {
       "source": "/assets/*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/*.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/*.js",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

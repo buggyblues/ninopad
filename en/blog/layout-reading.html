@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9fb">
+  <meta name="description" content="Read large PDF documents, jump between chapters, search text, and turn pages with dual knobs.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="奶猫妙控">
+  <meta property="og:title" content="Deep Reading Assistant: Turn Pages, Chapters & Bookmarks on PDF | NinoPad">
+  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/reading-01.webp">
+  <meta property="og:url" content="https://ninopad.com/blog/layout-reading">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-09-10">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deep Reading Assistant: Turn Pages, Chapters & Bookmarks on PDF | NinoPad">
+  <meta name="twitter:description" content="Read large PDF documents, jump between chapters, search text, and turn pages with dual knobs.">
+  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/reading-01.webp">
+  <meta property="og:description" content="Read large PDF documents, jump between chapters, search text, and turn pages with dual knobs.">
+  <meta name="keywords" content="奶猫妙控,NinoPad,阅读布局教程,操作步骤">
+  <link rel="canonical" href="https://ninopad.com/en/blog/layout-reading">
+  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-reading">
+  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-reading">
+  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-reading">
+  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../blog.css">
+  <title>Deep Reading Assistant: Turn Pages, Chapters & Bookmarks on PDF | NinoPad</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码",
+      "description": "同步读取文档书签与层级目录，支持关键词筛选章节、绝对页码跳转与正文查找，让大部头文献阅读更轻松。",
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "奶猫妙控"
+      },
+      "image": [
+        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/reading-01.webp"
+      ],
+      "mainEntityOfPage": "https://ninopad.com/blog/layout-reading"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://ninopad.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "博客",
+          "item": "https://ninopad.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码",
+          "item": "https://ninopad.com/blog/layout-reading"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "没有目录，是 App 没连接吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。文档可能没有可读取书签，或阅读器没有提供目录能力。先检查翻页与正文查找，再检查文档自身的目录。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "手机为什么没有显示整本 PDF？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "这个布局是 Mac 阅读器的控制界面。它读取可用状态并发送操作，不会自动把整本书导入手机。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "换成 EPUB 后按钮不一样？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "按钮根据阅读类型与软件能力变化。图书里的主题、章节、书签等操作不能直接套用 PDF 的页码流程。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="content-page article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
+      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
+      <span>奶猫妙控</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="../index.html#layouts">Features</a>
+      <a href="../index.html#pro">Pricing</a>
+      <a href="../blog.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-lang" href="/blog/layout-reading" aria-label="切换至中文" data-lang-switch>中文</a>
+      <a class="header-download" href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
+    <ul>
+      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
+      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
+      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
+      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
+      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
+    </ul>
+    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="选择设备并下载奶猫妙控">Free Download</a>
+    <div class="mobile-drawer-lang">
+      <a href="/blog/layout-reading" data-lang-switch>简体中文</a>
+      <a href="/en/blog/layout-reading" class="is-active">English</a>
+    </div>
+  </div>
+
+  <main id="main" class="article-shell">
+    <header class="article-header">
+      <a href="../blog.html">← 博客专栏 / 阅读</a>
+      <h1>深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码</h1>
+      <p>同步读取文档书签与层级目录，支持关键词筛选章节、绝对页码跳转与正文查找，让大部头文献阅读更轻松。</p>
+      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+    </header>
+    <figure class="article-cover article-cover-phone">
+      <img src="../../assets/screens/tutorials-1.2.0-r1/reading-01.webp" alt="阅读桌面显示预览 App 的演示 PDF 与当前位置。" width="1206" height="2622">
+      <figcaption>阅读桌面显示预览 App 的演示 PDF 与当前位置。</figcaption>
+    </figure>
+    <article class="article-body">
+<p class="article-lead">在电脑上研读长篇 PDF 或白皮书时，频繁拖动滚动条容易迷失方向。阅读布局把文档目录搬到你的手机屏幕上，轻点即可按章节跳转，输入页码瞬间直达，让翻阅文献变得像看实体书一样惬意。</p>
+<aside class="article-highlight"><strong>配图说明：</strong>本次实际打开目录、搜索“第二章”并打开页码跳转弹窗。截图中的“阅读测试.pdf”和章节来自演示状态；是否能读取你的目录、页码以及实际跳转位置，需要在 Mac 阅读器中检查。</aside>
+<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控 1.2.0，Mac 安装同版本配套端；完成配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>在 Mac“预览”中打开一份至少三页、带可搜索正文的 PDF。目录练习还需要文件本身包含书签目录；只有视觉排版出来的目录页并不一定能被读取成章节列表。</li></ul>
+<h2>1. 进入阅读布局，在 Mac 端准备测试文档</h2>
+<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“阅读”布局。列表项较多时可通过顶部搜索框快速检索。</p>
+<p>在 Mac 上使用 PDF 阅读器或电子书软件打开一份包含完整书签目录的参考文档（例如带目录的教程或规范白皮书）。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/reading-01.webp" alt="阅读桌面显示预览 App 的演示 PDF 与当前位置。" width="1206" height="2622" loading="lazy"><figcaption>阅读桌面显示预览 App 的演示 PDF 与当前位置。</figcaption></figure>
+<h2>2. 测试单页翻动，确认响应与阅读器焦点</h2>
+<p>点击手机阅读桌面上的“下一页”，观察 Mac 阅读器中的文档是否顺畅翻至下一页；接着点击“上一页”返回。</p>
+<p>通过单次点按确认手机与 Mac 阅读器的翻页快捷指令处于准确响应状态。在连续滚动模式下，请以阅读器实际呈现的视野为准。</p>
+<h2>3. 读取章节目录，核对文档层级结构</h2>
+<p>点击手机上的“目录”按键，等待手机读取并呈现文档的层级目录列表。核对列表中展示的章节标题是否与 Mac 端 PDF 的实际书签一致。</p>
+<p>若阅读器未向系统开放目录回读接口，界面会给出友好提示；本文演示章节用于验证目录交互逻辑，不代表所有无书签文档均能自动生成目录。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/reading-02-contents.webp" alt="实际打开的手机目录页；章节由演示阅读状态提供。" width="1206" height="2622" loading="lazy"><figcaption>实际打开的手机目录页；章节由演示阅读状态提供。</figcaption></figure>
+<h2>4. 搜索章节标题，点击实现跳转</h2>
+<p>在目录面板顶部的“搜索章节”框中输入章节关键词（例如“第二章”），列表会实时过滤出匹配条目。</p>
+<p>点选目标章节，目录面板自动收起，Mac 屏幕上的文档会立即跳转至对应章节起始页。手机弹窗收起代表指令下发，请在 Mac 端确认页面已到达。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/reading-03-search.webp" alt="在目录页实际输入“第二章”后的筛选结果。" width="1206" height="2622" loading="lazy"><figcaption>在目录页实际输入“第二章”后的筛选结果。</figcaption></figure>
+<h2>5. 使用“跳转页码”，直达指定页面</h2>
+<p>点击阅读桌面的“更多”菜单，选择“跳转页码”。在弹出的数字框中输入目标页码（例如 3），点击“前往”。</p>
+<p>在 Mac 端核对文档当前页码与正文内容，确认绝对页码跳转准确无误。注意 PDF 文件的物理页序号可能包含封面和前言，与正文印刷页码略有偏移属于正常现象。</p>
+<figure class="article-figure article-figure-phone"><img src="../../assets/screens/tutorials-1.2.0-r1/reading-04-page.webp" alt="输入文件页码 3 后，“前往”按钮可用；跳转后在 Mac 核对页面内容。" width="1206" height="2622" loading="lazy"><figcaption>输入文件页码 3 后，“前往”按钮可用；跳转后在 Mac 核对页面内容。</figcaption></figure>
+<h2>6. 切换正文搜索，深度定位文档细节</h2>
+<p>目录搜索只筛选章节名称。要找正文中的词，回到阅读桌面点查找入口，在“查找正文”弹窗输入文件中存在的词，再在 Mac 检查匹配结果。</p>
+<p>纯扫描图片型 PDF 若未经过 OCR 文本层识别可能无法直接检索正文；遇到精华段落时，可使用剪藏夹功能将其整理归档。</p>
+<h2>FAQ</h2>
+<h3>没有目录，是 App 没连接吗？</h3><p>不一定。文档可能没有可读取书签，或阅读器没有提供目录能力。先检查翻页与正文查找，再检查文档自身的目录。</p>
+<h3>手机为什么没有显示整本 PDF？</h3><p>这个布局是 Mac 阅读器的控制界面。它读取可用状态并发送操作，不会自动把整本书导入手机。</p>
+<h3>换成 EPUB 后按钮不一样？</h3><p>按钮根据阅读类型与软件能力变化。图书里的主题、章节、书签等操作不能直接套用 PDF 的页码流程。</p>
+<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
+    </article>
+    <nav class="article-next" aria-label="继续阅读">
+      <a href="layout-research.html">← 知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档</a>
+      <a href="layout-browser.html">网页浏览利器：在手机上直达网址、轻滑切换标签页 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
+    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+    <nav aria-label="页脚导航">
+      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
+      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
+      <a href="../updates.html">更新</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../support.html">支持</a>
+      <a href="../privacy.html">隐私</a>
+      <a href="../terms.html">条款</a>
+      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
+      <a href="/blog/layout-reading" data-lang-switch>简体中文</a>
+    </nav>
+    <small>© <span data-year></span> 奶猫妙控</small>
+  </footer>
+  <script src="../../script.js" defer></script>
+</body>
+</html>
