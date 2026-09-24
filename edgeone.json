@@ -1,12 +1,20 @@
 {
   "outputDirectory": ".",
+  "redirects": [
+    { "source": "/updates/", "destination": "/updates", "permanent": true },
+    { "source": "/blog/", "destination": "/blog", "permanent": true },
+    { "source": "/privacy/", "destination": "/privacy", "permanent": true },
+    { "source": "/terms/", "destination": "/terms", "permanent": true },
+    { "source": "/support/", "destination": "/support", "permanent": true },
+    { "source": "/blog/(.*)/", "destination": "/blog/$1", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/updates", "destination": "/updates.html" },
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/support", "destination": "/support.html" },
-    { "source": "/blog/*", "destination": "/blog/:splat.html" }
+    { "source": "/blog/([^/.]+)", "destination": "/blog/$1.html" }
   ],
   "headers": [
     {
