@@ -448,26 +448,27 @@ const initLayoutTabs = () => {
 const initRemoteShowcase = () => {
   const tabs = Array.from(document.querySelectorAll('.remote-nav-item'));
   const panel = document.querySelector('#remote-panel');
-  const img = document.querySelector('[data-remote-display-img]');
   const tag = document.querySelector('[data-remote-display-tag]');
   const title = document.querySelector('[data-remote-display-title]');
   const desc = document.querySelector('[data-remote-display-desc]');
-  if (!tabs.length || !panel || !img || !title || !desc) return;
+  const simStages = Array.from(document.querySelectorAll('.sim-view-stage'));
+  const isEn = document.documentElement.lang === 'en';
 
-  const preload = () => {
-    tabs.forEach((tab) => {
-      const src = tab.dataset.remoteImg;
-      if (src) {
-        const image = new Image();
-        image.src = src;
-      }
-    });
-  };
-  if ('requestIdleCallback' in window) window.requestIdleCallback(preload);
-  else window.setTimeout(preload, 500);
+  if (!tabs.length || !panel) return;
+
+  // Update clock on phone simulator
+  const simClock = document.querySelector('#sim-clock');
+  if (simClock) {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    simClock.textContent = `${h}:${m}`;
+  }
 
   const selectTab = (tab) => {
     if (!tab) return;
+    const mode = tab.id.replace('remote-tab-', '') || 'studio';
+
     tabs.forEach((t) => {
       const isCurrent = t === tab;
       t.classList.toggle('is-active', isCurrent);
@@ -475,36 +476,25 @@ const initRemoteShowcase = () => {
       t.tabIndex = isCurrent ? 0 : -1;
     });
 
-    if (!window.gsap || prefersReducedMotion) {
-      img.src = tab.dataset.remoteImg;
-      img.alt = tab.dataset.remoteTitle || '';
-      if (tag) tag.innerHTML = `<span class="badge-dot"></span> ${tab.dataset.remoteTag || ''}`;
-      title.textContent = tab.dataset.remoteTitle || '';
-      desc.textContent = tab.dataset.remoteDesc || '';
-      panel.setAttribute('aria-labelledby', tab.id);
-      return;
-    }
+    const targetStage = document.querySelector(`.sim-view-stage[data-sim-mode="${mode}"]`);
 
-    window.gsap.killTweensOf([img, title, desc]);
-    window.gsap.to([img, title, desc], {
-      autoAlpha: 0,
-      scale: 0.98,
-      duration: 0.14,
-      ease: 'power2.in',
-      onComplete: () => {
-        img.src = tab.dataset.remoteImg;
-        img.alt = tab.dataset.remoteTitle || '';
-        if (tag) tag.innerHTML = `<span class="badge-dot"></span> ${tab.dataset.remoteTag || ''}`;
-        title.textContent = tab.dataset.remoteTitle || '';
-        desc.textContent = tab.dataset.remoteDesc || '';
-        panel.setAttribute('aria-labelledby', tab.id);
+    if (tag) tag.innerHTML = `<span class="badge-dot"></span> ${tab.dataset.remoteTag || ''}`;
+    if (title) title.textContent = tab.dataset.remoteTitle || '';
+    if (desc) desc.textContent = tab.dataset.remoteDesc || '';
+    panel.setAttribute('aria-labelledby', tab.id);
 
-        window.gsap.to([img, title, desc], {
-          autoAlpha: 1,
-          scale: 1,
-          duration: 0.22,
-          ease: 'power2.out'
-        });
+    simStages.forEach((stage) => {
+      const match = stage === targetStage;
+      if (match) {
+        stage.style.display = 'flex';
+        if (window.gsap && !prefersReducedMotion) {
+          window.gsap.fromTo(stage, { autoAlpha: 0, scale: 0.98 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: 'power2.out' });
+        } else {
+          stage.classList.add('is-active');
+        }
+      } else {
+        stage.style.display = 'none';
+        stage.classList.remove('is-active');
       }
     });
   };
@@ -523,6 +513,196 @@ const initRemoteShowcase = () => {
       selectTab(tabs[nextIndex]);
     });
   });
+
+  // ==========================================
+  // Interactive Simulator Event Handlers
+  // ==========================================
+
+  // 1. Studio View Trackpad & Cursor
+  const trackpad = document.querySelector('#sim-trackpad');
+  const cursor = document.querySelector('#sim-mac-cursor');
+  const studioMac = document.querySelector('#sim-studio-mac');
+  const ripple = document.querySelector('#sim-touch-ripple');
+  const macToast = document.querySelector('#sim-mac-toast');
+
+  if (trackpad && cursor && studioMac) {
+    let isTracking = false;
+
+    const showToast = (text) => {
+      if (!macToast) return;
+      macToast.textContent = text;
+      macToast.classList.add('is-shown');
+      clearTimeout(macToast._tId);
+      macToast._tId = setTimeout(() => {
+        macToast.classList.remove('is-shown');
+      }, 1800);
+    };
+
+    const updateCursor = (e) => {
+      const padRect = trackpad.getBoundingClientRect();
+      const macRect = studioMac.getBoundingClientRect();
+      const relX = Math.max(0, Math.min(1, (e.clientX - padRect.left) / padRect.width));
+      const relY = Math.max(0, Math.min(1, (e.clientY - padRect.top) / padRect.height));
+
+      const targetX = relX * (macRect.width - 24) + 12;
+      const targetY = relY * (macRect.height - 24) + 12;
+
+      cursor.style.transform = `translate(${targetX}px, ${targetY}px)`;
+
+      if (ripple) {
+        ripple.style.left = `${(e.clientX - padRect.left)}px`;
+        ripple.style.top = `${(e.clientY - padRect.top)}px`;
+        ripple.style.opacity = '1';
+      }
+    };
+
+    trackpad.addEventListener('pointerdown', (e) => {
+      isTracking = true;
+      trackpad.setPointerCapture?.(e.pointerId);
+      updateCursor(e);
+      window.addEventListener('pointermove', updateCursor);
+      window.addEventListener('pointerup', () => {
+        isTracking = false;
+        if (ripple) ripple.style.opacity = '0';
+        window.removeEventListener('pointermove', updateCursor);
+      }, { once: true });
+    });
+
+    trackpad.addEventListener('click', () => {
+      showToast(isEn ? 'Clicked on Mac active window' : '已在 Mac 前台窗口完成点击选取');
+    });
+
+    // Quick Keys
+    document.querySelectorAll('.sim-quick-keys .sim-key-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.simAction;
+        if (action === 'spotlight') showToast(isEn ? '⌘+Space Spotlight search open' : '⌘+Space 聚焦搜索已唤起');
+        else if (action === 'copy') showToast(isEn ? '⌘+C Copied text to Mac clipboard' : '⌘+C 已复制选中文本到剪贴板');
+        else if (action === 'paste') showToast(isEn ? '⌘+V Pasted into Mac document' : '⌘+V 已粘贴内容到当前光标');
+        else if (action === 'esc') showToast(isEn ? 'Esc Dismiss active modal' : 'Esc 已关闭当前弹窗');
+        else if (action === 'enter') showToast(isEn ? '↵ Enter Command executed' : '↵ Enter 回车指令已发送');
+      });
+    });
+
+    // Scroll bar
+    const scrollBar = document.querySelector('#sim-scroll-bar');
+    const scrollThumb = document.querySelector('#sim-scroll-thumb');
+    const studioNotes = document.querySelector('#sim-studio-notes');
+    if (scrollBar && scrollThumb && studioNotes) {
+      scrollBar.addEventListener('pointerdown', (e) => {
+        const barRect = scrollBar.getBoundingClientRect();
+        const onMove = (ev) => {
+          const ratio = Math.max(0, Math.min(1, (ev.clientY - barRect.top) / barRect.height));
+          scrollThumb.style.top = `${ratio * (barRect.height - 30)}px`;
+          studioNotes.scrollTop = ratio * (studioNotes.scrollHeight - studioNotes.clientHeight);
+        };
+        onMove(e);
+        window.addEventListener('pointermove', onMove);
+        window.addEventListener('pointerup', () => window.removeEventListener('pointermove', onMove), { once: true });
+      });
+    }
+  }
+
+  // 2. Fullscreen Dock Switching
+  const dockIcons = document.querySelectorAll('.sim-dock-icon');
+  const fsTitle = document.querySelector('#sim-fs-title');
+  const fsAppName = document.querySelector('#sim-fs-appname');
+  const fsContent = document.querySelector('#sim-fs-content');
+
+  const appData = {
+    safari: { name: 'Safari', title: 'Safari — cream-deck.com', html: '<div class="sim-safari-bar"><span class="sim-safari-url">https://ninopad.app</span></div><p class="sim-fs-text">点击下方 Mac Dock 图标自由切换应用窗口</p>' },
+    code: { name: 'VS Code', title: 'Code — workspace.ts', html: '<p class="sim-note-line">const deck = new NinoPad();</p><p class="sim-note-line muted">// Stream latency: 12ms</p><p class="sim-note-line">deck.bindKey("⌘S", save);</p>' },
+    music: { name: 'Music', title: 'Music — Lo-Fi Chill Beats', html: '<p class="sim-note-line">🎵 Now Playing: Midnight Lo-Fi</p><p class="sim-note-line muted">Volume: 85% · AirPlay Active</p>' },
+    terminal: { name: 'Terminal', title: 'Terminal — zsh (80x24)', html: '<p class="sim-note-line" style="font-family:monospace; color:#10b981;">➜ mac-studio ~ git status</p><p class="sim-note-line muted" style="font-family:monospace;">On branch main (up to date)</p>' }
+  };
+
+  dockIcons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      dockIcons.forEach((d) => d.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const key = btn.dataset.dock;
+      if (appData[key]) {
+        if (fsAppName) fsAppName.textContent = appData[key].name;
+        if (fsTitle) fsTitle.textContent = appData[key].title;
+        if (fsContent) fsContent.innerHTML = appData[key].html;
+      }
+    });
+  });
+
+  // 3. Text & Voice Input Simulation
+  const voiceInput = document.querySelector('#sim-voice-input');
+  const sendBtn = document.querySelector('#sim-send-text-btn');
+  const injectedText = document.querySelector('#sim-injected-text');
+  const dictateBtn = document.querySelector('#sim-dictate-btn');
+
+  document.querySelectorAll('.sim-phrase-chips .sim-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      if (voiceInput) {
+        voiceInput.value = chip.dataset.phrase;
+        voiceInput.focus();
+      }
+    });
+  });
+
+  if (sendBtn && voiceInput && injectedText) {
+    sendBtn.addEventListener('click', () => {
+      const text = voiceInput.value.trim() || (isEn ? 'Confirmed! Ready to deploy.' : '已确认，准备上线发布！');
+      injectedText.textContent = '';
+      let charIdx = 0;
+      clearInterval(injectedText._tId);
+      injectedText._tId = setInterval(() => {
+        if (charIdx < text.length) {
+          injectedText.textContent = text.slice(0, charIdx + 1) + ' |';
+          charIdx++;
+        } else {
+          injectedText.textContent = text + ' ↵';
+          clearInterval(injectedText._tId);
+        }
+      }, 40);
+    });
+  }
+
+  if (dictateBtn && voiceInput) {
+    dictateBtn.addEventListener('click', () => {
+      dictateBtn.classList.toggle('is-listening');
+      if (dictateBtn.classList.contains('is-listening')) {
+        voiceInput.value = isEn ? 'Speech recognized: Standup meeting started.' : '语音识别中：今晚 8 点进行产品联调测试。';
+      }
+    });
+  }
+
+  // 4. Keyboard Shortcuts
+  const keyCombo = document.querySelector('#sim-key-combo');
+  const keyDesc = document.querySelector('#sim-key-desc');
+  const keyHud = document.querySelector('#sim-key-hud');
+
+  document.querySelectorAll('.sim-touch-keyboard .sim-kb-key').forEach((keyBtn) => {
+    keyBtn.addEventListener('click', () => {
+      const val = keyBtn.dataset.key;
+      if (keyCombo) keyCombo.textContent = val;
+      if (keyHud) keyHud.textContent = `${val} Pressed`;
+      if (keyDesc) {
+        if (val.includes('⌘')) keyDesc.textContent = isEn ? 'Triggered Mac system modifier' : '触发 Mac 系统快捷指令';
+        else if (val === 'Space') keyDesc.textContent = isEn ? 'Quick Look / Spotlight' : '快速预览 / 聚焦搜索';
+        else if (val === 'Esc') keyDesc.textContent = isEn ? 'Dismiss modal / Cancel' : '取消当前操作 / 退出全屏';
+        else keyDesc.textContent = isEn ? `Sent [${val}] keycode to Mac` : `已向 Mac 发送 [${val}] 按键指令`;
+      }
+    });
+  });
+
+  // 5. Wireless Microphone
+  const bigMicBtn = document.querySelector('#sim-big-mic-btn');
+  const micStateLabel = document.querySelector('#sim-mic-state-label');
+  const micStatusText = document.querySelector('#sim-mic-status-text');
+
+  if (bigMicBtn) {
+    bigMicBtn.addEventListener('click', () => {
+      bigMicBtn.classList.toggle('is-muted');
+      const isMuted = bigMicBtn.classList.contains('is-muted');
+      if (micStateLabel) micStateLabel.textContent = isMuted ? 'MUTED' : 'LIVE STREAMING';
+      if (micStatusText) micStatusText.textContent = isMuted ? (isEn ? 'Microphone Muted' : '无线麦克风已静音') : (isEn ? 'Wireless Mic Connected' : '无线麦克风已连接');
+    });
+  }
 };
 
 const initTypewriter = (gsap) => {

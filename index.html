@@ -346,93 +346,254 @@
       </div>
 
       <div class="remote-showcase">
-        <div class="remote-nav" role="tablist" aria-label="远程控制模式切换">
-          <button class="remote-nav-item is-active" type="button" role="tab" aria-selected="true" aria-controls="remote-panel" id="remote-tab-studio"
-            data-remote-img="assets/screens/release-1.3.1/store-01-studio.webp"
-            data-remote-tag="边看边控"
-            data-remote-title="边看边控 · Studio View"
-            data-remote-desc="将 Mac 实时桌面与触控板、独立滚轮排布于同一界面，坐卧皆可轻松操控电脑。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <div class="remote-display" id="remote-panel" role="tabpanel" aria-labelledby="remote-tab-studio" tabindex="0">
+          <!-- Interactive Mac Remote Simulator Widget (No Static Screenshot) -->
+          <div class="remote-simulator-phone" id="remote-sim">
+            <!-- Dynamic Island / Status Bar -->
+            <div class="sim-phone-header">
+              <span class="sim-time" id="sim-clock">09:41</span>
+              <div class="sim-island">
+                <span class="sim-island-dot"></span>
+                <span class="sim-island-text">NinoPad Connected</span>
               </div>
-              <strong>边看边控 (Studio View)</strong>
-              <span class="remote-nav-badge">推荐</span>
-            </div>
-            <p>Mac 实时画面 + 触控板与滚轮集成在同一界面</p>
-          </button>
-
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-fullscreen"
-            data-remote-img="assets/screens/v1.2.0/remote-fullscreen.webp"
-            data-remote-tag="全屏清晰"
-            data-remote-title="展开全屏桌面"
-            data-remote-desc="清晰低延迟串流，支持双指自由平移与缩放，远距离监看多任务进度。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+              <div class="sim-signals">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+                <span class="sim-battery">100%</span>
               </div>
-              <strong>展开全屏桌面</strong>
-              <span class="remote-nav-badge highlight">超清</span>
             </div>
-            <p>低延迟桌面画面串流，多任务窗口自由缩放查看</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-voice"
-            data-remote-img="assets/screens/v1.2.0/remote-text-voice.webp"
-            data-remote-tag="先改后发"
-            data-remote-title="文本键盘 · 语音与文字输入"
-            data-remote-desc="在手机上先口述或整理文字，确认无误后一键注入 Mac 光标所在位置。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <!-- Viewport Container for 5 Live Interactive Modes -->
+            <div class="sim-view-viewport">
+              
+              <!-- 1. Studio View Mode (Live Mac Desktop + Virtual Trackpad + Scroll + Keys) -->
+              <div class="sim-view-stage is-active" data-sim-mode="studio">
+                <div class="sim-mac-screen" id="sim-studio-mac">
+                  <div class="sim-mac-menubar">
+                    <div class="sim-mac-menu-left">
+                      <span class="sim-apple-logo"></span>
+                      <span>Notes</span>
+                      <span>Edit</span>
+                    </div>
+                    <div class="sim-mac-menu-right">
+                      <span>4K 60fps</span>
+                      <span>WiFi</span>
+                    </div>
+                  </div>
+                  <div class="sim-mac-workspace">
+                    <div class="sim-mac-window" id="sim-studio-window">
+                      <div class="sim-win-header">
+                        <span class="sim-win-dot red"></span>
+                        <span class="sim-win-dot yellow"></span>
+                        <span class="sim-win-dot green"></span>
+                        <span class="sim-win-title">Notes — Mac Studio</span>
+                      </div>
+                      <div class="sim-win-body" id="sim-studio-notes">
+                        <p class="sim-note-line">🚀 奶猫妙控 边看边控已连接</p>
+                        <p class="sim-note-line muted">在下方触控板滑动手指，光标实时移动...</p>
+                        <div class="sim-doc-items">
+                          <span class="sim-doc-badge">⌘ Space 聚焦</span>
+                          <span class="sim-doc-badge">滚轮平滑滚动</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Live Moving Mac Cursor -->
+                    <div class="sim-mac-cursor" id="sim-mac-cursor">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff" stroke="#111827" stroke-width="1.5">
+                        <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+                      </svg>
+                    </div>
+                    <!-- Feedback Toast -->
+                    <div class="sim-mac-toast" id="sim-mac-toast">⌘+Space 聚焦搜索已触发</div>
+                  </div>
+                </div>
+
+                <!-- Bottom Controller Area: Interactive Trackpad & Toolpad -->
+                <div class="sim-controller-area">
+                  <div class="sim-pad-row">
+                    <div class="sim-trackpad" id="sim-trackpad" title="在触控板上滑动或点击">
+                      <span class="sim-pad-hint">触控板 · 拖拽移动光标 / 点击选取</span>
+                      <div class="sim-touch-ripple" id="sim-touch-ripple"></div>
+                    </div>
+                    <div class="sim-scroll-bar" id="sim-scroll-bar" title="上下拖拽滚轮">
+                      <span class="sim-scroll-track"></span>
+                      <span class="sim-scroll-thumb" id="sim-scroll-thumb"></span>
+                    </div>
+                  </div>
+                  <!-- Quick Modifier Keys -->
+                  <div class="sim-quick-keys">
+                    <button class="sim-key-btn" type="button" data-sim-action="esc">Esc</button>
+                    <button class="sim-key-btn" type="button" data-sim-action="spotlight">⌘ Space</button>
+                    <button class="sim-key-btn" type="button" data-sim-action="copy">⌘ C</button>
+                    <button class="sim-key-btn" type="button" data-sim-action="paste">⌘ V</button>
+                    <button class="sim-key-btn" type="button" data-sim-action="enter">↵ Enter</button>
+                  </div>
+                </div>
               </div>
-              <strong>文本与语音输入</strong>
-              <span class="remote-nav-badge">高效</span>
-            </div>
-            <p>在手机上口述或整理文字，一键发送至 Mac 光标处</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-keyboard"
-            data-remote-img="assets/screens/v1.2.0/remote-keyboard.webp"
-            data-remote-tag="低延迟按键"
-            data-remote-title="虚拟键盘 · 常用按键"
-            data-remote-desc="常用功能键与 Command、Option 等修饰键即按即发，专为高频指令设计。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/><line x1="18" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+              <!-- 2. Fullscreen Desktop Stream Mode -->
+              <div class="sim-view-stage" data-sim-mode="fullscreen">
+                <div class="sim-mac-screen is-fullscreen" id="sim-fs-mac">
+                  <div class="sim-mac-menubar">
+                    <div class="sim-mac-menu-left">
+                      <span class="sim-apple-logo"></span>
+                      <span id="sim-fs-appname">Safari</span>
+                    </div>
+                    <div class="sim-mac-menu-right">
+                      <span class="sim-stream-badge">Ultra-HD Stream</span>
+                    </div>
+                  </div>
+                  <div class="sim-mac-workspace">
+                    <div class="sim-mac-window is-large" id="sim-fs-window">
+                      <div class="sim-win-header">
+                        <span class="sim-win-dot red"></span>
+                        <span class="sim-win-dot yellow"></span>
+                        <span class="sim-win-dot green"></span>
+                        <span class="sim-win-title" id="sim-fs-title">Safari — cream-deck.com</span>
+                      </div>
+                      <div class="sim-win-body" id="sim-fs-content">
+                        <div class="sim-safari-bar">
+                          <span class="sim-safari-url">https://ninopad.app</span>
+                        </div>
+                        <p class="sim-fs-text">点击下方 Mac Dock 图标自由切换应用窗口</p>
+                      </div>
+                    </div>
+                    <div class="sim-mac-dock">
+                      <button class="sim-dock-icon is-active" type="button" data-dock="safari" title="Safari">🌐</button>
+                      <button class="sim-dock-icon" type="button" data-dock="code" title="Code Editor">💻</button>
+                      <button class="sim-dock-icon" type="button" data-dock="music" title="Music">🎵</button>
+                      <button class="sim-dock-icon" type="button" data-dock="terminal" title="Terminal">⌨️</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <strong>虚拟键盘与快捷键</strong>
-              <span class="remote-nav-badge">实用</span>
-            </div>
-            <p>常用按键与修饰键即按即发，专为快捷指令设计</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-mic"
-            data-remote-img="assets/screens/v1.2.0/remote-microphone.webp"
-            data-remote-tag="无线传输"
-            data-remote-title="无线麦克风"
-            data-remote-desc="将手机麦克风音频通过低延迟通道无线传给 Mac，远程会议更自如。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+              <!-- 3. Text & Voice Pre-Edit Mode -->
+              <div class="sim-view-stage" data-sim-mode="voice">
+                <div class="sim-mac-screen is-compact">
+                  <div class="sim-mac-menubar">
+                    <div class="sim-mac-menu-left">
+                      <span class="sim-apple-logo"></span>
+                      <span>Notes</span>
+                    </div>
+                  </div>
+                  <div class="sim-mac-workspace">
+                    <div class="sim-mac-window">
+                      <div class="sim-win-header">
+                        <span class="sim-win-dot red"></span>
+                        <span class="sim-win-dot yellow"></span>
+                        <span class="sim-win-dot green"></span>
+                        <span class="sim-win-title">Mac 目标窗口</span>
+                      </div>
+                      <div class="sim-win-body sim-target-editor" id="sim-voice-mac-target">
+                        <span class="sim-target-text" id="sim-injected-text">Mac 光标就绪 |</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pre-edit text box on phone -->
+                <div class="sim-voice-deck">
+                  <div class="sim-voice-input-wrap">
+                    <textarea class="sim-voice-textarea" id="sim-voice-input" rows="2" placeholder="在手机上编辑文字或点击下方快捷词..."></textarea>
+                  </div>
+                  <div class="sim-phrase-chips">
+                    <button class="sim-chip" type="button" data-phrase="收到，正在部署最新版本！">快速回复</button>
+                    <button class="sim-chip" type="button" data-phrase="git commit -m 'feat: live update'">Git 提交</button>
+                    <button class="sim-chip" type="button" data-phrase="明早 10 点召开项目评审会议。">会议提醒</button>
+                  </div>
+                  <div class="sim-voice-actions">
+                    <button class="sim-mic-wave-btn" id="sim-dictate-btn" type="button">
+                      <span class="sim-mic-icon">🎙️</span>
+                      <span class="sim-wave-bars"><i></i><i></i><i></i><i></i></span>
+                      <span class="sim-dictate-label">语音听写</span>
+                    </button>
+                    <button class="sim-send-btn" id="sim-send-text-btn" type="button">
+                      一键发送至 Mac ↵
+                    </button>
+                  </div>
+                </div>
               </div>
-              <strong>无线高清麦克风</strong>
-              <span class="remote-nav-badge">清晰</span>
-            </div>
-            <p>将手机麦克风音频无线传至 Mac，通话更清晰</p>
-          </button>
-        </div>
 
-        <figure class="remote-display" id="remote-panel" role="tabpanel" aria-labelledby="remote-tab-studio" tabindex="0">
-          <div class="remote-display-stage">
-            <img class="remote-display-img" data-remote-display-img src="assets/screens/release-1.3.1/store-01-studio.webp" alt="奶猫妙控 Studio View 边看边控" width="1206" height="2622">
+              <!-- 4. Virtual Keyboard & Shortcuts Mode -->
+              <div class="sim-view-stage" data-sim-mode="keyboard">
+                <div class="sim-mac-screen is-compact">
+                  <div class="sim-mac-menubar">
+                    <div class="sim-mac-menu-left"><span class="sim-apple-logo"></span><span>System</span></div>
+                    <div class="sim-mac-menu-right"><span id="sim-key-hud">等待按键...</span></div>
+                  </div>
+                  <div class="sim-mac-workspace sim-keys-display">
+                    <div class="sim-key-feedback" id="sim-key-feedback">
+                      <span class="sim-key-combo" id="sim-key-combo">⌘ + Tab</span>
+                      <span class="sim-key-desc" id="sim-key-desc">触发 Mac 快捷指令</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Interactive Keyboard Keys -->
+                <div class="sim-touch-keyboard">
+                  <div class="sim-kb-row">
+                    <button class="sim-kb-key fn" type="button" data-key="Esc">Esc</button>
+                    <button class="sim-kb-key fn" type="button" data-key="F1">F1</button>
+                    <button class="sim-kb-key fn" type="button" data-key="F2">F2</button>
+                    <button class="sim-kb-key fn" type="button" data-key="F11">F11</button>
+                    <button class="sim-kb-key fn" type="button" data-key="⌫">⌫</button>
+                  </div>
+                  <div class="sim-kb-row">
+                    <button class="sim-kb-key mod" type="button" data-key="⌃ Ctrl">⌃</button>
+                    <button class="sim-kb-key mod" type="button" data-key="⌥ Option">⌥</button>
+                    <button class="sim-kb-key mod is-active" type="button" data-key="⌘ Command">⌘</button>
+                    <button class="sim-kb-key space" type="button" data-key="Space">Space</button>
+                    <button class="sim-kb-key ret" type="button" data-key="Return">↵</button>
+                  </div>
+                  <div class="sim-kb-row arrows">
+                    <button class="sim-kb-key" type="button" data-key="←">←</button>
+                    <button class="sim-kb-key" type="button" data-key="↑">↑</button>
+                    <button class="sim-kb-key" type="button" data-key="↓">↓</button>
+                    <button class="sim-kb-key" type="button" data-key="→">→</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. Wireless Microphone Mode -->
+              <div class="sim-view-stage" data-sim-mode="mic">
+                <div class="sim-mac-screen is-compact">
+                  <div class="sim-mac-menubar">
+                    <div class="sim-mac-menu-left"><span class="sim-apple-logo"></span><span>Audio In</span></div>
+                    <div class="sim-mac-menu-right"><span class="sim-audio-stat">48kHz · 24-bit</span></div>
+                  </div>
+                  <div class="sim-mac-workspace sim-mic-mac-view">
+                    <div class="sim-audio-card">
+                      <span class="sim-audio-dot is-live"></span>
+                      <strong id="sim-mic-status-text">无线麦克风已连接</strong>
+                      <p>正在作为 Mac 默认音频输入源</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Big Touch-to-Talk Mic -->
+                <div class="sim-mic-deck">
+                  <button class="sim-big-mic-btn is-active" id="sim-big-mic-btn" type="button">
+                    <div class="sim-mic-halo"></div>
+                    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                      <line x1="12" y1="19" x2="12" y2="22"/>
+                    </svg>
+                    <span class="sim-mic-state" id="sim-mic-state-label">LIVE STREAMING</span>
+                  </button>
+                  <div class="sim-audio-visualizer">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <span class="sim-mic-footer-hint">轻触切换静音 / 开启高清传输</span>
+                </div>
+              </div>
+
+            </div>
           </div>
+
           <figcaption class="remote-display-caption">
             <div class="remote-display-tag" data-remote-display-tag><span class="badge-dot"></span> 边看边控</div>
             <strong data-remote-display-title>边看边控 · Studio View</strong>
             <p data-remote-display-desc>将 Mac 实时桌面与触控板、独立滚轮排布于同一界面，坐卧皆可轻松操控电脑。</p>
           </figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
