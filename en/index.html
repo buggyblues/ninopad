@@ -337,483 +337,334 @@
     <section class="remote-section" id="remote">
       <div class="remote-intro">
         <p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
-        <h2>Control Your Mac, Way Beyond a Display</h2>
-        <p>Real-time desktop streaming, virtual trackpad, pre-edit text keyboard, and wireless microphone make iPhone &amp; iPad your natural control extension.</p>
+        <h2>Control Your Mac, Way Beyond a Single Screen</h2>
+        <p>Dual-screen synergy, right at your fingertips. Operate trackpads, dials, shortcuts, and voice on your phone to control the Mac display in real time.</p>
+        
+        <!-- Workstation Mode Selector Pills -->
+        <div class="remote-mode-pills" role="tablist" aria-label="Workstation mode switcher">
+          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">🎬 Video Editing</button>
+          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">🎵 Music Player</button>
+          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">⚡ Multitasking</button>
+          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">🎙️ Voice Dictation</button>
+          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">🔒 Lockscreen</button>
+        </div>
       </div>
 
-      <div class="remote-showcase">
-        <!-- Left: 5 Interactive Feature Tabs -->
-        <div class="remote-nav" role="tablist" aria-label="Remote control mode selector">
-          <button class="remote-nav-item is-active" type="button" role="tab" aria-selected="true" aria-controls="remote-panel" id="remote-tab-studio"
-            data-remote-tag="Studio View"
-            data-remote-title="Studio View · View &amp; Control"
-            data-remote-desc="View live Mac desktop while controlling with trackpad, scroll wheel, and quick keys on a single screen.">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <!-- Live Dual-Screen Interactive Workstation -->
+      <div class="mac-remote-workstation">
+        
+        <!-- Left: Mac Studio Display (Live Target Screen) -->
+        <div class="mac-display-bay">
+          <div class="mac-monitor-frame">
+            <!-- macOS Top Menu Bar -->
+            <div class="mac-menubar">
+              <div class="mac-menu-left">
+                <span class="mac-apple-logo"></span>
+                <strong class="mac-active-app" id="mac-app-name">Final Cut Pro</strong>
+                <span class="mac-menu-item">File</span>
+                <span class="mac-menu-item">Edit</span>
+                <span class="mac-menu-item">View</span>
               </div>
-              <strong>Studio View</strong>
-              <span class="remote-nav-badge">Featured</span>
+              <div class="mac-menu-right">
+                <span class="mac-stream-tag"><span class="live-dot"></span> 4K 60FPS · 12ms</span>
+                <span class="mac-clock-text">09:41</span>
+              </div>
             </div>
-            <p>Live Mac stream + trackpad &amp; scroll wheel unified</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-fullscreen"
-            data-remote-tag="Ultra-Clear"
-            data-remote-title="Fullscreen Remote Desktop"
-            data-remote-desc="Crisp low-latency streaming with floating action bar and seamless multi-app switching.">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            <!-- macOS Active Screen Canvas -->
+            <div class="mac-screen-canvas" id="mac-screen-canvas">
+              
+              <!-- 1. Video Editing Mode Canvas -->
+              <div class="mac-canvas-view is-active" data-canvas="video">
+                <div class="mac-video-window">
+                  <div class="mac-win-titlebar">
+                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    <span>Timeline — 4K_B-Roll_Master.mov</span>
+                  </div>
+                  <div class="mac-video-preview">
+                    <div class="video-art-box">
+                      <div class="video-placeholder-art">
+                        <span class="video-badge">COLOR GRADE: 709</span>
+                        <h4>Hawa Mahal · 4K 60p HDR</h4>
+                        <div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
+                      </div>
+                    </div>
+                    <!-- Scrubbable Timeline -->
+                    <div class="mac-timeline-bar" id="mac-timeline">
+                      <div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
+                      <div class="timeline-tracks">
+                        <div class="track-block v1">Video 1 [4K HDR]</div>
+                        <div class="track-block a1">Audio 1 [Dialogue -3dB]</div>
+                      </div>
+                      <div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <strong>Fullscreen Remote Desktop</strong>
-              <span class="remote-nav-badge highlight">HD</span>
-            </div>
-            <p>Low-latency desktop stream with smooth zoom and pan</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-voice"
-            data-remote-tag="Pre-edit &amp; Send"
-            data-remote-title="Text Keyboard &amp; Voice Input"
-            data-remote-desc="Dictate or polish text on your phone first, then inject directly into your Mac cursor with one tap.">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              <!-- 2. Music Player Mode Canvas -->
+              <div class="mac-canvas-view" data-canvas="music">
+                <div class="mac-music-window">
+                  <div class="mac-win-titlebar">
+                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    <span>Apple Music — Lo-Fi Chill</span>
+                  </div>
+                  <div class="mac-music-body">
+                    <div class="music-vinyl-disc is-spinning" id="music-vinyl">
+                      <div class="vinyl-grooves"></div>
+                      <div class="vinyl-center"><img src="../assets/software/apple-music.jpg" alt="" width="36" height="36"></div>
+                    </div>
+                    <div class="music-info-box">
+                      <span class="music-tag">NOW PLAYING</span>
+                      <h3 id="music-song-title">Midnight Ambient Beats</h3>
+                      <p>AirPlay 2 Lossless Streaming · Stereo</p>
+                      <div class="music-wave-spectrum" id="music-spectrum">
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <strong>Text &amp; Voice Input</strong>
-              <span class="remote-nav-badge">Efficient</span>
-            </div>
-            <p>Dictate text on mobile and inject to Mac cursor instantly</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-keyboard"
-            data-remote-tag="Low-Latency"
-            data-remote-title="Virtual Keyboard &amp; Modifiers"
-            data-remote-desc="Full macOS modifier matrix and function keys with instant tactile feedback.">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M6 12h.001M10 12h.001M14 12h.001M18 12h.001M7 16h10"/></svg>
+              <!-- 3. Desktop & Multi-Task Canvas -->
+              <div class="mac-canvas-view" data-canvas="desktop">
+                <div class="mac-mission-control" id="mac-mission-grid">
+                  <div class="mission-card active-card">
+                    <div class="mcard-header">🌐 Safari — CreamDeck.com</div>
+                    <div class="mcard-body"><div class="mini-browser-page"></div></div>
+                  </div>
+                  <div class="mission-card">
+                    <div class="mcard-header">💻 VS Code — App.tsx</div>
+                    <div class="mcard-body"><div class="mini-code-lines"></div></div>
+                  </div>
+                  <div class="mission-card">
+                    <div class="mcard-header">🎨 DaVinci Resolve — Color</div>
+                    <div class="mcard-body"><div class="mini-color-grading"></div></div>
+                  </div>
+                </div>
               </div>
-              <strong>Virtual Keyboard &amp; Modifiers</strong>
-              <span class="remote-nav-badge">Zero Lag</span>
-            </div>
-            <p>Fast-response modifier keys and shortcuts</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-mic"
-            data-remote-tag="Wireless HD"
-            data-remote-title="Wireless Microphone &amp; Console"
-            data-remote-desc="Turn your iPhone into a studio-grade low-noise mic and tactile controller for your Mac.">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+              <!-- 4. Notes & Voice Dictate Canvas -->
+              <div class="mac-canvas-view" data-canvas="notes">
+                <div class="mac-notes-window">
+                  <div class="mac-win-titlebar">
+                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    <span>Notes — Live Voice &amp; Text Injection</span>
+                  </div>
+                  <div class="mac-notes-content" id="mac-notes-body">
+                    <p class="notes-date">Today 09:41</p>
+                    <p class="notes-p" id="mac-typed-text">🚀 Mobile voice and text connected to Mac cursor...</p>
+                  </div>
+                </div>
               </div>
-              <strong>Wireless HD Microphone</strong>
-              <span class="remote-nav-badge">Crisp</span>
+
+              <!-- 5. Lockscreen Canvas -->
+              <div class="mac-canvas-view" data-canvas="lock">
+                <div class="mac-lockscreen-view">
+                  <div class="lock-clock">09:41</div>
+                  <p class="lock-date">Thursday, September 24</p>
+                  <div class="lock-avatar-box">
+                    <img src="../assets/mascot-look-v2.webp" alt="Panda User" width="64" height="64">
+                    <strong>CreamDeck Pro</strong>
+                    <button class="unlock-btn" type="button" id="mac-unlock-btn">Click to Unlock Mac ↵</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Synchronized Cursor on Mac Screen -->
+              <div class="mac-live-cursor" id="mac-live-cursor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0f172a" stroke="#ffffff" stroke-width="1.8">
+                  <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+                </svg>
+              </div>
+
+              <!-- macOS Native Toast / HUD Overlay -->
+              <div class="mac-hud-overlay" id="mac-workstation-hud">
+                <span class="hud-icon" id="hud-icon">🔊</span>
+                <span class="hud-text" id="hud-text">Volume: 50%</span>
+              </div>
             </div>
-            <p>Transmit phone mic audio to Mac with high clarity</p>
-          </button>
+
+            <!-- Mac Monitor Chin & Stand Base -->
+            <div class="mac-monitor-chin">
+              <span class="mac-chin-logo"></span>
+            </div>
+          </div>
         </div>
 
-        <!-- Right: Authentic CreamDeck Interactive Phone Simulator -->
-        <div class="remote-display" id="remote-panel" role="tabpanel" aria-labelledby="remote-tab-studio" tabindex="0">
-          <div class="remote-phone-chassis" id="remote-sim">
-            <!-- iOS Status Bar & Dynamic Island -->
-            <div class="sim-ios-header">
-              <span class="sim-ios-time">09:41</span>
-              <div class="sim-dynamic-island">
-                <span class="sim-island-indicator"></span>
-                <span class="sim-island-title">CreamDeck</span>
-              </div>
-              <div class="sim-ios-icons">
-                <svg width="15" height="11" viewBox="0 0 17 11" fill="currentColor"><path d="M1 9.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z"/></svg>
-                <svg width="14" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.5C9.8 2.5 11.9 3.4 13.5 4.9L15 3.3C13.1 1.4 10.4.3 7.5.3 4.6.3 1.9 1.4 0 3.3L1.5 4.9C3.1 3.4 5.2 2.5 7.5 2.5zm0 4c1.3 0 2.5.5 3.4 1.4L12.4 6.4C11.1 5.2 9.4 4.5 7.5 4.5s-3.6.7-4.9 1.9L4.1 7.9C5 7 6.2 6.5 7.5 6.5zm0 4c.8 0 1.5-.7 1.5-1.5S8.3 7.5 7.5 7.5 6 8.2 6 9s.7 1.5 1.5 1.5z"/></svg>
-                <div class="sim-battery-pill"><span class="sim-battery-level"></span></div>
-              </div>
+        <!-- Right: Handheld iPhone Controller (CreamDeck Controller App) -->
+        <div class="phone-controller-bay">
+          <div class="phone-deck-chassis">
+            
+            <!-- iOS Status Bar -->
+            <div class="p-ios-bar">
+              <span>09:41</span>
+              <div class="p-island"><span class="p-dot"></span><span>Mac Studio Connected</span></div>
+              <span>100%</span>
             </div>
 
-            <!-- Viewport Stage -->
-            <div class="sim-viewport">
+            <!-- Controller Surface (Interactive Board) -->
+            <div class="phone-controller-surface">
               
-              <!-- 1. Studio Mode -->
-              <div class="sim-stage is-active" data-sim-mode="studio">
-                <div class="sim-panda-holder">
-                  <img class="sim-panda-mascot" src="../assets/mascot-look-v2.webp" alt="Panda peeking over screen" width="240" height="200" loading="lazy">
+              <!-- Upper Row: Virtual Trackpad & Jog-Wheel -->
+              <div class="p-row upper">
+                <div class="p-trackpad-box" id="ws-trackpad" title="Drag your finger across the trackpad to move Mac cursor">
+                  <div class="p-trackpad-dots"></div>
+                  <span class="p-trackpad-hint">Virtual Trackpad<br><small>Drag to control cursor</small></span>
+                  <div class="p-cursor-ripple" id="ws-ripple"></div>
                 </div>
 
-                <div class="sim-mac-display" id="sim-studio-mac">
-                  <div class="sim-mac-topbar">
-                    <div class="sim-mac-dots">
-                      <span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span>
-                    </div>
-                    <span class="sim-mac-apptitle"> Safari — atlasobscura.com</span>
-                    <span class="sim-mac-fps">60 FPS</span>
-                  </div>
-                  <div class="sim-mac-viewport">
-                    <div class="sim-mac-webpage" id="sim-mac-webpage">
-                      <div class="sim-web-hero">
-                        <span class="sim-web-tag">INDIA · HISTORY &amp; CULTURE</span>
-                        <h4 class="sim-web-title">Delhi and Rajasthan: Colors of India</h4>
-                        <div class="sim-web-btn">Show 7 Photos</div>
-                      </div>
-                    </div>
-                    <div class="sim-mac-pointer" id="sim-mac-cursor">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#1e1b4b" stroke="#ffffff" stroke-width="1.8">
-                        <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-                      </svg>
-                    </div>
-                    <div class="sim-hud-toast" id="sim-mac-toast">Ready to Control</div>
-                  </div>
+                <div class="p-jog-wheel" id="ws-jog-wheel" title="Drag or scroll to scrub timeline">
+                  <div class="p-wheel-ridges"></div>
+                  <div class="p-wheel-thumb" id="ws-jog-thumb"></div>
                 </div>
-
-                <div class="sim-deck-panel">
-                  <div class="sim-deck-row upper-row">
-                    <div class="sim-trackpad-box" id="sim-trackpad" title="Drag to move Mac cursor, tap to click">
-                      <div class="sim-trackpad-dots"></div>
-                      <span class="sim-trackpad-label">Trackpad · Drag to move cursor</span>
-                      <div class="sim-touch-glow" id="sim-touch-ripple"></div>
-                    </div>
-
-                    <div class="sim-jog-wheel" id="sim-scroll-bar" title="Scroll wheel">
-                      <div class="sim-wheel-ridges"></div>
-                      <div class="sim-wheel-indicator" id="sim-scroll-thumb"></div>
-                    </div>
-
-                    <div class="sim-deck-mini-col">
-                      <button class="sim-3d-btn mini-btn" type="button" data-hud-action="keyboard" title="Live Keyboard">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>
-                        <span>Keyboard</span>
-                      </button>
-                      <div class="sim-mini-knob" title="Rotary Dial">
-                        <div class="sim-mini-knob-dial"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="sim-3d-keys-grid">
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="copy">Copy</button>
-                    <button class="sim-3d-btn peach" type="button" data-hud-action="paste">Paste</button>
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="undo">Undo</button>
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="redo">Redo</button>
-                    <button class="sim-3d-btn yellow" type="button" data-hud-action="switch-app">App Switch</button>
-                    <button class="sim-3d-btn blue" type="button" data-hud-action="mission-control">Mission Ctrl</button>
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="window-overview">Overview</button>
-                    <button class="sim-3d-btn coral" type="button" data-hud-action="lock">Lock Mac</button>
-                  </div>
-
-                  <div class="sim-deck-controls-bottom">
-                    <div class="sim-dial-widget">
-                      <div class="sim-dial-ring">
-                        <div class="sim-dial-ticks"></div>
-                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
-                      </div>
-                      <span class="sim-dial-text">Vol 45</span>
-                    </div>
-
-                    <div class="sim-dial-widget">
-                      <div class="sim-dial-ring">
-                        <div class="sim-dial-ticks"></div>
-                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
-                      </div>
-                      <span class="sim-dial-text">Bright 64</span>
-                    </div>
-
-                    <div class="sim-slider-widget">
-                      <div class="sim-slider-header">
-                        <span>Zoom</span>
-                        <span id="sim-zoom-val">50%</span>
-                      </div>
-                      <div class="sim-slider-track" id="sim-zoom-track">
-                        <div class="sim-slider-fill" id="sim-zoom-fill"></div>
-                        <div class="sim-slider-thumb" id="sim-zoom-thumb"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="sim-bottom-tabs">
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-                    <div class="sim-btab-item is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="sim-btab-dot"></span></div>
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-                  </div>
-                </div>
-
               </div>
 
-              <!-- 2. Fullscreen Mode -->
-              <div class="sim-stage" data-sim-mode="fullscreen">
-                <div class="sim-fullscreen-mac" id="sim-fs-mac">
-                  <div class="sim-fs-header">
-                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
-                    <span class="sim-fs-url" id="sim-fs-appname">atlasobscura.com</span>
-                    <span class="sim-fs-stream-badge">Ultra-HD Stream</span>
+              <!-- Dynamic Mode-Specific Control Pad -->
+              <div class="p-mode-pad" id="p-mode-pad">
+                
+                <!-- 1. Video Edit Mode Buttons -->
+                <div class="p-pad-view is-active" data-pview="video">
+                  <div class="p-keys-3d-grid">
+                    <button class="p-3d-btn yellow" type="button" data-cmd="play-toggle">▶ Play/Pause</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="blade">✂️ Blade Cut</button>
+                    <button class="p-3d-btn blue" type="button" data-cmd="grade">🎨 Color Grade</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="undo">↩️ Undo (⌘Z)</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="copy">📋 Copy Attr</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="paste">📌 Paste Attr</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="render">⚡ Fast Render</button>
+                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 Lock Mac</button>
                   </div>
-                  <div class="sim-fs-body" id="sim-fs-body">
-                    <div class="sim-fs-window-content" id="sim-fs-content">
-                      <div class="sim-fs-hero-art">
-                        <span class="sim-fs-tag">INDIA · RAJASTHAN</span>
-                        <h3>Hawa Mahal — Palace of Winds</h3>
-                        <p>Low-latency stream with smooth pan, zoom, and live desktop control.</p>
-                      </div>
+                </div>
+
+                <!-- 2. Music Player Mode Buttons -->
+                <div class="p-pad-view" data-pview="music">
+                  <div class="p-keys-3d-grid">
+                    <button class="p-3d-btn yellow" type="button" data-cmd="music-play">⏯ Play / Pause</button>
+                    <button class="p-3d-btn blue" type="button" data-cmd="music-next">⏭ Next Track</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="music-prev">⏮ Prev Track</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="music-like">❤️ Favorite</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="vol-up">🔊 Vol +</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="vol-down">🔉 Vol -</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="music-airplay">📡 AirPlay</button>
+                    <button class="p-3d-btn coral" type="button" data-cmd="mute">🔇 Mute</button>
+                  </div>
+                </div>
+
+                <!-- 3. Desktop Mode Buttons -->
+                <div class="p-pad-view" data-pview="desktop">
+                  <div class="p-keys-3d-grid">
+                    <button class="p-3d-btn blue" type="button" data-cmd="mission">🗂️ Mission Ctrl</button>
+                    <button class="p-3d-btn yellow" type="button" data-cmd="switch-app">⌘Tab Switch</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="spotlight">🔍 Spotlight</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="screenshot">📸 Screenshot</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="desktop-show">🖥️ Desktop</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="copy">📋 Copy</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="paste">📌 Paste</button>
+                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 Lock Screen</button>
+                  </div>
+                </div>
+
+                <!-- 4. Notes & Voice Mode Buttons -->
+                <div class="p-pad-view" data-pview="notes">
+                  <div class="p-voice-composer">
+                    <textarea class="p-voice-textarea" id="ws-voice-input" rows="2" placeholder="Type text or click quick chips to inject into Mac..."></textarea>
+                    <div class="p-voice-chips">
+                      <button class="p-chip" type="button" data-txt="Today's 4K sample video edit is complete!">Edit Done</button>
+                      <button class="p-chip" type="button" data-txt="git commit -m 'feat: live remote workstation'">Git Commit</button>
+                      <button class="p-chip" type="button" data-txt="Sync meeting at 3:00 PM in Conference Room 2.">Meeting</button>
+                    </div>
+                    <div class="p-voice-btns">
+                      <button class="p-mic-trigger" id="ws-mic-btn" type="button">
+                        <span class="p-mic-wave"><i></i><i></i><i></i><i></i></span>
+                        <span class="p-mic-text">🎙️ Dictate</span>
+                      </button>
+                      <button class="p-send-trigger" id="ws-send-btn" type="button">Inject to Mac ↵</button>
                     </div>
                   </div>
-                  <div class="sim-fs-floating-bar">
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="close" title="Close">✕</button>
-                    <button class="sim-fs-pill-btn is-active" type="button" data-fs-action="touch" title="Touch Mode">👆</button>
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="mouse" title="Mouse Pointer">🖱️</button>
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="keyboard" title="Keyboard">⌨️</button>
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="windows" title="Overview">🗂️</button>
-                  </div>
-                  <div class="sim-fs-dock">
-                    <button class="sim-dock-app is-active" type="button" data-dock="safari" title="Safari">🌐</button>
-                    <button class="sim-dock-app" type="button" data-dock="code" title="VS Code">💻</button>
-                    <button class="sim-dock-app" type="button" data-dock="music" title="Music">🎵</button>
-                    <button class="sim-dock-app" type="button" data-dock="terminal" title="Terminal">⌨️</button>
+                </div>
+
+                <!-- 5. Lock Screen Mode Buttons -->
+                <div class="p-pad-view" data-pview="lock">
+                  <div class="p-lock-controls">
+                    <button class="p-3d-btn coral big" type="button" data-cmd="lock">🔒 Lock Mac Screen Now</button>
+                    <button class="p-3d-btn yellow big" type="button" data-cmd="unlock">✨ Wake &amp; Unlock Mac</button>
                   </div>
                 </div>
               </div>
 
-              <!-- 3. Text & Voice Pre-Edit Mode -->
-              <div class="sim-stage" data-sim-mode="voice">
-                <div class="sim-seg-control">
-                  <span class="sim-seg-item is-active">Text</span>
-                  <span class="sim-seg-item">Realtime</span>
-                  <span class="sim-seg-done">Done</span>
+              <!-- Lower Row: Rotary Volume Dial & Slider -->
+              <div class="p-row lower">
+                <div class="p-dial-box" id="ws-vol-dial" title="Drag or scroll to adjust Mac volume">
+                  <div class="p-dial-knob">
+                    <div class="p-dial-dot"></div>
+                  </div>
+                  <span class="p-dial-lbl" id="ws-vol-lbl">Vol 50%</span>
                 </div>
 
-                <div class="sim-voice-mac-preview">
-                  <div class="sim-mac-topbar mini">
-                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
-                    <span>Mac Notes — Target Focus</span>
+                <div class="p-slider-box flex-1">
+                  <div class="p-slider-head">
+                    <span>Response Latency</span>
+                    <span id="ws-speed-val">Ultra-Low 12ms</span>
                   </div>
-                  <div class="sim-mac-doc-body" id="sim-voice-target">
-                    <p class="sim-doc-received-text" id="sim-injected-text">Waiting for text injection...</p>
-                  </div>
-                </div>
-
-                <div class="sim-voice-card">
-                  <textarea class="sim-voice-input-area" id="sim-voice-input" rows="3">Wrap up today's edit review and dispatch by 3:00 PM</textarea>
-                  <div class="sim-voice-chips-row">
-                    <button class="sim-vchip" type="button" data-text="Color grade and audio pass completed.">Edit Status</button>
-                    <button class="sim-vchip" type="button" data-text="git commit -m 'feat: interactive remote deck'">Git Commit</button>
-                    <button class="sim-vchip" type="button" data-text="Product sync in Conference Room A at 3 PM.">Meeting</button>
-                  </div>
-                  <div class="sim-voice-bottom-actions">
-                    <div class="sim-action-icons-left">
-                      <button class="sim-ico-btn" type="button" title="Attach">📎</button>
-                      <button class="sim-ico-btn" type="button" title="Settings">🎛️</button>
-                      <button class="sim-ico-btn" type="button" title="History">🕒</button>
-                    </div>
-                    <div class="sim-action-btns-right">
-                      <button class="sim-red-mic-btn" id="sim-dictate-btn" type="button" title="Voice Dictation">
-                        <span class="sim-wave-bars"><i></i><i></i><i></i><i></i></span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22" stroke="white" stroke-width="2"/></svg>
-                      </button>
-                      <button class="sim-black-send-btn" id="sim-send-text-btn" type="button" title="Inject to Mac">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. Virtual Keyboard Mode -->
-              <div class="sim-stage" data-sim-mode="keyboard">
-                <div class="sim-seg-control">
-                  <span class="sim-seg-item">Text</span>
-                  <span class="sim-seg-item is-active">Realtime</span>
-                  <span class="sim-seg-done">Done</span>
-                </div>
-
-                <div class="sim-kb-mac-hud">
-                  <div class="sim-mac-topbar mini">
-                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
-                    <span>Mac Keyboard HUD</span>
-                  </div>
-                  <div class="sim-hud-display-box">
-                    <span class="sim-hud-key-val" id="sim-key-combo">⌘ + Space</span>
-                    <span class="sim-hud-key-desc" id="sim-key-desc">Spotlight Search / Quick Look</span>
-                  </div>
-                </div>
-
-                <div class="sim-full-keyboard" id="sim-full-kb">
-                  <div class="kb-row">
-                    <button class="k-key sm fn" type="button" data-k="esc">esc</button>
-                    <button class="k-key sm fn" type="button" data-k="F1">F1</button>
-                    <button class="k-key sm fn" type="button" data-k="F2">F2</button>
-                    <button class="k-key sm fn" type="button" data-k="F3">F3</button>
-                    <button class="k-key sm fn" type="button" data-k="F4">F4</button>
-                    <button class="k-key sm fn" type="button" data-k="F5">F5</button>
-                    <button class="k-key sm fn" type="button" data-k="F6">F6</button>
-                    <button class="k-key sm fn" type="button" data-k="F7">F7</button>
-                    <button class="k-key sm fn" type="button" data-k="F8">F8</button>
-                    <button class="k-key sm fn" type="button" data-k="F9">F9</button>
-                    <button class="k-key sm fn" type="button" data-k="F10">F10</button>
-                    <button class="k-key sm fn" type="button" data-k="F11">F11</button>
-                    <button class="k-key sm fn" type="button" data-k="F12">F12</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key" type="button" data-k="1">1</button>
-                    <button class="k-key" type="button" data-k="2">2</button>
-                    <button class="k-key" type="button" data-k="3">3</button>
-                    <button class="k-key" type="button" data-k="4">4</button>
-                    <button class="k-key" type="button" data-k="5">5</button>
-                    <button class="k-key" type="button" data-k="6">6</button>
-                    <button class="k-key" type="button" data-k="7">7</button>
-                    <button class="k-key" type="button" data-k="8">8</button>
-                    <button class="k-key" type="button" data-k="9">9</button>
-                    <button class="k-key" type="button" data-k="0">0</button>
-                    <button class="k-key" type="button" data-k="-">-</button>
-                    <button class="k-key" type="button" data-k="=">=</button>
-                    <button class="k-key med del" type="button" data-k="⌫">⌫</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key med" type="button" data-k="tab">tab</button>
-                    <button class="k-key" type="button" data-k="Q">Q</button>
-                    <button class="k-key" type="button" data-k="W">W</button>
-                    <button class="k-key" type="button" data-k="E">E</button>
-                    <button class="k-key" type="button" data-k="R">R</button>
-                    <button class="k-key" type="button" data-k="T">T</button>
-                    <button class="k-key" type="button" data-k="Y">Y</button>
-                    <button class="k-key" type="button" data-k="U">U</button>
-                    <button class="k-key" type="button" data-k="I">I</button>
-                    <button class="k-key" type="button" data-k="O">O</button>
-                    <button class="k-key" type="button" data-k="P">P</button>
-                    <button class="k-key" type="button" data-k="[">[</button>
-                    <button class="k-key" type="button" data-k="]">]</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key med" type="button" data-k="caps">caps</button>
-                    <button class="k-key" type="button" data-k="A">A</button>
-                    <button class="k-key" type="button" data-k="S">S</button>
-                    <button class="k-key" type="button" data-k="D">D</button>
-                    <button class="k-key" type="button" data-k="F">F</button>
-                    <button class="k-key" type="button" data-k="G">G</button>
-                    <button class="k-key" type="button" data-k="H">H</button>
-                    <button class="k-key" type="button" data-k="J">J</button>
-                    <button class="k-key" type="button" data-k="K">K</button>
-                    <button class="k-key" type="button" data-k="L">L</button>
-                    <button class="k-key" type="button" data-k=";">;</button>
-                    <button class="k-key wide ret" type="button" data-k="return">return</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key wide" type="button" data-k="⇧">⇧</button>
-                    <button class="k-key" type="button" data-k="Z">Z</button>
-                    <button class="k-key" type="button" data-k="X">X</button>
-                    <button class="k-key" type="button" data-k="C">C</button>
-                    <button class="k-key" type="button" data-k="V">V</button>
-                    <button class="k-key" type="button" data-k="B">B</button>
-                    <button class="k-key" type="button" data-k="N">N</button>
-                    <button class="k-key" type="button" data-k="M">M</button>
-                    <button class="k-key" type="button" data-k=",">,</button>
-                    <button class="k-key" type="button" data-k=".">.</button>
-                    <button class="k-key" type="button" data-k="↑">↑</button>
-                    <button class="k-key wide" type="button" data-k="⇧">⇧</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key mod" type="button" data-k="^">^</button>
-                    <button class="k-key mod" type="button" data-k="⌥">⌥</button>
-                    <button class="k-key mod is-active" type="button" data-k="⌘">⌘</button>
-                    <button class="k-key space" type="button" data-k="space">space</button>
-                    <button class="k-key arrow" type="button" data-k="←">←</button>
-                    <button class="k-key arrow" type="button" data-k="↓">↓</button>
-                    <button class="k-key arrow" type="button" data-k="→">→</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 5. Wireless Mic & Tactile Console Mode -->
-              <div class="sim-stage" data-sim-mode="mic">
-                <div class="sim-mic-deck-console">
-                  <div class="sim-mdeck-row">
-                    <button class="sim-3d-btn green-btn" type="button" data-hud-action="link">Link Key</button>
-                    <button class="sim-3d-btn peach-wide-btn" type="button" data-hud-action="shift">Hold Shift</button>
-                    <div class="sim-toggle-widget">
-                      <div class="sim-toggle-pill is-on" id="sim-bool-switch">
-                        <span class="sim-toggle-knob"></span>
-                      </div>
-                      <span class="sim-toggle-label">Toggle</span>
-                    </div>
-                  </div>
-
-                  <div class="sim-mdeck-row">
-                    <div class="sim-dial-widget">
-                      <div class="sim-dial-ring">
-                        <div class="sim-dial-ticks"></div>
-                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
-                      </div>
-                      <span class="sim-dial-text">Volume 50</span>
-                    </div>
-
-                    <div class="sim-slider-widget flex-1">
-                      <div class="sim-slider-header">
-                        <span>Brightness</span>
-                        <span>50%</span>
-                      </div>
-                      <div class="sim-slider-track">
-                        <div class="sim-slider-fill" style="width: 50%;"></div>
-                        <div class="sim-slider-thumb" style="left: 50%;"></div>
-                      </div>
-                    </div>
-
-                    <button class="sim-3d-btn yellow-sq-btn" type="button" data-hud-action="encoder">
-                      <span>Encoder<br>Press</span>
-                      <span class="sim-btn-sub">↔</span>
-                    </button>
-                  </div>
-
-                  <div class="sim-mdeck-row dpad-mic-row">
-                    <div class="sim-dpad-cross">
-                      <button class="sim-dpad-btn up" type="button" data-hud-action="dpad-up">▲</button>
-                      <button class="sim-dpad-btn left" type="button" data-hud-action="dpad-left">◀</button>
-                      <button class="sim-dpad-btn center" type="button" data-hud-action="dpad-ok">●</button>
-                      <button class="sim-dpad-btn right" type="button" data-hud-action="dpad-right">▶</button>
-                      <button class="sim-dpad-btn down" type="button" data-hud-action="dpad-down">▼</button>
-                    </div>
-
-                    <button class="sim-3d-btn white-card-btn" type="button" data-hud-action="keyboard">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>
-                      <span>Keyboard</span>
-                    </button>
-
-                    <div class="sim-metal-mic-wrapper">
-                      <button class="sim-metal-mic-btn is-recording" id="sim-big-mic-btn" type="button" title="Toggle Mic Stream">
-                        <div class="sim-mic-glow-ring"></div>
-                        <div class="sim-mic-metal-mesh">
-                          <div class="sim-mesh-texture"></div>
-                        </div>
-                      </button>
-                      <span class="sim-mic-status-tag" id="sim-mic-state-label">RECORDING</span>
-                    </div>
-                  </div>
-
-                  <div class="sim-bottom-tabs">
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-                    <div class="sim-btab-item is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="sim-btab-dot"></span></div>
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                  <div class="p-slider-rail" id="ws-slider-rail">
+                    <div class="p-slider-bar" id="ws-slider-bar" style="width: 75%;"></div>
+                    <div class="p-slider-handle" id="ws-slider-handle" style="left: 75%;"></div>
                   </div>
                 </div>
               </div>
 
             </div>
           </div>
-
-          <figcaption class="remote-display-caption">
-            <div class="remote-display-tag" data-remote-display-tag><span class="badge-dot"></span> Studio View</div>
-            <strong data-remote-display-title>Studio View · View &amp; Control</strong>
-            <p data-remote-display-desc>View live Mac desktop while controlling with trackpad, scroll wheel, and quick keys on a single screen.</p>
-          </figcaption>
         </div>
+
       </div>
     </section>
 
+    <!-- Interactive Klotski Puzzle Game (妙控积木华容道) -->
     <section class="product-section" id="control">
-      <figure class="product-shot">
-        <img src="../assets/screens/v1.2.0/layout-editor.webp" alt="NinoPad Keypad Layout Editor" width="1206" height="2622" loading="lazy" decoding="async">
-      </figure>
+      
+      <!-- Left: Interactive Klotski Sliding Puzzle Arena -->
+      <div class="klotski-game-bay">
+        <div class="klotski-deck-arena">
+          
+          <div class="klotski-header-bar">
+            <div class="klotski-badge-tag"><span class="badge-dot"></span> CreamDeck · Sliding Puzzle</div>
+            <div class="klotski-stats">
+              <span class="stat-pill">Moves: <strong id="klotski-moves">0</strong></span>
+            </div>
+          </div>
+
+          <!-- 4x4 Tactile Modular Puzzle Grid -->
+          <div class="klotski-board-grid" id="klotski-board" role="grid" aria-label="CreamDeck tactile sliding puzzle game">
+            <!-- Tiles rendered dynamically by JS with CreamDeck skeuomorphic widgets -->
+          </div>
+
+          <!-- Game Controls Footer -->
+          <div class="klotski-footer-bar">
+            <button class="klotski-btn shuffle" id="klotski-shuffle-btn" type="button">🎲 Shuffle</button>
+            <button class="klotski-btn solve" id="klotski-solve-btn" type="button">✨ Perfect Solve</button>
+            <span class="klotski-hint">Tap any tile adjacent to the empty slot to slide</span>
+          </div>
+
+          <!-- Win Overlay Banner -->
+          <div class="klotski-win-banner" id="klotski-win-banner">
+            <div class="win-card">
+              <span class="win-icon">🎉</span>
+              <h4>Custom Keypad Assembled!</h4>
+              <p>Assemble buttons, dials, and sliders like building blocks to forge your ultimate desktop controller.</p>
+              <button class="win-play-again" id="klotski-replay-btn" type="button">Play Again ↻</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Feature Copy -->
       <div class="product-copy">
         <p class="eyebrow">CUSTOM CANVAS</p>
         <h2>Build Your Deck Like Building Blocks</h2>
-        <p>Place buttons, dials, sliders, trackpads, and displays freely across customizable grids tailored to your ergonomics.</p>
+        <p>Place buttons, dials, sliders, trackpads, and displays freely across customizable grids tailored to your ergonomics. Try sliding the modular deck puzzle on the left to feel the magic of modular control.</p>
         <div class="product-feature-list">
           <div class="product-feature-item">
             <div class="product-feature-icon">

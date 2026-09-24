@@ -342,505 +342,334 @@
       <div class="remote-intro">
         <p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
         <h2>掌控 Mac，远不止一面屏幕</h2>
-        <p>实时桌面画面镜像、虚拟触控板、预编辑文本键盘与无线麦克风，让身边的 iPhone 与 iPad 成为最自然的控制延伸。</p>
+        <p>双屏协同，触手可及。在右侧手机上操作触控板、旋钮、快捷键与语音，实时遥控左侧 Mac 桌面。</p>
+        
+        <!-- Workstation Mode Selector Pills -->
+        <div class="remote-mode-pills" role="tablist" aria-label="工作站模式切换">
+          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">🎬 视频剪辑</button>
+          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">🎵 音乐播放</button>
+          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">⚡ 极速多任务</button>
+          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">🎙️ 语音速记</button>
+          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">🔒 锁屏保护</button>
+        </div>
       </div>
 
-      <div class="remote-showcase">
-        <!-- Left: 5 Interactive Feature Tabs -->
-        <div class="remote-nav" role="tablist" aria-label="远程控制模式切换">
-          <button class="remote-nav-item is-active" type="button" role="tab" aria-selected="true" aria-controls="remote-panel" id="remote-tab-studio"
-            data-remote-tag="边看边控"
-            data-remote-title="边看边控 · Studio View"
-            data-remote-desc="将 Mac 实时桌面与触控板、独立滚轮与高频按键排布于同一界面，实时双向交互。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <!-- Live Dual-Screen Interactive Workstation -->
+      <div class="mac-remote-workstation">
+        
+        <!-- Left: Mac Studio Display (Live Target Screen) -->
+        <div class="mac-display-bay">
+          <div class="mac-monitor-frame">
+            <!-- macOS Top Menu Bar -->
+            <div class="mac-menubar">
+              <div class="mac-menu-left">
+                <span class="mac-apple-logo"></span>
+                <strong class="mac-active-app" id="mac-app-name">Final Cut Pro</strong>
+                <span class="mac-menu-item">文件</span>
+                <span class="mac-menu-item">编辑</span>
+                <span class="mac-menu-item">显示</span>
               </div>
-              <strong>边看边控 (Studio View)</strong>
-              <span class="remote-nav-badge">推荐</span>
+              <div class="mac-menu-right">
+                <span class="mac-stream-tag"><span class="live-dot"></span> 4K 60FPS · 12ms</span>
+                <span class="mac-clock-text">09:41</span>
+              </div>
             </div>
-            <p>Mac 实时画面 + 触控板、滚轮与高频按键集成在同一屏</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-fullscreen"
-            data-remote-tag="全屏清晰"
-            data-remote-title="展开全屏桌面"
-            data-remote-desc="清晰低延迟串流，悬浮浮岛多功能控制条，多任务窗口自由切换。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            <!-- macOS Active Screen Canvas -->
+            <div class="mac-screen-canvas" id="mac-screen-canvas">
+              
+              <!-- 1. Video Editing Mode Canvas -->
+              <div class="mac-canvas-view is-active" data-canvas="video">
+                <div class="mac-video-window">
+                  <div class="mac-win-titlebar">
+                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    <span>Timeline — 4K_B-Roll_Master.mov</span>
+                  </div>
+                  <div class="mac-video-preview">
+                    <div class="video-art-box">
+                      <div class="video-placeholder-art">
+                        <span class="video-badge">COLOR GRADE: 709</span>
+                        <h4>Hawa Mahal · 4K 60p HDR</h4>
+                        <div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
+                      </div>
+                    </div>
+                    <!-- Scrubbable Timeline -->
+                    <div class="mac-timeline-bar" id="mac-timeline">
+                      <div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
+                      <div class="timeline-tracks">
+                        <div class="track-block v1">Video 1 [4K HDR]</div>
+                        <div class="track-block a1">Audio 1 [Dialogue -3dB]</div>
+                      </div>
+                      <div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <strong>展开全屏桌面</strong>
-              <span class="remote-nav-badge highlight">超清</span>
-            </div>
-            <p>低延迟桌面画面串流，悬浮控制条与应用自由切换</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-voice"
-            data-remote-tag="先改后发"
-            data-remote-title="文本键盘 · 语音与文字输入"
-            data-remote-desc="在手机上先口述或整理文字，确认无误后一键注入 Mac 光标所在位置。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              <!-- 2. Music Player Mode Canvas -->
+              <div class="mac-canvas-view" data-canvas="music">
+                <div class="mac-music-window">
+                  <div class="mac-win-titlebar">
+                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    <span>Apple Music — Lo-Fi Chill</span>
+                  </div>
+                  <div class="mac-music-body">
+                    <div class="music-vinyl-disc is-spinning" id="music-vinyl">
+                      <div class="vinyl-grooves"></div>
+                      <div class="vinyl-center"><img src="assets/software/apple-music.jpg" alt="" width="36" height="36"></div>
+                    </div>
+                    <div class="music-info-box">
+                      <span class="music-tag">NOW PLAYING</span>
+                      <h3 id="music-song-title">Midnight Ambient Beats</h3>
+                      <p>AirPlay 2 无损串流中 · 立体声</p>
+                      <div class="music-wave-spectrum" id="music-spectrum">
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <strong>文本键盘与语音输入</strong>
-              <span class="remote-nav-badge">先改后发</span>
-            </div>
-            <p>手机先整理校对，语音/文本一键注入 Mac 光标处</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-keyboard"
-            data-remote-tag="实时按键"
-            data-remote-title="实时键盘与快捷键"
-            data-remote-desc="全功能 macOS 修饰键与功能键矩阵，指尖轻触即发。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M6 12h.001M10 12h.001M14 12h.001M18 12h.001M7 16h10"/></svg>
+              <!-- 3. Desktop & Multi-Task Canvas -->
+              <div class="mac-canvas-view" data-canvas="desktop">
+                <div class="mac-mission-control" id="mac-mission-grid">
+                  <div class="mission-card active-card">
+                    <div class="mcard-header">🌐 Safari — CreamDeck.com</div>
+                    <div class="mcard-body"><div class="mini-browser-page"></div></div>
+                  </div>
+                  <div class="mission-card">
+                    <div class="mcard-header">💻 VS Code — App.tsx</div>
+                    <div class="mcard-body"><div class="mini-code-lines"></div></div>
+                  </div>
+                  <div class="mission-card">
+                    <div class="mcard-header">🎨 DaVinci Resolve — Color</div>
+                    <div class="mcard-body"><div class="mini-color-grading"></div></div>
+                  </div>
+                </div>
               </div>
-              <strong>实时键盘与快捷键</strong>
-              <span class="remote-nav-badge">零延迟</span>
-            </div>
-            <p>完整 Function 键与 Command 修饰键触控矩阵</p>
-          </button>
 
-          <button class="remote-nav-item" type="button" role="tab" aria-selected="false" aria-controls="remote-panel" id="remote-tab-mic"
-            data-remote-tag="高清拾音"
-            data-remote-title="无线麦克风与触控面板"
-            data-remote-desc="手机秒变 Mac 专业降噪无线麦克风与方向控制台，通话会议更从容。">
-            <div class="remote-nav-header">
-              <div class="remote-nav-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+              <!-- 4. Notes & Voice Dictate Canvas -->
+              <div class="mac-canvas-view" data-canvas="notes">
+                <div class="mac-notes-window">
+                  <div class="mac-win-titlebar">
+                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    <span>备忘录 — 灵感速记与语音投送</span>
+                  </div>
+                  <div class="mac-notes-content" id="mac-notes-body">
+                    <p class="notes-date">今天 09:41</p>
+                    <p class="notes-p" id="mac-typed-text">🚀 手机文本与语音已直连 Mac 光标就绪...</p>
+                  </div>
+                </div>
               </div>
-              <strong>无线麦克风与触控台</strong>
-              <span class="remote-nav-badge">低噪拾音</span>
+
+              <!-- 5. Lockscreen Canvas -->
+              <div class="mac-canvas-view" data-canvas="lock">
+                <div class="mac-lockscreen-view">
+                  <div class="lock-clock">09:41</div>
+                  <p class="lock-date">9月24日 星期四</p>
+                  <div class="lock-avatar-box">
+                    <img src="assets/mascot-look-v2.webp" alt="Panda User" width="64" height="64">
+                    <strong>CreamDeck Pro</strong>
+                    <button class="unlock-btn" type="button" id="mac-unlock-btn">点击解锁 Mac ↵</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Synchronized Cursor on Mac Screen -->
+              <div class="mac-live-cursor" id="mac-live-cursor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0f172a" stroke="#ffffff" stroke-width="1.8">
+                  <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+                </svg>
+              </div>
+
+              <!-- macOS Native Toast / HUD Overlay -->
+              <div class="mac-hud-overlay" id="mac-workstation-hud">
+                <span class="hud-icon" id="hud-icon">🔊</span>
+                <span class="hud-text" id="hud-text">音量: 50%</span>
+              </div>
             </div>
-            <p>高保真无线音频直连，实体质感方向键与触控组件</p>
-          </button>
+
+            <!-- Mac Monitor Chin & Stand Base -->
+            <div class="mac-monitor-chin">
+              <span class="mac-chin-logo"></span>
+            </div>
+          </div>
         </div>
 
-        <!-- Right: Authentic CreamDeck Interactive Phone Simulator -->
-        <div class="remote-display" id="remote-panel" role="tabpanel" aria-labelledby="remote-tab-studio" tabindex="0">
-          <div class="remote-phone-chassis" id="remote-sim">
-            <!-- iOS Status Bar & Dynamic Island -->
-            <div class="sim-ios-header">
-              <span class="sim-ios-time">09:41</span>
-              <div class="sim-dynamic-island">
-                <span class="sim-island-indicator"></span>
-                <span class="sim-island-title">CreamDeck</span>
-              </div>
-              <div class="sim-ios-icons">
-                <svg width="15" height="11" viewBox="0 0 17 11" fill="currentColor"><path d="M1 9.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm4.5-2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z"/></svg>
-                <svg width="14" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.5C9.8 2.5 11.9 3.4 13.5 4.9L15 3.3C13.1 1.4 10.4.3 7.5.3 4.6.3 1.9 1.4 0 3.3L1.5 4.9C3.1 3.4 5.2 2.5 7.5 2.5zm0 4c1.3 0 2.5.5 3.4 1.4L12.4 6.4C11.1 5.2 9.4 4.5 7.5 4.5s-3.6.7-4.9 1.9L4.1 7.9C5 7 6.2 6.5 7.5 6.5zm0 4c.8 0 1.5-.7 1.5-1.5S8.3 7.5 7.5 7.5 6 8.2 6 9s.7 1.5 1.5 1.5z"/></svg>
-                <div class="sim-battery-pill"><span class="sim-battery-level"></span></div>
-              </div>
+        <!-- Right: Handheld iPhone Controller (CreamDeck Controller App) -->
+        <div class="phone-controller-bay">
+          <div class="phone-deck-chassis">
+            
+            <!-- iOS Status Bar -->
+            <div class="p-ios-bar">
+              <span>09:41</span>
+              <div class="p-island"><span class="p-dot"></span><span>Mac Studio 已连接</span></div>
+              <span>100%</span>
             </div>
 
-            <!-- Viewport Stage -->
-            <div class="sim-viewport">
+            <!-- Controller Surface (Interactive Board) -->
+            <div class="phone-controller-surface">
               
-              <!-- 1. Studio Mode (Panda + Mac Screen + Dotted Trackpad + Metallic Wheel + 3D Keys + Dials) -->
-              <div class="sim-stage is-active" data-sim-mode="studio">
+              <!-- Upper Row: Virtual Trackpad & Jog-Wheel -->
+              <div class="p-row upper">
+                <div class="p-trackpad-box" id="ws-trackpad" title="在触控板上滑动手指，左侧 Mac 光标实时同步！">
+                  <div class="p-trackpad-dots"></div>
+                  <span class="p-trackpad-hint">虚拟触控板<br><small>滑动遥控 Mac 光标</small></span>
+                  <div class="p-cursor-ripple" id="ws-ripple"></div>
+                </div>
+
+                <div class="p-jog-wheel" id="ws-jog-wheel" title="上下拖动或滚动滚轮，实时剪辑时间线/滑动">
+                  <div class="p-wheel-ridges"></div>
+                  <div class="p-wheel-thumb" id="ws-jog-thumb"></div>
+                </div>
+              </div>
+
+              <!-- Dynamic Mode-Specific Control Pad -->
+              <div class="p-mode-pad" id="p-mode-pad">
                 
-                <!-- Panda Mascot Peeking Over Mac Bezel -->
-                <div class="sim-panda-holder">
-                  <img class="sim-panda-mascot" src="assets/mascot-look-v2.webp" alt="奶猫趴在屏幕上方" width="240" height="200" loading="lazy">
-                </div>
-
-                <!-- Top Mac Screen Preview (Champagne Bezel) -->
-                <div class="sim-mac-display" id="sim-studio-mac">
-                  <div class="sim-mac-topbar">
-                    <div class="sim-mac-dots">
-                      <span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span>
-                    </div>
-                    <span class="sim-mac-apptitle"> Safari — atlasobscura.com</span>
-                    <span class="sim-mac-fps">60 FPS</span>
-                  </div>
-                  <div class="sim-mac-viewport">
-                    <div class="sim-mac-webpage" id="sim-mac-webpage">
-                      <div class="sim-web-hero">
-                        <span class="sim-web-tag">INDIA · HISTORY &amp; CULTURE</span>
-                        <h4 class="sim-web-title">Delhi and Rajasthan: Colors of India</h4>
-                        <div class="sim-web-btn">Show 7 Photos</div>
-                      </div>
-                    </div>
-                    <!-- Live Tracking Cursor -->
-                    <div class="sim-mac-pointer" id="sim-mac-cursor">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#1e1b4b" stroke="#ffffff" stroke-width="1.8">
-                        <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-                      </svg>
-                    </div>
-                    <!-- Mac Action HUD Toast -->
-                    <div class="sim-hud-toast" id="sim-mac-toast">已准备就绪</div>
+                <!-- 1. Video Edit Mode Buttons -->
+                <div class="p-pad-view is-active" data-pview="video">
+                  <div class="p-keys-3d-grid">
+                    <button class="p-3d-btn yellow" type="button" data-cmd="play-toggle">▶ 播放/暂停</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="blade">✂️ 剃刀切断</button>
+                    <button class="p-3d-btn blue" type="button" data-cmd="grade">🎨 智能调色</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="undo">↩️ 撤销 (⌘Z)</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="copy">📋 复制属性</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="paste">📌 粘贴属性</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="render">⚡ 快速渲染</button>
+                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 锁定 Mac</button>
                   </div>
                 </div>
 
-                <!-- Bottom CreamDeck Controller Deck -->
-                <div class="sim-deck-panel">
-                  
-                  <!-- Upper Row: Trackpad + Jog Wheel + Key + Dial -->
-                  <div class="sim-deck-row upper-row">
-                    <div class="sim-trackpad-box" id="sim-trackpad" title="在触控板上拖拽移动 Mac 光标，点击触发选取">
-                      <div class="sim-trackpad-dots"></div>
-                      <span class="sim-trackpad-label">虚拟触控板 · 拖拽移动光标</span>
-                      <div class="sim-touch-glow" id="sim-touch-ripple"></div>
-                    </div>
+                <!-- 2. Music Player Mode Buttons -->
+                <div class="p-pad-view" data-pview="music">
+                  <div class="p-keys-3d-grid">
+                    <button class="p-3d-btn yellow" type="button" data-cmd="music-play">⏯ 播放 / 暂停</button>
+                    <button class="p-3d-btn blue" type="button" data-cmd="music-next">⏭ 下一首</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="music-prev">⏮ 上一首</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="music-like">❤️ 喜欢收藏</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="vol-up">🔊 音量 +</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="vol-down">🔉 音量 -</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="music-airplay">📡 AirPlay</button>
+                    <button class="p-3d-btn coral" type="button" data-cmd="mute">🔇 一键静音</button>
+                  </div>
+                </div>
 
-                    <div class="sim-jog-wheel" id="sim-scroll-bar" title="上下拖动滚轮滚动网页">
-                      <div class="sim-wheel-ridges"></div>
-                      <div class="sim-wheel-indicator" id="sim-scroll-thumb"></div>
-                    </div>
+                <!-- 3. Desktop Mode Buttons -->
+                <div class="p-pad-view" data-pview="desktop">
+                  <div class="p-keys-3d-grid">
+                    <button class="p-3d-btn blue" type="button" data-cmd="mission">🗂️ 调度中心</button>
+                    <button class="p-3d-btn yellow" type="button" data-cmd="switch-app">⌘Tab 切应用</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="spotlight">🔍 聚焦搜索</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="screenshot">📸 截屏 (⇧⌘4)</button>
+                    <button class="p-3d-btn cream" type="button" data-cmd="desktop-show">🖥️ 显示桌面</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="copy">📋 复制</button>
+                    <button class="p-3d-btn peach" type="button" data-cmd="paste">📌 粘贴</button>
+                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 锁定屏幕</button>
+                  </div>
+                </div>
 
-                    <div class="sim-deck-mini-col">
-                      <button class="sim-3d-btn mini-btn" type="button" data-hud-action="keyboard" title="实时键盘">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>
-                        <span>实时键盘</span>
+                <!-- 4. Notes & Voice Mode Buttons -->
+                <div class="p-pad-view" data-pview="notes">
+                  <div class="p-voice-composer">
+                    <textarea class="p-voice-textarea" id="ws-voice-input" rows="2" placeholder="输入文字或点击下方快捷短语投送至 Mac..."></textarea>
+                    <div class="p-voice-chips">
+                      <button class="p-chip" type="button" data-txt="今天 4K 样片已剪辑完成，请查收！">剪辑完成</button>
+                      <button class="p-chip" type="button" data-txt="git commit -m 'feat: live remote workstation'">Git 提交</button>
+                      <button class="p-chip" type="button" data-txt="下午三点准时在 2 号会议室评审。">会议提醒</button>
+                    </div>
+                    <div class="p-voice-btns">
+                      <button class="p-mic-trigger" id="ws-mic-btn" type="button">
+                        <span class="p-mic-wave"><i></i><i></i><i></i><i></i></span>
+                        <span class="p-mic-text">🎙️ 语音输入</span>
                       </button>
-                      <div class="sim-mini-knob" title="旋钮编码器">
-                        <div class="sim-mini-knob-dial"></div>
-                      </div>
+                      <button class="p-send-trigger" id="ws-send-btn" type="button">一键投送至 Mac ↵</button>
                     </div>
-                  </div>
-
-                  <!-- Middle Rows: 8 Tactile 3D Action Buttons -->
-                  <div class="sim-3d-keys-grid">
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="copy">复制</button>
-                    <button class="sim-3d-btn peach" type="button" data-hud-action="paste">粘贴</button>
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="undo">撤销</button>
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="redo">重做</button>
-                    <button class="sim-3d-btn yellow" type="button" data-hud-action="switch-app">切换应用</button>
-                    <button class="sim-3d-btn blue" type="button" data-hud-action="mission-control">调度中心</button>
-                    <button class="sim-3d-btn cream" type="button" data-hud-action="window-overview">窗口总览</button>
-                    <button class="sim-3d-btn coral" type="button" data-hud-action="lock">锁定</button>
-                  </div>
-
-                  <!-- Lower Row: 2 Dials + 1 Slider -->
-                  <div class="sim-deck-controls-bottom">
-                    <div class="sim-dial-widget">
-                      <div class="sim-dial-ring">
-                        <div class="sim-dial-ticks"></div>
-                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
-                      </div>
-                      <span class="sim-dial-text">音量 45</span>
-                    </div>
-
-                    <div class="sim-dial-widget">
-                      <div class="sim-dial-ring">
-                        <div class="sim-dial-ticks"></div>
-                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
-                      </div>
-                      <span class="sim-dial-text">亮度 64</span>
-                    </div>
-
-                    <div class="sim-slider-widget">
-                      <div class="sim-slider-header">
-                        <span>缩放</span>
-                        <span id="sim-zoom-val">50%</span>
-                      </div>
-                      <div class="sim-slider-track" id="sim-zoom-track">
-                        <div class="sim-slider-fill" id="sim-zoom-fill"></div>
-                        <div class="sim-slider-thumb" id="sim-zoom-thumb"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Bottom App Tab Bar -->
-                  <div class="sim-bottom-tabs">
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-                    <div class="sim-btab-item is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="sim-btab-dot"></span></div>
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
                   </div>
                 </div>
 
-              </div>
-
-              <!-- 2. Fullscreen Mode (Full Mac Desktop + Floating Pill Action Bar + Clickable Dock) -->
-              <div class="sim-stage" data-sim-mode="fullscreen">
-                <div class="sim-fullscreen-mac" id="sim-fs-mac">
-                  <div class="sim-fs-header">
-                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
-                    <span class="sim-fs-url" id="sim-fs-appname">atlasobscura.com</span>
-                    <span class="sim-fs-stream-badge">Ultra-HD Stream</span>
-                  </div>
-                  <div class="sim-fs-body" id="sim-fs-body">
-                    <div class="sim-fs-window-content" id="sim-fs-content">
-                      <div class="sim-fs-hero-art">
-                        <span class="sim-fs-tag">INDIA · RAJASTHAN</span>
-                        <h3>Hawa Mahal — Palace of Winds</h3>
-                        <p>低延迟画面串流，支持双指自由缩放与多任务应用窗口直接切换。</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Floating Pill Overlay Action Bar (As seen in remote-fullscreen.webp) -->
-                  <div class="sim-fs-floating-bar">
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="close" title="关闭">✕</button>
-                    <button class="sim-fs-pill-btn is-active" type="button" data-fs-action="touch" title="触摸模式">👆</button>
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="mouse" title="鼠标指针">🖱️</button>
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="keyboard" title="呼出键盘">⌨️</button>
-                    <button class="sim-fs-pill-btn" type="button" data-fs-action="windows" title="多窗口">🗂️</button>
-                  </div>
-                  <!-- macOS Dock -->
-                  <div class="sim-fs-dock">
-                    <button class="sim-dock-app is-active" type="button" data-dock="safari" title="Safari"><img src="assets/software/apple-music.jpg" alt="" style="display:none;">🌐</button>
-                    <button class="sim-dock-app" type="button" data-dock="code" title="VS Code">💻</button>
-                    <button class="sim-dock-app" type="button" data-dock="music" title="Music">🎵</button>
-                    <button class="sim-dock-app" type="button" data-dock="terminal" title="Terminal">⌨️</button>
+                <!-- 5. Lock Screen Mode Buttons -->
+                <div class="p-pad-view" data-pview="lock">
+                  <div class="p-lock-controls">
+                    <button class="p-3d-btn coral big" type="button" data-cmd="lock">🔒 立即锁定 Mac 屏幕</button>
+                    <button class="p-3d-btn yellow big" type="button" data-cmd="unlock">✨ 一键唤醒与解锁</button>
                   </div>
                 </div>
               </div>
 
-              <!-- 3. Text & Voice Pre-Edit Mode (Segmented Tab + White Card Editor + Action Buttons) -->
-              <div class="sim-stage" data-sim-mode="voice">
-                <!-- Top Segmented Pill -->
-                <div class="sim-seg-control">
-                  <span class="sim-seg-item is-active">文本</span>
-                  <span class="sim-seg-item">实时</span>
-                  <span class="sim-seg-done">完成</span>
+              <!-- Lower Row: Rotary Volume Dial & Slider -->
+              <div class="p-row lower">
+                <div class="p-dial-box" id="ws-vol-dial" title="拖动旋转调节 Mac 音量">
+                  <div class="p-dial-knob">
+                    <div class="p-dial-dot"></div>
+                  </div>
+                  <span class="p-dial-lbl" id="ws-vol-lbl">音量 50%</span>
                 </div>
 
-                <!-- Top Mac Notes Screen receiving live typing -->
-                <div class="sim-voice-mac-preview">
-                  <div class="sim-mac-topbar mini">
-                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
-                    <span>Mac 备忘录 — 光标所在处</span>
+                <div class="p-slider-box flex-1">
+                  <div class="p-slider-head">
+                    <span>实时控制响应</span>
+                    <span id="ws-speed-val">超低延迟 12ms</span>
                   </div>
-                  <div class="sim-mac-doc-body" id="sim-voice-target">
-                    <p class="sim-doc-received-text" id="sim-injected-text">等待发送文本注入...</p>
-                  </div>
-                </div>
-
-                <!-- Cream Pre-Edit Card (Matching remote-text-voice.webp) -->
-                <div class="sim-voice-card">
-                  <textarea class="sim-voice-input-area" id="sim-voice-input" rows="3">把今天的剪辑进度整理好，下午三点发给大家</textarea>
-                  <div class="sim-voice-chips-row">
-                    <button class="sim-vchip" type="button" data-text="已完成调色与音频降噪处理。">剪辑进度</button>
-                    <button class="sim-vchip" type="button" data-text="git commit -m 'feat: interactive remote deck'">Git 提交</button>
-                    <button class="sim-vchip" type="button" data-text="下午 3:00 准时在会议室进行产品评审。">会议提醒</button>
-                  </div>
-                  <div class="sim-voice-bottom-actions">
-                    <div class="sim-action-icons-left">
-                      <button class="sim-ico-btn" type="button" title="附件">📎</button>
-                      <button class="sim-ico-btn" type="button" title="设置">🎛️</button>
-                      <button class="sim-ico-btn" type="button" title="历史">🕒</button>
-                    </div>
-                    <div class="sim-action-btns-right">
-                      <button class="sim-red-mic-btn" id="sim-dictate-btn" type="button" title="按住语音输入">
-                        <span class="sim-wave-bars"><i></i><i></i><i></i><i></i></span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22" stroke="white" stroke-width="2"/></svg>
-                      </button>
-                      <button class="sim-black-send-btn" id="sim-send-text-btn" type="button" title="一键注入 Mac">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. Virtual Keyboard Mode (Full QWERTY + Modifiers + HUD) -->
-              <div class="sim-stage" data-sim-mode="keyboard">
-                <div class="sim-seg-control">
-                  <span class="sim-seg-item">文本</span>
-                  <span class="sim-seg-item is-active">实时</span>
-                  <span class="sim-seg-done">完成</span>
-                </div>
-
-                <div class="sim-kb-mac-hud">
-                  <div class="sim-mac-topbar mini">
-                    <div class="sim-mac-dots"><span class="m-dot r"></span><span class="m-dot y"></span><span class="m-dot g"></span></div>
-                    <span>Mac 键盘响应中心</span>
-                  </div>
-                  <div class="sim-hud-display-box">
-                    <span class="sim-hud-key-val" id="sim-key-combo">⌘ + Space</span>
-                    <span class="sim-hud-key-desc" id="sim-key-desc">聚焦搜索 / 快速预览</span>
-                  </div>
-                </div>
-
-                <!-- iOS Full Keyboard (Matching remote-keyboard.webp) -->
-                <div class="sim-full-keyboard" id="sim-full-kb">
-                  <div class="kb-row">
-                    <button class="k-key sm fn" type="button" data-k="esc">esc</button>
-                    <button class="k-key sm fn" type="button" data-k="F1">F1</button>
-                    <button class="k-key sm fn" type="button" data-k="F2">F2</button>
-                    <button class="k-key sm fn" type="button" data-k="F3">F3</button>
-                    <button class="k-key sm fn" type="button" data-k="F4">F4</button>
-                    <button class="k-key sm fn" type="button" data-k="F5">F5</button>
-                    <button class="k-key sm fn" type="button" data-k="F6">F6</button>
-                    <button class="k-key sm fn" type="button" data-k="F7">F7</button>
-                    <button class="k-key sm fn" type="button" data-k="F8">F8</button>
-                    <button class="k-key sm fn" type="button" data-k="F9">F9</button>
-                    <button class="k-key sm fn" type="button" data-k="F10">F10</button>
-                    <button class="k-key sm fn" type="button" data-k="F11">F11</button>
-                    <button class="k-key sm fn" type="button" data-k="F12">F12</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key" type="button" data-k="1">1</button>
-                    <button class="k-key" type="button" data-k="2">2</button>
-                    <button class="k-key" type="button" data-k="3">3</button>
-                    <button class="k-key" type="button" data-k="4">4</button>
-                    <button class="k-key" type="button" data-k="5">5</button>
-                    <button class="k-key" type="button" data-k="6">6</button>
-                    <button class="k-key" type="button" data-k="7">7</button>
-                    <button class="k-key" type="button" data-k="8">8</button>
-                    <button class="k-key" type="button" data-k="9">9</button>
-                    <button class="k-key" type="button" data-k="0">0</button>
-                    <button class="k-key" type="button" data-k="-">-</button>
-                    <button class="k-key" type="button" data-k="=">=</button>
-                    <button class="k-key med del" type="button" data-k="⌫">⌫</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key med" type="button" data-k="tab">tab</button>
-                    <button class="k-key" type="button" data-k="Q">Q</button>
-                    <button class="k-key" type="button" data-k="W">W</button>
-                    <button class="k-key" type="button" data-k="E">E</button>
-                    <button class="k-key" type="button" data-k="R">R</button>
-                    <button class="k-key" type="button" data-k="T">T</button>
-                    <button class="k-key" type="button" data-k="Y">Y</button>
-                    <button class="k-key" type="button" data-k="U">U</button>
-                    <button class="k-key" type="button" data-k="I">I</button>
-                    <button class="k-key" type="button" data-k="O">O</button>
-                    <button class="k-key" type="button" data-k="P">P</button>
-                    <button class="k-key" type="button" data-k="[">[</button>
-                    <button class="k-key" type="button" data-k="]">]</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key med" type="button" data-k="caps">caps</button>
-                    <button class="k-key" type="button" data-k="A">A</button>
-                    <button class="k-key" type="button" data-k="S">S</button>
-                    <button class="k-key" type="button" data-k="D">D</button>
-                    <button class="k-key" type="button" data-k="F">F</button>
-                    <button class="k-key" type="button" data-k="G">G</button>
-                    <button class="k-key" type="button" data-k="H">H</button>
-                    <button class="k-key" type="button" data-k="J">J</button>
-                    <button class="k-key" type="button" data-k="K">K</button>
-                    <button class="k-key" type="button" data-k="L">L</button>
-                    <button class="k-key" type="button" data-k=";">;</button>
-                    <button class="k-key wide ret" type="button" data-k="return">return</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key wide" type="button" data-k="⇧">⇧</button>
-                    <button class="k-key" type="button" data-k="Z">Z</button>
-                    <button class="k-key" type="button" data-k="X">X</button>
-                    <button class="k-key" type="button" data-k="C">C</button>
-                    <button class="k-key" type="button" data-k="V">V</button>
-                    <button class="k-key" type="button" data-k="B">B</button>
-                    <button class="k-key" type="button" data-k="N">N</button>
-                    <button class="k-key" type="button" data-k="M">M</button>
-                    <button class="k-key" type="button" data-k=",">,</button>
-                    <button class="k-key" type="button" data-k=".">.</button>
-                    <button class="k-key" type="button" data-k="↑">↑</button>
-                    <button class="k-key wide" type="button" data-k="⇧">⇧</button>
-                  </div>
-                  <div class="kb-row">
-                    <button class="k-key mod" type="button" data-k="^">^</button>
-                    <button class="k-key mod" type="button" data-k="⌥">⌥</button>
-                    <button class="k-key mod is-active" type="button" data-k="⌘">⌘</button>
-                    <button class="k-key space" type="button" data-k="space">space</button>
-                    <button class="k-key arrow" type="button" data-k="←">←</button>
-                    <button class="k-key arrow" type="button" data-k="↓">↓</button>
-                    <button class="k-key arrow" type="button" data-k="→">→</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 5. Wireless Mic & Tactile Console Mode (Matching remote-microphone.webp) -->
-              <div class="sim-stage" data-sim-mode="mic">
-                <div class="sim-mic-deck-console">
-                  <!-- Row 1: Green Link, Peach Shift, Boolean Toggle -->
-                  <div class="sim-mdeck-row">
-                    <button class="sim-3d-btn green-btn" type="button" data-hud-action="link">链路按键</button>
-                    <button class="sim-3d-btn peach-wide-btn" type="button" data-hud-action="shift">按住 Shift</button>
-                    <div class="sim-toggle-widget">
-                      <div class="sim-toggle-pill is-on" id="sim-bool-switch">
-                        <span class="sim-toggle-knob"></span>
-                      </div>
-                      <span class="sim-toggle-label">布尔开关</span>
-                    </div>
-                  </div>
-
-                  <!-- Row 2: Volume Dial, Brightness Slider, Yellow Encoder -->
-                  <div class="sim-mdeck-row">
-                    <div class="sim-dial-widget">
-                      <div class="sim-dial-ring">
-                        <div class="sim-dial-ticks"></div>
-                        <div class="sim-dial-core"><span class="sim-dial-dot"></span></div>
-                      </div>
-                      <span class="sim-dial-text">系统音量 50</span>
-                    </div>
-
-                    <div class="sim-slider-widget flex-1">
-                      <div class="sim-slider-header">
-                        <span>屏幕亮度</span>
-                        <span>50%</span>
-                      </div>
-                      <div class="sim-slider-track">
-                        <div class="sim-slider-fill" style="width: 50%;"></div>
-                        <div class="sim-slider-thumb" style="left: 50%;"></div>
-                      </div>
-                    </div>
-
-                    <button class="sim-3d-btn yellow-sq-btn" type="button" data-hud-action="encoder">
-                      <span>按压<br>编码器</span>
-                      <span class="sim-btn-sub">↔</span>
-                    </button>
-                  </div>
-
-                  <!-- Row 3: Black D-Pad, Keyboard Key, Metal Microphone -->
-                  <div class="sim-mdeck-row dpad-mic-row">
-                    <!-- Black D-Pad -->
-                    <div class="sim-dpad-cross">
-                      <button class="sim-dpad-btn up" type="button" data-hud-action="dpad-up">▲</button>
-                      <button class="sim-dpad-btn left" type="button" data-hud-action="dpad-left">◀</button>
-                      <button class="sim-dpad-btn center" type="button" data-hud-action="dpad-ok">●</button>
-                      <button class="sim-dpad-btn right" type="button" data-hud-action="dpad-right">▶</button>
-                      <button class="sim-dpad-btn down" type="button" data-hud-action="dpad-down">▼</button>
-                    </div>
-
-                    <button class="sim-3d-btn white-card-btn" type="button" data-hud-action="keyboard">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>
-                      <span>实时键盘</span>
-                    </button>
-
-                    <!-- Circular Metal Mesh Mic with Red Glowing Ring -->
-                    <div class="sim-metal-mic-wrapper">
-                      <button class="sim-metal-mic-btn is-recording" id="sim-big-mic-btn" type="button" title="点击切换拾音状态">
-                        <div class="sim-mic-glow-ring"></div>
-                        <div class="sim-mic-metal-mesh">
-                          <div class="sim-mesh-texture"></div>
-                        </div>
-                      </button>
-                      <span class="sim-mic-status-tag" id="sim-mic-state-label">识别中</span>
-                    </div>
-                  </div>
-
-                  <!-- Bottom App Tab Bar -->
-                  <div class="sim-bottom-tabs">
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83 2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-                    <div class="sim-btab-item is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="sim-btab-dot"></span></div>
-                    <div class="sim-btab-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                  <div class="p-slider-rail" id="ws-slider-rail">
+                    <div class="p-slider-bar" id="ws-slider-bar" style="width: 75%;"></div>
+                    <div class="p-slider-handle" id="ws-slider-handle" style="left: 75%;"></div>
                   </div>
                 </div>
               </div>
 
             </div>
           </div>
-
-          <figcaption class="remote-display-caption">
-            <div class="remote-display-tag" data-remote-display-tag><span class="badge-dot"></span> 边看边控</div>
-            <strong data-remote-display-title>边看边控 · Studio View</strong>
-            <p data-remote-display-desc>将 Mac 实时桌面与触控板、独立滚轮排布于同一界面，坐卧皆可轻松操控电脑。</p>
-          </figcaption>
         </div>
+
       </div>
     </section>
 
+    <!-- Interactive Klotski Puzzle Game (妙控积木华容道) -->
     <section class="product-section" id="control">
-      <figure class="product-shot">
-        <img src="assets/screens/v1.2.0/layout-editor.webp" alt="奶猫妙控小键盘编辑器" width="1206" height="2622" loading="lazy">
-      </figure>
+      
+      <!-- Left: Interactive Klotski Sliding Puzzle Arena -->
+      <div class="klotski-game-bay">
+        <div class="klotski-deck-arena">
+          
+          <div class="klotski-header-bar">
+            <div class="klotski-badge-tag"><span class="badge-dot"></span> 妙控积木 · 华容道</div>
+            <div class="klotski-stats">
+              <span class="stat-pill">步数: <strong id="klotski-moves">0</strong></span>
+            </div>
+          </div>
+
+          <!-- 4x4 Tactile Modular Puzzle Grid -->
+          <div class="klotski-board-grid" id="klotski-board" role="grid" aria-label="妙控控件华容道小游戏">
+            <!-- Tiles rendered dynamically by JS with CreamDeck skeuomorphic widgets -->
+          </div>
+
+          <!-- Game Controls Footer -->
+          <div class="klotski-footer-bar">
+            <button class="klotski-btn shuffle" id="klotski-shuffle-btn" type="button">🎲 随机打乱</button>
+            <button class="klotski-btn solve" id="klotski-solve-btn" type="button">✨ 完美还原</button>
+            <span class="klotski-hint">点击与空白相邻的积木滑动拼装</span>
+          </div>
+
+          <!-- Win Overlay Banner -->
+          <div class="klotski-win-banner" id="klotski-win-banner">
+            <div class="win-card">
+              <span class="win-icon">🎉</span>
+              <h4>专属小键盘拼装完成！</h4>
+              <p>如积木般随心组合按键、旋钮与滑块，自由打造属于你的效率台。</p>
+              <button class="win-play-again" id="klotski-replay-btn" type="button">再玩一次 ↻</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Feature Copy -->
       <div class="product-copy">
         <p class="eyebrow">CUSTOM CANVAS</p>
         <h2>像搭积木一样，自由摆放专属小键盘</h2>
-        <p>按键、旋钮、滑块、触控板与显示屏随心放置，按你的手感习惯自由排布每一个像素。</p>
+        <p>按键、旋钮、滑块、触控板与显示屏随心放置，按你的手感习惯自由排布每一个像素。上手试试左侧的积木拼盘，感受随心组合的乐趣。</p>
+        
         <div class="product-feature-list">
           <div class="product-feature-item">
             <div class="product-feature-icon">
