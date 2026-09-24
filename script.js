@@ -462,8 +462,7 @@ const initMacRemoteWorkstation = () => {
     video: 'Final Cut Pro',
     music: 'Apple Music',
     desktop: isEn ? 'Mission Control' : '调度中心 (Mission Control)',
-    notes: isEn ? 'Notes' : '备忘录 (Notes)',
-    lock: isEn ? 'macOS Lockscreen' : 'macOS 锁屏'
+    notes: isEn ? 'Notes' : '备忘录 (Notes)'
   };
 
   // HUD Toast Trigger
@@ -483,24 +482,18 @@ const initMacRemoteWorkstation = () => {
     play: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
     pause: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>',
     blade: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
-    palette: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>',
-    render: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
-    lock: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
-    unlock: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>',
+    trimLeft: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><line x1="6" y1="6" x2="6" y2="18"/></svg>',
+    trimRight: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/><line x1="18" y1="6" x2="18" y2="18"/></svg>',
     next: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>',
-    prev: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>',
-    heart: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
-    airplay: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>',
+    heart: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+    vol: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>',
     mission: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
     switchApp: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>',
     search: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
     camera: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>',
-    desktop: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
     mic: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
     send: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
-    cursor: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l7 18 3-7 7-3L3 3z"/></svg>',
-    sleep: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
-    wake: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>'
+    cursor: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l7 18 3-7 7-3L3 3z"/></svg>'
   };
 
   // Mode Switcher
@@ -581,24 +574,34 @@ const initMacRemoteWorkstation = () => {
   const jogThumb = document.querySelector('#ws-jog-thumb');
   const macScrubber = document.querySelector('#mac-scrubber');
   const timecodeEl = document.querySelector('#video-timecode');
+  const vseg1 = document.querySelector('#vseg-1');
+  const vseg2 = document.querySelector('#vseg-2');
+  const aseg1 = document.querySelector('#aseg-1');
+  const aseg2 = document.querySelector('#aseg-2');
+
+  let scrubRatio = 0.45;
+  let cutPointPercent = 45;
+
+  const updateTimecode = (ratio) => {
+    if (!timecodeEl) return;
+    const totalFrames = Math.floor(ratio * 3600);
+    const secs = String(Math.floor((totalFrames % (60 * 30)) / 30)).padStart(2, '0');
+    const frames = String(totalFrames % 30).padStart(2, '0');
+    timecodeEl.textContent = `00:01:${secs}:${frames}`;
+  };
+
+  const setScrub = (ratio) => {
+    scrubRatio = Math.max(0.05, Math.min(0.95, ratio));
+    if (jogThumb && jogWheel) {
+      jogThumb.style.top = `${scrubRatio * (jogWheel.clientHeight - 24)}px`;
+    }
+    if (macScrubber) {
+      macScrubber.style.left = `${scrubRatio * 100}%`;
+    }
+    updateTimecode(scrubRatio);
+  };
 
   if (jogWheel && jogThumb && macScrubber) {
-    let scrubRatio = 0.45;
-
-    const setScrub = (ratio) => {
-      scrubRatio = Math.max(0.05, Math.min(0.95, ratio));
-      jogThumb.style.top = `${scrubRatio * (jogWheel.clientHeight - 24)}px`;
-      macScrubber.style.left = `${scrubRatio * 100}%`;
-
-      if (timecodeEl) {
-        const totalFrames = Math.floor(scrubRatio * 3600);
-        const mins = String(Math.floor(totalFrames / (60 * 30))).padStart(2, '0');
-        const secs = String(Math.floor((totalFrames % (60 * 30)) / 30)).padStart(2, '0');
-        const frames = String(totalFrames % 30).padStart(2, '0');
-        timecodeEl.textContent = `00:01:${secs}:${frames}`;
-      }
-    };
-
     const handleWheelDrag = (clientY) => {
       const rect = jogWheel.getBoundingClientRect();
       setScrub((clientY - rect.top) / rect.height);
@@ -618,7 +621,16 @@ const initMacRemoteWorkstation = () => {
     }, { passive: false });
   }
 
-  // Tactile Buttons Click Handling
+  // Set cut point on video track segments
+  const applyCutPoint = (percent) => {
+    cutPointPercent = Math.max(15, Math.min(85, percent));
+    if (vseg1) vseg1.style.width = `${cutPointPercent}%`;
+    if (vseg2) vseg2.style.width = `${100 - cutPointPercent}%`;
+    if (aseg1) aseg1.style.width = `${cutPointPercent}%`;
+    if (aseg2) aseg2.style.width = `${100 - cutPointPercent}%`;
+  };
+
+  // Music Player State
   const playlist = [
     'Midnight Ambient Beats',
     'Coffee Shop Lo-Fi',
@@ -628,11 +640,107 @@ const initMacRemoteWorkstation = () => {
   let currentSongIdx = 0;
   const songTitleEl = document.querySelector('#music-song-title');
   const vinylDisc = document.querySelector('#music-vinyl');
-  const artBox = document.querySelector('.video-art-box');
-  const missionCards = document.querySelectorAll('.mission-card');
+  const macHeartBtn = document.querySelector('#mac-music-heart');
+  const phoneHeartBtn = document.querySelector('#phone-music-heart-btn');
+  const volBar = document.querySelector('#mac-vol-mini-bar');
+  const volText = document.querySelector('#mac-vol-mini-text');
+  const dialIndicator = document.querySelector('#phone-dial-indicator');
+  const volLabel = document.querySelector('#phone-vol-lbl');
+  let currentVolume = 50;
+
+  const setVolume = (vol) => {
+    currentVolume = Math.max(0, Math.min(100, Math.round(vol)));
+    const deg = -135 + (currentVolume / 100) * 270;
+    if (dialIndicator) dialIndicator.style.transform = `rotate(${deg}deg)`;
+    if (volLabel) volLabel.textContent = isEn ? `Vol ${currentVolume}%` : `音量 ${currentVolume}%`;
+    if (volBar) volBar.style.width = `${currentVolume}%`;
+    if (volText) volText.textContent = `${currentVolume}%`;
+  };
+
+  // Music Heart click directly on Mac window
+  if (macHeartBtn) {
+    macHeartBtn.addEventListener('click', () => {
+      macHeartBtn.classList.toggle('is-active');
+      const isLoved = macHeartBtn.classList.contains('is-active');
+      showMacHud(hudIcons.heart, isLoved ? (isEn ? 'Added to Loved Songs' : '已添加到我喜爱的音乐 ❤️') : (isEn ? 'Removed from Loved Songs' : '已取消喜爱'));
+    });
+  }
+
+  // Volume Knob Drag & Click Handling
+  const phoneVolBtn = document.querySelector('#phone-vol-knob-btn');
+  if (phoneVolBtn) {
+    let knobStartY = 0;
+    let knobStartVol = 50;
+    let isKnobDragging = false;
+    let didKnobMove = false;
+
+    phoneVolBtn.addEventListener('pointerdown', (e) => {
+      phoneVolBtn.setPointerCapture?.(e.pointerId);
+      knobStartY = e.clientY;
+      knobStartVol = currentVolume;
+      isKnobDragging = true;
+      didKnobMove = false;
+
+      const onKnobMove = (ev) => {
+        if (!isKnobDragging) return;
+        const delta = knobStartY - ev.clientY;
+        if (Math.abs(delta) > 3) {
+          didKnobMove = true;
+          setVolume(knobStartVol + delta * 0.8);
+        }
+      };
+
+      const onKnobUp = () => {
+        if (!isKnobDragging) return;
+        isKnobDragging = false;
+        window.removeEventListener('pointermove', onKnobMove);
+        if (!didKnobMove) {
+          // Tapped without dragging -> cycle +15%
+          const nextVol = currentVolume >= 95 ? 20 : currentVolume + 15;
+          setVolume(nextVol);
+        }
+        showMacHud(hudIcons.vol, isEn ? `Mac Volume: ${currentVolume}%` : `Mac 音量已调至 ${currentVolume}%`);
+      };
+
+      window.addEventListener('pointermove', onKnobMove);
+      window.addEventListener('pointerup', onKnobUp, { once: true });
+    });
+
+    phoneVolBtn.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      setVolume(currentVolume - Math.sign(e.deltaY) * 5);
+      showMacHud(hudIcons.vol, isEn ? `Mac Volume: ${currentVolume}%` : `Mac 音量已调至 ${currentVolume}%`);
+    }, { passive: false });
+  }
+
+  // Desktop Multitasking State
+  const desktopScene = document.querySelector('#mac-desktop-scene');
+  const winCode = document.querySelector('#win-code');
+  const winSafari = document.querySelector('#win-safari');
+  const winDesign = document.querySelector('#win-design');
+  const spotlightBar = document.querySelector('#mac-spotlight-bar');
+  const spotlightQuery = document.querySelector('#spotlight-query');
+  const appSwitcher = document.querySelector('#mac-app-switcher');
+  const screenshotCard = document.querySelector('#mac-screenshot-card');
+  const windowsList = [winCode, winSafari, winDesign].filter(Boolean);
+  let frontWinIdx = 0;
+  let switcherTimer = null;
+  let screenshotTimer = null;
+
+  const spotlightQueries = [
+    'Final Cut Pro.app',
+    'Apple Music.app',
+    'Visual Studio Code.app',
+    'Safari.app',
+    'Figma.app'
+  ];
+  let spotlightQueryIdx = 0;
+
+  // Video Playing State
   let isVideoPlaying = false;
   let videoPlayTimer = null;
 
+  // Tactile Buttons Click Handling
   document.querySelectorAll('[data-cmd]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const cmd = btn.dataset.cmd;
@@ -640,38 +748,33 @@ const initMacRemoteWorkstation = () => {
       if (cmd === 'play-toggle') {
         isVideoPlaying = !isVideoPlaying;
         if (isVideoPlaying) {
-          showMacHud(hudIcons.play, isEn ? 'Video Timeline Playing' : '时间线已开始播放');
+          showMacHud(hudIcons.play, isEn ? 'Timeline Playing (Space)' : '时间线播放中 (Space)');
           videoPlayTimer = setInterval(() => {
-            if (macScrubber && timecodeEl) {
+            if (macScrubber) {
               const curLeft = parseFloat(macScrubber.style.left) || 45;
-              const nextLeft = (curLeft + 0.5) % 95;
-              macScrubber.style.left = `${nextLeft}%`;
+              const nextLeft = (curLeft + 0.6) % 95;
+              setScrub(nextLeft / 100);
             }
-          }, 60);
+          }, 50);
         } else {
           clearInterval(videoPlayTimer);
-          showMacHud(hudIcons.pause, isEn ? 'Video Timeline Paused' : '时间线已暂停');
+          showMacHud(hudIcons.pause, isEn ? 'Timeline Paused' : '时间线已暂停');
         }
       } else if (cmd === 'blade') {
-        showMacHud(hudIcons.blade, isEn ? 'Blade Cut created at playhead' : '剃刀剪切已在当前指针处完成');
-      } else if (cmd === 'grade') {
-        if (artBox) {
-          artBox.style.filter = artBox.style.filter ? '' : 'contrast(1.2) saturate(1.4) hue-rotate(15deg)';
-        }
-        showMacHud(hudIcons.palette, isEn ? 'Rec.709 Color Profile Applied' : '709 电影级调色已切换');
-      } else if (cmd === 'render') {
-        showMacHud(hudIcons.render, isEn ? 'Fast Background Render Started' : '快速后台渲染已启动');
-      } else if (cmd === 'lock') {
-        selectMode('lock');
-        showMacHud(hudIcons.lock, isEn ? 'Mac Screen Locked' : 'Mac 屏幕已锁定');
-      } else if (cmd === 'unlock') {
-        selectMode('video');
-        showMacHud(hudIcons.unlock, isEn ? 'Mac Screen Unlocked' : 'Mac 屏幕已解锁');
-      } else if (cmd === 'sleep') {
-        showMacHud(hudIcons.sleep, isEn ? 'Mac Sleep Mode Activated' : 'Mac 已进入睡眠模式');
-      } else if (cmd === 'wake') {
-        selectMode('video');
-        showMacHud(hudIcons.wake, isEn ? 'Mac Woken Up' : 'Mac 已重新唤醒');
+        const cutAt = Math.round(scrubRatio * 100);
+        applyCutPoint(cutAt);
+        const totalFrames = Math.floor(scrubRatio * 3600);
+        const secs = String(Math.floor((totalFrames % (60 * 30)) / 30)).padStart(2, '0');
+        const frames = String(totalFrames % 30).padStart(2, '0');
+        showMacHud(hudIcons.blade, isEn ? `Cut slice created at 00:01:${secs}:${frames}` : `剃刀切断已在 00:01:${secs}:${frames} 处生成`);
+      } else if (cmd === 'trim-left') {
+        applyCutPoint(cutPointPercent - 3);
+        setScrub(cutPointPercent / 100);
+        showMacHud(hudIcons.trimLeft, isEn ? `Trim In: -10 frames (${cutPointPercent}%)` : `剪口向左收紧 -10帧 (${cutPointPercent}%)`);
+      } else if (cmd === 'trim-right') {
+        applyCutPoint(cutPointPercent + 3);
+        setScrub(cutPointPercent / 100);
+        showMacHud(hudIcons.trimRight, isEn ? `Trim Out: +10 frames (${cutPointPercent}%)` : `剪口向右延展 +10帧 (${cutPointPercent}%)`);
       } else if (cmd === 'music-play') {
         if (vinylDisc) vinylDisc.classList.toggle('is-spinning');
         const spinning = vinylDisc?.classList.contains('is-spinning');
@@ -679,34 +782,76 @@ const initMacRemoteWorkstation = () => {
       } else if (cmd === 'music-next') {
         currentSongIdx = (currentSongIdx + 1) % playlist.length;
         if (songTitleEl) songTitleEl.textContent = playlist[currentSongIdx];
-        showMacHud(hudIcons.next, isEn ? `Next: ${playlist[currentSongIdx]}` : `已切歌: ${playlist[currentSongIdx]}`);
+        showMacHud(hudIcons.next, isEn ? `Track: ${playlist[currentSongIdx]}` : `已切歌: ${playlist[currentSongIdx]}`);
       } else if (cmd === 'music-like') {
-        showMacHud(hudIcons.heart, isEn ? 'Added to Loved Songs' : '已添加到我喜爱的音乐');
-      } else if (cmd === 'music-airplay') {
-        showMacHud(hudIcons.airplay, isEn ? 'Connected to HomePod Stereo' : '已连接 HomePod 立体声组合');
+        if (macHeartBtn) {
+          macHeartBtn.classList.toggle('is-active');
+          const isLoved = macHeartBtn.classList.contains('is-active');
+          showMacHud(hudIcons.heart, isLoved ? (isEn ? 'Added to Loved Songs' : '已添加到我喜爱的音乐 ❤️') : (isEn ? 'Removed from Loved Songs' : '已取消喜爱'));
+        }
       } else if (cmd === 'mission') {
         selectMode('desktop');
-        showMacHud(hudIcons.mission, isEn ? 'Mission Control Active' : '调度中心 · 全景多任务');
+        if (desktopScene) {
+          desktopScene.classList.toggle('is-mission-control');
+          const isMission = desktopScene.classList.contains('is-mission-control');
+          showMacHud(hudIcons.mission, isMission ? (isEn ? 'Mission Control: All Windows Spread' : '调度中心：窗口全景展开') : (isEn ? 'Mission Control: Restored' : '调度中心已恢复常规排列'));
+        }
       } else if (cmd === 'switch-app') {
         selectMode('desktop');
-        let curIdx = 0;
-        missionCards.forEach((card, idx) => {
-          if (card.classList.contains('active-card')) curIdx = idx;
-          card.classList.remove('active-card');
+        if (desktopScene) desktopScene.classList.remove('is-mission-control');
+
+        // Cycle front window
+        frontWinIdx = (frontWinIdx + 1) % windowsList.length;
+        windowsList.forEach((win, idx) => {
+          if (idx === frontWinIdx) {
+            win.style.zIndex = '3';
+            win.classList.add('is-active');
+          } else if (idx === (frontWinIdx + 2) % windowsList.length) {
+            win.style.zIndex = '2';
+            win.classList.remove('is-active');
+          } else {
+            win.style.zIndex = '1';
+            win.classList.remove('is-active');
+          }
         });
-        const nextIdx = (curIdx + 1) % (missionCards.length || 1);
-        if (missionCards[nextIdx]) missionCards[nextIdx].classList.add('active-card');
-        showMacHud(hudIcons.switchApp, isEn ? '⌘Tab App Switched' : '⌘Tab 切换前台活动窗口');
+
+        // Show App Switcher HUD briefly
+        if (appSwitcher) {
+          appSwitcher.classList.add('is-open');
+          const icons = appSwitcher.querySelectorAll('.app-switcher-icon');
+          icons.forEach((ic, i) => ic.classList.toggle('is-focused', i === frontWinIdx % icons.length));
+          clearTimeout(switcherTimer);
+          switcherTimer = setTimeout(() => {
+            appSwitcher.classList.remove('is-open');
+          }, 1200);
+        }
+
+        showMacHud(hudIcons.switchApp, isEn ? '⌘Tab Front Window Switched' : '⌘Tab 已置顶前台活动窗口');
       } else if (cmd === 'spotlight') {
-        showMacHud(hudIcons.search, isEn ? 'Spotlight Search (⌘Space)' : 'Spotlight 聚焦搜索已唤起');
+        selectMode('desktop');
+        if (spotlightBar) {
+          spotlightBar.classList.toggle('is-open');
+          const isOpen = spotlightBar.classList.contains('is-open');
+          if (isOpen && spotlightQuery) {
+            spotlightQueryIdx = (spotlightQueryIdx + 1) % spotlightQueries.length;
+            spotlightQuery.textContent = spotlightQueries[spotlightQueryIdx];
+          }
+          showMacHud(hudIcons.search, isOpen ? (isEn ? 'Spotlight Search (⌘Space)' : 'Spotlight 聚焦搜索已唤起') : (isEn ? 'Spotlight Dismissed' : 'Spotlight 搜索已关闭'));
+        }
       } else if (cmd === 'screenshot') {
+        selectMode('desktop');
         if (canvas) {
-          canvas.style.filter = 'brightness(2.2)';
+          canvas.style.filter = 'brightness(2.4)';
           setTimeout(() => { canvas.style.filter = ''; }, 120);
         }
-        showMacHud(hudIcons.camera, isEn ? 'Screenshot Saved to Desktop (⇧⌘4)' : '截屏已保存至 Mac 桌面 (⇧⌘4)');
-      } else if (cmd === 'desktop-show') {
-        showMacHud(hudIcons.desktop, isEn ? 'Show Desktop (F11)' : '显示桌面 (F11)');
+        if (screenshotCard) {
+          screenshotCard.classList.add('is-shown');
+          clearTimeout(screenshotTimer);
+          screenshotTimer = setTimeout(() => {
+            screenshotCard.classList.remove('is-shown');
+          }, 2500);
+        }
+        showMacHud(hudIcons.camera, isEn ? 'Screenshot Saved to Desktop (⇧⌘4)' : '截屏已捕获并存至桌面 (⇧⌘4)');
       }
     });
   });

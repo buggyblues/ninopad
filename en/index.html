@@ -358,10 +358,6 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             <span>Voice Dictation</span>
           </button>
-          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Lock Mac</span>
-          </button>
         </div>
       </div>
 
@@ -381,7 +377,6 @@
                 <span class="mac-menu-item">View</span>
               </div>
               <div class="mac-menu-right">
-                <span class="mac-stream-tag"><span class="live-dot"></span> 4K 60FPS · 12ms</span>
                 <span class="mac-clock-text">09:41</span>
               </div>
             </div>
@@ -399,17 +394,35 @@
                   <div class="mac-video-preview">
                     <div class="video-art-box">
                       <div class="video-placeholder-art">
-                        <span class="video-badge">COLOR GRADE: 709</span>
-                        <h4>Hawa Mahal · 4K 60p HDR</h4>
+                        <span class="video-badge" id="video-clip-badge">CLIP 01 · 4K 60p</span>
+                        <h4 id="video-clip-title">Hawa Mahal · Sunset Sequence</h4>
                         <div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
                       </div>
                     </div>
-                    <!-- Scrubbable Timeline -->
+                    <!-- Scrubbable Interactive Timeline with Cut Segments -->
                     <div class="mac-timeline-bar" id="mac-timeline">
                       <div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
-                      <div class="timeline-tracks">
-                        <div class="track-block v1">Video 1 [4K HDR]</div>
-                        <div class="track-block a1">Audio 1 [Dialogue -3dB]</div>
+                      <div class="timeline-tracks" id="timeline-tracks">
+                        <div class="track-row video-track">
+                          <div class="track-segment seg-1" id="vseg-1" style="width: 45%;">
+                            <span>Video 1A [4K HDR]</span>
+                            <div class="trim-handle trim-left"></div>
+                            <div class="trim-handle trim-right"></div>
+                          </div>
+                          <div class="track-segment seg-2" id="vseg-2" style="width: 55%;">
+                            <span>Video 1B [B-Roll]</span>
+                            <div class="trim-handle trim-left"></div>
+                            <div class="trim-handle trim-right"></div>
+                          </div>
+                        </div>
+                        <div class="track-row audio-track">
+                          <div class="track-segment aseg-1" id="aseg-1" style="width: 45%;">
+                            <span>Audio 1A [-3dB]</span>
+                          </div>
+                          <div class="track-segment aseg-2" id="aseg-2" style="width: 55%;">
+                            <span>Audio 1B [-3dB]</span>
+                          </div>
+                        </div>
                       </div>
                       <div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
                     </div>
@@ -430,9 +443,18 @@
                       <div class="vinyl-center"><img src="../assets/software/apple-music.jpg" alt="" width="36" height="36"></div>
                     </div>
                     <div class="music-info-box">
-                      <span class="music-tag">NOW PLAYING</span>
+                      <div class="music-title-row">
+                        <span class="music-tag">NOW PLAYING</span>
+                        <button class="music-heart-btn" id="mac-music-heart" type="button" aria-label="Favorite this song">
+                          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                      </div>
                       <h3 id="music-song-title">Midnight Ambient Beats</h3>
-                      <p>AirPlay 2 Lossless Streaming · Stereo</p>
+                      <div class="music-vol-indicator">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        <div class="vol-track-mini"><div class="vol-fill-mini" id="mac-vol-mini-bar" style="width: 50%;"></div></div>
+                        <span id="mac-vol-mini-text">50%</span>
+                      </div>
                       <div class="music-wave-spectrum" id="music-spectrum">
                         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                       </div>
@@ -441,20 +463,78 @@
                 </div>
               </div>
 
-              <!-- 3. Desktop & Multi-Task Canvas -->
+              <!-- 3. Desktop Mode Canvas (Classic Layered Mac Windows) -->
               <div class="mac-canvas-view" data-canvas="desktop">
-                <div class="mac-mission-control" id="mac-mission-grid">
-                  <div class="mission-card active-card">
-                    <div class="mcard-header">Safari — CreamDeck.com</div>
-                    <div class="mcard-body"><div class="mini-browser-page"></div></div>
+                <div class="mac-desktop-scene" id="mac-desktop-scene">
+                  
+                  <!-- Window 1: Code Editor Window (Top-Left Layer) -->
+                  <div class="mac-classic-win win-code is-active" id="win-code" style="z-index: 3;">
+                    <div class="win-title-bar">
+                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    </div>
+                    <div class="win-client code-client">
+                      <div class="code-gutter"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+                      <div class="code-lines">
+                        <p><span class="c-kw">import</span> { <span class="c-fn">createDeck</span> } <span class="c-kw">from</span> <span class="c-str">'@creamdeck/mac'</span>;</p>
+                        <p><span class="c-kw">const</span> pad = <span class="c-fn">createDeck</span>({ lowLatency: <span class="c-num">true</span> });</p>
+                        <p>pad.<span class="c-fn">on</span>(<span class="c-str">'action'</span>, (event) =&gt; {</p>
+                        <p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event);</p>
+                        <p>});</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mission-card">
-                    <div class="mcard-header">VS Code — App.tsx</div>
-                    <div class="mcard-body"><div class="mini-code-lines"></div></div>
+
+                  <!-- Window 2: Safari Browser Window (Layered Right) -->
+                  <div class="mac-classic-win win-safari" id="win-safari" style="z-index: 2;">
+                    <div class="win-title-bar">
+                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                      <div class="win-url-pill"><span>🔒</span> creamdeck.com</div>
+                    </div>
+                    <div class="win-client safari-client">
+                      <div class="safari-hero-card">
+                        <div class="s-badge">CreamDeck 2.0</div>
+                        <h4>Hardware Controller for Mac</h4>
+                      </div>
+                      <div class="safari-card-row">
+                        <div class="s-mini-block"></div>
+                        <div class="s-mini-block"></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mission-card">
-                    <div class="mcard-header">DaVinci Resolve — Color</div>
-                    <div class="mcard-body"><div class="mini-color-grading"></div></div>
+
+                  <!-- Window 3: Creative Canvas Window (Layered Back) -->
+                  <div class="mac-classic-win win-design" id="win-design" style="z-index: 1;">
+                    <div class="win-title-bar">
+                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                    </div>
+                    <div class="win-client design-client">
+                      <div class="design-canvas-preview">
+                        <div class="d-circle d-c1"></div>
+                        <div class="d-circle d-c2"></div>
+                        <div class="d-rect"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Spotlight Floating Bar Overlay -->
+                  <div class="mac-spotlight-bar" id="mac-spotlight-bar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span class="spotlight-query" id="spotlight-query">Final Cut Pro.app</span>
+                    <span class="spotlight-tag">App</span>
+                  </div>
+
+                  <!-- ⌘Tab App Switcher Overlay -->
+                  <div class="mac-app-switcher-hud" id="mac-app-switcher">
+                    <div class="app-switcher-icon is-focused"><img src="../assets/app-icon.webp" alt="CreamDeck" width="32" height="32"></div>
+                    <div class="app-switcher-icon"><img src="../assets/software/apple-music.jpg" alt="Music" width="32" height="32"></div>
+                    <div class="app-switcher-icon"><img src="../assets/software/safari.jpg" alt="Safari" width="32" height="32"></div>
+                    <div class="app-switcher-icon"><img src="../assets/software/vs-code.jpg" alt="Code" width="32" height="32"></div>
+                  </div>
+
+                  <!-- Floating Screenshot Thumbnail -->
+                  <div class="mac-screenshot-card" id="mac-screenshot-card">
+                    <div class="screenshot-mini-thumb"></div>
+                    <span>Screenshot Saved</span>
                   </div>
                 </div>
               </div>
@@ -469,19 +549,6 @@
                   <div class="mac-notes-content" id="mac-notes-body">
                     <p class="notes-date">Today 09:41</p>
                     <p class="notes-p" id="mac-typed-text">Mobile text and voice ready to inject into Mac...</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 5. Lockscreen Canvas -->
-              <div class="mac-canvas-view" data-canvas="lock">
-                <div class="mac-lockscreen-view">
-                  <div class="lock-clock">09:41</div>
-                  <p class="lock-date">Thursday, September 24</p>
-                  <div class="lock-avatar-box">
-                    <img src="../assets/mascot-look-v2.webp" alt="Panda User" width="64" height="64">
-                    <strong>CreamDeck Pro</strong>
-                    <button class="unlock-btn" type="button" id="mac-unlock-btn">Click to Unlock Mac ↵</button>
                   </div>
                 </div>
               </div>
@@ -533,7 +600,7 @@
               <!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
               <div class="p-mode-pad" id="p-mode-pad">
                 
-                <!-- 1. Video Edit Mode Buttons (4 Tactile Keys) -->
+                <!-- 1. Video Edit Mode Buttons (4 Tactile Keys: Play/Pause, Blade Cut, Trim In, Trim Out) -->
                 <div class="p-pad-view is-active" data-pview="video">
                   <div class="p-keys-3d-grid">
                     <button class="hero-keypad-btn key-yellow" type="button" data-cmd="play-toggle">
@@ -544,18 +611,18 @@
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
                       <span>Blade Cut</span>
                     </button>
-                    <button class="hero-keypad-btn key-peach" type="button" data-cmd="grade">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-                      <span>Color Grade</span>
+                    <button class="hero-keypad-btn key-peach" type="button" data-cmd="trim-left">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/><line x1="6" y1="6" x2="6" y2="18"/></svg>
+                      <span>Trim Left</span>
                     </button>
-                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="render">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                      <span>Fast Render</span>
+                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="trim-right">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/><line x1="18" y1="6" x2="18" y2="18"/></svg>
+                      <span>Trim Right</span>
                     </button>
                   </div>
                 </div>
 
-                <!-- 2. Music Player Mode Buttons (4 Tactile Keys) -->
+                <!-- 2. Music Player Mode Buttons (4 Tactile Keys: Play, Next, Like, Volume Knob) -->
                 <div class="p-pad-view" data-pview="music">
                   <div class="p-keys-3d-grid">
                     <button class="hero-keypad-btn key-yellow" type="button" data-cmd="music-play">
@@ -566,18 +633,20 @@
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
                       <span>Next Track</span>
                     </button>
-                    <button class="hero-keypad-btn key-coral" type="button" data-cmd="music-like">
+                    <button class="hero-keypad-btn key-coral" id="phone-music-heart-btn" type="button" data-cmd="music-like">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                       <span>Favorite</span>
                     </button>
-                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="music-airplay">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>
-                      <span>AirPlay</span>
+                    <button class="hero-keypad-btn key-cream key-knob-btn" id="phone-vol-knob-btn" type="button" data-cmd="music-vol" title="Adjust Mac Volume">
+                      <div class="phone-mini-dial">
+                        <div class="phone-dial-indicator" id="phone-dial-indicator"></div>
+                      </div>
+                      <span id="phone-vol-lbl">Vol 50%</span>
                     </button>
                   </div>
                 </div>
 
-                <!-- 3. Desktop Mode Buttons (4 Tactile Keys) -->
+                <!-- 3. Desktop Mode Buttons (4 Tactile Keys: Mission Control, Switch App, Spotlight, Screenshot) -->
                 <div class="p-pad-view" data-pview="desktop">
                   <div class="p-keys-3d-grid">
                     <button class="hero-keypad-btn key-blue" type="button" data-cmd="mission">
@@ -618,28 +687,6 @@
                         <span>Inject to Mac ↵</span>
                       </button>
                     </div>
-                  </div>
-                </div>
-
-                <!-- 5. Lock Screen Mode Buttons (4 Tactile Keys) -->
-                <div class="p-pad-view" data-pview="lock">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-coral" type="button" data-cmd="lock">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                      <span>Lock Screen</span>
-                    </button>
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="unlock">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-                      <span>Unlock Mac</span>
-                    </button>
-                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="sleep">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                      <span>Sleep Mode</span>
-                    </button>
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="wake">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-                      <span>Wake Up</span>
-                    </button>
                   </div>
                 </div>
 
