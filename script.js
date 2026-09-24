@@ -798,24 +798,31 @@ const initMacRemoteWorkstation = () => {
 
   // Desktop Multitasking State
   const desktopScene = document.querySelector('#mac-desktop-scene');
-  const winCode = document.querySelector('#win-code');
   const winSafari = document.querySelector('#win-safari');
-  const winDesign = document.querySelector('#win-design');
+  const winCode = document.querySelector('#win-code');
+  const winNinopad = document.querySelector('#win-ninopad');
   const spotlightBar = document.querySelector('#mac-spotlight-bar');
   const spotlightQuery = document.querySelector('#spotlight-query');
   const appSwitcher = document.querySelector('#mac-app-switcher');
   const screenshotCard = document.querySelector('#mac-screenshot-card');
-  const windowsList = [winCode, winSafari, winDesign].filter(Boolean);
+
+  // Strictly 1-to-1 ordered with #mac-app-switcher icons: [Safari, Xcode, Ninopad]
+  const windowsList = [winSafari, winCode, winNinopad].filter(Boolean);
+  const appTitles = [
+    isEn ? 'Safari (ninopad.com)' : 'Safari (ninopad.com 官网)',
+    isEn ? 'Xcode (NinoPadKit.swift)' : 'Xcode (NinoPadKit.swift 开发环境)',
+    isEn ? 'Ninopad Companion Studio' : 'Ninopad 妙控台管理中心'
+  ];
   let frontWinIdx = 0;
   let switcherTimer = null;
   let screenshotTimer = null;
 
   const spotlightQueries = [
-    'Final Cut Pro.app',
-    'Apple Music.app',
+    'ninopad.com',
     'Xcode.app',
     'Safari.app',
-    'Figma.app'
+    'Ninopad Studio.app',
+    'Final Cut Pro.app'
   ];
   let spotlightQueryIdx = 0;
 
@@ -974,14 +981,15 @@ const initMacRemoteWorkstation = () => {
         if (appSwitcher) {
           appSwitcher.classList.add('is-open');
           const icons = appSwitcher.querySelectorAll('.app-switcher-icon');
-          icons.forEach((ic, i) => ic.classList.toggle('is-focused', i === frontWinIdx % icons.length));
+          icons.forEach((ic, i) => ic.classList.toggle('is-focused', i === frontWinIdx));
           clearTimeout(switcherTimer);
           switcherTimer = setTimeout(() => {
             appSwitcher.classList.remove('is-open');
           }, 1200);
         }
 
-        showMacHud(hudIcons.switchApp, isEn ? '⌘Tab Front Window Switched' : '⌘Tab 已置顶前台活动窗口');
+        const activeTitle = appTitles[frontWinIdx] || 'App';
+        showMacHud(hudIcons.switchApp, isEn ? `⌘Tab: ${activeTitle}` : `⌘Tab 已置顶 ${activeTitle}`);
       } else if (cmd === 'spotlight') {
         selectMode('desktop');
         if (spotlightBar) {

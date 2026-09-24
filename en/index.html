@@ -467,51 +467,65 @@
               <div class="mac-canvas-view" data-canvas="desktop">
                 <div class="mac-desktop-scene" id="mac-desktop-scene">
                   
-                  <!-- Window 1: Code Editor Window (Top-Left Layer) -->
-                  <div class="mac-classic-win win-code is-active" id="win-code" style="z-index: 3;">
+                  <!-- Window 1: Safari Browser Window (Official Ninopad Website) -->
+                  <div class="mac-classic-win win-safari is-active" id="win-safari" style="z-index: 3;">
+                    <div class="win-title-bar safari-top-bar">
+                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                      <div class="safari-nav-buttons"><span>‹</span><span>›</span></div>
+                      <div class="win-url-pill"><span>🔒</span> ninopad.com</div>
+                    </div>
+                    <div class="win-client safari-client">
+                      <div class="mini-site-header">
+                        <span class="mini-logo">NINOPAD <strong>2.0</strong></span>
+                        <span class="mini-cta">Get Started</span>
+                      </div>
+                      <div class="mini-hero-body">
+                        <span class="mini-eyebrow">Tactile Controller Deck</span>
+                        <h4>Master Your Mac, Beyond a Single Screen</h4>
+                        <div class="mini-key-deck">
+                          <div class="mini-deck-key k-y"><span>⌘C</span><small>Copy</small></div>
+                          <div class="mini-deck-key k-b"><span>⌘V</span><small>Paste</small></div>
+                          <div class="mini-deck-key k-p"><span>⎋</span><small>Undo</small></div>
+                          <div class="mini-deck-key k-l"><span>⇧⌘4</span><small>Capture</small></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Window 2: Code Editor Window (Xcode) -->
+                  <div class="mac-classic-win win-code" id="win-code" style="z-index: 2;">
                     <div class="win-title-bar">
                       <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+                      <span class="win-title-text">NinoPadKit.swift — Xcode</span>
                     </div>
                     <div class="win-client code-client">
                       <div class="code-gutter"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
                       <div class="code-lines">
-                        <p><span class="c-kw">import</span> { <span class="c-fn">createDeck</span> } <span class="c-kw">from</span> <span class="c-str">'@creamdeck/mac'</span>;</p>
-                        <p><span class="c-kw">const</span> pad = <span class="c-fn">createDeck</span>({ lowLatency: <span class="c-num">true</span> });</p>
-                        <p>pad.<span class="c-fn">on</span>(<span class="c-str">'action'</span>, (event) =&gt; {</p>
-                        <p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event);</p>
-                        <p>});</p>
+                        <p><span class="c-kw">import</span> <span class="c-fn">NinoPadKit</span></p>
+                        <p><span class="c-kw">let</span> deck = <span class="c-fn">NinoPadDeck</span>(lowLatency: <span class="c-num">true</span>)</p>
+                        <p>deck.<span class="c-fn">onAction</span> { event <span class="c-kw">in</span></p>
+                        <p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event)</p>
+                        <p>}</p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Window 2: Safari Browser Window (Layered Right) -->
-                  <div class="mac-classic-win win-safari" id="win-safari" style="z-index: 2;">
+                  <!-- Window 3: Ninopad Companion Studio Window -->
+                  <div class="mac-classic-win win-ninopad" id="win-ninopad" style="z-index: 1;">
                     <div class="win-title-bar">
                       <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <div class="win-url-pill"><span>🔒</span> creamdeck.com</div>
+                      <span class="win-title-text">Ninopad Companion</span>
                     </div>
-                    <div class="win-client safari-client">
-                      <div class="safari-hero-card">
-                        <div class="s-badge">CreamDeck 2.0</div>
-                        <h4>Hardware Controller for Mac</h4>
+                    <div class="win-client ninopad-client">
+                      <div class="np-status-bar">
+                        <span class="np-device-dot"></span>
+                        <span class="np-device-name">iPhone 16 Pro · 0.8ms</span>
                       </div>
-                      <div class="safari-card-row">
-                        <div class="s-mini-block"></div>
-                        <div class="s-mini-block"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Window 3: Creative Canvas Window (Layered Back) -->
-                  <div class="mac-classic-win win-design" id="win-design" style="z-index: 1;">
-                    <div class="win-title-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    </div>
-                    <div class="win-client design-client">
-                      <div class="design-canvas-preview">
-                        <div class="d-circle d-c1"></div>
-                        <div class="d-circle d-c2"></div>
-                        <div class="d-rect"></div>
+                      <div class="np-grid-preview">
+                        <div class="np-tile t-active">4K Edit</div>
+                        <div class="np-tile">Lo-Fi Beats</div>
+                        <div class="np-tile">Fast Tasks</div>
+                        <div class="np-tile">Quick Notes</div>
                       </div>
                     </div>
                   </div>
@@ -519,16 +533,15 @@
                   <!-- Spotlight Floating Bar Overlay -->
                   <div class="mac-spotlight-bar" id="mac-spotlight-bar">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <span class="spotlight-query" id="spotlight-query">Final Cut Pro.app</span>
+                    <span class="spotlight-query" id="spotlight-query">Safari.app</span>
                     <span class="spotlight-tag">App</span>
                   </div>
 
-                  <!-- ⌘Tab App Switcher Overlay -->
+                  <!-- ⌘Tab App Switcher Overlay (1-to-1 Aligned with Windows: Safari, Xcode, Ninopad) -->
                   <div class="mac-app-switcher-hud" id="mac-app-switcher">
-                    <div class="app-switcher-icon is-focused"><img src="../assets/app-icon.webp" alt="CreamDeck" width="32" height="32"></div>
-                    <div class="app-switcher-icon"><img src="../assets/software/apple-music.jpg" alt="Music" width="32" height="32"></div>
-                    <div class="app-switcher-icon"><img src="../assets/software/safari.png" alt="Safari" width="32" height="32"></div>
-                    <div class="app-switcher-icon"><img src="../assets/software/xcode.png" alt="Xcode" width="32" height="32"></div>
+                    <div class="app-switcher-icon is-focused" title="Safari"><img src="../assets/software/safari.png" alt="Safari" width="32" height="32"></div>
+                    <div class="app-switcher-icon" title="Xcode"><img src="../assets/software/xcode.png" alt="Xcode" width="32" height="32"></div>
+                    <div class="app-switcher-icon" title="Ninopad"><img src="../assets/app-icon.webp" alt="Ninopad" width="32" height="32"></div>
                   </div>
 
                   <!-- Floating Screenshot Thumbnail -->
