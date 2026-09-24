@@ -1470,36 +1470,39 @@ const initMotion = () => {
       }
     }
 
-    gsap.timeline({ scrollTrigger: { trigger: '.layouts-section', start: 'top 76%', once: true } })
-      .from('.layout-copy h2, .layout-copy > p', { ...reveal, y: 25, stagger: .07 })
-      .from('.layout-tabs', { ...reveal, y: 20, clearProps: 'transform,opacity,visibility' }, '-=.3')
-      .from('.layout-preview', { ...reveal, x: desktop ? 48 : 0, rotation: 2 }, '-=.5');
+    if (document.querySelector('.layouts-section')) {
+      gsap.timeline({ scrollTrigger: { trigger: '.layouts-section', start: 'top 76%', once: true } })
+        .from('.layouts-header > *', { ...reveal, y: 25, stagger: .07 })
+        .from('.deck-hardware-chassis', { ...reveal, y: 28, scale: .98, duration: .7 }, '-=.3');
+    }
 
-    gsap.timeline({ scrollTrigger: { trigger: '.product-section', start: 'top 76%', once: true } })
-      .from('.product-shot', { ...reveal, x: desktop ? -48 : 0, rotation: -2 })
-      .from('.product-copy .eyebrow, .product-copy h2, .product-copy > p', { ...reveal, y: 24, stagger: .07 }, '-=.38')
-      .from('.product-feature-item', { ...reveal, y: 20, stagger: .075 }, '-=.32');
+    if (document.querySelector('.remote-section')) {
+      gsap.timeline({ scrollTrigger: { trigger: '.remote-section', start: 'top 76%', once: true } })
+        .from('.remote-intro > *', { ...reveal, y: 24, stagger: .07 })
+        .from('.mac-remote-workstation', { ...reveal, y: 32, scale: .98, duration: .75 }, '-=.35');
+    }
 
-    gsap.timeline({ scrollTrigger: { trigger: '.remote-section', start: 'top 76%', once: true } })
-      .from('.remote-intro > *', { ...reveal, y: 24, stagger: .07 })
-      .from('.remote-nav-item', { ...reveal, x: desktop ? -32 : 0, y: desktop ? 0 : 20, stagger: .06 }, '-=.34')
-      .from('.remote-display', { ...reveal, x: desktop ? 42 : 0, scale: .96, rotation: desktop ? 1.5 : 0 }, '-=.45');
+    if (document.querySelector('.how-section')) {
+      gsap.timeline({ scrollTrigger: { trigger: '.how-section', start: 'top 74%', once: true } })
+        .from('.connection-art', { ...reveal, x: desktop ? -54 : 0, rotation: -4, scale: .95 })
+        .from('.how-copy > *', { ...reveal, y: 24, stagger: .07 }, '-=.4')
+        .from('.steps li', { ...reveal, y: 19, stagger: .08 }, '-=.32');
+    }
 
-    gsap.timeline({ scrollTrigger: { trigger: '.how-section', start: 'top 74%', once: true } })
-      .from('.connection-art', { ...reveal, x: desktop ? -54 : 0, rotation: -4, scale: .95 })
-      .from('.how-copy > *', { ...reveal, y: 24, stagger: .07 }, '-=.4')
-      .from('.steps li', { ...reveal, y: 19, stagger: .08 }, '-=.32');
+    if (document.querySelector('.scenarios-section')) {
+      gsap.timeline({ scrollTrigger: { trigger: '.scenarios-section', start: 'top 76%', once: true } })
+        .from('.role-tabs', { ...reveal, y: 18 })
+        .from('.role-panels', { ...reveal, y: 23 }, '-=.34')
+        .from('.role-stage', { autoAlpha: 0, xPercent: desktop ? 12 : 0, y: 38, rotation: 5, scale: .9, duration: .72, ease: 'back.out(1.45)' }, '-=.48');
+    }
 
-    gsap.timeline({ scrollTrigger: { trigger: '.scenarios-section', start: 'top 76%', once: true } })
-      .from('.role-tabs', { ...reveal, y: 18 })
-      .from('.role-panels', { ...reveal, y: 23 }, '-=.34')
-      .from('.role-stage', { autoAlpha: 0, xPercent: desktop ? 12 : 0, y: 38, rotation: 5, scale: .9, duration: .72, ease: 'back.out(1.45)' }, '-=.48');
-
-    gsap.timeline({ scrollTrigger: { trigger: '.pro-section', start: 'top 76%', once: true } })
-      .from('.pro-heading .eyebrow, .pro-heading h2, .pro-heading > p', { ...reveal, y: 26, stagger: .07 })
-      .from('.pro-companion', { ...reveal, x: desktop ? -24 : 0, duration: .65 }, '-=.35')
-      .from('.pro-plan-card', { ...reveal, y: 28, scale: .97, stagger: .09, duration: .55, ease: 'back.out(1.25)' }, '-=.48')
-      .from('.pro-trust-badges span', { autoAlpha: 0, y: 12, stagger: .06, duration: .4 }, '-=.2');
+    if (document.querySelector('.pro-section')) {
+      gsap.timeline({ scrollTrigger: { trigger: '.pro-section', start: 'top 76%', once: true } })
+        .from('.pro-heading .eyebrow, .pro-heading h2, .pro-heading > p', { ...reveal, y: 26, stagger: .07 })
+        .from('.pro-companion', { ...reveal, x: desktop ? -24 : 0, duration: .65 }, '-=.35')
+        .from('.pro-plan-card', { ...reveal, y: 28, scale: .97, stagger: .09, duration: .55, ease: 'back.out(1.25)' }, '-=.48')
+        .from('.pro-trust-badges span', { autoAlpha: 0, y: 12, stagger: .06, duration: .4 }, '-=.2');
+    }
 
     document.querySelectorAll('.quick-details, .pro-benefits-details').forEach((details) => {
       const onToggle = () => ScrollTrigger.refresh();
