@@ -574,13 +574,27 @@ const initMacRemoteWorkstation = () => {
   const jogThumb = document.querySelector('#ws-jog-thumb');
   const macScrubber = document.querySelector('#mac-scrubber');
   const timecodeEl = document.querySelector('#video-timecode');
-  const vseg1 = document.querySelector('#vseg-1');
-  const vseg2 = document.querySelector('#vseg-2');
-  const aseg1 = document.querySelector('#aseg-1');
-  const aseg2 = document.querySelector('#aseg-2');
+  const videoTrackRow = document.querySelector('#video-track-row');
+  const audioTrackRow = document.querySelector('#audio-track-row');
+  const videoClipBadge = document.querySelector('#video-clip-badge');
+  const videoClipTitle = document.querySelector('#video-clip-title');
 
   let scrubRatio = 0.45;
-  let cutPointPercent = 45;
+  let cutPoints = [45]; // Array of cut percentages (e.g. [25, 55, 78])
+
+  const clipMetadata = [
+    { badge: 'CLIP 01 · 4K 60p', title: isEn ? 'Hawa Mahal · Sunset Sequence' : '风之宫殿 · 日落光影延时' },
+    { badge: 'CLIP 02 · 4K HDR', title: isEn ? 'Palace Courtyard · Wide B-Roll' : '王宫中庭 · 广角大场景运镜' },
+    { badge: 'CLIP 03 · 120p Macro', title: isEn ? 'Marble Carvings · Detail Pan' : '大理石雕刻 · 慢动作推拉' },
+    { badge: 'CLIP 04 · Aerial 4K', title: isEn ? 'City Skyline · Golden Hour' : '金色时刻 · 城市全景航拍' },
+    { badge: 'CLIP 05 · Night 60p', title: isEn ? 'Street Market · Bokeh Blur' : '夜景集市 · 迷人光斑虚化' },
+    { badge: 'CLIP 06 · Action 4K', title: isEn ? 'Speed Boat · Water Splash' : '快艇破浪 · 高帧率动态捕捉' },
+    { badge: 'CLIP 07 · Master 4K', title: isEn ? 'Color Grading · Final Master' : '全片母带 · 电影级校色输出' }
+  ];
+
+  const getClipLetter = (idx) => {
+    return String.fromCharCode(65 + (idx % 26));
+  };
 
   const updateTimecode = (ratio) => {
     if (!timecodeEl) return;
@@ -590,8 +604,82 @@ const initMacRemoteWorkstation = () => {
     timecodeEl.textContent = `00:01:${secs}:${frames}`;
   };
 
+  const highlightActiveClip = () => {
+    const curP = scrubRatio * 100;
+    const points = [...cutPoints].sort((a, b) => a - b);
+    let activeIdx = 0;
+    let prev = 0;
+
+    for (let i = 0; i < points.length; i++) {
+      if (curP >= prev && curP < points[i]) {
+        activeIdx = i;
+        break;
+      }
+      prev = points[i];
+      if (i === points.length - 1 && curP >= points[i]) {
+        activeIdx = points.length;
+      }
+    }
+
+    videoTrackRow?.querySelectorAll('.track-segment').forEach((el, idx) => {
+      el.classList.toggle('is-active-clip', idx === activeIdx);
+    });
+    audioTrackRow?.querySelectorAll('.track-segment').forEach((el, idx) => {
+      el.classList.toggle('is-active-clip', idx === activeIdx);
+    });
+
+    const meta = clipMetadata[activeIdx % clipMetadata.length];
+    if (videoClipBadge && meta) videoClipBadge.textContent = meta.badge;
+    if (videoClipTitle && meta) videoClipTitle.textContent = meta.title;
+  };
+
+  const renderTimelineSegments = (justCutIndex = -1) => {
+    if (!videoTrackRow || !audioTrackRow) return;
+
+    const points = [...cutPoints].sort((a, b) => a - b);
+    const intervals = [];
+    let prev = 0;
+    for (let i = 0; i < points.length; i++) {
+      intervals.push({ start: prev, end: points[i] });
+      prev = points[i];
+    }
+    intervals.push({ start: prev, end: 100 });
+
+    videoTrackRow.innerHTML = intervals.map((seg, idx) => {
+      const width = (seg.end - seg.start).toFixed(2);
+      const letter = getClipLetter(idx);
+      const isJustCut = idx === justCutIndex || idx === justCutIndex + 1 ? ' just-cut' : '';
+      return `
+        <div class="track-segment${isJustCut}" data-seg-idx="${idx}" data-start="${seg.start}" data-end="${seg.end}" style="width: ${width}%;">
+          <span>Video 1${letter}</span>
+          <div class="trim-handle trim-left"></div>
+          <div class="trim-handle trim-right"></div>
+        </div>
+      `;
+    }).join('');
+
+    audioTrackRow.innerHTML = intervals.map((seg, idx) => {
+      const width = (seg.end - seg.start).toFixed(2);
+      const letter = getClipLetter(idx);
+      return `
+        <div class="track-segment" data-seg-idx="${idx}" data-start="${seg.start}" data-end="${seg.end}" style="width: ${width}%;">
+          <span>Audio 1${letter}</span>
+        </div>
+      `;
+    }).join('');
+
+    videoTrackRow.querySelectorAll('.track-segment').forEach((el) => {
+      el.addEventListener('click', () => {
+        const start = parseFloat(el.dataset.start);
+        setScrub((start + 1.5) / 100);
+      });
+    });
+
+    highlightActiveClip();
+  };
+
   const setScrub = (ratio) => {
-    scrubRatio = Math.max(0.05, Math.min(0.95, ratio));
+    scrubRatio = Math.max(0.02, Math.min(0.98, ratio));
     if (jogThumb && jogWheel) {
       jogThumb.style.top = `${scrubRatio * (jogWheel.clientHeight - 24)}px`;
     }
@@ -599,7 +687,11 @@ const initMacRemoteWorkstation = () => {
       macScrubber.style.left = `${scrubRatio * 100}%`;
     }
     updateTimecode(scrubRatio);
+    highlightActiveClip();
   };
+
+  // Initial timeline render
+  renderTimelineSegments();
 
   if (jogWheel && jogThumb && macScrubber) {
     const handleWheelDrag = (clientY) => {
@@ -620,15 +712,6 @@ const initMacRemoteWorkstation = () => {
       setScrub(scrubRatio + e.deltaY * 0.0015);
     }, { passive: false });
   }
-
-  // Set cut point on video track segments
-  const applyCutPoint = (percent) => {
-    cutPointPercent = Math.max(15, Math.min(85, percent));
-    if (vseg1) vseg1.style.width = `${cutPointPercent}%`;
-    if (vseg2) vseg2.style.width = `${100 - cutPointPercent}%`;
-    if (aseg1) aseg1.style.width = `${cutPointPercent}%`;
-    if (aseg2) aseg2.style.width = `${100 - cutPointPercent}%`;
-  };
 
   // Music Player State
   const playlist = [
@@ -730,7 +813,7 @@ const initMacRemoteWorkstation = () => {
   const spotlightQueries = [
     'Final Cut Pro.app',
     'Apple Music.app',
-    'Visual Studio Code.app',
+    'Xcode.app',
     'Safari.app',
     'Figma.app'
   ];
@@ -752,7 +835,7 @@ const initMacRemoteWorkstation = () => {
           videoPlayTimer = setInterval(() => {
             if (macScrubber) {
               const curLeft = parseFloat(macScrubber.style.left) || 45;
-              const nextLeft = (curLeft + 0.6) % 95;
+              const nextLeft = (curLeft + 0.6) % 96;
               setScrub(nextLeft / 100);
             }
           }, 50);
@@ -761,20 +844,92 @@ const initMacRemoteWorkstation = () => {
           showMacHud(hudIcons.pause, isEn ? 'Timeline Paused' : '时间线已暂停');
         }
       } else if (cmd === 'blade') {
-        const cutAt = Math.round(scrubRatio * 100);
-        applyCutPoint(cutAt);
+        const curP = scrubRatio * 100;
+        const sorted = [...cutPoints].sort((a, b) => a - b);
+        const tooClose = curP < 3 || curP > 97 || sorted.some((p) => Math.abs(p - curP) < 3.5);
+
+        if (tooClose) {
+          showMacHud(hudIcons.blade, isEn ? 'Too close to existing cut point' : '距离已有剪口过近，请微调后再切');
+          return;
+        }
+
+        cutPoints.push(curP);
+        cutPoints.sort((a, b) => a - b);
+        const cutIdx = cutPoints.indexOf(curP);
+
+        renderTimelineSegments(cutIdx);
+
         const totalFrames = Math.floor(scrubRatio * 3600);
         const secs = String(Math.floor((totalFrames % (60 * 30)) / 30)).padStart(2, '0');
         const frames = String(totalFrames % 30).padStart(2, '0');
-        showMacHud(hudIcons.blade, isEn ? `Cut slice created at 00:01:${secs}:${frames}` : `剃刀切断已在 00:01:${secs}:${frames} 处生成`);
+        showMacHud(
+          hudIcons.blade,
+          isEn
+            ? `Blade cut #${cutIdx + 1} added at 00:01:${secs}:${frames} (${cutPoints.length + 1} clips)`
+            : `已在 00:01:${secs}:${frames} 新增剪口（现共 ${cutPoints.length + 1} 个片段）`
+        );
       } else if (cmd === 'trim-left') {
-        applyCutPoint(cutPointPercent - 3);
-        setScrub(cutPointPercent / 100);
-        showMacHud(hudIcons.trimLeft, isEn ? `Trim In: -10 frames (${cutPointPercent}%)` : `剪口向左收紧 -10帧 (${cutPointPercent}%)`);
+        if (cutPoints.length === 0) {
+          showMacHud(hudIcons.trimLeft, isEn ? 'No cut points to trim' : '当前暂无剪口可调节');
+          return;
+        }
+
+        const curP = scrubRatio * 100;
+        let nearestIdx = 0;
+        let minDist = Infinity;
+        cutPoints.forEach((p, i) => {
+          const dist = Math.abs(p - curP);
+          if (dist < minDist) {
+            minDist = dist;
+            nearestIdx = i;
+          }
+        });
+
+        const prevBound = nearestIdx === 0 ? 0 : cutPoints[nearestIdx - 1];
+        if (cutPoints[nearestIdx] - 2.5 >= prevBound + 3) {
+          cutPoints[nearestIdx] -= 2.5;
+          setScrub(cutPoints[nearestIdx] / 100);
+          renderTimelineSegments();
+          showMacHud(
+            hudIcons.trimLeft,
+            isEn
+              ? `Cut #${nearestIdx + 1} Trim In: -8 frames (${Math.round(cutPoints[nearestIdx])}%)`
+              : `剪口 #${nearestIdx + 1} 向左收紧 -8帧 (${Math.round(cutPoints[nearestIdx])}%)`
+          );
+        } else {
+          showMacHud(hudIcons.trimLeft, isEn ? 'Reached minimum clip duration' : '已达片段最短时长限制');
+        }
       } else if (cmd === 'trim-right') {
-        applyCutPoint(cutPointPercent + 3);
-        setScrub(cutPointPercent / 100);
-        showMacHud(hudIcons.trimRight, isEn ? `Trim Out: +10 frames (${cutPointPercent}%)` : `剪口向右延展 +10帧 (${cutPointPercent}%)`);
+        if (cutPoints.length === 0) {
+          showMacHud(hudIcons.trimRight, isEn ? 'No cut points to trim' : '当前暂无剪口可调节');
+          return;
+        }
+
+        const curP = scrubRatio * 100;
+        let nearestIdx = 0;
+        let minDist = Infinity;
+        cutPoints.forEach((p, i) => {
+          const dist = Math.abs(p - curP);
+          if (dist < minDist) {
+            minDist = dist;
+            nearestIdx = i;
+          }
+        });
+
+        const nextBound = nearestIdx === cutPoints.length - 1 ? 100 : cutPoints[nearestIdx + 1];
+        if (cutPoints[nearestIdx] + 2.5 <= nextBound - 3) {
+          cutPoints[nearestIdx] += 2.5;
+          setScrub(cutPoints[nearestIdx] / 100);
+          renderTimelineSegments();
+          showMacHud(
+            hudIcons.trimRight,
+            isEn
+              ? `Cut #${nearestIdx + 1} Trim Out: +8 frames (${Math.round(cutPoints[nearestIdx])}%)`
+              : `剪口 #${nearestIdx + 1} 向右延展 +8帧 (${Math.round(cutPoints[nearestIdx])}%)`
+          );
+        } else {
+          showMacHud(hudIcons.trimRight, isEn ? 'Reached minimum clip duration' : '已达片段最短时长限制');
+        }
       } else if (cmd === 'music-play') {
         if (vinylDisc) vinylDisc.classList.toggle('is-spinning');
         const spinning = vinylDisc?.classList.contains('is-spinning');
