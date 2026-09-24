@@ -342,15 +342,30 @@
       <div class="remote-intro">
         <p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
         <h2>掌控 Mac，远不止一面屏幕</h2>
-        <p>双屏协同，触手可及。在右侧手机上操作触控板、旋钮、快捷键与语音，实时遥控左侧 Mac 桌面。</p>
+        <p>双屏协同，触手可及。在右侧手机上操作触控板与快捷键，实时遥控左侧 Mac 桌面。</p>
         
-        <!-- Workstation Mode Selector Pills -->
+        <!-- Workstation Mode Selector Pills (Clean SVG Icons, No Emoji) -->
         <div class="remote-mode-pills" role="tablist" aria-label="工作站模式切换">
-          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">🎬 视频剪辑</button>
-          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">🎵 音乐播放</button>
-          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">⚡ 极速多任务</button>
-          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">🎙️ 语音速记</button>
-          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">🔒 锁屏保护</button>
+          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+            <span>视频剪辑</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <span>音乐播放</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>极速多任务</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span>语音速记</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>锁屏保护</span>
+          </button>
         </div>
       </div>
 
@@ -434,15 +449,15 @@
               <div class="mac-canvas-view" data-canvas="desktop">
                 <div class="mac-mission-control" id="mac-mission-grid">
                   <div class="mission-card active-card">
-                    <div class="mcard-header">🌐 Safari — CreamDeck.com</div>
+                    <div class="mcard-header">Safari — CreamDeck.com</div>
                     <div class="mcard-body"><div class="mini-browser-page"></div></div>
                   </div>
                   <div class="mission-card">
-                    <div class="mcard-header">💻 VS Code — App.tsx</div>
+                    <div class="mcard-header">VS Code — App.tsx</div>
                     <div class="mcard-body"><div class="mini-code-lines"></div></div>
                   </div>
                   <div class="mission-card">
-                    <div class="mcard-header">🎨 DaVinci Resolve — Color</div>
+                    <div class="mcard-header">DaVinci Resolve — Color</div>
                     <div class="mcard-body"><div class="mini-color-grading"></div></div>
                   </div>
                 </div>
@@ -457,7 +472,7 @@
                   </div>
                   <div class="mac-notes-content" id="mac-notes-body">
                     <p class="notes-date">今天 09:41</p>
-                    <p class="notes-p" id="mac-typed-text">🚀 手机文本与语音已直连 Mac 光标就绪...</p>
+                    <p class="notes-p" id="mac-typed-text">手机文本与语音已直连 Mac 光标就绪...</p>
                   </div>
                 </div>
               </div>
@@ -484,8 +499,10 @@
 
               <!-- macOS Native Toast / HUD Overlay -->
               <div class="mac-hud-overlay" id="mac-workstation-hud">
-                <span class="hud-icon" id="hud-icon">🔊</span>
-                <span class="hud-text" id="hud-text">音量: 50%</span>
+                <span class="hud-icon" id="hud-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                </span>
+                <span class="hud-text" id="hud-text">就绪</span>
               </div>
             </div>
 
@@ -500,17 +517,10 @@
         <div class="phone-controller-bay">
           <div class="phone-deck-chassis">
             
-            <!-- iOS Status Bar -->
-            <div class="p-ios-bar">
-              <span>09:41</span>
-              <div class="p-island"><span class="p-dot"></span><span>Mac Studio 已连接</span></div>
-              <span>100%</span>
-            </div>
-
             <!-- Controller Surface (Interactive Board) -->
             <div class="phone-controller-surface">
               
-              <!-- Upper Row: Virtual Trackpad & Jog-Wheel -->
+              <!-- Upper Area: Virtual Trackpad & Jog-Wheel -->
               <div class="p-row upper">
                 <div class="p-trackpad-box" id="ws-trackpad" title="在触控板上滑动手指，左侧 Mac 光标实时同步！">
                   <div class="p-trackpad-dots"></div>
@@ -518,58 +528,82 @@
                   <div class="p-cursor-ripple" id="ws-ripple"></div>
                 </div>
 
-                <div class="p-jog-wheel" id="ws-jog-wheel" title="上下拖动或滚动滚轮，实时剪辑时间线/滑动">
+                <div class="p-jog-wheel" id="ws-jog-wheel" title="上下拖动或滚动滚轮，实时剪辑时间线">
                   <div class="p-wheel-ridges"></div>
                   <div class="p-wheel-thumb" id="ws-jog-thumb"></div>
                 </div>
               </div>
 
-              <!-- Dynamic Mode-Specific Control Pad -->
+              <!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
               <div class="p-mode-pad" id="p-mode-pad">
                 
-                <!-- 1. Video Edit Mode Buttons -->
+                <!-- 1. Video Edit Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view is-active" data-pview="video">
                   <div class="p-keys-3d-grid">
-                    <button class="p-3d-btn yellow" type="button" data-cmd="play-toggle">▶ 播放/暂停</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="blade">✂️ 剃刀切断</button>
-                    <button class="p-3d-btn blue" type="button" data-cmd="grade">🎨 智能调色</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="undo">↩️ 撤销 (⌘Z)</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="copy">📋 复制属性</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="paste">📌 粘贴属性</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="render">⚡ 快速渲染</button>
-                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 锁定 Mac</button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="play-toggle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>播放 / 暂停</span>
+                    </button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="blade">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                      <span>剃刀剪切</span>
+                    </button>
+                    <button class="hero-keypad-btn key-peach" type="button" data-cmd="grade">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                      <span>智能调色</span>
+                    </button>
+                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="render">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                      <span>快速渲染</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- 2. Music Player Mode Buttons -->
+                <!-- 2. Music Player Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view" data-pview="music">
                   <div class="p-keys-3d-grid">
-                    <button class="p-3d-btn yellow" type="button" data-cmd="music-play">⏯ 播放 / 暂停</button>
-                    <button class="p-3d-btn blue" type="button" data-cmd="music-next">⏭ 下一首</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="music-prev">⏮ 上一首</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="music-like">❤️ 喜欢收藏</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="vol-up">🔊 音量 +</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="vol-down">🔉 音量 -</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="music-airplay">📡 AirPlay</button>
-                    <button class="p-3d-btn coral" type="button" data-cmd="mute">🔇 一键静音</button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="music-play">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+                      <span>播放 / 暂停</span>
+                    </button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="music-next">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+                      <span>下一首</span>
+                    </button>
+                    <button class="hero-keypad-btn key-coral" type="button" data-cmd="music-like">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                      <span>喜欢收藏</span>
+                    </button>
+                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="music-airplay">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>
+                      <span>隔空播放</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- 3. Desktop Mode Buttons -->
+                <!-- 3. Desktop Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view" data-pview="desktop">
                   <div class="p-keys-3d-grid">
-                    <button class="p-3d-btn blue" type="button" data-cmd="mission">🗂️ 调度中心</button>
-                    <button class="p-3d-btn yellow" type="button" data-cmd="switch-app">⌘Tab 切应用</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="spotlight">🔍 聚焦搜索</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="screenshot">📸 截屏 (⇧⌘4)</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="desktop-show">🖥️ 显示桌面</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="copy">📋 复制</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="paste">📌 粘贴</button>
-                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 锁定屏幕</button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="mission">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                      <span>调度中心</span>
+                    </button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="switch-app">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                      <span>切换应用</span>
+                    </button>
+                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="spotlight">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      <span>聚焦搜索</span>
+                    </button>
+                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="screenshot">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      <span>一键截屏</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- 4. Notes & Voice Mode Buttons -->
+                <!-- 4. Notes & Voice Mode (Voice Actions + Textarea) -->
                 <div class="p-pad-view" data-pview="notes">
                   <div class="p-voice-composer">
                     <textarea class="p-voice-textarea" id="ws-voice-input" rows="2" placeholder="输入文字或点击下方快捷短语投送至 Mac..."></textarea>
@@ -578,127 +612,47 @@
                       <button class="p-chip" type="button" data-txt="git commit -m 'feat: live remote workstation'">Git 提交</button>
                       <button class="p-chip" type="button" data-txt="下午三点准时在 2 号会议室评审。">会议提醒</button>
                     </div>
-                    <div class="p-voice-btns">
-                      <button class="p-mic-trigger" id="ws-mic-btn" type="button">
-                        <span class="p-mic-wave"><i></i><i></i><i></i><i></i></span>
-                        <span class="p-mic-text">🎙️ 语音输入</span>
+                    <div class="p-keys-3d-grid mini-grid">
+                      <button class="hero-keypad-btn key-coral" id="ws-mic-btn" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                        <span>语音听写</span>
                       </button>
-                      <button class="p-send-trigger" id="ws-send-btn" type="button">一键投送至 Mac ↵</button>
+                      <button class="hero-keypad-btn key-blue" id="ws-send-btn" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        <span>注入 Mac ↵</span>
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                <!-- 5. Lock Screen Mode Buttons -->
+                <!-- 5. Lock Screen Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view" data-pview="lock">
-                  <div class="p-lock-controls">
-                    <button class="p-3d-btn coral big" type="button" data-cmd="lock">🔒 立即锁定 Mac 屏幕</button>
-                    <button class="p-3d-btn yellow big" type="button" data-cmd="unlock">✨ 一键唤醒与解锁</button>
+                  <div class="p-keys-3d-grid">
+                    <button class="hero-keypad-btn key-coral" type="button" data-cmd="lock">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                      <span>锁定屏幕</span>
+                    </button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="unlock">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+                      <span>一键解锁</span>
+                    </button>
+                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="sleep">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                      <span>睡眠模式</span>
+                    </button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="wake">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                      <span>重新唤醒</span>
+                    </button>
                   </div>
                 </div>
-              </div>
 
-              <!-- Lower Row: Rotary Volume Dial & Slider -->
-              <div class="p-row lower">
-                <div class="p-dial-box" id="ws-vol-dial" title="拖动旋转调节 Mac 音量">
-                  <div class="p-dial-knob">
-                    <div class="p-dial-dot"></div>
-                  </div>
-                  <span class="p-dial-lbl" id="ws-vol-lbl">音量 50%</span>
-                </div>
-
-                <div class="p-slider-box flex-1">
-                  <div class="p-slider-head">
-                    <span>实时控制响应</span>
-                    <span id="ws-speed-val">超低延迟 12ms</span>
-                  </div>
-                  <div class="p-slider-rail" id="ws-slider-rail">
-                    <div class="p-slider-bar" id="ws-slider-bar" style="width: 75%;"></div>
-                    <div class="p-slider-handle" id="ws-slider-handle" style="left: 75%;"></div>
-                  </div>
-                </div>
               </div>
 
             </div>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Interactive Klotski Puzzle Game (妙控积木华容道) -->
-    <section class="product-section" id="control">
-      
-      <!-- Left: Interactive Klotski Sliding Puzzle Arena -->
-      <div class="klotski-game-bay">
-        <div class="klotski-deck-arena">
-          
-          <div class="klotski-header-bar">
-            <div class="klotski-badge-tag"><span class="badge-dot"></span> 妙控积木 · 华容道</div>
-            <div class="klotski-stats">
-              <span class="stat-pill">步数: <strong id="klotski-moves">0</strong></span>
-            </div>
-          </div>
-
-          <!-- 4x4 Tactile Modular Puzzle Grid -->
-          <div class="klotski-board-grid" id="klotski-board" role="grid" aria-label="妙控控件华容道小游戏">
-            <!-- Tiles rendered dynamically by JS with CreamDeck skeuomorphic widgets -->
-          </div>
-
-          <!-- Game Controls Footer -->
-          <div class="klotski-footer-bar">
-            <button class="klotski-btn shuffle" id="klotski-shuffle-btn" type="button">🎲 随机打乱</button>
-            <button class="klotski-btn solve" id="klotski-solve-btn" type="button">✨ 完美还原</button>
-            <span class="klotski-hint">点击与空白相邻的积木滑动拼装</span>
-          </div>
-
-          <!-- Win Overlay Banner -->
-          <div class="klotski-win-banner" id="klotski-win-banner">
-            <div class="win-card">
-              <span class="win-icon">🎉</span>
-              <h4>专属小键盘拼装完成！</h4>
-              <p>如积木般随心组合按键、旋钮与滑块，自由打造属于你的效率台。</p>
-              <button class="win-play-again" id="klotski-replay-btn" type="button">再玩一次 ↻</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Right: Feature Copy -->
-      <div class="product-copy">
-        <p class="eyebrow">CUSTOM CANVAS</p>
-        <h2>像搭积木一样，自由摆放专属小键盘</h2>
-        <p>按键、旋钮、滑块、触控板与显示屏随心放置，按你的手感习惯自由排布每一个像素。上手试试左侧的积木拼盘，感受随心组合的乐趣。</p>
-        
-        <div class="product-feature-list">
-          <div class="product-feature-item">
-            <div class="product-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            </div>
-            <div class="product-feature-text">
-              <h3>自由网格与自适应排布</h3>
-              <p>支持无拘束拖拽缩放控件尺寸与网格位置，契合左右手不同的操作习惯。</p>
-            </div>
-          </div>
-          <div class="product-feature-item">
-            <div class="product-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <div class="product-feature-text">
-              <h3>快捷指令与一键宏自动化</h3>
-              <p>将复杂的组合按键、常用短语或连续工作流绑定至单颗按键，一步直达。</p>
-            </div>
-          </div>
-          <div class="product-feature-item">
-            <div class="product-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <div class="product-feature-text">
-              <h3>前台软件智能跟随</h3>
-              <p>为不同创作与办公工具设置专属界面，切换电脑当前窗口时自动唤起对应按键。</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 

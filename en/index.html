@@ -340,13 +340,28 @@
         <h2>Control Your Mac, Way Beyond a Single Screen</h2>
         <p>Dual-screen synergy, right at your fingertips. Operate trackpads, dials, shortcuts, and voice on your phone to control the Mac display in real time.</p>
         
-        <!-- Workstation Mode Selector Pills -->
+        <!-- Workstation Mode Selector Pills (Clean SVG Icons, No Emoji) -->
         <div class="remote-mode-pills" role="tablist" aria-label="Workstation mode switcher">
-          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">🎬 Video Editing</button>
-          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">🎵 Music Player</button>
-          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">⚡ Multitasking</button>
-          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">🎙️ Voice Dictation</button>
-          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">🔒 Lockscreen</button>
+          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+            <span>Video Editing</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <span>Music Player</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>Multitasking</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span>Voice Dictation</span>
+          </button>
+          <button class="rm-pill" type="button" data-rmode="lock" role="tab" aria-selected="false">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Lock Mac</span>
+          </button>
         </div>
       </div>
 
@@ -430,15 +445,15 @@
               <div class="mac-canvas-view" data-canvas="desktop">
                 <div class="mac-mission-control" id="mac-mission-grid">
                   <div class="mission-card active-card">
-                    <div class="mcard-header">🌐 Safari — CreamDeck.com</div>
+                    <div class="mcard-header">Safari — CreamDeck.com</div>
                     <div class="mcard-body"><div class="mini-browser-page"></div></div>
                   </div>
                   <div class="mission-card">
-                    <div class="mcard-header">💻 VS Code — App.tsx</div>
+                    <div class="mcard-header">VS Code — App.tsx</div>
                     <div class="mcard-body"><div class="mini-code-lines"></div></div>
                   </div>
                   <div class="mission-card">
-                    <div class="mcard-header">🎨 DaVinci Resolve — Color</div>
+                    <div class="mcard-header">DaVinci Resolve — Color</div>
                     <div class="mcard-body"><div class="mini-color-grading"></div></div>
                   </div>
                 </div>
@@ -449,11 +464,11 @@
                 <div class="mac-notes-window">
                   <div class="mac-win-titlebar">
                     <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>Notes — Live Voice &amp; Text Injection</span>
+                    <span>Notes — Quick Notes &amp; Voice Injection</span>
                   </div>
                   <div class="mac-notes-content" id="mac-notes-body">
                     <p class="notes-date">Today 09:41</p>
-                    <p class="notes-p" id="mac-typed-text">🚀 Mobile voice and text connected to Mac cursor...</p>
+                    <p class="notes-p" id="mac-typed-text">Mobile text and voice ready to inject into Mac...</p>
                   </div>
                 </div>
               </div>
@@ -480,8 +495,10 @@
 
               <!-- macOS Native Toast / HUD Overlay -->
               <div class="mac-hud-overlay" id="mac-workstation-hud">
-                <span class="hud-icon" id="hud-icon">🔊</span>
-                <span class="hud-text" id="hud-text">Volume: 50%</span>
+                <span class="hud-icon" id="hud-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                </span>
+                <span class="hud-text" id="hud-text">Ready</span>
               </div>
             </div>
 
@@ -496,21 +513,14 @@
         <div class="phone-controller-bay">
           <div class="phone-deck-chassis">
             
-            <!-- iOS Status Bar -->
-            <div class="p-ios-bar">
-              <span>09:41</span>
-              <div class="p-island"><span class="p-dot"></span><span>Mac Studio Connected</span></div>
-              <span>100%</span>
-            </div>
-
             <!-- Controller Surface (Interactive Board) -->
             <div class="phone-controller-surface">
               
-              <!-- Upper Row: Virtual Trackpad & Jog-Wheel -->
+              <!-- Upper Area: Virtual Trackpad & Jog-Wheel -->
               <div class="p-row upper">
                 <div class="p-trackpad-box" id="ws-trackpad" title="Drag your finger across the trackpad to move Mac cursor">
                   <div class="p-trackpad-dots"></div>
-                  <span class="p-trackpad-hint">Virtual Trackpad<br><small>Drag to control cursor</small></span>
+                  <span class="p-trackpad-hint">Virtual Trackpad<br><small>Drag to control Mac cursor</small></span>
                   <div class="p-cursor-ripple" id="ws-ripple"></div>
                 </div>
 
@@ -520,52 +530,76 @@
                 </div>
               </div>
 
-              <!-- Dynamic Mode-Specific Control Pad -->
+              <!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
               <div class="p-mode-pad" id="p-mode-pad">
                 
-                <!-- 1. Video Edit Mode Buttons -->
+                <!-- 1. Video Edit Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view is-active" data-pview="video">
                   <div class="p-keys-3d-grid">
-                    <button class="p-3d-btn yellow" type="button" data-cmd="play-toggle">▶ Play/Pause</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="blade">✂️ Blade Cut</button>
-                    <button class="p-3d-btn blue" type="button" data-cmd="grade">🎨 Color Grade</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="undo">↩️ Undo (⌘Z)</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="copy">📋 Copy Attr</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="paste">📌 Paste Attr</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="render">⚡ Fast Render</button>
-                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 Lock Mac</button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="play-toggle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <span>Play / Pause</span>
+                    </button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="blade">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                      <span>Blade Cut</span>
+                    </button>
+                    <button class="hero-keypad-btn key-peach" type="button" data-cmd="grade">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                      <span>Color Grade</span>
+                    </button>
+                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="render">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                      <span>Fast Render</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- 2. Music Player Mode Buttons -->
+                <!-- 2. Music Player Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view" data-pview="music">
                   <div class="p-keys-3d-grid">
-                    <button class="p-3d-btn yellow" type="button" data-cmd="music-play">⏯ Play / Pause</button>
-                    <button class="p-3d-btn blue" type="button" data-cmd="music-next">⏭ Next Track</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="music-prev">⏮ Prev Track</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="music-like">❤️ Favorite</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="vol-up">🔊 Vol +</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="vol-down">🔉 Vol -</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="music-airplay">📡 AirPlay</button>
-                    <button class="p-3d-btn coral" type="button" data-cmd="mute">🔇 Mute</button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="music-play">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+                      <span>Play / Pause</span>
+                    </button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="music-next">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+                      <span>Next Track</span>
+                    </button>
+                    <button class="hero-keypad-btn key-coral" type="button" data-cmd="music-like">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                      <span>Favorite</span>
+                    </button>
+                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="music-airplay">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>
+                      <span>AirPlay</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- 3. Desktop Mode Buttons -->
+                <!-- 3. Desktop Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view" data-pview="desktop">
                   <div class="p-keys-3d-grid">
-                    <button class="p-3d-btn blue" type="button" data-cmd="mission">🗂️ Mission Ctrl</button>
-                    <button class="p-3d-btn yellow" type="button" data-cmd="switch-app">⌘Tab Switch</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="spotlight">🔍 Spotlight</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="screenshot">📸 Screenshot</button>
-                    <button class="p-3d-btn cream" type="button" data-cmd="desktop-show">🖥️ Desktop</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="copy">📋 Copy</button>
-                    <button class="p-3d-btn peach" type="button" data-cmd="paste">📌 Paste</button>
-                    <button class="p-3d-btn coral" type="button" data-cmd="lock">🔒 Lock Screen</button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="mission">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                      <span>Mission Control</span>
+                    </button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="switch-app">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                      <span>Switch App</span>
+                    </button>
+                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="spotlight">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      <span>Spotlight</span>
+                    </button>
+                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="screenshot">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      <span>Screenshot</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- 4. Notes & Voice Mode Buttons -->
+                <!-- 4. Notes & Voice Mode (Voice Actions + Textarea) -->
                 <div class="p-pad-view" data-pview="notes">
                   <div class="p-voice-composer">
                     <textarea class="p-voice-textarea" id="ws-voice-input" rows="2" placeholder="Type text or click quick chips to inject into Mac..."></textarea>
@@ -574,126 +608,47 @@
                       <button class="p-chip" type="button" data-txt="git commit -m 'feat: live remote workstation'">Git Commit</button>
                       <button class="p-chip" type="button" data-txt="Sync meeting at 3:00 PM in Conference Room 2.">Meeting</button>
                     </div>
-                    <div class="p-voice-btns">
-                      <button class="p-mic-trigger" id="ws-mic-btn" type="button">
-                        <span class="p-mic-wave"><i></i><i></i><i></i><i></i></span>
-                        <span class="p-mic-text">🎙️ Dictate</span>
+                    <div class="p-keys-3d-grid mini-grid">
+                      <button class="hero-keypad-btn key-coral" id="ws-mic-btn" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                        <span>Voice Dictate</span>
                       </button>
-                      <button class="p-send-trigger" id="ws-send-btn" type="button">Inject to Mac ↵</button>
+                      <button class="hero-keypad-btn key-blue" id="ws-send-btn" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        <span>Inject to Mac ↵</span>
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                <!-- 5. Lock Screen Mode Buttons -->
+                <!-- 5. Lock Screen Mode Buttons (4 Tactile Keys) -->
                 <div class="p-pad-view" data-pview="lock">
-                  <div class="p-lock-controls">
-                    <button class="p-3d-btn coral big" type="button" data-cmd="lock">🔒 Lock Mac Screen Now</button>
-                    <button class="p-3d-btn yellow big" type="button" data-cmd="unlock">✨ Wake &amp; Unlock Mac</button>
+                  <div class="p-keys-3d-grid">
+                    <button class="hero-keypad-btn key-coral" type="button" data-cmd="lock">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                      <span>Lock Screen</span>
+                    </button>
+                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="unlock">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+                      <span>Unlock Mac</span>
+                    </button>
+                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="sleep">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                      <span>Sleep Mode</span>
+                    </button>
+                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="wake">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                      <span>Wake Up</span>
+                    </button>
                   </div>
                 </div>
-              </div>
 
-              <!-- Lower Row: Rotary Volume Dial & Slider -->
-              <div class="p-row lower">
-                <div class="p-dial-box" id="ws-vol-dial" title="Drag or scroll to adjust Mac volume">
-                  <div class="p-dial-knob">
-                    <div class="p-dial-dot"></div>
-                  </div>
-                  <span class="p-dial-lbl" id="ws-vol-lbl">Vol 50%</span>
-                </div>
-
-                <div class="p-slider-box flex-1">
-                  <div class="p-slider-head">
-                    <span>Response Latency</span>
-                    <span id="ws-speed-val">Ultra-Low 12ms</span>
-                  </div>
-                  <div class="p-slider-rail" id="ws-slider-rail">
-                    <div class="p-slider-bar" id="ws-slider-bar" style="width: 75%;"></div>
-                    <div class="p-slider-handle" id="ws-slider-handle" style="left: 75%;"></div>
-                  </div>
-                </div>
               </div>
 
             </div>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Interactive Klotski Puzzle Game (妙控积木华容道) -->
-    <section class="product-section" id="control">
-      
-      <!-- Left: Interactive Klotski Sliding Puzzle Arena -->
-      <div class="klotski-game-bay">
-        <div class="klotski-deck-arena">
-          
-          <div class="klotski-header-bar">
-            <div class="klotski-badge-tag"><span class="badge-dot"></span> CreamDeck · Sliding Puzzle</div>
-            <div class="klotski-stats">
-              <span class="stat-pill">Moves: <strong id="klotski-moves">0</strong></span>
-            </div>
-          </div>
-
-          <!-- 4x4 Tactile Modular Puzzle Grid -->
-          <div class="klotski-board-grid" id="klotski-board" role="grid" aria-label="CreamDeck tactile sliding puzzle game">
-            <!-- Tiles rendered dynamically by JS with CreamDeck skeuomorphic widgets -->
-          </div>
-
-          <!-- Game Controls Footer -->
-          <div class="klotski-footer-bar">
-            <button class="klotski-btn shuffle" id="klotski-shuffle-btn" type="button">🎲 Shuffle</button>
-            <button class="klotski-btn solve" id="klotski-solve-btn" type="button">✨ Perfect Solve</button>
-            <span class="klotski-hint">Tap any tile adjacent to the empty slot to slide</span>
-          </div>
-
-          <!-- Win Overlay Banner -->
-          <div class="klotski-win-banner" id="klotski-win-banner">
-            <div class="win-card">
-              <span class="win-icon">🎉</span>
-              <h4>Custom Keypad Assembled!</h4>
-              <p>Assemble buttons, dials, and sliders like building blocks to forge your ultimate desktop controller.</p>
-              <button class="win-play-again" id="klotski-replay-btn" type="button">Play Again ↻</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Right: Feature Copy -->
-      <div class="product-copy">
-        <p class="eyebrow">CUSTOM CANVAS</p>
-        <h2>Build Your Deck Like Building Blocks</h2>
-        <p>Place buttons, dials, sliders, trackpads, and displays freely across customizable grids tailored to your ergonomics. Try sliding the modular deck puzzle on the left to feel the magic of modular control.</p>
-        <div class="product-feature-list">
-          <div class="product-feature-item">
-            <div class="product-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            </div>
-            <div class="product-feature-text">
-              <h3>Free Grid &amp; Adaptive Layouts</h3>
-              <p>Drag, drop, and resize controls freely to fit left or right-handed preferences on any screen size.</p>
-            </div>
-          </div>
-          <div class="product-feature-item">
-            <div class="product-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <div class="product-feature-text">
-              <h3>Shortcuts &amp; One-Tap Macros</h3>
-              <p>Bind complex hotkey sequences, text snippets, and multi-step actions to a single tactile button.</p>
-            </div>
-          </div>
-          <div class="product-feature-item">
-            <div class="product-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <div class="product-feature-text">
-              <h3>Foreground App Intelligence</h3>
-              <p>Automatically switches your mobile keypad layout to match the active window on your Mac.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 

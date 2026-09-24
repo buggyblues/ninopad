@@ -839,31 +839,27 @@ section[id], section {
 
 .phone-controller-surface {
   flex: 1;
-  padding: 0.65rem;
+  padding: 0.85rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .p-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .p-row.upper {
-  height: 5.2rem;
-}
-
-.p-row.lower {
-  align-items: center;
+  height: 7.2rem;
 }
 
 /* Trackpad */
 .p-trackpad-box {
-  flex: 1.4;
+  flex: 1;
   background: #ebe4d5;
   border: 1px solid rgba(33, 31, 26, 0.08);
-  border-radius: 0.85rem;
+  border-radius: 1.15rem;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 0 rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
@@ -884,13 +880,18 @@ section[id], section {
 }
 
 .p-trackpad-hint {
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 800;
   color: #8c7d69;
   text-align: center;
   pointer-events: none;
-  line-height: 1.35;
+  line-height: 1.4;
   z-index: 2;
+}
+
+.p-trackpad-hint small {
+  font-size: 0.52rem;
+  opacity: 0.85;
 }
 
 .p-cursor-ripple {
@@ -905,12 +906,13 @@ section[id], section {
   transition: opacity 0.15s ease;
 }
 
-/* Jog Wheel */
+/* Slender Tactile Jog Wheel Roller */
 .p-jog-wheel {
-  width: 2.35rem;
+  width: 1.35rem;
+  flex-shrink: 0;
   background: linear-gradient(180deg, #d3cbba 0%, #ede8dc 50%, #c4bbab 100%);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0.75rem;
+  border-radius: 999px;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.06);
   position: relative;
   cursor: ns-resize;
@@ -928,18 +930,18 @@ section[id], section {
 .p-wheel-thumb {
   position: absolute;
   top: 35%;
-  left: 3px;
-  right: 3px;
-  height: 1.35rem;
+  left: 2px;
+  right: 2px;
+  height: 1.25rem;
   background: linear-gradient(180deg, #fdfbf7 0%, #e2dcd0 100%);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.35rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* 3D Tactile Buttons Grid */
+/* Dynamic Mode Pad */
 .p-mode-pad {
-  min-height: 12.5rem;
+  min-height: 10.5rem;
 }
 
 .p-pad-view {
@@ -953,41 +955,118 @@ section[id], section {
 .p-keys-3d-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.45rem;
+  gap: 0.55rem;
 }
 
-.p-3d-btn {
-  height: 2.6rem;
-  border-radius: 0.75rem;
-  border: none;
-  font-family: inherit;
-  font-size: 0.72rem;
-  font-weight: 850;
-  cursor: pointer;
+.p-keys-3d-grid.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+/* 3D Skeuomorphic Keycap Buttons (Reference: Hero section .hero-key) */
+.hero-keypad-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  gap: 0.35rem;
+  min-height: 4.4rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: 1.15rem;
+  border: 0.08rem solid rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  cursor: pointer;
   user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  position: relative;
 }
 
-.p-3d-btn:active {
+.hero-keypad-btn svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+}
+
+.hero-keypad-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-keypad-btn:active,
+.hero-keypad-btn.is-pressed {
   transform: translateY(3px) !important;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15) !important;
 }
 
-.p-3d-btn.yellow { background: #ffe682; color: #78350f; box-shadow: 0 4px 0 #dfbe4a, 0 4px 8px rgba(0,0,0,0.08); }
-.p-3d-btn.peach { background: #fcd9c4; color: #7c2d12; box-shadow: 0 4px 0 #e4b297, 0 4px 8px rgba(0,0,0,0.08); }
-.p-3d-btn.blue { background: #6ba3fa; color: #ffffff; box-shadow: 0 4px 0 #467bc9, 0 4px 8px rgba(0,0,0,0.08); }
-.p-3d-btn.cream { background: #ffffff; color: #1e293b; box-shadow: 0 4px 0 #d1c8b8, 0 4px 8px rgba(0,0,0,0.08); }
-.p-3d-btn.coral { background: #fca5a5; color: #7f1d1d; box-shadow: 0 4px 0 #db7575, 0 4px 8px rgba(0,0,0,0.08); }
-.p-3d-btn.big { height: 3.2rem; font-size: 0.85rem; width: 100%; margin-bottom: 0.5rem; }
+/* Keycap 3D Gradients & Bevel Shadows */
+.hero-keypad-btn.key-yellow {
+  background: linear-gradient(145deg, #ffe972, #ffc72f);
+  color: #78350f;
+  box-shadow: inset 0 0.15rem 0.22rem rgba(255, 255, 255, 0.8), inset 0 -0.42rem 0 #dfa507, 0 0.45rem 1rem rgba(163, 113, 8, 0.18);
+}
+.hero-keypad-btn.key-yellow:active,
+.hero-keypad-btn.key-yellow.is-pressed {
+  box-shadow: inset 0 0.1rem 0.15rem rgba(255, 255, 255, 0.6), inset 0 -0.15rem 0 #dfa507, 0 0.15rem 0.4rem rgba(163, 113, 8, 0.15) !important;
+}
+
+.hero-keypad-btn.key-blue {
+  background: linear-gradient(145deg, #65a6ff, #2575e9);
+  color: #ffffff;
+  box-shadow: inset 0 0.15rem 0.22rem rgba(255, 255, 255, 0.6), inset 0 -0.42rem 0 #155cb8, 0 0.45rem 1rem rgba(37, 117, 233, 0.22);
+}
+.hero-keypad-btn.key-blue:active,
+.hero-keypad-btn.key-blue.is-pressed {
+  box-shadow: inset 0 0.1rem 0.15rem rgba(255, 255, 255, 0.5), inset 0 -0.15rem 0 #155cb8, 0 0.15rem 0.4rem rgba(37, 117, 233, 0.18) !important;
+}
+
+.hero-keypad-btn.key-peach {
+  background: linear-gradient(145deg, #ffe4d1, #ffc8aa);
+  color: #7c2d12;
+  box-shadow: inset 0 0.15rem 0.22rem rgba(255, 255, 255, 0.8), inset 0 -0.42rem 0 #df9a70, 0 0.45rem 1rem rgba(143, 88, 54, 0.16);
+}
+.hero-keypad-btn.key-peach:active,
+.hero-keypad-btn.key-peach.is-pressed {
+  box-shadow: inset 0 0.1rem 0.15rem rgba(255, 255, 255, 0.6), inset 0 -0.15rem 0 #df9a70, 0 0.15rem 0.4rem rgba(143, 88, 54, 0.12) !important;
+}
+
+.hero-keypad-btn.key-lilac {
+  background: linear-gradient(145deg, #efd9ff, #d8a9fa);
+  color: #5b21b6;
+  box-shadow: inset 0 0.15rem 0.22rem rgba(255, 255, 255, 0.8), inset 0 -0.42rem 0 #b37ada, 0 0.45rem 1rem rgba(111, 69, 139, 0.16);
+}
+.hero-keypad-btn.key-lilac:active,
+.hero-keypad-btn.key-lilac.is-pressed {
+  box-shadow: inset 0 0.1rem 0.15rem rgba(255, 255, 255, 0.6), inset 0 -0.15rem 0 #b37ada, 0 0.15rem 0.4rem rgba(111, 69, 139, 0.12) !important;
+}
+
+.hero-keypad-btn.key-coral {
+  background: linear-gradient(145deg, #ff9a91, #ff6861);
+  color: #ffffff;
+  box-shadow: inset 0 0.15rem 0.22rem rgba(255, 255, 255, 0.6), inset 0 -0.42rem 0 #d34540, 0 0.45rem 1rem rgba(255, 104, 97, 0.2);
+}
+.hero-keypad-btn.key-coral:active,
+.hero-keypad-btn.key-coral.is-pressed {
+  box-shadow: inset 0 0.1rem 0.15rem rgba(255, 255, 255, 0.5), inset 0 -0.15rem 0 #d34540, 0 0.15rem 0.4rem rgba(255, 104, 97, 0.16) !important;
+}
+
+.hero-keypad-btn.key-cream {
+  background: linear-gradient(145deg, #ffffff, #efebe2);
+  color: #1e293b;
+  box-shadow: inset 0 0.15rem 0.22rem rgba(255, 255, 255, 0.95), inset 0 -0.42rem 0 #cfc7b7, 0 0.45rem 1rem rgba(80, 64, 42, 0.14);
+}
+.hero-keypad-btn.key-cream:active,
+.hero-keypad-btn.key-cream.is-pressed {
+  box-shadow: inset 0 0.1rem 0.15rem rgba(255, 255, 255, 0.8), inset 0 -0.15rem 0 #cfc7b7, 0 0.15rem 0.4rem rgba(80, 64, 42, 0.1) !important;
+}
 
 /* Voice Composer */
 .p-voice-composer {
   background: #ffffff;
-  border-radius: 0.85rem;
+  border-radius: 0.95rem;
   padding: 0.65rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -1026,386 +1105,6 @@ section[id], section {
   cursor: pointer;
 }
 
-.p-voice-btns {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.p-mic-trigger {
-  flex: 1;
-  height: 2.2rem;
-  background: #ef4444;
-  color: #ffffff;
-  border: none;
-  border-radius: 0.55rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  box-shadow: 0 3px 0 #dc2626;
-}
-
-.p-mic-wave {
-  display: none;
-  align-items: center;
-  gap: 2px;
-  height: 12px;
-}
-
-.p-mic-wave i {
-  width: 2px;
-  height: 100%;
-  background: #ffffff;
-  border-radius: 1px;
-  animation: pwave 0.5s ease-in-out infinite alternate;
-}
-.p-mic-wave i:nth-child(2) { animation-delay: 0.15s; }
-.p-mic-wave i:nth-child(3) { animation-delay: 0.3s; }
-.p-mic-wave i:nth-child(4) { animation-delay: 0.1s; }
-
-@keyframes pwave {
-  0% { transform: scaleY(0.3); }
-  100% { transform: scaleY(1); }
-}
-
-.p-mic-trigger.is-active .p-mic-wave { display: flex; }
-
-.p-send-trigger {
-  flex: 1.2;
-  height: 2.2rem;
-  background: #0f172a;
-  color: #ffffff;
-  border: none;
-  border-radius: 0.55rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 3px 0 #020617;
-}
-
-/* Dial & Slider */
-.p-dial-box {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  cursor: grab;
-}
-
-.p-dial-knob {
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, #3b404e 0%, #1f222b 100%);
-  border: 2px solid #111827;
-  position: relative;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  transition: transform 0.05s linear;
-}
-
-.p-dial-dot {
-  position: absolute;
-  top: 3px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 6px;
-  background: #60a5fa;
-  border-radius: 1.5px;
-}
-
-.p-dial-lbl {
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #475569;
-}
-
-.p-slider-box {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.p-slider-head {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.55rem;
-  font-weight: 800;
-  color: #64748b;
-}
-
-.p-slider-rail {
-  height: 0.85rem;
-  background: #e2dbcc;
-  border-radius: 999px;
-  position: relative;
-  cursor: pointer;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.p-slider-bar {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #818cf8, #6366f1);
-}
-
-.p-slider-handle {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  border: 1px solid rgba(0,0,0,0.1);
-}
-
-/* ==========================================================================
-   Tactile Klotski Sliding Puzzle Arena (#control)
-   ========================================================================== */
-
-.klotski-game-bay {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.klotski-deck-arena {
-  width: min(100%, 25rem);
-  background: #f4eee2;
-  border: 2px solid #dfcfb7;
-  border-radius: 1.85rem;
-  padding: 1rem;
-  box-shadow: 0 1.5rem 4rem rgba(48, 38, 23, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  position: relative;
-  user-select: none;
-}
-
-.klotski-header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.klotski-badge-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--purple);
-  background: rgba(100, 85, 223, 0.1);
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-}
-
-.klotski-stats .stat-pill {
-  font-size: 0.74rem;
-  font-weight: 750;
-  color: #64748b;
-  background: #ffffff;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.klotski-stats strong {
-  color: var(--ink);
-}
-
-.klotski-board-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 0.45rem;
-  aspect-ratio: 1 / 1;
-  background: #e5ded2;
-  border: 1px solid rgba(33, 31, 26, 0.08);
-  border-radius: 1.15rem;
-  padding: 0.45rem;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.klotski-tile {
-  background: #ffffff;
-  border-radius: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-  padding: 0.25rem;
-  box-shadow: 0 3.5px 0 #d1c8b8, 0 4px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
-  user-select: none;
-}
-
-.klotski-tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5.5px 0 #d1c8b8, 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-.klotski-tile:active {
-  transform: translateY(2px) !important;
-  box-shadow: 0 1px 0 #d1c8b8 !important;
-}
-
-.klotski-tile.is-empty {
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.klotski-tile-icon {
-  font-size: 1.15rem;
-  line-height: 1;
-}
-
-.klotski-tile-num {
-  font-size: 0.52rem;
-  font-weight: 850;
-  color: #64748b;
-  margin-top: 0.15rem;
-}
-
-/* Specific tactile widgets on tiles */
-.klotski-tile.tile-panda {
-  background: linear-gradient(135deg, #fff7ed, #ffedd5);
-  box-shadow: 0 3.5px 0 #fed7aa, 0 4px 6px rgba(0,0,0,0.08);
-}
-
-.klotski-tile.tile-yellow {
-  background: #ffe682;
-  box-shadow: 0 3.5px 0 #dfbe4a, 0 4px 6px rgba(0,0,0,0.08);
-}
-.klotski-tile.tile-yellow .klotski-tile-num { color: #78350f; }
-
-.klotski-tile.tile-peach {
-  background: #fcd9c4;
-  box-shadow: 0 3.5px 0 #e4b297, 0 4px 6px rgba(0,0,0,0.08);
-}
-.klotski-tile.tile-peach .klotski-tile-num { color: #7c2d12; }
-
-.klotski-tile.tile-blue {
-  background: #6ba3fa;
-  box-shadow: 0 3.5px 0 #467bc9, 0 4px 6px rgba(0,0,0,0.08);
-}
-.klotski-tile.tile-blue .klotski-tile-num { color: #ffffff; }
-
-.klotski-footer-bar {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.klotski-btn {
-  padding: 0.45rem 0.85rem;
-  border-radius: 0.65rem;
-  border: none;
-  font-family: inherit;
-  font-size: 0.72rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.klotski-btn.shuffle {
-  background: #0f172a;
-  color: #ffffff;
-  box-shadow: 0 3px 0 #020617;
-}
-
-.klotski-btn.solve {
-  background: #ffffff;
-  color: var(--purple);
-  box-shadow: 0 3px 0 #d1c8b8;
-  border: 1px solid rgba(100, 85, 223, 0.2);
-}
-
-.klotski-btn:active {
-  transform: translateY(2px);
-}
-
-.klotski-hint {
-  width: 100%;
-  font-size: 0.62rem;
-  color: #8c7d69;
-  text-align: center;
-  font-weight: 700;
-  margin-top: 0.1rem;
-}
-
-/* Win Overlay */
-.klotski-win-banner {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(8px);
-  border-radius: 1.85rem;
-  display: none;
-  place-items: center;
-  padding: 1.5rem;
-  z-index: 50;
-}
-
-.klotski-win-banner.is-active {
-  display: grid;
-  animation: winPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes winPop {
-  from { opacity: 0; transform: scale(0.92); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.win-card {
-  background: #ffffff;
-  border-radius: 1.25rem;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
-}
-
-.win-icon {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.win-card h4 {
-  font-size: 1.15rem;
-  font-weight: 900;
-  color: var(--ink);
-  margin: 0;
-}
-
-.win-card p {
-  font-size: 0.76rem;
-  color: var(--muted);
-  margin: 0.4rem 0 1rem;
-  line-height: 1.5;
-}
-
-.win-play-again {
-  background: var(--purple);
-  color: #ffffff;
-  border: none;
-  border-radius: 0.75rem;
-  padding: 0.55rem 1.2rem;
-  font-size: 0.82rem;
-  font-weight: 850;
-  cursor: pointer;
-  box-shadow: 0 3px 0 #4f40c4;
-}
-
 
 
 .product-section { display: grid; grid-template-columns: minmax(16rem, .82fr) minmax(0, 1.18fr); gap: clamp(3rem, 8vw, 6.5rem); align-items: center; background: var(--sand); }
@@ -1439,7 +1138,6 @@ section[id], section {
   margin: 1.5rem 0 0;
   padding: 0;
   list-style: none;
-  border-top: .0625rem solid var(--line);
 }
 .steps li {
   min-height: 5.2rem;

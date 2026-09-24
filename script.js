@@ -468,15 +468,39 @@ const initMacRemoteWorkstation = () => {
 
   // HUD Toast Trigger
   let hudTimer = null;
-  const showMacHud = (icon, text) => {
+  const showMacHud = (iconSvg, text) => {
     if (!hud) return;
-    if (hudIcon) hudIcon.textContent = icon;
+    if (hudIcon) hudIcon.innerHTML = iconSvg;
     if (hudText) hudText.textContent = text;
     hud.classList.add('is-shown');
     clearTimeout(hudTimer);
     hudTimer = setTimeout(() => {
       hud.classList.remove('is-shown');
     }, 1800);
+  };
+
+  const hudIcons = {
+    play: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
+    pause: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>',
+    blade: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
+    palette: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>',
+    render: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+    lock: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+    unlock: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>',
+    next: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>',
+    prev: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>',
+    heart: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>',
+    airplay: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>',
+    mission: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
+    switchApp: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>',
+    search: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+    camera: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>',
+    desktop: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    mic: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+    send: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>',
+    cursor: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l7 18 3-7 7-3L3 3z"/></svg>',
+    sleep: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+    wake: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>'
   };
 
   // Mode Switcher
@@ -548,7 +572,7 @@ const initMacRemoteWorkstation = () => {
     });
 
     trackpad.addEventListener('click', () => {
-      showMacHud('👆', isEn ? 'Clicked on Mac active window' : '已在 Mac 窗口选取目标');
+      showMacHud(hudIcons.cursor, isEn ? 'Clicked on Mac active window' : '已在 Mac 窗口选取目标');
     });
   }
 
@@ -594,7 +618,7 @@ const initMacRemoteWorkstation = () => {
     }, { passive: false });
   }
 
-  // 3D Buttons Click Handling
+  // Tactile Buttons Click Handling
   const playlist = [
     'Midnight Ambient Beats',
     'Coffee Shop Lo-Fi',
@@ -616,7 +640,7 @@ const initMacRemoteWorkstation = () => {
       if (cmd === 'play-toggle') {
         isVideoPlaying = !isVideoPlaying;
         if (isVideoPlaying) {
-          showMacHud('▶️', isEn ? 'Video Timeline Playing' : '时间线已开始播放');
+          showMacHud(hudIcons.play, isEn ? 'Video Timeline Playing' : '时间线已开始播放');
           videoPlayTimer = setInterval(() => {
             if (macScrubber && timecodeEl) {
               const curLeft = parseFloat(macScrubber.style.left) || 45;
@@ -626,50 +650,43 @@ const initMacRemoteWorkstation = () => {
           }, 60);
         } else {
           clearInterval(videoPlayTimer);
-          showMacHud('⏸️', isEn ? 'Video Timeline Paused' : '时间线已暂停');
+          showMacHud(hudIcons.pause, isEn ? 'Video Timeline Paused' : '时间线已暂停');
         }
       } else if (cmd === 'blade') {
-        showMacHud('✂️', isEn ? 'Blade Cut created at playhead' : '✂️ 剃刀剪切已在当前指针处完成');
+        showMacHud(hudIcons.blade, isEn ? 'Blade Cut created at playhead' : '剃刀剪切已在当前指针处完成');
       } else if (cmd === 'grade') {
         if (artBox) {
           artBox.style.filter = artBox.style.filter ? '' : 'contrast(1.2) saturate(1.4) hue-rotate(15deg)';
         }
-        showMacHud('🎨', isEn ? 'Rec.709 Color Profile Applied' : '🎨 709 电影级调色已切换');
-      } else if (cmd === 'undo') {
-        showMacHud('↩️', isEn ? 'Undo Command (⌘Z)' : '↩️ 撤销 (⌘Z)');
-      } else if (cmd === 'copy') {
-        showMacHud('📋', isEn ? 'Copied to Mac Clipboard (⌘C)' : '📋 属性已复制到剪贴板 (⌘C)');
-      } else if (cmd === 'paste') {
-        showMacHud('📌', isEn ? 'Pasted to Mac Selection (⌘V)' : '📌 属性已粘贴应用 (⌘V)');
+        showMacHud(hudIcons.palette, isEn ? 'Rec.709 Color Profile Applied' : '709 电影级调色已切换');
       } else if (cmd === 'render') {
-        showMacHud('⚡', isEn ? 'Fast Background Render Started' : '⚡ 快速后台渲染已启动');
+        showMacHud(hudIcons.render, isEn ? 'Fast Background Render Started' : '快速后台渲染已启动');
       } else if (cmd === 'lock') {
         selectMode('lock');
-        showMacHud('🔒', isEn ? 'Mac Screen Locked' : '🔒 Mac 屏幕已锁定');
+        showMacHud(hudIcons.lock, isEn ? 'Mac Screen Locked' : 'Mac 屏幕已锁定');
       } else if (cmd === 'unlock') {
         selectMode('video');
-        showMacHud('✨', isEn ? 'Mac Screen Unlocked' : '✨ Mac 屏幕已解锁');
+        showMacHud(hudIcons.unlock, isEn ? 'Mac Screen Unlocked' : 'Mac 屏幕已解锁');
+      } else if (cmd === 'sleep') {
+        showMacHud(hudIcons.sleep, isEn ? 'Mac Sleep Mode Activated' : 'Mac 已进入睡眠模式');
+      } else if (cmd === 'wake') {
+        selectMode('video');
+        showMacHud(hudIcons.wake, isEn ? 'Mac Woken Up' : 'Mac 已重新唤醒');
       } else if (cmd === 'music-play') {
         if (vinylDisc) vinylDisc.classList.toggle('is-spinning');
         const spinning = vinylDisc?.classList.contains('is-spinning');
-        showMacHud(spinning ? '▶️' : '⏸️', spinning ? (isEn ? 'Apple Music Playing' : 'Apple Music 正在播放') : (isEn ? 'Apple Music Paused' : 'Apple Music 已暂停'));
+        showMacHud(spinning ? hudIcons.play : hudIcons.pause, spinning ? (isEn ? 'Apple Music Playing' : 'Apple Music 正在播放') : (isEn ? 'Apple Music Paused' : 'Apple Music 已暂停'));
       } else if (cmd === 'music-next') {
         currentSongIdx = (currentSongIdx + 1) % playlist.length;
         if (songTitleEl) songTitleEl.textContent = playlist[currentSongIdx];
-        showMacHud('⏭️', isEn ? `Next: ${playlist[currentSongIdx]}` : `已切歌: ${playlist[currentSongIdx]}`);
-      } else if (cmd === 'music-prev') {
-        currentSongIdx = (currentSongIdx - 1 + playlist.length) % playlist.length;
-        if (songTitleEl) songTitleEl.textContent = playlist[currentSongIdx];
-        showMacHud('⏮️', isEn ? `Prev: ${playlist[currentSongIdx]}` : `已切歌: ${playlist[currentSongIdx]}`);
+        showMacHud(hudIcons.next, isEn ? `Next: ${playlist[currentSongIdx]}` : `已切歌: ${playlist[currentSongIdx]}`);
       } else if (cmd === 'music-like') {
-        showMacHud('❤️', isEn ? 'Added to Loved Songs' : '❤️ 已添加到我喜爱的音乐');
+        showMacHud(hudIcons.heart, isEn ? 'Added to Loved Songs' : '已添加到我喜爱的音乐');
       } else if (cmd === 'music-airplay') {
-        showMacHud('📡', isEn ? 'Connected to HomePod Stereo' : '📡 已连接 HomePod 立体声组合');
-      } else if (cmd === 'mute') {
-        showMacHud('🔇', isEn ? 'Volume Muted (0%)' : '🔇 一键静音已生效');
+        showMacHud(hudIcons.airplay, isEn ? 'Connected to HomePod Stereo' : '已连接 HomePod 立体声组合');
       } else if (cmd === 'mission') {
         selectMode('desktop');
-        showMacHud('🗂️', isEn ? 'Mission Control Active' : '🗂️ 调度中心 · 全景多任务');
+        showMacHud(hudIcons.mission, isEn ? 'Mission Control Active' : '调度中心 · 全景多任务');
       } else if (cmd === 'switch-app') {
         selectMode('desktop');
         let curIdx = 0;
@@ -679,17 +696,17 @@ const initMacRemoteWorkstation = () => {
         });
         const nextIdx = (curIdx + 1) % (missionCards.length || 1);
         if (missionCards[nextIdx]) missionCards[nextIdx].classList.add('active-card');
-        showMacHud('💻', isEn ? '⌘Tab App Switched' : '⌘Tab 切换前台活动窗口');
+        showMacHud(hudIcons.switchApp, isEn ? '⌘Tab App Switched' : '⌘Tab 切换前台活动窗口');
       } else if (cmd === 'spotlight') {
-        showMacHud('🔍', isEn ? 'Spotlight Search (⌘Space)' : '🔍 Spotlight 聚焦搜索已唤起');
+        showMacHud(hudIcons.search, isEn ? 'Spotlight Search (⌘Space)' : 'Spotlight 聚焦搜索已唤起');
       } else if (cmd === 'screenshot') {
         if (canvas) {
           canvas.style.filter = 'brightness(2.2)';
           setTimeout(() => { canvas.style.filter = ''; }, 120);
         }
-        showMacHud('📸', isEn ? 'Screenshot Saved to Desktop (⇧⌘4)' : '📸 截屏已保存至 Mac 桌面 (⇧⌘4)');
+        showMacHud(hudIcons.camera, isEn ? 'Screenshot Saved to Desktop (⇧⌘4)' : '截屏已保存至 Mac 桌面 (⇧⌘4)');
       } else if (cmd === 'desktop-show') {
-        showMacHud('🖥️', isEn ? 'Show Desktop (F11)' : '🖥️ 显示桌面 (F11)');
+        showMacHud(hudIcons.desktop, isEn ? 'Show Desktop (F11)' : '显示桌面 (F11)');
       }
     });
   });
@@ -699,7 +716,7 @@ const initMacRemoteWorkstation = () => {
   if (unlockBtn) {
     unlockBtn.addEventListener('click', () => {
       selectMode('video');
-      showMacHud('✨', isEn ? 'Mac Screen Unlocked' : '✨ Mac 屏幕已解锁');
+      showMacHud(hudIcons.unlock, isEn ? 'Mac Screen Unlocked' : 'Mac 屏幕已解锁');
     });
   }
 
@@ -724,9 +741,9 @@ const initMacRemoteWorkstation = () => {
       const isRecording = micBtn.classList.contains('is-active');
       if (isRecording) {
         voiceInput.value = isEn ? 'Speech recognized: Exporting 4K Master by 3:00 PM.' : '语音识别录入：下午 3:00 准时在会议室进行样片评审。';
-        showMacHud('🎙️', isEn ? 'Recording Voice Dictation...' : '正在拾音并高保真识别中...');
+        showMacHud(hudIcons.mic, isEn ? 'Recording Voice Dictation...' : '正在拾音并高保真识别中...');
       } else {
-        showMacHud('⏸️', isEn ? 'Voice Dictation Paused' : '语音听写已暂停');
+        showMacHud(hudIcons.pause, isEn ? 'Voice Dictation Paused' : '语音听写已暂停');
       }
     });
   }
@@ -747,187 +764,9 @@ const initMacRemoteWorkstation = () => {
           clearInterval(typedTextEl._tId);
         }
       }, 30);
-      showMacHud('🚀', isEn ? 'Text injected into Mac Notes' : '🚀 文本已实时注入 Mac 备忘录');
+      showMacHud(hudIcons.send, isEn ? 'Text injected into Mac Notes' : '文本已实时注入 Mac 备忘录');
     });
   }
-
-  // Rotary Dial Drag / Rotate
-  const volDial = document.querySelector('#ws-vol-dial');
-  const volKnob = volDial?.querySelector('.p-dial-knob');
-  const volLbl = document.querySelector('#ws-vol-lbl');
-
-  if (volDial && volKnob) {
-    let volVal = 50;
-    const updateVol = (val) => {
-      volVal = Math.max(0, Math.min(100, Math.round(val)));
-      const deg = -135 + (volVal / 100) * 270;
-      volKnob.style.transform = `rotate(${deg}deg)`;
-      if (volLbl) volLbl.textContent = isEn ? `Vol ${volVal}%` : `音量 ${volVal}%`;
-      showMacHud('🔊', isEn ? `Volume: ${volVal}%` : `系统音量: ${volVal}%`);
-    };
-
-    volDial.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      updateVol(volVal - e.deltaY * 0.1);
-    }, { passive: false });
-
-    volDial.addEventListener('click', () => {
-      updateVol(volVal >= 90 ? 10 : volVal + 15);
-    });
-  }
-
-  // Speed Slider Drag
-  const sliderRail = document.querySelector('#ws-slider-rail');
-  const sliderBar = document.querySelector('#ws-slider-bar');
-  const sliderHandle = document.querySelector('#ws-slider-handle');
-  const speedVal = document.querySelector('#ws-speed-val');
-
-  if (sliderRail && sliderBar && sliderHandle) {
-    const updateSlider = (clientX) => {
-      const rect = sliderRail.getBoundingClientRect();
-      const pct = Math.max(0, Math.min(100, Math.round(((clientX - rect.left) / rect.width) * 100)));
-      sliderBar.style.width = `${pct}%`;
-      sliderHandle.style.left = `${pct}%`;
-      const ms = Math.round(30 - (pct / 100) * 22);
-      if (speedVal) speedVal.textContent = isEn ? `Ultra-Low ${ms}ms` : `超低延迟 ${ms}ms`;
-    };
-
-    sliderRail.addEventListener('pointerdown', (e) => {
-      sliderRail.setPointerCapture?.(e.pointerId);
-      updateSlider(e.clientX);
-      const onMove = (ev) => updateSlider(ev.clientX);
-      window.addEventListener('pointermove', onMove);
-      window.addEventListener('pointerup', () => window.removeEventListener('pointermove', onMove), { once: true });
-    });
-  }
-};
-
-const initKlotskiGame = () => {
-  const boardEl = document.querySelector('#klotski-board');
-  if (!boardEl) return;
-
-  const isEn = document.documentElement.lang === 'en';
-  const movesEl = document.querySelector('#klotski-moves');
-  const winBanner = document.querySelector('#klotski-win-banner');
-  const shuffleBtn = document.querySelector('#klotski-shuffle-btn');
-  const solveBtn = document.querySelector('#klotski-solve-btn');
-  const replayBtn = document.querySelector('#klotski-replay-btn');
-
-  const tileDefs = [
-    { id: 1, icon: '🐼', nameZh: '主控', nameEn: 'Panda', cls: 'tile-panda' },
-    { id: 2, icon: '🎚️', nameZh: '推子', nameEn: 'Slider', cls: 'tile-peach' },
-    { id: 3, icon: '🎛️', nameZh: '滚轮', nameEn: 'JogWheel', cls: 'tile-cream' },
-    { id: 4, icon: '📋', nameZh: '复制', nameEn: 'Copy', cls: 'tile-yellow' },
-    { id: 5, icon: '📌', nameZh: '粘贴', nameEn: 'Paste', cls: 'tile-peach' },
-    { id: 6, icon: '✂️', nameZh: '剃刀', nameEn: 'Blade', cls: 'tile-blue' },
-    { id: 7, icon: '↩️', nameZh: '撤销', nameEn: 'Undo', cls: 'tile-cream' },
-    { id: 8, icon: '🔊', nameZh: '旋钮', nameEn: 'Dial', cls: 'tile-yellow' },
-    { id: 9, icon: '🎙️', nameZh: '麦克', nameEn: 'Mic', cls: 'tile-peach' },
-    { id: 10, icon: '⎋', nameZh: 'Esc', nameEn: 'Esc', cls: 'tile-cream' },
-    { id: 11, icon: '↵', nameZh: 'Enter', nameEn: 'Enter', cls: 'tile-yellow' },
-    { id: 12, icon: '⌥', nameZh: 'Option', nameEn: 'Opt', cls: 'tile-blue' },
-    { id: 13, icon: '⌘', nameZh: 'Command', nameEn: 'Cmd', cls: 'tile-blue' },
-    { id: 14, icon: '💡', nameZh: '灵感', nameEn: 'Idea', cls: 'tile-yellow' },
-    { id: 15, icon: '⚙️', nameZh: '设置', nameEn: 'Config', cls: 'tile-cream' }
-  ];
-
-  let board = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-  let moves = 0;
-
-  const checkWin = () => {
-    return board.every((val, idx) => (idx === 15 ? val === 0 : val === idx + 1));
-  };
-
-  const renderBoard = () => {
-    boardEl.innerHTML = '';
-    board.forEach((val, slotIdx) => {
-      if (val === 0) {
-        const emptyDiv = document.createElement('div');
-        emptyDiv.className = 'klotski-tile is-empty';
-        emptyDiv.setAttribute('aria-hidden', 'true');
-        boardEl.appendChild(emptyDiv);
-      } else {
-        const def = tileDefs.find((t) => t.id === val) || { icon: '⬛', nameZh: '按键', nameEn: 'Key', cls: 'tile-cream' };
-        const btn = document.createElement('button');
-        btn.className = `klotski-tile ${def.cls}`;
-        btn.type = 'button';
-        btn.setAttribute('aria-label', isEn ? `Slide tile ${def.nameEn}` : `滑动积木 ${def.nameZh}`);
-        btn.innerHTML = `
-          <span class="klotski-tile-icon">${def.icon}</span>
-          <span class="klotski-tile-num">${isEn ? def.nameEn : def.nameZh}</span>
-        `;
-        btn.addEventListener('click', () => trySlide(slotIdx));
-        boardEl.appendChild(btn);
-      }
-    });
-
-    if (movesEl) movesEl.textContent = String(moves);
-  };
-
-  const trySlide = (slotIdx) => {
-    const emptyIdx = board.indexOf(0);
-    const r1 = Math.floor(slotIdx / 4);
-    const c1 = slotIdx % 4;
-    const r2 = Math.floor(emptyIdx / 4);
-    const c2 = emptyIdx % 4;
-
-    const isAdjacent = Math.abs(r1 - r2) + Math.abs(c1 - c2) === 1;
-
-    if (isAdjacent) {
-      board[emptyIdx] = board[slotIdx];
-      board[slotIdx] = 0;
-      moves++;
-      renderBoard();
-
-      if (navigator.vibrate) navigator.vibrate(10);
-
-      if (moves > 0 && checkWin()) {
-        if (winBanner) winBanner.classList.add('is-active');
-      }
-    }
-  };
-
-  const shuffle = () => {
-    board = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-    let lastMove = -1;
-
-    for (let step = 0; step < 80; step++) {
-      const emptyIdx = board.indexOf(0);
-      const r = Math.floor(emptyIdx / 4);
-      const c = emptyIdx % 4;
-      const neighbors = [];
-
-      if (r > 0) neighbors.push(emptyIdx - 4);
-      if (r < 3) neighbors.push(emptyIdx + 4);
-      if (c > 0) neighbors.push(emptyIdx - 1);
-      if (c < 3) neighbors.push(emptyIdx + 1);
-
-      const validNeighbors = neighbors.filter((n) => n !== lastMove);
-      const pick = validNeighbors.length ? validNeighbors[Math.floor(Math.random() * validNeighbors.length)] : neighbors[0];
-
-      board[emptyIdx] = board[pick];
-      board[pick] = 0;
-      lastMove = emptyIdx;
-    }
-
-    moves = 0;
-    if (winBanner) winBanner.classList.remove('is-active');
-    renderBoard();
-  };
-
-  const solve = () => {
-    board = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-    moves = 0;
-    if (winBanner) winBanner.classList.remove('is-active');
-    renderBoard();
-  };
-
-  if (shuffleBtn) shuffleBtn.addEventListener('click', shuffle);
-  if (solveBtn) solveBtn.addEventListener('click', solve);
-  if (replayBtn) replayBtn.addEventListener('click', shuffle);
-
-  // Initialize with a playable shuffled board
-  shuffle();
 };
 
 const initTypewriter = (gsap) => {
@@ -1543,6 +1382,5 @@ const initBlogFilter = () => {
 
 initLayoutTabs();
 initMacRemoteWorkstation();
-initKlotskiGame();
 initMotion();
 initBlogFilter();
