@@ -5,8 +5,20 @@ export function campaignToken(page, language, placement = 'content') {
   return `web-${language === 'en' ? 'en' : 'zh'}-${slug}-${area}`.slice(0, 30);
 }
 
-export function appStoreURL(provider, page, language, placement) {
-  const url = new URL('https://apps.apple.com/app/apple-store/id6805378609');
+export function appStoreProductURL(storefront = 'us') {
+  // These are Apple's actual product URLs, verified through the public lookup
+  // API. Generic /app/id links can currently redirect to the Today page.
+  return new URL(storefront === 'cn'
+    ? 'https://apps.apple.com/cn/app/奶猫妙控-ninopad-随心全能小键盘/id6805378609'
+    : 'https://apps.apple.com/us/app/ninopad/id6805378609').href;
+}
+
+export function browserStorefront(language = '') {
+  return /^zh(?:-CN|-Hans(?:-CN)?)?$/i.test(language) ? 'cn' : 'us';
+}
+
+export function appStoreURL(provider, page, language, placement, storefront = language === 'zh-CN' ? 'cn' : 'us') {
+  const url = new URL(appStoreProductURL(storefront));
   url.searchParams.set('pt', provider);
   url.searchParams.set('ct', campaignToken(page, language, placement));
   url.searchParams.set('mt', '8');

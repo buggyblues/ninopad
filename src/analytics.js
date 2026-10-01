@@ -1,5 +1,5 @@
 import config from './growth-config.json';
-import { analyticsAllowed, analyticsLocation, analyticsReferrer, appStoreURL } from './growth.js';
+import { analyticsAllowed, analyticsLocation, analyticsReferrer, appStoreURL, browserStorefront } from './growth.js';
 
 export function initializeAnalytics(i18next, page) {
   const language = i18next.resolvedLanguage;
@@ -22,7 +22,7 @@ export function initializeAnalytics(i18next, page) {
   // Attribution works without tracking consent and uses Apple's public campaign
   // tokens, never a visitor identifier. These links also exist in static HTML.
   for (const link of document.querySelectorAll('a[href*="apps.apple.com/"]')) {
-    link.href = appStoreURL(config.appStoreProviderToken, page, language, placement(link));
+    link.href = appStoreURL(config.appStoreProviderToken, page, language, placement(link), browserStorefront(navigator.language));
   }
   function event(name, parameters = {}) {
     if (!initialized || consent !== 'granted' || privacySignal) return;

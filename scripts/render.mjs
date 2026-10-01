@@ -3,7 +3,7 @@ import { load } from 'cheerio';
 import i18next from 'i18next';
 import { options, localeURL } from '../src/language.js';
 import { addGrowthContent } from './growth-content.mjs';
-import { appStoreURL, campaignToken } from '../src/growth.js';
+import { appStoreURL, appStoreProductURL, campaignToken } from '../src/growth.js';
 import growthConfig from '../src/growth-config.json' with { type: 'json' };
 const origin = 'https://ninopad.com';
 const languages = ['zh-CN', 'en'];
@@ -117,10 +117,11 @@ for (const language of languages) {
     $('head').append(`<meta property="og:locale:alternate" content="${language === 'en' ? 'zh_CN' : 'en_US'}">`);
     // Capture-independent application data is shared; no invented ratings.
     const graph = [];
-    const organization = { '@type':'Organization', '@id':origin+'/#organization', name:'NinoPad', alternateName:'奶猫妙控', url:origin+'/', logo:origin+'/assets/app-icon.png', sameAs:['https://github.com/buggyblues/ninopad','https://apps.apple.com/app/id6805378609'] };
+    const productURL = appStoreProductURL(language === 'zh-CN' ? 'cn' : 'us');
+    const organization = { '@type':'Organization', '@id':origin+'/#organization', name:'NinoPad', alternateName:'奶猫妙控', url:origin+'/', logo:origin+'/assets/app-icon.png', sameAs:['https://github.com/buggyblues/ninopad',appStoreProductURL('cn'),appStoreProductURL('us')] };
     if (page === 'index') graph.push(organization, { '@type':'WebSite', '@id':origin+'/#website', url:origin+'/', name:'NinoPad', alternateName:'奶猫妙控', inLanguage:['zh-CN','en'], publisher:{'@id':organization['@id']} });
     graph.push({ '@type':'WebPage', '@id':canonical+'#page', url:canonical, name:$('title').text(), description:$('meta[name="description"]').attr('content'), inLanguage:language, isPartOf:{'@id':origin+'/#website'}, publisher:{'@id':organization['@id']} });
-    if (page === 'index') graph.push({ '@type':'SoftwareApplication', '@id':origin+'/#software', name:'NinoPad', alternateName:'奶猫妙控', applicationCategory:'UtilitiesApplication', operatingSystem:'iOS 17+, iPadOS 17+, macOS 13+', installUrl:'https://apps.apple.com/app/id6805378609', downloadUrl:['https://apps.apple.com/app/id6805378609','https://github.com/buggyblues/ninopad/releases/latest'], offers:{ '@type':'Offer', price:'0', priceCurrency:'USD' }, inLanguage:language, description:$('meta[name="description"]').attr('content') });
+    if (page === 'index') graph.push({ '@type':'SoftwareApplication', '@id':origin+'/#software', name:'NinoPad', alternateName:'奶猫妙控', applicationCategory:'UtilitiesApplication', operatingSystem:'iOS 17+, iPadOS 17+, macOS 13+', installUrl:productURL, downloadUrl:[productURL,'https://github.com/buggyblues/ninopad/releases/latest'], offers:{ '@type':'Offer', price:'0', priceCurrency:'USD' }, inLanguage:language, description:$('meta[name="description"]').attr('content') });
     const faqs = $('main details').toArray().map(n => ({ '@type':'Question', name:$(n).find('summary').text().trim(), acceptedAnswer:{ '@type':'Answer', text:$(n).find('p').text().trim() } })).filter(q=>q.name && q.acceptedAnswer.text);
     if (faqs.length) graph.push({ '@type':'FAQPage', inLanguage:language, mainEntity:faqs });
     if (page.startsWith('blog_')) {
@@ -162,7 +163,8 @@ NinoPad is an iPhone and iPad keypad and control deck for Mac.
 - Website images show the actual native App with synthetic demonstration data.
 
 ## Official downloads
-- [iPhone and iPad](https://apps.apple.com/app/id6805378609)
+- [iPhone and iPad — international storefront](${appStoreProductURL('us')})
+- [iPhone and iPad — China storefront](${appStoreProductURL('cn')})
 - [Mac companion](https://github.com/buggyblues/ninopad/releases/latest)
 - [Support](https://ninopad.com/support)
 - [Privacy](https://ninopad.com/privacy)

@@ -31,6 +31,8 @@ Detection priority is an explicit `?lng=en` / `?lng=zh-CN`, a saved manual choic
 
 Paths are never used by the language detector. `/en/` remains a prerendered crawl and legacy link entry, with reciprocal `hreflang` and canonical URLs. A visitor using Chinese can see Chinese on `/en/`; an English visitor can see English on `/`. Manual switches preserve the page and hash.
 
+App Store links use Apple's actual product URLs. A Simplified Chinese browser opens the China storefront even after selecting English on the website; other browser locales use the international product URL. Campaign language remains the website language. The customer's Apple Account ultimately determines the storefront where installation and payment occur.
+
 Known search and answer-engine crawlers retain the prerendered document language so both catalogs remain indexable after JavaScript rendering. Visitor detection is independent of these crawl entries.
 
 ## Native screenshots
