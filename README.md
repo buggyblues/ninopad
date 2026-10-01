@@ -1,45 +1,69 @@
-# 奶猫妙控 (NinoPad)
+# NinoPad website
 
-> 随心全能小键盘，跃然掌上 · A customizable Mac control deck for phones and tablets.
+Vite multipage website for **https://ninopad.com**, using **i18next** and **i18next-browser-languagedetector**. Chinese and English use the same templates, styles, interactions and screenshot slots.
 
-[官网 (Website)](https://ninopad.com) · [iPhone / iPad (App Store)](https://apps.apple.com/app/id6805378609) · [Mac 下载](https://github.com/buggyblues/ninopad/releases/latest) · [专栏与指南 (Blog)](https://ninopad.com/blog) · [问题反馈 (Support)](https://github.com/buggyblues/ninopad/issues)
+## Develop and verify
 
----
+Use Node 22.12+ (or Node 24) and npm. A pinned Node 22.22 build dependency also supplies the npm-script runtime on EdgeOne, whose documented preinstalled version is 22.11.
 
-## ✨ 核心特性 (Key Features)
+```sh
+npm ci
+npm run dev
+npm run check
+npm run preview
+```
 
-- **🎨 高度自由定制**：按键、旋钮、阻尼滑块、触控板与实时桌面预览随心组合，为不同专业软件打造专属掌上工作台。
-- **🖥️ 实时桌面串流**：以设备原生比例流畅查看 Mac 桌面，低延迟操作光标与双向惯性滚动，支持一键展开全屏。
-- **🎬 一体创作工作台**：智能感知前台应用，一套触控布局自适应联动 DaVinci Resolve、Adobe Premiere Pro、Final Cut Pro 与剪映专业版。
-- **🎙️ 双重语音与输入模式**：支持手机端语音转文字（预编辑后一键整段投送）与无线高清麦克风传输；同时提供极速响应的低延迟实时键盘。
-- **📽️ 全套演示利器**：集成体感/触控双模激光笔、局部放大镜、自适应智能提词器、现场互动音效与屏幕弹幕。
-- **🔒 纯本地安全通信**：基于本地局域网点对点直连，无需注册、无云端中转，严密保护隐私与创作数据安全。
+Production output is `dist/`. The existing EdgeOne Makers project (`ninopad-website`, `makers-smtejewta4a4`) uses `npm ci`, `npm run build`, and output directory `dist`. `edgeone.json` overrides the console build settings; the fallback `vercel.json` has equivalent settings. Publishing follows the existing Git workflow.
 
----
+## Edit content
 
-## 💻 系统要求 (System Requirements)
+- `src/pages/`: one HTML template per page, including the blog.
+- `src/locales/zh-CN.json` and `en.json`: i18next resources for text, attributes and interaction messages.
+- `src/main.js`: language detection and DOM bindings.
+- `src/interactions.js`, `src/*.css`: shared presentation and interactions.
+- `public/assets/`: static images, icons and verified native captures.
 
-- **Mac 端**：macOS 13 (Ventura) 及更高版本（原生适配 Apple Silicon M 系列芯片与 Intel 处理器）
-- **移动端**：iOS 17+ / iPadOS 17+
+`npm run dev` and `npm run build` render the root, `blog/` and `en/` HTML files. Treat those files as generated output. Text-node bindings retain inline elements rather than replacing markup with translated HTML. Keep translation keys present in both catalogs. Runtime bundles load only the current page and shared interaction strings.
 
----
+## Language behavior
 
-## 🚀 快速开始 (Quick Start)
+Detection priority is an explicit `?lng=en` / `?lng=zh-CN`, a saved manual choice, then `navigator.languages`. Regional Chinese variants use `zh-CN`; supported English variants use `en`; unsupported languages fall back to English. Automatic detection is not persisted. A manual choice is saved under `ninopad_lang` and applies to all pages.
 
-1. 在 [App Store](https://apps.apple.com/app/id6805378609) 安装 iPhone / iPad 版；再从 [Releases](https://github.com/buggyblues/ninopad/releases/latest) 下载 Universal DMG 安装包，将“奶猫妙控”拖入“应用程序”文件夹；
-2. 按照系统提示在“系统设置 → 隐私与安全性 → 辅助功能”中授予权限；
-3. 确保手机与 Mac 处于同一 Wi-Fi 网络，在手机端 App 扫描 Mac 菜单栏中的二维码即可秒级配对。
+Paths are never used by the language detector. `/en/` remains a prerendered crawl and legacy link entry, with reciprocal `hreflang` and canonical URLs. A visitor using Chinese can see Chinese on `/en/`; an English visitor can see English on `/`. Manual switches preserve the page and hash.
 
----
+Known search and answer-engine crawlers retain the prerendered document language so both catalogs remain indexable after JavaScript rendering. Visitor detection is independent of these crawl entries.
 
-## 📄 Repository Notes
+## Native screenshots
 
-This repository contains official website assets, documentation, and release distributions for NinoPad.
+The app repository beside this website owns the native capture runners:
 
-## Website deployment
+```sh
+SIMULATOR_UDID=<dedicated-website-simulator> Scripts/capture-website-screenshots.sh
+SIMULATOR_UDID=<dedicated-website-simulator> Scripts/WebsiteTutorials/run.sh
+SIMULATOR_UDID=<dedicated-website-simulator> Scripts/WebsiteTutorials/run.sh --guides
+SIMULATOR_UDID=<dedicated-website-simulator> Scripts/WebsiteTutorials/run.sh --release
+Scripts/capture-macos-website-screenshot.sh
+python3 Scripts/WebsiteScreenshots/publish.py --website ../cream-deck-public
+```
 
-- Canonical site: [ninopad.com](https://ninopad.com/).
-- EdgeOne Makers project: `ninopad-website` (`makers-smtejewta4a4`), connected to this repository's `main` branch. Each push triggers a new production deployment.
-- Static output is the repository root. [edgeone.json](edgeone.json) defines the extensionless public routes and response headers.
-- DNSPod `@` CNAME target: `ninopad.com.pages.dnsoe4.com`. HTTPS is configured in the Makers custom-domain page.
-- The website articles and release content are generated from the private product repository's `Website/content/` by `Scripts/update-website-content.py`; check both repositories when changing public URLs.
+Run these commands from the app repository. Captures go to `public/assets/screens/{zh-CN,en}/`. `data-screen` stores the shared scene path, and i18next selects the locale folder at runtime. English captures come from the actual Debug App using capture-only English resources and synthetic demonstration data. Normal release App localization is a separate project.
+
+To run the complete pipeline with one command, use `SIMULATOR_UDID=<dedicated-website-simulator> bash Scripts/WebsiteScreenshots/generate.sh` from the app repository. Set `WEBSITE_LANGUAGES=en` to refresh English only, or `NINOPAD_WEBSITE_DIR` to target a different website checkout. The dedicated simulator is restarted to localize native Photos and share sheets.
+
+English images require native Vision OCR without Chinese text, visible-content checks and SHA-256 provenance. `npm run build` rejects missing images, wrong language paths, unverified English captures, Chinese bound text, metadata omissions and differences between Chinese/English DOM structure. It also builds the sitemap, robots and factual `llms.txt` / `llms-full.txt` guides.
+
+## SEO, GEO and ASO
+
+Both languages are rendered before JavaScript runs. Every page has title/description, canonical, reciprocal language alternates and localized social images. JSON-LD is generated from visible page content; no review ratings are fabricated. The 404 page is excluded from the sitemap and has `noindex`.
+
+Machine-readable product facts distinguish local control traffic from optional iCloud and third-party services. App Store copy lives in the app repository's `AppStore/en-US.json` and `AppStore/zh-Hans.json`; editing it does not submit an App Store release.
+
+## Analytics and acquisition
+
+`src/growth-config.json` contains public GA4 measurement ID `G-Q2D5L3JJ9Q` and Apple's public campaign provider token. These are identifiers, not credentials. Tracking runs only on `ninopad.com`, after the visitor accepts analytics, and respects DNT/GPC. The footer lets visitors change their choice. Local development and the 404 page do not load Google Analytics.
+
+GA enhanced measurement is disabled. Explicit events are `page_view`, `app_store_click`, `mac_download`, `select_content`, `pricing_view`, and `language_change`. App Store clicks are a key event counted once per session with no assigned monetary value. Do not send `purchase` from the website: actual installs, purchases and proceeds belong in App Store Connect.
+
+App Store links carry `pt=128660955`, `mt=8`, and a bounded `ct` campaign token identifying language, page and placement. They work even when analytics is declined. GA receives page paths and validated standard UTM tags; other query parameters and hashes are removed, and referrers contain only the origin.
+
+Submit `https://ninopad.com/sitemap-index.xml` in Search Console. It references separate Chinese and English sitemaps, each with 36 indexable URLs; the original `sitemap.xml` remains available. Canonicals stay tied to the prerendered crawl entry when a visitor switches language. `llms-full.txt` includes product facts and the visible bilingual guides with their source URLs; it does not guarantee search or AI inclusion.

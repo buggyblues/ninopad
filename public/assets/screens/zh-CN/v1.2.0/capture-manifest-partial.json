@@ -1,0 +1,48 @@
+{
+  "nativeApp": true,
+  "data": "synthetic demonstration fixtures",
+  "scenes": [
+    {
+      "name": "control-davinci",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "control-davinci.json"
+      },
+      "fixtures": {
+        "control-davinci.json": "230f99a7cffdfd14447a4dc0062b2032bb8188bcc4b144aca2ff3e3c5219408b"
+      },
+      "sha256": "20f175bff6f02cb096b66df74f3dbdaa4172d444006e3e8fe45b4db517738ce1"
+    },
+    {
+      "name": "control-final-cut",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "control-final-cut.json"
+      },
+      "fixtures": {
+        "control-final-cut.json": "dabddafaa8306ed5761fa306c82baee343dfbdc22c1f17666372492940d027ac"
+      },
+      "sha256": "0674c66d720c98335131567ffba1edec2e3739cdde70ac3a5c0da1c91ea9681d"
+    },
+    {
+      "name": "control-jianying",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "control-jianying.json"
+      },
+      "fixtures": {
+        "control-jianying.json": "6fa50029e6c365cbd4b15c53ee97184da83494107a593b376f2a0bb61cbd7e3f"
+      },
+      "sha256": "5cedaafcb9e1508bf889edea42cb7d531d3e1ed1c78378c1d7680683ef6dfed3"
+    }
+  ]
+}

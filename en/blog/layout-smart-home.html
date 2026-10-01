@@ -1,209 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Connect Home Assistant with Long-Lived Access Tokens. Add room lights and smooth rotary dimmers to your mobile deck.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="NinoPad">
-  <meta property="og:title" content="Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials | NinoPad">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/smart-home-01.webp">
-  <meta property="og:url" content="https://ninopad.com/en/blog/layout-smart-home">
-  <meta property="og:locale" content="en_US">
-  <meta property="article:published_time" content="2026-09-10">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials | NinoPad">
-  <meta name="twitter:description" content="Connect Home Assistant with Long-Lived Access Tokens. Add room lights and smooth rotary dimmers to your mobile deck.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/smart-home-01.webp">
-  <meta property="og:description" content="Connect Home Assistant with Long-Lived Access Tokens. Add room lights and smooth rotary dimmers to your mobile deck.">
-  <meta name="keywords" content="NinoPad smart home layout, Home Assistant touch panel, rotary dimmer iOS, smart lights controller">
-  <link rel="canonical" href="https://ninopad.com/en/blog/layout-smart-home">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-smart-home">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-smart-home">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-smart-home">
-  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../blog.css">
-  <title>Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials | NinoPad</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials",
-      "description": "Connect Home Assistant with Long-Lived Access Tokens. Add room lights and smooth rotary dimmers to your mobile deck.",
-      "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
-      "inLanguage": "en",
-      "author": {
-        "@type": "Organization",
-        "name": "NinoPad"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "NinoPad"
-      },
-      "image": [
-        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/smart-home-01.webp"
-      ],
-      "mainEntityOfPage": "https://ninopad.com/en/blog/layout-smart-home"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://ninopad.com/en/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://ninopad.com/en/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials",
-          "item": "https://ninopad.com/en/blog/layout-smart-home"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Where do I generate a Long-Lived Access Token in Home Assistant?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In your Home Assistant dashboard, click your Profile icon at the bottom of the sidebar, scroll down to 'Long-Lived Access Tokens', click 'Create Token', and copy the generated key into NinoPad."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does NinoPad require cloud internet access to control smart devices?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. NinoPad communicates directly with your local Home Assistant instance over your local Wi-Fi network with zero cloud dependency."
-          }
-        }
-      ]
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_layout-smart-home" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_001&quot;}" property="og:site_name">
+<meta content="Devices throughout the house are at your fingertips: connect to Home Assistant and use physical knobs to light up your inspiration｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/smart-home-01.webp" property="og:image" data-localized-social="tutorials-1.2.0-r1/smart-home-01.webp">
+<meta content="https://ninopad.com/en/blog/layout-smart-home" property="og:url">
+<meta content="en_US" property="og:locale">
+<meta content="2026-09-10" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Devices throughout the house are at your fingertips: connect to Home Assistant and use physical knobs to light up your inspiration｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_003&quot;}" name="twitter:title">
+<meta content="Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/smart-home-01.webp" name="twitter:image" data-localized-social="tutorials-1.2.0-r1/smart-home-01.webp">
+<meta content="Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_005&quot;}" property="og:description">
+<meta content="NinoPad, NinoPad, smart home layout tutorial, operation steps" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.attr_006&quot;}" name="keywords">
+<link href="https://ninopad.com/en/blog/layout-smart-home" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_007&quot;}">Devices throughout the house are at your fingertips: connect to Home Assistant and use physical knobs to light up your inspiration｜NinoPad</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-smart-home"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-smart-home"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-smart-home"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-en-layout-smart-banner&amp;mt=8"><meta property="og:image:alt" content="The smart home operation interface of NinoPad 1.2.0; the desk lamp, curtains, etc. in the screenshot are provided by the local interactive demonstration service." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.social_image_alt&quot;}"><meta name="twitter:image:alt" content="The smart home operation interface of NinoPad 1.2.0; the desk lamp, curtains, etc. in the screenshot are provided by the local interactive demonstration service." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-smart-home.social_image_alt&quot;}"><meta property="og:locale:alternate" content="zh_CN"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_layout-smart-home.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/en/blog/layout-smart-home#page","url":"https://ninopad.com/en/blog/layout-smart-home","name":"Devices throughout the house are at your fingertips: connect to Home Assistant and use physical knobs to light up your inspiration｜NinoPad","description":"Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming.","inLanguage":"en","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"Devices throughout the house are at your fingertips: connect to Home Assistant and light up your inspiration with physical knobs","description":"Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming.","inLanguage":"en","datePublished":"2026-09-10","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/en/blog/layout-smart-home","image":["https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/smart-home-01.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ninopad.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ninopad.com/en/blog"},{"@type":"ListItem","position":3,"name":"Devices throughout the house are at your fingertips: connect to Home Assistant and light up your inspiration with physical knobs","item":"https://ninopad.com/en/blog/layout-smart-home"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
-      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>NinoPad</span>
-    </a>
-    <nav aria-label="Main Navigation">
-      <a href="../index.html#layouts">Features</a>
-      <a href="../index.html#pro">Pricing</a>
-      <a href="../blog.html" aria-current="page">Blog</a>
-      <a href="../index.html#faq">FAQ</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/blog/layout-smart-home" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/layout-smart-home" data-lang-switch>简体中文</a>
-      <a href="/en/blog/layout-smart-home" class="is-active">English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_008&quot;}" href="#main">Skip to text</a>
+<header class="site-header">
+<a aria-label="NinoPad Home Page" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_009&quot;}" href="/en/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_010&quot;}">NinoPad</span>
+</a>
+<nav aria-label="Main navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_012&quot;}" href="/en/#layouts">Function</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_013&quot;}" href="/en/#pro">Price</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_014&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_015&quot;}" href="/en/#faq">FAQ</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+</nav>
+<div class="header-actions">
+<a aria-label="切换至中文" class="header-lang" data-lang-switch="" href="/blog/layout-smart-home?lng=zh-CN">简体中文</a>
+<a aria-label="Select device and download NinoPad" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_019&quot;}" href="/en/#download">free download</a>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_022&quot;}" data-mobile-nav-link="" href="/en/#layouts">Function</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_023&quot;}" data-mobile-nav-link="" href="/en/#pro">Price</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_024&quot;}" data-mobile-nav-link="" href="/en/blog">Blog</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_025&quot;}" data-mobile-nav-link="" href="/en/#faq">FAQ</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a></li>
+</ul>
+<a aria-label="Select device and download NinoPad" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_027&quot;}" data-mobile-nav-link="" href="/en/#download">free download</a>
+<div class="mobile-drawer-lang">
+<a class="" href="/blog/layout-smart-home?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/layout-smart-home?lng=en" data-language="en" aria-label="Switch to English" class="is-active">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="Breadcrumbs" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/en/">Home</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/en/blog">Guides</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.growth_breadcrumb&quot;}">Devices throughout the house are at your fingertips: connect to Home Assistant and light up your inspiration with physical knobs</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_030&quot;}" href="/en/blog">← Blog Column / Smart Home</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_031&quot;}">Devices throughout the house are at your fingertips: connect to Home Assistant and light up your inspiration with physical knobs</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_032&quot;}">Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming.</p>
+<p class="article-meta"><time data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_033&quot;}" datetime="2026-09-10">September 10, 2026</time></p>
+</header>
+<figure class="article-cover article-cover-phone">
+<img alt="The smart home operation interface of NinoPad 1.2.0; the desk lamp, curtains, etc. in the screenshot are provided by the local interactive demonstration service." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-smart-home.attr_034&quot;}" height="2622" src="/assets/screens/en/tutorials-1.2.0-r1/smart-home-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-01.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_035&quot;}">The smart home operation interface of NinoPad 1.2.0; the desk lamp, curtains, etc. in the screenshot are provided by the local interactive demonstration service.</figcaption>
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_036&quot;}">Free common home controls from cumbersome app menus. By binding Home Assistant to your smart home layout, you can turn your desk lamp or room light into a knob component with delicate scales, and switch and adjust brightness at the palm of your hand.</p>
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_layout-smart-home.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_038&quot;}">Picture description:</strong>The device in the picture is provided by the local demo service, and switching operations will update the demo status. Once you're connected to a real home, check your phone's readback, Home Assistant status, and actual device action at the same time.</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_039&quot;}">Before starting</h2><ul><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_040&quot;}">Install Naimao Magic Control 1.2.0 on iPhone/iPad. This function can be used independently and does not require connection to a Mac.</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_041&quot;}">Prepare Home Assistant that is already running, and a light that can be controlled normally on the platform. The phone needs to be able to access its address; first verify that the switch is working in Home Assistant itself.</li></ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_042&quot;}">1. Enter the smart home layout and click on the "Connect Home" portal</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_043&quot;}">Click the "Layouts" tab at the bottom of your iPhone to find and enter the "Smart Home" layout in the list. For multi-desktop solutions, please expand the arrow on the right and select the corresponding desktop.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_044&quot;}">When entering for the first time and the connection has not been configured yet, the "Connect Home" button will be displayed in the center of the desktop. Click it to enter the Home Connect wizard and select Add Home Assistant service. If the device has been added before, you can manage it directly on the existing connection without having to build the network again.</p>
+<figure class="article-figure article-figure-phone"><img alt="Home connection management page; there is currently a local demo connection and you can continue to add Home Assistant." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-smart-home.attr_045&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/smart-home-04-connections.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-04-connections.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_046&quot;}">Home connection management page; there is currently a local demo connection and you can continue to add Home Assistant.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_047&quot;}">2. Fill in the Home Assistant service address and long-term access token</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_048&quot;}">Fill in your Home Assistant address in the "Service address" field of the connection form. For example, a local instance might use homeassistant.local:8123, but this must be replaced with an address that the phone can actually access.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_049&quot;}">Create a long-term access token on the Security page of your Home Assistant profile and copy it into the app's Access Token field. Do not fill in the login password as a token. If using local HTTP, follow the page prompts to confirm "Allow this local HTTP connection"; the token is only used for your own connection, do not include it in the tutorial screenshot.</p>
+<figure class="article-figure article-figure-phone"><img alt="The actual Home Assistant connection form that opens; the tutorial screenshot does not fill in the real access token." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-smart-home.attr_050&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/smart-home-05-form.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-05-form.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_051&quot;}">The actual Home Assistant connection form that opens; the tutorial screenshot does not fill in the real access token.</figcaption></figure>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_052&quot;}">Reference:<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_053&quot;}" href="https://www.home-assistant.io/docs/configuration/user-configuration/">Home Assistant official profile and security settings instructions</a>。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_054&quot;}">3. After the connection is successful, add the smart lighting component to the desktop</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_055&quot;}">Click "Connect" and wait for a clear connected status and device list. Click "Return to Layout, Add Component", then enter the editor from "Add Equipment Component" in the empty layout, select the home equipment component and bind the lamp just now.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_056&quot;}">You can also use the "Automatically add... online devices" entry on the empty desktop to join in batches. The successful connection and the component being added are two steps; just filling in the token will not allow each device to automatically appear on the existing desktop.</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_057&quot;}">4. Check the device name and room, click the switch in the center of the knob</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_058&quot;}">Save the desktop and return to the main interface, check the device name on the card and the room it belongs to (such as "desk lamp/study"). Tap the center area of ​​the light knob to send an on-off command, observe the status changes of the center indicator light, and confirm in the real room that the physical lamps have been turned off or on simultaneously.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_059&quot;}">The phone will wait for Home Assistant's real status readback and update the UI. The instantaneous animation of button press is only touch feedback. Please refer to the actual physical lamp or status readback.</p>
+<figure class="article-figure article-figure-phone"><img alt="After actually clicking on the power of the desk lamp, the demo service read back as off; it is not a photo of the actual lamp." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-smart-home.attr_060&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/smart-home-02-off.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-02-off.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_061&quot;}">After actually clicking on the power of the desk lamp, the demo service read back as off; it is not a photo of the actual lamp.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_062&quot;}">5. Press and hold the outer ring of the knob to adjust the light brightness smoothly</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_063&quot;}">The center of the light knob is responsible for turning the power on and off, and the outer ring is responsible for dimming. Press and hold the outer ring of the knob and slowly rotate it clockwise to increase the brightness, rotate it counterclockwise to decrease the brightness, and wait for the status value to be read back after letting go.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_064&quot;}">First make small adjustments to confirm that the light and dark changes of the physical lamp are consistent with the percentage value displayed on the mobile phone. The dimming function requires that the lamp hardware itself supports the dimming protocol. Ordinary on-off sockets only support switch operations.</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_065&quot;}">6. Click the device name to view details and expand the smart ecosystem of the whole house</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_066&quot;}">Click the device name area below the card to open the details and view the status and more controls provided by the device. Check here if you're offline or having an error, then go back to Home Assistant to check the device itself.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_067&quot;}">When the switch and readback of a light are verified, add curtains, sockets and other equipment, and check their true actions one by one. Matter devices must be added to Apple Home or Home Assistant first. This App does not provide an independent Matter network configuration process.</p>
+<figure class="article-figure article-figure-phone"><img alt="Actually click the device name to enter the desk lamp details; the data comes from the local demo service." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-smart-home.attr_068&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/smart-home-03-detail.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-03-detail.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_069&quot;}">Actually click the device name to enter the desk lamp details; the data comes from the local demo service.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_070&quot;}">FAQ</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_071&quot;}">The connection is successful, but there is no device on the desktop?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_072&quot;}">First check if Home Connection finds supported devices, then return to the layout to add and bind home device components. Existing connections will not automatically rearrange your previously edited desktop.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_073&quot;}">Why is the button grayed out when the status shows offline?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_074&quot;}">Offline devices are not guaranteed to receive control requests. First check the online status in the home platform and the connection from the mobile phone to the service address; after recovery, wait for the new status to be read back.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_075&quot;}">Can I switch to Apple Home?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_076&quot;}">You can connect to an existing Apple home and follow the system prompts to allow access. The device needs to be added and available on the home platform first; capabilities such as cameras and door locks are not supported by the lighting exercises in this article.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_077&quot;}">This article is written based on the interface and operation of Naimao Magic Control 1.2.0, and was updated on September 10, 2026.<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_078&quot;}" href="/en/updates">View changelog</a> · <a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_079&quot;}" href="/en/support">Connection and permissions help</a>。</p>
+</article>
+<nav aria-label="Continue reading" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_080&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_081&quot;}" href="/en/blog/layout-work">← Getting Started with Workbench Assistant: Make your iPhone a powerful partner next to your Mac keyboard</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_082&quot;}" href="/en/blog/layout-launcher">Mac commonly used software portable control: create your own handheld application launcher →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">Try this workflow on your iPhone or iPad</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">Basic controls are free. Mac control requires both apps on the same local network. Pro unlocks advanced decks and standalone instruments.</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-layout-smart-article&amp;mt=8">Get the iPhone / iPad app</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">Get the free Mac companion</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/en/blog/mac-settings">Read the pairing and permissions guide →</a></aside></main>
+<footer>
+<a class="brand" href="/en/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_083&quot;}">NinoPad</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_084&quot;}">&gt;w&lt; All-purpose small keyboard, right in the palm of your hand</p>
+<nav aria-label="Footer navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-smart-home.attr_085&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-layout-smart-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_086&quot;}" href="https://github.com/buggyblues/ninopad/releases">Download</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_087&quot;}" href="/en/updates">update</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_088&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_089&quot;}" href="/en/support">support</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_090&quot;}" href="/en/privacy">Privacy</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_091&quot;}" href="/en/terms">Terms</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-smart-home.text_092&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+<a data-lang-switch="" href="/blog/layout-smart-home?lng=zh-CN" aria-label="切换至中文" class="">简体中文</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_layout-smart-home.text_094&quot;}">© <span data-year=""></span> NinoPad</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">Analytics preferences</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← Blog / Smart Home</a>
-      <h1>Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials</h1>
-      <p>Connect Home Assistant, add smart room lights, and adjust stepless dimmers · ~5 min read</p>
-    </header>
+<script src="/src/main.js" type="module"></script>
 
-    <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-01.webp" alt="NinoPad Smart Home layout interface" width="1206" height="2622">
-    </figure>
-
-    <article class="article-body">
-      <p class="article-lead">Control your desk lighting, ambient lamps, and room climate without opening heavy dashboard apps. NinoPad connects directly to Home Assistant, Apple Home, and Matter ecosystems with tactile on/off switches and smooth rotary dimmers.</p>
-
-      <aside class="article-highlight"><strong>Setup Step:</strong> Enter your local Home Assistant URL (e.g., http://homeassistant.local:8123) and access token in NinoPad's Smart Home settings.</aside>
-
-      <h2>1. Connect Home Assistant via Local Token</h2>
-      <p>In the Smart Home layout, tap <strong>"Connect Home"</strong>, enter your server address and long-lived access token to discover all entities automatically.</p>
-
-      <h2>2. Add Smart Lights &amp; Scene Buttons</h2>
-      <p>Select your desk lamp, ceiling light, or light strip from the entity list and place a custom widget on your deck.</p>
-
-      <h2>3. Stepless Rotary Dimming</h2>
-      <p>Tap the center of the dial to toggle power; glide your finger around the outer knob ring to smoothly adjust brightness from 1% to 100%.</p>
-
-      <figure class="article-figure article-figure-phone">
-        <img src="../../assets/screens/tutorials-1.2.0-r1/smart-home-01.webp" alt="NinoPad Smart Home control layout" width="1206" height="2622" loading="lazy">
-        <figcaption>Smart Home deck: Rotary light dimmers, scene triggers, temperature monitor, and switches.</figcaption>
-      </figure>
-
-      <h2>4. Trigger One-Touch Room Scenes</h2>
-      <p>Configure mood buttons like <em>"Focus Work"</em> (cool bright light) or <em>"Cinema Mode"</em> (warm dim lighting) for instant atmosphere changes.</p>
-
-      <section class="faq-section" id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>Where do I generate a Long-Lived Access Token in Home Assistant?</summary>
-          <p>In your Home Assistant dashboard, click your Profile icon at the bottom of the sidebar, scroll down to 'Long-Lived Access Tokens', click 'Create Token', and copy the generated key into NinoPad.</p>
-        </details>
-        <details>
-          <summary>Does NinoPad require cloud internet access to control smart devices?</summary>
-          <p>No. NinoPad communicates directly with your local Home Assistant instance over your local Wi-Fi network with zero cloud dependency.</p>
-        </details>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
-    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
-    <nav aria-label="Footer Navigation">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
-      <a href="../updates.html">Updates</a>
-      <a href="../blog.html">Blog</a>
-      <a href="../support.html">Support</a>
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-      <a href="/blog/layout-smart-home" data-lang-switch>简体中文</a>
-    </nav>
-    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
-  </footer>
-  <script src="../../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="Website analytics preferences" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">Allow Google Analytics to measure page visits and download clicks? You can decline and change your choice in the footer.</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">Allow analytics</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">Decline analytics</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/en/privacy#website-analytics">Privacy details</a></div></aside></body></html>

@@ -1,172 +1,140 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eff8eb">
-  <meta name="description" content="了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="第一次连接 Mac：配对、权限设置与常见问题｜奶猫妙控">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/macos-adapter.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/mac-settings">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="article:published_time" content="2026-08-31">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="第一次连接 Mac：配对、权限设置与常见问题｜奶猫妙控">
-  <meta name="twitter:description" content="了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/macos-adapter.webp">
-  <meta property="og:description" content="了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。">
-  <link rel="canonical" href="https://ninopad.com/blog/mac-settings">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/mac-settings">
-  <link rel="preload" as="image" href="../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../assets/app-icon.png">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../blog.css">
-  <title>第一次连接 Mac：配对、权限设置与常见问题｜奶猫妙控</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "第一次连接 Mac：配对、权限设置与常见问题",
-  "description": "了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-09-10",
-  "author": {
-    "@type": "Organization",
-    "name": "奶猫妙控"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "奶猫妙控"
-  },
-  "image": "https://ninopad.com/assets/screens/macos-adapter.webp",
-  "mainEntityOfPage": "https://ninopad.com/blog/mac-settings"
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_mac-settings" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eff8eb" name="theme-color">
+<meta content="奶猫妙控 Mac 配套端设置指南：系统要求、局域网扫码配对、辅助功能与屏幕录制权限，以及配对超时、按键无响应和黑屏排查。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_001&quot;}" property="og:site_name">
+<meta content="iPhone 连接 Mac 教程：扫码配对与权限设置｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/zh-CN/macos-adapter.webp" property="og:image" data-localized-social="macos-adapter.webp">
+<meta content="https://ninopad.com/blog/mac-settings" property="og:url">
+<meta content="zh_CN" property="og:locale">
+<meta content="2026-08-31" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="iPhone 连接 Mac 教程：扫码配对与权限设置｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_003&quot;}" name="twitter:title">
+<meta content="奶猫妙控 Mac 配套端设置指南：系统要求、局域网扫码配对、辅助功能与屏幕录制权限，以及配对超时、按键无响应和黑屏排查。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/macos-adapter.webp" name="twitter:image" data-localized-social="macos-adapter.webp">
+<meta content="奶猫妙控 Mac 配套端设置指南：系统要求、局域网扫码配对、辅助功能与屏幕录制权限，以及配对超时、按键无响应和黑屏排查。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_005&quot;}" property="og:description">
+<link href="https://ninopad.com/blog/mac-settings" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_006&quot;}">iPhone 连接 Mac 教程：扫码配对与权限设置｜奶猫妙控</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/mac-settings"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-zh-setup-banner&amp;mt=8"><meta property="og:image:alt" content="奶猫妙控 Mac 端显示配对二维码和连接状态" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.social_image_alt&quot;}"><meta name="twitter:image:alt" content="奶猫妙控 Mac 端显示配对二维码和连接状态" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.social_image_alt&quot;}"><meta property="og:locale:alternate" content="en_US"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_mac-settings.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/blog/mac-settings#page","url":"https://ninopad.com/blog/mac-settings","name":"iPhone 连接 Mac 教程：扫码配对与权限设置｜奶猫妙控","description":"奶猫妙控 Mac 配套端设置指南：系统要求、局域网扫码配对、辅助功能与屏幕录制权限，以及配对超时、按键无响应和黑屏排查。","inLanguage":"zh-CN","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"iPhone 连接 Mac 教程：扫码配对与权限设置","description":"奶猫妙控 Mac 配套端设置指南：系统要求、局域网扫码配对、辅助功能与屏幕录制权限，以及配对超时、按键无响应和黑屏排查。","inLanguage":"zh-CN","datePublished":"2026-08-31","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/blog/mac-settings","image":["https://ninopad.com/assets/screens/zh-CN/macos-adapter.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ninopad.com/"},{"@type":"ListItem","position":2,"name":"使用指南","item":"https://ninopad.com/blog"},{"@type":"ListItem","position":3,"name":"iPhone 连接 Mac 教程：扫码配对与权限设置","item":"https://ninopad.com/blog/mac-settings"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
-      <img src="../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="../index.html#layouts">功能</a>
-      <a href="../index.html#pro">价格</a>
-      <a href="../blog.html" aria-current="page">博客</a>
-      <a href="../index.html#faq">常见问题</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/en/blog/mac-settings" aria-label="Switch to English" data-lang-switch>EN</a>
-      <a class="header-download" href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>功能</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>价格</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>博客</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>常见问题</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/mac-settings" class="is-active">简体中文</a>
-      <a href="/en/blog/mac-settings" data-lang-switch>English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_007&quot;}" href="#main">跳到正文</a>
+<header class="site-header">
+<a aria-label="奶猫妙控首页" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_008&quot;}" href="/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_009&quot;}">奶猫妙控</span>
+</a>
+<nav aria-label="主导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_010&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_011&quot;}" href="/#layouts">功能</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_012&quot;}" href="/#pro">价格</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_013&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_014&quot;}" href="/#faq">常见问题</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_015&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+</nav>
+<div class="header-actions">
+<a aria-label="Switch to English" class="header-lang" data-lang-switch="" href="/en/blog/mac-settings?lng=en">English</a>
+<a aria-label="选择设备并下载奶猫妙控" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_019&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_018&quot;}" href="/#download">免费下载</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_020&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_021&quot;}" data-mobile-nav-link="" href="/#layouts">功能</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_022&quot;}" data-mobile-nav-link="" href="/#pro">价格</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_023&quot;}" data-mobile-nav-link="" href="/blog">博客</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_024&quot;}" data-mobile-nav-link="" href="/#faq">常见问题</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_025&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a></li>
+</ul>
+<a aria-label="选择设备并下载奶猫妙控" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_027&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_026&quot;}" data-mobile-nav-link="" href="/#download">免费下载</a>
+<div class="mobile-drawer-lang">
+<a class="is-active" href="/blog/mac-settings?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/mac-settings?lng=en" data-language="en" aria-label="Switch to English" class="">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="页面位置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/">首页</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/blog">使用指南</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.growth_breadcrumb&quot;}">iPhone 连接 Mac 教程：扫码配对与权限设置</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_029&quot;}" href="/blog">← 博客专栏 / 系统权限与安全</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_030&quot;}">iPhone 连接 Mac 教程：扫码配对与权限设置</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_031&quot;}">辅助功能、屏幕录制与本地网络授权排查，以及局域网本地通信说明 · 阅读约 6 分钟</p>
+</header>
+<figure class="article-cover article-cover-mac">
+<img alt="奶猫妙控 Mac 端显示配对二维码和连接状态" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_mac-settings.attr_032&quot;}" height="1196" src="/assets/screens/zh-CN/macos-adapter.webp" width="944" data-screen="macos-adapter.webp">
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_033&quot;}">奶猫妙控作为一款专为 macOS 打造的掌上副控与桌面串流工具，需要获取系统的必要辅助授权，以实现按键映射、快捷指令注入与桌面画面回传。初次使用或升级系统后，规范的权限配置是保障一切功能顺畅运行的基础。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_034&quot;}">本文为你梳理奶猫妙控所需的核心系统权限、配置操作流程、常见连接故障排查方法，以及基于局域网点对点（P2P）直连的安全架构。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_035&quot;}">一、核心系统权限清单及用途说明</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_036&quot;}">先从以下与连接和桌面控制有关的权限开始。不同 macOS 版本的项目名称可能略有差异，按系统实际显示的名称操作；其他功能需要额外权限时，App 会在相应流程中提示。</p>
+<ul>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_038&quot;}">辅助功能（Accessibility）：</strong>用于接收手机端发送的模拟按键、滚轮滚动、组合快捷键以及鼠标光标手势控制指令。</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_039&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_040&quot;}">屏幕录制（Screen Recording / 屏幕与系统音频录制）：</strong>用于在“边看边控”与“全屏沉浸”模式下，捕获 Mac 实时桌面帧画面并流式传输至手机。</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_041&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_042&quot;}">本地网络（Local Network）：</strong>用于在同一 Wi-Fi 或局域网内通过 Bonjour 协议自动发现 Mac 端服务，建立高速点对点直连通道。</li>
+</ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_043&quot;}">二、macOS 权限配置步骤指南</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_044&quot;}">首次启动 Mac 配套端后，可以在系统设置中检查控制与画面权限。只需要鼠标和键盘控制时，先完成辅助功能授权；需要查看屏幕时，再检查屏幕录制。</p>
+<ol class="article-steps-list">
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_045&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_046&quot;}">点击 Mac 屏幕左上角苹果图标 ，打开<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_047&quot;}">“系统设置”（System Settings）</strong>。</li>
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_048&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_049&quot;}">在左侧边栏找到并进入<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_050&quot;}">“隐私与安全性”（Privacy &amp; Security）</strong>。</li>
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_051&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_052&quot;}">点击<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_053&quot;}">“辅助功能”（Accessibility）</strong>，在列表中找到“奶猫妙控”（NinoPad），将其右侧开关切换为允许状态。</li>
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_054&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_055&quot;}">返回上一层，点击<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_056&quot;}">“屏幕录制”或“屏幕与系统音频录制”</strong>，确保“奶猫妙控”开关已开启。</li>
+</ol>
+<figure class="article-figure article-figure-mac">
+<img alt="奶猫妙控 Mac 端偏好设置" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_mac-settings.attr_057&quot;}" height="1332" loading="lazy" src="/assets/screens/zh-CN/macos-settings.webp" width="1516" data-screen="macos-settings.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_058&quot;}">在 Mac 端偏好设置中，可实时查看权限状态、管理配对设备并开启开机自启</figcaption>
+</figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_059&quot;}">三、常见连接与权限问题排查手册（FAQ）</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_060&quot;}">1. 为什么手机扫描 Mac 端的二维码提示连接超时？</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_061&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_062&quot;}">请首先确认 iPhone/iPad 与 Mac 处于<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_063&quot;}">同一个 Wi-Fi 路由器或局域网下</strong>。如果路由器开启了“AP 隔离 (Client Isolation)”或处于“访客 Wi-Fi 模式”，局域网内设备将无法互相寻址。建议切换为同一标准家庭或办公室 Wi-Fi 网络。</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_064&quot;}">2. 为什么 macOS 系统大版本升级后按键突然失效？</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_065&quot;}">系统更新或重新安装 App 后，先检查辅助功能列表中的授权是否仍然开启、对应的是否为当前安装的奶猫妙控。若开启后依然无法控制，可尝试移除旧条目，再添加当前 App；重新打开配套端后，用一次鼠标移动或文字输入确认是否恢复。</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_066&quot;}">3. 桌面串流出现黑屏或重复弹出权限提示？</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_067&quot;}">先检查屏幕录制授权，然后按系统提示退出并重新打开 Mac 配套端。返回手机重试画面预览；如果仍是黑屏，再确认授权对应当前安装的 App，以及手机和 Mac 的连接是否正常。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_068&quot;}">四、本地局域网点对点传输与隐私说明</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_069&quot;}">奶猫妙控团队深知用户的创作与工程隐私至关重要，从底层架构上保障数据安全：</p>
+<ul>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_070&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_071&quot;}">局域网直连：</strong>这里的桌面控制流程通过配对设备间的连接传输按键、文字与画面。先确认连接的是自己的 Mac，再开始操作。</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_072&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_073&quot;}">按功能理解数据去向：</strong>本地直连描述的是手机与 Mac 的控制连接。系统语音识别或其他第三方服务有各自的处理方式，不能据此认为所有功能都无需联网。</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_074&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_075&quot;}">配对管理：</strong>在 Mac 配套端查看已配对设备，确认设备列表与自己的使用情况一致。配对信息和家庭服务令牌应只用于自己的设备连接。</li>
+</ul>
+</article>
+<nav aria-label="继续阅读" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_076&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_077&quot;}" href="/blog/remote-control-mac">← 在手机上查看并控制 Mac 桌面</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_078&quot;}" href="/blog/editing-keypad">用手机辅助剪辑：从浏览时间线到分割与撤销 →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">把这套操作放到手边</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">基础控制免费。连接 Mac 时，两端需安装奶猫妙控并处于同一局域网；高级工作台和独立乐器由 Pro 解锁。</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-setup-article&amp;mt=8">下载 iPhone / iPad App</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">下载免费 Mac 配套端</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/blog/mac-settings">查看配对与权限设置指南 →</a></aside></main>
+<footer>
+<a class="brand" href="/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_079&quot;}">奶猫妙控</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_080&quot;}">&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+<nav aria-label="页脚导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_081&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-setup-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_082&quot;}" href="https://github.com/buggyblues/ninopad/releases">下载</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_083&quot;}" href="/updates">更新</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_084&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_085&quot;}" href="/support">支持</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_086&quot;}" href="/privacy">隐私</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_087&quot;}" href="/terms">条款</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_088&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+<a data-lang-switch="" href="/en/blog/mac-settings?lng=en" aria-label="Switch to English" class="">English</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_mac-settings.text_090&quot;}">© <span data-year=""></span> 奶猫妙控</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">网站统计设置</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 系统权限与安全</a>
-      <h1>第一次连接 Mac：配对、权限设置与常见问题</h1>
-      <p>辅助功能、屏幕录制与本地网络授权排查，以及局域网本地通信说明 · 阅读约 6 分钟</p>
-    </header>
+<script src="/src/main.js" type="module"></script>
 
-    <figure class="article-cover article-cover-mac">
-      <img src="../assets/screens/macos-adapter.webp?v=20260831d" alt="奶猫妙控 Mac 端显示配对二维码和连接状态" width="944" height="1196">
-    </figure>
-
-    <article class="article-body">
-      <p class="article-lead">奶猫妙控作为一款专为 macOS 打造的掌上副控与桌面串流工具，需要获取系统的必要辅助授权，以实现按键映射、快捷指令注入与桌面画面回传。初次使用或升级系统后，规范的权限配置是保障一切功能顺畅运行的基础。</p>
-      <p>本文为你梳理奶猫妙控所需的核心系统权限、配置操作流程、常见连接故障排查方法，以及基于局域网点对点（P2P）直连的安全架构。</p>
-
-      <h2>一、核心系统权限清单及用途说明</h2>
-      <p>先从以下与连接和桌面控制有关的权限开始。不同 macOS 版本的项目名称可能略有差异，按系统实际显示的名称操作；其他功能需要额外权限时，App 会在相应流程中提示。</p>
-      <ul>
-        <li><strong>辅助功能（Accessibility）：</strong>用于接收手机端发送的模拟按键、滚轮滚动、组合快捷键以及鼠标光标手势控制指令。</li>
-        <li><strong>屏幕录制（Screen Recording / 屏幕与系统音频录制）：</strong>用于在“边看边控”与“全屏沉浸”模式下，捕获 Mac 实时桌面帧画面并流式传输至手机。</li>
-        <li><strong>本地网络（Local Network）：</strong>用于在同一 Wi-Fi 或局域网内通过 Bonjour 协议自动发现 Mac 端服务，建立高速点对点直连通道。</li>
-      </ul>
-
-      <h2>二、macOS 权限配置步骤指南</h2>
-      <p>首次启动 Mac 配套端后，可以在系统设置中检查控制与画面权限。只需要鼠标和键盘控制时，先完成辅助功能授权；需要查看屏幕时，再检查屏幕录制。</p>
-      <ol class="article-steps-list">
-        <li>点击 Mac 屏幕左上角苹果图标 ，打开<strong>“系统设置”（System Settings）</strong>。</li>
-        <li>在左侧边栏找到并进入<strong>“隐私与安全性”（Privacy &amp; Security）</strong>。</li>
-        <li>点击<strong>“辅助功能”（Accessibility）</strong>，在列表中找到“奶猫妙控”（NinoPad），将其右侧开关切换为允许状态。</li>
-        <li>返回上一层，点击<strong>“屏幕录制”或“屏幕与系统音频录制”</strong>，确保“奶猫妙控”开关已开启。</li>
-      </ol>
-
-      <figure class="article-figure article-figure-mac">
-        <img src="../assets/screens/macos-settings.webp?v=20260831d" alt="奶猫妙控 Mac 端偏好设置" width="1516" height="1332" loading="lazy">
-        <figcaption>在 Mac 端偏好设置中，可实时查看权限状态、管理配对设备并开启开机自启</figcaption>
-      </figure>
-
-      <h2>三、常见连接与权限问题排查手册（FAQ）</h2>
-      
-      <h3>1. 为什么手机扫描 Mac 端的二维码提示连接超时？</h3>
-      <p>请首先确认 iPhone/iPad 与 Mac 处于<strong>同一个 Wi-Fi 路由器或局域网下</strong>。如果路由器开启了“AP 隔离 (Client Isolation)”或处于“访客 Wi-Fi 模式”，局域网内设备将无法互相寻址。建议切换为同一标准家庭或办公室 Wi-Fi 网络。</p>
-
-      <h3>2. 为什么 macOS 系统大版本升级后按键突然失效？</h3>
-      <p>系统更新或重新安装 App 后，先检查辅助功能列表中的授权是否仍然开启、对应的是否为当前安装的奶猫妙控。若开启后依然无法控制，可尝试移除旧条目，再添加当前 App；重新打开配套端后，用一次鼠标移动或文字输入确认是否恢复。</p>
-
-      <h3>3. 桌面串流出现黑屏或重复弹出权限提示？</h3>
-      <p>先检查屏幕录制授权，然后按系统提示退出并重新打开 Mac 配套端。返回手机重试画面预览；如果仍是黑屏，再确认授权对应当前安装的 App，以及手机和 Mac 的连接是否正常。</p>
-
-      <h2>四、本地局域网点对点传输与隐私说明</h2>
-      <p>奶猫妙控团队深知用户的创作与工程隐私至关重要，从底层架构上保障数据安全：</p>
-      <ul>
-        <li><strong>局域网直连：</strong>这里的桌面控制流程通过配对设备间的连接传输按键、文字与画面。先确认连接的是自己的 Mac，再开始操作。</li>
-        <li><strong>按功能理解数据去向：</strong>本地直连描述的是手机与 Mac 的控制连接。系统语音识别或其他第三方服务有各自的处理方式，不能据此认为所有功能都无需联网。</li>
-        <li><strong>配对管理：</strong>在 Mac 配套端查看已配对设备，确认设备列表与自己的使用情况一致。配对信息和家庭服务令牌应只用于自己的设备连接。</li>
-      </ul>
-    </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="remote-control-mac.html">← 在手机上查看并控制 Mac 桌面</a>
-      <a href="editing-keypad.html">用手机辅助剪辑：从浏览时间线到分割与撤销 →</a>
-    </nav>
-  </main>
-
-  <footer>
-    <a class="brand" href="../index.html"><img src="../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
-      <a href="../blog.html">博客</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-      <a href="/en/blog/mac-settings" data-lang-switch>English</a>
-    </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
-  </footer>
-  <script src="../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="网站统计设置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">允许使用 Google Analytics 了解页面访问和下载点击？你可以拒绝，并随时在页脚修改选择。</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">允许统计</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">拒绝统计</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/privacy#website-analytics">隐私说明</a></div></aside></body></html>

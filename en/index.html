@@ -1,978 +1,833 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f0e6">
-  <meta name="description" content="NinoPad is a customizable Mac control deck & secondary keypad for iPhone and iPad. Features real-time screen mirroring, Codex & AI coding integration, native macOS shell terminal, video editing shortcuts, remote trackpad, and wireless microphone. Direct local network connection, secure and ultra-low latency.">
-  <meta name="keywords" content="NinoPad, Mac keypad, Mac remote control, Stream Deck alternative, Codex deck, macOS terminal remote, DaVinci Resolve keypad, Final Cut Pro shortcuts, Mac trackpad, wireless microphone, teleprompter, virtual laser pointer, secondary control deck">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="application-name" content="NinoPad">
-  <meta name="apple-mobile-web-app-title" content="NinoPad">
-  <meta name="author" content="buggyblues">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="NinoPad">
-  <meta property="og:title" content="NinoPad | Customizable Mac Control Deck & Handheld Remote Console">
-  <meta property="og:description" content="Control your Mac from your palm: real-time screen stream, precision trackpad, hotkeys, text keyboard, and wireless mic. Direct local connection with low latency.">
-  <meta property="og:image" content="https://ninopad.com/assets/app-icon.png">
-  <meta property="og:image:alt" content="NinoPad App Icon">
-  <meta property="og:url" content="https://ninopad.com/en/">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NinoPad | Customizable Mac Control Deck & Handheld Remote Console">
-  <meta name="twitter:description" content="Control your Mac from your palm: real-time screen stream, precision trackpad, hotkeys, text keyboard, and wireless mic. Direct local connection with low latency.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/app-icon.png">
-  <link rel="canonical" href="https://ninopad.com/en/">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/">
-  <link rel="preload" as="image" href="../assets/panda-paw-glyph-v1.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../assets/app-icon.png">
-  <link rel="apple-touch-icon" href="../assets/app-icon.png">
-  <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../styles.css?v=2.1.0">
-  <link rel="stylesheet" href="../layouts.css?v=2.1.0">
-  <title>NinoPad | Customizable Mac Control Deck &amp; Handheld Remote Console</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://ninopad.com/en/#website",
-        "url": "https://ninopad.com/en/",
-        "name": "NinoPad",
-        "description": "Customizable Mac Control Deck & Handheld Remote Console for iPhone and iPad",
-        "inLanguage": "en"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://ninopad.com/#organization",
-        "name": "NinoPad",
-        "url": "https://ninopad.com/",
-        "logo": "https://ninopad.com/assets/app-icon.png",
-        "sameAs": [
-          "https://github.com/buggyblues/ninopad",
-          "https://apps.apple.com/app/id6805378609",
-          "https://arcade.ninopad.com/"
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://ninopad.com/en/#software",
-        "name": "NinoPad",
-        "url": "https://ninopad.com/en/",
-        "downloadUrl": [
-          "https://apps.apple.com/app/id6805378609",
-          "https://github.com/buggyblues/ninopad/releases/latest"
-        ],
-        "installUrl": "https://apps.apple.com/app/id6805378609",
-        "image": "https://ninopad.com/assets/app-icon.png",
-        "applicationCategory": "UtilitiesApplication, ProductivityApplication",
-        "operatingSystem": "macOS 13+, iOS 17+, iPadOS 17+",
-        "softwareVersion": "1.3.6",
-        "inLanguage": "en",
-        "description": "A versatile Mac control deck and customizable keypad for iPhone & iPad. Features AI Coding & Codex companion, native Shell terminal, real-time screen streaming, precision trackpad, text injection, and dedicated consoles for pro apps.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        },
-        "featureList": [
-          "Customizable tactile buttons, knobs, sliders, and trackpad",
-          "Real-time Mac screen mirroring and full-screen remote control",
-          "AI coding & Codex task queue inspection and reasoning controls",
-          "Native macOS Shell terminal with multi-session management",
-          "Remote trackpad with smooth inertial scrolling and low-latency keyboard",
-          "Full text pre-editing and accurate speech-to-text injection",
-          "Wireless HD microphone streaming from phone to Mac",
-          "Pixel-perfect aspect ratio scaling without distortion",
-          "One-tap encrypted local Wi-Fi QR pairing",
-          "iOS Home Screen Widgets and App Icon Quick Actions",
-          "Presets for DaVinci Resolve, Final Cut Pro, CapCut, Keynote, Apple Music",
-          "Presentation suite: virtual laser pointer, smart teleprompter, sound effects"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://ninopad.com/en/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do iPhone/iPad and Mac need to be on the same Wi-Fi network?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. NinoPad communicates directly over your high-speed local network (Wi-Fi), requiring no internet or cloud relay for minimal latency and maximum privacy." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is Mac not responding to key presses or screen stream?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Basic hotkeys and cursor control require Accessibility permission in macOS 'System Settings → Privacy & Security → Accessibility'. Screen mirroring requires 'Screen Recording' permission." }
-          },
-          {
-            "@type": "Question",
-            "name": "Are core features free? How do I purchase or restore Pro?",
-            "acceptedAnswer": { "@type": "Answer", "text": "All core keypads, trackpad, and system controls are 100% free. Pro membership can be subscribed to or purchased as a lifetime unlock inside the iOS app via Apple StoreKit, with full support for restoring purchases across devices." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my data or screen content uploaded to the cloud?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Never. All control commands, text, and screen streams are transmitted strictly peer-to-peer within your local area network without passing through any external servers." }
-          },
-          {
-            "@type": "Question",
-            "name": "Which Mac devices and operating systems are supported?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Supports macOS 13 (Ventura) and later. The Universal binary natively supports both Apple Silicon (M1/M2/M3/M4 chips) and Intel-based Macs." }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-</head>
+<!DOCTYPE html><html data-page="index" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#f6f0e6" name="theme-color">
+<meta content="Turn your iPhone or iPad into a Mac trackpad, shortcut keypad and screen viewer. Pair on local Wi-Fi, try free controls and customize with Pro." data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_000&quot;}" name="description">
+<meta content="NinoPad, NinoPad, Mac keypad, Mac remote control, atmosphere programming, Codex sub-control, Mac terminal, Shell, editing keypad, DaVinci Resolve sub-control, Final Cut Pro console, editing shortcut keys, Mac trackpad, wireless microphone, speech prompter, virtual laser pointer, handheld sub-control, Stream Deck replacement" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_001&quot;}" name="keywords">
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_002&quot;}" name="application-name">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_003&quot;}" name="apple-mobile-web-app-title">
+<meta content="buggyblues" name="author">
+<meta content="website" property="og:type">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_004&quot;}" property="og:site_name">
+<meta content="NinoPad | iPhone &amp; iPad Remote Control for Mac" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_005&quot;}" property="og:title">
+<meta content="Turn your iPhone or iPad into a Mac trackpad, shortcut keypad and screen viewer. Pair on local Wi-Fi, try free controls and customize with Pro." data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_006&quot;}" property="og:description">
+<meta content="https://ninopad.com/assets/screens/en/release-1.3.1/store-01-studio.webp" property="og:image" data-localized-social="release-1.3.1/store-01-studio.webp">
+<meta content="NinoPad work layout" data-i18n-attrs="{&quot;content&quot;:&quot;index.social_image_alt&quot;}" property="og:image:alt">
+<meta content="https://ninopad.com/en/" property="og:url">
+<meta content="en_US" property="og:locale">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="NinoPad | iPhone &amp; iPad Remote Control for Mac" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_008&quot;}" name="twitter:title">
+<meta content="Turn your iPhone or iPad into a Mac trackpad, shortcut keypad and screen viewer. Pair on local Wi-Fi, try free controls and customize with Pro." data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_009&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/en/release-1.3.1/store-01-studio.webp" name="twitter:image" data-localized-social="release-1.3.1/store-01-studio.webp">
+<link href="https://ninopad.com/en/" rel="canonical">
+
+
+
+<link as="image" fetchpriority="high" href="/assets/panda-paw-glyph-v1.webp" rel="preload" type="image/webp">
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/assets/app-icon.png" rel="apple-touch-icon">
+<link href="/site-en.webmanifest" rel="manifest">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/layouts.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;index.text_010&quot;}">NinoPad | iPhone &amp; iPad Remote Control for Mac</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-en-home-banner&amp;mt=8"><meta name="twitter:image:alt" content="NinoPad work layout" data-i18n-attrs="{&quot;content&quot;:&quot;index.social_image_alt&quot;}"><meta property="og:locale:alternate" content="zh_CN"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="index.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},{"@type":"WebSite","@id":"https://ninopad.com/#website","url":"https://ninopad.com/","name":"NinoPad","alternateName":"奶猫妙控","inLanguage":["zh-CN","en"],"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"WebPage","@id":"https://ninopad.com/en/#page","url":"https://ninopad.com/en/","name":"NinoPad | iPhone & iPad Remote Control for Mac","description":"Turn your iPhone or iPad into a Mac trackpad, shortcut keypad and screen viewer. Pair on local Wi-Fi, try free controls and customize with Pro.","inLanguage":"en","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"SoftwareApplication","@id":"https://ninopad.com/#software","name":"NinoPad","alternateName":"奶猫妙控","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS 17+, iPadOS 17+, macOS 13+","installUrl":"https://apps.apple.com/app/id6805378609","downloadUrl":["https://apps.apple.com/app/id6805378609","https://github.com/buggyblues/ninopad/releases/latest"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"en","description":"Turn your iPhone or iPad into a Mac trackpad, shortcut keypad and screen viewer. Pair on local Wi-Fi, try free controls and customize with Pro."},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"More shortcut widgets and gesture operations","acceptedAnswer":{"@type":"Answer","text":"Supports desktop widgets to view connection status and quick access, supports long-pressing icons to scan QR codes for pairing and edge gestures to switch layouts."}},{"@type":"Question","name":"See the full list of Pro benefits","acceptedAnswer":{"@type":"Answer","text":"Contains exclusive control panels for editing, color grading, synthesizer performance, and development terminals.Unlock high-definition and ultra-high-definition streaming quality, and watch the computer screen more clearly and delicately on your mobile phone.Adjust the button knob component at will to support the creation of multiple independent scene desktop switches.Built-in NinoPad illustrations, motion wallpapers and custom background images.Provides reporting tools such as laser pointers, magnifying glasses, screen brushes, and camera floating windows.Photos, drafts, and file attachments from your mobile phone can be sent directly to your Mac with just one click.Automatically synchronize layout configuration, wallpapers, clipboards and music creation project data.Check task progress through Live Activities on the Lock Screen and Dynamic Island."}},{"@type":"Question","name":"Do my devices need to be on the same Wi-Fi network?","acceptedAnswer":{"@type":"Answer","text":"Remote control requires your iPhone or iPad and Mac to share a local network. Control traffic stays on that network; an internet connection is not required for basic control."}},{"@type":"Question","name":"Why can't my Mac receive control commands or screens?","acceptedAnswer":{"@type":"Answer","text":"Regular keys and controls need to be allowed for NinoPad in Mac's \"System Settings → Privacy & Security → Accessibility\"; if real-time screen mirroring is required, the \"Screen Recording\" permission needs to be turned on separately."}},{"@type":"Question","name":"Are basic functions free? How to purchase and restore Pro membership?","acceptedAnswer":{"@type":"Answer","text":"Core basic keypad and system controls are completely free. Pro members can go to \"Settings → NinoPad Pro\" on iPhone/iPad to subscribe or buy out. All transactions are processed by the Apple App Store, and one-click recovery of purchases is supported."}},{"@type":"Question","name":"Will control instructions and data be uploaded to the cloud?","acceptedAnswer":{"@type":"Answer","text":"Mac controls, text input and screen images travel directly between paired devices on the local network, without a cloud relay. Optional iCloud sync and third-party services have separate data flows; see the privacy policy."}},{"@type":"Question","name":"What Mac devices and systems are supported?","acceptedAnswer":{"@type":"Answer","text":"Supports Mac devices running macOS 13 (Ventura) and higher, and the Universal architecture is natively compatible with Apple Silicon (M series chips) and Intel processors."}}]}]}</script></head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_011&quot;}" href="#main">Skip to content</a>
+<header class="site-header">
+<a aria-label="NinoPad Home Page" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_012&quot;}" href="#top">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_013&quot;}">NinoPad</span>
+</a>
+<nav aria-label="Main navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_014&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_015&quot;}" href="#layouts">Features</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_016&quot;}" href="#pro">Pricing</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_017&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_018&quot;}" href="#faq">FAQ</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_019&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+</nav>
+<div class="header-actions">
+<a aria-label="切换至中文" class="header-lang" data-lang-switch="" href="/?lng=zh-CN">简体中文</a>
+<a aria-label="Select device and download NinoPad" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_023&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_022&quot;}" href="#download">Free download</a>
+<button aria-controls="mobile-drawer" aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_024&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer-backdrop" data-mobile-drawer-backdrop=""></div>
+<div aria-hidden="true" aria-label="Mobile navigation menu" aria-modal="true" class="mobile-drawer" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_025&quot;}" data-mobile-drawer="" id="mobile-drawer" role="dialog">
+<ul>
+<li><a data-mobile-nav-link="" href="#layouts"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_026&quot;}">Features</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="#pro"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_027&quot;}">Pricing</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="/en/blog"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_028&quot;}">Blog</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="#faq"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_029&quot;}">FAQ</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_030&quot;}">Game lobby</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+</ul>
+<a aria-label="Select device and download NinoPad" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_032&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_031&quot;}" data-mobile-nav-link="" href="#download">Free download</a>
+<div class="mobile-drawer-lang">
+<a class="" href="/?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/?lng=en" data-language="en" aria-label="Switch to English" class="is-active">English</a>
+</div>
+</div>
+<main id="main">
+<section class="hero" id="top">
+<div aria-hidden="true" class="hero-field">
+<span class="hero-control hero-key hero-key-blue" data-i18n-text="{&quot;0&quot;:&quot;index.text_034&quot;}">Search</span>
+<span class="hero-control hero-key hero-key-lilac" data-i18n-text="{&quot;0&quot;:&quot;index.text_035&quot;}">Screenshot</span>
+<span class="hero-control hero-key hero-key-yellow" data-i18n-text="{&quot;0&quot;:&quot;index.text_036&quot;}">Switch app</span>
+<span class="hero-control hero-key hero-key-coral" data-i18n-text="{&quot;0&quot;:&quot;index.text_037&quot;}">Mute</span>
+<span class="hero-control hero-key hero-key-cream">⌨︎</span>
+<span class="hero-control hero-key hero-key-dark" data-i18n-text="{&quot;0&quot;:&quot;index.text_038&quot;}">Show desktop</span>
+<span class="hero-control hero-trackpad"></span>
+<span class="hero-control hero-knob"></span>
+<span class="hero-control hero-slider"></span>
+<span class="hero-control hero-key hero-key-small" data-i18n-text="{&quot;0&quot;:&quot;index.text_039&quot;}">Copy</span>
+<span class="hero-control hero-key hero-key-small hero-key-peach" data-i18n-text="{&quot;0&quot;:&quot;index.text_040&quot;}">Paste</span>
+</div>
+<div class="hero-copy">
+<h1 aria-label="Your Mac control deck, right in your palm" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_041&quot;}">
+<span class="hero-line hero-line-first"><span data-i18n-attrs="{&quot;data-text&quot;:&quot;index.attr_043&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_042&quot;}" data-text="Your Mac Control Deck," data-typewriter="">Your Mac Control Deck,</span><span aria-hidden="true" class="type-caret"></span></span>
+<span aria-hidden="true" class="hero-line hero-line-accent" data-i18n-text="{&quot;0&quot;:&quot;index.text_044&quot;,&quot;2&quot;:&quot;index.text_045&quot;}">Right in Your <img alt="" class="hero-paw" height="320" src="/assets/panda-paw-glyph-v1.webp" width="320">Palm</span>
+</h1><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_intro&quot;}" class="hero-product-intro">Turn your iPhone or iPad into a Mac trackpad and shortcut keypad. Pair over local Wi-Fi and start with free controls; Pro unlocks custom decks and pocket instruments.</p>
+<div class="hero-actions platform-download" data-platform-download="">
+<div aria-label="Select download device" class="download-platforms" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_046&quot;}" hidden="" role="tablist">
+<button aria-controls="hero-iphone-panel" aria-selected="true" class="download-platform" data-download-platform="iphone" id="hero-iphone-tab" role="tab" tabindex="0" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="10" x="7" y="2"></rect></svg><span>iPhone</span></button>
+<button aria-controls="hero-ipad-panel" aria-selected="false" class="download-platform" data-download-platform="ipad" id="hero-ipad-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="16" x="4" y="2"></rect></svg><span>iPad</span></button>
+<button aria-controls="hero-mac-panel" aria-selected="false" class="download-platform" data-download-platform="mac" id="hero-mac-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span>Mac</span></button>
+</div>
+<div aria-labelledby="hero-iphone-tab" class="download-panel" data-download-panel="iphone" id="hero-iphone-panel" role="tabpanel">
+<a aria-label="Download NinoPad iPhone version in App Store" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_047&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-home-top&amp;mt=8"><img alt="Download on the App Store" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_048&quot;}" height="52" src="/assets/badges/app-store-en-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="hero-ipad-tab" class="download-panel" data-download-panel="ipad" hidden="" id="hero-ipad-panel" role="tabpanel">
+<a aria-label="Download NinoPad iPad version on the App Store" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_049&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-home-top&amp;mt=8"><img alt="Download on the App Store" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_050&quot;}" height="52" src="/assets/badges/app-store-en-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="hero-mac-tab" class="download-panel" data-download-panel="mac" hidden="" id="hero-mac-panel" role="tabpanel">
+<a aria-label="Download NinoPad Mac version" class="download-badge download-badge-mac" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_051&quot;}" data-release-link="" href="https://github.com/buggyblues/ninopad/releases/latest"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span data-i18n-text="{&quot;0&quot;:&quot;index.text_052&quot;}">Download for Mac</span></a>
+</div>
+<noscript><a class="download-fallback" data-i18n-text='{"0":"index.text_053"}' href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 版 →</a></noscript>
+</div>
+</div>
+</section>
+<section class="layouts-section" id="layouts">
+<div class="layouts-header">
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_054&quot;}">Start with ready-made layouts and customize them to fit your workflow.</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_055&quot;}">There are 18 built-in high-frequency preset layouts, and the knobs can be switched at will, making it easy to use right away. <a data-i18n-text="{&quot;0&quot;:&quot;index.text_056&quot;}" href="/en/blog">View the quick start guide →</a></p>
+</div>
+<!-- Unified Hardware Console Deck -->
+<div aria-labelledby="layout-tab-work" class="deck-hardware-chassis" id="layout-panel" role="tabpanel">
+<!-- Left Hardware Bay: Retro LCD Screen on Top, Rotary Knob Below -->
+<div class="deck-controls-bay">
+<!-- Clean Retro LCD Status Screen (No outer decorations) -->
+<div aria-live="polite" class="deck-lcd-screen">
+<div class="lcd-screen-glass">
+<div class="lcd-screen-header">
+<div class="lcd-header-tags">
+<span class="lcd-tag is-active">AUTO</span>
+<span class="lcd-tag is-active">PRESET</span>
+</div>
+<span class="lcd-screen-index" data-led-index="">01 / 18</span>
+</div>
+<div class="lcd-screen-body led-screen-body">
+<strong class="lcd-screen-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_057&quot;}" data-layout-name="">Work</strong>
+<p class="lcd-screen-desc" data-i18n-text="{&quot;0&quot;:&quot;index.text_058&quot;}" data-layout-description="">macOS desktop and current applications · The trackpad, scroll wheel and high-frequency keys are integrated on one screen, allowing you to control while watching.</p>
+</div>
+<div class="lcd-screen-footer">
+<a class="lcd-screen-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_059&quot;}" data-layout-guide="" data-layout-guide-label="" href="/en/blog/layout-work">Read the tutorial →</a>
+</div>
+</div>
+</div>
+<!-- Rotary Dial Unit (Below LCD screen, Clean Minimalist Knob) -->
+<div class="deck-dial-unit">
+<div class="knob-rotary-mount">
+<!-- Preset Data Store / Accessible Tablist -->
+<div aria-label="Default layout" class="knob-items-ring" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_060&quot;}" id="knob-ring" role="tablist" style="display:none;">
+<div class="knob-node-item is-active" data-index="0">
+<button aria-controls="layout-panel" aria-label="work" aria-selected="true" class="knob-tick" data-alt="NinoPad work layout" data-blog-href="/en/blog/layout-work" data-description="macOS desktop and current applications · The trackpad, scroll wheel and high-frequency keys are integrated on one screen, allowing you to control while watching." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_061&quot;,&quot;data-name&quot;:&quot;index.attr_062&quot;,&quot;title&quot;:&quot;index.attr_063&quot;,&quot;data-description&quot;:&quot;index.attr_064&quot;,&quot;data-alt&quot;:&quot;index.attr_065&quot;}" data-icon="/assets/layouts/work.svg" data-image="/assets/screens/en/release-1.3.1/store-01-studio.webp" data-name="work" id="layout-tab-work" role="tab" tabindex="0" title="work" type="button" data-screen="release-1.3.1/store-01-studio.webp"></button>
+</div>
+<div class="knob-node-item" data-index="1">
+<button aria-controls="layout-panel" aria-label="launcher" aria-selected="false" class="knob-tick" data-alt="NinoPad launcher layout" data-blog-href="/en/blog/layout-launcher" data-description="Dock and frequently used applications · Turn Mac frequently used applications into large icons within easy reach, and switch to the foreground with one click." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_066&quot;,&quot;data-name&quot;:&quot;index.attr_067&quot;,&quot;title&quot;:&quot;index.attr_068&quot;,&quot;data-description&quot;:&quot;index.attr_069&quot;,&quot;data-alt&quot;:&quot;index.attr_070&quot;}" data-icon="/assets/layouts/launcher.svg" data-image="/assets/screens/en/v1.2.0/control-launcher.webp" data-name="launcher" id="layout-tab-launcher" role="tab" tabindex="-1" title="launcher" type="button" data-screen="v1.2.0/control-launcher.webp"></button>
+</div>
+<div class="knob-node-item" data-index="2">
+<button aria-controls="layout-panel" aria-label="Browser" aria-selected="false" class="knob-tick" data-alt="NinoPad browser layout" data-blog-href="/en/blog/layout-browser" data-description="Safari and Chrome · Direct access to frequently used URLs and two-way slider to cut tabs, making web browsing smoother." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_071&quot;,&quot;data-name&quot;:&quot;index.attr_072&quot;,&quot;title&quot;:&quot;index.attr_073&quot;,&quot;data-description&quot;:&quot;index.attr_074&quot;,&quot;data-alt&quot;:&quot;index.attr_075&quot;}" data-icon="/assets/layouts/browser.svg" data-image="/assets/screens/en/v1.2.0/control-browser.webp" data-name="Browser" id="layout-tab-browser" role="tab" tabindex="-1" title="Browser" type="button" data-screen="v1.2.0/control-browser.webp"></button>
+</div>
+<div class="knob-node-item" data-index="3">
+<button aria-controls="layout-panel" aria-label="Finance" aria-selected="false" class="knob-tick" data-alt="NinoPad financial layout" data-blog-href="/en/blog/layout-finance" data-description="Excel and Numbers · Numeric keypad, local calculator and commonly used table formulas make input and calculation in an organized manner." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_076&quot;,&quot;data-name&quot;:&quot;index.attr_077&quot;,&quot;title&quot;:&quot;index.attr_078&quot;,&quot;data-description&quot;:&quot;index.attr_079&quot;,&quot;data-alt&quot;:&quot;index.attr_080&quot;}" data-icon="/assets/layouts/finance.svg" data-image="/assets/screens/en/v1.2.0/control-finance.webp" data-name="Finance" id="layout-tab-finance" role="tab" tabindex="-1" title="Finance" type="button" data-screen="v1.2.0/control-finance.webp"></button>
+</div>
+<div class="knob-node-item" data-index="4">
+<button aria-controls="layout-panel" aria-label="writing" aria-selected="false" class="knob-tick" data-alt="NinoPad writing layout" data-blog-href="/en/blog/layout-writing" data-description="Markdown and text editing · Character/word/paragraph multi-level cursor movement and typesetting shortcut keys make editing more focused." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_081&quot;,&quot;data-name&quot;:&quot;index.attr_082&quot;,&quot;title&quot;:&quot;index.attr_083&quot;,&quot;data-description&quot;:&quot;index.attr_084&quot;,&quot;data-alt&quot;:&quot;index.attr_085&quot;}" data-icon="/assets/layouts/writing.svg" data-image="/assets/screens/en/text-1.3.0-r1/writing-01.webp" data-name="writing" id="layout-tab-writing" role="tab" tabindex="-1" title="writing" type="button" data-screen="text-1.3.0-r1/writing-01.webp"></button>
+</div>
+<div class="knob-node-item" data-index="5">
+<button aria-controls="layout-panel" aria-label="Research" aria-selected="false" class="knob-tick" data-alt="NinoPad research layout" data-blog-href="/en/blog/layout-research" data-description="Excerpts from literature and web pages · Quickly archive ideas, methods and evidence, keeping the original sources intact." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_086&quot;,&quot;data-name&quot;:&quot;index.attr_087&quot;,&quot;title&quot;:&quot;index.attr_088&quot;,&quot;data-description&quot;:&quot;index.attr_089&quot;,&quot;data-alt&quot;:&quot;index.attr_090&quot;}" data-icon="/assets/layouts/research.svg" data-image="/assets/screens/en/text-1.3.0-r1/research-01.webp" data-name="Research" id="layout-tab-research" role="tab" tabindex="-1" title="Research" type="button" data-screen="text-1.3.0-r1/research-01.webp"></button>
+</div>
+<div class="knob-node-item" data-index="6">
+<button aria-controls="layout-panel" aria-label="read" aria-selected="false" class="knob-tick" data-alt="NinoPad reading layout" data-blog-href="/en/blog/layout-reading" data-description="Books and PDFs · Two-way page turning knob, smooth scroll wheel and chapter jump for immersive long reading." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_091&quot;,&quot;data-name&quot;:&quot;index.attr_092&quot;,&quot;title&quot;:&quot;index.attr_093&quot;,&quot;data-description&quot;:&quot;index.attr_094&quot;,&quot;data-alt&quot;:&quot;index.attr_095&quot;}" data-icon="/assets/layouts/reading.svg" data-image="/assets/screens/en/v1.2.0/control-reading.webp" data-name="read" id="layout-tab-reading" role="tab" tabindex="-1" title="read" type="button" data-screen="v1.2.0/control-reading.webp"></button>
+</div>
+<div class="knob-node-item" data-index="7">
+<button aria-controls="layout-panel" aria-label="Atmosphere programming" aria-selected="false" class="knob-tick" data-alt="NinoPad Atmosphere Programming Layout" data-blog-href="/en/blog/layout-codex" data-description="Claude Code / Codex · Check the AI generation status and task queue in real time, and continue to advance your inspiration." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_096&quot;,&quot;data-name&quot;:&quot;index.attr_097&quot;,&quot;title&quot;:&quot;index.attr_098&quot;,&quot;data-description&quot;:&quot;index.attr_099&quot;,&quot;data-alt&quot;:&quot;index.attr_100&quot;}" data-icon="/assets/layouts/coding-lab.svg" data-image="/assets/screens/en/release-1.3.1/store-14-coding-lab.webp" data-name="Atmosphere programming" id="layout-tab-coding-lab" role="tab" tabindex="-1" title="Atmosphere programming" type="button" data-screen="release-1.3.1/store-14-coding-lab.webp"></button>
+</div>
+<div class="knob-node-item" data-index="8">
+<button aria-controls="layout-panel" aria-label="Codex" aria-selected="false" class="knob-tick" data-alt="NinoPadCodex layout" data-blog-href="/en/blog/layout-codex" data-description="Codex desktop application · Real-time readback of task status, knob to adjust model and inference depth." data-i18n-attrs="{&quot;data-description&quot;:&quot;index.attr_101&quot;,&quot;data-alt&quot;:&quot;index.attr_102&quot;}" data-icon="/assets/layouts/codex.svg" data-image="/assets/screens/en/release-1.3.1/store-09-codex.webp" data-name="Codex" id="layout-tab-codex" role="tab" tabindex="-1" title="Codex" type="button" data-screen="release-1.3.1/store-09-codex.webp"></button>
+</div>
+<div class="knob-node-item" data-index="9">
+<button aria-controls="layout-panel" aria-label="terminal" aria-selected="false" class="knob-tick" data-alt="NinoPad terminal layout" data-blog-href="/en/blog/layout-terminal" data-description="Native Mac terminal (vim / top / ssh) · Status screen, full-screen keyboard and frequently used control keys are within one-touch access." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_103&quot;,&quot;data-name&quot;:&quot;index.attr_104&quot;,&quot;title&quot;:&quot;index.attr_105&quot;,&quot;data-description&quot;:&quot;index.attr_106&quot;,&quot;data-alt&quot;:&quot;index.attr_107&quot;}" data-icon="/assets/layouts/terminal.svg" data-image="/assets/screens/en/v1.2.0/control-terminal.webp" data-name="terminal" id="layout-tab-terminal" role="tab" tabindex="-1" title="terminal" type="button" data-screen="v1.2.0/control-terminal.webp"></button>
+</div>
+<div class="knob-node-item" data-index="10">
+<button aria-controls="layout-panel" aria-label="Application creation platform" aria-selected="false" class="knob-tick" data-alt="NinoPad application creation desk layout" data-blog-href="/en/blog/layout-creative" data-description="DaVinci / Premiere / Editing · Automatically switch mapping with the front-end application, keeping the timeline and color correction in the palm of your hand." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_108&quot;,&quot;data-name&quot;:&quot;index.attr_109&quot;,&quot;title&quot;:&quot;index.attr_110&quot;,&quot;data-description&quot;:&quot;index.attr_111&quot;,&quot;data-alt&quot;:&quot;index.attr_112&quot;}" data-icon="/assets/layouts/creative.svg" data-image="/assets/screens/en/v1.2.0/control-resolve.webp" data-name="Application creation platform" id="layout-tab-creative" role="tab" tabindex="-1" title="Application creation platform" type="button" data-screen="v1.2.0/control-resolve.webp"></button>
+</div>
+<div class="knob-node-item" data-index="11">
+<button aria-controls="layout-panel" aria-label="Demo" aria-selected="false" class="knob-tick" data-alt="NinoPad demo layout" data-blog-href="/en/blog/layout-presentation" data-description="Keynote / PowerPoint · Speech assistance, projection control and segment timing, allowing you to calmly control the stage when speaking." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_113&quot;,&quot;data-name&quot;:&quot;index.attr_114&quot;,&quot;title&quot;:&quot;index.attr_115&quot;,&quot;data-description&quot;:&quot;index.attr_116&quot;,&quot;data-alt&quot;:&quot;index.attr_117&quot;}" data-icon="/assets/layouts/presentation.svg" data-image="/assets/screens/en/v1.2.0/control-presentation-assist.webp" data-name="Demo" id="layout-tab-presentation" role="tab" tabindex="-1" title="Demo" type="button" data-screen="v1.2.0/control-presentation-assist.webp"></button>
+</div>
+<div class="knob-node-item" data-index="12">
+<button aria-controls="layout-panel" aria-label="media" aria-selected="false" class="knob-tick" data-alt="NinoPad media layout" data-blog-href="/en/blog/layout-media" data-description="Apple Music and Spotify · Classic touch-based carousel selection, volume adjustment, and playback mode switching." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_118&quot;,&quot;data-name&quot;:&quot;index.attr_119&quot;,&quot;title&quot;:&quot;index.attr_120&quot;,&quot;data-description&quot;:&quot;index.attr_121&quot;,&quot;data-alt&quot;:&quot;index.attr_122&quot;}" data-icon="/assets/layouts/media.svg" data-image="/assets/screens/en/v1.2.0/control-media.webp" data-name="media" id="layout-tab-media" role="tab" tabindex="-1" title="media" type="button" data-screen="v1.2.0/control-media.webp"></button>
+</div>
+<div class="knob-node-item" data-index="13">
+<button aria-controls="layout-panel" aria-label="sampling" aria-selected="false" class="knob-tick" data-alt="NinoPad sample layout" data-blog-href="/en/blog/layout-sampler" data-description="Audio Sampling for Mobile · Fast recording, smart slicing, and 16-frame responsive pad riffing." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_123&quot;,&quot;data-name&quot;:&quot;index.attr_124&quot;,&quot;title&quot;:&quot;index.attr_125&quot;,&quot;data-description&quot;:&quot;index.attr_126&quot;,&quot;data-alt&quot;:&quot;index.attr_127&quot;}" data-icon="/assets/layouts/sampler.svg" data-image="/assets/screens/en/v1.2.0/control-sampler.webp" data-name="sampling" id="layout-tab-sampler" role="tab" tabindex="-1" title="sampling" type="button" data-screen="v1.2.0/control-sampler.webp"></button>
+</div>
+<div class="knob-node-item" data-index="14">
+<button aria-controls="layout-panel" aria-label="synthesizer" aria-selected="false" class="knob-tick" data-alt="NinoPad synthesizer layout" data-blog-href="/en/blog/guide-synthesizer" data-description="Built-in sound engine with MIDI · Sequential chord keys, filter knobs and 6-track loop recording." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_128&quot;,&quot;data-name&quot;:&quot;index.attr_129&quot;,&quot;title&quot;:&quot;index.attr_130&quot;,&quot;data-description&quot;:&quot;index.attr_131&quot;,&quot;data-alt&quot;:&quot;index.attr_132&quot;}" data-icon="/assets/layouts/synthesizer.svg" data-image="/assets/screens/en/release-1.3.0/synth-01-chord.webp" data-name="synthesizer" id="layout-tab-synthesizer" role="tab" tabindex="-1" title="synthesizer" type="button" data-screen="release-1.3.0/synth-01-chord.webp"></button>
+</div>
+<div class="knob-node-item" data-index="15">
+<button aria-controls="layout-panel" aria-label="guitar" aria-selected="false" class="knob-tick" data-alt="NinoPad Guitar Layout" data-blog-href="/en/blog/guide-guitar" data-description="Six-string guitar playing and learning · Induction strumming, rocker cutting chords, and 100 built-in advanced exercises." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_133&quot;,&quot;data-name&quot;:&quot;index.attr_134&quot;,&quot;title&quot;:&quot;index.attr_135&quot;,&quot;data-description&quot;:&quot;index.attr_136&quot;,&quot;data-alt&quot;:&quot;index.attr_137&quot;}" data-icon="/assets/layouts/guitar.svg" data-image="/assets/screens/en/release-1.3.0/guitar-01-play.webp" data-name="guitar" id="layout-tab-guitar" role="tab" tabindex="-1" title="guitar" type="button" data-screen="release-1.3.0/guitar-01-play.webp"></button>
+</div>
+<div class="knob-node-item" data-index="16">
+<button aria-controls="layout-panel" aria-label="game" aria-selected="false" class="knob-tick" data-alt="NinoPad game layout" data-blog-href="/en/blog/layout-arcade" data-description="Touch screen controller mode·Cross direction keys, ABXY and shoulder keys, enjoy classic Mac games on the palm of your hand." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_138&quot;,&quot;data-name&quot;:&quot;index.attr_139&quot;,&quot;title&quot;:&quot;index.attr_140&quot;,&quot;data-description&quot;:&quot;index.attr_141&quot;,&quot;data-alt&quot;:&quot;index.attr_142&quot;}" data-icon="/assets/layouts/arcade.svg" data-image="/assets/screens/en/v1.2.0/control-arcade.webp" data-name="game" id="layout-tab-arcade" role="tab" tabindex="-1" title="game" type="button" data-screen="v1.2.0/control-arcade.webp"></button>
+</div>
+<div class="knob-node-item" data-index="17">
+<button aria-controls="layout-panel" aria-label="smart home" aria-selected="false" class="knob-tick" data-alt="NinoPad smart home layout" data-blog-href="/en/blog/layout-smart-home" data-description="Home Assistant and Apple Home · Turn lights, shades, and scenes into intuitive knobs and switches." data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_143&quot;,&quot;data-name&quot;:&quot;index.attr_144&quot;,&quot;title&quot;:&quot;index.attr_145&quot;,&quot;data-description&quot;:&quot;index.attr_146&quot;,&quot;data-alt&quot;:&quot;index.attr_147&quot;}" data-icon="/assets/layouts/smart-home.svg" data-image="/assets/screens/en/v1.2.0/control-smart-home.webp" data-name="smart home" id="layout-tab-smart-home" role="tab" tabindex="-1" title="smart home" type="button" data-screen="v1.2.0/control-smart-home.webp"></button>
+</div>
+</div>
+<!-- Sleek Hardware Knob Dial (Tap / Drag to change) -->
+<div aria-label="Preset layout adjustment knob" aria-valuemax="18" aria-valuemin="1" aria-valuenow="1" aria-valuetext="工作" class="knob-dial is-inviting" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_148&quot;}" id="layout-knob" role="slider" tabindex="0">
+<div class="knob-dial-body">
+<div class="knob-grooves"></div>
+<div class="knob-pointer-needle"></div>
+</div>
+<div class="knob-center-hub">
+<img alt="" class="knob-hub-icon" data-knob-icon="" height="36" src="/assets/layouts/work.svg" width="36">
+<strong class="knob-hub-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_149&quot;}" data-knob-hub-name="">Work</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Hardware Bay: Device Screen Mockup -->
+<div class="deck-screen-bay">
+<div class="deck-screen-bezel">
+<a aria-label="Read the job layout tutorial" class="layout-preview-frame" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_150&quot;}" data-layout-guide="" href="/en/blog/layout-work">
+<img alt="NinoPad work layout" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_151&quot;}" data-layout-image="" height="2622" loading="lazy" src="/assets/screens/en/release-1.3.1/store-01-studio.webp" width="1206" data-screen="release-1.3.1/store-01-studio.webp">
+</a>
+</div>
+</div>
+</div>
+</section><section class="search-guides" id="guides"><h2 data-i18n-text="{&quot;0&quot;:&quot;index.growth_heading&quot;}">Start with what you want to do</h2><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_summary&quot;}">Follow practical setup steps, check the requirements, and choose the controls that fit your workflow.</p><div class="search-guide-grid"><a class="search-guide-card" href="/en/blog/remote-control-mac"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_remote_title&quot;}">Control your Mac from your phone</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_remote_body&quot;}">Use the trackpad, keyboard input and screen mirroring on the same Wi-Fi network.</p></a><a class="search-guide-card" href="/en/blog/custom-keypad"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_macros_title&quot;}">Build a shortcut keypad</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_macros_body&quot;}">Add buttons and bind actions or shortcut combinations to match your daily tasks.</p></a><a class="search-guide-card" href="/en/blog/presentation-tools"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_slides_title&quot;}">Run a Mac presentation from iPhone</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_slides_body&quot;}">Practice slide controls, teleprompter cues and timed sections with the presentation deck.</p></a><a class="search-guide-card" href="/en/blog/mac-settings"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_setup_title&quot;}">Pair your devices and set permissions</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_setup_body&quot;}">Check system requirements, scan to pair and troubleshoot timeouts or black previews.</p></a></div></section>
+<section class="remote-section" id="remote">
+<div class="remote-intro">
+<p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_152&quot;}">Control your Mac with more than just a screen</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_153&quot;}">Dual-screen collaboration is at your fingertips. Use the touchpad and shortcut keys on the phone on the right to remotely control the Mac desktop on the left in real time.</p>
+<!-- Workstation Mode Selector Pills (Clean SVG Icons, No Emoji) -->
+<div aria-label="Workstation mode switching" class="remote-mode-pills" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_154&quot;}" role="tablist">
+<button aria-selected="true" class="rm-pill is-active" data-rmode="video" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><rect height="20" rx="2.18" ry="2.18" width="20" x="2" y="2"></rect><line x1="7" x2="7" y1="2" y2="22"></line><line x1="17" x2="17" y1="2" y2="22"></line><line x1="2" x2="22" y1="12" y2="12"></line><line x1="2" x2="7" y1="7" y2="7"></line><line x1="2" x2="7" y1="17" y2="17"></line><line x1="17" x2="22" y1="17" y2="17"></line><line x1="17" x2="22" y1="7" y2="7"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_155&quot;}">Video editing</span>
+</button>
+<button aria-selected="false" class="rm-pill" data-rmode="music" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_156&quot;}">Music playback</span>
+</button>
+<button aria-selected="false" class="rm-pill" data-rmode="desktop" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_157&quot;}">Multitasking</span>
+</button>
+<button aria-selected="false" class="rm-pill" data-rmode="notes" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_158&quot;}">Speech to text</span>
+</button>
+</div>
+</div>
+<!-- Live Dual-Screen Interactive Workstation -->
+<div class="mac-remote-workstation">
+<!-- Left: Mac Studio Display (Live Target Screen) -->
+<div class="mac-display-bay">
+<div class="mac-monitor-frame">
+<!-- macOS Top Menu Bar -->
+<div class="mac-menubar">
+<div class="mac-menu-left">
+<span class="mac-apple-logo"></span>
+<strong class="mac-active-app" id="mac-app-name">Final Cut Pro</strong>
+<span class="mac-menu-item" data-i18n-text="{&quot;0&quot;:&quot;index.text_159&quot;}">File</span>
+<span class="mac-menu-item" data-i18n-text="{&quot;0&quot;:&quot;index.text_160&quot;}">Edit</span>
+<span class="mac-menu-item" data-i18n-text="{&quot;0&quot;:&quot;index.text_161&quot;}">show</span>
+</div>
+<div class="mac-menu-right">
+<span class="mac-clock-text">09:41</span>
+</div>
+</div>
+<!-- macOS Active Screen Canvas -->
+<div class="mac-screen-canvas" id="mac-screen-canvas">
+<!-- 1. Video Editing Mode Canvas -->
+<div class="mac-canvas-view is-active" data-canvas="video">
+<div class="mac-video-window">
+<div class="mac-win-titlebar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span>Timeline — 4K_B-Roll_Master.mov</span>
+</div>
+<div class="mac-video-preview">
+<div class="video-art-box">
+<div class="video-placeholder-art">
+<span class="video-badge" id="video-clip-badge">CLIP 01 · 4K 60p</span>
+<h4 id="video-clip-title">Hawa Mahal · Sunset Sequence</h4>
+<div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
+</div>
+</div>
+<!-- Scrubbable Interactive Timeline with Cut Segments -->
+<div class="mac-timeline-bar" id="mac-timeline">
+<div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
+<div class="timeline-tracks" id="timeline-tracks">
+<div class="track-row video-track" id="video-track-row">
+<div class="track-segment" style="width: 45%;">
+<span>Video 1A [4K HDR]</span>
+<div class="trim-handle trim-left"></div>
+<div class="trim-handle trim-right"></div>
+</div>
+<div class="track-segment" style="width: 55%;">
+<span>Video 1B [B-Roll]</span>
+<div class="trim-handle trim-left"></div>
+<div class="trim-handle trim-right"></div>
+</div>
+</div>
+<div class="track-row audio-track" id="audio-track-row">
+<div class="track-segment" style="width: 45%;">
+<span>Audio 1A [-3dB]</span>
+</div>
+<div class="track-segment" style="width: 55%;">
+<span>Audio 1B [-3dB]</span>
+</div>
+</div>
+</div>
+<div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Music Player Mode Canvas -->
+<div class="mac-canvas-view" data-canvas="music">
+<div class="mac-music-window">
+<div class="mac-win-titlebar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span>Apple Music — Lo-Fi Chill</span>
+</div>
+<div class="mac-music-body">
+<div class="music-vinyl-disc is-spinning" id="music-vinyl">
+<div class="vinyl-grooves"></div>
+<div class="vinyl-center"><img alt="" height="36" src="/assets/software/apple-music.jpg" width="36"></div>
+</div>
+<div class="music-info-box">
+<div class="music-title-row">
+<span class="music-tag">NOW PLAYING</span>
+<button aria-label="Favorite current song" class="music-heart-btn" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_162&quot;}" id="mac-music-heart" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" width="17"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+</div>
+<h3 id="music-song-title">Midnight Ambient Beats</h3>
+<div class="music-vol-indicator">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+<div class="vol-track-mini"><div class="vol-fill-mini" id="mac-vol-mini-bar" style="width: 50%;"></div></div>
+<span id="mac-vol-mini-text">50%</span>
+</div>
+<div class="music-wave-spectrum" id="music-spectrum">
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Desktop Mode Canvas (Classic Layered Mac Windows) -->
+<div class="mac-canvas-view" data-canvas="desktop">
+<div class="mac-desktop-scene" id="mac-desktop-scene">
+<!-- Window 1: Safari Browser Window (Official Ninopad Website) -->
+<div class="mac-classic-win win-safari is-active" id="win-safari" style="z-index: 3;">
+<div class="win-title-bar safari-top-bar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<div class="safari-nav-buttons"><span>‹</span><span>›</span></div>
+<div class="win-url-pill"><span>🔒</span> ninopad.com</div>
+</div>
+<div class="win-client safari-client">
+<div class="mini-site-header">
+<span class="mini-logo">NINOPAD <strong>2.0</strong></span>
+<span class="mini-cta" data-i18n-text="{&quot;0&quot;:&quot;index.text_163&quot;}">Turn on linkage</span>
+</div>
+<div class="mini-hero-body">
+<span class="mini-eyebrow" data-i18n-text="{&quot;0&quot;:&quot;index.text_164&quot;}">Hardware-level touch experience</span>
+<h4 data-i18n-text="{&quot;0&quot;:&quot;index.text_165&quot;}">Control your Mac with more than just a screen</h4>
+<div class="mini-key-deck">
+<div class="mini-deck-key k-y"><span>⌘C</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_166&quot;}">Copy</small></div>
+<div class="mini-deck-key k-b"><span>⌘V</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_167&quot;}">Paste</small></div>
+<div class="mini-deck-key k-p"><span>⎋</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_168&quot;}">Undo</small></div>
+<div class="mini-deck-key k-l"><span>⇧⌘4</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_169&quot;}">screenshot</small></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Window 2: Code Editor Window (Xcode) -->
+<div class="mac-classic-win win-code" id="win-code" style="z-index: 2;">
+<div class="win-title-bar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span class="win-title-text">NinoPadKit.swift — Xcode</span>
+</div>
+<div class="win-client code-client">
+<div class="code-gutter"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+<div class="code-lines">
+<p><span class="c-kw">import</span> <span class="c-fn">NinoPadKit</span></p>
+<p><span class="c-kw">let</span> deck = <span class="c-fn">NinoPadDeck</span>(lowLatency: <span class="c-num">true</span>)</p>
+<p>deck.<span class="c-fn">onAction</span> { event <span class="c-kw">in</span></p>
+<p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event)</p>
+<p>}</p>
+</div>
+</div>
+</div>
+<!-- Window 3: Ninopad Companion Studio Window -->
+<div class="mac-classic-win win-ninopad" id="win-ninopad" style="z-index: 1;">
+<div class="win-title-bar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span class="win-title-text">Ninopad Companion</span>
+</div>
+<div class="win-client ninopad-client">
+<div class="np-status-bar">
+<span class="np-device-dot"></span>
+<span class="np-device-name">iPhone 16 Pro · 0.8ms</span>
+</div>
+<div class="np-grid-preview">
+<div class="np-tile t-active" data-i18n-text="{&quot;0&quot;:&quot;index.text_170&quot;}">4K clip</div>
+<div class="np-tile" data-i18n-text="{&quot;0&quot;:&quot;index.text_171&quot;}">Lo-Fi music</div>
+<div class="np-tile" data-i18n-text="{&quot;0&quot;:&quot;index.text_172&quot;}">Multitasking</div>
+<div class="np-tile" data-i18n-text="{&quot;0&quot;:&quot;index.text_173&quot;}">inspiration shorthand</div>
+</div>
+</div>
+</div>
+<!-- Spotlight Floating Bar Overlay -->
+<div class="mac-spotlight-bar" id="mac-spotlight-bar">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="18"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<span class="spotlight-query" id="spotlight-query">Safari.app</span>
+<span class="spotlight-tag" data-i18n-text="{&quot;0&quot;:&quot;index.text_174&quot;}">Application</span>
+</div>
+<!-- ⌘Tab App Switcher Overlay (1-to-1 Aligned with Windows: Safari, Xcode, Ninopad) -->
+<div class="mac-app-switcher-hud" id="mac-app-switcher">
+<div class="app-switcher-icon is-focused" title="Safari"><img alt="Safari" height="32" src="/assets/software/safari.png" width="32"></div>
+<div class="app-switcher-icon" title="Xcode"><img alt="Xcode" height="32" src="/assets/software/xcode.png" width="32"></div>
+<div class="app-switcher-icon" title="Ninopad"><img alt="Ninopad" height="32" src="/assets/app-icon.webp" width="32"></div>
+</div>
+<!-- Floating Screenshot Thumbnail -->
+<div class="mac-screenshot-card" id="mac-screenshot-card">
+<div class="screenshot-mini-thumb"></div>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_175&quot;}">Screenshot is ready</span>
+</div>
+</div>
+</div>
+<!-- 4. Notes & Voice Dictate Canvas -->
+<div class="mac-canvas-view" data-canvas="notes">
+<div class="mac-notes-window">
+<div class="mac-win-titlebar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_176&quot;}">Notes — shorthand for inspiration and voice delivery</span>
+</div>
+<div class="mac-notes-content" id="mac-notes-body">
+<p class="notes-date" data-i18n-text="{&quot;0&quot;:&quot;index.text_177&quot;}">Today 09:41</p>
+<p class="notes-p" data-i18n-text="{&quot;0&quot;:&quot;index.text_178&quot;}" id="mac-typed-text">Mobile text and voice are directly connected to Mac cursor ready...</p>
+</div>
+</div>
+</div>
+<!-- Live Synchronized Cursor on Mac Screen -->
+<div class="mac-live-cursor" id="mac-live-cursor">
+<svg fill="#0f172a" height="18" stroke="#ffffff" stroke-width="1.8" viewBox="0 0 24 24" width="18">
+<path d="M3 3l7 18 3-7 7-3L3 3z"></path>
+</svg>
+</div>
+<!-- macOS Native Toast / HUD Overlay -->
+<div class="mac-hud-overlay" id="mac-workstation-hud">
+<span class="hud-icon" id="hud-icon">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="14"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+</span>
+<span class="hud-text" data-i18n-text="{&quot;0&quot;:&quot;index.text_179&quot;}" id="hud-text">ready</span>
+</div>
+</div>
+<!-- Mac Monitor Chin & Stand Base -->
+<div class="mac-monitor-chin">
+<span class="mac-chin-logo"></span>
+</div>
+</div>
+</div>
+<!-- Right: Handheld iPhone Controller (CreamDeck Controller App) -->
+<div class="phone-controller-bay">
+<div class="phone-deck-chassis">
+<!-- Controller Surface (Interactive Board) -->
+<div class="phone-controller-surface">
+<!-- Upper Area: Virtual Trackpad & Jog-Wheel -->
+<div class="p-row upper">
+<div class="p-trackpad-box" data-i18n-attrs="{&quot;title&quot;:&quot;index.attr_180&quot;}" id="ws-trackpad" title="Slide your finger on the trackpad and the Mac cursor on the left is synchronized in real time!">
+<div class="p-trackpad-dots"></div>
+<span class="p-trackpad-hint" data-i18n-text="{&quot;0&quot;:&quot;index.text_181&quot;}">virtual trackpad<br><small data-i18n-text="{&quot;0&quot;:&quot;index.text_182&quot;}">Slide to remote control Mac cursor</small></span>
+<div class="p-cursor-ripple" id="ws-ripple"></div>
+</div>
+<div class="p-jog-wheel" data-i18n-attrs="{&quot;title&quot;:&quot;index.attr_183&quot;}" id="ws-jog-wheel" title="Drag up or down or scroll the wheel to edit the timeline in real time">
+<div class="p-wheel-ridges"></div>
+<div class="p-wheel-thumb" id="ws-jog-thumb"></div>
+</div>
+</div>
+<!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
+<div class="p-mode-pad" id="p-mode-pad">
+<!-- 1. Video Edit Mode Buttons (4 Tactile Keys: Play/Pause, Blade Cut, Trim In, Trim Out) -->
+<div class="p-pad-view is-active" data-pview="video">
+<div class="p-keys-3d-grid">
+<button class="hero-keypad-btn key-yellow" data-cmd="play-toggle" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_184&quot;}">Play/pause</span>
+</button>
+<button class="hero-keypad-btn key-blue" data-cmd="blade" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" x2="8.12" y1="4" y2="15.88"></line><line x1="14.47" x2="20" y1="14.48" y2="20"></line><line x1="8.12" x2="12" y1="8.12" y2="12"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_185&quot;}">Blade cut</span>
+</button>
+<button class="hero-keypad-btn key-peach" data-cmd="trim-left" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline><line x1="6" x2="6" y1="6" y2="18"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_186&quot;}">Move the cut left</span>
+</button>
+<button class="hero-keypad-btn key-lilac" data-cmd="trim-right" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline><line x1="18" x2="18" y1="6" y2="18"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_187&quot;}">Move the cut right</span>
+</button>
+</div>
+</div>
+<!-- 2. Music Player Mode Buttons (4 Tactile Keys: Play, Next, Like, Volume Knob) -->
+<div class="p-pad-view" data-pview="music">
+<div class="p-keys-3d-grid">
+<button class="hero-keypad-btn key-yellow" data-cmd="music-play" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_188&quot;}">Play/pause</span>
+</button>
+<button class="hero-keypad-btn key-blue" data-cmd="music-next" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_189&quot;}">Next song</span>
+</button>
+<button class="hero-keypad-btn key-coral" data-cmd="music-like" id="phone-music-heart-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_190&quot;}">Like to collect</span>
+</button>
+<button class="hero-keypad-btn key-cream key-knob-btn" data-cmd="music-vol" data-i18n-attrs="{&quot;title&quot;:&quot;index.attr_191&quot;}" id="phone-vol-knob-btn" title="Adjust Mac volume" type="button">
+<div class="phone-mini-dial">
+<div class="phone-dial-indicator" id="phone-dial-indicator"></div>
+</div>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_192&quot;}" id="phone-vol-lbl">Volume 50%</span>
+</button>
+</div>
+</div>
+<!-- 3. Desktop Mode Buttons (4 Tactile Keys: Mission Control, Switch App, Spotlight, Screenshot) -->
+<div class="p-pad-view" data-pview="desktop">
+<div class="p-keys-3d-grid">
+<button class="hero-keypad-btn key-blue" data-cmd="mission" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_193&quot;}">Mission Control</span>
+</button>
+<button class="hero-keypad-btn key-yellow" data-cmd="switch-app" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_194&quot;}">Switch app</span>
+</button>
+<button class="hero-keypad-btn key-cream" data-cmd="spotlight" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_195&quot;}">Spotlight Search</span>
+</button>
+<button class="hero-keypad-btn key-lilac" data-cmd="screenshot" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_196&quot;}">One-click screenshot</span>
+</button>
+</div>
+</div>
+<!-- 4. Notes & Voice Mode (Voice Actions + Textarea) -->
+<div class="p-pad-view" data-pview="notes">
+<div class="p-voice-composer">
+<textarea class="p-voice-textarea" data-i18n-attrs="{&quot;placeholder&quot;:&quot;index.attr_197&quot;}" id="ws-voice-input" placeholder="Enter text or click the shortcut phrase below to send to Mac..." rows="2"></textarea>
+<div class="p-voice-chips">
+<button class="p-chip" data-i18n-attrs="{&quot;data-txt&quot;:&quot;index.attr_199&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_198&quot;}" data-txt="Today's 4K sample footage has been edited, please check it out!" type="button">Editing completed</button>
+<button class="p-chip" data-i18n-text="{&quot;0&quot;:&quot;index.text_200&quot;}" data-txt="git commit -m 'feat: live remote workstation'" type="button">Git commit</button>
+<button class="p-chip" data-i18n-attrs="{&quot;data-txt&quot;:&quot;index.attr_202&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_201&quot;}" data-txt="The review will be held promptly at 3pm in Conference Room 2." type="button">Meeting reminder</button>
+</div>
+<div class="p-keys-3d-grid mini-grid">
+<button class="hero-keypad-btn key-coral" id="ws-mic-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_203&quot;}">Voice dictation</span>
+</button>
+<button class="hero-keypad-btn key-blue" id="ws-send-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_204&quot;}">Inject Mac ↵</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="how-section" id="how">
+<figure aria-label="Koala panda in cowboy hat flicks plug into Mac" class="connection-art sprite-sequence" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_205&quot;}">
+<img alt="Koala panda in cowboy hat ready to connect to Mac" class="sprite-frame connection-frame" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_206&quot;}" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-01.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-02.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-03.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-04.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-05.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-06.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-07.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-08.png" width="1200">
+</figure>
+<div class="how-copy">
+<p class="eyebrow">FAST PAIRING</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_207&quot;}">Get connected in three simple steps</h2>
+<ol class="steps">
+<li><span>01</span><div><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_208&quot;}">Install mobile and Mac versions</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_209&quot;,&quot;2&quot;:&quot;index.text_210&quot;,&quot;4&quot;:&quot;index.text_211&quot;}">from <a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-home-how&amp;mt=8">App Store</a> Install mobile app;<a data-i18n-text="{&quot;0&quot;:&quot;index.text_212&quot;}" data-release-link="" href="https://github.com/buggyblues/ninopad/releases/latest">Download the Mac installation package</a>, drag "NinoPad" into "Applications" and start it</p></div></li>
+<li><span>02</span><div><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_213&quot;}">Enable Accessibility access</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_214&quot;}">Turn on the accessibility permissions in the system settings according to the system boot to support cross-application quick control</p></div></li>
+<li><span>03</span><div><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_215&quot;}">Scan the QR code to pair</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_216&quot;}">Make sure both ends are in the same LAN Wi-Fi, open the mobile phone and scan the QR code to complete the binding.</p></div></li>
+</ol>
+<details class="quick-details">
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_217&quot;}">More shortcut widgets and gesture operations</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_218&quot;}">Supports desktop widgets to view connection status and quick access, supports long-pressing icons to scan QR codes for pairing and edge gestures to switch layouts.</p>
+<div class="quick-screens">
+<figure>
+<img alt="NinoPad device and pairing page" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_219&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/device-pairing.webp" width="1206" data-screen="v1.2.0/device-pairing.webp">
+<figcaption><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_220&quot;}">Devices and Pairing</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_221&quot;}">Automatically discover Mac devices on the LAN, scan the QR code to quickly establish an encrypted session</span></figcaption>
+</figure>
+<figure>
+<img alt="NinoPad small keyboard switching page" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_222&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/layout-switcher.webp" width="1206" data-screen="v1.2.0/layout-switcher.webp">
+<figcaption><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_223&quot;}">Switch workspaces freely</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_224&quot;}">Press and hold the edge of the screen or swipe horizontally to switch smoothly between multiple sets of workspace keypads</span></figcaption>
+</figure>
+</div>
+</details>
+</div>
+</section>
+<section class="scenarios-section" id="scenarios">
+<div class="scenario-copy">
+<div aria-label="Usage scenarios" class="role-tabs" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_225&quot;}" role="tablist">
+<button aria-controls="role-panel-edit" aria-selected="true" data-role-index="0" id="role-tab-edit" role="tab" tabindex="0" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_226&quot;}">Editing</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_227&quot;}">Director</span></button>
+<button aria-controls="role-panel-music" aria-selected="false" data-role-index="1" id="role-tab-music" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_228&quot;}">Music</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_229&quot;}">Musician</span></button>
+<button aria-controls="role-panel-present" aria-selected="false" data-role-index="2" id="role-tab-present" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_230&quot;}">Presentations</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_231&quot;}">Speaker</span></button>
+<button aria-controls="role-panel-code" aria-selected="false" data-role-index="3" id="role-tab-code" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_232&quot;}">Everyday</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_233&quot;}">Tasks</span></button>
+<button aria-controls="role-panel-reading" aria-selected="false" data-role-index="4" id="role-tab-reading" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_234&quot;}">Writing</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_235&quot;}">Writer</span></button>
+<button aria-controls="role-panel-game" aria-selected="false" data-role-index="5" id="role-tab-game" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_236&quot;}">Gaming</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_237&quot;}">Player</span></button>
+</div>
+<div class="role-panels">
+<article aria-labelledby="role-tab-edit" class="role-panel is-active" id="role-panel-edit" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_238&quot;}">Editing Deck</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_239&quot;}">Travel through the timeline with your fingertips and edit at a faster pace</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_240&quot;}">Compatible with common shortcut keys for DaVinci Resolve, Final Cut Pro and editing. Turn the knob to find frames precisely, and quickly cut and play back with one hand.</p>
+<ul aria-label="Editing software" class="role-apps" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_241&quot;}">
+<li><img alt="" height="512" src="/assets/software/davinci-resolve.png" width="512"><span>DaVinci Resolve</span></li>
+<li><img alt="" height="512" src="/assets/software/final-cut-pro.png" width="512"><span>Final Cut Pro</span></li>
+<li><img alt="" height="512" src="/assets/software/jianying-pro.jpg" width="512"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_242&quot;}">CapCut Pro</span></li>
+</ul>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-music" class="role-panel" id="role-panel-music" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_243&quot;}">Music Studio</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_244&quot;}">Play chords and melodies with your fingertips to record sound inspiration at any time</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_245&quot;}">Built-in synthesizer sounds and guitar strumming panel support live recording of samples and quick slicing. Play whenever inspiration strikes without having to bring out a heavy keyboard.</p>
+<div class="role-links"><a data-i18n-text="{&quot;0&quot;:&quot;index.text_246&quot;}" href="/en/blog/guide-synthesizer">Synthesizer →</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_247&quot;}" href="/en/blog/guide-guitar">Guitar →</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_248&quot;}" href="/en/blog/layout-sampler">Sampling →</a></div>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-present" class="role-panel" id="role-panel-present" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_249&quot;}">Presentation Assistant</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_250&quot;}">Your mobile phone is a page turner, so you can easily control the pace of reporting</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_251&quot;}">Supports PPT and Keynote page turning. It comes with prompt notes, countdown, laser pointer and drawing board, and can also use the mobile phone camera as a floating window to project to the big screen.</p>
+<ul aria-label="Presentation software" class="role-apps" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_252&quot;}">
+<li><img alt="" height="512" src="/assets/software/microsoft-powerpoint.png" width="512"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_253&quot;}">PowerPoint</span></li>
+<li><img alt="" height="512" src="/assets/software/keynote.jpg" width="512"><span>Keynote</span></li>
+</ul>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-code" class="role-panel" id="role-panel-code" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_254&quot;}">Development Assistant</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_255&quot;}">Keep an eye on terminal progress in real time and switch work focus with one click</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_256&quot;}">Check the terminal session and Codex task status on the small screen of your mobile phone, and trigger frequently used commands at a click. It does not take up the main screen of your computer, so you can focus on typing code without being distracted.</p>
+<ul aria-label="Productivity software" class="role-apps" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_257&quot;}">
+<li><img alt="" height="1024" src="/assets/software/codex.png" width="1024"><span>Codex</span></li>
+<li><img alt="" height="512" src="/assets/software/xcode.png" width="512"><span>Xcode</span></li>
+</ul>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-reading" class="role-panel" id="role-panel-reading" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_258&quot;}">Reading &amp; Writing Deck</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_259&quot;}">Turn pages with one hand to make excerpts, and send text drafts as you go</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_260&quot;}">Tap to turn pages and organize excerpts when reading, and quickly enter Markdown structures when writing. Text or voice drafts on your phone can be synchronized and sent to your computer with one click.</p>
+<div class="role-links"><a data-i18n-text="{&quot;0&quot;:&quot;index.text_261&quot;}" href="/en/blog/layout-reading">View reading and writing tutorial →</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_262&quot;}" href="/en/blog/layout-writing">Writing →</a></div>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-game" class="role-panel" id="role-panel-game" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_263&quot;}">Party Controller</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_264&quot;}">The mobile phone serves as a touch screen controller, and the party can be started at any time</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_265&quot;}">Open the built-in game lobby on the Mac, and after pairing, the phone can be used as a touch screen controller. Supports multiple devices to join "Breaking Sky" and "Zhiye Soccer" to play on the same screen.</p>
+<div class="role-links"><a class="role-game-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_266&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Go to the web game lobby ↗</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_267&quot;}" href="/en/blog/layout-arcade">View handle connection guide →</a></div>
+</article>
+</div>
+</div>
+<figure aria-hidden="true" class="role-stage">
+<img alt="" class="role-figure is-active" height="768" loading="lazy" src="/assets/mascot-role-director-v1.png" width="768">
+<img alt="" class="role-figure" height="768" loading="lazy" src="/assets/mascot-role-musician-v1.png" width="768">
+<img alt="" class="role-figure" height="768" loading="lazy" src="/assets/mascot-role-presenter-v1.png" width="768">
+<img alt="" class="role-figure" height="768" loading="lazy" src="/assets/mascot-role-programmer-v1.png" width="768">
+<img alt="" class="role-figure role-art-white" height="1254" loading="lazy" src="/assets/mascot-reading-role-v4.webp" width="1254">
+<img alt="" class="role-figure role-art-white" height="1254" loading="lazy" src="/assets/mascot-game-role-v4.webp" width="1254">
+</figure>
+</section>
+<section class="pro-section" id="pro">
+<div class="pro-heading">
+<p class="eyebrow">PRO EDITION</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_268&quot;}">Upgrade to the Pro version and customize your own workbench</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_269&quot;}">Unlock HD streaming, professional music and development layouts, multiple desktops and iCloud synchronization, and experience richer desktop control.</p>
+</div>
+<div class="pro-purchase">
+<div class="pro-companion">
+<img alt="" height="1254" loading="lazy" src="/assets/mascot-pro-role-v4.webp" width="1254">
+<ul><li data-i18n-text="{&quot;0&quot;:&quot;index.text_270&quot;}">Professional layout such as editing development and music creation</li><li data-i18n-text="{&quot;0&quot;:&quot;index.text_271&quot;}">Ultra-clear streaming quality and full-screen game streaming experience</li><li data-i18n-text="{&quot;0&quot;:&quot;index.text_272&quot;}">Free customization of multiple desktops and beautification of wallpapers</li></ul>
+</div>
+<div aria-label="NinoPad Pro package price in mainland China" class="pro-plans" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_273&quot;}">
+<article class="pro-plan-card">
+<div class="pro-plan-header">
+<span class="pro-plan-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_274&quot;}">Weekly subscription</span>
+</div>
+<p class="pro-plan-price"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_275&quot;}">$0.49</strong><small data-i18n-text="{&quot;0&quot;:&quot;index.text_276&quot;}">/week</small></p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_277&quot;}">Weekly subscription — try Pro at your pace</h3>
+</article>
+<article class="pro-plan-card is-recommended">
+<div class="pro-plan-header">
+<span class="pro-plan-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_278&quot;}">Annual subscription</span>
+</div>
+<p class="pro-plan-price"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_279&quot;}">$6.99</strong><small data-i18n-text="{&quot;0&quot;:&quot;index.text_280&quot;}">/year</small></p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_281&quot;}">Annual subscription — for everyday use</h3>
+</article>
+<article class="pro-plan-card is-lifetime">
+<div class="pro-plan-header">
+<span class="pro-plan-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_282&quot;}">Lifetime</span>
+</div>
+<p class="pro-plan-price"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_283&quot;}">$13.99</strong><small data-i18n-text="{&quot;0&quot;:&quot;index.text_284&quot;}">One-time purchase</small></p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_285&quot;}">Lifetime purchase — pay once</h3>
+</article>
+<div class="pro-trust-badges">
+<span data-i18n-text="{&quot;1&quot;:&quot;index.text_286&quot;}"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Secure payment through Apple</span>
+<span data-i18n-text="{&quot;1&quot;:&quot;index.text_287&quot;}"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg> Restore purchases on a new device</span>
+<span data-i18n-text="{&quot;1&quot;:&quot;index.text_288&quot;}"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Cancel subscriptions in the App Store</span>
+</div>
+</div>
+</div>
+<details class="pro-benefits-details">
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_289&quot;}">See the full list of Pro benefits</summary>
+<div class="pro-benefits-list">
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_290&quot;}">Professional software layout</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_291&quot;}">Contains exclusive control panels for editing, color grading, synthesizer performance, and development terminals.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_292&quot;}">Ultra HD picture streaming</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_293&quot;}">Unlock high-definition and ultra-high-definition streaming quality, and watch the computer screen more clearly and delicately on your mobile phone.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_294&quot;}">Free customization and multiple desktops</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_295&quot;}">Adjust the button knob component at will to support the creation of multiple independent scene desktop switches.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_296&quot;}">Personalized illustrations and wallpapers</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_297&quot;}">Built-in NinoPad illustrations, motion wallpapers and custom background images.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_298&quot;}">A complete set of presentation aids</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_299&quot;}">Provides reporting tools such as laser pointers, magnifying glasses, screen brushes, and camera floating windows.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_300&quot;}">Quick photo and file transfer</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_301&quot;}">Photos, drafts, and file attachments from your mobile phone can be sent directly to your Mac with just one click.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_302&quot;}">iCloud Sync</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_303&quot;}">Automatically synchronize layout configuration, wallpapers, clipboards and music creation project data.</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_304&quot;}">Dynamic Island &amp; Live Activities</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_305&quot;}">Check task progress through Live Activities on the Lock Screen and Dynamic Island.</p></article>
+</div>
+</details>
+<p class="pro-note" data-i18n-text="{&quot;0&quot;:&quot;index.text_306&quot;}">All package benefits are exactly the same, and the actual price will be displayed at the App Store checkout. <a data-i18n-text="{&quot;0&quot;:&quot;index.text_307&quot;}" href="/en/terms">View full purchase and subscription terms</a></p>
+</section>
+<section class="mac-section" id="mac">
+<div class="mac-copy">
+<p class="eyebrow">&gt;w&lt;</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_308&quot;}">Ready when you need it, right in your menu bar</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_309&quot;}">Check the cute emoji connection status, refresh pairing codes and manage devices at any time in the top menu bar</p>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_310&quot;}" href="/en/support">View the connection guide</a>
+</div>
+<img alt="NinoPad Mac side pairing QR code and settings" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_311&quot;}" height="1196" loading="lazy" src="/assets/screens/en/macos-adapter.webp" width="944" data-screen="macos-adapter.webp">
+</section>
+<section class="faq-section" id="faq">
+<div class="faq-header">
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_312&quot;}">FAQ</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_313&quot;}">Answers to frequently asked questions about LAN connections, permission troubleshooting, membership subscriptions, and privacy security</p>
+<a class="faq-more-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_314&quot;}" href="/en/support">View the full help and support manual →</a>
+</div>
+<div class="faq-list">
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_315&quot;}">Do my devices need to be on the same Wi-Fi network?</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_316&quot;}">Remote control requires your iPhone or iPad and Mac to share a local network. Control traffic stays on that network; an internet connection is not required for basic control.</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_317&quot;}">Why can't my Mac receive control commands or screens?</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_318&quot;}">Regular keys and controls need to be allowed for NinoPad in Mac's "System Settings → Privacy &amp; Security → Accessibility"; if real-time screen mirroring is required, the "Screen Recording" permission needs to be turned on separately.</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_319&quot;}">Are basic functions free? How to purchase and restore Pro membership?</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_320&quot;}">Core basic keypad and system controls are completely free. Pro members can go to "Settings → NinoPad Pro" on iPhone/iPad to subscribe or buy out. All transactions are processed by the Apple App Store, and one-click recovery of purchases is supported.</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_321&quot;}">Will control instructions and data be uploaded to the cloud?</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_322&quot;}">Mac controls, text input and screen images travel directly between paired devices on the local network, without a cloud relay. Optional iCloud sync and third-party services have separate data flows; see the privacy policy.</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_323&quot;}">What Mac devices and systems are supported?</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_324&quot;}">Supports Mac devices running macOS 13 (Ventura) and higher, and the Universal architecture is natively compatible with Apple Silicon (M series chips) and Intel processors.</p>
+</details>
+</div>
+</section>
+<section class="download-section" id="download">
+<figure aria-label="Koala Panda Partner brings download package" class="download-art sprite-sequence" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_325&quot;}">
+<img alt="Koala Panda Partner brings download package" class="sprite-frame download-frame" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_326&quot;}" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-01.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-02.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-03.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-04.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-05.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-06.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-07.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-08.webp" width="768">
+</figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_327&quot;}">Keep the keypad handy</h2>
+<p class="download-copy" data-i18n-text="{&quot;0&quot;:&quot;index.text_328&quot;}">With mobile phones, tablets and computers, scan the QR code to pair up instantly.</p>
+<div class="download-actions platform-download" data-platform-download="">
+<div aria-label="Select download device" class="download-platforms" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_329&quot;}" hidden="" role="tablist">
+<button aria-controls="footer-iphone-panel" aria-selected="true" class="download-platform" data-download-platform="iphone" id="footer-iphone-tab" role="tab" tabindex="0" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="10" x="7" y="2"></rect></svg><span>iPhone</span></button>
+<button aria-controls="footer-ipad-panel" aria-selected="false" class="download-platform" data-download-platform="ipad" id="footer-ipad-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="16" x="4" y="2"></rect></svg><span>iPad</span></button>
+<button aria-controls="footer-mac-panel" aria-selected="false" class="download-platform" data-download-platform="mac" id="footer-mac-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span>Mac</span></button>
+</div>
+<div aria-labelledby="footer-iphone-tab" class="download-panel" data-download-panel="iphone" id="footer-iphone-panel" role="tabpanel">
+<a aria-label="Download NinoPad iPhone version in App Store" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_330&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-home-downloa&amp;mt=8"><img alt="Download on the App Store" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_331&quot;}" height="52" src="/assets/badges/app-store-en-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="footer-ipad-tab" class="download-panel" data-download-panel="ipad" hidden="" id="footer-ipad-panel" role="tabpanel">
+<a aria-label="Download NinoPad iPad version on the App Store" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_332&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-home-downloa&amp;mt=8"><img alt="Download on the App Store" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_333&quot;}" height="52" src="/assets/badges/app-store-en-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="footer-mac-tab" class="download-panel" data-download-panel="mac" hidden="" id="footer-mac-panel" role="tabpanel">
+<a aria-label="Download NinoPad Mac version" class="download-badge download-badge-mac" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_334&quot;}" data-release-link="" href="https://github.com/buggyblues/ninopad/releases/latest"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span data-i18n-text="{&quot;0&quot;:&quot;index.text_335&quot;}">Download for Mac</span></a>
+</div>
+<noscript><a class="download-fallback" data-i18n-text='{"0":"index.text_336"}' href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 版 →</a></noscript>
+</div>
+</section>
+</main>
+<div aria-hidden="true" class="look-panda">
+<div class="look-panda-motion">
+<img alt="" height="750" src="/assets/mascot-look-v2.webp" width="900">
+<span class="look-pupil look-pupil-left"></span>
+<span class="look-pupil look-pupil-right"></span>
+</div>
+</div>
+<footer>
+<a class="brand" href="#top"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_337&quot;}">NinoPad</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_338&quot;}">&gt;w&lt; All-purpose small keyboard, right in the palm of your hand</p>
+<nav aria-label="Footer navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_339&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-home-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_340&quot;}" href="https://github.com/buggyblues/ninopad/releases">Download</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_341&quot;}" href="/en/updates">Updates</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_342&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_343&quot;}" href="/en/support">Support</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_344&quot;}" href="/en/privacy">Privacy</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_345&quot;}" href="/en/terms">Terms</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_346&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+<a data-lang-switch="" href="/?lng=zh-CN" aria-label="切换至中文" class="">简体中文</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;index.text_348&quot;}">© <span data-year=""></span> NinoPad</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">Analytics preferences</button></footer>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="NinoPad Homepage">
-      <img src="../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>NinoPad</span>
-    </a>
-    <nav aria-label="Main Navigation">
-      <a href="#layouts">Features</a>
-      <a href="#pro">Pricing</a>
-      <a href="blog.html">Blog</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="#download" aria-label="Choose device and download NinoPad">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="#layouts" data-mobile-nav-link>Features</a></li>
-      <li><a href="#pro" data-mobile-nav-link>Pricing</a></li>
-      <li><a href="blog.html" data-mobile-nav-link>Blog</a></li>
-      <li><a href="#faq" data-mobile-nav-link>FAQ</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="#download" aria-label="Choose device and download NinoPad">Free Download</a>
-    <div class="mobile-drawer-lang">
-      <a href="/" data-lang-switch>简体中文</a>
-      <a href="/en/" class="is-active">English</a>
-    </div>
-  </div>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-field" aria-hidden="true">
-        <span class="hero-control hero-key hero-key-blue">Search</span>
-        <span class="hero-control hero-key hero-key-lilac">Screenshot</span>
-        <span class="hero-control hero-key hero-key-yellow">App Switcher</span>
-        <span class="hero-control hero-key hero-key-coral">Mute</span>
-        <span class="hero-control hero-key hero-key-cream">⌨︎</span>
-        <span class="hero-control hero-key hero-key-dark">Desktop</span>
-        <span class="hero-control hero-trackpad"></span>
-        <span class="hero-control hero-knob"></span>
-        <span class="hero-control hero-slider"></span>
-        <span class="hero-control hero-key hero-key-small">Copy</span>
-        <span class="hero-control hero-key hero-key-small hero-key-peach">Paste</span>
-      </div>
-      <div class="hero-copy">
-        <h1 aria-label="Customizable Mac Control Deck in Your Palm">
-          <span class="hero-line hero-line-first"><span data-typewriter data-text="Your Mac Control Deck,">Your Mac Control Deck,</span><span class="type-caret" aria-hidden="true"></span></span>
-          <span class="hero-line hero-line-accent" aria-hidden="true">Right in <img class="hero-paw" src="../assets/panda-paw-glyph-v1.webp" alt="" width="320" height="320" fetchpriority="high"> Palm</span>
-        </h1>
-        <div class="hero-actions platform-download" data-platform-download>
-          <div class="download-platforms" role="tablist" aria-label="Select device to download" hidden>
-            <button type="button" class="download-platform" id="hero-iphone-tab" role="tab" aria-selected="true" aria-controls="hero-iphone-panel" tabindex="0" data-download-platform="iphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/></svg><span>iPhone</span></button>
-            <button type="button" class="download-platform" id="hero-ipad-tab" role="tab" aria-selected="false" aria-controls="hero-ipad-panel" tabindex="-1" data-download-platform="ipad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/></svg><span>iPad</span></button>
-            <button type="button" class="download-platform" id="hero-mac-tab" role="tab" aria-selected="false" aria-controls="hero-mac-panel" tabindex="-1" data-download-platform="mac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>Mac</span></button>
-          </div>
-          <div class="download-panel" id="hero-iphone-panel" role="tabpanel" aria-labelledby="hero-iphone-tab" data-download-panel="iphone">
-            <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="Download NinoPad for iPhone on App Store"><img src="../assets/badges/app-store-zh-cn-black.svg" alt="Download on App Store" width="142" height="52"></a>
-          </div>
-          <div class="download-panel" id="hero-ipad-panel" role="tabpanel" aria-labelledby="hero-ipad-tab" data-download-panel="ipad" hidden>
-            <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="Download NinoPad for iPad on App Store"><img src="../assets/badges/app-store-zh-cn-black.svg" alt="Download on App Store" width="142" height="52"></a>
-          </div>
-          <div class="download-panel" id="hero-mac-panel" role="tabpanel" aria-labelledby="hero-mac-tab" data-download-panel="mac" hidden>
-            <a class="download-badge download-badge-mac" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link aria-label="Download NinoPad for Mac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>Download for Mac</span></a>
-          </div>
-          <noscript><a class="download-fallback" href="https://github.com/buggyblues/ninopad/releases/latest">Download for Mac →</a></noscript>
-        </div>
-      </div>
-    </section>
 
-    <section class="layouts-section" id="layouts">
-      <div class="layouts-header">
-        <h2>Ready-made Layouts, Easily Customized</h2>
-        <p>18 ready-made layouts for your Mac workflow. Turn the dial to switch. <a href="blog.html">View user guides →</a></p>
-      </div>
+<script src="/src/main.js" type="module"></script>
 
-      <!-- Unified Hardware Console Deck -->
-      <div class="deck-hardware-chassis" id="layout-panel" role="tabpanel" aria-labelledby="layout-tab-work">
-        
-        <!-- Left Hardware Bay: Retro LCD Screen on Top, Rotary Knob Below -->
-        <div class="deck-controls-bay">
-          
-          <!-- Clean Retro LCD Status Screen (No outer decorations) -->
-          <div class="deck-lcd-screen" aria-live="polite">
-            <div class="lcd-screen-glass">
-              <div class="lcd-screen-header">
-                <div class="lcd-header-tags">
-                  <span class="lcd-tag is-active">AUTO</span>
-                  <span class="lcd-tag is-active">PRESET</span>
-                </div>
-                <span class="lcd-screen-index" data-led-index>01 / 18</span>
-              </div>
-
-              <div class="lcd-screen-body led-screen-body">
-                <strong class="lcd-screen-name" data-layout-name>Work</strong>
-                <p class="lcd-screen-desc" data-layout-description>macOS Desktop &amp; Apps · Trackpad, scroll wheel, and vital shortcuts on one screen.</p>
-              </div>
-
-              <div class="lcd-screen-footer">
-                <a class="lcd-screen-link" data-layout-guide data-layout-guide-label href="blog/layout-work.html">Read Tutorial →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rotary Dial Unit (Below LCD screen, Clean Minimalist Knob) -->
-          <div class="deck-dial-unit">
-            <div class="knob-rotary-mount">
-              <!-- Preset Data Store / Accessible Tablist -->
-              <div class="knob-items-ring" id="knob-ring" role="tablist" aria-label="Preset Layouts" style="display:none;">
-                <div class="knob-node-item is-active" data-index="0">
-                  <button id="layout-tab-work" class="knob-tick" type="button" role="tab" aria-selected="true" aria-controls="layout-panel" tabindex="0" data-image="../assets/screens/release-1.3.1/store-01-studio.webp" data-name="Work" data-icon="../assets/layouts/work.svg" data-description="macOS Desktop &amp; Apps · Trackpad, scroll wheel, and vital shortcuts on one screen." data-alt="NinoPad Work Layout UI demo" data-blog-href="blog/layout-work.html" aria-label="Work" title="Work"></button>
-                </div>
-                <div class="knob-node-item" data-index="1">
-                  <button id="layout-tab-launcher" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-launcher.webp" data-name="Launcher" data-icon="../assets/layouts/launcher.svg" data-description="Dock &amp; App Switcher · Favorite Mac apps as large touch icons to bring frontmost instantly." data-alt="NinoPad Launcher Layout UI demo" data-blog-href="blog/layout-launcher.html" aria-label="Launcher" title="Launcher"></button>
-                </div>
-                <div class="knob-node-item" data-index="2">
-                  <button id="layout-tab-browser" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-browser.webp" data-name="Browser" data-icon="../assets/layouts/browser.svg" data-description="Safari &amp; Chrome · Direct bookmark shortcuts, tab slider, and in-page search." data-alt="NinoPad Browser Layout UI demo" data-blog-href="blog/layout-browser.html" aria-label="Browser" title="Browser"></button>
-                </div>
-                <div class="knob-node-item" data-index="3">
-                  <button id="layout-tab-finance" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-finance.webp" data-name="Finance" data-icon="../assets/layouts/finance.svg" data-description="Excel &amp; Sheets · Numeric keypad, instant calculator, and frequent formula helpers." data-alt="NinoPad Finance Layout UI demo" data-blog-href="blog/layout-finance.html" aria-label="Finance" title="Finance"></button>
-                </div>
-                <div class="knob-node-item" data-index="4">
-                  <button id="layout-tab-writing" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/text-1.3.0-r1/writing-01.webp" data-name="Writing" data-icon="../assets/layouts/writing.svg" data-description="Markdown &amp; Editors · Multi-tier cursor nav, precise selection, and quick formatting." data-alt="NinoPad Writing Layout UI demo" data-blog-href="blog/layout-writing.html" aria-label="Writing" title="Writing"></button>
-                </div>
-                <div class="knob-node-item" data-index="5">
-                  <button id="layout-tab-research" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/text-1.3.0-r1/research-01.webp" data-name="Research" data-icon="../assets/layouts/research.svg" data-description="PDF &amp; Web Clipping · Clip quotes, methods, and evidence with source URLs preserved." data-alt="NinoPad Research Layout UI demo" data-blog-href="blog/layout-research.html" aria-label="Research" title="Research"></button>
-                </div>
-                <div class="knob-node-item" data-index="6">
-                  <button id="layout-tab-reading" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-reading.webp" data-name="Reading" data-icon="../assets/layouts/reading.svg" data-description="Books &amp; PDFs · Rotary page turning, smooth scrolling, and chapter jump." data-alt="NinoPad Reading Layout UI demo" data-blog-href="blog/layout-reading.html" aria-label="Reading" title="Reading"></button>
-                </div>
-                <div class="knob-node-item" data-index="7">
-                  <button id="layout-tab-coding-lab" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.1/store-14-coding-lab.webp" data-name="AI Coding" data-icon="../assets/layouts/coding-lab.svg" data-description="Claude Code &amp; Codex · Live generation status, session switcher, and queue approval." data-alt="NinoPad AI Coding Layout UI demo" data-blog-href="blog/layout-codex.html" aria-label="AI Coding" title="AI Coding"></button>
-                </div>
-                <div class="knob-node-item" data-index="8">
-                  <button id="layout-tab-codex" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.1/store-09-codex.webp" data-name="Codex" data-icon="../assets/layouts/codex.svg" data-description="Codex App · Live slot status inspection with rotary reasoning effort dial." data-alt="NinoPad Codex Layout UI demo" data-blog-href="blog/layout-codex.html" aria-label="Codex" title="Codex"></button>
-                </div>
-                <div class="knob-node-item" data-index="9">
-                  <button id="layout-tab-terminal" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-terminal.webp" data-name="Terminal" data-icon="../assets/layouts/terminal.svg" data-description="Mac Terminal &amp; SSH · Live status monitor, full keyboard, and shell control keys." data-alt="NinoPad Terminal Layout UI demo" data-blog-href="blog/layout-terminal.html" aria-label="Terminal" title="Terminal"></button>
-                </div>
-                <div class="knob-node-item" data-index="10">
-                  <button id="layout-tab-creative" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-resolve.webp" data-name="Studio" data-icon="../assets/layouts/creative.svg" data-description="DaVinci, Premiere &amp; CapCut · Auto-adapts to active app with timeline jog &amp; color wheels." data-alt="NinoPad Studio Layout UI demo" data-blog-href="blog/layout-creative.html" aria-label="Studio" title="Studio"></button>
-                </div>
-                <div class="knob-node-item" data-index="11">
-                  <button id="layout-tab-presentation" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-presentation-assist.webp" data-name="Present" data-icon="../assets/layouts/presentation.svg" data-description="Keynote &amp; PowerPoint · Slide remote, presenter notes, and stage timer in one view." data-alt="NinoPad Presentation Layout UI demo" data-blog-href="blog/layout-presentation.html" aria-label="Present" title="Present"></button>
-                </div>
-                <div class="knob-node-item" data-index="12">
-                  <button id="layout-tab-media" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-media.webp" data-name="Media" data-icon="../assets/layouts/media.svg" data-description="Apple Music &amp; Spotify · Classic click wheel for track browsing and volume tuning." data-alt="NinoPad Media Layout UI demo" data-blog-href="blog/layout-media.html" aria-label="Media" title="Media"></button>
-                </div>
-                <div class="knob-node-item" data-index="13">
-                  <button id="layout-tab-sampler" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-sampler.webp" data-name="Sampler" data-icon="../assets/layouts/sampler.svg" data-description="Audio Sampler · Instant recording, auto-slicing, and 16 velocity drum pads." data-alt="NinoPad Sampler Layout UI demo" data-blog-href="blog/layout-sampler.html" aria-label="Sampler" title="Sampler"></button>
-                </div>
-                <div class="knob-node-item" data-index="14">
-                  <button id="layout-tab-synthesizer" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.0/synth-01-chord.webp" data-name="Synthesizer" data-icon="../assets/layouts/synthesizer.svg" data-description="Synth Engine &amp; MIDI · Diatonic chords, filter knobs, and 6-track looper." data-alt="NinoPad Synthesizer Layout UI demo" data-blog-href="blog/guide-synthesizer.html" aria-label="Synthesizer" title="Synthesizer"></button>
-                </div>
-                <div class="knob-node-item" data-index="15">
-                  <button id="layout-tab-guitar" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/release-1.3.0/guitar-01-play.webp" data-name="Guitar" data-icon="../assets/layouts/guitar.svg" data-description="Acoustic Guitar · Strum strings, change chords with joystick, with 100 interactive lessons." data-alt="NinoPad Guitar Layout UI demo" data-blog-href="blog/guide-guitar.html" aria-label="Guitar" title="Guitar"></button>
-                </div>
-                <div class="knob-node-item" data-index="16">
-                  <button id="layout-tab-arcade" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-arcade.webp" data-name="Arcade" data-icon="../assets/layouts/arcade.svg" data-description="Gamepad Mode · D-pad, ABXY, and shoulder triggers for Mac gaming." data-alt="NinoPad Arcade Layout UI demo" data-blog-href="blog/layout-arcade.html" aria-label="Arcade" title="Arcade"></button>
-                </div>
-                <div class="knob-node-item" data-index="17">
-                  <button id="layout-tab-smart-home" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="../assets/screens/v1.2.0/control-smart-home.webp" data-name="Smart Home" data-icon="../assets/layouts/smart-home.svg" data-description="Home Assistant &amp; Apple Home · Physical dials for lights, climate, and scenes." data-alt="NinoPad Smart Home Layout UI demo" data-blog-href="blog/layout-smart-home.html" aria-label="Smart Home" title="Smart Home"></button>
-                </div>
-              </div>
-
-              <!-- Sleek Hardware Knob Dial (Tap / Drag to change) -->
-              <div class="knob-dial is-inviting" id="layout-knob" role="slider" aria-label="Preset layout rotary dial" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1" aria-valuetext="Work" tabindex="0">
-                <div class="knob-dial-body">
-                  <div class="knob-grooves"></div>
-                  <div class="knob-pointer-needle"></div>
-                </div>
-                <div class="knob-center-hub">
-                  <img class="knob-hub-icon" data-knob-icon src="../assets/layouts/work.svg" alt="" width="36" height="36">
-                  <strong class="knob-hub-name" data-knob-hub-name>Work</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Hardware Bay: Device Screen Mockup -->
-        <div class="deck-screen-bay">
-          <div class="deck-screen-bezel">
-            <a class="layout-preview-frame" data-layout-guide href="blog/layout-work.html" aria-label="Read Work Layout Guide">
-              <img data-layout-image src="../assets/screens/release-1.3.1/store-01-studio.webp" alt="NinoPad Work Layout UI demo" width="1206" height="2622" loading="lazy" decoding="async">
-            </a>
-          </div>
-        </div>
-      </div>
-
-    <section class="remote-section" id="remote">
-      <div class="remote-intro">
-        <p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
-        <h2>Control Your Mac, Way Beyond a Single Screen</h2>
-        <p>Dual-screen synergy, right at your fingertips. Operate trackpads, dials, shortcuts, and voice on your phone to control the Mac display in real time.</p>
-        
-        <!-- Workstation Mode Selector Pills (Clean SVG Icons, No Emoji) -->
-        <div class="remote-mode-pills" role="tablist" aria-label="Workstation mode switcher">
-          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
-            <span>Video Editing</span>
-          </button>
-          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            <span>Music Player</span>
-          </button>
-          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            <span>Multitasking</span>
-          </button>
-          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-            <span>Voice Dictation</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Live Dual-Screen Interactive Workstation -->
-      <div class="mac-remote-workstation">
-        
-        <!-- Left: Mac Studio Display (Live Target Screen) -->
-        <div class="mac-display-bay">
-          <div class="mac-monitor-frame">
-            <!-- macOS Top Menu Bar -->
-            <div class="mac-menubar">
-              <div class="mac-menu-left">
-                <span class="mac-apple-logo"></span>
-                <strong class="mac-active-app" id="mac-app-name">Final Cut Pro</strong>
-                <span class="mac-menu-item">File</span>
-                <span class="mac-menu-item">Edit</span>
-                <span class="mac-menu-item">View</span>
-              </div>
-              <div class="mac-menu-right">
-                <span class="mac-clock-text">09:41</span>
-              </div>
-            </div>
-
-            <!-- macOS Active Screen Canvas -->
-            <div class="mac-screen-canvas" id="mac-screen-canvas">
-              
-              <!-- 1. Video Editing Mode Canvas -->
-              <div class="mac-canvas-view is-active" data-canvas="video">
-                <div class="mac-video-window">
-                  <div class="mac-win-titlebar">
-                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>Timeline — 4K_B-Roll_Master.mov</span>
-                  </div>
-                  <div class="mac-video-preview">
-                    <div class="video-art-box">
-                      <div class="video-placeholder-art">
-                        <span class="video-badge" id="video-clip-badge">CLIP 01 · 4K 60p</span>
-                        <h4 id="video-clip-title">Hawa Mahal · Sunset Sequence</h4>
-                        <div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
-                      </div>
-                    </div>
-                    <!-- Scrubbable Interactive Timeline with Cut Segments -->
-                    <div class="mac-timeline-bar" id="mac-timeline">
-                      <div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
-                      <div class="timeline-tracks" id="timeline-tracks">
-                        <div class="track-row video-track" id="video-track-row">
-                          <div class="track-segment" style="width: 45%;">
-                            <span>Video 1A [4K HDR]</span>
-                            <div class="trim-handle trim-left"></div>
-                            <div class="trim-handle trim-right"></div>
-                          </div>
-                          <div class="track-segment" style="width: 55%;">
-                            <span>Video 1B [B-Roll]</span>
-                            <div class="trim-handle trim-left"></div>
-                            <div class="trim-handle trim-right"></div>
-                          </div>
-                        </div>
-                        <div class="track-row audio-track" id="audio-track-row">
-                          <div class="track-segment" style="width: 45%;">
-                            <span>Audio 1A [-3dB]</span>
-                          </div>
-                          <div class="track-segment" style="width: 55%;">
-                            <span>Audio 1B [-3dB]</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. Music Player Mode Canvas -->
-              <div class="mac-canvas-view" data-canvas="music">
-                <div class="mac-music-window">
-                  <div class="mac-win-titlebar">
-                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>Apple Music — Lo-Fi Chill</span>
-                  </div>
-                  <div class="mac-music-body">
-                    <div class="music-vinyl-disc is-spinning" id="music-vinyl">
-                      <div class="vinyl-grooves"></div>
-                      <div class="vinyl-center"><img src="../assets/software/apple-music.jpg" alt="" width="36" height="36"></div>
-                    </div>
-                    <div class="music-info-box">
-                      <div class="music-title-row">
-                        <span class="music-tag">NOW PLAYING</span>
-                        <button class="music-heart-btn" id="mac-music-heart" type="button" aria-label="Favorite this song">
-                          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        </button>
-                      </div>
-                      <h3 id="music-song-title">Midnight Ambient Beats</h3>
-                      <div class="music-vol-indicator">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                        <div class="vol-track-mini"><div class="vol-fill-mini" id="mac-vol-mini-bar" style="width: 50%;"></div></div>
-                        <span id="mac-vol-mini-text">50%</span>
-                      </div>
-                      <div class="music-wave-spectrum" id="music-spectrum">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 3. Desktop Mode Canvas (Classic Layered Mac Windows) -->
-              <div class="mac-canvas-view" data-canvas="desktop">
-                <div class="mac-desktop-scene" id="mac-desktop-scene">
-                  
-                  <!-- Window 1: Safari Browser Window (Official Ninopad Website) -->
-                  <div class="mac-classic-win win-safari is-active" id="win-safari" style="z-index: 3;">
-                    <div class="win-title-bar safari-top-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <div class="safari-nav-buttons"><span>‹</span><span>›</span></div>
-                      <div class="win-url-pill"><span>🔒</span> ninopad.com</div>
-                    </div>
-                    <div class="win-client safari-client">
-                      <div class="mini-site-header">
-                        <span class="mini-logo">NINOPAD <strong>2.0</strong></span>
-                        <span class="mini-cta">Get Started</span>
-                      </div>
-                      <div class="mini-hero-body">
-                        <span class="mini-eyebrow">Tactile Controller Deck</span>
-                        <h4>Master Your Mac, Beyond a Single Screen</h4>
-                        <div class="mini-key-deck">
-                          <div class="mini-deck-key k-y"><span>⌘C</span><small>Copy</small></div>
-                          <div class="mini-deck-key k-b"><span>⌘V</span><small>Paste</small></div>
-                          <div class="mini-deck-key k-p"><span>⎋</span><small>Undo</small></div>
-                          <div class="mini-deck-key k-l"><span>⇧⌘4</span><small>Capture</small></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Window 2: Code Editor Window (Xcode) -->
-                  <div class="mac-classic-win win-code" id="win-code" style="z-index: 2;">
-                    <div class="win-title-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <span class="win-title-text">NinoPadKit.swift — Xcode</span>
-                    </div>
-                    <div class="win-client code-client">
-                      <div class="code-gutter"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
-                      <div class="code-lines">
-                        <p><span class="c-kw">import</span> <span class="c-fn">NinoPadKit</span></p>
-                        <p><span class="c-kw">let</span> deck = <span class="c-fn">NinoPadDeck</span>(lowLatency: <span class="c-num">true</span>)</p>
-                        <p>deck.<span class="c-fn">onAction</span> { event <span class="c-kw">in</span></p>
-                        <p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event)</p>
-                        <p>}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Window 3: Ninopad Companion Studio Window -->
-                  <div class="mac-classic-win win-ninopad" id="win-ninopad" style="z-index: 1;">
-                    <div class="win-title-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <span class="win-title-text">Ninopad Companion</span>
-                    </div>
-                    <div class="win-client ninopad-client">
-                      <div class="np-status-bar">
-                        <span class="np-device-dot"></span>
-                        <span class="np-device-name">iPhone 16 Pro · 0.8ms</span>
-                      </div>
-                      <div class="np-grid-preview">
-                        <div class="np-tile t-active">4K Edit</div>
-                        <div class="np-tile">Lo-Fi Beats</div>
-                        <div class="np-tile">Fast Tasks</div>
-                        <div class="np-tile">Quick Notes</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Spotlight Floating Bar Overlay -->
-                  <div class="mac-spotlight-bar" id="mac-spotlight-bar">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <span class="spotlight-query" id="spotlight-query">Safari.app</span>
-                    <span class="spotlight-tag">App</span>
-                  </div>
-
-                  <!-- ⌘Tab App Switcher Overlay (1-to-1 Aligned with Windows: Safari, Xcode, Ninopad) -->
-                  <div class="mac-app-switcher-hud" id="mac-app-switcher">
-                    <div class="app-switcher-icon is-focused" title="Safari"><img src="../assets/software/safari.png" alt="Safari" width="32" height="32"></div>
-                    <div class="app-switcher-icon" title="Xcode"><img src="../assets/software/xcode.png" alt="Xcode" width="32" height="32"></div>
-                    <div class="app-switcher-icon" title="Ninopad"><img src="../assets/app-icon.webp" alt="Ninopad" width="32" height="32"></div>
-                  </div>
-
-                  <!-- Floating Screenshot Thumbnail -->
-                  <div class="mac-screenshot-card" id="mac-screenshot-card">
-                    <div class="screenshot-mini-thumb"></div>
-                    <span>Screenshot Saved</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. Notes & Voice Dictate Canvas -->
-              <div class="mac-canvas-view" data-canvas="notes">
-                <div class="mac-notes-window">
-                  <div class="mac-win-titlebar">
-                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>Notes — Quick Notes &amp; Voice Injection</span>
-                  </div>
-                  <div class="mac-notes-content" id="mac-notes-body">
-                    <p class="notes-date">Today 09:41</p>
-                    <p class="notes-p" id="mac-typed-text">Mobile text and voice ready to inject into Mac...</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Live Synchronized Cursor on Mac Screen -->
-              <div class="mac-live-cursor" id="mac-live-cursor">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0f172a" stroke="#ffffff" stroke-width="1.8">
-                  <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-                </svg>
-              </div>
-
-              <!-- macOS Native Toast / HUD Overlay -->
-              <div class="mac-hud-overlay" id="mac-workstation-hud">
-                <span class="hud-icon" id="hud-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                </span>
-                <span class="hud-text" id="hud-text">Ready</span>
-              </div>
-            </div>
-
-            <!-- Mac Monitor Chin & Stand Base -->
-            <div class="mac-monitor-chin">
-              <span class="mac-chin-logo"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Handheld iPhone Controller (CreamDeck Controller App) -->
-        <div class="phone-controller-bay">
-          <div class="phone-deck-chassis">
-            
-            <!-- Controller Surface (Interactive Board) -->
-            <div class="phone-controller-surface">
-              
-              <!-- Upper Area: Virtual Trackpad & Jog-Wheel -->
-              <div class="p-row upper">
-                <div class="p-trackpad-box" id="ws-trackpad" title="Drag your finger across the trackpad to move Mac cursor">
-                  <div class="p-trackpad-dots"></div>
-                  <span class="p-trackpad-hint">Virtual Trackpad<br><small>Drag to control Mac cursor</small></span>
-                  <div class="p-cursor-ripple" id="ws-ripple"></div>
-                </div>
-
-                <div class="p-jog-wheel" id="ws-jog-wheel" title="Drag or scroll to scrub timeline">
-                  <div class="p-wheel-ridges"></div>
-                  <div class="p-wheel-thumb" id="ws-jog-thumb"></div>
-                </div>
-              </div>
-
-              <!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
-              <div class="p-mode-pad" id="p-mode-pad">
-                
-                <!-- 1. Video Edit Mode Buttons (4 Tactile Keys: Play/Pause, Blade Cut, Trim In, Trim Out) -->
-                <div class="p-pad-view is-active" data-pview="video">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="play-toggle">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      <span>Play / Pause</span>
-                    </button>
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="blade">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-                      <span>Blade Cut</span>
-                    </button>
-                    <button class="hero-keypad-btn key-peach" type="button" data-cmd="trim-left">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/><line x1="6" y1="6" x2="6" y2="18"/></svg>
-                      <span>Trim Left</span>
-                    </button>
-                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="trim-right">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/><line x1="18" y1="6" x2="18" y2="18"/></svg>
-                      <span>Trim Right</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 2. Music Player Mode Buttons (4 Tactile Keys: Play, Next, Like, Volume Knob) -->
-                <div class="p-pad-view" data-pview="music">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="music-play">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-                      <span>Play / Pause</span>
-                    </button>
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="music-next">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-                      <span>Next Track</span>
-                    </button>
-                    <button class="hero-keypad-btn key-coral" id="phone-music-heart-btn" type="button" data-cmd="music-like">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                      <span>Favorite</span>
-                    </button>
-                    <button class="hero-keypad-btn key-cream key-knob-btn" id="phone-vol-knob-btn" type="button" data-cmd="music-vol" title="Adjust Mac Volume">
-                      <div class="phone-mini-dial">
-                        <div class="phone-dial-indicator" id="phone-dial-indicator"></div>
-                      </div>
-                      <span id="phone-vol-lbl">Vol 50%</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 3. Desktop Mode Buttons (4 Tactile Keys: Mission Control, Switch App, Spotlight, Screenshot) -->
-                <div class="p-pad-view" data-pview="desktop">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="mission">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                      <span>Mission Control</span>
-                    </button>
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="switch-app">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                      <span>Switch App</span>
-                    </button>
-                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="spotlight">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                      <span>Spotlight</span>
-                    </button>
-                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="screenshot">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                      <span>Screenshot</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 4. Notes & Voice Mode (Voice Actions + Textarea) -->
-                <div class="p-pad-view" data-pview="notes">
-                  <div class="p-voice-composer">
-                    <textarea class="p-voice-textarea" id="ws-voice-input" rows="2" placeholder="Type text or click quick chips to inject into Mac..."></textarea>
-                    <div class="p-voice-chips">
-                      <button class="p-chip" type="button" data-txt="Today's 4K sample video edit is complete!">Edit Done</button>
-                      <button class="p-chip" type="button" data-txt="git commit -m 'feat: live remote workstation'">Git Commit</button>
-                      <button class="p-chip" type="button" data-txt="Sync meeting at 3:00 PM in Conference Room 2.">Meeting</button>
-                    </div>
-                    <div class="p-keys-3d-grid mini-grid">
-                      <button class="hero-keypad-btn key-coral" id="ws-mic-btn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                        <span>Voice Dictate</span>
-                      </button>
-                      <button class="hero-keypad-btn key-blue" id="ws-send-btn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                        <span>Inject to Mac ↵</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="how-section" id="how">
-      <figure class="connection-art sprite-sequence" aria-label="Cowboy panda connecting Mac">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-01.png" alt="Cowboy panda preparing Mac connection" width="1200" height="1200" loading="lazy" decoding="async">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-02.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-03.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-04.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-05.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-06.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-07.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="../assets/mascot-connection-cowboy-v2-frame-08.png" alt="" width="1200" height="1200" loading="lazy" decoding="async" aria-hidden="true">
-      </figure>
-      <div class="how-copy">
-        <p class="eyebrow">FAST PAIRING</p>
-        <h2>Three Simple Steps to Get Started</h2>
-        <ol class="steps">
-          <li><span>01</span><div><h3>Install iOS &amp; Mac Apps</h3><p>Install the iOS app from <a href="https://apps.apple.com/app/id6805378609">App Store</a>; <a href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link>Download the Mac DMG</a>, move NinoPad to Applications and launch.</p></div></li>
-          <li><span>02</span><div><h3>Grant macOS Accessibility Permission</h3><p>Enable Accessibility permissions in System Settings to allow cross-application shortcut controls.</p></div></li>
-          <li><span>03</span><div><h3>Scan QR Code to Pair</h3><p>Ensure both devices are on the same local Wi-Fi, open the mobile app, and scan the menu bar QR code.</p></div></li>
-        </ol>
-        <details class="quick-details">
-          <summary>Widgets &amp; Edge Gestures</summary>
-          <p>Check connection status via iOS Lock &amp; Home screen widgets. Long press the app icon to pair quickly and swipe edges to cycle layouts.</p>
-          <div class="quick-screens">
-            <figure>
-              <img src="../assets/screens/v1.2.0/device-pairing.webp" alt="NinoPad Device Pairing Screen" width="1206" height="2622" loading="lazy" decoding="async">
-              <figcaption><strong>Device Pairing</strong><span>Local network discovery with encrypted session key</span></figcaption>
-            </figure>
-            <figure>
-              <img src="../assets/screens/v1.2.0/layout-switcher.webp" alt="NinoPad Layout Switcher" width="1206" height="2622" loading="lazy" decoding="async">
-              <figcaption><strong>Workspace Switcher</strong><span>Swipe edges or long-press to glide between keypad decks</span></figcaption>
-            </figure>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <section class="scenarios-section" id="scenarios">
-      <div class="scenario-copy">
-        <div class="role-tabs" role="tablist" aria-label="Use Scenarios">
-          <button id="role-tab-edit" type="button" role="tab" aria-selected="true" aria-controls="role-panel-edit" tabindex="0" data-role-index="0"><strong>Edit</strong><span>Director</span></button>
-          <button id="role-tab-music" type="button" role="tab" aria-selected="false" aria-controls="role-panel-music" tabindex="-1" data-role-index="1"><strong>Music</strong><span>Musician</span></button>
-          <button id="role-tab-present" type="button" role="tab" aria-selected="false" aria-controls="role-panel-present" tabindex="-1" data-role-index="2"><strong>Present</strong><span>Speaker</span></button>
-          <button id="role-tab-code" type="button" role="tab" aria-selected="false" aria-controls="role-panel-code" tabindex="-1" data-role-index="3"><strong>Dev</strong><span>Engineer</span></button>
-          <button id="role-tab-reading" type="button" role="tab" aria-selected="false" aria-controls="role-panel-reading" tabindex="-1" data-role-index="4"><strong>Writing</strong><span>Author</span></button>
-          <button id="role-tab-game" type="button" role="tab" aria-selected="false" aria-controls="role-panel-game" tabindex="-1" data-role-index="5"><strong>Arcade</strong><span>Gamer</span></button>
-        </div>
-        <div class="role-panels">
-          <article class="role-panel is-active" id="role-panel-edit" role="tabpanel" aria-labelledby="role-tab-edit">
-            <p class="role-name">Video Editing Console</p>
-            <h2>Navigate Timelines at the Speed of Thought</h2>
-            <p>Adapted for DaVinci Resolve, Final Cut Pro, Premiere, and CapCut. Jog frames with precision dials, cut clips, and preview in real time.</p>
-            <ul class="role-apps" aria-label="Supported Video Apps">
-              <li><img src="../assets/software/davinci-resolve.png" alt="" width="512" height="512"><span>DaVinci Resolve</span></li>
-              <li><img src="../assets/software/final-cut-pro.png" alt="" width="512" height="512"><span>Final Cut Pro</span></li>
-              <li><img src="../assets/software/jianying-pro.jpg" alt="" width="512" height="512"><span>CapCut Pro</span></li>
-            </ul>
-          </article>
-          <article class="role-panel" id="role-panel-music" role="tabpanel" aria-labelledby="role-tab-music" aria-hidden="true">
-            <p class="role-name">Music Studio</p>
-            <h2>Play Chords, Strum &amp; Capture Musical Ideas</h2>
-            <p>Built-in synthesizer with diatonic chords, acoustic guitar strumming engine, and sampler for instant beatmaking without heavy gear.</p>
-            <div class="role-links"><a href="blog/guide-synthesizer.html">Synthesizer →</a><a href="blog/guide-guitar.html">Guitar →</a><a href="blog/layout-sampler.html">Sampler →</a></div>
-          </article>
-          <article class="role-panel" id="role-panel-present" role="tabpanel" aria-labelledby="role-tab-present" aria-hidden="true">
-            <p class="role-name">Stage Companion</p>
-            <h2>Your Phone is the Ultimate Slide Remote</h2>
-            <p>Supports Keynote and PowerPoint. Includes teleprompter notes, segment timer, virtual laser pointer, and phone camera PiP overlay.</p>
-            <ul class="role-apps" aria-label="Supported Presentation Apps">
-              <li><img src="../assets/software/microsoft-powerpoint.png" alt="" width="512" height="512"><span>PowerPoint</span></li>
-              <li><img src="../assets/software/keynote.jpg" alt="" width="512" height="512"><span>Keynote</span></li>
-            </ul>
-          </article>
-          <article class="role-panel" id="role-panel-code" role="tabpanel" aria-labelledby="role-tab-code" aria-hidden="true">
-            <p class="role-name">Dev &amp; AI Studio</p>
-            <h2>Keep Tabs on Terminals &amp; Codex Agent Slots</h2>
-            <p>Monitor background builds and AI coding progress on your secondary phone display. Fire hotkeys without sacrificing main screen real estate.</p>
-            <ul class="role-apps" aria-label="Supported Dev Apps">
-              <li><img src="../assets/software/codex.png" alt="" width="1024" height="1024"><span>Codex</span></li>
-              <li><img src="../assets/software/xcode.png" alt="" width="512" height="512"><span>Xcode</span></li>
-            </ul>
-          </article>
-          <article class="role-panel" id="role-panel-reading" role="tabpanel" aria-labelledby="role-tab-reading" aria-hidden="true">
-            <p class="role-name">Reading &amp; Writing</p>
-            <h2>One-Handed Page Turning &amp; Quick Drafts</h2>
-            <p>Turn PDF pages effortlessly, organize research excerpts, and format Markdown on the fly. Sync voice drafts to Mac in one tap.</p>
-            <div class="role-links"><a href="blog/layout-reading.html">Reading Guide →</a><a href="blog/layout-writing.html">Writing →</a></div>
-          </article>
-          <article class="role-panel" id="role-panel-game" role="tabpanel" aria-labelledby="role-tab-game" aria-hidden="true">
-            <p class="role-name">Party Gamepad</p>
-            <h2>Use Mobile Devices as Touch Controllers</h2>
-            <p>Open Game Hall on your Mac and join with multiple phones as touch gamepads for local multiplayer party games.</p>
-            <div class="role-links"><a class="role-game-link" href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Open Arcade ↗</a><a href="blog/layout-arcade.html">Gamepad Guide →</a></div>
-          </article>
-        </div>
-      </div>
-      <figure class="role-stage" aria-hidden="true">
-        <img class="role-figure is-active" src="../assets/mascot-role-director-v1.png" alt="" width="768" height="768" loading="lazy" decoding="async">
-        <img class="role-figure" src="../assets/mascot-role-musician-v1.png" alt="" width="768" height="768" loading="lazy" decoding="async">
-        <img class="role-figure" src="../assets/mascot-role-presenter-v1.png" alt="" width="768" height="768" loading="lazy" decoding="async">
-        <img class="role-figure" src="../assets/mascot-role-programmer-v1.png" alt="" width="768" height="768" loading="lazy" decoding="async">
-        <img class="role-figure role-art-white" src="../assets/mascot-reading-role-v4.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async">
-        <img class="role-figure role-art-white" src="../assets/mascot-game-role-v4.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async">
-      </figure>
-    </section>
-
-    <section class="pro-section" id="pro">
-      <div class="pro-heading">
-        <p class="eyebrow">PRO EDITION</p>
-        <h2>Upgrade to Pro for Full Creative Power</h2>
-        <p>Unlock HD screen streaming, advanced music &amp; development layouts, multi-workspace switching, and iCloud sync.</p>
-      </div>
-      <div class="pro-purchase">
-        <div class="pro-companion">
-          <img src="../assets/mascot-pro-role-v4.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async">
-          <ul><li>Pro layouts for video editing, audio, and dev tools</li><li>Ultra-clear streaming and low-latency full-screen gaming</li><li>Multiple custom workspaces and wallpaper customization</li></ul>
-        </div>
-        <div class="pro-plans" aria-label="NinoPad Pro Plans">
-          <article class="pro-plan-card">
-            <div class="pro-plan-header">
-              <span class="pro-plan-name">Weekly</span>
-            </div>
-            <p class="pro-plan-price"><strong>$0.49</strong><small>/ week</small></p>
-            <h3>Flexible weekly subscription for short-term projects</h3>
-          </article>
-          <article class="pro-plan-card is-recommended">
-            <div class="pro-plan-header">
-              <span class="pro-plan-name">Annual</span>
-            </div>
-            <p class="pro-plan-price"><strong>$6.99</strong><small>/ year</small></p>
-            <h3>Best value annual plan for daily workflow enhancement</h3>
-          </article>
-          <article class="pro-plan-card is-lifetime">
-            <div class="pro-plan-header">
-              <span class="pro-plan-name">Lifetime</span>
-            </div>
-            <p class="pro-plan-price"><strong>$13.99</strong><small>one-time</small></p>
-            <h3>Pay once, own forever with all future updates included</h3>
-          </article>
-          <div class="pro-trust-badges">
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Apple Secure In-App Purchase</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Instant Cross-Device Restore</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Manage anytime in App Store</span>
-          </div>
-        </div>
-      </div>
-      <details class="pro-benefits-details">
-        <summary>View Complete Pro Features &amp; Benefits</summary>
-        <div class="pro-benefits-list">
-          <article class="pro-benefit-item"><h3>Pro App Consoles</h3><p>Dedicated control surfaces for DaVinci Resolve, FCP, synthesizers, and coding.</p></article>
-          <article class="pro-benefit-item"><h3>Ultra HD Streaming</h3><p>Enjoy crisp resolution and smooth frame rates for responsive desktop monitoring.</p></article>
-          <article class="pro-benefit-item"><h3>Multi-Workspace Decks</h3><p>Create unlimited independent keypad scenes and switch between them instantly.</p></article>
-          <article class="pro-benefit-item"><h3>Custom Wallpapers &amp; Themes</h3><p>Personalize your control deck with animated wallpapers and custom images.</p></article>
-          <article class="pro-benefit-item"><h3>Full Presentation Suite</h3><p>Access laser pointer, magnifier, drawing pen, and camera PiP overlay tools.</p></article>
-          <article class="pro-benefit-item"><h3>Fast File &amp; Photo Injection</h3><p>Send mobile photos, snippets, and files straight to Mac with one tap.</p></article>
-          <article class="pro-benefit-item"><h3>iCloud Sync</h3><p>Seamlessly back up and sync your keypad decks across all your devices.</p></article>
-          <article class="pro-benefit-item"><h3>Live Activities &amp; Dynamic Island</h3><p>Keep track of background task progress and connections right from Lock Screen.</p></article>
-        </div>
-      </details>
-      <p class="pro-note">All plans include identical Pro benefits. Exact pricing and currency are displayed at checkout in App Store. <a href="terms.html">View complete Terms of Purchase</a></p>
-    </section>
-
-    <section class="mac-section" id="mac">
-      <div class="mac-copy">
-        <p class="eyebrow">&gt;w&lt;</p>
-        <h2>Lightweight &amp; Quiet in Your Menu Bar</h2>
-        <p>Check connection status with expressive emoticons, refresh pairing codes, and manage paired devices instantly.</p>
-        <a href="support.html">View Connection Guide</a>
-      </div>
-      <img src="../assets/screens/macos-adapter.webp?v=20260831d" alt="NinoPad Mac Companion Menu Bar QR &amp; Settings" width="944" height="1196" loading="lazy" decoding="async">
-    </section>
-
-    <section class="faq-section" id="faq">
-      <div class="faq-header">
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about local networking, permissions, Pro unlock, and privacy.</p>
-        <a class="faq-more-link" href="support.html">View Complete Support &amp; Help Manual →</a>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary>Do iPhone/iPad and Mac need to be on the same Wi-Fi?</summary>
-          <p>Yes. NinoPad communicates directly over your local Wi-Fi network, requiring no internet or cloud relay for minimal latency and maximum privacy.</p>
-        </details>
-        <details>
-          <summary>Why is Mac not responding to key presses or screen stream?</summary>
-          <p>Basic hotkeys and cursor control require Accessibility permission in macOS 'System Settings → Privacy & Security → Accessibility'. Screen mirroring requires 'Screen Recording' permission.</p>
-        </details>
-        <details>
-          <summary>Are core features free? How do I purchase or restore Pro?</summary>
-          <p>All core keypads, trackpad, and system controls are 100% free. Pro membership can be subscribed to or purchased as a lifetime unlock inside the iOS app via Apple StoreKit, with full support for restoring purchases across devices.</p>
-        </details>
-        <details>
-          <summary>Is my data or screen content uploaded to the cloud?</summary>
-          <p>Never. All control commands, text, and screen streams are transmitted strictly peer-to-peer within your local area network without passing through any external servers.</p>
-        </details>
-        <details>
-          <summary>Which Mac devices and operating systems are supported?</summary>
-          <p>Supports macOS 13 (Ventura) and later. The Universal binary natively supports both Apple Silicon (M1/M2/M3/M4 chips) and Intel-based Macs.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="download-section" id="download">
-      <figure class="download-art sprite-sequence" aria-label="Panda companion delivering download package">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-01.webp" alt="Panda companion delivering download package" width="768" height="768" loading="lazy" decoding="async">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-02.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-03.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-04.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-05.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-06.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-07.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="../assets/mascot-download-v2-frame-08.webp" alt="" width="768" height="768" loading="lazy" decoding="async" aria-hidden="true">
-      </figure>
-      <h2>Put Your Mac Control Deck in Hand</h2>
-      <p class="download-copy">Phone, tablet, and Mac. Pair in seconds with QR code.</p>
-      <div class="download-actions platform-download" data-platform-download>
-        <div class="download-platforms" role="tablist" aria-label="Select device to download" hidden>
-          <button type="button" class="download-platform" id="footer-iphone-tab" role="tab" aria-selected="true" aria-controls="footer-iphone-panel" tabindex="0" data-download-platform="iphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/></svg><span>iPhone</span></button>
-          <button type="button" class="download-platform" id="footer-ipad-tab" role="tab" aria-selected="false" aria-controls="footer-ipad-panel" tabindex="-1" data-download-platform="ipad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/></svg><span>iPad</span></button>
-          <button type="button" class="download-platform" id="footer-mac-tab" role="tab" aria-selected="false" aria-controls="footer-mac-panel" tabindex="-1" data-download-platform="mac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>Mac</span></button>
-        </div>
-        <div class="download-panel" id="footer-iphone-panel" role="tabpanel" aria-labelledby="footer-iphone-tab" data-download-panel="iphone">
-          <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="Download NinoPad for iPhone on App Store"><img src="../assets/badges/app-store-zh-cn-black.svg" alt="Download on App Store" width="142" height="52"></a>
-        </div>
-        <div class="download-panel" id="footer-ipad-panel" role="tabpanel" aria-labelledby="footer-ipad-tab" data-download-panel="ipad" hidden>
-          <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="Download NinoPad for iPad on App Store"><img src="../assets/badges/app-store-zh-cn-black.svg" alt="Download on App Store" width="142" height="52"></a>
-        </div>
-        <div class="download-panel" id="footer-mac-panel" role="tabpanel" aria-labelledby="footer-mac-tab" data-download-panel="mac" hidden>
-          <a class="download-badge download-badge-mac" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link aria-label="Download NinoPad for Mac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>Download for Mac</span></a>
-        </div>
-        <noscript><a class="download-fallback" href="https://github.com/buggyblues/ninopad/releases/latest">Download for Mac →</a></noscript>
-      </div>
-    </section>
-  </main>
-
-  <div class="look-panda" aria-hidden="true">
-    <div class="look-panda-motion">
-      <img src="../assets/mascot-look-v2.webp" alt="" width="900" height="750" loading="lazy" decoding="async">
-      <span class="look-pupil look-pupil-left"></span>
-      <span class="look-pupil look-pupil-right"></span>
-    </div>
-  </div>
-
-  <footer>
-    <a class="brand" href="#top"><img src="../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
-    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
-    <nav aria-label="Footer Navigation">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
-      <a href="updates.html">Updates</a>
-      <a href="blog.html">Blog</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-      <a href="/" data-lang-switch>简体中文</a>
-    </nav>
-    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
-  <script src="../script.js?v=2.1.0" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="Website analytics preferences" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">Allow Google Analytics to measure page visits and download clicks? You can decline and change your choice in the footer.</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">Allow analytics</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">Decline analytics</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/en/privacy#website-analytics">Privacy details</a></div></aside></body></html>

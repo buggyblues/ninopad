@@ -1,983 +1,833 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f6f0e6">
-  <meta name="description" content="奶猫妙控（NinoPad）是专为 Mac 打造的掌上副控与全能小键盘。支持 氛围编程与 Codex、Mac 原生 Shell 终端、剪映/DaVinci/FCP 剪辑自适应、低延迟桌面画面镜像与虚拟触控板。局域网本地直连，安全顺手。">
-  <meta name="keywords" content="奶猫妙控,NinoPad,Mac小键盘,Mac远程控制,氛围编程,Codex副控,Mac终端,Shell,剪辑小键盘,DaVinci Resolve副控,Final Cut Pro控制台,剪映快捷键,Mac触控板,无线麦克风,演讲提词器,虚拟激光笔,掌上副控,Stream Deck替代">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="application-name" content="奶猫妙控">
-  <meta name="apple-mobile-web-app-title" content="奶猫妙控">
-  <meta name="author" content="buggyblues">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="奶猫妙控｜Mac 随心全能小键盘与掌上远程控制台">
-  <meta property="og:description" content="在掌上实时查看 Mac 画面，用触控板、常用快捷键、文本键盘与语音流畅掌控一切。局域网本地直连，低延迟更安全。">
-  <meta property="og:image" content="https://ninopad.com/assets/app-icon.png">
-  <meta property="og:image:alt" content="奶猫妙控 App 图标">
-  <meta property="og:url" content="https://ninopad.com/">
-  <meta property="og:locale" content="zh_CN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="奶猫妙控｜Mac 随心全能小键盘与掌上远程控制台">
-  <meta name="twitter:description" content="在掌上实时查看 Mac 画面，用触控板、常用快捷键、文本键盘与语音流畅掌控一切。局域网本地直连，低延迟更安全。">
-  <meta name="twitter:image" content="https://ninopad.com/assets/app-icon.png">
-  <link rel="canonical" href="https://ninopad.com/">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/">
-  <link rel="preload" as="image" href="assets/panda-paw-glyph-v1.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <link rel="apple-touch-icon" href="assets/app-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=2.1.0">
-  <link rel="stylesheet" href="layouts.css?v=2.1.0">
-  <title>奶猫妙控｜Mac 随心全能小键盘与掌上远程控制台</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://ninopad.com/#website",
-        "url": "https://ninopad.com/",
-        "name": "奶猫妙控",
-        "alternateName": "NinoPad",
-        "description": "Mac 随心全能小键盘与掌上远程控制台",
-        "inLanguage": "zh-CN"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://ninopad.com/#organization",
-        "name": "奶猫妙控",
-        "alternateName": "NinoPad",
-        "url": "https://ninopad.com/",
-        "logo": "https://ninopad.com/assets/app-icon.png",
-        "sameAs": [
-          "https://github.com/buggyblues/ninopad",
-          "https://apps.apple.com/app/id6805378609",
-          "https://arcade.ninopad.com/"
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://ninopad.com/#software",
-        "name": "奶猫妙控",
-        "alternateName": "NinoPad",
-        "url": "https://ninopad.com/",
-        "downloadUrl": [
-          "https://apps.apple.com/app/id6805378609",
-          "https://github.com/buggyblues/ninopad/releases/latest"
-        ],
-        "installUrl": "https://apps.apple.com/app/id6805378609",
-        "image": "https://ninopad.com/assets/app-icon.png",
-        "applicationCategory": "UtilitiesApplication, ProductivityApplication",
-        "operatingSystem": "macOS 13+, iOS 17+, iPadOS 17+",
-        "softwareVersion": "1.3.6",
-        "inLanguage": "zh-CN",
-        "description": "专为 Mac 打造的随心全能掌上副控与小键盘，支持 氛围编程与 Codex、Mac 原生 Shell 终端、实时画面串流、触控板、文本键盘及专业软件专属控制台。",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "CNY",
-          "availability": "https://schema.org/InStock"
-        },
-        "featureList": [
-          "自由定制的按键、旋钮与触控板",
-          "Mac 桌面实时画面镜像与全屏操作",
-          "氛围编程与 Codex任务状态回读与推理调节",
-          "Mac 原生 Shell 终端多会话管理与全屏输入",
-          "远程触控板、双向滚动与低延迟实时键盘",
-          "整段文本预编辑与精准语音转文字",
-          "将移动设备麦克风无线传输至 Mac",
-          "窗口按设备比例原生适配，不拉伸变形",
-          "一键扫码安全局域网配对",
-          "支持 iOS 桌面小组件与图标长按快捷方式",
-          "预置剪映、DaVinci Resolve、PowerPoint、Apple Music 等专属小键盘",
-          "演讲演示辅助：虚拟激光笔、智能提词器、音效与屏幕互动"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://ninopad.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "需要连同一个 Wi-Fi 吗？",
-            "acceptedAnswer": { "@type": "Answer", "text": "需要。iPhone/iPad 与 Mac 通过本地局域网高速直接通信，无需外网连接，延迟更低更安全。" }
-          },
-          {
-            "@type": "Question",
-            "name": "Mac 为什么收不到控制指令或画面？",
-            "acceptedAnswer": { "@type": "Answer", "text": "常规按键与控制需在 Mac 的“系统设置 → 隐私与安全性 → 辅助功能”中允许奶猫妙控；若需屏幕实时画面镜像，则需单独开启“屏幕录制”权限。" }
-          },
-          {
-            "@type": "Question",
-            "name": "基础功能免费吗？Pro 会员如何购买与恢复？",
-            "acceptedAnswer": { "@type": "Answer", "text": "核心基础小键盘与系统控制完全免费。Pro 会员可在 iPhone/iPad 端进入“设置 → 奶猫妙控 Pro”订阅或买断，所有交易由 Apple App Store 处理，支持一键恢复购买。" }
-          },
-          {
-            "@type": "Question",
-            "name": "控制指令与数据会被上传到云端吗？",
-            "acceptedAnswer": { "@type": "Answer", "text": "绝不上传。所有控制指令、文本与屏幕画面均在本地局域网内点对点直连传输，不经过任何云端服务器，充分保护您的隐私安全。" }
-          },
-          {
-            "@type": "Question",
-            "name": "支持哪些 Mac 设备与系统？",
-            "acceptedAnswer": { "@type": "Answer", "text": "支持运行 macOS 13 (Ventura) 及更高版本的 Mac 设备，Universal 通用架构原生适配 Apple Silicon (M系列芯片) 与 Intel 处理器。" }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-</head>
+<!DOCTYPE html><html data-page="index" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#f6f0e6" name="theme-color">
+<meta content="用 iPhone 或 iPad 遥控 Mac：触控板、快捷键、屏幕镜像与自定义按键。局域网扫码配对，基础控制免费，Pro 解锁专业工作台与口袋乐器。" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_000&quot;}" name="description">
+<meta content="奶猫妙控,NinoPad,Mac小键盘,Mac远程控制,氛围编程,Codex副控,Mac终端,Shell,剪辑小键盘,DaVinci Resolve副控,Final Cut Pro控制台,剪映快捷键,Mac触控板,无线麦克风,演讲提词器,虚拟激光笔,掌上副控,Stream Deck替代" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_001&quot;}" name="keywords">
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_002&quot;}" name="application-name">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_003&quot;}" name="apple-mobile-web-app-title">
+<meta content="buggyblues" name="author">
+<meta content="website" property="og:type">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_004&quot;}" property="og:site_name">
+<meta content="奶猫妙控 NinoPad｜iPhone / iPad 遥控 Mac 与快捷键小键盘" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_005&quot;}" property="og:title">
+<meta content="用 iPhone 或 iPad 遥控 Mac：触控板、快捷键、屏幕镜像与自定义按键。局域网扫码配对，基础控制免费，Pro 解锁专业工作台与口袋乐器。" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_006&quot;}" property="og:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/release-1.3.1/store-01-studio.webp" property="og:image" data-localized-social="release-1.3.1/store-01-studio.webp">
+<meta content="奶猫妙控工作布局" data-i18n-attrs="{&quot;content&quot;:&quot;index.social_image_alt&quot;}" property="og:image:alt">
+<meta content="https://ninopad.com/" property="og:url">
+<meta content="zh_CN" property="og:locale">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="奶猫妙控 NinoPad｜iPhone / iPad 遥控 Mac 与快捷键小键盘" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_008&quot;}" name="twitter:title">
+<meta content="用 iPhone 或 iPad 遥控 Mac：触控板、快捷键、屏幕镜像与自定义按键。局域网扫码配对，基础控制免费，Pro 解锁专业工作台与口袋乐器。" data-i18n-attrs="{&quot;content&quot;:&quot;index.attr_009&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/release-1.3.1/store-01-studio.webp" name="twitter:image" data-localized-social="release-1.3.1/store-01-studio.webp">
+<link href="https://ninopad.com/" rel="canonical">
+
+
+
+<link as="image" fetchpriority="high" href="/assets/panda-paw-glyph-v1.webp" rel="preload" type="image/webp">
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/assets/app-icon.png" rel="apple-touch-icon">
+<link href="/site-zh-CN.webmanifest" rel="manifest">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/layouts.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;index.text_010&quot;}">奶猫妙控 NinoPad｜iPhone / iPad 遥控 Mac 与快捷键小键盘</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-zh-home-banner&amp;mt=8"><meta name="twitter:image:alt" content="奶猫妙控工作布局" data-i18n-attrs="{&quot;content&quot;:&quot;index.social_image_alt&quot;}"><meta property="og:locale:alternate" content="en_US"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="index.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},{"@type":"WebSite","@id":"https://ninopad.com/#website","url":"https://ninopad.com/","name":"NinoPad","alternateName":"奶猫妙控","inLanguage":["zh-CN","en"],"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"WebPage","@id":"https://ninopad.com/#page","url":"https://ninopad.com/","name":"奶猫妙控 NinoPad｜iPhone / iPad 遥控 Mac 与快捷键小键盘","description":"用 iPhone 或 iPad 遥控 Mac：触控板、快捷键、屏幕镜像与自定义按键。局域网扫码配对，基础控制免费，Pro 解锁专业工作台与口袋乐器。","inLanguage":"zh-CN","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"SoftwareApplication","@id":"https://ninopad.com/#software","name":"NinoPad","alternateName":"奶猫妙控","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS 17+, iPadOS 17+, macOS 13+","installUrl":"https://apps.apple.com/app/id6805378609","downloadUrl":["https://apps.apple.com/app/id6805378609","https://github.com/buggyblues/ninopad/releases/latest"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"zh-CN","description":"用 iPhone 或 iPad 遥控 Mac：触控板、快捷键、屏幕镜像与自定义按键。局域网扫码配对，基础控制免费，Pro 解锁专业工作台与口袋乐器。"},{"@type":"FAQPage","inLanguage":"zh-CN","mainEntity":[{"@type":"Question","name":"更多快捷小组件与手势操作","acceptedAnswer":{"@type":"Answer","text":"支持桌面小组件查看连接状态与快捷入口，支持长按图标扫码配对及边缘手势切换布局。"}},{"@type":"Question","name":"查看完整 Pro 权益清单","acceptedAnswer":{"@type":"Answer","text":"包含剪辑调色、合成器演奏与开发终端等专属控制面板。解锁高清与超清串流画质，手机屏幕查看电脑更清晰细腻。随心调整按键旋钮组件，支持建立多个独立场景桌面切换。解锁内置奶猫插画、动态壁纸以及自定义背景图片导入功能。提供激光笔、放大镜、屏幕画笔与摄像头浮窗等汇报工具。手机端照片、草稿与文件附件，轻点即可直接发送到 Mac。自动同步布局配置、壁纸、剪藏夹与音乐创作工程数据。支持锁屏实时活动与灵动岛，在手机上随时查看任务进度。"}},{"@type":"Question","name":"需要连同一个 Wi-Fi 吗？","acceptedAnswer":{"@type":"Answer","text":"需要。iPhone/iPad 与 Mac 通过本地局域网高速直接通信，无需外网连接，延迟更低更安全。"}},{"@type":"Question","name":"Mac 为什么收不到控制指令或画面？","acceptedAnswer":{"@type":"Answer","text":"常规按键与控制需在 Mac 的“系统设置 → 隐私与安全性 → 辅助功能”中允许奶猫妙控；若需屏幕实时画面镜像，则需单独开启“屏幕录制”权限。"}},{"@type":"Question","name":"基础功能免费吗？Pro 会员如何购买与恢复？","acceptedAnswer":{"@type":"Answer","text":"核心基础小键盘与系统控制完全免费。Pro 会员可在 iPhone/iPad 端进入“设置 → 奶猫妙控 Pro”订阅或买断，所有交易由 Apple App Store 处理，支持一键恢复购买。"}},{"@type":"Question","name":"控制指令与数据会被上传到云端吗？","acceptedAnswer":{"@type":"Answer","text":"Mac 控制指令、文字输入和画面在已配对设备之间通过局域网直接传输，不经过云端中转。可选的 iCloud 同步和第三方服务有独立的数据流，详见隐私政策。"}},{"@type":"Question","name":"支持哪些 Mac 设备与系统？","acceptedAnswer":{"@type":"Answer","text":"支持运行 macOS 13 (Ventura) 及更高版本的 Mac 设备，Universal 通用架构原生适配 Apple Silicon (M系列芯片) 与 Intel 处理器。"}}]}]}</script></head>
 <body>
-  <a class="skip-link" href="#main">跳到正文</a>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_011&quot;}" href="#main">跳到正文</a>
+<header class="site-header">
+<a aria-label="奶猫妙控首页" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_012&quot;}" href="#top">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_013&quot;}">奶猫妙控</span>
+</a>
+<nav aria-label="主导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_014&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_015&quot;}" href="#layouts">功能</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_016&quot;}" href="#pro">价格</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_017&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_018&quot;}" href="#faq">常见问题</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_019&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+</nav>
+<div class="header-actions">
+<a aria-label="Switch to English" class="header-lang" data-lang-switch="" href="/en/?lng=en">English</a>
+<a aria-label="选择设备并下载奶猫妙控" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_023&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_022&quot;}" href="#download">免费下载</a>
+<button aria-controls="mobile-drawer" aria-expanded="false" aria-label="切换导航菜单" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_024&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer-backdrop" data-mobile-drawer-backdrop=""></div>
+<div aria-hidden="true" aria-label="移动端导航菜单" aria-modal="true" class="mobile-drawer" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_025&quot;}" data-mobile-drawer="" id="mobile-drawer" role="dialog">
+<ul>
+<li><a data-mobile-nav-link="" href="#layouts"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_026&quot;}">功能</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="#pro"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_027&quot;}">价格</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="/blog"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_028&quot;}">博客</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="#faq"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_029&quot;}">常见问题</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+<li><a data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_030&quot;}">游戏大厅</span><svg aria-hidden="true" class="drawer-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+</ul>
+<a aria-label="选择设备并下载奶猫妙控" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_032&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_031&quot;}" data-mobile-nav-link="" href="#download">免费下载</a>
+<div class="mobile-drawer-lang">
+<a class="is-active" href="/?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/?lng=en" data-language="en" aria-label="Switch to English" class="">English</a>
+</div>
+</div>
+<main id="main">
+<section class="hero" id="top">
+<div aria-hidden="true" class="hero-field">
+<span class="hero-control hero-key hero-key-blue" data-i18n-text="{&quot;0&quot;:&quot;index.text_034&quot;}">搜索</span>
+<span class="hero-control hero-key hero-key-lilac" data-i18n-text="{&quot;0&quot;:&quot;index.text_035&quot;}">截图</span>
+<span class="hero-control hero-key hero-key-yellow" data-i18n-text="{&quot;0&quot;:&quot;index.text_036&quot;}">切换应用</span>
+<span class="hero-control hero-key hero-key-coral" data-i18n-text="{&quot;0&quot;:&quot;index.text_037&quot;}">静音</span>
+<span class="hero-control hero-key hero-key-cream">⌨︎</span>
+<span class="hero-control hero-key hero-key-dark" data-i18n-text="{&quot;0&quot;:&quot;index.text_038&quot;}">显示桌面</span>
+<span class="hero-control hero-trackpad"></span>
+<span class="hero-control hero-knob"></span>
+<span class="hero-control hero-slider"></span>
+<span class="hero-control hero-key hero-key-small" data-i18n-text="{&quot;0&quot;:&quot;index.text_039&quot;}">复制</span>
+<span class="hero-control hero-key hero-key-small hero-key-peach" data-i18n-text="{&quot;0&quot;:&quot;index.text_040&quot;}">粘贴</span>
+</div>
+<div class="hero-copy">
+<h1 aria-label="随心全能小键盘，跃然掌上" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_041&quot;}">
+<span class="hero-line hero-line-first"><span data-i18n-attrs="{&quot;data-text&quot;:&quot;index.attr_043&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_042&quot;}" data-text="随心全能小键盘，" data-typewriter="">随心全能小键盘，</span><span aria-hidden="true" class="type-caret"></span></span>
+<span aria-hidden="true" class="hero-line hero-line-accent" data-i18n-text="{&quot;0&quot;:&quot;index.text_044&quot;,&quot;2&quot;:&quot;index.text_045&quot;}">跃然<img alt="" class="hero-paw" height="320" src="/assets/panda-paw-glyph-v1.webp" width="320">上</span>
+</h1><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_intro&quot;}" class="hero-product-intro">把 iPhone 或 iPad 变成 Mac 的触控板与快捷键小键盘。局域网扫码连接，基础控制免费；自定义工作台和口袋乐器由 Pro 解锁。</p>
+<div class="hero-actions platform-download" data-platform-download="">
+<div aria-label="选择下载设备" class="download-platforms" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_046&quot;}" hidden="" role="tablist">
+<button aria-controls="hero-iphone-panel" aria-selected="true" class="download-platform" data-download-platform="iphone" id="hero-iphone-tab" role="tab" tabindex="0" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="10" x="7" y="2"></rect></svg><span>iPhone</span></button>
+<button aria-controls="hero-ipad-panel" aria-selected="false" class="download-platform" data-download-platform="ipad" id="hero-ipad-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="16" x="4" y="2"></rect></svg><span>iPad</span></button>
+<button aria-controls="hero-mac-panel" aria-selected="false" class="download-platform" data-download-platform="mac" id="hero-mac-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span>Mac</span></button>
+</div>
+<div aria-labelledby="hero-iphone-tab" class="download-panel" data-download-panel="iphone" id="hero-iphone-panel" role="tabpanel">
+<a aria-label="在 App Store 下载奶猫妙控 iPhone 版" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_047&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-home-top&amp;mt=8"><img alt="在 App Store 下载" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_048&quot;}" height="52" src="/assets/badges/app-store-zh-cn-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="hero-ipad-tab" class="download-panel" data-download-panel="ipad" hidden="" id="hero-ipad-panel" role="tabpanel">
+<a aria-label="在 App Store 下载奶猫妙控 iPad 版" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_049&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-home-top&amp;mt=8"><img alt="在 App Store 下载" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_050&quot;}" height="52" src="/assets/badges/app-store-zh-cn-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="hero-mac-tab" class="download-panel" data-download-panel="mac" hidden="" id="hero-mac-panel" role="tabpanel">
+<a aria-label="下载奶猫妙控 Mac 版" class="download-badge download-badge-mac" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_051&quot;}" data-release-link="" href="https://github.com/buggyblues/ninopad/releases/latest"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span data-i18n-text="{&quot;0&quot;:&quot;index.text_052&quot;}">下载 Mac 版</span></a>
+</div>
+<noscript><a class="download-fallback" data-i18n-text='{"0":"index.text_053"}' href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 版 →</a></noscript>
+</div>
+</div>
+</section>
+<section class="layouts-section" id="layouts">
+<div class="layouts-header">
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_054&quot;}">现成布局开箱即用，按习惯随时调整</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_055&quot;}">内建 18 套高频预设布局，旋钮随心切换，上手就能用。 <a data-i18n-text="{&quot;0&quot;:&quot;index.text_056&quot;}" href="/blog">查看快速上手指南 →</a></p>
+</div>
+<!-- Unified Hardware Console Deck -->
+<div aria-labelledby="layout-tab-work" class="deck-hardware-chassis" id="layout-panel" role="tabpanel">
+<!-- Left Hardware Bay: Retro LCD Screen on Top, Rotary Knob Below -->
+<div class="deck-controls-bay">
+<!-- Clean Retro LCD Status Screen (No outer decorations) -->
+<div aria-live="polite" class="deck-lcd-screen">
+<div class="lcd-screen-glass">
+<div class="lcd-screen-header">
+<div class="lcd-header-tags">
+<span class="lcd-tag is-active">AUTO</span>
+<span class="lcd-tag is-active">PRESET</span>
+</div>
+<span class="lcd-screen-index" data-led-index="">01 / 18</span>
+</div>
+<div class="lcd-screen-body led-screen-body">
+<strong class="lcd-screen-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_057&quot;}" data-layout-name="">工作</strong>
+<p class="lcd-screen-desc" data-i18n-text="{&quot;0&quot;:&quot;index.text_058&quot;}" data-layout-description="">macOS 桌面与当前应用 · 触控板、滚轮与高频按键汇于一屏，边看边控。</p>
+</div>
+<div class="lcd-screen-footer">
+<a class="lcd-screen-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_059&quot;}" data-layout-guide="" data-layout-guide-label="" href="/blog/layout-work">阅读教程 →</a>
+</div>
+</div>
+</div>
+<!-- Rotary Dial Unit (Below LCD screen, Clean Minimalist Knob) -->
+<div class="deck-dial-unit">
+<div class="knob-rotary-mount">
+<!-- Preset Data Store / Accessible Tablist -->
+<div aria-label="预设布局" class="knob-items-ring" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_060&quot;}" id="knob-ring" role="tablist" style="display:none;">
+<div class="knob-node-item is-active" data-index="0">
+<button aria-controls="layout-panel" aria-label="工作" aria-selected="true" class="knob-tick" data-alt="奶猫妙控工作布局" data-blog-href="/blog/layout-work" data-description="macOS 桌面与当前应用 · 触控板、滚轮与高频按键汇于一屏，边看边控。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_061&quot;,&quot;data-name&quot;:&quot;index.attr_062&quot;,&quot;title&quot;:&quot;index.attr_063&quot;,&quot;data-description&quot;:&quot;index.attr_064&quot;,&quot;data-alt&quot;:&quot;index.attr_065&quot;}" data-icon="/assets/layouts/work.svg" data-image="/assets/screens/zh-CN/release-1.3.1/store-01-studio.webp" data-name="工作" id="layout-tab-work" role="tab" tabindex="0" title="工作" type="button" data-screen="release-1.3.1/store-01-studio.webp"></button>
+</div>
+<div class="knob-node-item" data-index="1">
+<button aria-controls="layout-panel" aria-label="启动器" aria-selected="false" class="knob-tick" data-alt="奶猫妙控启动器布局" data-blog-href="/blog/layout-launcher" data-description="Dock 与常用应用 · 将 Mac 常用应用化作触手可及的大图标，一键切至前台。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_066&quot;,&quot;data-name&quot;:&quot;index.attr_067&quot;,&quot;title&quot;:&quot;index.attr_068&quot;,&quot;data-description&quot;:&quot;index.attr_069&quot;,&quot;data-alt&quot;:&quot;index.attr_070&quot;}" data-icon="/assets/layouts/launcher.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-launcher.webp" data-name="启动器" id="layout-tab-launcher" role="tab" tabindex="-1" title="启动器" type="button" data-screen="v1.2.0/control-launcher.webp"></button>
+</div>
+<div class="knob-node-item" data-index="2">
+<button aria-controls="layout-panel" aria-label="浏览器" aria-selected="false" class="knob-tick" data-alt="奶猫妙控浏览器布局" data-blog-href="/blog/layout-browser" data-description="Safari 与 Chrome · 常用网址直达与双向滑块切标签，网页浏览更流畅。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_071&quot;,&quot;data-name&quot;:&quot;index.attr_072&quot;,&quot;title&quot;:&quot;index.attr_073&quot;,&quot;data-description&quot;:&quot;index.attr_074&quot;,&quot;data-alt&quot;:&quot;index.attr_075&quot;}" data-icon="/assets/layouts/browser.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-browser.webp" data-name="浏览器" id="layout-tab-browser" role="tab" tabindex="-1" title="浏览器" type="button" data-screen="v1.2.0/control-browser.webp"></button>
+</div>
+<div class="knob-node-item" data-index="3">
+<button aria-controls="layout-panel" aria-label="财务" aria-selected="false" class="knob-tick" data-alt="奶猫妙控财务布局" data-blog-href="/blog/layout-finance" data-description="Excel 与 Numbers · 数字小键盘、本地计算器与常用表格公式，录入核算井井有条。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_076&quot;,&quot;data-name&quot;:&quot;index.attr_077&quot;,&quot;title&quot;:&quot;index.attr_078&quot;,&quot;data-description&quot;:&quot;index.attr_079&quot;,&quot;data-alt&quot;:&quot;index.attr_080&quot;}" data-icon="/assets/layouts/finance.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-finance.webp" data-name="财务" id="layout-tab-finance" role="tab" tabindex="-1" title="财务" type="button" data-screen="v1.2.0/control-finance.webp"></button>
+</div>
+<div class="knob-node-item" data-index="4">
+<button aria-controls="layout-panel" aria-label="写作" aria-selected="false" class="knob-tick" data-alt="奶猫妙控写作布局" data-blog-href="/blog/layout-writing" data-description="Markdown 与文本编辑 · 字符/词/段多级光标移动与排版快捷键，改稿更专注。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_081&quot;,&quot;data-name&quot;:&quot;index.attr_082&quot;,&quot;title&quot;:&quot;index.attr_083&quot;,&quot;data-description&quot;:&quot;index.attr_084&quot;,&quot;data-alt&quot;:&quot;index.attr_085&quot;}" data-icon="/assets/layouts/writing.svg" data-image="/assets/screens/zh-CN/text-1.3.0-r1/writing-01.webp" data-name="写作" id="layout-tab-writing" role="tab" tabindex="-1" title="写作" type="button" data-screen="text-1.3.0-r1/writing-01.webp"></button>
+</div>
+<div class="knob-node-item" data-index="5">
+<button aria-controls="layout-panel" aria-label="调研" aria-selected="false" class="knob-tick" data-alt="奶猫妙控调研布局" data-blog-href="/blog/layout-research" data-description="文献与网页摘录 · 观点、方法与证据快速归档，完整留存原始出处。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_086&quot;,&quot;data-name&quot;:&quot;index.attr_087&quot;,&quot;title&quot;:&quot;index.attr_088&quot;,&quot;data-description&quot;:&quot;index.attr_089&quot;,&quot;data-alt&quot;:&quot;index.attr_090&quot;}" data-icon="/assets/layouts/research.svg" data-image="/assets/screens/zh-CN/text-1.3.0-r1/research-01.webp" data-name="调研" id="layout-tab-research" role="tab" tabindex="-1" title="调研" type="button" data-screen="text-1.3.0-r1/research-01.webp"></button>
+</div>
+<div class="knob-node-item" data-index="6">
+<button aria-controls="layout-panel" aria-label="阅读" aria-selected="false" class="knob-tick" data-alt="奶猫妙控阅读布局" data-blog-href="/blog/layout-reading" data-description="图书与 PDF · 双向翻页旋钮、平滑滚轮与章节跳转，沉浸长篇阅读。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_091&quot;,&quot;data-name&quot;:&quot;index.attr_092&quot;,&quot;title&quot;:&quot;index.attr_093&quot;,&quot;data-description&quot;:&quot;index.attr_094&quot;,&quot;data-alt&quot;:&quot;index.attr_095&quot;}" data-icon="/assets/layouts/reading.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-reading.webp" data-name="阅读" id="layout-tab-reading" role="tab" tabindex="-1" title="阅读" type="button" data-screen="v1.2.0/control-reading.webp"></button>
+</div>
+<div class="knob-node-item" data-index="7">
+<button aria-controls="layout-panel" aria-label="氛围编程" aria-selected="false" class="knob-tick" data-alt="奶猫妙控氛围编程布局" data-blog-href="/blog/layout-codex" data-description="Claude Code / Codex · 实时查看 AI 生成状态与任务队列，灵感持续推进。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_096&quot;,&quot;data-name&quot;:&quot;index.attr_097&quot;,&quot;title&quot;:&quot;index.attr_098&quot;,&quot;data-description&quot;:&quot;index.attr_099&quot;,&quot;data-alt&quot;:&quot;index.attr_100&quot;}" data-icon="/assets/layouts/coding-lab.svg" data-image="/assets/screens/zh-CN/release-1.3.1/store-14-coding-lab.webp" data-name="氛围编程" id="layout-tab-coding-lab" role="tab" tabindex="-1" title="氛围编程" type="button" data-screen="release-1.3.1/store-14-coding-lab.webp"></button>
+</div>
+<div class="knob-node-item" data-index="8">
+<button aria-controls="layout-panel" aria-label="Codex" aria-selected="false" class="knob-tick" data-alt="奶猫妙控Codex布局" data-blog-href="/blog/layout-codex" data-description="Codex 桌面应用 · 任务状态实时回读，旋钮调节模型与推理深度。" data-i18n-attrs="{&quot;data-description&quot;:&quot;index.attr_101&quot;,&quot;data-alt&quot;:&quot;index.attr_102&quot;}" data-icon="/assets/layouts/codex.svg" data-image="/assets/screens/zh-CN/release-1.3.1/store-09-codex.webp" data-name="Codex" id="layout-tab-codex" role="tab" tabindex="-1" title="Codex" type="button" data-screen="release-1.3.1/store-09-codex.webp"></button>
+</div>
+<div class="knob-node-item" data-index="9">
+<button aria-controls="layout-panel" aria-label="终端" aria-selected="false" class="knob-tick" data-alt="奶猫妙控终端布局" data-blog-href="/blog/layout-terminal" data-description="Mac 原生终端 (vim / top / ssh) · 状态屏、全屏键盘与常用控制键一触即达。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_103&quot;,&quot;data-name&quot;:&quot;index.attr_104&quot;,&quot;title&quot;:&quot;index.attr_105&quot;,&quot;data-description&quot;:&quot;index.attr_106&quot;,&quot;data-alt&quot;:&quot;index.attr_107&quot;}" data-icon="/assets/layouts/terminal.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-terminal.webp" data-name="终端" id="layout-tab-terminal" role="tab" tabindex="-1" title="终端" type="button" data-screen="v1.2.0/control-terminal.webp"></button>
+</div>
+<div class="knob-node-item" data-index="10">
+<button aria-controls="layout-panel" aria-label="应用创作台" aria-selected="false" class="knob-tick" data-alt="奶猫妙控应用创作台布局" data-blog-href="/blog/layout-creative" data-description="DaVinci / Premiere / 剪映 · 随前台应用自动切换映射，时间线与调色尽在掌心。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_108&quot;,&quot;data-name&quot;:&quot;index.attr_109&quot;,&quot;title&quot;:&quot;index.attr_110&quot;,&quot;data-description&quot;:&quot;index.attr_111&quot;,&quot;data-alt&quot;:&quot;index.attr_112&quot;}" data-icon="/assets/layouts/creative.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-resolve.webp" data-name="应用创作台" id="layout-tab-creative" role="tab" tabindex="-1" title="应用创作台" type="button" data-screen="v1.2.0/control-resolve.webp"></button>
+</div>
+<div class="knob-node-item" data-index="11">
+<button aria-controls="layout-panel" aria-label="演示" aria-selected="false" class="knob-tick" data-alt="奶猫妙控演示布局" data-blog-href="/blog/layout-presentation" data-description="Keynote / PowerPoint · 演讲辅助、放映控制与分段计时，台前演说从容控场。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_113&quot;,&quot;data-name&quot;:&quot;index.attr_114&quot;,&quot;title&quot;:&quot;index.attr_115&quot;,&quot;data-description&quot;:&quot;index.attr_116&quot;,&quot;data-alt&quot;:&quot;index.attr_117&quot;}" data-icon="/assets/layouts/presentation.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-presentation-assist.webp" data-name="演示" id="layout-tab-presentation" role="tab" tabindex="-1" title="演示" type="button" data-screen="v1.2.0/control-presentation-assist.webp"></button>
+</div>
+<div class="knob-node-item" data-index="12">
+<button aria-controls="layout-panel" aria-label="媒体" aria-selected="false" class="knob-tick" data-alt="奶猫妙控媒体布局" data-blog-href="/blog/layout-media" data-description="Apple Music 与 Spotify · 经典触控轮选歌、调音量与切换播放模式。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_118&quot;,&quot;data-name&quot;:&quot;index.attr_119&quot;,&quot;title&quot;:&quot;index.attr_120&quot;,&quot;data-description&quot;:&quot;index.attr_121&quot;,&quot;data-alt&quot;:&quot;index.attr_122&quot;}" data-icon="/assets/layouts/media.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-media.webp" data-name="媒体" id="layout-tab-media" role="tab" tabindex="-1" title="媒体" type="button" data-screen="v1.2.0/control-media.webp"></button>
+</div>
+<div class="knob-node-item" data-index="13">
+<button aria-controls="layout-panel" aria-label="采样" aria-selected="false" class="knob-tick" data-alt="奶猫妙控采样布局" data-blog-href="/blog/layout-sampler" data-description="移动端音频采样 · 快速录音、智能切片与 16 格响应式鼓垫即兴演奏。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_123&quot;,&quot;data-name&quot;:&quot;index.attr_124&quot;,&quot;title&quot;:&quot;index.attr_125&quot;,&quot;data-description&quot;:&quot;index.attr_126&quot;,&quot;data-alt&quot;:&quot;index.attr_127&quot;}" data-icon="/assets/layouts/sampler.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-sampler.webp" data-name="采样" id="layout-tab-sampler" role="tab" tabindex="-1" title="采样" type="button" data-screen="v1.2.0/control-sampler.webp"></button>
+</div>
+<div class="knob-node-item" data-index="14">
+<button aria-controls="layout-panel" aria-label="合成器" aria-selected="false" class="knob-tick" data-alt="奶猫妙控合成器布局" data-blog-href="/blog/guide-synthesizer" data-description="内建发声引擎与 MIDI · 顺阶和弦键、滤波器旋钮与 6 轨循环录音。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_128&quot;,&quot;data-name&quot;:&quot;index.attr_129&quot;,&quot;title&quot;:&quot;index.attr_130&quot;,&quot;data-description&quot;:&quot;index.attr_131&quot;,&quot;data-alt&quot;:&quot;index.attr_132&quot;}" data-icon="/assets/layouts/synthesizer.svg" data-image="/assets/screens/zh-CN/release-1.3.0/synth-01-chord.webp" data-name="合成器" id="layout-tab-synthesizer" role="tab" tabindex="-1" title="合成器" type="button" data-screen="release-1.3.0/synth-01-chord.webp"></button>
+</div>
+<div class="knob-node-item" data-index="15">
+<button aria-controls="layout-panel" aria-label="吉他" aria-selected="false" class="knob-tick" data-alt="奶猫妙控吉他布局" data-blog-href="/blog/guide-guitar" data-description="六弦吉他弹唱与学习 · 感应扫弦、摇杆切和弦，内置 100 首进阶练习。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_133&quot;,&quot;data-name&quot;:&quot;index.attr_134&quot;,&quot;title&quot;:&quot;index.attr_135&quot;,&quot;data-description&quot;:&quot;index.attr_136&quot;,&quot;data-alt&quot;:&quot;index.attr_137&quot;}" data-icon="/assets/layouts/guitar.svg" data-image="/assets/screens/zh-CN/release-1.3.0/guitar-01-play.webp" data-name="吉他" id="layout-tab-guitar" role="tab" tabindex="-1" title="吉他" type="button" data-screen="release-1.3.0/guitar-01-play.webp"></button>
+</div>
+<div class="knob-node-item" data-index="16">
+<button aria-controls="layout-panel" aria-label="游戏" aria-selected="false" class="knob-tick" data-alt="奶猫妙控游戏布局" data-blog-href="/blog/layout-arcade" data-description="触屏手柄模式 · 十字方向键、ABXY 与肩键，掌上畅享 Mac 经典游戏。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_138&quot;,&quot;data-name&quot;:&quot;index.attr_139&quot;,&quot;title&quot;:&quot;index.attr_140&quot;,&quot;data-description&quot;:&quot;index.attr_141&quot;,&quot;data-alt&quot;:&quot;index.attr_142&quot;}" data-icon="/assets/layouts/arcade.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-arcade.webp" data-name="游戏" id="layout-tab-arcade" role="tab" tabindex="-1" title="游戏" type="button" data-screen="v1.2.0/control-arcade.webp"></button>
+</div>
+<div class="knob-node-item" data-index="17">
+<button aria-controls="layout-panel" aria-label="智能家居" aria-selected="false" class="knob-tick" data-alt="奶猫妙控智能家居布局" data-blog-href="/blog/layout-smart-home" data-description="Home Assistant 与 Apple 家庭 · 灯光、窗帘与场景转为直观旋钮与开关。" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_143&quot;,&quot;data-name&quot;:&quot;index.attr_144&quot;,&quot;title&quot;:&quot;index.attr_145&quot;,&quot;data-description&quot;:&quot;index.attr_146&quot;,&quot;data-alt&quot;:&quot;index.attr_147&quot;}" data-icon="/assets/layouts/smart-home.svg" data-image="/assets/screens/zh-CN/v1.2.0/control-smart-home.webp" data-name="智能家居" id="layout-tab-smart-home" role="tab" tabindex="-1" title="智能家居" type="button" data-screen="v1.2.0/control-smart-home.webp"></button>
+</div>
+</div>
+<!-- Sleek Hardware Knob Dial (Tap / Drag to change) -->
+<div aria-label="预设布局调节旋钮" aria-valuemax="18" aria-valuemin="1" aria-valuenow="1" aria-valuetext="工作" class="knob-dial is-inviting" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_148&quot;}" id="layout-knob" role="slider" tabindex="0">
+<div class="knob-dial-body">
+<div class="knob-grooves"></div>
+<div class="knob-pointer-needle"></div>
+</div>
+<div class="knob-center-hub">
+<img alt="" class="knob-hub-icon" data-knob-icon="" height="36" src="/assets/layouts/work.svg" width="36">
+<strong class="knob-hub-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_149&quot;}" data-knob-hub-name="">工作</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Hardware Bay: Device Screen Mockup -->
+<div class="deck-screen-bay">
+<div class="deck-screen-bezel">
+<a aria-label="阅读工作布局教程" class="layout-preview-frame" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_150&quot;}" data-layout-guide="" href="/blog/layout-work">
+<img alt="奶猫妙控工作布局" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_151&quot;}" data-layout-image="" height="2622" loading="lazy" src="/assets/screens/zh-CN/release-1.3.1/store-01-studio.webp" width="1206" data-screen="release-1.3.1/store-01-studio.webp">
+</a>
+</div>
+</div>
+</div>
+</section><section class="search-guides" id="guides"><h2 data-i18n-text="{&quot;0&quot;:&quot;index.growth_heading&quot;}">从你想完成的操作开始</h2><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_summary&quot;}">从真实操作步骤了解设备要求、设置方法与使用边界，再选择适合自己的布局。</p><div class="search-guide-grid"><a class="search-guide-card" href="/blog/remote-control-mac"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_remote_title&quot;}">用手机遥控 Mac</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_remote_body&quot;}">触控板、键盘输入与屏幕镜像；了解同一 Wi-Fi 下的连接方式。</p></a><a class="search-guide-card" href="/blog/custom-keypad"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_macros_title&quot;}">定制快捷键与宏按键</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_macros_body&quot;}">添加按键、绑定操作与组合快捷键，让常用动作触手可及。</p></a><a class="search-guide-card" href="/blog/presentation-tools"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_slides_title&quot;}">用 iPhone 控制 Mac 演示</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_slides_body&quot;}">练习翻页、提词与分段计时，了解演讲布局的设置。</p></a><a class="search-guide-card" href="/blog/mac-settings"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.growth_setup_title&quot;}">第一次配对与权限设置</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.growth_setup_body&quot;}">检查系统要求、扫码连接，并排查配对超时与黑屏。</p></a></div></section>
+<section class="remote-section" id="remote">
+<div class="remote-intro">
+<p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_152&quot;}">掌控 Mac，远不止一面屏幕</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_153&quot;}">双屏协同，触手可及。在右侧手机上操作触控板与快捷键，实时遥控左侧 Mac 桌面。</p>
+<!-- Workstation Mode Selector Pills (Clean SVG Icons, No Emoji) -->
+<div aria-label="工作站模式切换" class="remote-mode-pills" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_154&quot;}" role="tablist">
+<button aria-selected="true" class="rm-pill is-active" data-rmode="video" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><rect height="20" rx="2.18" ry="2.18" width="20" x="2" y="2"></rect><line x1="7" x2="7" y1="2" y2="22"></line><line x1="17" x2="17" y1="2" y2="22"></line><line x1="2" x2="22" y1="12" y2="12"></line><line x1="2" x2="7" y1="7" y2="7"></line><line x1="2" x2="7" y1="17" y2="17"></line><line x1="17" x2="22" y1="17" y2="17"></line><line x1="17" x2="22" y1="7" y2="7"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_155&quot;}">视频剪辑</span>
+</button>
+<button aria-selected="false" class="rm-pill" data-rmode="music" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_156&quot;}">音乐播放</span>
+</button>
+<button aria-selected="false" class="rm-pill" data-rmode="desktop" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_157&quot;}">极速多任务</span>
+</button>
+<button aria-selected="false" class="rm-pill" data-rmode="notes" role="tab" type="button">
+<svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_158&quot;}">语音速记</span>
+</button>
+</div>
+</div>
+<!-- Live Dual-Screen Interactive Workstation -->
+<div class="mac-remote-workstation">
+<!-- Left: Mac Studio Display (Live Target Screen) -->
+<div class="mac-display-bay">
+<div class="mac-monitor-frame">
+<!-- macOS Top Menu Bar -->
+<div class="mac-menubar">
+<div class="mac-menu-left">
+<span class="mac-apple-logo"></span>
+<strong class="mac-active-app" id="mac-app-name">Final Cut Pro</strong>
+<span class="mac-menu-item" data-i18n-text="{&quot;0&quot;:&quot;index.text_159&quot;}">文件</span>
+<span class="mac-menu-item" data-i18n-text="{&quot;0&quot;:&quot;index.text_160&quot;}">编辑</span>
+<span class="mac-menu-item" data-i18n-text="{&quot;0&quot;:&quot;index.text_161&quot;}">显示</span>
+</div>
+<div class="mac-menu-right">
+<span class="mac-clock-text">09:41</span>
+</div>
+</div>
+<!-- macOS Active Screen Canvas -->
+<div class="mac-screen-canvas" id="mac-screen-canvas">
+<!-- 1. Video Editing Mode Canvas -->
+<div class="mac-canvas-view is-active" data-canvas="video">
+<div class="mac-video-window">
+<div class="mac-win-titlebar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span>Timeline — 4K_B-Roll_Master.mov</span>
+</div>
+<div class="mac-video-preview">
+<div class="video-art-box">
+<div class="video-placeholder-art">
+<span class="video-badge" id="video-clip-badge">CLIP 01 · 4K 60p</span>
+<h4 id="video-clip-title">Hawa Mahal · Sunset Sequence</h4>
+<div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
+</div>
+</div>
+<!-- Scrubbable Interactive Timeline with Cut Segments -->
+<div class="mac-timeline-bar" id="mac-timeline">
+<div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
+<div class="timeline-tracks" id="timeline-tracks">
+<div class="track-row video-track" id="video-track-row">
+<div class="track-segment" style="width: 45%;">
+<span>Video 1A [4K HDR]</span>
+<div class="trim-handle trim-left"></div>
+<div class="trim-handle trim-right"></div>
+</div>
+<div class="track-segment" style="width: 55%;">
+<span>Video 1B [B-Roll]</span>
+<div class="trim-handle trim-left"></div>
+<div class="trim-handle trim-right"></div>
+</div>
+</div>
+<div class="track-row audio-track" id="audio-track-row">
+<div class="track-segment" style="width: 45%;">
+<span>Audio 1A [-3dB]</span>
+</div>
+<div class="track-segment" style="width: 55%;">
+<span>Audio 1B [-3dB]</span>
+</div>
+</div>
+</div>
+<div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Music Player Mode Canvas -->
+<div class="mac-canvas-view" data-canvas="music">
+<div class="mac-music-window">
+<div class="mac-win-titlebar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span>Apple Music — Lo-Fi Chill</span>
+</div>
+<div class="mac-music-body">
+<div class="music-vinyl-disc is-spinning" id="music-vinyl">
+<div class="vinyl-grooves"></div>
+<div class="vinyl-center"><img alt="" height="36" src="/assets/software/apple-music.jpg" width="36"></div>
+</div>
+<div class="music-info-box">
+<div class="music-title-row">
+<span class="music-tag">NOW PLAYING</span>
+<button aria-label="收藏当前歌曲" class="music-heart-btn" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_162&quot;}" id="mac-music-heart" type="button">
+<svg fill="none" height="17" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" width="17"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+</div>
+<h3 id="music-song-title">Midnight Ambient Beats</h3>
+<div class="music-vol-indicator">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+<div class="vol-track-mini"><div class="vol-fill-mini" id="mac-vol-mini-bar" style="width: 50%;"></div></div>
+<span id="mac-vol-mini-text">50%</span>
+</div>
+<div class="music-wave-spectrum" id="music-spectrum">
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Desktop Mode Canvas (Classic Layered Mac Windows) -->
+<div class="mac-canvas-view" data-canvas="desktop">
+<div class="mac-desktop-scene" id="mac-desktop-scene">
+<!-- Window 1: Safari Browser Window (Official Ninopad Website) -->
+<div class="mac-classic-win win-safari is-active" id="win-safari" style="z-index: 3;">
+<div class="win-title-bar safari-top-bar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<div class="safari-nav-buttons"><span>‹</span><span>›</span></div>
+<div class="win-url-pill"><span>🔒</span> ninopad.com</div>
+</div>
+<div class="win-client safari-client">
+<div class="mini-site-header">
+<span class="mini-logo">NINOPAD <strong>2.0</strong></span>
+<span class="mini-cta" data-i18n-text="{&quot;0&quot;:&quot;index.text_163&quot;}">开启联动</span>
+</div>
+<div class="mini-hero-body">
+<span class="mini-eyebrow" data-i18n-text="{&quot;0&quot;:&quot;index.text_164&quot;}">硬件级触控体验</span>
+<h4 data-i18n-text="{&quot;0&quot;:&quot;index.text_165&quot;}">掌控 Mac，远不止一面屏幕</h4>
+<div class="mini-key-deck">
+<div class="mini-deck-key k-y"><span>⌘C</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_166&quot;}">复制</small></div>
+<div class="mini-deck-key k-b"><span>⌘V</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_167&quot;}">粘贴</small></div>
+<div class="mini-deck-key k-p"><span>⎋</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_168&quot;}">撤销</small></div>
+<div class="mini-deck-key k-l"><span>⇧⌘4</span><small data-i18n-text="{&quot;0&quot;:&quot;index.text_169&quot;}">截屏</small></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Window 2: Code Editor Window (Xcode) -->
+<div class="mac-classic-win win-code" id="win-code" style="z-index: 2;">
+<div class="win-title-bar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span class="win-title-text">NinoPadKit.swift — Xcode</span>
+</div>
+<div class="win-client code-client">
+<div class="code-gutter"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+<div class="code-lines">
+<p><span class="c-kw">import</span> <span class="c-fn">NinoPadKit</span></p>
+<p><span class="c-kw">let</span> deck = <span class="c-fn">NinoPadDeck</span>(lowLatency: <span class="c-num">true</span>)</p>
+<p>deck.<span class="c-fn">onAction</span> { event <span class="c-kw">in</span></p>
+<p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event)</p>
+<p>}</p>
+</div>
+</div>
+</div>
+<!-- Window 3: Ninopad Companion Studio Window -->
+<div class="mac-classic-win win-ninopad" id="win-ninopad" style="z-index: 1;">
+<div class="win-title-bar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span class="win-title-text">Ninopad Companion</span>
+</div>
+<div class="win-client ninopad-client">
+<div class="np-status-bar">
+<span class="np-device-dot"></span>
+<span class="np-device-name">iPhone 16 Pro · 0.8ms</span>
+</div>
+<div class="np-grid-preview">
+<div class="np-tile t-active" data-i18n-text="{&quot;0&quot;:&quot;index.text_170&quot;}">4K 剪辑</div>
+<div class="np-tile" data-i18n-text="{&quot;0&quot;:&quot;index.text_171&quot;}">Lo-Fi 音乐</div>
+<div class="np-tile" data-i18n-text="{&quot;0&quot;:&quot;index.text_172&quot;}">极速多任务</div>
+<div class="np-tile" data-i18n-text="{&quot;0&quot;:&quot;index.text_173&quot;}">灵感速记</div>
+</div>
+</div>
+</div>
+<!-- Spotlight Floating Bar Overlay -->
+<div class="mac-spotlight-bar" id="mac-spotlight-bar">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="18"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<span class="spotlight-query" id="spotlight-query">Safari.app</span>
+<span class="spotlight-tag" data-i18n-text="{&quot;0&quot;:&quot;index.text_174&quot;}">应用</span>
+</div>
+<!-- ⌘Tab App Switcher Overlay (1-to-1 Aligned with Windows: Safari, Xcode, Ninopad) -->
+<div class="mac-app-switcher-hud" id="mac-app-switcher">
+<div class="app-switcher-icon is-focused" title="Safari"><img alt="Safari" height="32" src="/assets/software/safari.png" width="32"></div>
+<div class="app-switcher-icon" title="Xcode"><img alt="Xcode" height="32" src="/assets/software/xcode.png" width="32"></div>
+<div class="app-switcher-icon" title="Ninopad"><img alt="Ninopad" height="32" src="/assets/app-icon.webp" width="32"></div>
+</div>
+<!-- Floating Screenshot Thumbnail -->
+<div class="mac-screenshot-card" id="mac-screenshot-card">
+<div class="screenshot-mini-thumb"></div>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_175&quot;}">截屏已就绪</span>
+</div>
+</div>
+</div>
+<!-- 4. Notes & Voice Dictate Canvas -->
+<div class="mac-canvas-view" data-canvas="notes">
+<div class="mac-notes-window">
+<div class="mac-win-titlebar">
+<span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_176&quot;}">备忘录 — 灵感速记与语音投送</span>
+</div>
+<div class="mac-notes-content" id="mac-notes-body">
+<p class="notes-date" data-i18n-text="{&quot;0&quot;:&quot;index.text_177&quot;}">今天 09:41</p>
+<p class="notes-p" data-i18n-text="{&quot;0&quot;:&quot;index.text_178&quot;}" id="mac-typed-text">手机文本与语音已直连 Mac 光标就绪...</p>
+</div>
+</div>
+</div>
+<!-- Live Synchronized Cursor on Mac Screen -->
+<div class="mac-live-cursor" id="mac-live-cursor">
+<svg fill="#0f172a" height="18" stroke="#ffffff" stroke-width="1.8" viewBox="0 0 24 24" width="18">
+<path d="M3 3l7 18 3-7 7-3L3 3z"></path>
+</svg>
+</div>
+<!-- macOS Native Toast / HUD Overlay -->
+<div class="mac-hud-overlay" id="mac-workstation-hud">
+<span class="hud-icon" id="hud-icon">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="14"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+</span>
+<span class="hud-text" data-i18n-text="{&quot;0&quot;:&quot;index.text_179&quot;}" id="hud-text">就绪</span>
+</div>
+</div>
+<!-- Mac Monitor Chin & Stand Base -->
+<div class="mac-monitor-chin">
+<span class="mac-chin-logo"></span>
+</div>
+</div>
+</div>
+<!-- Right: Handheld iPhone Controller (CreamDeck Controller App) -->
+<div class="phone-controller-bay">
+<div class="phone-deck-chassis">
+<!-- Controller Surface (Interactive Board) -->
+<div class="phone-controller-surface">
+<!-- Upper Area: Virtual Trackpad & Jog-Wheel -->
+<div class="p-row upper">
+<div class="p-trackpad-box" data-i18n-attrs="{&quot;title&quot;:&quot;index.attr_180&quot;}" id="ws-trackpad" title="在触控板上滑动手指，左侧 Mac 光标实时同步！">
+<div class="p-trackpad-dots"></div>
+<span class="p-trackpad-hint" data-i18n-text="{&quot;0&quot;:&quot;index.text_181&quot;}">虚拟触控板<br><small data-i18n-text="{&quot;0&quot;:&quot;index.text_182&quot;}">滑动遥控 Mac 光标</small></span>
+<div class="p-cursor-ripple" id="ws-ripple"></div>
+</div>
+<div class="p-jog-wheel" data-i18n-attrs="{&quot;title&quot;:&quot;index.attr_183&quot;}" id="ws-jog-wheel" title="上下拖动或滚动滚轮，实时剪辑时间线">
+<div class="p-wheel-ridges"></div>
+<div class="p-wheel-thumb" id="ws-jog-thumb"></div>
+</div>
+</div>
+<!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
+<div class="p-mode-pad" id="p-mode-pad">
+<!-- 1. Video Edit Mode Buttons (4 Tactile Keys: Play/Pause, Blade Cut, Trim In, Trim Out) -->
+<div class="p-pad-view is-active" data-pview="video">
+<div class="p-keys-3d-grid">
+<button class="hero-keypad-btn key-yellow" data-cmd="play-toggle" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_184&quot;}">播放 / 暂停</span>
+</button>
+<button class="hero-keypad-btn key-blue" data-cmd="blade" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" x2="8.12" y1="4" y2="15.88"></line><line x1="14.47" x2="20" y1="14.48" y2="20"></line><line x1="8.12" x2="12" y1="8.12" y2="12"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_185&quot;}">剃刀剪切</span>
+</button>
+<button class="hero-keypad-btn key-peach" data-cmd="trim-left" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline><line x1="6" x2="6" y1="6" y2="18"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_186&quot;}">剪口左移</span>
+</button>
+<button class="hero-keypad-btn key-lilac" data-cmd="trim-right" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline><line x1="18" x2="18" y1="6" y2="18"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_187&quot;}">剪口右移</span>
+</button>
+</div>
+</div>
+<!-- 2. Music Player Mode Buttons (4 Tactile Keys: Play, Next, Like, Volume Knob) -->
+<div class="p-pad-view" data-pview="music">
+<div class="p-keys-3d-grid">
+<button class="hero-keypad-btn key-yellow" data-cmd="music-play" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_188&quot;}">播放 / 暂停</span>
+</button>
+<button class="hero-keypad-btn key-blue" data-cmd="music-next" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_189&quot;}">下一首</span>
+</button>
+<button class="hero-keypad-btn key-coral" data-cmd="music-like" id="phone-music-heart-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_190&quot;}">喜欢收藏</span>
+</button>
+<button class="hero-keypad-btn key-cream key-knob-btn" data-cmd="music-vol" data-i18n-attrs="{&quot;title&quot;:&quot;index.attr_191&quot;}" id="phone-vol-knob-btn" title="调节 Mac 音量" type="button">
+<div class="phone-mini-dial">
+<div class="phone-dial-indicator" id="phone-dial-indicator"></div>
+</div>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_192&quot;}" id="phone-vol-lbl">音量 50%</span>
+</button>
+</div>
+</div>
+<!-- 3. Desktop Mode Buttons (4 Tactile Keys: Mission Control, Switch App, Spotlight, Screenshot) -->
+<div class="p-pad-view" data-pview="desktop">
+<div class="p-keys-3d-grid">
+<button class="hero-keypad-btn key-blue" data-cmd="mission" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_193&quot;}">调度中心</span>
+</button>
+<button class="hero-keypad-btn key-yellow" data-cmd="switch-app" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_194&quot;}">切换应用</span>
+</button>
+<button class="hero-keypad-btn key-cream" data-cmd="spotlight" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_195&quot;}">聚焦搜索</span>
+</button>
+<button class="hero-keypad-btn key-lilac" data-cmd="screenshot" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_196&quot;}">一键截屏</span>
+</button>
+</div>
+</div>
+<!-- 4. Notes & Voice Mode (Voice Actions + Textarea) -->
+<div class="p-pad-view" data-pview="notes">
+<div class="p-voice-composer">
+<textarea class="p-voice-textarea" data-i18n-attrs="{&quot;placeholder&quot;:&quot;index.attr_197&quot;}" id="ws-voice-input" placeholder="输入文字或点击下方快捷短语投送至 Mac..." rows="2"></textarea>
+<div class="p-voice-chips">
+<button class="p-chip" data-i18n-attrs="{&quot;data-txt&quot;:&quot;index.attr_199&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_198&quot;}" data-txt="今天 4K 样片已剪辑完成，请查收！" type="button">剪辑完成</button>
+<button class="p-chip" data-i18n-text="{&quot;0&quot;:&quot;index.text_200&quot;}" data-txt="git commit -m 'feat: live remote workstation'" type="button">Git 提交</button>
+<button class="p-chip" data-i18n-attrs="{&quot;data-txt&quot;:&quot;index.attr_202&quot;}" data-i18n-text="{&quot;0&quot;:&quot;index.text_201&quot;}" data-txt="下午三点准时在 2 号会议室评审。" type="button">会议提醒</button>
+</div>
+<div class="p-keys-3d-grid mini-grid">
+<button class="hero-keypad-btn key-coral" id="ws-mic-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_203&quot;}">语音听写</span>
+</button>
+<button class="hero-keypad-btn key-blue" id="ws-send-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+<span data-i18n-text="{&quot;0&quot;:&quot;index.text_204&quot;}">注入 Mac ↵</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="how-section" id="how">
+<figure aria-label="戴牛仔帽的无尾熊猫将插头甩进 Mac" class="connection-art sprite-sequence" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_205&quot;}">
+<img alt="戴牛仔帽的无尾熊猫准备连接 Mac" class="sprite-frame connection-frame" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_206&quot;}" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-01.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-02.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-03.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-04.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-05.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-06.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-07.png" width="1200">
+<img alt="" aria-hidden="true" class="sprite-frame connection-frame" height="1200" loading="lazy" src="/assets/mascot-connection-cowboy-v2-frame-08.png" width="1200">
+</figure>
+<div class="how-copy">
+<p class="eyebrow">FAST PAIRING</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_207&quot;}">简单三步，即刻开启联动</h2>
+<ol class="steps">
+<li><span>01</span><div><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_208&quot;}">安装手机与 Mac 端</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_209&quot;,&quot;2&quot;:&quot;index.text_210&quot;,&quot;4&quot;:&quot;index.text_211&quot;}">从 <a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-home-how&amp;mt=8">App Store</a> 安装手机 App；<a data-i18n-text="{&quot;0&quot;:&quot;index.text_212&quot;}" data-release-link="" href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 安装包</a>，将“奶猫妙控”拖入“应用程序”后启动</p></div></li>
+<li><span>02</span><div><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_213&quot;}">授予系统辅助功能权限</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_214&quot;}">按系统引导在系统设置中开启辅助功能权限，以支持跨应用快捷控制</p></div></li>
+<li><span>03</span><div><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_215&quot;}">手机扫码快速配对</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_216&quot;}">确保两端处于同一局域网 Wi-Fi，打开手机端扫描二维码即可完成绑定</p></div></li>
+</ol>
+<details class="quick-details">
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_217&quot;}">更多快捷小组件与手势操作</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_218&quot;}">支持桌面小组件查看连接状态与快捷入口，支持长按图标扫码配对及边缘手势切换布局。</p>
+<div class="quick-screens">
+<figure>
+<img alt="奶猫妙控设备与配对页面" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_219&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/device-pairing.webp" width="1206" data-screen="v1.2.0/device-pairing.webp">
+<figcaption><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_220&quot;}">设备与配对</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_221&quot;}">局域网自动发现 Mac 设备，扫码快速建立加密会话</span></figcaption>
+</figure>
+<figure>
+<img alt="奶猫妙控小键盘切换页面" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_222&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/layout-switcher.webp" width="1206" data-screen="v1.2.0/layout-switcher.webp">
+<figcaption><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_223&quot;}">工作区自如切换</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_224&quot;}">长按屏幕边缘或横滑，在多套工作区小键盘间流畅切转</span></figcaption>
+</figure>
+</div>
+</details>
+</div>
+</section>
+<section class="scenarios-section" id="scenarios">
+<div class="scenario-copy">
+<div aria-label="使用场景" class="role-tabs" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_225&quot;}" role="tablist">
+<button aria-controls="role-panel-edit" aria-selected="true" data-role-index="0" id="role-tab-edit" role="tab" tabindex="0" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_226&quot;}">剪辑</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_227&quot;}">导演</span></button>
+<button aria-controls="role-panel-music" aria-selected="false" data-role-index="1" id="role-tab-music" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_228&quot;}">音乐</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_229&quot;}">乐手</span></button>
+<button aria-controls="role-panel-present" aria-selected="false" data-role-index="2" id="role-tab-present" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_230&quot;}">演讲</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_231&quot;}">演讲者</span></button>
+<button aria-controls="role-panel-code" aria-selected="false" data-role-index="3" id="role-tab-code" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_232&quot;}">效率</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_233&quot;}">日常</span></button>
+<button aria-controls="role-panel-reading" aria-selected="false" data-role-index="4" id="role-tab-reading" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_234&quot;}">读写</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_235&quot;}">作家</span></button>
+<button aria-controls="role-panel-game" aria-selected="false" data-role-index="5" id="role-tab-game" role="tab" tabindex="-1" type="button"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_236&quot;}">游戏</strong><span data-i18n-text="{&quot;0&quot;:&quot;index.text_237&quot;}">玩家</span></button>
+</div>
+<div class="role-panels">
+<article aria-labelledby="role-tab-edit" class="role-panel is-active" id="role-panel-edit" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_238&quot;}">剪辑台</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_239&quot;}">指尖穿梭时间线，剪片节奏快一步</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_240&quot;}">适配 DaVinci Resolve、Final Cut Pro 与剪映常用快捷键。转动旋钮精细找帧，单手快速切割与回放。</p>
+<ul aria-label="剪辑软件" class="role-apps" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_241&quot;}">
+<li><img alt="" height="512" src="/assets/software/davinci-resolve.png" width="512"><span>DaVinci Resolve</span></li>
+<li><img alt="" height="512" src="/assets/software/final-cut-pro.png" width="512"><span>Final Cut Pro</span></li>
+<li><img alt="" height="512" src="/assets/software/jianying-pro.jpg" width="512"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_242&quot;}">剪映专业版</span></li>
+</ul>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-music" class="role-panel" id="role-panel-music" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_243&quot;}">音乐台</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_244&quot;}">和弦旋律指尖弹，随时记录声音灵感</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_245&quot;}">内置合成器音色与吉他扫弦面板，支持现场录制采样并快速切片。灵感来了随时弹奏，不用搬出厚重键盘。</p>
+<div class="role-links"><a data-i18n-text="{&quot;0&quot;:&quot;index.text_246&quot;}" href="/blog/guide-synthesizer">合成器 →</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_247&quot;}" href="/blog/guide-guitar">吉他 →</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_248&quot;}" href="/blog/layout-sampler">采样 →</a></div>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-present" class="role-panel" id="role-panel-present" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_249&quot;}">讲台助手</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_250&quot;}">手机就是翻页器，从容掌控汇报节奏</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_251&quot;}">支持 PPT 与 Keynote 翻页。自带提词备注、倒计时、激光笔与画板，还能把手机摄像头作为浮窗投到大屏。</p>
+<ul aria-label="演示软件" class="role-apps" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_252&quot;}">
+<li><img alt="" height="512" src="/assets/software/microsoft-powerpoint.png" width="512"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_253&quot;}">Microsoft PowerPoint</span></li>
+<li><img alt="" height="512" src="/assets/software/keynote.jpg" width="512"><span>Keynote</span></li>
+</ul>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-code" class="role-panel" id="role-panel-code" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_254&quot;}">开发助手</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_255&quot;}">实时盯紧终端进度，一键切换工作焦点</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_256&quot;}">在手机小屏查看终端会话与 Codex 任务状态，常用命令一触即发。不占电脑主屏幕，专注敲代码不分心。</p>
+<ul aria-label="效率软件" class="role-apps" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_257&quot;}">
+<li><img alt="" height="1024" src="/assets/software/codex.png" width="1024"><span>Codex</span></li>
+<li><img alt="" height="512" src="/assets/software/xcode.png" width="512"><span>Xcode</span></li>
+</ul>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-reading" class="role-panel" id="role-panel-reading" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_258&quot;}">读写台</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_259&quot;}">单手翻页做摘录，文字草稿随手传</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_260&quot;}">阅读时轻点翻页、整理摘录，写作时快速输入 Markdown 结构。手机上的文字或语音草稿，一键同步发送到电脑。</p>
+<div class="role-links"><a data-i18n-text="{&quot;0&quot;:&quot;index.text_261&quot;}" href="/blog/layout-reading">查看读写使用教程 →</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_262&quot;}" href="/blog/layout-writing">写作 →</a></div>
+</article>
+<article aria-hidden="true" aria-labelledby="role-tab-game" class="role-panel" id="role-panel-game" role="tabpanel">
+<p class="role-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_263&quot;}">派对掌机</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_264&quot;}">手机作为触屏手柄，聚会联机随时开局</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_265&quot;}">在 Mac 端打开内置游戏大厅，配对后手机即可作为触屏手柄。支持多台设备加入《炸翻天》《纸野足球》同屏畅玩。</p>
+<div class="role-links"><a class="role-game-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_266&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">前往网页游戏大厅 ↗</a><a data-i18n-text="{&quot;0&quot;:&quot;index.text_267&quot;}" href="/blog/layout-arcade">查看手柄连接指南 →</a></div>
+</article>
+</div>
+</div>
+<figure aria-hidden="true" class="role-stage">
+<img alt="" class="role-figure is-active" height="768" loading="lazy" src="/assets/mascot-role-director-v1.png" width="768">
+<img alt="" class="role-figure" height="768" loading="lazy" src="/assets/mascot-role-musician-v1.png" width="768">
+<img alt="" class="role-figure" height="768" loading="lazy" src="/assets/mascot-role-presenter-v1.png" width="768">
+<img alt="" class="role-figure" height="768" loading="lazy" src="/assets/mascot-role-programmer-v1.png" width="768">
+<img alt="" class="role-figure role-art-white" height="1254" loading="lazy" src="/assets/mascot-reading-role-v4.webp" width="1254">
+<img alt="" class="role-figure role-art-white" height="1254" loading="lazy" src="/assets/mascot-game-role-v4.webp" width="1254">
+</figure>
+</section>
+<section class="pro-section" id="pro">
+<div class="pro-heading">
+<p class="eyebrow">PRO EDITION</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_268&quot;}">升级 Pro 版，定制属于你的专属工作台</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_269&quot;}">解锁高清串流、专业音乐与开发布局、多桌面与 iCloud 同步，体验更丰富的桌面控制。</p>
+</div>
+<div class="pro-purchase">
+<div class="pro-companion">
+<img alt="" height="1254" loading="lazy" src="/assets/mascot-pro-role-v4.webp" width="1254">
+<ul><li data-i18n-text="{&quot;0&quot;:&quot;index.text_270&quot;}">剪辑开发与音乐创作等专业布局</li><li data-i18n-text="{&quot;0&quot;:&quot;index.text_271&quot;}">超清串流画质与全屏游戏串流体验</li><li data-i18n-text="{&quot;0&quot;:&quot;index.text_272&quot;}">多桌面自由定制与壁纸美化</li></ul>
+</div>
+<div aria-label="奶猫妙控 Pro 中国大陆套餐价格" class="pro-plans" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_273&quot;}">
+<article class="pro-plan-card">
+<div class="pro-plan-header">
+<span class="pro-plan-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_274&quot;}">按周订阅</span>
+</div>
+<p class="pro-plan-price"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_275&quot;}">¥3</strong><small data-i18n-text="{&quot;0&quot;:&quot;index.text_276&quot;}">/ 周</small></p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_277&quot;}">按周订阅，适合短期体验与尝鲜</h3>
+</article>
+<article class="pro-plan-card is-recommended">
+<div class="pro-plan-header">
+<span class="pro-plan-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_278&quot;}">按年订阅</span>
+</div>
+<p class="pro-plan-price"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_279&quot;}">¥48</strong><small data-i18n-text="{&quot;0&quot;:&quot;index.text_280&quot;}">/ 年</small></p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_281&quot;}">按年订阅，适合日常长期主力使用</h3>
+</article>
+<article class="pro-plan-card is-lifetime">
+<div class="pro-plan-header">
+<span class="pro-plan-name" data-i18n-text="{&quot;0&quot;:&quot;index.text_282&quot;}">终身买断</span>
+</div>
+<p class="pro-plan-price"><strong data-i18n-text="{&quot;0&quot;:&quot;index.text_283&quot;}">¥98</strong><small data-i18n-text="{&quot;0&quot;:&quot;index.text_284&quot;}">一次购买</small></p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_285&quot;}">一次购买终身买断，无需按期续费</h3>
+</article>
+<div class="pro-trust-badges">
+<span data-i18n-text="{&quot;1&quot;:&quot;index.text_286&quot;}"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Apple 官方安全扣费</span>
+<span data-i18n-text="{&quot;1&quot;:&quot;index.text_287&quot;}"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg> 更换设备一键恢复</span>
+<span data-i18n-text="{&quot;1&quot;:&quot;index.text_288&quot;}"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 随时在 App Store 取消</span>
+</div>
+</div>
+</div>
+<details class="pro-benefits-details">
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_289&quot;}">查看完整 Pro 权益清单</summary>
+<div class="pro-benefits-list">
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_290&quot;}">专业软件布局</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_291&quot;}">包含剪辑调色、合成器演奏与开发终端等专属控制面板。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_292&quot;}">超清画面串流</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_293&quot;}">解锁高清与超清串流画质，手机屏幕查看电脑更清晰细腻。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_294&quot;}">自由定制与多桌面</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_295&quot;}">随心调整按键旋钮组件，支持建立多个独立场景桌面切换。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_296&quot;}">个性插画与壁纸</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_297&quot;}">解锁内置奶猫插画、动态壁纸以及自定义背景图片导入功能。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_298&quot;}">全套演讲辅助工具</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_299&quot;}">提供激光笔、放大镜、屏幕画笔与摄像头浮窗等汇报工具。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_300&quot;}">照片与文件快传</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_301&quot;}">手机端照片、草稿与文件附件，轻点即可直接发送到 Mac。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_302&quot;}">iCloud 云端同步</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_303&quot;}">自动同步布局配置、壁纸、剪藏夹与音乐创作工程数据。</p></article>
+<article class="pro-benefit-item"><h3 data-i18n-text="{&quot;0&quot;:&quot;index.text_304&quot;}">灵动岛与实时通知</h3><p data-i18n-text="{&quot;0&quot;:&quot;index.text_305&quot;}">支持锁屏实时活动与灵动岛，在手机上随时查看任务进度。</p></article>
+</div>
+</details>
+<p class="pro-note" data-i18n-text="{&quot;0&quot;:&quot;index.text_306&quot;}">所有套餐权益完全相同，实际价格由 App Store 结账时显示为准。 <a data-i18n-text="{&quot;0&quot;:&quot;index.text_307&quot;}" href="/terms">查看完整购买与订阅条款</a></p>
+</section>
+<section class="mac-section" id="mac">
+<div class="mac-copy">
+<p class="eyebrow">&gt;w&lt;</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_308&quot;}">轻量常驻，默默守候在菜单栏</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_309&quot;}">在顶部菜单栏随时查看可爱的颜文字连接状态、刷新配对码并管理设备</p>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_310&quot;}" href="/support">查看连接指南</a>
+</div>
+<img alt="奶猫妙控 Mac 端配对二维码与设置" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_311&quot;}" height="1196" loading="lazy" src="/assets/screens/zh-CN/macos-adapter.webp" width="944" data-screen="macos-adapter.webp">
+</section>
+<section class="faq-section" id="faq">
+<div class="faq-header">
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_312&quot;}">常见问题</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_313&quot;}">解答关于局域网连接、权限排查、会员订阅及隐私安全的常见疑问</p>
+<a class="faq-more-link" data-i18n-text="{&quot;0&quot;:&quot;index.text_314&quot;}" href="/support">查看完整帮助与支持手册 →</a>
+</div>
+<div class="faq-list">
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_315&quot;}">需要连同一个 Wi-Fi 吗？</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_316&quot;}">需要。iPhone/iPad 与 Mac 通过本地局域网高速直接通信，无需外网连接，延迟更低更安全。</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_317&quot;}">Mac 为什么收不到控制指令或画面？</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_318&quot;}">常规按键与控制需在 Mac 的“系统设置 → 隐私与安全性 → 辅助功能”中允许奶猫妙控；若需屏幕实时画面镜像，则需单独开启“屏幕录制”权限。</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_319&quot;}">基础功能免费吗？Pro 会员如何购买与恢复？</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_320&quot;}">核心基础小键盘与系统控制完全免费。Pro 会员可在 iPhone/iPad 端进入“设置 → 奶猫妙控 Pro”订阅或买断，所有交易由 Apple App Store 处理，支持一键恢复购买。</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_321&quot;}">控制指令与数据会被上传到云端吗？</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_322&quot;}">Mac 控制指令、文字输入和画面在已配对设备之间通过局域网直接传输，不经过云端中转。可选的 iCloud 同步和第三方服务有独立的数据流，详见隐私政策。</p>
+</details>
+<details>
+<summary data-i18n-text="{&quot;0&quot;:&quot;index.text_323&quot;}">支持哪些 Mac 设备与系统？</summary>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_324&quot;}">支持运行 macOS 13 (Ventura) 及更高版本的 Mac 设备，Universal 通用架构原生适配 Apple Silicon (M系列芯片) 与 Intel 处理器。</p>
+</details>
+</div>
+</section>
+<section class="download-section" id="download">
+<figure aria-label="无尾熊猫伙伴带来下载包" class="download-art sprite-sequence" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_325&quot;}">
+<img alt="无尾熊猫伙伴带来下载包" class="sprite-frame download-frame" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_326&quot;}" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-01.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-02.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-03.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-04.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-05.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-06.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-07.webp" width="768">
+<img alt="" aria-hidden="true" class="sprite-frame download-frame" height="768" loading="lazy" src="/assets/mascot-download-v2-frame-08.webp" width="768">
+</figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;index.text_327&quot;}">把小键盘放到手边</h2>
+<p class="download-copy" data-i18n-text="{&quot;0&quot;:&quot;index.text_328&quot;}">手机、平板与电脑，扫码即刻搭档。</p>
+<div class="download-actions platform-download" data-platform-download="">
+<div aria-label="选择下载设备" class="download-platforms" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_329&quot;}" hidden="" role="tablist">
+<button aria-controls="footer-iphone-panel" aria-selected="true" class="download-platform" data-download-platform="iphone" id="footer-iphone-tab" role="tab" tabindex="0" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="10" x="7" y="2"></rect></svg><span>iPhone</span></button>
+<button aria-controls="footer-ipad-panel" aria-selected="false" class="download-platform" data-download-platform="ipad" id="footer-ipad-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="20" rx="2.5" width="16" x="4" y="2"></rect></svg><span>iPad</span></button>
+<button aria-controls="footer-mac-panel" aria-selected="false" class="download-platform" data-download-platform="mac" id="footer-mac-tab" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span>Mac</span></button>
+</div>
+<div aria-labelledby="footer-iphone-tab" class="download-panel" data-download-panel="iphone" id="footer-iphone-panel" role="tabpanel">
+<a aria-label="在 App Store 下载奶猫妙控 iPhone 版" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_330&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-home-downloa&amp;mt=8"><img alt="在 App Store 下载" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_331&quot;}" height="52" src="/assets/badges/app-store-zh-cn-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="footer-ipad-tab" class="download-panel" data-download-panel="ipad" hidden="" id="footer-ipad-panel" role="tabpanel">
+<a aria-label="在 App Store 下载奶猫妙控 iPad 版" class="download-badge" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_332&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-home-downloa&amp;mt=8"><img alt="在 App Store 下载" data-i18n-attrs="{&quot;alt&quot;:&quot;index.attr_333&quot;}" height="52" src="/assets/badges/app-store-zh-cn-black.svg" width="142" data-store-badge=""></a>
+</div>
+<div aria-labelledby="footer-mac-tab" class="download-panel" data-download-panel="mac" hidden="" id="footer-mac-panel" role="tabpanel">
+<a aria-label="下载奶猫妙控 Mac 版" class="download-badge download-badge-mac" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_334&quot;}" data-release-link="" href="https://github.com/buggyblues/ninopad/releases/latest"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><rect height="12" rx="1.5" width="16" x="4" y="3"></rect><path d="m4 15-2 4h20l-2-4M9 19h6"></path></svg><span data-i18n-text="{&quot;0&quot;:&quot;index.text_335&quot;}">下载 Mac 版</span></a>
+</div>
+<noscript><a class="download-fallback" data-i18n-text='{"0":"index.text_336"}' href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 版 →</a></noscript>
+</div>
+</section>
+</main>
+<div aria-hidden="true" class="look-panda">
+<div class="look-panda-motion">
+<img alt="" height="750" src="/assets/mascot-look-v2.webp" width="900">
+<span class="look-pupil look-pupil-left"></span>
+<span class="look-pupil look-pupil-right"></span>
+</div>
+</div>
+<footer>
+<a class="brand" href="#top"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;index.text_337&quot;}">奶猫妙控</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;index.text_338&quot;}">&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+<nav aria-label="页脚导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;index.attr_339&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-home-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_340&quot;}" href="https://github.com/buggyblues/ninopad/releases">下载</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_341&quot;}" href="/updates">更新</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_342&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_343&quot;}" href="/support">支持</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_344&quot;}" href="/privacy">隐私</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_345&quot;}" href="/terms">条款</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;index.text_346&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+<a data-lang-switch="" href="/en/?lng=en" aria-label="Switch to English" class="">English</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;index.text_348&quot;}">© <span data-year=""></span> 奶猫妙控</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">网站统计设置</button></footer>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="奶猫妙控首页">
-      <img src="assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="#layouts">功能</a>
-      <a href="#pro">价格</a>
-      <a href="blog.html">博客</a>
-      <a href="#faq">常见问题</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/en/" aria-label="Switch to English" data-lang-switch>EN</a>
-      <a class="header-download" href="#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" aria-controls="mobile-drawer" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer-backdrop" data-mobile-drawer-backdrop aria-hidden="true"></div>
-  <div class="mobile-drawer" id="mobile-drawer" data-mobile-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-label="移动端导航菜单">
-    <ul>
-      <li><a href="#layouts" data-mobile-nav-link><span>功能</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#pro" data-mobile-nav-link><span>价格</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="blog.html" data-mobile-nav-link><span>博客</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="#faq" data-mobile-nav-link><span>常见问题</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link><span>游戏大厅</span><svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-    <div class="mobile-drawer-lang">
-      <a href="/" class="is-active">简体中文</a>
-      <a href="/en/" data-lang-switch>English</a>
-    </div>
-  </div>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-field" aria-hidden="true">
-        <span class="hero-control hero-key hero-key-blue">搜索</span>
-        <span class="hero-control hero-key hero-key-lilac">截图</span>
-        <span class="hero-control hero-key hero-key-yellow">切换应用</span>
-        <span class="hero-control hero-key hero-key-coral">静音</span>
-        <span class="hero-control hero-key hero-key-cream">⌨︎</span>
-        <span class="hero-control hero-key hero-key-dark">显示桌面</span>
-        <span class="hero-control hero-trackpad"></span>
-        <span class="hero-control hero-knob"></span>
-        <span class="hero-control hero-slider"></span>
-        <span class="hero-control hero-key hero-key-small">复制</span>
-        <span class="hero-control hero-key hero-key-small hero-key-peach">粘贴</span>
-      </div>
-      <div class="hero-copy">
-        <h1 aria-label="随心全能小键盘，跃然掌上">
-          <span class="hero-line hero-line-first"><span data-typewriter data-text="随心全能小键盘，">随心全能小键盘，</span><span class="type-caret" aria-hidden="true"></span></span>
-          <span class="hero-line hero-line-accent" aria-hidden="true">跃然<img class="hero-paw" src="assets/panda-paw-glyph-v1.webp" alt="" width="320" height="320">上</span>
-        </h1>
-        <div class="hero-actions platform-download" data-platform-download>
-          <div class="download-platforms" role="tablist" aria-label="选择下载设备" hidden>
-            <button type="button" class="download-platform" id="hero-iphone-tab" role="tab" aria-selected="true" aria-controls="hero-iphone-panel" tabindex="0" data-download-platform="iphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/></svg><span>iPhone</span></button>
-            <button type="button" class="download-platform" id="hero-ipad-tab" role="tab" aria-selected="false" aria-controls="hero-ipad-panel" tabindex="-1" data-download-platform="ipad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/></svg><span>iPad</span></button>
-            <button type="button" class="download-platform" id="hero-mac-tab" role="tab" aria-selected="false" aria-controls="hero-mac-panel" tabindex="-1" data-download-platform="mac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>Mac</span></button>
-          </div>
-          <div class="download-panel" id="hero-iphone-panel" role="tabpanel" aria-labelledby="hero-iphone-tab" data-download-panel="iphone">
-            <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="在 App Store 下载奶猫妙控 iPhone 版"><img src="assets/badges/app-store-zh-cn-black.svg" alt="在 App Store 下载" width="142" height="52"></a>
-          </div>
-          <div class="download-panel" id="hero-ipad-panel" role="tabpanel" aria-labelledby="hero-ipad-tab" data-download-panel="ipad" hidden>
-            <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="在 App Store 下载奶猫妙控 iPad 版"><img src="assets/badges/app-store-zh-cn-black.svg" alt="在 App Store 下载" width="142" height="52"></a>
-          </div>
-          <div class="download-panel" id="hero-mac-panel" role="tabpanel" aria-labelledby="hero-mac-tab" data-download-panel="mac" hidden>
-            <a class="download-badge download-badge-mac" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link aria-label="下载奶猫妙控 Mac 版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>下载 Mac 版</span></a>
-          </div>
-          <noscript><a class="download-fallback" href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 版 →</a></noscript>
-        </div>
-      </div>
-    </section>
-
-    <section class="layouts-section" id="layouts">
-      <div class="layouts-header">
-        <h2>现成布局开箱即用，按习惯随时调整</h2>
-        <p>内建 18 套高频预设布局，旋钮随心切换，上手就能用。 <a href="blog.html">查看快速上手指南 →</a></p>
-      </div>
-
-      <!-- Unified Hardware Console Deck -->
-      <div class="deck-hardware-chassis" id="layout-panel" role="tabpanel" aria-labelledby="layout-tab-work">
-        
-        <!-- Left Hardware Bay: Retro LCD Screen on Top, Rotary Knob Below -->
-        <div class="deck-controls-bay">
-          
-          <!-- Clean Retro LCD Status Screen (No outer decorations) -->
-          <div class="deck-lcd-screen" aria-live="polite">
-            <div class="lcd-screen-glass">
-              <div class="lcd-screen-header">
-                <div class="lcd-header-tags">
-                  <span class="lcd-tag is-active">AUTO</span>
-                  <span class="lcd-tag is-active">PRESET</span>
-                </div>
-                <span class="lcd-screen-index" data-led-index>01 / 18</span>
-              </div>
-
-              <div class="lcd-screen-body led-screen-body">
-                <strong class="lcd-screen-name" data-layout-name>工作</strong>
-                <p class="lcd-screen-desc" data-layout-description>macOS 桌面与当前应用 · 触控板、滚轮与高频按键汇于一屏，边看边控。</p>
-              </div>
-
-              <div class="lcd-screen-footer">
-                <a class="lcd-screen-link" data-layout-guide data-layout-guide-label href="blog/layout-work.html">阅读教程 →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rotary Dial Unit (Below LCD screen, Clean Minimalist Knob) -->
-          <div class="deck-dial-unit">
-            <div class="knob-rotary-mount">
-              <!-- Preset Data Store / Accessible Tablist -->
-              <div class="knob-items-ring" id="knob-ring" role="tablist" aria-label="预设布局" style="display:none;">
-                <div class="knob-node-item is-active" data-index="0">
-                  <button id="layout-tab-work" class="knob-tick" type="button" role="tab" aria-selected="true" aria-controls="layout-panel" tabindex="0" data-image="assets/screens/release-1.3.1/store-01-studio.webp" data-name="工作" data-icon="assets/layouts/work.svg" data-description="macOS 桌面与当前应用 · 触控板、滚轮与高频按键汇于一屏，边看边控。" data-alt="奶猫妙控工作布局" data-blog-href="blog/layout-work.html" aria-label="工作" title="工作"></button>
-                </div>
-                <div class="knob-node-item" data-index="1">
-                  <button id="layout-tab-launcher" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-launcher.webp" data-name="启动器" data-icon="assets/layouts/launcher.svg" data-description="Dock 与常用应用 · 将 Mac 常用应用化作触手可及的大图标，一键切至前台。" data-alt="奶猫妙控启动器布局" data-blog-href="blog/layout-launcher.html" aria-label="启动器" title="启动器"></button>
-                </div>
-                <div class="knob-node-item" data-index="2">
-                  <button id="layout-tab-browser" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-browser.webp" data-name="浏览器" data-icon="assets/layouts/browser.svg" data-description="Safari 与 Chrome · 常用网址直达与双向滑块切标签，网页浏览更流畅。" data-alt="奶猫妙控浏览器布局" data-blog-href="blog/layout-browser.html" aria-label="浏览器" title="浏览器"></button>
-                </div>
-                <div class="knob-node-item" data-index="3">
-                  <button id="layout-tab-finance" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-finance.webp" data-name="财务" data-icon="assets/layouts/finance.svg" data-description="Excel 与 Numbers · 数字小键盘、本地计算器与常用表格公式，录入核算井井有条。" data-alt="奶猫妙控财务布局" data-blog-href="blog/layout-finance.html" aria-label="财务" title="财务"></button>
-                </div>
-                <div class="knob-node-item" data-index="4">
-                  <button id="layout-tab-writing" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/text-1.3.0-r1/writing-01.webp" data-name="写作" data-icon="assets/layouts/writing.svg" data-description="Markdown 与文本编辑 · 字符/词/段多级光标移动与排版快捷键，改稿更专注。" data-alt="奶猫妙控写作布局" data-blog-href="blog/layout-writing.html" aria-label="写作" title="写作"></button>
-                </div>
-                <div class="knob-node-item" data-index="5">
-                  <button id="layout-tab-research" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/text-1.3.0-r1/research-01.webp" data-name="调研" data-icon="assets/layouts/research.svg" data-description="文献与网页摘录 · 观点、方法与证据快速归档，完整留存原始出处。" data-alt="奶猫妙控调研布局" data-blog-href="blog/layout-research.html" aria-label="调研" title="调研"></button>
-                </div>
-                <div class="knob-node-item" data-index="6">
-                  <button id="layout-tab-reading" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-reading.webp" data-name="阅读" data-icon="assets/layouts/reading.svg" data-description="图书与 PDF · 双向翻页旋钮、平滑滚轮与章节跳转，沉浸长篇阅读。" data-alt="奶猫妙控阅读布局" data-blog-href="blog/layout-reading.html" aria-label="阅读" title="阅读"></button>
-                </div>
-                <div class="knob-node-item" data-index="7">
-                  <button id="layout-tab-coding-lab" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.1/store-14-coding-lab.webp" data-name="氛围编程" data-icon="assets/layouts/coding-lab.svg" data-description="Claude Code / Codex · 实时查看 AI 生成状态与任务队列，灵感持续推进。" data-alt="奶猫妙控氛围编程布局" data-blog-href="blog/layout-codex.html" aria-label="氛围编程" title="氛围编程"></button>
-                </div>
-                <div class="knob-node-item" data-index="8">
-                  <button id="layout-tab-codex" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.1/store-09-codex.webp" data-name="Codex" data-icon="assets/layouts/codex.svg" data-description="Codex 桌面应用 · 任务状态实时回读，旋钮调节模型与推理深度。" data-alt="奶猫妙控Codex布局" data-blog-href="blog/layout-codex.html" aria-label="Codex" title="Codex"></button>
-                </div>
-                <div class="knob-node-item" data-index="9">
-                  <button id="layout-tab-terminal" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-terminal.webp" data-name="终端" data-icon="assets/layouts/terminal.svg" data-description="Mac 原生终端 (vim / top / ssh) · 状态屏、全屏键盘与常用控制键一触即达。" data-alt="奶猫妙控终端布局" data-blog-href="blog/layout-terminal.html" aria-label="终端" title="终端"></button>
-                </div>
-                <div class="knob-node-item" data-index="10">
-                  <button id="layout-tab-creative" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-resolve.webp" data-name="应用创作台" data-icon="assets/layouts/creative.svg" data-description="DaVinci / Premiere / 剪映 · 随前台应用自动切换映射，时间线与调色尽在掌心。" data-alt="奶猫妙控应用创作台布局" data-blog-href="blog/layout-creative.html" aria-label="应用创作台" title="应用创作台"></button>
-                </div>
-                <div class="knob-node-item" data-index="11">
-                  <button id="layout-tab-presentation" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-presentation-assist.webp" data-name="演示" data-icon="assets/layouts/presentation.svg" data-description="Keynote / PowerPoint · 演讲辅助、放映控制与分段计时，台前演说从容控场。" data-alt="奶猫妙控演示布局" data-blog-href="blog/layout-presentation.html" aria-label="演示" title="演示"></button>
-                </div>
-                <div class="knob-node-item" data-index="12">
-                  <button id="layout-tab-media" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-media.webp" data-name="媒体" data-icon="assets/layouts/media.svg" data-description="Apple Music 与 Spotify · 经典触控轮选歌、调音量与切换播放模式。" data-alt="奶猫妙控媒体布局" data-blog-href="blog/layout-media.html" aria-label="媒体" title="媒体"></button>
-                </div>
-                <div class="knob-node-item" data-index="13">
-                  <button id="layout-tab-sampler" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-sampler.webp" data-name="采样" data-icon="assets/layouts/sampler.svg" data-description="移动端音频采样 · 快速录音、智能切片与 16 格响应式鼓垫即兴演奏。" data-alt="奶猫妙控采样布局" data-blog-href="blog/layout-sampler.html" aria-label="采样" title="采样"></button>
-                </div>
-                <div class="knob-node-item" data-index="14">
-                  <button id="layout-tab-synthesizer" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.0/synth-01-chord.webp" data-name="合成器" data-icon="assets/layouts/synthesizer.svg" data-description="内建发声引擎与 MIDI · 顺阶和弦键、滤波器旋钮与 6 轨循环录音。" data-alt="奶猫妙控合成器布局" data-blog-href="blog/guide-synthesizer.html" aria-label="合成器" title="合成器"></button>
-                </div>
-                <div class="knob-node-item" data-index="15">
-                  <button id="layout-tab-guitar" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/release-1.3.0/guitar-01-play.webp" data-name="吉他" data-icon="assets/layouts/guitar.svg" data-description="六弦吉他弹唱与学习 · 感应扫弦、摇杆切和弦，内置 100 首进阶练习。" data-alt="奶猫妙控吉他布局" data-blog-href="blog/guide-guitar.html" aria-label="吉他" title="吉他"></button>
-                </div>
-                <div class="knob-node-item" data-index="16">
-                  <button id="layout-tab-arcade" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-arcade.webp" data-name="游戏" data-icon="assets/layouts/arcade.svg" data-description="触屏手柄模式 · 十字方向键、ABXY 与肩键，掌上畅享 Mac 经典游戏。" data-alt="奶猫妙控游戏布局" data-blog-href="blog/layout-arcade.html" aria-label="游戏" title="游戏"></button>
-                </div>
-                <div class="knob-node-item" data-index="17">
-                  <button id="layout-tab-smart-home" class="knob-tick" type="button" role="tab" aria-selected="false" aria-controls="layout-panel" tabindex="-1" data-image="assets/screens/v1.2.0/control-smart-home.webp" data-name="智能家居" data-icon="assets/layouts/smart-home.svg" data-description="Home Assistant 与 Apple 家庭 · 灯光、窗帘与场景转为直观旋钮与开关。" data-alt="奶猫妙控智能家居布局" data-blog-href="blog/layout-smart-home.html" aria-label="智能家居" title="智能家居"></button>
-                </div>
-              </div>
-
-              <!-- Sleek Hardware Knob Dial (Tap / Drag to change) -->
-              <div class="knob-dial is-inviting" id="layout-knob" role="slider" aria-label="预设布局调节旋钮" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1" aria-valuetext="工作" tabindex="0">
-                <div class="knob-dial-body">
-                  <div class="knob-grooves"></div>
-                  <div class="knob-pointer-needle"></div>
-                </div>
-                <div class="knob-center-hub">
-                  <img class="knob-hub-icon" data-knob-icon src="assets/layouts/work.svg" alt="" width="36" height="36">
-                  <strong class="knob-hub-name" data-knob-hub-name>工作</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Hardware Bay: Device Screen Mockup -->
-        <div class="deck-screen-bay">
-          <div class="deck-screen-bezel">
-            <a class="layout-preview-frame" data-layout-guide href="blog/layout-work.html" aria-label="阅读工作布局教程">
-              <img data-layout-image src="assets/screens/release-1.3.1/store-01-studio.webp" alt="奶猫妙控工作布局" width="1206" height="2622" loading="lazy">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="remote-section" id="remote">
-      <div class="remote-intro">
-        <p class="eyebrow">REMOTE SCREEN &amp; CONTROL</p>
-        <h2>掌控 Mac，远不止一面屏幕</h2>
-        <p>双屏协同，触手可及。在右侧手机上操作触控板与快捷键，实时遥控左侧 Mac 桌面。</p>
-        
-        <!-- Workstation Mode Selector Pills (Clean SVG Icons, No Emoji) -->
-        <div class="remote-mode-pills" role="tablist" aria-label="工作站模式切换">
-          <button class="rm-pill is-active" type="button" data-rmode="video" role="tab" aria-selected="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
-            <span>视频剪辑</span>
-          </button>
-          <button class="rm-pill" type="button" data-rmode="music" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            <span>音乐播放</span>
-          </button>
-          <button class="rm-pill" type="button" data-rmode="desktop" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            <span>极速多任务</span>
-          </button>
-          <button class="rm-pill" type="button" data-rmode="notes" role="tab" aria-selected="false">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-            <span>语音速记</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Live Dual-Screen Interactive Workstation -->
-      <div class="mac-remote-workstation">
-        
-        <!-- Left: Mac Studio Display (Live Target Screen) -->
-        <div class="mac-display-bay">
-          <div class="mac-monitor-frame">
-            <!-- macOS Top Menu Bar -->
-            <div class="mac-menubar">
-              <div class="mac-menu-left">
-                <span class="mac-apple-logo"></span>
-                <strong class="mac-active-app" id="mac-app-name">Final Cut Pro</strong>
-                <span class="mac-menu-item">文件</span>
-                <span class="mac-menu-item">编辑</span>
-                <span class="mac-menu-item">显示</span>
-              </div>
-              <div class="mac-menu-right">
-                <span class="mac-clock-text">09:41</span>
-              </div>
-            </div>
-
-            <!-- macOS Active Screen Canvas -->
-            <div class="mac-screen-canvas" id="mac-screen-canvas">
-              
-              <!-- 1. Video Editing Mode Canvas -->
-              <div class="mac-canvas-view is-active" data-canvas="video">
-                <div class="mac-video-window">
-                  <div class="mac-win-titlebar">
-                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>Timeline — 4K_B-Roll_Master.mov</span>
-                  </div>
-                  <div class="mac-video-preview">
-                    <div class="video-art-box">
-                      <div class="video-placeholder-art">
-                        <span class="video-badge" id="video-clip-badge">CLIP 01 · 4K 60p</span>
-                        <h4 id="video-clip-title">Hawa Mahal · Sunset Sequence</h4>
-                        <div class="video-playhead-badge" id="video-timecode">00:01:24:18</div>
-                      </div>
-                    </div>
-                    <!-- Scrubbable Interactive Timeline with Cut Segments -->
-                    <div class="mac-timeline-bar" id="mac-timeline">
-                      <div class="timeline-ruler"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div>
-                      <div class="timeline-tracks" id="timeline-tracks">
-                        <div class="track-row video-track" id="video-track-row">
-                          <div class="track-segment" style="width: 45%;">
-                            <span>Video 1A [4K HDR]</span>
-                            <div class="trim-handle trim-left"></div>
-                            <div class="trim-handle trim-right"></div>
-                          </div>
-                          <div class="track-segment" style="width: 55%;">
-                            <span>Video 1B [B-Roll]</span>
-                            <div class="trim-handle trim-left"></div>
-                            <div class="trim-handle trim-right"></div>
-                          </div>
-                        </div>
-                        <div class="track-row audio-track" id="audio-track-row">
-                          <div class="track-segment" style="width: 45%;">
-                            <span>Audio 1A [-3dB]</span>
-                          </div>
-                          <div class="track-segment" style="width: 55%;">
-                            <span>Audio 1B [-3dB]</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="timeline-scrubber" id="mac-scrubber" style="left: 45%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. Music Player Mode Canvas -->
-              <div class="mac-canvas-view" data-canvas="music">
-                <div class="mac-music-window">
-                  <div class="mac-win-titlebar">
-                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>Apple Music — Lo-Fi Chill</span>
-                  </div>
-                  <div class="mac-music-body">
-                    <div class="music-vinyl-disc is-spinning" id="music-vinyl">
-                      <div class="vinyl-grooves"></div>
-                      <div class="vinyl-center"><img src="assets/software/apple-music.jpg" alt="" width="36" height="36"></div>
-                    </div>
-                    <div class="music-info-box">
-                      <div class="music-title-row">
-                        <span class="music-tag">NOW PLAYING</span>
-                        <button class="music-heart-btn" id="mac-music-heart" type="button" aria-label="收藏当前歌曲">
-                          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        </button>
-                      </div>
-                      <h3 id="music-song-title">Midnight Ambient Beats</h3>
-                      <div class="music-vol-indicator">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                        <div class="vol-track-mini"><div class="vol-fill-mini" id="mac-vol-mini-bar" style="width: 50%;"></div></div>
-                        <span id="mac-vol-mini-text">50%</span>
-                      </div>
-                      <div class="music-wave-spectrum" id="music-spectrum">
-                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 3. Desktop Mode Canvas (Classic Layered Mac Windows) -->
-              <div class="mac-canvas-view" data-canvas="desktop">
-                <div class="mac-desktop-scene" id="mac-desktop-scene">
-                  
-                  <!-- Window 1: Safari Browser Window (Official Ninopad Website) -->
-                  <div class="mac-classic-win win-safari is-active" id="win-safari" style="z-index: 3;">
-                    <div class="win-title-bar safari-top-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <div class="safari-nav-buttons"><span>‹</span><span>›</span></div>
-                      <div class="win-url-pill"><span>🔒</span> ninopad.com</div>
-                    </div>
-                    <div class="win-client safari-client">
-                      <div class="mini-site-header">
-                        <span class="mini-logo">NINOPAD <strong>2.0</strong></span>
-                        <span class="mini-cta">开启联动</span>
-                      </div>
-                      <div class="mini-hero-body">
-                        <span class="mini-eyebrow">硬件级触控体验</span>
-                        <h4>掌控 Mac，远不止一面屏幕</h4>
-                        <div class="mini-key-deck">
-                          <div class="mini-deck-key k-y"><span>⌘C</span><small>复制</small></div>
-                          <div class="mini-deck-key k-b"><span>⌘V</span><small>粘贴</small></div>
-                          <div class="mini-deck-key k-p"><span>⎋</span><small>撤销</small></div>
-                          <div class="mini-deck-key k-l"><span>⇧⌘4</span><small>截屏</small></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Window 2: Code Editor Window (Xcode) -->
-                  <div class="mac-classic-win win-code" id="win-code" style="z-index: 2;">
-                    <div class="win-title-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <span class="win-title-text">NinoPadKit.swift — Xcode</span>
-                    </div>
-                    <div class="win-client code-client">
-                      <div class="code-gutter"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
-                      <div class="code-lines">
-                        <p><span class="c-kw">import</span> <span class="c-fn">NinoPadKit</span></p>
-                        <p><span class="c-kw">let</span> deck = <span class="c-fn">NinoPadDeck</span>(lowLatency: <span class="c-num">true</span>)</p>
-                        <p>deck.<span class="c-fn">onAction</span> { event <span class="c-kw">in</span></p>
-                        <p>&nbsp;&nbsp;MacStudio.<span class="c-fn">dispatchSync</span>(event)</p>
-                        <p>}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Window 3: Ninopad Companion Studio Window -->
-                  <div class="mac-classic-win win-ninopad" id="win-ninopad" style="z-index: 1;">
-                    <div class="win-title-bar">
-                      <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                      <span class="win-title-text">Ninopad Companion</span>
-                    </div>
-                    <div class="win-client ninopad-client">
-                      <div class="np-status-bar">
-                        <span class="np-device-dot"></span>
-                        <span class="np-device-name">iPhone 16 Pro · 0.8ms</span>
-                      </div>
-                      <div class="np-grid-preview">
-                        <div class="np-tile t-active">4K 剪辑</div>
-                        <div class="np-tile">Lo-Fi 音乐</div>
-                        <div class="np-tile">极速多任务</div>
-                        <div class="np-tile">灵感速记</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Spotlight Floating Bar Overlay -->
-                  <div class="mac-spotlight-bar" id="mac-spotlight-bar">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <span class="spotlight-query" id="spotlight-query">Safari.app</span>
-                    <span class="spotlight-tag">应用</span>
-                  </div>
-
-                  <!-- ⌘Tab App Switcher Overlay (1-to-1 Aligned with Windows: Safari, Xcode, Ninopad) -->
-                  <div class="mac-app-switcher-hud" id="mac-app-switcher">
-                    <div class="app-switcher-icon is-focused" title="Safari"><img src="assets/software/safari.png" alt="Safari" width="32" height="32"></div>
-                    <div class="app-switcher-icon" title="Xcode"><img src="assets/software/xcode.png" alt="Xcode" width="32" height="32"></div>
-                    <div class="app-switcher-icon" title="Ninopad"><img src="assets/app-icon.webp" alt="Ninopad" width="32" height="32"></div>
-                  </div>
-
-                  <!-- Floating Screenshot Thumbnail -->
-                  <div class="mac-screenshot-card" id="mac-screenshot-card">
-                    <div class="screenshot-mini-thumb"></div>
-                    <span>截屏已就绪</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. Notes & Voice Dictate Canvas -->
-              <div class="mac-canvas-view" data-canvas="notes">
-                <div class="mac-notes-window">
-                  <div class="mac-win-titlebar">
-                    <span class="w-dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
-                    <span>备忘录 — 灵感速记与语音投送</span>
-                  </div>
-                  <div class="mac-notes-content" id="mac-notes-body">
-                    <p class="notes-date">今天 09:41</p>
-                    <p class="notes-p" id="mac-typed-text">手机文本与语音已直连 Mac 光标就绪...</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Live Synchronized Cursor on Mac Screen -->
-              <div class="mac-live-cursor" id="mac-live-cursor">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0f172a" stroke="#ffffff" stroke-width="1.8">
-                  <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-                </svg>
-              </div>
-
-              <!-- macOS Native Toast / HUD Overlay -->
-              <div class="mac-hud-overlay" id="mac-workstation-hud">
-                <span class="hud-icon" id="hud-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                </span>
-                <span class="hud-text" id="hud-text">就绪</span>
-              </div>
-            </div>
-
-            <!-- Mac Monitor Chin & Stand Base -->
-            <div class="mac-monitor-chin">
-              <span class="mac-chin-logo"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Handheld iPhone Controller (CreamDeck Controller App) -->
-        <div class="phone-controller-bay">
-          <div class="phone-deck-chassis">
-            
-            <!-- Controller Surface (Interactive Board) -->
-            <div class="phone-controller-surface">
-              
-              <!-- Upper Area: Virtual Trackpad & Jog-Wheel -->
-              <div class="p-row upper">
-                <div class="p-trackpad-box" id="ws-trackpad" title="在触控板上滑动手指，左侧 Mac 光标实时同步！">
-                  <div class="p-trackpad-dots"></div>
-                  <span class="p-trackpad-hint">虚拟触控板<br><small>滑动遥控 Mac 光标</small></span>
-                  <div class="p-cursor-ripple" id="ws-ripple"></div>
-                </div>
-
-                <div class="p-jog-wheel" id="ws-jog-wheel" title="上下拖动或滚动滚轮，实时剪辑时间线">
-                  <div class="p-wheel-ridges"></div>
-                  <div class="p-wheel-thumb" id="ws-jog-thumb"></div>
-                </div>
-              </div>
-
-              <!-- Dynamic Mode-Specific 4-Button Hero Keypads -->
-              <div class="p-mode-pad" id="p-mode-pad">
-                
-                <!-- 1. Video Edit Mode Buttons (4 Tactile Keys: Play/Pause, Blade Cut, Trim In, Trim Out) -->
-                <div class="p-pad-view is-active" data-pview="video">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="play-toggle">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                      <span>播放 / 暂停</span>
-                    </button>
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="blade">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-                      <span>剃刀剪切</span>
-                    </button>
-                    <button class="hero-keypad-btn key-peach" type="button" data-cmd="trim-left">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/><line x1="6" y1="6" x2="6" y2="18"/></svg>
-                      <span>剪口左移</span>
-                    </button>
-                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="trim-right">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/><line x1="18" y1="6" x2="18" y2="18"/></svg>
-                      <span>剪口右移</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 2. Music Player Mode Buttons (4 Tactile Keys: Play, Next, Like, Volume Knob) -->
-                <div class="p-pad-view" data-pview="music">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="music-play">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-                      <span>播放 / 暂停</span>
-                    </button>
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="music-next">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-                      <span>下一首</span>
-                    </button>
-                    <button class="hero-keypad-btn key-coral" id="phone-music-heart-btn" type="button" data-cmd="music-like">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                      <span>喜欢收藏</span>
-                    </button>
-                    <button class="hero-keypad-btn key-cream key-knob-btn" id="phone-vol-knob-btn" type="button" data-cmd="music-vol" title="调节 Mac 音量">
-                      <div class="phone-mini-dial">
-                        <div class="phone-dial-indicator" id="phone-dial-indicator"></div>
-                      </div>
-                      <span id="phone-vol-lbl">音量 50%</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 3. Desktop Mode Buttons (4 Tactile Keys: Mission Control, Switch App, Spotlight, Screenshot) -->
-                <div class="p-pad-view" data-pview="desktop">
-                  <div class="p-keys-3d-grid">
-                    <button class="hero-keypad-btn key-blue" type="button" data-cmd="mission">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                      <span>调度中心</span>
-                    </button>
-                    <button class="hero-keypad-btn key-yellow" type="button" data-cmd="switch-app">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                      <span>切换应用</span>
-                    </button>
-                    <button class="hero-keypad-btn key-cream" type="button" data-cmd="spotlight">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                      <span>聚焦搜索</span>
-                    </button>
-                    <button class="hero-keypad-btn key-lilac" type="button" data-cmd="screenshot">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                      <span>一键截屏</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 4. Notes & Voice Mode (Voice Actions + Textarea) -->
-                <div class="p-pad-view" data-pview="notes">
-                  <div class="p-voice-composer">
-                    <textarea class="p-voice-textarea" id="ws-voice-input" rows="2" placeholder="输入文字或点击下方快捷短语投送至 Mac..."></textarea>
-                    <div class="p-voice-chips">
-                      <button class="p-chip" type="button" data-txt="今天 4K 样片已剪辑完成，请查收！">剪辑完成</button>
-                      <button class="p-chip" type="button" data-txt="git commit -m 'feat: live remote workstation'">Git 提交</button>
-                      <button class="p-chip" type="button" data-txt="下午三点准时在 2 号会议室评审。">会议提醒</button>
-                    </div>
-                    <div class="p-keys-3d-grid mini-grid">
-                      <button class="hero-keypad-btn key-coral" id="ws-mic-btn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                        <span>语音听写</span>
-                      </button>
-                      <button class="hero-keypad-btn key-blue" id="ws-send-btn" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                        <span>注入 Mac ↵</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="how-section" id="how">
-      <figure class="connection-art sprite-sequence" aria-label="戴牛仔帽的无尾熊猫将插头甩进 Mac">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-01.png" alt="戴牛仔帽的无尾熊猫准备连接 Mac" width="1200" height="1200" loading="lazy">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-02.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-03.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-04.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-05.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-06.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-07.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame connection-frame" src="assets/mascot-connection-cowboy-v2-frame-08.png" alt="" width="1200" height="1200" loading="lazy" aria-hidden="true">
-      </figure>
-      <div class="how-copy">
-        <p class="eyebrow">FAST PAIRING</p>
-        <h2>简单三步，即刻开启联动</h2>
-        <ol class="steps">
-          <li><span>01</span><div><h3>安装手机与 Mac 端</h3><p>从 <a href="https://apps.apple.com/app/id6805378609">App Store</a> 安装手机 App；<a href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link>下载 Mac 安装包</a>，将“奶猫妙控”拖入“应用程序”后启动</p></div></li>
-          <li><span>02</span><div><h3>授予系统辅助功能权限</h3><p>按系统引导在系统设置中开启辅助功能权限，以支持跨应用快捷控制</p></div></li>
-          <li><span>03</span><div><h3>手机扫码快速配对</h3><p>确保两端处于同一局域网 Wi-Fi，打开手机端扫描二维码即可完成绑定</p></div></li>
-        </ol>
-        <details class="quick-details">
-          <summary>更多快捷小组件与手势操作</summary>
-          <p>支持桌面小组件查看连接状态与快捷入口，支持长按图标扫码配对及边缘手势切换布局。</p>
-          <div class="quick-screens">
-        <figure>
-          <img src="assets/screens/v1.2.0/device-pairing.webp" alt="奶猫妙控设备与配对页面" width="1206" height="2622" loading="lazy">
-          <figcaption><strong>设备与配对</strong><span>局域网自动发现 Mac 设备，扫码快速建立加密会话</span></figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screens/v1.2.0/layout-switcher.webp" alt="奶猫妙控小键盘切换页面" width="1206" height="2622" loading="lazy">
-          <figcaption><strong>工作区自如切换</strong><span>长按屏幕边缘或横滑，在多套工作区小键盘间流畅切转</span></figcaption>
-        </figure>
-      </div>
-        </details>
-      </div>
-    </section>
 
 
-    <section class="scenarios-section" id="scenarios">
-      <div class="scenario-copy">
-        <div class="role-tabs" role="tablist" aria-label="使用场景">
-          <button id="role-tab-edit" type="button" role="tab" aria-selected="true" aria-controls="role-panel-edit" tabindex="0" data-role-index="0"><strong>剪辑</strong><span>导演</span></button>
-          <button id="role-tab-music" type="button" role="tab" aria-selected="false" aria-controls="role-panel-music" tabindex="-1" data-role-index="1"><strong>音乐</strong><span>乐手</span></button>
-          <button id="role-tab-present" type="button" role="tab" aria-selected="false" aria-controls="role-panel-present" tabindex="-1" data-role-index="2"><strong>演讲</strong><span>演讲者</span></button>
-          <button id="role-tab-code" type="button" role="tab" aria-selected="false" aria-controls="role-panel-code" tabindex="-1" data-role-index="3"><strong>效率</strong><span>日常</span></button>
-          <button id="role-tab-reading" type="button" role="tab" aria-selected="false" aria-controls="role-panel-reading" tabindex="-1" data-role-index="4"><strong>读写</strong><span>作家</span></button>
-          <button id="role-tab-game" type="button" role="tab" aria-selected="false" aria-controls="role-panel-game" tabindex="-1" data-role-index="5"><strong>游戏</strong><span>玩家</span></button>
-        </div>
-        <div class="role-panels">
-          <article class="role-panel is-active" id="role-panel-edit" role="tabpanel" aria-labelledby="role-tab-edit">
-            <p class="role-name">剪辑台</p>
-            <h2>指尖穿梭时间线，剪片节奏快一步</h2>
-            <p>适配 DaVinci Resolve、Final Cut Pro 与剪映常用快捷键。转动旋钮精细找帧，单手快速切割与回放。</p>
-            <ul class="role-apps" aria-label="剪辑软件">
-              <li><img src="assets/software/davinci-resolve.png" alt="" width="512" height="512"><span>DaVinci Resolve</span></li>
-              <li><img src="assets/software/final-cut-pro.png" alt="" width="512" height="512"><span>Final Cut Pro</span></li>
-              <li><img src="assets/software/jianying-pro.jpg" alt="" width="512" height="512"><span>剪映专业版</span></li>
-            </ul>
-          </article>
-          <article class="role-panel" id="role-panel-music" role="tabpanel" aria-labelledby="role-tab-music" aria-hidden="true">
-            <p class="role-name">音乐台</p>
-            <h2>和弦旋律指尖弹，随时记录声音灵感</h2>
-            <p>内置合成器音色与吉他扫弦面板，支持现场录制采样并快速切片。灵感来了随时弹奏，不用搬出厚重键盘。</p>
-            <div class="role-links"><a href="blog/guide-synthesizer.html">合成器 →</a><a href="blog/guide-guitar.html">吉他 →</a><a href="blog/layout-sampler.html">采样 →</a></div>
-          </article>
-          <article class="role-panel" id="role-panel-present" role="tabpanel" aria-labelledby="role-tab-present" aria-hidden="true">
-            <p class="role-name">讲台助手</p>
-            <h2>手机就是翻页器，从容掌控汇报节奏</h2>
-            <p>支持 PPT 与 Keynote 翻页。自带提词备注、倒计时、激光笔与画板，还能把手机摄像头作为浮窗投到大屏。</p>
-            <ul class="role-apps" aria-label="演示软件">
-              <li><img src="assets/software/microsoft-powerpoint.png" alt="" width="512" height="512"><span>Microsoft PowerPoint</span></li>
-              <li><img src="assets/software/keynote.jpg" alt="" width="512" height="512"><span>Keynote</span></li>
-            </ul>
-          </article>
-          <article class="role-panel" id="role-panel-code" role="tabpanel" aria-labelledby="role-tab-code" aria-hidden="true">
-            <p class="role-name">开发助手</p>
-            <h2>实时盯紧终端进度，一键切换工作焦点</h2>
-            <p>在手机小屏查看终端会话与 Codex 任务状态，常用命令一触即发。不占电脑主屏幕，专注敲代码不分心。</p>
-            <ul class="role-apps" aria-label="效率软件">
-              <li><img src="assets/software/codex.png" alt="" width="1024" height="1024"><span>Codex</span></li>
-              <li><img src="assets/software/xcode.png" alt="" width="512" height="512"><span>Xcode</span></li>
-            </ul>
-          </article>
-          <article class="role-panel" id="role-panel-reading" role="tabpanel" aria-labelledby="role-tab-reading" aria-hidden="true">
-            <p class="role-name">读写台</p>
-            <h2>单手翻页做摘录，文字草稿随手传</h2>
-            <p>阅读时轻点翻页、整理摘录，写作时快速输入 Markdown 结构。手机上的文字或语音草稿，一键同步发送到电脑。</p>
-            <div class="role-links"><a href="blog/layout-reading.html">查看读写使用教程 →</a><a href="blog/layout-writing.html">写作 →</a></div>
-          </article>
-          <article class="role-panel" id="role-panel-game" role="tabpanel" aria-labelledby="role-tab-game" aria-hidden="true">
-            <p class="role-name">派对掌机</p>
-            <h2>手机作为触屏手柄，聚会联机随时开局</h2>
-            <p>在 Mac 端打开内置游戏大厅，配对后手机即可作为触屏手柄。支持多台设备加入《炸翻天》《纸野足球》同屏畅玩。</p>
-            <div class="role-links"><a class="role-game-link" href="https://arcade.ninopad.com/" target="_blank" rel="noopener">前往网页游戏大厅 ↗</a><a href="blog/layout-arcade.html">查看手柄连接指南 →</a></div>
-          </article>
-        </div>
-      </div>
-      <figure class="role-stage" aria-hidden="true">
-        <img class="role-figure is-active" src="assets/mascot-role-director-v1.png" alt="" width="768" height="768" loading="lazy">
-        <img class="role-figure" src="assets/mascot-role-musician-v1.png" alt="" width="768" height="768" loading="lazy">
-        <img class="role-figure" src="assets/mascot-role-presenter-v1.png" alt="" width="768" height="768" loading="lazy">
-        <img class="role-figure" src="assets/mascot-role-programmer-v1.png" alt="" width="768" height="768" loading="lazy">
-        <img class="role-figure role-art-white" src="assets/mascot-reading-role-v4.webp" alt="" width="1254" height="1254" loading="lazy">
-        <img class="role-figure role-art-white" src="assets/mascot-game-role-v4.webp" alt="" width="1254" height="1254" loading="lazy">
-      </figure>
-    </section>
+<script src="/src/main.js" type="module"></script>
 
-    <section class="pro-section" id="pro">
-      <div class="pro-heading">
-        <p class="eyebrow">PRO EDITION</p>
-        <h2>升级 Pro 版，定制属于你的专属工作台</h2>
-        <p>解锁高清串流、专业音乐与开发布局、多桌面与 iCloud 同步，体验更丰富的桌面控制。</p>
-      </div>
-      <div class="pro-purchase">
-        <div class="pro-companion">
-          <img src="assets/mascot-pro-role-v4.webp" alt="" width="1254" height="1254" loading="lazy">
-          <ul><li>剪辑开发与音乐创作等专业布局</li><li>超清串流画质与全屏游戏串流体验</li><li>多桌面自由定制与壁纸美化</li></ul>
-        </div>
-        <div class="pro-plans" aria-label="奶猫妙控 Pro 中国大陆套餐价格">
-          <article class="pro-plan-card">
-            <div class="pro-plan-header">
-              <span class="pro-plan-name">按周订阅</span>
-            </div>
-            <p class="pro-plan-price"><strong>¥3</strong><small>/ 周</small></p>
-            <h3>按周订阅，适合短期体验与尝鲜</h3>
-          </article>
-          <article class="pro-plan-card is-recommended">
-            <div class="pro-plan-header">
-              <span class="pro-plan-name">按年订阅</span>
-            </div>
-            <p class="pro-plan-price"><strong>¥48</strong><small>/ 年</small></p>
-            <h3>按年订阅，适合日常长期主力使用</h3>
-          </article>
-          <article class="pro-plan-card is-lifetime">
-            <div class="pro-plan-header">
-              <span class="pro-plan-name">终身买断</span>
-            </div>
-            <p class="pro-plan-price"><strong>¥98</strong><small>一次购买</small></p>
-            <h3>一次购买终身买断，无需按期续费</h3>
-          </article>
-          <div class="pro-trust-badges">
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Apple 官方安全扣费</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> 更换设备一键恢复</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 随时在 App Store 取消</span>
-          </div>
-        </div>
-      </div>
-      <details class="pro-benefits-details">
-        <summary>查看完整 Pro 权益清单</summary>
-        <div class="pro-benefits-list">
-          <article class="pro-benefit-item"><h3>专业软件布局</h3><p>包含剪辑调色、合成器演奏与开发终端等专属控制面板。</p></article>
-          <article class="pro-benefit-item"><h3>超清画面串流</h3><p>解锁高清与超清串流画质，手机屏幕查看电脑更清晰细腻。</p></article>
-          <article class="pro-benefit-item"><h3>自由定制与多桌面</h3><p>随心调整按键旋钮组件，支持建立多个独立场景桌面切换。</p></article>
-          <article class="pro-benefit-item"><h3>个性插画与壁纸</h3><p>解锁内置奶猫插画、动态壁纸以及自定义背景图片导入功能。</p></article>
-          <article class="pro-benefit-item"><h3>全套演讲辅助工具</h3><p>提供激光笔、放大镜、屏幕画笔与摄像头浮窗等汇报工具。</p></article>
-          <article class="pro-benefit-item"><h3>照片与文件快传</h3><p>手机端照片、草稿与文件附件，轻点即可直接发送到 Mac。</p></article>
-          <article class="pro-benefit-item"><h3>iCloud 云端同步</h3><p>自动同步布局配置、壁纸、剪藏夹与音乐创作工程数据。</p></article>
-          <article class="pro-benefit-item"><h3>灵动岛与实时通知</h3><p>支持锁屏实时活动与灵动岛，在手机上随时查看任务进度。</p></article>
-        </div>
-      </details>
-      <p class="pro-note">所有套餐权益完全相同，实际价格由 App Store 结账时显示为准。 <a href="terms.html">查看完整购买与订阅条款</a></p>
-    </section>
-
-    <section class="mac-section" id="mac">
-      <div class="mac-copy">
-        <p class="eyebrow">&gt;w&lt;</p>
-        <h2>轻量常驻，默默守候在菜单栏</h2>
-        <p>在顶部菜单栏随时查看可爱的颜文字连接状态、刷新配对码并管理设备</p>
-        <a href="support.html">查看连接指南</a>
-      </div>
-      <img src="assets/screens/macos-adapter.webp?v=20260831d" alt="奶猫妙控 Mac 端配对二维码与设置" width="944" height="1196" loading="lazy">
-    </section>
-
-    <section class="faq-section" id="faq">
-      <div class="faq-header">
-        <h2>常见问题</h2>
-        <p>解答关于局域网连接、权限排查、会员订阅及隐私安全的常见疑问</p>
-        <a class="faq-more-link" href="support.html">查看完整帮助与支持手册 →</a>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary>需要连同一个 Wi-Fi 吗？</summary>
-          <p>需要。iPhone/iPad 与 Mac 通过本地局域网高速直接通信，无需外网连接，延迟更低更安全。</p>
-        </details>
-        <details>
-          <summary>Mac 为什么收不到控制指令或画面？</summary>
-          <p>常规按键与控制需在 Mac 的“系统设置 → 隐私与安全性 → 辅助功能”中允许奶猫妙控；若需屏幕实时画面镜像，则需单独开启“屏幕录制”权限。</p>
-        </details>
-        <details>
-          <summary>基础功能免费吗？Pro 会员如何购买与恢复？</summary>
-          <p>核心基础小键盘与系统控制完全免费。Pro 会员可在 iPhone/iPad 端进入“设置 → 奶猫妙控 Pro”订阅或买断，所有交易由 Apple App Store 处理，支持一键恢复购买。</p>
-        </details>
-        <details>
-          <summary>控制指令与数据会被上传到云端吗？</summary>
-          <p>绝不上传。所有控制指令、文本与屏幕画面均在本地局域网内点对点直连传输，不经过任何云端服务器，充分保护您的隐私安全。</p>
-        </details>
-        <details>
-          <summary>支持哪些 Mac 设备与系统？</summary>
-          <p>支持运行 macOS 13 (Ventura) 及更高版本的 Mac 设备，Universal 通用架构原生适配 Apple Silicon (M系列芯片) 与 Intel 处理器。</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="download-section" id="download">
-      <figure class="download-art sprite-sequence" aria-label="无尾熊猫伙伴带来下载包">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-01.webp" alt="无尾熊猫伙伴带来下载包" width="768" height="768" loading="lazy">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-02.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-03.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-04.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-05.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-06.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-07.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-        <img class="sprite-frame download-frame" src="assets/mascot-download-v2-frame-08.webp" alt="" width="768" height="768" loading="lazy" aria-hidden="true">
-      </figure>
-      <h2>把小键盘放到手边</h2>
-      <p class="download-copy">手机、平板与电脑，扫码即刻搭档。</p>
-      <div class="download-actions platform-download" data-platform-download>
-        <div class="download-platforms" role="tablist" aria-label="选择下载设备" hidden>
-          <button type="button" class="download-platform" id="footer-iphone-tab" role="tab" aria-selected="true" aria-controls="footer-iphone-panel" tabindex="0" data-download-platform="iphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/></svg><span>iPhone</span></button>
-          <button type="button" class="download-platform" id="footer-ipad-tab" role="tab" aria-selected="false" aria-controls="footer-ipad-panel" tabindex="-1" data-download-platform="ipad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/></svg><span>iPad</span></button>
-          <button type="button" class="download-platform" id="footer-mac-tab" role="tab" aria-selected="false" aria-controls="footer-mac-panel" tabindex="-1" data-download-platform="mac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>Mac</span></button>
-        </div>
-        <div class="download-panel" id="footer-iphone-panel" role="tabpanel" aria-labelledby="footer-iphone-tab" data-download-panel="iphone">
-          <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="在 App Store 下载奶猫妙控 iPhone 版"><img src="assets/badges/app-store-zh-cn-black.svg" alt="在 App Store 下载" width="142" height="52"></a>
-        </div>
-        <div class="download-panel" id="footer-ipad-panel" role="tabpanel" aria-labelledby="footer-ipad-tab" data-download-panel="ipad" hidden>
-          <a class="download-badge" href="https://apps.apple.com/app/id6805378609" aria-label="在 App Store 下载奶猫妙控 iPad 版"><img src="assets/badges/app-store-zh-cn-black.svg" alt="在 App Store 下载" width="142" height="52"></a>
-        </div>
-        <div class="download-panel" id="footer-mac-panel" role="tabpanel" aria-labelledby="footer-mac-tab" data-download-panel="mac" hidden>
-          <a class="download-badge download-badge-mac" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link aria-label="下载奶猫妙控 Mac 版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="m4 15-2 4h20l-2-4M9 19h6"/></svg><span>下载 Mac 版</span></a>
-        </div>
-        <noscript><a class="download-fallback" href="https://github.com/buggyblues/ninopad/releases/latest">下载 Mac 版 →</a></noscript>
-      </div>
-    </section>
-  </main>
-
-  <div class="look-panda" aria-hidden="true">
-    <div class="look-panda-motion">
-      <img src="assets/mascot-look-v2.webp" alt="" width="900" height="750">
-      <span class="look-pupil look-pupil-left"></span>
-      <span class="look-pupil look-pupil-right"></span>
-    </div>
-  </div>
-
-  <footer>
-    <a class="brand" href="#top"><img src="assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="updates.html">更新</a>
-      <a href="blog.html">博客</a>
-      <a href="support.html">支持</a>
-      <a href="privacy.html">隐私</a>
-      <a href="terms.html">条款</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-      <a href="/en/" data-lang-switch>English</a>
-    </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
-  <script src="script.js?v=2.1.0" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="网站统计设置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">允许使用 Google Analytics 了解页面访问和下载点击？你可以拒绝，并随时在页脚修改选择。</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">允许统计</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">拒绝统计</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/privacy#website-analytics">隐私说明</a></div></aside></body></html>

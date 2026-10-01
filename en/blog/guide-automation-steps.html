@@ -1,236 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Chain text injection, collision-preventing delays, and ⌘S shortcuts into automated macros with live testing and on-screen preview.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="NinoPad">
-  <meta property="og:title" content="Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro | NinoPad">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/macro-04-preview.webp">
-  <meta property="og:url" content="https://ninopad.com/en/blog/guide-automation-steps">
-  <meta property="og:locale" content="en_US">
-  <meta property="article:published_time" content="2026-09-10">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro | NinoPad">
-  <meta name="twitter:description" content="Chain text injection, collision-preventing delays, and ⌘S shortcuts into automated macros with live testing and on-screen preview.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/macro-04-preview.webp">
-  <meta property="og:description" content="Chain text injection, collision-preventing delays, and ⌘S shortcuts into automated macros with live testing and on-screen preview.">
-  <meta name="keywords" content="NinoPad, Mac automation, shortcut macro, text macro, delay step, workflow builder">
-  <link rel="canonical" href="https://ninopad.com/en/blog/guide-automation-steps">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-automation-steps">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-automation-steps">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-automation-steps">
-  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../blog.css">
-  <title>Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro | NinoPad</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro",
-      "description": "Chain text injection, collision-preventing delays, and \u2318S shortcuts into automated macros with live testing and on-screen preview.",
-      "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
-      "inLanguage": "en",
-      "author": {
-        "@type": "Organization",
-        "name": "NinoPad"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "NinoPad"
-      },
-      "image": [
-        "https://ninopad.com/assets/screens/guides-1.2.0-r1/macro-04-preview.webp"
-      ],
-      "mainEntityOfPage": "https://ninopad.com/en/blog/guide-automation-steps"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://ninopad.com/en/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://ninopad.com/en/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro",
-          "item": "https://ninopad.com/en/blog/guide-automation-steps"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why does a 'Save As' dialog appear when executing the macro?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The target document has never been saved initially, or the active software maps \u2318S to a different command. Manually save the file once first, verify the app's hotkey behavior, and re-run."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why was text typed into the wrong window even with a delay step?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Delays only pause execution for a fixed duration; they do not switch window focus. Ensure your Mac target app and document cursor are focused, or add an explicit 'Switch App' step."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why didn't the document save when preview shows 'command, s'?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The on-screen preview describes step definitions without executing actual system shortcuts. Connect to your Mac and test run the button to verify file saving."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I stop an automation that is running in a loop?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The editor provides a 'Stop Automation' button during execution; you can also configure a dedicated emergency stop button. For initial practice, keep the mode set to 'Run Once'."
-          }
-        }
-      ]
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_guide-automation-steps" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step." data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_001&quot;}" property="og:site_name">
+<meta content="Connect operations into a stream: Create a &quot;record and automatically save&quot; multi-step macro｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/en/guides-1.2.0-r1/macro-04-preview.webp" property="og:image" data-localized-social="guides-1.2.0-r1/macro-04-preview.webp">
+<meta content="https://ninopad.com/en/blog/guide-automation-steps" property="og:url">
+<meta content="en_US" property="og:locale">
+<meta content="2026-09-10" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Connect operations into a stream: Create a &quot;record and automatically save&quot; multi-step macro｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_003&quot;}" name="twitter:title">
+<meta content="Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step." data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/en/guides-1.2.0-r1/macro-04-preview.webp" name="twitter:image" data-localized-social="guides-1.2.0-r1/macro-04-preview.webp">
+<meta content="Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step." data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_005&quot;}" property="og:description">
+<meta content="NinoPad, NinoPad, Mac automation, shortcut macros, text macros, waiting steps" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.attr_006&quot;}" name="keywords">
+<link href="https://ninopad.com/en/blog/guide-automation-steps" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_007&quot;}">Connect operations into a stream: Create a "record and automatically save" multi-step macro｜NinoPad</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-automation-steps"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-automation-steps"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-automation-steps"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-en-guide-automa-banner&amp;mt=8"><meta property="og:image:alt" content="&quot;Record and Save&quot; native content preview with actual configuration for all three steps." data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.social_image_alt&quot;}"><meta name="twitter:image:alt" content="&quot;Record and Save&quot; native content preview with actual configuration for all three steps." data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-automation-steps.social_image_alt&quot;}"><meta property="og:locale:alternate" content="zh_CN"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_guide-automation-steps.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/en/blog/guide-automation-steps#page","url":"https://ninopad.com/en/blog/guide-automation-steps","name":"Connect operations into a stream: Create a \"record and automatically save\" multi-step macro｜NinoPad","description":"Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step.","inLanguage":"en","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"Connect actions into a flow: Create a \"record and auto-save\" multi-step macro","description":"Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step.","inLanguage":"en","datePublished":"2026-09-10","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/en/blog/guide-automation-steps","image":["https://ninopad.com/assets/screens/en/guides-1.2.0-r1/macro-04-preview.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ninopad.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ninopad.com/en/blog"},{"@type":"ListItem","position":3,"name":"Connect actions into a flow: Create a \"record and auto-save\" multi-step macro","item":"https://ninopad.com/en/blog/guide-automation-steps"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
-      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>NinoPad</span>
-    </a>
-    <nav aria-label="Main Navigation">
-      <a href="../index.html#layouts">Features</a>
-      <a href="../index.html#pro">Pricing</a>
-      <a href="../blog.html" aria-current="page">Blog</a>
-      <a href="../index.html#faq">FAQ</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/blog/guide-automation-steps" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/guide-automation-steps" data-lang-switch>简体中文</a>
-      <a href="/en/blog/guide-automation-steps" class="is-active">English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_008&quot;}" href="#main">Skip to text</a>
+<header class="site-header">
+<a aria-label="NinoPad Home Page" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_009&quot;}" href="/en/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_010&quot;}">NinoPad</span>
+</a>
+<nav aria-label="Main navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_012&quot;}" href="/en/#layouts">Function</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_013&quot;}" href="/en/#pro">Price</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_014&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_015&quot;}" href="/en/#faq">FAQ</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+</nav>
+<div class="header-actions">
+<a aria-label="切换至中文" class="header-lang" data-lang-switch="" href="/blog/guide-automation-steps?lng=zh-CN">简体中文</a>
+<a aria-label="Select device and download NinoPad" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_019&quot;}" href="/en/#download">free download</a>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_022&quot;}" data-mobile-nav-link="" href="/en/#layouts">Function</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_023&quot;}" data-mobile-nav-link="" href="/en/#pro">Price</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_024&quot;}" data-mobile-nav-link="" href="/en/blog">Blog</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_025&quot;}" data-mobile-nav-link="" href="/en/#faq">FAQ</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a></li>
+</ul>
+<a aria-label="Select device and download NinoPad" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_027&quot;}" data-mobile-nav-link="" href="/en/#download">free download</a>
+<div class="mobile-drawer-lang">
+<a class="" href="/blog/guide-automation-steps?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/guide-automation-steps?lng=en" data-language="en" aria-label="Switch to English" class="is-active">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="Breadcrumbs" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/en/">Home</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/en/blog">Guides</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.growth_breadcrumb&quot;}">Connect actions into a flow: Create a "record and auto-save" multi-step macro</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_030&quot;}" href="/en/blog">← Blog Column / Automation Steps</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_031&quot;}">Connect actions into a flow: Create a "record and auto-save" multi-step macro</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_032&quot;}">Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step.</p>
+<p class="article-meta"><time data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_033&quot;}" datetime="2026-09-10">September 10, 2026</time></p>
+</header>
+<figure class="article-cover article-cover-phone">
+<img alt="&quot;Record and Save&quot; native content preview with actual configuration for all three steps." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-automation-steps.attr_034&quot;}" height="2622" src="/assets/screens/en/guides-1.2.0-r1/macro-04-preview.webp" width="1206" data-screen="guides-1.2.0-r1/macro-04-preview.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_035&quot;}">"Record and Save" native content preview with actual configuration for all three steps.</figcaption>
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_036&quot;}">After memorizing a sentence, do you still have to manually press the shortcut key to save it? In fact, just pack multiple actions into the same button. This tutorial will take you to expand a single step into a complete macro of "enter text → pause for 0.5 seconds → automatically press ⌘S". Through mobile phone preview and practical trial operation, you can master the core logic of multi-step automation.</p>
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_guide-automation-steps.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_038&quot;}">Picture description:</strong>The screenshots show the three steps of real editing in the app and the content preview. The Mac connection status is demo data. The preview does not press ⌘S and does not prove that the file has been saved; the actual saving results need to be checked in your own Mac document.</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_039&quot;}">Before starting</h2><ul><li data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_040&quot;}">First read the tutorial on common text buttons and create a "Send Text" button.</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_041&quot;}">Prepare a test document on your Mac that has been saved to disk, and confirm that the software saves it with ⌘S; place the cursor in the editable text.</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_042&quot;}">Connect to the Mac Automation Service; keep "Run Once" for the first exercise to avoid multiple rounds of input that are difficult to judge.</li></ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_043&quot;}">1. Expand from text buttons to automation</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_044&quot;}">Open a configured text button in the desktop editing state, and set the input content to "Today's record: confirm the goal first, then add the next step." After input, keep "No additional keys". Close the text editing page, return to the operation configuration panel, and click "Expand to Automation".</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_045&quot;}">The newly opened "Edit Automation" page will automatically retain the original text steps. Enter "Record and Save" in the "Automation Name" field. This allows you to add subsequent steps from an already defined action without having to retype the entire paragraph.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_046&quot;}">Reference:<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_047&quot;}" href="https://ninopad.com/blog/guide-text-button">Complete steps to create commonly used text buttons</a>。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_048&quot;}">2. Add a "wait 0.5 seconds" step</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_049&quot;}">Click "Add step" under "Steps" and select "Wait". The default waiting time for a new step is 0.5 seconds. This example uses this recommended default value directly; if changes are needed, click "Wait 0.5 seconds" to enter the step editing page for fine-tuning.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_050&quot;}">The list of steps at this time is "Enter text" and "Wait 0.5 seconds". The waiting time is fixed and will not detect whether the target software has been loaded. Appropriate delay waiting can effectively prevent the key conflict caused by the text of the previous step not being fully received by the editor and the shortcut keys of the next step being triggered in advance.</p>
+<figure class="article-figure article-figure-phone"><img alt="After expanding from text actions, add a real &quot;wait 0.5 seconds&quot; step." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-automation-steps.attr_051&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/macro-01-wait.webp" width="1206" data-screen="guides-1.2.0-r1/macro-01-wait.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_052&quot;}">After expanding from text actions, add a real "wait 0.5 seconds" step.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_053&quot;}">3. Add Command-S save shortcut key</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_054&quot;}">Click "Add Step" again, select "Shortcut Key", and then open the newly added shortcut key step. Select "Command" in the key combination area, fill in S in the primary key input box, and complete the input.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_055&quot;}">Return to the automation editing page and check that the key values displayed in the third step strictly correspond to Command and S. The key combination is sent to the current foreground application of the computer when this step is performed, so the test document needs to be kept in the foreground; the first save as dialog box will change the subsequent process. It is recommended to create and save the test file on Mac first.</p>
+<figure class="article-figure article-figure-phone"><img alt="Select Command in the shortcut key step and fill in the primary key S." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-automation-steps.attr_056&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/macro-02-shortcut.webp" width="1206" data-screen="guides-1.2.0-r1/macro-02-shortcut.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_057&quot;}">Select Command in the shortcut key step and fill in the primary key S.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_058&quot;}">4. Confirm the sequence and set it to "Run Once"</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_059&quot;}">Go back to the step list and double-check the order of the steps: Step 1 is "Enter text," Step 2 is "Wait 0.5 seconds," and Step 3 is "Command + S." Select "Run once" as the execution mode.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_060&quot;}">If you add extra steps by mistake, you can use the editor's editing mode to delete or drag and move steps, or you can use the "Undo" button at the bottom to restore recent modifications; if you need to temporarily skip a step, enter the step and turn off "Enable this step".</p>
+<figure class="article-figure article-figure-phone"><img alt="The three steps are sequenced; a run processes the enabled steps in sequence." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-automation-steps.attr_061&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/macro-03-sequence.webp" width="1206" data-screen="guides-1.2.0-r1/macro-03-sequence.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_062&quot;}">The three steps are sequenced; a run processes the enabled steps in sequence.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_063&quot;}">5. Preview the content and try it out on Mac</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_064&quot;}">Click "Preview Content" and check whether the descriptions of the exercise text, wait 0.5 seconds, and save shortcut keys are accurate one by one. Close the preview after confirming that there are no redundant Enter or blank steps.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_065&quot;}">When connecting to the automation service, you can click "Try Run Once". It saves the configuration and actually executes a round on the Mac's current application. Bring the test document to the foreground before triggering the test run; a record should be inserted and processed by the target software ⌘S. Finally, check the document content and the save status of the software, and if necessary, close and reopen the test file to confirm.</p>
+<figure class="article-figure article-figure-phone"><img alt="The native content preview lists text, wait, and shortcut keys; here it is only previewed and no computer operations are performed." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-automation-steps.attr_066&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/macro-04-preview.webp" width="1206" data-screen="guides-1.2.0-r1/macro-04-preview.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_067&quot;}">The native content preview lists text, wait, and shortcut keys; here it is only previewed and no computer operations are performed.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_068&quot;}">6. Save button, used in daily documents</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_069&quot;}">After confirming that the trial run results are as expected, click "Save and Sync" to exit component properties and desktop editing mode. Then just tap the automation button on the mobile phone's sub-controller to complete log appending and instant saving with one click.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_070&quot;}">For use with other professional software, you can gradually add "switch applications" or more shortcut keys. A trial run is performed for each new step. It is easier to troubleshoot positioning problems than adding a large number of actions at once. First use clear text and shortcut keys to complete a stable small process, and then gradually expand it.</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_071&quot;}">FAQ</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_072&quot;}">Why does the "Save As" window appear after running it?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_073&quot;}">The test file has not completed its first save, or the target software uses ⌘S for other commands. Save the file manually first, confirm the software's shortcut key behavior, then return to the text and try again.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_074&quot;}">Even after adding wait, why is the word still entered at the wrong position?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_075&quot;}">Waiting only pauses for a fixed duration and does not correct focus. Check the Mac foreground application, document body, and pop-up windows; when you need to switch applications, you should explicitly configure the "Switch Application" step.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_076&quot;}">There is command,s in the preview, why is the file not saved?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_077&quot;}">The content preview shows step descriptions and does not execute shortcut keys. It is necessary to test run after connection and confirm the saving result in the target software.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_078&quot;}">How do I stop an automation that is running repeatedly?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_079&quot;}">The editor provides Stop Automation during runtime; Stop Automation can also be configured as a separate button. The first exercise remains "Run Once" without enabling repeat mode.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_080&quot;}">This article is written based on the interface and operation of Naimao Magic Control 1.2.0, and was updated on September 10, 2026.<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_081&quot;}" href="/en/updates">View changelog</a> · <a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_082&quot;}" href="/en/support">Connection and permissions help</a>。</p>
+</article>
+<nav aria-label="Continue reading" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_083&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_084&quot;}" href="/en/blog/guide-text-button">← Turn high-frequency phrases into physical keys: touch them with your fingertips and input them to Mac with one click</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_085&quot;}" href="/en/blog/layout-work">Getting Started with Workbench Assistant: Make your iPhone a powerful companion next to your Mac keyboard →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">Try this workflow on your iPhone or iPad</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">Basic controls are free. Mac control requires both apps on the same local network. Pro unlocks advanced decks and standalone instruments.</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-guide-automa-article&amp;mt=8">Get the iPhone / iPad app</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">Get the free Mac companion</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/en/blog/mac-settings">Read the pairing and permissions guide →</a></aside></main>
+<footer>
+<a class="brand" href="/en/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_086&quot;}">NinoPad</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_087&quot;}">&gt;w&lt; All-purpose small keyboard, right in the palm of your hand</p>
+<nav aria-label="Footer navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-automation-steps.attr_088&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-guide-automa-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_089&quot;}" href="https://github.com/buggyblues/ninopad/releases">Download</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_090&quot;}" href="/en/updates">update</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_091&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_092&quot;}" href="/en/support">support</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_093&quot;}" href="/en/privacy">Privacy</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_094&quot;}" href="/en/terms">Terms</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-automation-steps.text_095&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+<a data-lang-switch="" href="/blog/guide-automation-steps?lng=zh-CN" aria-label="切换至中文" class="">简体中文</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_guide-automation-steps.text_097&quot;}">© <span data-year=""></span> NinoPad</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">Analytics preferences</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← Blog / Automation Steps</a>
-      <h1>Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro</h1>
-      <p>Chain text injection, execution delays, and ⌘S shortcuts into one reliable macro · ~5 min read</p>
-    </header>
+<script src="/src/main.js" type="module"></script>
 
-    <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/guides-1.2.0-r1/macro-04-preview.webp" alt="NinoPad macro editor preview with 3 configured steps" width="1206" height="2622">
-    </figure>
-
-    <article class="article-body">
-      <p class="article-lead">Repetitive desktop tasks like logging timestamps, pasting formatted templates, and pressing Save can be automated into a single tap. NinoPad's multi-step macro builder lets you chain text injection, safety delays, and shortcut commands into a unified sequence.</p>
-
-      <aside class="article-highlight"><strong>Preparation:</strong> Open a blank TextEdit or notes document on your Mac, click inside the document to position the cursor, and save the file once as a test draft.</aside>
-
-      <h2>1. Add a Multi-Step Macro Button</h2>
-      <p>Enter desktop edit mode on NinoPad, tap <strong>"Add Widget"</strong>, choose "Macro / Automation", and name your new button "Log &amp; Save".</p>
-
-      <h2>2. Step 1: Add Text Injection</h2>
-      <p>In the macro steps list, add a <strong>"Send Text"</strong> step. Type your template content (e.g., <code>[LOG ENTRY] Daily Review - </code>) and toggle "Append Return" to advance the line automatically.</p>
-
-      <h2>3. Step 2: Add a Safe Delay Step</h2>
-      <p>Add a <strong>"Delay"</strong> step and set the duration to <code>200ms</code>. This brief pause gives the Mac text editor sufficient time to process character rendering before receiving subsequent hotkeys.</p>
-
-      <h2>4. Step 3: Add the ⌘S Shortcut</h2>
-      <p>Add a <strong>"Shortcut"</strong> step, record <code>⌘S</code> (Command + S), and label the step "Save Document".</p>
-
-      <figure class="article-figure article-figure-phone">
-        <img src="../../assets/screens/guides-1.2.0-r1/macro-04-preview.webp" alt="NinoPad macro editor preview" width="1206" height="2622" loading="lazy">
-        <figcaption>Step preview clearly illustrates the chained execution flow: Text → Delay → ⌘S.</figcaption>
-      </figure>
-
-      <h2>5. Test Run and Verify in Mac Document</h2>
-      <p>Tap "Run Step-by-Step" or exit edit mode and press the button. Watch your Mac document receive the text entry and trigger the save shortcut seamlessly.</p>
-
-      <section class="faq-section" id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>Why does a 'Save As' dialog appear when executing the macro?</summary>
-          <p>The target document has never been saved initially, or the active software maps ⌘S to a different command. Manually save the file once first, verify the app's hotkey behavior, and re-run.</p>
-        </details>
-        <details>
-          <summary>Why was text typed into the wrong window even with a delay step?</summary>
-          <p>Delays only pause execution for a fixed duration; they do not switch window focus. Ensure your Mac target app and document cursor are focused, or add an explicit 'Switch App' step.</p>
-        </details>
-        <details>
-          <summary>Why didn't the document save when preview shows 'command, s'?</summary>
-          <p>The on-screen preview describes step definitions without executing actual system shortcuts. Connect to your Mac and test run the button to verify file saving.</p>
-        </details>
-        <details>
-          <summary>How do I stop an automation that is running in a loop?</summary>
-          <p>The editor provides a 'Stop Automation' button during execution; you can also configure a dedicated emergency stop button. For initial practice, keep the mode set to 'Run Once'.</p>
-        </details>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
-    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
-    <nav aria-label="Footer Navigation">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
-      <a href="../updates.html">Updates</a>
-      <a href="../blog.html">Blog</a>
-      <a href="../support.html">Support</a>
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-      <a href="/blog/guide-automation-steps" data-lang-switch>简体中文</a>
-    </nav>
-    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
-  </footer>
-  <script src="../../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="Website analytics preferences" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">Allow Google Analytics to measure page visits and download clicks? You can decline and change your choice in the footer.</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">Allow analytics</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">Decline analytics</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/en/privacy#website-analytics">Privacy details</a></div></aside></body></html>

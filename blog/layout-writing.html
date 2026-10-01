@@ -1,211 +1,138 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/writing-01.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/layout-writing">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="article:published_time" content="2026-09-10">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控">
-  <meta name="twitter:description" content="利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/writing-01.webp">
-  <meta property="og:description" content="利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。">
-  <meta name="keywords" content="奶猫妙控,NinoPad,写作布局教程,操作步骤">
-  <link rel="canonical" href="https://ninopad.com/blog/layout-writing">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-writing">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-writing">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-writing">
-  <link rel="preload" as="image" href="../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../assets/app-icon.png">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../blog.css">
-  <title>专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "专注文字创作：用写作布局随心跳段、文内查找与一键排版",
-      "description": "利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。",
-      "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
-      "inLanguage": "zh-CN",
-      "author": {
-        "@type": "Organization",
-        "name": "奶猫妙控"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "奶猫妙控"
-      },
-      "image": [
-        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/writing-01.webp"
-      ],
-      "mainEntityOfPage": "https://ninopad.com/blog/layout-writing"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "专注文字创作：用写作布局随心跳段、文内查找与一键排版",
-          "item": "https://ninopad.com/blog/layout-writing"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "手机显示了字数，为什么不能精确选择网页文本？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "统计读取、文本选择与修改是不同能力。只读网页或未开放文本接口的区域不一定允许精确操作，先在可编辑正文验证。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Markdown 操作在 Obsidian 中没反应？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "检查配套集成包中 Obsidian 目录的安装说明、插件是否启用，以及当前是否在可编辑笔记中。先确认普通输入正常，再验证标题、列表等专有命令。"
-          }
-        }
-      ]
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_layout-writing" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_001&quot;}" property="og:site_name">
+<meta content="专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-01.webp" property="og:image" data-localized-social="tutorials-1.2.0-r1/writing-01.webp">
+<meta content="https://ninopad.com/blog/layout-writing" property="og:url">
+<meta content="zh_CN" property="og:locale">
+<meta content="2026-09-10" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_003&quot;}" name="twitter:title">
+<meta content="利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-01.webp" name="twitter:image" data-localized-social="tutorials-1.2.0-r1/writing-01.webp">
+<meta content="利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_005&quot;}" property="og:description">
+<meta content="奶猫妙控,NinoPad,写作布局教程,操作步骤" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.attr_006&quot;}" name="keywords">
+<link href="https://ninopad.com/blog/layout-writing" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_007&quot;}">专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-writing"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-writing"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-writing"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-zh-layout-writi-banner&amp;mt=8"><meta property="og:image:alt" content="写作桌面，文本统计来自演示状态。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.social_image_alt&quot;}"><meta name="twitter:image:alt" content="写作桌面，文本统计来自演示状态。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-writing.social_image_alt&quot;}"><meta property="og:locale:alternate" content="en_US"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_layout-writing.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/blog/layout-writing#page","url":"https://ninopad.com/blog/layout-writing","name":"专注文字创作：用写作布局随心跳段、文内查找与一键排版｜奶猫妙控","description":"利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。","inLanguage":"zh-CN","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"专注文字创作：用写作布局随心跳段、文内查找与一键排版","description":"利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。","inLanguage":"zh-CN","datePublished":"2026-09-10","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/blog/layout-writing","image":["https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-01.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ninopad.com/"},{"@type":"ListItem","position":2,"name":"使用指南","item":"https://ninopad.com/blog"},{"@type":"ListItem","position":3,"name":"专注文字创作：用写作布局随心跳段、文内查找与一键排版","item":"https://ninopad.com/blog/layout-writing"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
-      <img src="../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="../index.html#layouts">功能</a>
-      <a href="../index.html#pro">价格</a>
-      <a href="../blog.html" aria-current="page">博客</a>
-      <a href="../index.html#faq">常见问题</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/en/blog/layout-writing" aria-label="Switch to English" data-lang-switch>EN</a>
-      <a class="header-download" href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>功能</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>价格</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>博客</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>常见问题</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/layout-writing" class="is-active">简体中文</a>
-      <a href="/en/blog/layout-writing" data-lang-switch>English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_008&quot;}" href="#main">跳到正文</a>
+<header class="site-header">
+<a aria-label="奶猫妙控首页" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_009&quot;}" href="/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_010&quot;}">奶猫妙控</span>
+</a>
+<nav aria-label="主导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_012&quot;}" href="/#layouts">功能</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_013&quot;}" href="/#pro">价格</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_014&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_015&quot;}" href="/#faq">常见问题</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+</nav>
+<div class="header-actions">
+<a aria-label="Switch to English" class="header-lang" data-lang-switch="" href="/en/blog/layout-writing?lng=en">English</a>
+<a aria-label="选择设备并下载奶猫妙控" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_019&quot;}" href="/#download">免费下载</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_022&quot;}" data-mobile-nav-link="" href="/#layouts">功能</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_023&quot;}" data-mobile-nav-link="" href="/#pro">价格</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_024&quot;}" data-mobile-nav-link="" href="/blog">博客</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_025&quot;}" data-mobile-nav-link="" href="/#faq">常见问题</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a></li>
+</ul>
+<a aria-label="选择设备并下载奶猫妙控" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_027&quot;}" data-mobile-nav-link="" href="/#download">免费下载</a>
+<div class="mobile-drawer-lang">
+<a class="is-active" href="/blog/layout-writing?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/layout-writing?lng=en" data-language="en" aria-label="Switch to English" class="">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="页面位置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/">首页</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/blog">使用指南</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.growth_breadcrumb&quot;}">专注文字创作：用写作布局随心跳段、文内查找与一键排版</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_030&quot;}" href="/blog">← 博客专栏 / 写作</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_031&quot;}">专注文字创作：用写作布局随心跳段、文内查找与一键排版</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_032&quot;}">利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。</p>
+<p class="article-meta"><time data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_033&quot;}" datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+</header>
+<figure class="article-cover article-cover-phone">
+<img alt="写作桌面，文本统计来自演示状态。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-writing.attr_034&quot;}" height="2622" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-01.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_035&quot;}">写作桌面，文本统计来自演示状态。</figcaption>
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_036&quot;}">长文撰写与润色时，手不用频繁离开主键盘去摸鼠标。写作布局将段落跳转、文内搜索和常用的 Markdown 标题与样式按键全盘收拢在副屏上，让你将全部心力倾注于文字本身。</p>
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_layout-writing.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_038&quot;}">配图说明：</strong>本次实际核验了“段”范围、文内查找弹窗与格式桌面入口。截图正文和统计值使用演示状态；文字选择与格式效果需要在真实 Mac 编辑器中确认。</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_039&quot;}">开始前</h2><ul><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_040&quot;}">iPhone / iPad 安装奶猫妙控 1.2.0，Mac 安装同版本配套端；完成配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_041&quot;}">在 Mac“文本编辑”新建练习文档，写两段文字：“今天先写提纲。”“明天补充例子。”把光标放进正文。Markdown 专有操作请在支持的编辑器中使用；Obsidian 的精确集成需要安装配套插件。</li></ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_042&quot;}">1. 进入写作布局，核对文本统计与光标位置</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_043&quot;}">在 iPhone 底部点击“布局”标签，在列表中找到并进入“写作”布局。多桌面方案请展开右侧箭头后点选对应桌面。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_044&quot;}">进入写作桌面后，小屏可回读编辑器反馈的文本统计与字数状态。在 Mac 上打开一篇正在编写的文档，用鼠标将光标定位在某一段落中间，作为练习起点。</p>
+<figure class="article-figure article-figure-phone"><img alt="写作桌面，文本统计来自演示状态。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-writing.attr_045&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-01.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_046&quot;}">写作桌面，文本统计来自演示状态。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_047&quot;}">2. 切换跳转范围至“段”，测试段首段尾跳转</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_048&quot;}">在手机的“字／词／句／段”范围选择条上，轻点切换至“段”级别。此时两端的边界操作按钮会自动映射为“段首”与“段尾”。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_049&quot;}">点一下“段尾”，观察 Mac 中的光标是否跳至当前自然段落末尾；再点“段首”，光标返回段落开头。若需要精细单字微调，只需在范围条上切回“字”即可。</p>
+<figure class="article-figure article-figure-phone"><img alt="实际点击“段”后，范围条与段首、段尾操作同步显示。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-writing.attr_050&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-02-paragraph.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-02-paragraph.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_051&quot;}">实际点击“段”后，范围条与段首、段尾操作同步显示。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_052&quot;}">3. 使用“查找”功能快速定位文内关键词</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_053&quot;}">点击手机上的“查找”按钮，呼出“文内查找”交互弹窗。在输入框中填入目标关键词（例如“提纲”），点击弹窗内的“查找”。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_054&quot;}">再次点“查找”可查看或修改查询词；结束这次查找时使用“结束查找”。取消弹窗不会清空记住的关键词，所以换文档后先检查输入框里的旧词。</p>
+<figure class="article-figure article-figure-phone"><img alt="从查找按钮打开的“文内查找”弹窗。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-writing.attr_055&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-03-search.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-03-search.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_056&quot;}">从查找按钮打开的“文内查找”弹窗。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_057&quot;}">4. 选定关键文字，应用加粗格式</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_058&quot;}">在 Mac 端选中“提纲”这两个字，然后按下写作桌面上的“B”键（加粗）。在支持富文本的编辑器中，选中的文字会立即变为粗体；再次按下或使用撤销快捷键可恢复原样。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_059&quot;}">如果文档是纯文本，字体样式可能不会保留。不要从按钮已经按下推断编辑器一定完成了格式变更；先确认文档模式和编辑器支持情况。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_060&quot;}">5. 切换到“格式”桌面，转换 Markdown 标题层级</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_061&quot;}">点击写作桌面右下方的页面切换按钮，进入专门的“格式”桌面。这里聚合了加粗、斜体、下划线、超链接以及“正文 / H1...H6”标题层级控制按键。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_062&quot;}">Markdown 练习可用一份可丢弃的 Markdown 文件：把光标放到一行标题，选择 H2，再检查编辑器中的实际文本或标题层级。文本编辑器与 Markdown 编辑器的行为不同，先用一种格式核验，再继续其他操作。</p>
+<figure class="article-figure article-figure-phone"><img alt="实际切换到格式桌面，显示标题层级与各格式键。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-writing.attr_063&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-04-format.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-04-format.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_064&quot;}">实际切换到格式桌面，显示标题层级与各格式键。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_065&quot;}">6. 返回写作主桌面，保持专注编辑节奏</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_066&quot;}">点击格式桌面右下角的返回按钮，切回写作主桌面，继续保持原有的范围选择状态。需要直接输入时可在格式桌面点击“键盘”，完成后点“完成”返回。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_067&quot;}">写作桌面中的“删除”键支持长按切换持续删除模式，初次使用建议采用单次点按，确保每一步光标位移与格式调整都在掌控之中。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_068&quot;}">参考：<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_069&quot;}" href="https://github.com/buggyblues/ninopad/releases/download/v1.2.0/CreamDeck-Integrations-1.2.0.zip">下载配套集成与对应软件安装说明</a>。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_070&quot;}">常见问题</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_071&quot;}">手机显示了字数，为什么不能精确选择网页文本？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_072&quot;}">统计读取、文本选择与修改是不同能力。只读网页或未开放文本接口的区域不一定允许精确操作，先在可编辑正文验证。</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_073&quot;}">Markdown 操作在 Obsidian 中没反应？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_074&quot;}">检查配套集成包中 Obsidian 目录的安装说明、插件是否启用，以及当前是否在可编辑笔记中。先确认普通输入正常，再验证标题、列表等专有命令。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_075&quot;}">本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_076&quot;}" href="/updates">查看更新日志</a> · <a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_077&quot;}" href="/support">连接与权限帮助</a>。</p>
+</article>
+<nav aria-label="继续阅读" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_078&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_079&quot;}" href="/blog/layout-research">← 知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_080&quot;}" href="/blog/layout-work">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档 →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">把这套操作放到手边</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">基础控制免费。连接 Mac 时，两端需安装奶猫妙控并处于同一局域网；高级工作台和独立乐器由 Pro 解锁。</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-layout-writi-article&amp;mt=8">下载 iPhone / iPad App</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">下载免费 Mac 配套端</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/blog/mac-settings">查看配对与权限设置指南 →</a></aside></main>
+<footer>
+<a class="brand" href="/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_081&quot;}">奶猫妙控</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_082&quot;}">&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+<nav aria-label="页脚导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-writing.attr_083&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-layout-writi-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_084&quot;}" href="https://github.com/buggyblues/ninopad/releases">下载</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_085&quot;}" href="/updates">更新</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_086&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_087&quot;}" href="/support">支持</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_088&quot;}" href="/privacy">隐私</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_089&quot;}" href="/terms">条款</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-writing.text_090&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+<a data-lang-switch="" href="/en/blog/layout-writing?lng=en" aria-label="Switch to English" class="">English</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_layout-writing.text_092&quot;}">© <span data-year=""></span> 奶猫妙控</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">网站统计设置</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 写作</a>
-      <h1>专注文字创作：用写作布局随心跳段、文内查找与一键排版</h1>
-      <p>利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
-    </header>
-    <figure class="article-cover article-cover-phone">
-      <img src="../assets/screens/tutorials-1.2.0-r1/writing-01.webp" alt="写作桌面，文本统计来自演示状态。" width="1206" height="2622">
-      <figcaption>写作桌面，文本统计来自演示状态。</figcaption>
-    </figure>
-    <article class="article-body">
-<p class="article-lead">长文撰写与润色时，手不用频繁离开主键盘去摸鼠标。写作布局将段落跳转、文内搜索和常用的 Markdown 标题与样式按键全盘收拢在副屏上，让你将全部心力倾注于文字本身。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>本次实际核验了“段”范围、文内查找弹窗与格式桌面入口。截图正文和统计值使用演示状态；文字选择与格式效果需要在真实 Mac 编辑器中确认。</aside>
-<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控 1.2.0，Mac 安装同版本配套端；完成配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>在 Mac“文本编辑”新建练习文档，写两段文字：“今天先写提纲。”“明天补充例子。”把光标放进正文。Markdown 专有操作请在支持的编辑器中使用；Obsidian 的精确集成需要安装配套插件。</li></ul>
-<h2>1. 进入写作布局，核对文本统计与光标位置</h2>
-<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“写作”布局。多桌面方案请展开右侧箭头后点选对应桌面。</p>
-<p>进入写作桌面后，小屏可回读编辑器反馈的文本统计与字数状态。在 Mac 上打开一篇正在编写的文档，用鼠标将光标定位在某一段落中间，作为练习起点。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/writing-01.webp" alt="写作桌面，文本统计来自演示状态。" width="1206" height="2622" loading="lazy"><figcaption>写作桌面，文本统计来自演示状态。</figcaption></figure>
-<h2>2. 切换跳转范围至“段”，测试段首段尾跳转</h2>
-<p>在手机的“字／词／句／段”范围选择条上，轻点切换至“段”级别。此时两端的边界操作按钮会自动映射为“段首”与“段尾”。</p>
-<p>点一下“段尾”，观察 Mac 中的光标是否跳至当前自然段落末尾；再点“段首”，光标返回段落开头。若需要精细单字微调，只需在范围条上切回“字”即可。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/writing-02-paragraph.webp" alt="实际点击“段”后，范围条与段首、段尾操作同步显示。" width="1206" height="2622" loading="lazy"><figcaption>实际点击“段”后，范围条与段首、段尾操作同步显示。</figcaption></figure>
-<h2>3. 使用“查找”功能快速定位文内关键词</h2>
-<p>点击手机上的“查找”按钮，呼出“文内查找”交互弹窗。在输入框中填入目标关键词（例如“提纲”），点击弹窗内的“查找”。</p>
-<p>再次点“查找”可查看或修改查询词；结束这次查找时使用“结束查找”。取消弹窗不会清空记住的关键词，所以换文档后先检查输入框里的旧词。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/writing-03-search.webp" alt="从查找按钮打开的“文内查找”弹窗。" width="1206" height="2622" loading="lazy"><figcaption>从查找按钮打开的“文内查找”弹窗。</figcaption></figure>
-<h2>4. 选定关键文字，应用加粗格式</h2>
-<p>在 Mac 端选中“提纲”这两个字，然后按下写作桌面上的“B”键（加粗）。在支持富文本的编辑器中，选中的文字会立即变为粗体；再次按下或使用撤销快捷键可恢复原样。</p>
-<p>如果文档是纯文本，字体样式可能不会保留。不要从按钮已经按下推断编辑器一定完成了格式变更；先确认文档模式和编辑器支持情况。</p>
-<h2>5. 切换到“格式”桌面，转换 Markdown 标题层级</h2>
-<p>点击写作桌面右下方的页面切换按钮，进入专门的“格式”桌面。这里聚合了加粗、斜体、下划线、超链接以及“正文 / H1...H6”标题层级控制按键。</p>
-<p>Markdown 练习可用一份可丢弃的 Markdown 文件：把光标放到一行标题，选择 H2，再检查编辑器中的实际文本或标题层级。文本编辑器与 Markdown 编辑器的行为不同，先用一种格式核验，再继续其他操作。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/writing-04-format.webp" alt="实际切换到格式桌面，显示标题层级与各格式键。" width="1206" height="2622" loading="lazy"><figcaption>实际切换到格式桌面，显示标题层级与各格式键。</figcaption></figure>
-<h2>6. 返回写作主桌面，保持专注编辑节奏</h2>
-<p>点击格式桌面右下角的返回按钮，切回写作主桌面，继续保持原有的范围选择状态。需要直接输入时可在格式桌面点击“键盘”，完成后点“完成”返回。</p>
-<p>写作桌面中的“删除”键支持长按切换持续删除模式，初次使用建议采用单次点按，确保每一步光标位移与格式调整都在掌控之中。</p>
-<p>参考：<a href="https://github.com/buggyblues/ninopad/releases/download/v1.2.0/CreamDeck-Integrations-1.2.0.zip">下载配套集成与对应软件安装说明</a>。</p>
-<h2>常见问题</h2>
-<h3>手机显示了字数，为什么不能精确选择网页文本？</h3><p>统计读取、文本选择与修改是不同能力。只读网页或未开放文本接口的区域不一定允许精确操作，先在可编辑正文验证。</p>
-<h3>Markdown 操作在 Obsidian 中没反应？</h3><p>检查配套集成包中 Obsidian 目录的安装说明、插件是否启用，以及当前是否在可编辑笔记中。先确认普通输入正常，再验证标题、列表等专有命令。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
-    </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="layout-research.html">← 知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档</a>
-      <a href="layout-work.html">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档 →</a>
-    </nav>
-  </main>
+<script src="/src/main.js" type="module"></script>
 
-  <footer>
-    <a class="brand" href="../index.html"><img src="../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
-      <a href="../blog.html">博客</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-      <a href="/en/blog/layout-writing" data-lang-switch>English</a>
-    </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
-  </footer>
-  <script src="../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="网站统计设置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">允许使用 Google Analytics 了解页面访问和下载点击？你可以拒绝，并随时在页脚修改选择。</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">允许统计</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">拒绝统计</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/privacy#website-analytics">隐私说明</a></div></aside></body></html>

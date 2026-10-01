@@ -1,219 +1,138 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/text-button-01-content.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/guide-text-button">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="article:published_time" content="2026-09-10">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控">
-  <meta name="twitter:description" content="在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/guides-1.2.0-r1/text-button-01-content.webp">
-  <meta property="og:description" content="在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。">
-  <meta name="keywords" content="奶猫妙控,NinoPad,文字按钮,常用语,Mac 文本输入,自动化草稿">
-  <link rel="canonical" href="https://ninopad.com/blog/guide-text-button">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-button">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-button">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-text-button">
-  <link rel="preload" as="image" href="../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../assets/app-icon.png">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../blog.css">
-  <title>把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "把高频短语做成实体按键：指尖轻触，一键输入到 Mac",
-      "description": "在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。",
-      "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
-      "inLanguage": "zh-CN",
-      "author": {
-        "@type": "Organization",
-        "name": "奶猫妙控"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "奶猫妙控"
-      },
-      "image": [
-        "https://ninopad.com/assets/screens/guides-1.2.0-r1/text-button-01-content.webp"
-      ],
-      "mainEntityOfPage": "https://ninopad.com/blog/guide-text-button"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "把高频短语做成实体按键：指尖轻触，一键输入到 Mac",
-          "item": "https://ninopad.com/blog/guide-text-button"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "为什么点完按钮没有出现在预期窗口？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "文字输入依赖 Mac 当前输入位置。先确认已经同步，再切到目标软件的可编辑正文并点出光标；菜单、弹窗或其他窗口占据焦点时，输入位置也会随之改变。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "保存名称改了，按钮上的字为什么没变？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "保存名称属于文字动作。回到组件属性的“外观”页修改按钮显示文字，再退出编辑器检查。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "预览成功，能说明连接没有问题吗？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "不能。内容预览在本地完成。Mac 执行要另外验证连接、同步状态、权限和实际输入结果。"
-          }
-        }
-      ]
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_guide-text-button" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_001&quot;}" property="og:site_name">
+<meta content="把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/zh-CN/guides-1.2.0-r1/text-button-01-content.webp" property="og:image" data-localized-social="guides-1.2.0-r1/text-button-01-content.webp">
+<meta content="https://ninopad.com/blog/guide-text-button" property="og:url">
+<meta content="zh_CN" property="og:locale">
+<meta content="2026-09-10" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_003&quot;}" name="twitter:title">
+<meta content="在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/guides-1.2.0-r1/text-button-01-content.webp" name="twitter:image" data-localized-social="guides-1.2.0-r1/text-button-01-content.webp">
+<meta content="在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_005&quot;}" property="og:description">
+<meta content="奶猫妙控,NinoPad,文字按钮,常用语,Mac 文本输入,自动化草稿" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.attr_006&quot;}" name="keywords">
+<link href="https://ninopad.com/blog/guide-text-button" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_007&quot;}">把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/guide-text-button"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/guide-text-button"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/guide-text-button"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-zh-guide-text-b-banner&amp;mt=8"><meta property="og:image:alt" content="已填写常用回复和保存名称的原生文字编辑器。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.social_image_alt&quot;}"><meta name="twitter:image:alt" content="已填写常用回复和保存名称的原生文字编辑器。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_guide-text-button.social_image_alt&quot;}"><meta property="og:locale:alternate" content="en_US"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_guide-text-button.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/blog/guide-text-button#page","url":"https://ninopad.com/blog/guide-text-button","name":"把高频短语做成实体按键：指尖轻触，一键输入到 Mac｜奶猫妙控","description":"在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。","inLanguage":"zh-CN","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"把高频短语做成实体按键：指尖轻触，一键输入到 Mac","description":"在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。","inLanguage":"zh-CN","datePublished":"2026-09-10","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/blog/guide-text-button","image":["https://ninopad.com/assets/screens/zh-CN/guides-1.2.0-r1/text-button-01-content.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ninopad.com/"},{"@type":"ListItem","position":2,"name":"使用指南","item":"https://ninopad.com/blog"},{"@type":"ListItem","position":3,"name":"把高频短语做成实体按键：指尖轻触，一键输入到 Mac","item":"https://ninopad.com/blog/guide-text-button"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
-      <img src="../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="../index.html#layouts">功能</a>
-      <a href="../index.html#pro">价格</a>
-      <a href="../blog.html" aria-current="page">博客</a>
-      <a href="../index.html#faq">常见问题</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/en/blog/guide-text-button" aria-label="Switch to English" data-lang-switch>EN</a>
-      <a class="header-download" href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>功能</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>价格</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>博客</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>常见问题</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/guide-text-button" class="is-active">简体中文</a>
-      <a href="/en/blog/guide-text-button" data-lang-switch>English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_008&quot;}" href="#main">跳到正文</a>
+<header class="site-header">
+<a aria-label="奶猫妙控首页" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_009&quot;}" href="/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_010&quot;}">奶猫妙控</span>
+</a>
+<nav aria-label="主导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_012&quot;}" href="/#layouts">功能</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_013&quot;}" href="/#pro">价格</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_014&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_015&quot;}" href="/#faq">常见问题</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+</nav>
+<div class="header-actions">
+<a aria-label="Switch to English" class="header-lang" data-lang-switch="" href="/en/blog/guide-text-button?lng=en">English</a>
+<a aria-label="选择设备并下载奶猫妙控" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_019&quot;}" href="/#download">免费下载</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_022&quot;}" data-mobile-nav-link="" href="/#layouts">功能</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_023&quot;}" data-mobile-nav-link="" href="/#pro">价格</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_024&quot;}" data-mobile-nav-link="" href="/blog">博客</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_025&quot;}" data-mobile-nav-link="" href="/#faq">常见问题</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a></li>
+</ul>
+<a aria-label="选择设备并下载奶猫妙控" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_027&quot;}" data-mobile-nav-link="" href="/#download">免费下载</a>
+<div class="mobile-drawer-lang">
+<a class="is-active" href="/blog/guide-text-button?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/guide-text-button?lng=en" data-language="en" aria-label="Switch to English" class="">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="页面位置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/">首页</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/blog">使用指南</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.growth_breadcrumb&quot;}">把高频短语做成实体按键：指尖轻触，一键输入到 Mac</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_030&quot;}" href="/blog">← 博客专栏 / 常用文字</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_031&quot;}">把高频短语做成实体按键：指尖轻触，一键输入到 Mac</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_032&quot;}">在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。</p>
+<p class="article-meta"><time data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_033&quot;}" datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+</header>
+<figure class="article-cover article-cover-phone">
+<img alt="已填写常用回复和保存名称的原生文字编辑器。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-text-button.attr_034&quot;}" height="2622" src="/assets/screens/zh-CN/guides-1.2.0-r1/text-button-01-content.webp" width="1206" data-screen="guides-1.2.0-r1/text-button-01-content.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_035&quot;}">已填写常用回复和保存名称的原生文字编辑器。</figcaption>
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_036&quot;}">每天都要回复好几遍的固定短语、常用地址或客服模版，何必反复敲击键盘？在奶猫妙控中建一颗专属的文字按钮，把光标停在 Mac 窗口，手机上轻轻一点即可精准输入。跟随本篇练习，为你常用的“确认收到”打造第一个快捷按键。</p>
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_guide-text-button.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_038&quot;}">配图说明：</strong>配图来自 App 原生编辑器与内容预览，使用示例文字和模拟连接。预览只在手机上显示内容；实际输入与同步请在连接的 Mac 上确认。</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_039&quot;}">开始前</h2><ul><li data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_040&quot;}">使用奶猫妙控 1.2.0；进入有空间添加按钮的桌面，本文从工作布局开始。</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_041&quot;}">要在电脑实际使用，需要连接运行奶猫妙控 Mac 端的电脑，并按提示开启控制所需权限。</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_042&quot;}">先准备一个空白测试文档，把光标放在正文里，便于确认输入位置与追加按键的效果。</li></ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_043&quot;}">1. 添加一个快捷按钮，并选择“发送文字”</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_044&quot;}">在底部点“布局”，再点“编辑当前桌面”。进入编辑器后点“添加组件”，选择“按键”组件；新按钮需要先配置操作。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_045&quot;}">在操作列表的“常用操作”里点“发送文字”，会打开同名编辑页。如果是在调整已有按钮，则进入它的“操作”页，点当前操作旁的“更换”，再选择“发送文字”。先完成内容设置，之后再调整按钮外观。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_046&quot;}">参考：<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_047&quot;}" href="https://ninopad.com/blog/layout-work">工作布局的编辑入口图解</a>。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_048&quot;}">2. 先存一条完整、能直接使用的回复</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_049&quot;}">在“输入要发送的文字”中填入练习句。检查标点和措辞，把需要每次修改的具体日期、金额或姓名留给实际使用时填写，避免把某一次回复误当作通用模板。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_050&quot;}">向下找到“保存名称”，将名称改为“确认收到”。这个名称用于识别自动化内容；按钮表面的文字在组件“外观”的“名称”中调整，二者需要分别检查。</p>
+<figure class="article-figure article-figure-phone"><img alt="实际输入的回复文字；保存名称和按钮外观文字分别设置。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-text-button.attr_051&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/text-button-01-content.webp" width="1206" data-screen="guides-1.2.0-r1/text-button-01-content.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_052&quot;}">实际输入的回复文字；保存名称和按钮外观文字分别设置。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_053&quot;}">3. 决定输入结束后是否追加按键</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_054&quot;}">打开“输入后”区域的“完成输入后”，可以选“不追加按键”“按 Enter”“按 ⌘Enter”或自定义快捷键。第一次练习选“不追加按键”，让文字停留在当前输入框中，留出检查和修改的机会。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_055&quot;}">Enter 在不同软件中的含义不同：可能换行，也可能直接发送。只有在目标软件中确认过行为后，再为这条回复追加对应按键。输入文字不会自动寻找聊天窗口，也不会替你确认收件人。</p>
+<figure class="article-figure article-figure-phone"><img alt="“完成输入后”菜单显示可用的追加按键选项。练习先保留“不追加按键”。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-text-button.attr_056&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/text-button-02-submit.webp" width="1206" data-screen="guides-1.2.0-r1/text-button-02-submit.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_057&quot;}">“完成输入后”菜单显示可用的追加按键选项。练习先保留“不追加按键”。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_058&quot;}">4. 保留“发送一次”，用内容预览核对</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_059&quot;}">在“发送方式”中保留“发送一次”。本例只有一条文字，不需要重复轮次或按住连发。向下点“预览内容”，检查预览里是否完整显示那句话。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_060&quot;}">“内容预览”只展示这轮将取出的内容，不会操作 Mac，也不会推进正式文字列表的取用进度。可以点“预览下一轮”重复检查；看到文字并不等于电脑已经收到了文字。</p>
+<figure class="article-figure article-figure-phone"><img alt="内容预览真实显示练习句，可反复检查，预览本身不操作 Mac。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_guide-text-button.attr_061&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/text-button-03-preview.webp" width="1206" data-screen="guides-1.2.0-r1/text-button-03-preview.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_062&quot;}">内容预览真实显示练习句，可反复检查，预览本身不操作 Mac。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_063&quot;}">5. 保存配置，再在 Mac 文档里验证一次</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_064&quot;}">关闭内容预览，回到编辑页。已连接可用的自动化服务时，右上角显示“保存并同步”；尚未连接时显示“保存草稿”。按当前按钮保存，并留意页面是否报告同步失败或超时。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_065&quot;}">回到组件属性点“完成”，再退出桌面编辑。现在切到 Mac 的测试文档，点正文让插入光标出现，然后点一次手机上的新按钮。应只插入一条回复；本例没有追加按键，文字应留在文档中。若仍显示“待同步”，先重新连接并打开编辑页保存同步，再重试。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_066&quot;}">6. 需要多条回复时，再扩展文字列表</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_067&quot;}">回到“编辑文字与发送方式”，点“添加一条”，可以继续写第二条；已有逐行文本时可使用“按行导入…”，导入预览中的每个非空行会成为独立条目。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_068&quot;}">多条文字会出现“取用方式”。“顺序下一条”用于逐条取用，“随机一条”和“打乱后依次取”适合轮换素材，“一次输入全部”会取出整个列表。先用“预览下一轮”观察所选方式，再决定是否开启“最后一条后回到第一条”。不要把“取哪一条”与“重复运行多少轮”混为一项设置。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_069&quot;}">常见问题</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_070&quot;}">为什么点完按钮没有出现在预期窗口？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_071&quot;}">文字输入依赖 Mac 当前输入位置。先确认已经同步，再切到目标软件的可编辑正文并点出光标；菜单、弹窗或其他窗口占据焦点时，输入位置也会随之改变。</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_072&quot;}">保存名称改了，按钮上的字为什么没变？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_073&quot;}">保存名称属于文字动作。回到组件属性的“外观”页修改按钮显示文字，再退出编辑器检查。</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_074&quot;}">预览成功，能说明连接没有问题吗？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_075&quot;}">不能。内容预览在本地完成。Mac 执行要另外验证连接、同步状态、权限和实际输入结果。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_076&quot;}">本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_077&quot;}" href="/updates">查看更新日志</a> · <a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_078&quot;}" href="/support">连接与权限帮助</a>。</p>
+</article>
+<nav aria-label="继续阅读" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_079&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_080&quot;}" href="/blog/layout-work">← 工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_081&quot;}" href="/blog/guide-automation-steps">把操作连成一条流：打造“记录并自动保存”的多步宏 →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">把这套操作放到手边</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">基础控制免费。连接 Mac 时，两端需安装奶猫妙控并处于同一局域网；高级工作台和独立乐器由 Pro 解锁。</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-guide-text-b-article&amp;mt=8">下载 iPhone / iPad App</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">下载免费 Mac 配套端</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/blog/mac-settings">查看配对与权限设置指南 →</a></aside></main>
+<footer>
+<a class="brand" href="/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_082&quot;}">奶猫妙控</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_083&quot;}">&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+<nav aria-label="页脚导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_guide-text-button.attr_084&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-guide-text-b-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_085&quot;}" href="https://github.com/buggyblues/ninopad/releases">下载</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_086&quot;}" href="/updates">更新</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_087&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_088&quot;}" href="/support">支持</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_089&quot;}" href="/privacy">隐私</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_090&quot;}" href="/terms">条款</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_guide-text-button.text_091&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+<a data-lang-switch="" href="/en/blog/guide-text-button?lng=en" aria-label="Switch to English" class="">English</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_guide-text-button.text_093&quot;}">© <span data-year=""></span> 奶猫妙控</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">网站统计设置</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / 常用文字</a>
-      <h1>把高频短语做成实体按键：指尖轻触，一键输入到 Mac</h1>
-      <p>在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
-    </header>
-    <figure class="article-cover article-cover-phone">
-      <img src="../assets/screens/guides-1.2.0-r1/text-button-01-content.webp" alt="已填写常用回复和保存名称的原生文字编辑器。" width="1206" height="2622">
-      <figcaption>已填写常用回复和保存名称的原生文字编辑器。</figcaption>
-    </figure>
-    <article class="article-body">
-<p class="article-lead">每天都要回复好几遍的固定短语、常用地址或客服模版，何必反复敲击键盘？在奶猫妙控中建一颗专属的文字按钮，把光标停在 Mac 窗口，手机上轻轻一点即可精准输入。跟随本篇练习，为你常用的“确认收到”打造第一个快捷按键。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>配图来自 App 原生编辑器与内容预览，使用示例文字和模拟连接。预览只在手机上显示内容；实际输入与同步请在连接的 Mac 上确认。</aside>
-<h2>开始前</h2><ul><li>使用奶猫妙控 1.2.0；进入有空间添加按钮的桌面，本文从工作布局开始。</li><li>要在电脑实际使用，需要连接运行奶猫妙控 Mac 端的电脑，并按提示开启控制所需权限。</li><li>先准备一个空白测试文档，把光标放在正文里，便于确认输入位置与追加按键的效果。</li></ul>
-<h2>1. 添加一个快捷按钮，并选择“发送文字”</h2>
-<p>在底部点“布局”，再点“编辑当前桌面”。进入编辑器后点“添加组件”，选择“按键”组件；新按钮需要先配置操作。</p>
-<p>在操作列表的“常用操作”里点“发送文字”，会打开同名编辑页。如果是在调整已有按钮，则进入它的“操作”页，点当前操作旁的“更换”，再选择“发送文字”。先完成内容设置，之后再调整按钮外观。</p>
-<p>参考：<a href="https://ninopad.com/blog/layout-work">工作布局的编辑入口图解</a>。</p>
-<h2>2. 先存一条完整、能直接使用的回复</h2>
-<p>在“输入要发送的文字”中填入练习句。检查标点和措辞，把需要每次修改的具体日期、金额或姓名留给实际使用时填写，避免把某一次回复误当作通用模板。</p>
-<p>向下找到“保存名称”，将名称改为“确认收到”。这个名称用于识别自动化内容；按钮表面的文字在组件“外观”的“名称”中调整，二者需要分别检查。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/guides-1.2.0-r1/text-button-01-content.webp" alt="实际输入的回复文字；保存名称和按钮外观文字分别设置。" width="1206" height="2622" loading="lazy"><figcaption>实际输入的回复文字；保存名称和按钮外观文字分别设置。</figcaption></figure>
-<h2>3. 决定输入结束后是否追加按键</h2>
-<p>打开“输入后”区域的“完成输入后”，可以选“不追加按键”“按 Enter”“按 ⌘Enter”或自定义快捷键。第一次练习选“不追加按键”，让文字停留在当前输入框中，留出检查和修改的机会。</p>
-<p>Enter 在不同软件中的含义不同：可能换行，也可能直接发送。只有在目标软件中确认过行为后，再为这条回复追加对应按键。输入文字不会自动寻找聊天窗口，也不会替你确认收件人。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/guides-1.2.0-r1/text-button-02-submit.webp" alt="“完成输入后”菜单显示可用的追加按键选项。练习先保留“不追加按键”。" width="1206" height="2622" loading="lazy"><figcaption>“完成输入后”菜单显示可用的追加按键选项。练习先保留“不追加按键”。</figcaption></figure>
-<h2>4. 保留“发送一次”，用内容预览核对</h2>
-<p>在“发送方式”中保留“发送一次”。本例只有一条文字，不需要重复轮次或按住连发。向下点“预览内容”，检查预览里是否完整显示那句话。</p>
-<p>“内容预览”只展示这轮将取出的内容，不会操作 Mac，也不会推进正式文字列表的取用进度。可以点“预览下一轮”重复检查；看到文字并不等于电脑已经收到了文字。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/guides-1.2.0-r1/text-button-03-preview.webp" alt="内容预览真实显示练习句，可反复检查，预览本身不操作 Mac。" width="1206" height="2622" loading="lazy"><figcaption>内容预览真实显示练习句，可反复检查，预览本身不操作 Mac。</figcaption></figure>
-<h2>5. 保存配置，再在 Mac 文档里验证一次</h2>
-<p>关闭内容预览，回到编辑页。已连接可用的自动化服务时，右上角显示“保存并同步”；尚未连接时显示“保存草稿”。按当前按钮保存，并留意页面是否报告同步失败或超时。</p>
-<p>回到组件属性点“完成”，再退出桌面编辑。现在切到 Mac 的测试文档，点正文让插入光标出现，然后点一次手机上的新按钮。应只插入一条回复；本例没有追加按键，文字应留在文档中。若仍显示“待同步”，先重新连接并打开编辑页保存同步，再重试。</p>
-<h2>6. 需要多条回复时，再扩展文字列表</h2>
-<p>回到“编辑文字与发送方式”，点“添加一条”，可以继续写第二条；已有逐行文本时可使用“按行导入…”，导入预览中的每个非空行会成为独立条目。</p>
-<p>多条文字会出现“取用方式”。“顺序下一条”用于逐条取用，“随机一条”和“打乱后依次取”适合轮换素材，“一次输入全部”会取出整个列表。先用“预览下一轮”观察所选方式，再决定是否开启“最后一条后回到第一条”。不要把“取哪一条”与“重复运行多少轮”混为一项设置。</p>
-<h2>常见问题</h2>
-<h3>为什么点完按钮没有出现在预期窗口？</h3><p>文字输入依赖 Mac 当前输入位置。先确认已经同步，再切到目标软件的可编辑正文并点出光标；菜单、弹窗或其他窗口占据焦点时，输入位置也会随之改变。</p>
-<h3>保存名称改了，按钮上的字为什么没变？</h3><p>保存名称属于文字动作。回到组件属性的“外观”页修改按钮显示文字，再退出编辑器检查。</p>
-<h3>预览成功，能说明连接没有问题吗？</h3><p>不能。内容预览在本地完成。Mac 执行要另外验证连接、同步状态、权限和实际输入结果。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
-    </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="layout-work.html">← 工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档</a>
-      <a href="guide-automation-steps.html">把操作连成一条流：打造“记录并自动保存”的多步宏 →</a>
-    </nav>
-  </main>
+<script src="/src/main.js" type="module"></script>
 
-  <footer>
-    <a class="brand" href="../index.html"><img src="../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
-      <a href="../blog.html">博客</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-      <a href="/en/blog/guide-text-button" data-lang-switch>English</a>
-    </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
-  </footer>
-  <script src="../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="网站统计设置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">允许使用 Google Analytics 了解页面访问和下载点击？你可以拒绝，并随时在页脚修改选择。</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">允许统计</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">拒绝统计</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/privacy#website-analytics">隐私说明</a></div></aside></body></html>

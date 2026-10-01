@@ -1,0 +1,362 @@
+{
+  "nativeApp": true,
+  "data": "synthetic demonstration fixtures",
+  "scenes": [
+    {
+      "name": "control-studio",
+      "args": [
+        "--deck",
+        "studio"
+      ],
+      "fixtures": {},
+      "sha256": "d158be301c8083810d0ad90042002948032106d7e9f009a29827b84a1888ec29"
+    },
+    {
+      "name": "remote-fullscreen",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-remote"
+      ],
+      "fixtures": {},
+      "sha256": "d2f0fc427afa7a87a8d15724c76caedfd720a1b3d107f95b5c88c00a3b25bbbc"
+    },
+    {
+      "name": "remote-keyboard",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-keyboard",
+        "--keyboard-mode=realtime"
+      ],
+      "fixtures": {},
+      "sha256": "51b91a160da49b1dde7077532d8ff11844ff86b59977173a6343835407cf6dca"
+    },
+    {
+      "name": "remote-text-voice",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-keyboard",
+        "--keyboard-mode=text",
+        "--keyboard-speech-preview"
+      ],
+      "fixtures": {},
+      "sha256": "06eaf905fca2891ee38f139a6a89ea43f4761312711af6af6c3a5ef97b2b7d5f"
+    },
+    {
+      "name": "remote-microphone",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-microphone-active"
+      ],
+      "fixtures": {},
+      "sha256": "15350e23df21dbf4f0b4629c6b6a0df3eb9026daa06e5f89f65aa4654410c056"
+    },
+    {
+      "name": "control-codex",
+      "args": [
+        "--deck",
+        "codex-micro"
+      ],
+      "env": {
+        "VIBEKEYS_CODEX_STATE_FIXTURE": "codex.json"
+      },
+      "fixtures": {
+        "codex.json": "58dd982601a579d934f25a0b89202dae1e65c1f663ba1a06b5270a785c1e62cd"
+      },
+      "sha256": "f9e1c02d01f0c78bfcb9d88387dc843cbb7d421470fb0cd4e4de338abf36fe6b"
+    },
+    {
+      "name": "control-resolve",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "creative.json"
+      },
+      "fixtures": {
+        "creative.json": "90b3dff790384c0a2e2c9261b68c90c69943512508b1500c226542ecd64448ae"
+      },
+      "sha256": "645a6c8afba40705f42a78da19b34e58f3223a409f05a65be69a01b3774004a3"
+    },
+    {
+      "name": "control-media",
+      "args": [
+        "--deck",
+        "media"
+      ],
+      "env": {
+        "VIBEKEYS_MEDIA_STATE_FIXTURE": "media.json"
+      },
+      "fixtures": {
+        "media.json": "9cc517a7d0c3dc9843f3009c77f338b7954c41e60d1e1fafedcc0930bd9f4f15"
+      },
+      "sha256": "5097871d30b31ebd3ed896159067b2bfccd6a575fcee1f25ed71c58432b854c7"
+    },
+    {
+      "name": "control-presentation-assist",
+      "args": [
+        "--deck",
+        "presentation-assist"
+      ],
+      "fixtures": {},
+      "sha256": "3946584477ada33aa93d364f9fe87173ca5f8c63015aa6cc2d491a46c1bce500"
+    },
+    {
+      "name": "control-presentation",
+      "args": [
+        "--deck",
+        "presentation"
+      ],
+      "fixtures": {},
+      "sha256": "9244ea23563af83384f376f56410bd97d8233b54b1911884e85b0305ee7d3bba"
+    },
+    {
+      "name": "control-launcher",
+      "args": [
+        "--deck",
+        "mac-launcher"
+      ],
+      "fixtures": {},
+      "sha256": "386484b82de4aff30130d3d2ccf6cfcb19d60cb93483f2e927dbe3406b96f829"
+    },
+    {
+      "name": "control-browser",
+      "args": [
+        "--deck",
+        "browser"
+      ],
+      "fixtures": {},
+      "sha256": "3760b9d92b171c087af1f281a42b48b3aa31cc4e4b7471befaecb8a136eb54f8"
+    },
+    {
+      "name": "control-terminal",
+      "args": [
+        "--deck",
+        "terminal"
+      ],
+      "env": {
+        "VIBEKEYS_TERMINAL_PREVIEW": "1"
+      },
+      "fixtures": {},
+      "sha256": "f8ed2de1b34f1e823db40d8ccdc352f83e06135626c9439c0620132282d38bc9"
+    },
+    {
+      "name": "control-writing",
+      "args": [
+        "--deck",
+        "writing"
+      ],
+      "env": {
+        "VIBEKEYS_RESEARCH_STATE_FIXTURE": "writing.json"
+      },
+      "fixtures": {
+        "writing.json": "558d8e93973112ceba5988550d7f89a245ba5b8c59e85102f6b23a0ff05d8a8d"
+      },
+      "sha256": "0fd839a39b27c0233ce6d695e2eb15f677bad7705660e4d197432ffb6a246e93"
+    },
+    {
+      "name": "control-writing-format",
+      "args": [
+        "--deck",
+        "writing-format"
+      ],
+      "env": {
+        "VIBEKEYS_RESEARCH_STATE_FIXTURE": "writing.json"
+      },
+      "fixtures": {
+        "writing.json": "558d8e93973112ceba5988550d7f89a245ba5b8c59e85102f6b23a0ff05d8a8d"
+      },
+      "sha256": "7e75b2c30ffb2fd121fe3c97db04a6e2a05523ddf035691171e521a56484fb3c"
+    },
+    {
+      "name": "control-research",
+      "args": [
+        "--deck",
+        "research"
+      ],
+      "env": {
+        "VIBEKEYS_RESEARCH_STATE_FIXTURE": "research.json"
+      },
+      "fixtures": {
+        "research.json": "ce32b794520cb7c994ea27a763ec60bbee0b8f9c0831bdc2bfa668242d6ffaa6"
+      },
+      "sha256": "316d71031d4dd2c6f03366177a2a3b86e48fa8a181e6203a012916fc2538172c"
+    },
+    {
+      "name": "control-reading",
+      "args": [
+        "--deck",
+        "reading"
+      ],
+      "env": {
+        "VIBEKEYS_READING_FIXTURE": "pdf"
+      },
+      "fixtures": {},
+      "sha256": "551ec0b25a6ce33963aa6de477a07bf4a26267ec062937eb07a2c8648a080d25"
+    },
+    {
+      "name": "control-finance",
+      "args": [
+        "--deck",
+        "finance-entry"
+      ],
+      "fixtures": {},
+      "sha256": "198447017aa30cc30ac2fb82fcdcbf430d0115aa282503112def406e9b81dcf4"
+    },
+    {
+      "name": "control-finance-sheet",
+      "args": [
+        "--deck",
+        "finance-sheet"
+      ],
+      "fixtures": {},
+      "sha256": "ff878e6d7f60ef4e0b00d8d472b9062ade8efcda68b8b643719166819ff54363"
+    },
+    {
+      "name": "control-sampler",
+      "args": [
+        "--deck",
+        "sampler-record",
+        "--sampler-demo"
+      ],
+      "fixtures": {},
+      "sha256": "032c41d117678b97492e273bcee9dc390a7189641211bc205c7bffcf2486fc51"
+    },
+    {
+      "name": "control-sampler-perform",
+      "args": [
+        "--deck",
+        "sampler-perform",
+        "--sampler-demo"
+      ],
+      "fixtures": {},
+      "sha256": "cd39fabcc7d1d685c5a8217784ff1c80b2859f0cd4b2668298712807ce22d1c2"
+    },
+    {
+      "name": "control-arcade",
+      "args": [
+        "--deck",
+        "arcade",
+        "--arcade-preview"
+      ],
+      "fixtures": {},
+      "sha256": "5d55a82b2e2cd5e7bdbece6c1fdbe1b8a31afdc5ecd542dedac807d9e81a2e67"
+    },
+    {
+      "name": "control-smart-home",
+      "args": [
+        "--deck",
+        "smart-home"
+      ],
+      "env": {
+        "VIBEKEYS_WEBSITE_HOME": "home.json"
+      },
+      "fixtures": {
+        "home.json": "44bb1f47e3a8da97b7df7924c16bc085a4e61c31dba86530d4b967d0bdf44d99"
+      },
+      "sha256": "4fb3cbea902ed10773f584e3eafe84e1c346805eff1aeb9fe66b23ac1af8c82c"
+    },
+    {
+      "name": "control-presentation-timing",
+      "args": [
+        "--deck",
+        "presentation-timing"
+      ],
+      "fixtures": {},
+      "sha256": "a031b133bdf248b7bb1cc027ed66d8f07ba989dac6d8ba922cce10788ac812c3"
+    },
+    {
+      "name": "layout-editor",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-editor"
+      ],
+      "fixtures": {},
+      "sha256": "b9ae0926169ac90016ffdf23b1eed6a1cd0d9bbee9495a576afb8c1715bf3f5e"
+    },
+    {
+      "name": "layout-switcher",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-modes"
+      ],
+      "fixtures": {},
+      "sha256": "ddf83eecbed737f7189a76751d10bbfca8e026f014b929088a4151442cb3ec4c"
+    },
+    {
+      "name": "device-pairing",
+      "args": [
+        "--show-devices"
+      ],
+      "fixtures": {},
+      "sha256": "e4e1642cb2899f0e2ee1bca9998ea73bef55153eebac98808acc8572b8151e4a"
+    },
+    {
+      "name": "pro-paywall",
+      "args": [
+        "--preview-paywall"
+      ],
+      "fixtures": {},
+      "sha256": "2f5c70504ddcccea1deb03f654086838e9e37dd5553f44797e817b1408b4aeef"
+    },
+    {
+      "name": "control-presentation-board",
+      "args": [
+        "--deck",
+        "presentation-assist",
+        "--show-presentation-board",
+        "--preview-presentation-tools"
+      ],
+      "fixtures": {},
+      "sha256": "feca4095ac38aa176005d48974204cf57aaaab4282239bff74314fe211e85a99"
+    },
+    {
+      "name": "control-davinci",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "control-davinci.json"
+      },
+      "fixtures": {
+        "control-davinci.json": "230f99a7cffdfd14447a4dc0062b2032bb8188bcc4b144aca2ff3e3c5219408b"
+      },
+      "sha256": "20f175bff6f02cb096b66df74f3dbdaa4172d444006e3e8fe45b4db517738ce1"
+    },
+    {
+      "name": "control-final-cut",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "control-final-cut.json"
+      },
+      "fixtures": {
+        "control-final-cut.json": "dabddafaa8306ed5761fa306c82baee343dfbdc22c1f17666372492940d027ac"
+      },
+      "sha256": "0674c66d720c98335131567ffba1edec2e3739cdde70ac3a5c0da1c91ea9681d"
+    },
+    {
+      "name": "control-jianying",
+      "args": [
+        "--deck",
+        "editing-adaptive"
+      ],
+      "env": {
+        "VIBEKEYS_WORKBENCH_STATE_FIXTURE": "control-jianying.json"
+      },
+      "fixtures": {
+        "control-jianying.json": "6fa50029e6c365cbd4b15c53ee97184da83494107a593b376f2a0bb61cbd7e3f"
+      },
+      "sha256": "5cedaafcb9e1508bf889edea42cb7d531d3e1ed1c78378c1d7680683ef6dfed3"
+    }
+  ]
+}

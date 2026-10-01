@@ -1,0 +1,71 @@
+{
+  "nativeApp": true,
+  "captureMethod": "XCUITest taps, presses, typing and orientation changes; XCUIScreen screenshot",
+  "conversion": "Apply native PNG orientation, strip metadata, encode WebP quality 82; no UI redraw or compositing.",
+  "data": "Synthetic Mac/plugin state; local calculator, clipping library, sampler and demo Home provider run in the App.",
+  "limits": "No claim of real Mac execution or real household/game control from these screenshots.",
+  "testCases": 13,
+  "sources": {
+    "Scripts/WebsiteScreenshots/scenes.json": "ece457d76a992df48422549873c13a791a21e5808437006fb078f886659a44b9",
+    "Scripts/WebsiteScreenshots/control-final-cut.json": "dabddafaa8306ed5761fa306c82baee343dfbdc22c1f17666372492940d027ac",
+    "Scripts/WebsiteScreenshots/media.json": "9cc517a7d0c3dc9843f3009c77f338b7954c41e60d1e1fafedcc0930bd9f4f15",
+    "Scripts/WebsiteScreenshots/writing.json": "558d8e93973112ceba5988550d7f89a245ba5b8c59e85102f6b23a0ff05d8a8d",
+    "Scripts/WebsiteScreenshots/research.json": "ce32b794520cb7c994ea27a763ec60bbee0b8f9c0831bdc2bfa668242d6ffaa6",
+    "Scripts/WebsiteScreenshots/coding-lab.json": "d88fb5a1ed0c7ff9636140bae4e8bea556f7e36ce8bce43a5e07c44af321cf07",
+    "Scripts/WebsiteScreenshots/creative.json": "90b3dff790384c0a2e2c9261b68c90c69943512508b1500c226542ecd64448ae",
+    "Scripts/WebsiteScreenshots/control-davinci.json": "230f99a7cffdfd14447a4dc0062b2032bb8188bcc4b144aca2ff3e3c5219408b",
+    "Scripts/WebsiteScreenshots/home.json": "44bb1f47e3a8da97b7df7924c16bc085a4e61c31dba86530d4b967d0bdf44d99",
+    "Scripts/WebsiteScreenshots/codex.json": "58dd982601a579d934f25a0b89202dae1e65c1f663ba1a06b5270a785c1e62cd",
+    "Scripts/WebsiteScreenshots/control-jianying.json": "6fa50029e6c365cbd4b15c53ee97184da83494107a593b376f2a0bb61cbd7e3f",
+    "Scripts/WebsiteTutorials/research.json": "e17cbe2e1a42b283a077dbb5ee5fef428a567e18b93e86d40bc7e339c3c4b549",
+    "Scripts/AppStore/StoreCaptureUITests.swift": "d21ecfae3c25330f9a342e0003a3ae6ebf1186dccf505a860c52578cb1238ff1",
+    "Scripts/AppStore/wallpaper-captures.json": "2caa79d9e519583bd8701bfd55f6080c194000d48be403ec0b64bc2f5017e3a2"
+  },
+  "screenshots": [
+    {
+      "name": "store-01-studio",
+      "width": 1284,
+      "height": 2778,
+      "test": "StoreCaptureUITests/test01Studio()",
+      "testResult": "Passed",
+      "nativePixelWidth": 1284,
+      "nativePixelHeight": 2778,
+      "resultBundle": "store-r2.xcresult",
+      "capturedAtUnix": 1789263353.242,
+      "device": "Cream Deck Website Store iPhone",
+      "pngSHA256": "c940f8478eb727b456603a6998e89958ef8ee0d006d46ea3cecc1b4e450b93f0",
+      "uiTreeSHA256": "39e8b1dbf56fb3eea67260a291b87a4f487ff251cacebb0b22f600c43847e4b0",
+      "webpSHA256": "1f351d36277a1b5a8e1925c6a5088ea57c07764b1296261622ed1375cf6241ad"
+    },
+    {
+      "name": "store-09-codex",
+      "width": 1284,
+      "height": 2778,
+      "test": "StoreCaptureUITests/test10Codex()",
+      "testResult": "Passed",
+      "nativePixelWidth": 1284,
+      "nativePixelHeight": 2778,
+      "resultBundle": "store-r2.xcresult",
+      "capturedAtUnix": 1789263579.726,
+      "device": "Cream Deck Website Store iPhone",
+      "pngSHA256": "ffa448c24e61a438c3704b908ae5cecbd66c865536a957e9825c09151c088a41",
+      "uiTreeSHA256": "6b59043a03a2fa887dce67b4903344f1ce69f69d9f8ae3c14da9cc75f14865e8",
+      "webpSHA256": "70cd2ee5037e9f17e2fc33a053fe8eb7062f8263f20f19b9a0921d626747df82"
+    },
+    {
+      "name": "store-14-coding-lab",
+      "width": 1284,
+      "height": 2778,
+      "test": "StoreCaptureUITests/test19CodingLab()",
+      "testResult": "Passed",
+      "nativePixelWidth": 1284,
+      "nativePixelHeight": 2778,
+      "resultBundle": "store-r2.xcresult",
+      "capturedAtUnix": 1789263786.668,
+      "device": "Cream Deck Website Store iPhone",
+      "pngSHA256": "b2d102c286ba496ac08295a07ed9d47767e4e2fe643c0c998eec55ec6d00f33c",
+      "uiTreeSHA256": "0fc64c696808a8faf0d67324d62dd60b7d521c858d5d1e9d855ba0d2118a35c5",
+      "webpSHA256": "5c49fe6fdfd0c270efa2e87ba9ad37d62db713ea57d7244e077285221d3bc563"
+    }
+  ]
+}

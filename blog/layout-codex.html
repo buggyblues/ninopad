@@ -1,216 +1,143 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/codex-01.webp">
-  <meta property="og:url" content="https://ninopad.com/blog/layout-codex">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="article:published_time" content="2026-09-10">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控">
-  <meta name="twitter:description" content="掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/codex-01.webp">
-  <meta property="og:description" content="掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。">
-  <meta name="keywords" content="奶猫妙控,NinoPad,Codex布局教程,操作步骤">
-  <link rel="canonical" href="https://ninopad.com/blog/layout-codex">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-codex">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-codex">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-codex">
-  <link rel="preload" as="image" href="../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../assets/app-icon.png">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../blog.css">
-  <title>多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "多 Agent 并行调度：用Codex布局从容切换 Codex 任务",
-      "description": "掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。",
-      "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
-      "inLanguage": "zh-CN",
-      "author": {
-        "@type": "Organization",
-        "name": "奶猫妙控"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "奶猫妙控"
-      },
-      "image": [
-        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/codex-01.webp"
-      ],
-      "mainEntityOfPage": "https://ninopad.com/blog/layout-codex"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://ninopad.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "博客",
-          "item": "https://ninopad.com/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "多 Agent 并行调度：用Codex布局从容切换 Codex 任务",
-          "item": "https://ninopad.com/blog/layout-codex"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "任务名称没有更新？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "先确认 Mac Codex 正在运行，当前任务来源里确实有任务；再检查连接与版本。不要用截图里的演示标题判断自己是否连接成功。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "额度为空，是否代表没有剩余额度？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "不代表。未读取到额度时不能按零余额理解。请查看 Codex 自身提供的用量信息，等状态读取恢复后再核对。"
-          }
-        }
-      ]
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_layout-codex" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_001&quot;}" property="og:site_name">
+<meta content="多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-01.webp" property="og:image" data-localized-social="tutorials-1.2.0-r1/codex-01.webp">
+<meta content="https://ninopad.com/blog/layout-codex" property="og:url">
+<meta content="zh_CN" property="og:locale">
+<meta content="2026-09-10" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_003&quot;}" name="twitter:title">
+<meta content="掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-01.webp" name="twitter:image" data-localized-social="tutorials-1.2.0-r1/codex-01.webp">
+<meta content="掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_005&quot;}" property="og:description">
+<meta content="奶猫妙控,NinoPad,Codex布局教程,操作步骤" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.attr_006&quot;}" name="keywords">
+<link href="https://ninopad.com/blog/layout-codex" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_007&quot;}">多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-codex"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-codex"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-codex"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-zh-layout-codex-banner&amp;mt=8"><meta property="og:image:alt" content="Codex桌面，任务名称、状态与额度均为演示数据。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.social_image_alt&quot;}"><meta name="twitter:image:alt" content="Codex桌面，任务名称、状态与额度均为演示数据。" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-codex.social_image_alt&quot;}"><meta property="og:locale:alternate" content="en_US"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_layout-codex.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/blog/layout-codex#page","url":"https://ninopad.com/blog/layout-codex","name":"多 Agent 并行调度：用Codex布局从容切换 Codex 任务｜奶猫妙控","description":"掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。","inLanguage":"zh-CN","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"多 Agent 并行调度：用Codex布局从容切换 Codex 任务","description":"掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。","inLanguage":"zh-CN","datePublished":"2026-09-10","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/blog/layout-codex","image":["https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-01.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ninopad.com/"},{"@type":"ListItem","position":2,"name":"使用指南","item":"https://ninopad.com/blog"},{"@type":"ListItem","position":3,"name":"多 Agent 并行调度：用Codex布局从容切换 Codex 任务","item":"https://ninopad.com/blog/layout-codex"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="奶猫妙控首页">
-      <img src="../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="../index.html#layouts">功能</a>
-      <a href="../index.html#pro">价格</a>
-      <a href="../blog.html" aria-current="page">博客</a>
-      <a href="../index.html#faq">常见问题</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/en/blog/layout-codex" aria-label="Switch to English" data-lang-switch>EN</a>
-      <a class="header-download" href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>功能</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>价格</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>博客</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>常见问题</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/layout-codex" class="is-active">简体中文</a>
-      <a href="/en/blog/layout-codex" data-lang-switch>English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_008&quot;}" href="#main">跳到正文</a>
+<header class="site-header">
+<a aria-label="奶猫妙控首页" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_009&quot;}" href="/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_010&quot;}">奶猫妙控</span>
+</a>
+<nav aria-label="主导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_012&quot;}" href="/#layouts">功能</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_013&quot;}" href="/#pro">价格</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_014&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_015&quot;}" href="/#faq">常见问题</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+</nav>
+<div class="header-actions">
+<a aria-label="Switch to English" class="header-lang" data-lang-switch="" href="/en/blog/layout-codex?lng=en">English</a>
+<a aria-label="选择设备并下载奶猫妙控" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_019&quot;}" href="/#download">免费下载</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_022&quot;}" data-mobile-nav-link="" href="/#layouts">功能</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_023&quot;}" data-mobile-nav-link="" href="/#pro">价格</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_024&quot;}" data-mobile-nav-link="" href="/blog">博客</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_025&quot;}" data-mobile-nav-link="" href="/#faq">常见问题</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a></li>
+</ul>
+<a aria-label="选择设备并下载奶猫妙控" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_027&quot;}" data-mobile-nav-link="" href="/#download">免费下载</a>
+<div class="mobile-drawer-lang">
+<a class="is-active" href="/blog/layout-codex?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/layout-codex?lng=en" data-language="en" aria-label="Switch to English" class="">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="页面位置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/">首页</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/blog">使用指南</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.growth_breadcrumb&quot;}">多 Agent 并行调度：用Codex布局从容切换 Codex 任务</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_030&quot;}" href="/blog">← 博客专栏 / Codex</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_031&quot;}">多 Agent 并行调度：用Codex布局从容切换 Codex 任务</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_032&quot;}">掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。</p>
+<p class="article-meta"><time data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_033&quot;}" datetime="2026-09-10">2026 年 9 月 10 日</time></p>
+</header>
+<figure class="article-cover article-cover-phone">
+<img alt="Codex桌面，任务名称、状态与额度均为演示数据。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-codex.attr_034&quot;}" height="2622" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/codex-01.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_035&quot;}">Codex桌面，任务名称、状态与额度均为演示数据。</figcaption>
+</figure>
+<article class="article-body">
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_layout-codex.text_036&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_037&quot;}">1.3.1 布局更名：</strong>原「氛围编程」已更名为「Codex」。本次还新增了独立的「氛围编程」布局，用于 Claude Code、Codex 和 Antigravity 等 Mac 本地助手。下面先说明两者如何选择，原有 Codex 操作教程继续保留。</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_038&quot;}">新增的氛围编程，从哪里开始</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_039&quot;}">先将手机与 Mac 配套端一起更新到 1.3.1，在同一局域网完成配对。对应编程助手需要先在 Mac 上安装并登录，手机不会独立运行 AI 模型，奶猫妙控 Pro 也不包含第三方 AI 订阅。</p>
+<ol><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_040&quot;}">在底部「布局」中选择「氛围编程」。主界面下方有「项目」「会话」「队列」和「设置」按键。</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_041&quot;}">通过「项目」选择要继续的项目，通过「会话」查看会话；已有会话分配到按键后，点按对应按键即可切换。顶部小屏显示所选任务的回复。</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_042&quot;}">在小屏的「工作」「交付物」「文件」「项目」「用量」之间切换，按需查看当前会话的信息。需要读长回复时，点击「展开」。新指令从「新任务」发起，等待中的任务在「队列」查看；权限请求要先核对内容，再决定是否允许。</li></ol>
+<figure class="article-figure article-figure-phone"><img alt="氛围编程实际主界面，显示旅行手账的模拟会话与回复" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-codex.attr_043&quot;}" height="2778" loading="lazy" src="/assets/screens/zh-CN/release-1.3.1/store-14-coding-lab.webp" width="1284" data-screen="release-1.3.1/store-14-coding-lab.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_044&quot;}">真实 App 主界面，项目和回复为截图用模拟数据。可用助手、模型、用量及操作选项以 Mac 的实际安装和登录状态为准。</figcaption></figure>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_045&quot;}">如果你主要想查看 Codex 桌面任务的六个槽位、额度与推理档位，选择「Codex」，继续下面的操作。需要运行本地 Shell，则使用单独的「终端」布局。</p>
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_046&quot;}">让 AI 编写代码时，多个任务同时跑往往需要频繁切屏盯进度。Codex布局为你提供掌上调度台：在手机上直观掌握各槽位任务进展，单击查看状态回读、双击将对应窗口聚焦前台，还可平滑调节模型推理强度与用量回读，多工作流调度游刃有余。</p>
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_layout-codex.text_047&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_048&quot;}">配图说明：</strong>配图中的任务、模型和额度使用示例数据，键盘与设置页来自实际 App。练习前请核对自己的任务，模型可选项和额度以实际账号为准。</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_049&quot;}">开始前</h2><ul><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_050&quot;}">iPhone / iPad 安装奶猫妙控，Mac 安装对应配套端；完成局域网配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_051&quot;}">Mac 上需预先安装并登录 Codex 桌面 App，并有处于活动中的编程任务。本布局面向 Mac 桌面端 Codex 的任务调度；命令行会话请使用终端布局。</li></ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_052&quot;}">1. 进入Codex布局，查看任务槽位</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_053&quot;}">在 iPhone 底部点击“布局”标签，在列表中找到并进入“Codex”布局。多桌面方案请展开右侧箭头后选择对应桌面。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_054&quot;}">桌面中陈列着多个任务槽位按键，顶部小屏可回读当前选中的任务状态。若任务按键为空白，请先确认 Mac 端对应 Codex / Agent 开发环境已处于运行与连接状态。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_055&quot;}">任务按键展示当前活动槽位，便于直观管理多条并发工作流，不代表账号仅能处理有限数量的任务。</p>
+<figure class="article-figure article-figure-phone"><img alt="Codex桌面，任务名称、状态与额度均为演示数据。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-codex.attr_056&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/codex-01.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_057&quot;}">Codex桌面，任务名称、状态与额度均为演示数据。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_058&quot;}">2. 掌握单击切换与双击前台聚焦逻辑</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_059&quot;}">在默认设置下，单击任务键会在手机端后台选中该任务，便于查看其上下文与状态；双击任务键则会在切换的同时，自动将 Mac 上的对应窗口激活置于最前台。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_060&quot;}">在 Mac 端打开多个窗口，分别尝试单击与双击操作，观察前台焦点的切换效果，确保在不打扰当前编写思路的同时自如调度任务。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_061&quot;}">3. 打开实时键盘，核准光标位置后输入指令</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_062&quot;}">选定目标任务后，点击手机上的“实时键盘”，在顶部切换为“实时”输入模式（确保非本地草稿模式）。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_063&quot;}">先在 Mac 端确认光标已位于目标任务的 Prompt 输入框内，然后在手机键盘输入准备好的指令内容，在 Mac 端核对文字输入完全正确后再执行发送。</p>
+<figure class="article-figure article-figure-phone"><img alt="实际从Codex桌面打开的实时键盘；本次未向真实任务输入。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-codex.attr_064&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-02-keyboard.webp" width="1206" data-screen="tutorials-1.2.0-r1/codex-02-keyboard.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_065&quot;}">实际从Codex桌面打开的实时键盘；本次未向真实任务输入。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_066&quot;}">4. 调节模型选择与推理强度旋钮</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_067&quot;}">返回Codex主桌面，查看“模型”和“推理强度”旋钮下方的状态回读。若需调整推理强度，每次轻拨一个档位，等待手机与 Mac 上的当前任务参数同步完成。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_068&quot;}">可用模型与推理档位取决于你绑定的具体服务与账号权限，额度面板提供可视化消耗参考，帮助你合理规划 Token 预算。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_069&quot;}">5. 进入设置页面，定制窗口聚焦习惯</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_070&quot;}">点击底栏“设置”，进入“Codex”详细设置页面。在此处可以检查 Agent 服务来源，并根据个人操作习惯开启或关闭“单击时聚焦 ChatGPT”以及任务完成事件通知。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_071&quot;}">配置完成后返回桌面，按需灵活管理后台任务。若希望保持静默后台处理，保持单击不聚焦即可。</p>
+<figure class="article-figure article-figure-phone"><img alt="Codex设置页，显示 Agent 来源与单击聚焦选项。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-codex.attr_072&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-04-preferences.webp" width="1206" data-screen="tutorials-1.2.0-r1/codex-04-preferences.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_073&quot;}">Codex设置页，显示 Agent 来源与单击聚焦选项。</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_074&quot;}">6. 处理关键审批请求，安全调度代码修改</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_075&quot;}">当 Agent 执行涉及系统敏感操作（如文件修改或命令执行）弹出审批请求时，切记先在 Mac 屏幕上仔细阅读待审批的操作范围与 diff 内容，再在手机端点击“批准”或“拒绝”。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_076&quot;}">需要开启全新探索时使用“新任务”，想在当前上下文分支讨论时使用“分叉任务”。完成操作后在 Mac 端核验新分支，避免在旧任务上混淆输入。</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_077&quot;}">常见问题</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_078&quot;}">任务名称没有更新？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_079&quot;}">先确认 Mac Codex 正在运行，当前任务来源里确实有任务；再检查连接与版本。不要用截图里的演示标题判断自己是否连接成功。</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_080&quot;}">额度为空，是否代表没有剩余额度？</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_081&quot;}">不代表。未读取到额度时不能按零余额理解。请查看 Codex 自身提供的用量信息，等状态读取恢复后再核对。</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_082&quot;}">本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_083&quot;}" href="/updates">查看更新日志</a> · <a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_084&quot;}" href="/support">连接与权限帮助</a>。</p>
+</article>
+<nav aria-label="继续阅读" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_085&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_086&quot;}" href="/blog/layout-terminal">← 命令行随身监控：在手机上新建、切换与全屏管理终端会话</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_087&quot;}" href="/blog/layout-work">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档 →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">把这套操作放到手边</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">基础控制免费。连接 Mac 时，两端需安装奶猫妙控并处于同一局域网；高级工作台和独立乐器由 Pro 解锁。</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-layout-codex-article&amp;mt=8">下载 iPhone / iPad App</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">下载免费 Mac 配套端</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/blog/mac-settings">查看配对与权限设置指南 →</a></aside></main>
+<footer>
+<a class="brand" href="/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_088&quot;}">奶猫妙控</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_089&quot;}">&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+<nav aria-label="页脚导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-codex.attr_090&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-layout-codex-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_091&quot;}" href="https://github.com/buggyblues/ninopad/releases">下载</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_092&quot;}" href="/updates">更新</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_093&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_094&quot;}" href="/support">支持</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_095&quot;}" href="/privacy">隐私</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_096&quot;}" href="/terms">条款</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-codex.text_097&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+<a data-lang-switch="" href="/en/blog/layout-codex?lng=en" aria-label="Switch to English" class="">English</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_layout-codex.text_099&quot;}">© <span data-year=""></span> 奶猫妙控</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">网站统计设置</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← 博客专栏 / Codex</a>
-      <h1>多 Agent 并行调度：用Codex布局从容切换 Codex 任务</h1>
-      <p>掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。</p>
-      <p class="article-meta"><time datetime="2026-09-10">2026 年 9 月 10 日</time></p>
-    </header>
-    <figure class="article-cover article-cover-phone">
-      <img src="../assets/screens/tutorials-1.2.0-r1/codex-01.webp" alt="Codex桌面，任务名称、状态与额度均为演示数据。" width="1206" height="2622">
-      <figcaption>Codex桌面，任务名称、状态与额度均为演示数据。</figcaption>
-    </figure>
-    <article class="article-body">
-<aside class="article-highlight"><strong>1.3.1 布局更名：</strong>原「氛围编程」已更名为「Codex」。本次还新增了独立的「氛围编程」布局，用于 Claude Code、Codex 和 Antigravity 等 Mac 本地助手。下面先说明两者如何选择，原有 Codex 操作教程继续保留。</aside>
-<h2>新增的氛围编程，从哪里开始</h2>
-<p>先将手机与 Mac 配套端一起更新到 1.3.1，在同一局域网完成配对。对应编程助手需要先在 Mac 上安装并登录，手机不会独立运行 AI 模型，奶猫妙控 Pro 也不包含第三方 AI 订阅。</p>
-<ol><li>在底部「布局」中选择「氛围编程」。主界面下方有「项目」「会话」「队列」和「设置」按键。</li><li>通过「项目」选择要继续的项目，通过「会话」查看会话；已有会话分配到按键后，点按对应按键即可切换。顶部小屏显示所选任务的回复。</li><li>在小屏的「工作」「交付物」「文件」「项目」「用量」之间切换，按需查看当前会话的信息。需要读长回复时，点击「展开」。新指令从「新任务」发起，等待中的任务在「队列」查看；权限请求要先核对内容，再决定是否允许。</li></ol>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/release-1.3.1/store-14-coding-lab.webp" alt="氛围编程实际主界面，显示旅行手账的模拟会话与回复" width="1284" height="2778" loading="lazy"><figcaption>真实 App 主界面，项目和回复为截图用模拟数据。可用助手、模型、用量及操作选项以 Mac 的实际安装和登录状态为准。</figcaption></figure>
-<p>如果你主要想查看 Codex 桌面任务的六个槽位、额度与推理档位，选择「Codex」，继续下面的操作。需要运行本地 Shell，则使用单独的「终端」布局。</p>
-<p class="article-lead">让 AI 编写代码时，多个任务同时跑往往需要频繁切屏盯进度。Codex布局为你提供掌上调度台：在手机上直观掌握各槽位任务进展，单击查看状态回读、双击将对应窗口聚焦前台，还可平滑调节模型推理强度与用量回读，多工作流调度游刃有余。</p>
-<aside class="article-highlight"><strong>配图说明：</strong>配图中的任务、模型和额度使用示例数据，键盘与设置页来自实际 App。练习前请核对自己的任务，模型可选项和额度以实际账号为准。</aside>
-<h2>开始前</h2><ul><li>iPhone / iPad 安装奶猫妙控，Mac 安装对应配套端；完成局域网配对，并允许 Mac 端的辅助功能权限。需要电脑画面时，再开启屏幕录制权限。</li><li>Mac 上需预先安装并登录 Codex 桌面 App，并有处于活动中的编程任务。本布局面向 Mac 桌面端 Codex 的任务调度；命令行会话请使用终端布局。</li></ul>
-<h2>1. 进入Codex布局，查看任务槽位</h2>
-<p>在 iPhone 底部点击“布局”标签，在列表中找到并进入“Codex”布局。多桌面方案请展开右侧箭头后选择对应桌面。</p>
-<p>桌面中陈列着多个任务槽位按键，顶部小屏可回读当前选中的任务状态。若任务按键为空白，请先确认 Mac 端对应 Codex / Agent 开发环境已处于运行与连接状态。</p>
-<p>任务按键展示当前活动槽位，便于直观管理多条并发工作流，不代表账号仅能处理有限数量的任务。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/codex-01.webp" alt="Codex桌面，任务名称、状态与额度均为演示数据。" width="1206" height="2622" loading="lazy"><figcaption>Codex桌面，任务名称、状态与额度均为演示数据。</figcaption></figure>
-<h2>2. 掌握单击切换与双击前台聚焦逻辑</h2>
-<p>在默认设置下，单击任务键会在手机端后台选中该任务，便于查看其上下文与状态；双击任务键则会在切换的同时，自动将 Mac 上的对应窗口激活置于最前台。</p>
-<p>在 Mac 端打开多个窗口，分别尝试单击与双击操作，观察前台焦点的切换效果，确保在不打扰当前编写思路的同时自如调度任务。</p>
-<h2>3. 打开实时键盘，核准光标位置后输入指令</h2>
-<p>选定目标任务后，点击手机上的“实时键盘”，在顶部切换为“实时”输入模式（确保非本地草稿模式）。</p>
-<p>先在 Mac 端确认光标已位于目标任务的 Prompt 输入框内，然后在手机键盘输入准备好的指令内容，在 Mac 端核对文字输入完全正确后再执行发送。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/codex-02-keyboard.webp" alt="实际从Codex桌面打开的实时键盘；本次未向真实任务输入。" width="1206" height="2622" loading="lazy"><figcaption>实际从Codex桌面打开的实时键盘；本次未向真实任务输入。</figcaption></figure>
-<h2>4. 调节模型选择与推理强度旋钮</h2>
-<p>返回Codex主桌面，查看“模型”和“推理强度”旋钮下方的状态回读。若需调整推理强度，每次轻拨一个档位，等待手机与 Mac 上的当前任务参数同步完成。</p>
-<p>可用模型与推理档位取决于你绑定的具体服务与账号权限，额度面板提供可视化消耗参考，帮助你合理规划 Token 预算。</p>
-<h2>5. 进入设置页面，定制窗口聚焦习惯</h2>
-<p>点击底栏“设置”，进入“Codex”详细设置页面。在此处可以检查 Agent 服务来源，并根据个人操作习惯开启或关闭“单击时聚焦 ChatGPT”以及任务完成事件通知。</p>
-<p>配置完成后返回桌面，按需灵活管理后台任务。若希望保持静默后台处理，保持单击不聚焦即可。</p>
-<figure class="article-figure article-figure-phone"><img src="../assets/screens/tutorials-1.2.0-r1/codex-04-preferences.webp" alt="Codex设置页，显示 Agent 来源与单击聚焦选项。" width="1206" height="2622" loading="lazy"><figcaption>Codex设置页，显示 Agent 来源与单击聚焦选项。</figcaption></figure>
-<h2>6. 处理关键审批请求，安全调度代码修改</h2>
-<p>当 Agent 执行涉及系统敏感操作（如文件修改或命令执行）弹出审批请求时，切记先在 Mac 屏幕上仔细阅读待审批的操作范围与 diff 内容，再在手机端点击“批准”或“拒绝”。</p>
-<p>需要开启全新探索时使用“新任务”，想在当前上下文分支讨论时使用“分叉任务”。完成操作后在 Mac 端核验新分支，避免在旧任务上混淆输入。</p>
-<h2>常见问题</h2>
-<h3>任务名称没有更新？</h3><p>先确认 Mac Codex 正在运行，当前任务来源里确实有任务；再检查连接与版本。不要用截图里的演示标题判断自己是否连接成功。</p>
-<h3>额度为空，是否代表没有剩余额度？</h3><p>不代表。未读取到额度时不能按零余额理解。请查看 Codex 自身提供的用量信息，等状态读取恢复后再核对。</p>
-<p>本文按奶猫妙控 1.2.0 的界面与操作编写，更新于 2026 年 9 月 10 日。<a href="../updates.html">查看更新日志</a> · <a href="../support.html">连接与权限帮助</a>。</p>
-    </article>
-    <nav class="article-next" aria-label="继续阅读">
-      <a href="layout-terminal.html">← 命令行随身监控：在手机上新建、切换与全屏管理终端会话</a>
-      <a href="layout-work.html">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档 →</a>
-    </nav>
-  </main>
+<script src="/src/main.js" type="module"></script>
 
-  <footer>
-    <a class="brand" href="../index.html"><img src="../assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">下载</a>
-      <a href="../updates.html">更新</a>
-      <a href="../blog.html">博客</a>
-      <a href="../support.html">支持</a>
-      <a href="../privacy.html">隐私</a>
-      <a href="../terms.html">条款</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-      <a href="/en/blog/layout-codex" data-lang-switch>English</a>
-    </nav>
-    <small>© <span data-year></span> 奶猫妙控</small>
-  </footer>
-  <script src="../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="网站统计设置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">允许使用 Google Analytics 了解页面访问和下载点击？你可以拒绝，并随时在页脚修改选择。</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">允许统计</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">拒绝统计</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/privacy#website-analytics">隐私说明</a></div></aside></body></html>

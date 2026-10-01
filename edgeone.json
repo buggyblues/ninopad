@@ -1,61 +1,172 @@
 {
-  "outputDirectory": ".",
+  "outputDirectory": "dist",
   "redirects": [
-    { "source": "/updates/", "destination": "/updates", "permanent": true },
-    { "source": "/blog/", "destination": "/blog", "permanent": true },
-    { "source": "/privacy/", "destination": "/privacy", "permanent": true },
-    { "source": "/terms/", "destination": "/terms", "permanent": true },
-    { "source": "/support/", "destination": "/support", "permanent": true },
-    { "source": "/blog/(.*)/", "destination": "/blog/$1", "permanent": true },
-    { "source": "/en/updates/", "destination": "/en/updates", "permanent": true },
-    { "source": "/en/blog/", "destination": "/en/blog", "permanent": true },
-    { "source": "/en/privacy/", "destination": "/en/privacy", "permanent": true },
-    { "source": "/en/terms/", "destination": "/en/terms", "permanent": true },
-    { "source": "/en/support/", "destination": "/en/support", "permanent": true },
-    { "source": "/en/blog/(.*)/", "destination": "/en/blog/$1", "permanent": true }
+    {
+      "source": "/updates/",
+      "destination": "/updates",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms/",
+      "destination": "/terms",
+      "statusCode": 301
+    },
+    {
+      "source": "/support/",
+      "destination": "/support",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/:slug/",
+      "destination": "/blog/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/updates/",
+      "destination": "/en/updates",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/",
+      "destination": "/en/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/privacy/",
+      "destination": "/en/privacy",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/terms/",
+      "destination": "/en/terms",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/support/",
+      "destination": "/en/support",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/blog/:slug/",
+      "destination": "/en/blog/:slug",
+      "statusCode": 301
+    }
   ],
   "rewrites": [
-    { "source": "/updates", "destination": "/updates.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/support", "destination": "/support.html" },
-    { "source": "/blog/([^/.]+)", "destination": "/blog/$1.html" },
-    { "source": "/en", "destination": "/en/index.html" },
-    { "source": "/en/", "destination": "/en/index.html" },
-    { "source": "/en/updates", "destination": "/en/updates.html" },
-    { "source": "/en/blog", "destination": "/en/blog.html" },
-    { "source": "/en/privacy", "destination": "/en/privacy.html" },
-    { "source": "/en/terms", "destination": "/en/terms.html" },
-    { "source": "/en/support", "destination": "/en/support.html" },
-    { "source": "/en/blog/([^/.]+)", "destination": "/en/blog/$1.html" }
+    {
+      "source": "/updates",
+      "destination": "/updates.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/support.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/en/",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/en/updates",
+      "destination": "/en/updates.html"
+    },
+    {
+      "source": "/en/blog",
+      "destination": "/en/blog.html"
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/en/privacy.html"
+    },
+    {
+      "source": "/en/terms",
+      "destination": "/en/terms.html"
+    },
+    {
+      "source": "/en/support",
+      "destination": "/en/support.html"
+    },
+    {
+      "source": "/en/blog/:slug",
+      "destination": "/en/blog/:slug.html"
+    }
   ],
   "headers": [
     {
       "source": "/assets/*",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/*.css",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/*.js",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
       ]
     },
     {
       "source": "/*",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/assets/*.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/*.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "nodeVersion": "22.11.0"
 }

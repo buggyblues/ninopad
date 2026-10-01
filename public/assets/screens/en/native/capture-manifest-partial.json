@@ -1,0 +1,104 @@
+{
+  "nativeApp": true,
+  "language": "en",
+  "data": "synthetic demonstration fixtures",
+  "scenes": [
+    {
+      "name": "layout-switcher",
+      "args": [
+        "--deck",
+        "studio",
+        "--show-modes"
+      ],
+      "language": "en",
+      "width": 1206,
+      "height": 2622,
+      "recognizedText": [
+        "*",
+        "+ New layout",
+        ".s0",
+        "09:41",
+        "3 desktops • speech",
+        "3 desktops•speech",
+        "6",
+        "<",
+        ">-",
+        "AII",
+        "All",
+        "Browser",
+        "Codex",
+        "Collection",
+        "Default",
+        "Edit current desktop",
+        "Other layouts",
+        "Presentation",
+        "Recently",
+        "Search layout or desktop",
+        "Work",
+        "currently in use",
+        "launcher",
+        "layout plan",
+        "management",
+        "media",
+        "x"
+      ],
+      "fixtures": {},
+      "sha256": "851188c7d437bf9b4072694d838963f6c0087ea875b3da2c0a00661306f88220"
+    },
+    {
+      "name": "control-coding-lab",
+      "args": [
+        "--deck",
+        "coding-lab"
+      ],
+      "env": {
+        "VIBEKEYS_CODING_LAB_STATE_FIXTURE": "coding-lab.json"
+      },
+      "language": "en",
+      "width": 1206,
+      "height": 2622,
+      "recognizedText": [
+        "+",
+        "09:41",
+        "<",
+        "A",
+        "Create a",
+        "Create a one-page travel diary",
+        "Deliverables",
+        "Devices",
+        "Dosage",
+        "Expand",
+        "File",
+        "Layouts",
+        "Make a small website to record your travels, make it more",
+        "Make an",
+        "Model to be synchronized",
+        "Polish the",
+        "Project",
+        "Queue",
+        "Reply",
+        "Settings",
+        "Task",
+        "The travel account has been set up",
+        "Work",
+        "itinerary..",
+        "itinerary...",
+        "neW",
+        "new",
+        "one-pag...",
+        "page copy",
+        "refreshing.",
+        "session",
+        "tasks",
+        "• Browsable on mobile phones and computers",
+        "• Codex Completed",
+        "• Home page displays recent journeys",
+        "• Location cards support filtering"
+      ],
+      "fixtures": {
+        "coding-lab.json": "9afbe8eab02e6b74d34df17cc38af8ef346b9526256b23c15816463bdd60244f"
+      },
+      "sha256": "b68ef7efde43f7d47fa9841abbc0e38e8f5d81c47cd7daff089936c993956d0b"
+    }
+  ]
+}

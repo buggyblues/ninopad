@@ -1,169 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.">
-  <meta name="keywords" content="NinoPad Mac setup, macOS accessibility permissions, screen recording permission, NinoPad pairing, troubleshooting">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="NinoPad">
-  <meta property="og:title" content="First Time Connecting to Mac: Pairing, Permissions & Troubleshooting | NinoPad">
-  <meta property="og:description" content="Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/macos-adapter.webp">
-  <meta property="og:url" content="https://ninopad.com/en/blog/mac-settings">
-  <meta property="og:locale" content="en_US">
-  <meta property="article:published_time" content="2026-08-31">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="First Time Connecting to Mac: Pairing, Permissions & Troubleshooting | NinoPad">
-  <meta name="twitter:description" content="Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/macos-adapter.webp">
-  <link rel="canonical" href="https://ninopad.com/en/blog/mac-settings">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/mac-settings">
-  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../blog.css">
-  <title>First Time Connecting to Mac: Pairing, Permissions & Troubleshooting | NinoPad</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "First Time Connecting to Mac: Pairing, Permissions & Troubleshooting",
-    "description": "Checklist for Accessibility, Screen Recording, local network discovery, and resolving connection or black screen issues.",
-    "datePublished": "2026-08-31",
-    "dateModified": "2026-09-10",
-    "inLanguage": "en",
-    "author": {
-      "@type": "Organization",
-      "name": "NinoPad"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "NinoPad"
-    },
-    "image": "https://ninopad.com/assets/screens/macos-adapter.webp",
-    "mainEntityOfPage": "https://ninopad.com/en/blog/mac-settings"
-  }
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_mac-settings" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eff8eb" name="theme-color">
+<meta content="Set up the free NinoPad Mac companion, pair your iPhone over local Wi-Fi and enable permissions. Troubleshoot pairing timeouts and black screen previews." data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_001&quot;}" property="og:site_name">
+<meta content="Connect iPhone to Mac: Pairing &amp; Permissions | NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/en/macos-adapter.webp" property="og:image" data-localized-social="macos-adapter.webp">
+<meta content="https://ninopad.com/en/blog/mac-settings" property="og:url">
+<meta content="en_US" property="og:locale">
+<meta content="2026-08-31" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Connect iPhone to Mac: Pairing &amp; Permissions | NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_003&quot;}" name="twitter:title">
+<meta content="Set up the free NinoPad Mac companion, pair your iPhone over local Wi-Fi and enable permissions. Troubleshoot pairing timeouts and black screen previews." data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/en/macos-adapter.webp" name="twitter:image" data-localized-social="macos-adapter.webp">
+<meta content="Set up the free NinoPad Mac companion, pair your iPhone over local Wi-Fi and enable permissions. Troubleshoot pairing timeouts and black screen previews." data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.attr_005&quot;}" property="og:description">
+<link href="https://ninopad.com/en/blog/mac-settings" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_006&quot;}">Connect iPhone to Mac: Pairing &amp; Permissions | NinoPad</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/mac-settings"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/mac-settings"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/mac-settings"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-en-setup-banner&amp;mt=8"><meta property="og:image:alt" content="NinoPad Mac shows pairing QR code and connection status" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.social_image_alt&quot;}"><meta name="twitter:image:alt" content="NinoPad Mac shows pairing QR code and connection status" data-i18n-attrs="{&quot;content&quot;:&quot;blog_mac-settings.social_image_alt&quot;}"><meta property="og:locale:alternate" content="zh_CN"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_mac-settings.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/en/blog/mac-settings#page","url":"https://ninopad.com/en/blog/mac-settings","name":"Connect iPhone to Mac: Pairing & Permissions | NinoPad","description":"Set up the free NinoPad Mac companion, pair your iPhone over local Wi-Fi and enable permissions. Troubleshoot pairing timeouts and black screen previews.","inLanguage":"en","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"Connect iPhone to Mac: Pairing & Permissions","description":"Set up the free NinoPad Mac companion, pair your iPhone over local Wi-Fi and enable permissions. Troubleshoot pairing timeouts and black screen previews.","inLanguage":"en","datePublished":"2026-08-31","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/en/blog/mac-settings","image":["https://ninopad.com/assets/screens/en/macos-adapter.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ninopad.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ninopad.com/en/blog"},{"@type":"ListItem","position":3,"name":"Connect iPhone to Mac: Pairing & Permissions","item":"https://ninopad.com/en/blog/mac-settings"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
-      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>NinoPad</span>
-    </a>
-    <nav aria-label="Main Navigation">
-      <a href="../index.html#layouts">Features</a>
-      <a href="../index.html#pro">Pricing</a>
-      <a href="../blog.html" aria-current="page">Blog</a>
-      <a href="../index.html#faq">FAQ</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/blog/mac-settings" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/mac-settings" data-lang-switch>简体中文</a>
-      <a href="/en/blog/mac-settings" class="is-active">English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_007&quot;}" href="#main">Skip to text</a>
+<header class="site-header">
+<a aria-label="NinoPad Home Page" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_008&quot;}" href="/en/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_009&quot;}">NinoPad</span>
+</a>
+<nav aria-label="Main navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_010&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_011&quot;}" href="/en/#layouts">Function</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_012&quot;}" href="/en/#pro">Price</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_013&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_014&quot;}" href="/en/#faq">FAQ</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_015&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+</nav>
+<div class="header-actions">
+<a aria-label="切换至中文" class="header-lang" data-lang-switch="" href="/blog/mac-settings?lng=zh-CN">简体中文</a>
+<a aria-label="Select device and download NinoPad" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_019&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_018&quot;}" href="/en/#download">free download</a>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_020&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_021&quot;}" data-mobile-nav-link="" href="/en/#layouts">Function</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_022&quot;}" data-mobile-nav-link="" href="/en/#pro">Price</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_023&quot;}" data-mobile-nav-link="" href="/en/blog">Blog</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_024&quot;}" data-mobile-nav-link="" href="/en/#faq">FAQ</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_025&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a></li>
+</ul>
+<a aria-label="Select device and download NinoPad" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_027&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_026&quot;}" data-mobile-nav-link="" href="/en/#download">free download</a>
+<div class="mobile-drawer-lang">
+<a class="" href="/blog/mac-settings?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/mac-settings?lng=en" data-language="en" aria-label="Switch to English" class="is-active">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="Breadcrumbs" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/en/">Home</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/en/blog">Guides</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.growth_breadcrumb&quot;}">Connect iPhone to Mac: Pairing &amp; Permissions</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_029&quot;}" href="/en/blog">← Blog Column / System Permissions and Security</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_030&quot;}">Connect iPhone to Mac: Pairing &amp; Permissions</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_031&quot;}">Accessibility, screen recording and local network authorization troubleshooting, and local communication instructions on LAN · About 6 minutes to read</p>
+</header>
+<figure class="article-cover article-cover-mac">
+<img alt="NinoPad Mac shows pairing QR code and connection status" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_mac-settings.attr_032&quot;}" height="1196" src="/assets/screens/en/macos-adapter.webp" width="944" data-screen="macos-adapter.webp">
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_033&quot;}">As a handheld secondary control and desktop streaming tool specially built for macOS, NinoPad needs to obtain the necessary auxiliary authorization from the system to achieve key mapping, shortcut command injection and desktop screen postback. After using the system for the first time or upgrading it, standardized permission configuration is the basis for ensuring the smooth operation of all functions.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_034&quot;}">This article will sort out the core system permissions, configuration operation procedures, common connection troubleshooting methods required by NinoPad, and the security architecture based on LAN point-to-point (P2P) direct connection.</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_035&quot;}">1. Core system permission list and usage description</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_036&quot;}">Start with the following permissions related to connections and desktop control. The project names of different macOS versions may be slightly different. Please operate according to the name actually displayed by the system; when other functions require additional permissions, the App will prompt you in the corresponding process.</p>
+<ul>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_038&quot;}">Accessibility:</strong>Used to receive analog keys, wheel scrolling, combination shortcut keys and mouse cursor gesture control instructions sent by the mobile phone.</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_039&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_040&quot;}">Screen Recording/Screen and System Audio Recording:</strong>Used to capture Mac real-time desktop frames and stream them to mobile phones in "Watch While Control" and "Full Screen Immersion" modes.</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_041&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_042&quot;}">Local Network:</strong>Used to automatically discover Mac-side services through the Bonjour protocol within the same Wi-Fi or LAN and establish a high-speed point-to-point direct connection channel.</li>
+</ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_043&quot;}">2. macOS permission configuration step-by-step guide</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_044&quot;}">After launching the Mac companion for the first time, you can check control and screen permissions in System Settings. When you only need mouse and keyboard control, complete accessibility authorization first; when you need to view the screen, check the screen recording.</p>
+<ol class="article-steps-list">
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_045&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_046&quot;}">Click the Apple icon  in the upper left corner of the Mac screen to open<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_047&quot;}">System Settings</strong>.</li>
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_048&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_049&quot;}">Find and enter in the left sidebar<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_050&quot;}">Privacy &amp; Security</strong>.</li>
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_051&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_052&quot;}">Click<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_053&quot;}">"Accessibility"</strong>, find "NinoPad" (NinoPad) in the list, and switch the switch on the right side of it to allow.</li>
+<li data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_054&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_055&quot;}">To return to the previous level, click<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_056&quot;}">"Screen Recording" or "Screen and System Audio Recording"</strong>, make sure the "NinoPad" switch is turned on.</li>
+</ol>
+<figure class="article-figure article-figure-mac">
+<img alt="NinoPad Mac Preferences" data-i18n-attrs="{&quot;alt&quot;:&quot;blog_mac-settings.attr_057&quot;}" height="1332" loading="lazy" src="/assets/screens/en/macos-settings.webp" width="1516" data-screen="macos-settings.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_058&quot;}">In Mac preferences, you can view permission status in real time, manage paired devices, and enable auto-start at startup.</figcaption>
+</figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_059&quot;}">3. Common connection and permissions troubleshooting manual (FAQ)</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_060&quot;}">1. Why does the connection timeout appear when scanning the QR code on the Mac with my mobile phone?</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_061&quot;,&quot;2&quot;:&quot;blog_mac-settings.text_062&quot;}">Please first make sure your iPhone/iPad and Mac are in<strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_063&quot;}">Under the same Wi-Fi router or LAN</strong>. If the router has "AP Isolation (Client Isolation)" turned on or is in "Guest Wi-Fi Mode", devices within the LAN will not be able to address each other. It is recommended to switch to the same standard home or office Wi-Fi network.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_064&quot;}">2. Why do the keys suddenly become invalid after a major version upgrade of the macOS system?</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_065&quot;}">After the system is updated or the app is reinstalled, first check whether the authorization in the accessibility list is still enabled and whether it corresponds to the currently installed NinoPad. If you still cannot control it after opening it, you can try to remove the old entry and then add the current app; after reopening the companion terminal, use a mouse move or text input to confirm whether to restore it.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_066&quot;}">3. A black screen appears or permission prompt pops up repeatedly during desktop streaming?</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_067&quot;}">Check the screen recording authorization first, then follow the system prompts to exit and reopen the Mac companion. Return to the phone and try again to preview the screen; if the screen is still black, confirm again that the authorization corresponds to the currently installed app and whether the connection between the phone and Mac is normal.</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_068&quot;}">4. Local LAN point-to-point transmission and privacy instructions</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_069&quot;}">The NinoPad team knows that the privacy of users' creations and projects is crucial, and ensures data security from the underlying architecture:</p>
+<ul>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_070&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_071&quot;}">LAN direct connection:</strong>The desktop control flow here transmits keystrokes, text, and images through the connection between paired devices. Make sure you are connecting to your Mac before starting.</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_072&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_073&quot;}">Understand the destination of data by function:</strong>Local direct connection describes the control connection between the mobile phone and the Mac. System voice recognition or other third-party services have their own processing methods, and it cannot be assumed that all functions do not require networking.</li>
+<li data-i18n-text="{&quot;1&quot;:&quot;blog_mac-settings.text_074&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_075&quot;}">Pair management:</strong>Check the paired devices on the Mac companion terminal and confirm that the device list is consistent with your usage. Pairing information and home service tokens should only be used for your own device connections.</li>
+</ul>
+</article>
+<nav aria-label="Continue reading" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_076&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_077&quot;}" href="/en/blog/remote-control-mac">← View and control your Mac desktop from your phone</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_078&quot;}" href="/en/blog/editing-keypad">Use your mobile phone to assist editing: from browsing the timeline to splitting and undoing →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">Try this workflow on your iPhone or iPad</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">Basic controls are free. Mac control requires both apps on the same local network. Pro unlocks advanced decks and standalone instruments.</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-setup-article&amp;mt=8">Get the iPhone / iPad app</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">Get the free Mac companion</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/en/blog/mac-settings">Read the pairing and permissions guide →</a></aside></main>
+<footer>
+<a class="brand" href="/en/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_079&quot;}">NinoPad</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_080&quot;}">&gt;w&lt; All-purpose small keyboard, right in the palm of your hand</p>
+<nav aria-label="Footer navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_mac-settings.attr_081&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-setup-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_082&quot;}" href="https://github.com/buggyblues/ninopad/releases">Download</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_083&quot;}" href="/en/updates">update</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_084&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_085&quot;}" href="/en/support">support</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_086&quot;}" href="/en/privacy">Privacy</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_087&quot;}" href="/en/terms">Terms</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_mac-settings.text_088&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+<a data-lang-switch="" href="/blog/mac-settings?lng=zh-CN" aria-label="切换至中文" class="">简体中文</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_mac-settings.text_090&quot;}">© <span data-year=""></span> NinoPad</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">Analytics preferences</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← Blog / System Permissions & Security</a>
-      <h1>First Time Connecting to Mac: Pairing, Permissions & Troubleshooting</h1>
-      <p>Accessibility, Screen Recording, local network authorization, and peer-to-peer security · ~6 min read</p>
-    </header>
+<script src="/src/main.js" type="module"></script>
 
-    <figure class="article-cover article-cover-mac">
-      <img src="../../assets/screens/macos-adapter.webp?v=20260831d" alt="NinoPad Mac companion app showing QR code pairing and status" width="1206" height="2622">
-    </figure>
-
-    <article class="article-body">
-      <p class="article-lead">As a dedicated Mac companion and desktop streaming utility, NinoPad requires essential macOS system authorizations to perform keystroke injection, mouse cursor control, and low-latency screen streaming. Proper permission configuration ensures all features run smoothly.</p>
-      <p>This guide explains each core permission, step-by-step setup in macOS System Settings, troubleshooting tips for common connection issues, and our peer-to-peer local network privacy architecture.</p>
-
-      <h2>1. Core macOS Permissions and Their Purposes</h2>
-      <p>NinoPad requests the following permissions for control and streaming:</p>
-      <ul>
-        <li><strong>Accessibility:</strong> Allows the Mac companion to receive simulated keystrokes, scroll wheel events, shortcut combos, and trackpad gestures from your phone;</li>
-        <li><strong>Screen Recording (Screen &amp; System Audio Recording):</strong> Enables low-latency capture and streaming of your Mac desktop frames to your mobile device in Studio View and Fullscreen Mirror mode;</li>
-        <li><strong>Local Network:</strong> Allows NinoPad on iOS and macOS to discover each other automatically via Bonjour protocol on the same Wi-Fi network for high-speed direct communication.</li>
-      </ul>
-
-      <h2>2. Step-by-Step macOS Permission Configuration</h2>
-      <p>When launching the Mac companion app for the first time, configure permissions via System Settings:</p>
-      <ol class="article-steps-list">
-        <li>Click the Apple menu  in the top-left corner of your Mac screen and select <strong>System Settings</strong>.</li>
-        <li>In the left sidebar, navigate to <strong>Privacy &amp; Security</strong>.</li>
-        <li>Click <strong>Accessibility</strong>, locate "NinoPad" in the list, and toggle the switch to ON.</li>
-        <li>Return to the previous screen, click <strong>Screen Recording</strong> (or "Screen &amp; System Audio Recording"), and ensure "NinoPad" is enabled.</li>
-      </ol>
-
-      <figure class="article-figure article-figure-mac">
-        <img src="../../assets/screens/macos-settings.webp?v=20260831d" alt="NinoPad Mac companion preference window" width="1516" height="1332" loading="lazy">
-        <figcaption>Check permission statuses, manage paired devices, and toggle launch-at-login in Mac preferences.</figcaption>
-      </figure>
-
-      <h2>3. Troubleshooting Common Connection Issues (FAQ)</h2>
-      
-      <h3>Why does QR code scanning show a connection timeout?</h3>
-      <p>Ensure that both your iPhone/iPad and Mac are connected to the <strong>same Wi-Fi router or local network</strong>. If your router has "AP Isolation (Client Isolation)" or "Guest Mode" enabled, devices cannot communicate directly. Switch to a standard home or office Wi-Fi network.</p>
-
-      <h3>Why did keypresses stop responding after a macOS major update?</h3>
-      <p>After a macOS update or reinstall, check if the Accessibility permission remains toggled ON for the currently installed NinoPad app. If it is already ON but not responding, remove the entry from the list using the "-" button and re-add NinoPad.</p>
-
-      <h3>Why is desktop streaming showing a black screen?</h3>
-      <p>Verify that Screen Recording permission is enabled, then quit and relaunch the NinoPad Mac companion app as prompted by macOS. Reopen the stream on your phone to resume preview.</p>
-
-      <h2>4. Local Peer-to-Peer Privacy & Security</h2>
-      <p>All video frames, keystrokes, and trackpad data are transmitted strictly over your local Wi-Fi network via direct peer-to-peer (P2P) sockets. No screen data or user input is ever uploaded to cloud servers, ensuring total privacy and near-zero latency.</p>
-    </article>
-
-    <nav class="article-next" aria-label="Continue reading">
-      <a href="remote-control-mac.html">← View and Control Mac Desktop on Mobile</a>
-    </nav>
-  </main>
-
-  <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
-    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
-    <nav aria-label="Footer Navigation">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
-      <a href="../updates.html">Updates</a>
-      <a href="../blog.html">Blog</a>
-      <a href="../support.html">Support</a>
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-      <a href="/blog/mac-settings" data-lang-switch>简体中文</a>
-    </nav>
-    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
-  </footer>
-  <script src="../../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="Website analytics preferences" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">Allow Google Analytics to measure page visits and download clicks? You can decline and change your choice in the footer.</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">Allow analytics</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">Decline analytics</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/en/privacy#website-analytics">Privacy details</a></div></aside></body></html>

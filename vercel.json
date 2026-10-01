@@ -7,12 +7,12 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=3600, must-revalidate"
         }
       ]
     },
     {
-      "source": "/(.*)\\.(css|js|webp|png|jpg|svg|woff2)",
+      "source": "/assets/(.*)\\.(css|js)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -50,5 +50,9 @@
       "destination": "https://ninopad.com/:path*",
       "permanent": true
     }
-  ]
+  ],
+  "outputDirectory": "dist",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "framework": "vite"
 }

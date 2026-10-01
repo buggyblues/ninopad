@@ -1,522 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Explore 17 ready-to-use preset layouts and step-by-step practical guides for NinoPad. From Mac pairing, daily workflow speedups to palm synthesizer, guitar, and custom wallpapers.">
-  <meta name="keywords" content="NinoPad blog, Mac keypad guide, DaVinci Resolve keypad, remote desktop Mac, speech to text Mac, teleprompter, custom deck">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="buggyblues">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="NinoPad">
-  <meta property="og:title" content="Blog &amp; Guides | NinoPad">
-  <meta property="og:description" content="Explore 17 ready-to-use preset layouts and step-by-step practical guides for NinoPad. From Mac pairing, daily workflow speedups to palm synthesizer, guitar, and custom wallpapers.">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/v1.2.0/control-studio.webp">
-  <meta property="og:url" content="https://ninopad.com/en/blog">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog &amp; Guides | NinoPad">
-  <meta name="twitter:description" content="Explore 17 ready-to-use preset layouts and step-by-step practical guides for NinoPad.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/v1.2.0/control-studio.webp">
-  <link rel="canonical" href="https://ninopad.com/en/blog">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog">
-  <link rel="preload" as="image" href="../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../assets/app-icon.png">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../blog.css">
-  <title>Blog &amp; Guides | NinoPad</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "NinoPad Blog & Guides",
-  "description": "17 preset layouts and step-by-step practical guides for NinoPad",
-  "url": "https://ninopad.com/en/blog",
-  "inLanguage": "en",
-  "blogPost": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Work Deck Starter: Turn iPhone into Mac's Capable Companion",
-      "url": "https://ninopad.com/en/blog/layout-work.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Turn Frequent Phrases into Physical Buttons: One-Tap Injection to Mac",
-      "url": "https://ninopad.com/en/blog/guide-text-button.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro",
-      "url": "https://ninopad.com/en/blog/guide-automation-steps.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Never Forget Formula Syntax: Visual SUMIFS Builder on Mobile",
-      "url": "https://ninopad.com/en/blog/guide-sumifs.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM",
-      "url": "https://ninopad.com/en/blog/guide-text-cleanup.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher",
-      "url": "https://ninopad.com/en/blog/layout-launcher.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Web Surfing Deck: Direct URL Input, Tab Slider & In-Page Search",
-      "url": "https://ninopad.com/en/blog/layout-browser.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Finance & Spreadsheets: Fast Calculation & Visual Formula Building",
-      "url": "https://ninopad.com/en/blog/layout-finance.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Speak on Mobile First, Then Inject Text to Mac",
-      "url": "https://ninopad.com/en/blog/voice-text-input.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "View and Control Mac Desktop on Mobile",
-      "url": "https://ninopad.com/en/blog/remote-control-mac.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Start from One Button: Customizing Your Mac Deck",
-      "url": "https://ninopad.com/en/blog/custom-keypad.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Multi-Agent Orchestration: Switch AI Tasks with Codex Layout",
-      "url": "https://ninopad.com/en/blog/layout-codex.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Terminal Monitor on the Go: Manage Mac Shell Sessions",
-      "url": "https://ninopad.com/en/blog/layout-terminal.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Effective Research Clipping: Capture Quotes, Personal Insights & Source URLs",
-      "url": "https://ninopad.com/en/blog/guide-clipping-sources.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Precise Organization & Archiving: Filter Clippings by Type & Export in One Click",
-      "url": "https://ninopad.com/en/blog/guide-clipping-export.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools",
-      "url": "https://ninopad.com/en/blog/layout-writing.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Knowledge Extraction Workflow: Capture Quotes, Thoughts & Citations",
-      "url": "https://ninopad.com/en/blog/layout-research.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Deep Reading Assistant: PDF Navigation, Table of Contents & Page Jumps",
-      "url": "https://ninopad.com/en/blog/layout-reading.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "3D Modeling Palm Companion: Blender Viewport Navigation & Shortcuts",
-      "url": "https://ninopad.com/en/blog/layout-creative.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Presentation Master: Wireless Slide Remote, PiP Overlay & Split Timer",
-      "url": "https://ninopad.com/en/blog/layout-presentation.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Video Editing with Mobile: From Timeline Scrubbing to Blade & Undo",
-      "url": "https://ninopad.com/en/blog/editing-keypad.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Presentation Assistant: Slide Clicker, Floating PiP & Split Timer",
-      "url": "https://ninopad.com/en/blog/presentation-tools.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Synthesizer Starter: Diatonic Chords & Drum Patterns",
-      "url": "https://ninopad.com/en/blog/guide-synthesizer.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Guitar Starter: Strum 6 Strings & Master 100 Song Lessons",
-      "url": "https://ninopad.com/en/blog/guide-guitar.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Classic Click Wheel Returns: Control Mac Music & Media on Mobile",
-      "url": "https://ninopad.com/en/blog/layout-media.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design",
-      "url": "https://ninopad.com/en/blog/layout-sampler.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "How to Use Mobile as Gamepad for NinoPad Arcade",
-      "url": "https://ninopad.com/en/blog/layout-arcade.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials",
-      "url": "https://ninopad.com/en/blog/layout-smart-home.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Set an Animated Wallpaper: From Built-in Mascot Loops to Custom Videos",
-      "url": "https://ninopad.com/en/blog/guide-dynamic-wallpaper.html"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "First Time Connecting to Mac: Pairing, Permissions & Troubleshooting",
-      "url": "https://ninopad.com/en/blog/mac-settings.html"
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="A selection of 17 ready-to-use preset layouts and step-by-step tutorials. From connecting to Mac and working efficiently in daily life, to handheld synthesizers, guitar practice and dynamic wallpaper customization, NinoPad will help you play with it easily." data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_000&quot;}" name="description">
+<meta content="NinoPad Blog, Mac Keyboard Guide, DaVinci Clip Keyboard, Mac Remote Desktop, Voice Input to Text, Smart Teleprompter, Custom Assistant Control" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_001&quot;}" name="keywords">
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<meta content="buggyblues" name="author">
+<meta content="website" property="og:type">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_002&quot;}" property="og:site_name">
+<meta content="Article Column｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_003&quot;}" property="og:title">
+<meta content="A selection of 17 ready-to-use preset layouts and step-by-step tutorials. From connecting to Mac and working efficiently in daily life, to handheld synthesizers, guitar practice and dynamic wallpaper customization, NinoPad will help you play with it easily." data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_004&quot;}" property="og:description">
+<meta content="https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/work-01.webp" property="og:image" data-localized-social="tutorials-1.2.0-r1/work-01.webp">
+<meta content="https://ninopad.com/en/blog" property="og:url">
+<meta content="en_US" property="og:locale">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Article Column｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_005&quot;}" name="twitter:title">
+<meta content="A selection of 17 ready-to-use preset layouts and step-by-step tutorials. From connecting to Mac and working efficiently in daily life, to handheld synthesizers, guitar practice and dynamic wallpaper customization, NinoPad will help you play with it easily." data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_006&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/work-01.webp" name="twitter:image" data-localized-social="tutorials-1.2.0-r1/work-01.webp">
+<link href="https://ninopad.com/en/blog" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog.text_007&quot;}">Article Column｜NinoPad</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-en-blog-banner&amp;mt=8"><meta property="og:image:alt" content="Work Desktop: Use the sample connection; practice by placing your cursor in a Mac document." data-i18n-attrs="{&quot;content&quot;:&quot;blog.social_image_alt&quot;}"><meta name="twitter:image:alt" content="Work Desktop: Use the sample connection; practice by placing your cursor in a Mac document." data-i18n-attrs="{&quot;content&quot;:&quot;blog.social_image_alt&quot;}"><meta property="og:locale:alternate" content="zh_CN"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/en/blog#page","url":"https://ninopad.com/en/blog","name":"Article Column｜NinoPad","description":"A selection of 17 ready-to-use preset layouts and step-by-step tutorials. From connecting to Mac and working efficiently in daily life, to handheld synthesizers, guitar practice and dynamic wallpaper customization, NinoPad will help you play with it easily.","inLanguage":"en","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}}]}</script></head>
 <body class="content-page">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="NinoPad Homepage">
-      <img src="../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>NinoPad</span>
-    </a>
-    <nav aria-label="Main Navigation">
-      <a href="index.html#layouts">Features</a>
-      <a href="index.html#pro">Pricing</a>
-      <a href="blog.html" aria-current="page">Blog</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/blog" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="index.html#layouts" data-mobile-nav-link>Features</a></li>
-      <li><a href="index.html#pro" data-mobile-nav-link>Pricing</a></li>
-      <li><a href="blog.html" data-mobile-nav-link>Blog</a></li>
-      <li><a href="index.html#faq" data-mobile-nav-link>FAQ</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog" data-lang-switch>简体中文</a>
-      <a href="/en/blog" class="is-active">English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog.text_008&quot;}" href="#main">Skip to text</a>
+<header class="site-header">
+<a aria-label="NinoPad Home Page" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_009&quot;}" href="/en/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog.text_010&quot;}">NinoPad</span>
+</a>
+<nav aria-label="Main navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_012&quot;}" href="/en/#layouts">Function</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_013&quot;}" href="/en/#pro">Price</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog.text_014&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_015&quot;}" href="/en/#faq">FAQ</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+</nav>
+<div class="header-actions">
+<a aria-label="切换至中文" class="header-lang" data-lang-switch="" href="/blog?lng=zh-CN">简体中文</a>
+<a aria-label="Select device and download NinoPad" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog.text_019&quot;}" href="/en/#download">free download</a>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_022&quot;}" data-mobile-nav-link="" href="/en/#layouts">Function</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_023&quot;}" data-mobile-nav-link="" href="/en/#pro">Price</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_024&quot;}" data-mobile-nav-link="" href="/en/blog">Blog</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_025&quot;}" data-mobile-nav-link="" href="/en/#faq">FAQ</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a></li>
+</ul>
+<a aria-label="Select device and download NinoPad" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog.text_027&quot;}" data-mobile-nav-link="" href="/en/#download">free download</a>
+<div class="mobile-drawer-lang">
+<a class="" href="/blog?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog?lng=en" data-language="en" aria-label="Switch to English" class="is-active">English</a>
+</div>
+</div>
+<main id="main">
+<section class="content-hero content-hero-blog">
+<p class="eyebrow" data-i18n-text="{&quot;0&quot;:&quot;blog.text_030&quot;}">&gt;w&lt; In-depth columns and user guides</p>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog.text_031&quot;}">Article column</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_032&quot;}">A selection of 17 ready-to-use preset layouts and step-by-step tutorials. From connecting to Mac and working efficiently in daily life, to handheld synthesizers, guitar practice and dynamic wallpaper customization, NinoPad will help you play with it easily.</p>
+</section>
+<div class="blog-shell">
+<nav aria-label="Article classification" class="blog-categories" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_033&quot;}">
+<button aria-pressed="true" class="blog-category-tag is-active" data-blog-filter="all" data-i18n-text="{&quot;0&quot;:&quot;blog.text_034&quot;}" type="button">All articles</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="daily" data-i18n-text="{&quot;0&quot;:&quot;blog.text_035&quot;}" type="button">daily efficiency</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="development" data-i18n-text="{&quot;0&quot;:&quot;blog.text_036&quot;}" type="button">development tools</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="reading" data-i18n-text="{&quot;0&quot;:&quot;blog.text_037&quot;}" type="button">reading and writing</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="creative" data-i18n-text="{&quot;0&quot;:&quot;blog.text_038&quot;}" type="button">Creation and Presentation</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="audio" data-i18n-text="{&quot;0&quot;:&quot;blog.text_039&quot;}" type="button">Sound and Entertainment</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="home" data-i18n-text="{&quot;0&quot;:&quot;blog.text_040&quot;}" type="button">smart home</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="settings" data-i18n-text="{&quot;0&quot;:&quot;blog.text_041&quot;}" type="button">Connection and settings</button>
+</nav>
+<!-- Featured Article -->
+<a class="blog-featured" data-blog-cat="daily" data-blog-item="" href="/en/blog/layout-work">
+<figure class="blog-featured-img"><img alt="Work Desktop: Use the sample connection; practice by placing your cursor in a Mac document." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_042&quot;}" height="2622" src="/assets/screens/en/tutorials-1.2.0-r1/work-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/work-01.webp"></figure>
+<div class="blog-featured-content">
+<span class="blog-featured-badge" data-i18n-text="{&quot;0&quot;:&quot;blog.text_043&quot;}">⭐ Start here · Daily productivity</span>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog.text_044&quot;}">Getting Started with Workplace Assistant: Make your iPhone a powerful companion next to your Mac keyboard</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_045&quot;}">Quickly get started with the multi-functional work desktop: use the trackpad to navigate freely, use the real-time keyboard to type smoothly, and cooperate with undo, redo and one-click cutting and pasting to comprehensively speed up your desktop daily life.</p>
+<div class="blog-meta"><time datetime="2026-09-10">2026-09-10</time><span>·</span><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_046&quot;}">Read about 5 minutes</span></div>
+<span class="blog-read-btn" data-i18n-text="{&quot;0&quot;:&quot;blog.text_047&quot;}">Read more →</span>
+</div>
+</a>
+<!-- Article Grid -->
+<div aria-label="More articles" class="blog-grid" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_048&quot;}">
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/guide-text-button">
+<figure class="blog-card-thumb"><img alt="Native text editor with filled in common replies and saved names." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_049&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/text-button-01-content.webp" width="1206" data-screen="guides-1.2.0-r1/text-button-01-content.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_050&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_051&quot;}">Turn high-frequency phrases into physical keys: touch them with your fingertips and input them to Mac with one click</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_052&quot;}">Configure shortcut buttons for frequently used phrases on your mobile phone, set additional enter or keystrokes, and check text through built-in preview, so you can say goodbye to repeated typing on the keyboard.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_053&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/guide-automation-steps">
+<figure class="blog-card-thumb"><img alt="&quot;Record and Save&quot; native content preview with actual configuration for all three steps." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_054&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/macro-04-preview.webp" width="1206" data-screen="guides-1.2.0-r1/macro-04-preview.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_055&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_056&quot;}">Connect actions into a flow: Create a "record and auto-save" multi-step macro</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_057&quot;}">Expand basic text keys into an automated process, connect text input, anti-collision delay and ⌘S shortcut key, and use actual testing and preview to ensure stable execution of each step.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_058&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/guide-sumifs">
+<figure class="blog-card-thumb"><img alt="Generate SUMIFS with two sets of conditions, project and status, and all parameters have been actually filled in." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_059&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/sumifs-02-conditions.webp" width="1206" data-screen="guides-1.2.0-r1/sumifs-02-conditions.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_060&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_061&quot;}">Say goodbye to misremembering function parameters: use mobile phones to visually generate SUMIFS multi-condition formulas</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_062&quot;}">Long press SUMIFS to bring up the visual editing panel, intuitively configure multiple sets of summation and filtering conditions, instantly generate standard formulas and inject them into Excel tables with one click.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_063&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/guide-text-cleanup">
+<figure class="blog-card-thumb"><img alt="Actually generates a SUBSTITUTE formula that removes SKU-, leaving a valid empty string argument." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_064&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/clean-text-01-remove.webp" width="1206" data-screen="guides-1.2.0-r1/clean-text-01-remove.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_065&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_066&quot;}">Standardize messy product data: Use SUBSTITUTE and TRIM to easily clean text</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_067&quot;}">Visually configure text replacement and space removal functions on your mobile phone, distinguish between global replacement and specified first matches, and safely clean table data with the control column.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_068&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/layout-launcher">
+<figure class="blog-card-thumb"><img alt="System application demo directory in the launcher; user devices synchronize their own application list." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_069&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/launcher-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_070&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_071&quot;}">Mac commonly used software portable control: create your own handheld application launcher</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_072&quot;}">Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_073&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/layout-browser">
+<figure class="blog-card-thumb"><img alt="The browser desktop includes URL input, new tab, in-page search, and tab controls." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_074&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/browser-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/browser-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_075&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_076&quot;}">Web browsing tool: Go directly to the website on your mobile phone and switch tabs with a swipe</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_077&quot;}">Quickly enter and reach the target URL through the mobile phone, use the slider control to switch tabs freely, and combine on-page search with automated linkage to create a smooth surfing flow.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_078&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/layout-finance">
+<figure class="blog-card-thumb"><img alt="Enter 0.1+0.2= in sequence, and the small screen will display 0.3; it can be used in other apps on your phone after copying." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_079&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/finance-01-calculator.webp" width="1206" data-screen="tutorials-1.2.0-r1/finance-01-calculator.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_080&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_081&quot;}">A good helper for numbers and tables: quickly calculate accounts and visually construct function formulas on your mobile phone</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_082&quot;}">It has a built-in independent and easy-to-use local calculator, which supports long-pressing SUMIFS to fill in parameters item by item and generate standardized formulas, making it easy to summarize and enter data.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_083&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/voice-text-input">
+<figure class="blog-card-thumb"><img alt="NinoPad text keyboard and voice input interface" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_084&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/remote-text-voice.webp" width="1206" data-screen="v1.2.0/remote-text-voice.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_085&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_086&quot;}">Dictate on your phone first, then type the text into your Mac</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_087&quot;}">Switch to text mode, dictate on your phone, correct typos, and then use the up-screen buttons to input to your Mac. Learn the difference between text mode and live mode.</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_088&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/remote-control-mac">
+<figure class="blog-card-thumb"><img alt="NinoPad displays Mac screen, trackpad and scroll controls" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_089&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/control-studio.webp" width="1206" data-screen="v1.2.0/control-studio.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_090&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_091&quot;}">View and control your Mac desktop on your phone</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_092&quot;}">After LAN pairing is complete, use your phone to move the Mac cursor, view the screen, and select text drafts or type in real time by scene.</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_093&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/en/blog/custom-keypad">
+<figure class="blog-card-thumb"><img alt="NinoPad Keyboard Editor" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_094&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/layout-editor.webp" width="1206" data-screen="v1.2.0/layout-editor.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_095&quot;}">daily efficiency</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_096&quot;}">Start with one button to customize your Mac secondary controller</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_097&quot;}">Enter the editor from the work layout, add keys, bind operations, adjust size and appearance, then connect to your Mac to try it out, and gradually create a desktop that suits you.</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_098&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="development" data-blog-item="" href="/en/blog/layout-codex">
+<figure class="blog-card-thumb"><img alt="On the atmosphere programming desktop, the task name, status, and quota are all demo data." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_099&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/codex-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/codex-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_100&quot;}">development tools</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_101&quot;}">Multi-Agent parallel scheduling: use Codex layout to switch tasks calmly</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_102&quot;}">Master the single-click view and double-click foreground focus of task slots, adjust model inference intensity and usage readback in real time, and securely approve code operations.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_103&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="development" data-blog-item="" href="/en/blog/layout-terminal">
+<figure class="blog-card-thumb"><img alt="Compact terminal interface: both sessions and output are clear preview data." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_104&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/terminal-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/terminal-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_105&quot;}">development tools</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_106&quot;}">Command line portable monitoring: create, switch and manage terminal sessions in full screen on your mobile phone</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_107&quot;}">Manage Mac terminal session tags from the palm of your hand, run read-only commands to verify links, expand full-screen immersive input, and keep track of background compilation and operation and maintenance status at any time.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_108&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/en/blog/guide-clipping-sources">
+<figure class="blog-card-thumb"><img alt="Original clipping details with original text, notes and sources kept separately." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_109&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/clip-source-02-detail.webp" width="1206" data-screen="guides-1.2.0-r1/clip-source-02-detail.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_110&quot;}">reading and writing</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_111&quot;}">Make good excerpts of information: classify the original text, personal reflections and source links into categories</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_112&quot;}">Create structured excerpt entries in the clipboard, clearly splitting the text, notes, and source URLs, so that you can accurately retrieve them in the future using only fragmentary memorized words.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_113&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/en/blog/guide-clipping-export">
+<figure class="blog-card-thumb"><img alt="Two actual selected exercise clips, the export button shows the exact number." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_114&quot;}" height="2622" loading="lazy" src="/assets/screens/en/guides-1.2.0-r1/clip-export-03-selection.webp" width="1206" data-screen="guides-1.2.0-r1/clip-export-03-selection.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_115&quot;}">reading and writing</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_116&quot;}">Precise organization and archiving: filter clips by type, package and export files with one click</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_117&quot;}">Use keywords and media types to filter data multiple times, make multiple selections across conditions, and easily export text and attachments through the iOS native sharing panel.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_118&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/en/blog/layout-writing">
+<figure class="blog-card-thumb"><img alt="Writing desktop, text statistics from presentation state." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_119&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/writing-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_120&quot;}">reading and writing</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_121&quot;}">Focus on text creation: use writing layout to follow your heartbeat, search within the text and typesetting with one click</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_122&quot;}">Using the four-level range of words/words/sentences/paragraphs to accurately move the cursor, combined with in-text search and Markdown format panel, greatly reduce the burden of memorizing keyboard shortcuts.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_123&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/en/blog/layout-research">
+<figure class="blog-card-thumb"><img alt="Selection and source preview of the research desktop; the picture shows the clear demonstration content." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_124&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/research-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/research-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_125&quot;}">reading and writing</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_126&quot;}">Knowledge excerpt workflow: capture fragments of inspiration and archive the original text, personal notes and sources.</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_127&quot;}">Seamlessly read Mac selections or manually enter data, add exclusive thoughts and source links to excerpts, and build a well-organized material library in your phone's clipboard.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_128&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/en/blog/layout-reading">
+<figure class="blog-card-thumb"><img alt="Reading Desktop displays the preview app's demo PDF with your current location." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_129&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/reading-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/reading-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_130&quot;}">reading and writing</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_131&quot;}">In-depth reading assistance: use your mobile phone to flip through PDFs, jump directly to chapters and jump to page numbers accurately</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_132&quot;}">Synchronously read document bookmarks and hierarchical directories, support keyword filtering of chapters, absolute page number jump and text search, making reading large documents easier.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_133&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/en/blog/layout-creative">
+<figure class="blog-card-thumb"><img alt="The application creation platform in Blender demo state, the control name corresponds to the modeling scene." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_134&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/creative-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/creative-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_135&quot;}">Creation and Presentation</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_136&quot;}">3D modeling handheld assistant: from Blender perspective roaming to natural collaboration of quick operations</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_137&quot;}">The dedicated keys are automatically switched with the front-end software, and combined with Blender's default key positions, it is easy to complete object selection, focus and viewport surround, and support horizontal screen two-hand control.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_138&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/en/blog/layout-presentation">
+<figure class="blog-card-thumb"><img alt="Lecture assistance desktop, camera and mobile screen projection button are adjacent." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_139&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/presentation-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/presentation-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_140&quot;}">Creation and Presentation</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_141&quot;}">Easily control your speech: wireless remote control for page turning, picture-in-picture floating window and precise segment timing</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_142&quot;}">It is equipped with forward and backward page turning and picture-in-picture camera/screen projection floating window, and uses segmented timers to accurately control the rhythm of rehearsal and speech, and calmly control each podium.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_143&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/en/blog/editing-keypad">
+<figure class="blog-card-thumb"><img alt="DaVinci Resolve editing keypad for NinoPad" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_144&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/control-davinci.webp" width="1206" data-screen="v1.2.0/control-davinci.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_145&quot;}">Creation and Presentation</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_146&quot;}">Use mobile phones to assist editing: from browsing the timeline to splitting and undoing</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_147&quot;}">Confirm the editing software on the application creation platform, use practice projects to try frame-by-frame browsing, playback and pause, split and undo, and learn how to operate different workspaces.</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_148&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/en/blog/presentation-tools">
+<figure class="blog-card-thumb"><img alt="NinoPad speech assistant desktop" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_149&quot;}" height="2622" loading="lazy" src="/assets/screens/en/v1.2.0/control-presentation-assist.webp" width="1206" data-screen="v1.2.0/control-presentation-assist.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_150&quot;}">Creation and Presentation</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_151&quot;}">Use mobile phones to assist speeches: turning pages, setting floating windows and segment timing</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_152&quot;}">Practice turning pages in the presentation layout, set up the camera and mobile phone screen projection floating window, and then use the speech timer to record the time of each part.</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_153&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/en/blog/guide-synthesizer">
+<figure class="blog-card-thumb"><img alt="Synthesizer's chord desktop: Sustain is turned on, and the current chord is displayed on the small screen above." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_154&quot;}" height="2622" loading="lazy" src="/assets/screens/en/release-1.3.0/synth-01-chord.webp" width="1206" data-screen="release-1.3.0/synth-01-chord.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_155&quot;}">Sound and Entertainment</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_156&quot;}">Getting Started with Synthesizers: Play beautiful chords and add drum beats for inspiration</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_157&quot;}">Easily start with seventh-level chord keys, master sustain skills, enable tone editing, generate rich drum beat variations, and control playback at any time, giving you a comprehensive understanding of the four major functional desktops of the synthesizer.</p>
+<div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_158&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/en/blog/guide-guitar">
+<figure class="blog-card-thumb"><img alt="Guitar desktop: select chords at the top, pick the strings in the middle, and provide muting, bending and console access at the bottom." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_159&quot;}" height="2622" loading="lazy" src="/assets/screens/en/release-1.3.0/guitar-01-play.webp" width="1206" data-screen="release-1.3.0/guitar-01-play.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_160&quot;}">Sound and Entertainment</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_161&quot;}">Introduction to guitar: strum the six strings and follow the prompts to practice a chord</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_162&quot;}">Get to know the strings, chords and consoles of the guitar desktop, then enter the learning desktop to select songs, listen to demonstrations and practice step by step.</p>
+<div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_163&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/en/blog/layout-media">
+<figure class="blog-card-thumb"><img alt="The media desktop displays the demo track &quot;Afternoon Practice&quot;, and no real player is connected this time." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_164&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/media-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/media-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_165&quot;}">Sound and Entertainment</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_166&quot;}">The classic click wheel returns: Use your phone to elegantly control Mac music and playback progress</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_167&quot;}">Reproduce the classic click wheel and hierarchical menu feel, check the current track and cover at any time, smoothly fine-tune the playback progress and switch playback modes.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_168&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/en/blog/layout-sampler">
+<figure class="blog-card-thumb"><img alt="NinoPad 1.2.0's sampling interface; screenshot taken from the app's native sampler, using playable synthesized sample drum sounds." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_169&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/sampler-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/sampler-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_170&quot;}">Sound and Entertainment</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_171&quot;}">Handheld Rhythm Workstation: Load sample drum beats, fine-tune sounds and explore slicing gameplay</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_172&quot;}">Hit the touch drum pads on your mobile phone, explore the sampling menu and loudness arrangement, distinguish the rules of sound stacking and relay cutting, and start rhythm creation anytime and anywhere.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_173&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/en/blog/layout-arcade">
+<figure class="blog-card-thumb"><img alt="P1 native handles and action tags in the football demo session." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_174&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/arcade-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/arcade-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_175&quot;}">Sound and Entertainment</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_176&quot;}">How to use your mobile phone as a controller to play the Magic Game Hall</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_177&quot;}">Let you quickly get started with the Magic Game Hall. Use your paired mobile phone as a touch screen controller, choose your favorite party or single-player game, and start fun battles with friends on the same screen.</p>
+<div class="blog-card-footer"><time data-i18n-text="{&quot;0&quot;:&quot;blog.text_178&quot;}" datetime="2026-09-16">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_179&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="home" data-blog-item="" href="/en/blog/layout-smart-home">
+<figure class="blog-card-thumb"><img alt="The smart home operation interface of NinoPad 1.2.0; the desk lamp, curtains, etc. in the screenshot are provided by the local interactive demonstration service." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_180&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/smart-home-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_181&quot;}">smart home</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_182&quot;}">Devices throughout the house are at your fingertips: connect to Home Assistant and light up your inspiration with physical knobs</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_183&quot;}">Connect to Home Assistant through the service address and access token, add smart lamps to the mobile desktop, and experience smooth switching and stepless light and dark dimming.</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_184&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="settings" data-blog-item="" href="/en/blog/guide-dynamic-wallpaper">
+<figure class="blog-card-thumb"><img alt="The &quot;Orange Soup Warm Sun&quot; dynamic wallpaper has been selected. The display mode and playback options can be adjusted below." data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_185&quot;}" height="2622" loading="lazy" src="/assets/screens/en/release-1.3.0/wallpaper-03-selected.webp" width="1206" data-screen="release-1.3.0/wallpaper-03-selected.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_186&quot;}">Connection and settings</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_187&quot;}">Change a moving wallpaper: from built-in animals to your own videos</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_188&quot;}">Search for animals in Themes &amp; Wallpapers, apply live wallpapers, adjust the display, and learn about multi-select import, save and layout individual settings.</p>
+<div class="blog-card-footer"><time data-i18n-text="{&quot;0&quot;:&quot;blog.text_189&quot;}" datetime="2026-09-11">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_190&quot;}">Read about 5 minutes →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="settings" data-blog-item="" href="/en/blog/mac-settings">
+<figure class="blog-card-thumb"><img alt="NinoPad Mac shows pairing QR code and connection status" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_191&quot;}" height="1196" loading="lazy" src="/assets/screens/en/macos-adapter.webp" width="944" data-screen="macos-adapter.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_192&quot;}">Connection and settings</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_193&quot;}">Connecting to your Mac for the first time: pairing, permission settings, and FAQs</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_194&quot;}">Learn what Accessibility, Screen Recording, and Local Networking do, step by step check your Mac authorization, and troubleshoot pairing timeouts, unresponsive keys, and black screens.</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_195&quot;}">Read about 5 minutes →</span></div>
+</a>
+</div>
+</div>
+</main>
+<footer>
+<a class="brand" href="/en/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_196&quot;}">NinoPad</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_197&quot;}">&gt;w&lt; All-purpose small keyboard, right in the palm of your hand</p>
+<nav aria-label="Footer navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_198&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-blog-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_199&quot;}" href="/en/#layouts">Features</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_200&quot;}" href="/en/#pro">PRO Member</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_201&quot;}" href="/en/updates">Change log</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_202&quot;}" href="/en/blog">Article column</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_203&quot;}" href="/en/support">Support Guide</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_204&quot;}" href="/en/privacy">privacy policy</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_205&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+<a data-lang-switch="" href="/blog?lng=zh-CN" aria-label="切换至中文" class="">简体中文</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog.text_207&quot;}">© <span data-year=""></span> NinoPad · Free sub-control and remote control workbench</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">Analytics preferences</button></footer>
 
-  <main id="main">
-    <section class="content-hero content-hero-blog">
-      <p class="eyebrow">&gt;w&lt; Guides &amp; Tutorials</p>
-      <h1>Blog &amp; Knowledge Base</h1>
-      <p>Explore 17 ready-to-use preset layouts and step-by-step practical guides. From setup to everyday efficiency, synthesizers, and dynamic themes.</p>
-    </section>
+<script src="/src/main.js" type="module"></script>
 
-    <div class="blog-shell">
-      <nav class="blog-categories" aria-label="Article categories">
-        <button class="blog-category-tag is-active" type="button" data-blog-filter="all" aria-pressed="true">All Articles</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="daily" aria-pressed="false">Productivity</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="development" aria-pressed="false">Dev Tools</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="reading" aria-pressed="false">Writing</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="creative" aria-pressed="false">Creative</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="audio" aria-pressed="false">Audio &amp; Fun</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="home" aria-pressed="false">Smart Home</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="settings" aria-pressed="false">Setup &amp; Pairing</button>
-      </nav>
-
-      <!-- Featured Article -->
-      <a class="blog-featured" href="blog/layout-work.html" data-blog-item data-blog-cat="daily">
-        <figure class="blog-featured-img"><img src="../assets/screens/tutorials-1.2.0-r1/work-01.webp" alt="Work Deck Starter: Turn iPhone into Mac's Capable Companion" width="1206" height="2622" decoding="async"></figure>
-        <div class="blog-featured-content">
-          <span class="blog-featured-badge">⭐ Start Here · Productivity</span>
-          <h2>Work Deck Starter: Turn iPhone into Mac's Capable Companion</h2>
-          <p>Master the Work layout: trackpad navigation, smooth typing, undo, redo, and one-tap clipboard actions to supercharge your daily desktop routine.</p>
-          <div class="blog-meta"><time datetime="2026-09-10">2026-09-10</time><span>·</span><span>5 min read</span></div>
-          <span class="blog-read-btn">Read Article →</span>
-        </div>
-      </a>
-
-      <!-- Article Grid -->
-      <div class="blog-grid" aria-label="Article Grid">
-        <a class="blog-card" href="blog/guide-text-button.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/guides-1.2.0-r1/text-button-01-content.webp" alt="Turn Frequent Phrases into Physical Buttons: One-Tap Injection to Mac" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Turn Frequent Phrases into Physical Buttons: One-Tap Injection to Mac</h3>
-          <p>Configure frequently used text buttons, template phrases, customer support replies, and code snippets for instant insertion into Mac.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-automation-steps.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/guides-1.2.0-r1/macro-04-preview.webp" alt="Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Streamline Your Workflow: Building a 'Log & Auto-Save' Multi-Step Macro</h3>
-          <p>Chain text injection, collision-preventing delays, and ⌘S shortcuts into automated macros with live testing and on-screen preview.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-sumifs.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/guides-1.2.0-r1/sumifs-02-conditions.webp" alt="Never Forget Formula Syntax: Visual SUMIFS Builder on Mobile" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Never Forget Formula Syntax: Visual SUMIFS Builder on Mobile</h3>
-          <p>Long-press SUMIFS on NinoPad to open a visual parameter builder. Fill multi-condition criteria and inject standard Excel/Numbers formulas effortlessly.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-text-cleanup.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp" alt="Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Clean Messy Data: Simplify Spreadsheet Text with SUBSTITUTE & TRIM</h3>
-          <p>Visually build text replacement and whitespace cleanup formulas on mobile. Handle prefix removal, trailing spaces, and data hygiene safely.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-launcher.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher</h3>
-          <p>Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-browser.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/browser-01.webp" alt="Web Surfing Deck: Direct URL Input, Tab Slider & In-Page Search" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Web Surfing Deck: Direct URL Input, Tab Slider & In-Page Search</h3>
-          <p>Navigate to URLs with one tap, slide between tabs with continuous rotary controls, and trigger in-page search in Safari and Chrome.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-finance.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/finance-01-calculator.webp" alt="Finance & Spreadsheets: Fast Calculation & Visual Formula Building" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Finance & Spreadsheets: Fast Calculation & Visual Formula Building</h3>
-          <p>On-device calculator, numeric keypad, and 64 formula helpers. Visually build SUMIFS, COUNTIFS, and VLOOKUP expressions.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/voice-text-input.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/v1.2.0/remote-text-voice.webp" alt="Speak on Mobile First, Then Inject Text to Mac" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Speak on Mobile First, Then Inject Text to Mac</h3>
-          <p>Switch to Text Mode, dictate on mobile, polish typos, then tap Send to inject text cleanly into Mac without interrupting active focus.</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/remote-control-mac.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/v1.2.0/control-studio.webp" alt="View and Control Mac Desktop on Mobile" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>View and Control Mac Desktop on Mobile</h3>
-          <p>After local network pairing, move Mac cursor, view live screen stream, and switch between pre-edited draft text or real-time terminal keys.</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/custom-keypad.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="../assets/screens/v1.2.0/layout-editor.webp" alt="Start from One Button: Customizing Your Mac Deck" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Productivity</span>
-          <h3>Start from One Button: Customizing Your Mac Deck</h3>
-          <p>Add custom hotkey buttons, macro flows, knobs, and background wallpapers to build your personalized control center.</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-codex.html" data-blog-item data-blog-cat="development">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/codex-01.webp" alt="Multi-Agent Orchestration: Switch AI Tasks with Codex Layout" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Dev Tools</span>
-          <h3>Multi-Agent Orchestration: Switch AI Tasks with Codex Layout</h3>
-          <p>Inspect task slot states, single-click to preview, double-click to bring frontmost, and adjust model reasoning effort with tactile rotary dials.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-terminal.html" data-blog-item data-blog-cat="development">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/terminal-01.webp" alt="Terminal Monitor on the Go: Manage Mac Shell Sessions" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Dev Tools</span>
-          <h3>Terminal Monitor on the Go: Manage Mac Shell Sessions</h3>
-          <p>Create, switch, and monitor Mac terminal sessions with dedicated status displays, full-screen keyboard, and essential CLI shortcuts.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-clipping-sources.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="../assets/screens/guides-1.2.0-r1/clip-source-02-detail.webp" alt="Effective Research Clipping: Capture Quotes, Personal Insights & Source URLs" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Writing</span>
-          <h3>Effective Research Clipping: Capture Quotes, Personal Insights & Source URLs</h3>
-          <p>Seamlessly capture Mac text selections or manual quotes, attach personal reflections, preserve source URLs, and build an organized research repository.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-clipping-export.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="../assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp" alt="Precise Organization & Archiving: Filter Clippings by Type & Export in One Click" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Writing</span>
-          <h3>Precise Organization & Archiving: Filter Clippings by Type & Export in One Click</h3>
-          <p>Filter research clippings by idea, method, evidence, and notes. Batch export structured Markdown files with preserved source URLs.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-writing.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/writing-01.webp" alt="Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Writing</span>
-          <h3>Focused Writing Deck: 4-Tier Text Navigation, Search & Markdown Tools</h3>
-          <p>4-tier cursor navigation (char/word/line/para), precise text selection, in-document search, and Markdown formatting shortcuts.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-research.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/research-01.webp" alt="Knowledge Extraction Workflow: Capture Quotes, Thoughts & Citations" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Writing</span>
-          <h3>Knowledge Extraction Workflow: Capture Quotes, Thoughts & Citations</h3>
-          <p>Capture quotes from Mac selection, record personal reflections, retain citations, and build an exportable research repository.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-reading.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/reading-01.webp" alt="Deep Reading Assistant: PDF Navigation, Table of Contents & Page Jumps" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Writing</span>
-          <h3>Deep Reading Assistant: PDF Navigation, Table of Contents & Page Jumps</h3>
-          <p>Sync document TOC, filter chapter titles, jump to page numbers, and search text in PDF documents with rotary dials.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-creative.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/creative-01.webp" alt="3D Modeling Palm Companion: Blender Viewport Navigation & Shortcuts" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Creative</span>
-          <h3>3D Modeling Palm Companion: Blender Viewport Navigation & Shortcuts</h3>
-          <p>Automatically adapt buttons to Blender, DaVinci Resolve, and Final Cut Pro. Orbit viewports, select meshes, and sculpt in landscape mode.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-presentation.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/presentation-01.webp" alt="Presentation Master: Wireless Slide Remote, PiP Overlay & Split Timer" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Creative</span>
-          <h3>Presentation Master: Wireless Slide Remote, PiP Overlay & Split Timer</h3>
-          <p>Wireless slide remote, camera Picture-in-Picture overlay, mobile screen mirroring, and split section rehearsal timers.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/editing-keypad.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="../assets/screens/v1.2.0/control-davinci.webp" alt="Video Editing with Mobile: From Timeline Scrubbing to Blade & Undo" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Creative</span>
-          <h3>Video Editing with Mobile: From Timeline Scrubbing to Blade & Undo</h3>
-          <p>Adaptive shortcut keypad for DaVinci Resolve, Premiere Pro, Final Cut Pro, and CapCut. Scrub frames, blade clips, and toggle playback seamlessly.</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/presentation-tools.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="../assets/screens/v1.2.0/control-presentation-assist.webp" alt="Presentation Assistant: Slide Clicker, Floating PiP & Split Timer" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Creative</span>
-          <h3>Presentation Assistant: Slide Clicker, Floating PiP & Split Timer</h3>
-          <p>Slide advance, webcam overlay, screen broadcasting, and rehearsal timers for confident public speaking.</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-synthesizer.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="../assets/screens/release-1.3.0/synth-01-chord.webp" alt="Synthesizer Starter: Diatonic Chords & Drum Patterns" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Audio & Fun</span>
-          <h3>Synthesizer Starter: Diatonic Chords & Drum Patterns</h3>
-          <p>Play lush chords, modulate filter cutoff knobs, build dynamic drum beats, and record multi-track loops on NinoPad's palm synthesizer.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-guitar.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="../assets/screens/release-1.3.0/guitar-01-play.webp" alt="Guitar Starter: Strum 6 Strings & Master 100 Song Lessons" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Audio & Fun</span>
-          <h3>Guitar Starter: Strum 6 Strings & Master 100 Song Lessons</h3>
-          <p>Strum 6 capacitive strings, switch chords with the virtual joystick, and practice interactive song lessons on NinoPad.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-media.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/media-01.webp" alt="Classic Click Wheel Returns: Control Mac Music & Media on Mobile" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Audio & Fun</span>
-          <h3>Classic Click Wheel Returns: Control Mac Music & Media on Mobile</h3>
-          <p>Revive the classic tactile click wheel for Apple Music and Spotify. View album art, track info, and scrub playback smoothly.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-sampler.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/sampler-01.webp" alt="Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Audio & Fun</span>
-          <h3>Palm Groove Workstation: Sample Packs, Drum Slicing & Sound Design</h3>
-          <p>Tap 16 responsive drum pads, explore sample sound kits, configure choke groups, and produce beats anywhere.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-arcade.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/arcade-01.webp" alt="How to Use Mobile as Gamepad for NinoPad Arcade" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Audio & Fun</span>
-          <h3>How to Use Mobile as Gamepad for NinoPad Arcade</h3>
-          <p>Turn your iPhone or iPad into a responsive touch gamepad. D-pad, ABXY, shoulder buttons, and local multiplayer party games.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-smart-home.html" data-blog-item data-blog-cat="home">
-          <figure class="blog-card-thumb"><img src="../assets/screens/tutorials-1.2.0-r1/smart-home-01.webp" alt="Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Smart Home</span>
-          <h3>Smart Home at Your Fingertips: Connect Home Assistant & Physical Dials</h3>
-          <p>Connect Home Assistant with Long-Lived Access Tokens. Add room lights and smooth rotary dimmers to your mobile deck.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-dynamic-wallpaper.html" data-blog-item data-blog-cat="settings">
-          <figure class="blog-card-thumb"><img src="../assets/screens/release-1.3.0/wallpaper-03-selected.webp" alt="Set an Animated Wallpaper: From Built-in Mascot Loops to Custom Videos" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Setup & Pairing</span>
-          <h3>Set an Animated Wallpaper: From Built-in Mascot Loops to Custom Videos</h3>
-          <p>Customize NinoPad's aesthetic with adorable animated mascot loops, retro pixel art, or your own looping video clips.</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>5 min read →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/mac-settings.html" data-blog-item data-blog-cat="settings">
-          <figure class="blog-card-thumb"><img src="../assets/screens/macos-adapter.webp?v=20260831d" alt="First Time Connecting to Mac: Pairing, Permissions & Troubleshooting" width="1206" height="2622" loading="lazy" decoding="async"></figure>
-          <span class="blog-card-tag">Setup & Pairing</span>
-          <h3>First Time Connecting to Mac: Pairing, Permissions & Troubleshooting</h3>
-          <p>Step-by-step checklist for Accessibility, Screen Recording, local network discovery, and resolving connection issues.</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>5 min read →</span></div>
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <a class="brand" href="index.html"><img src="../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
-    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
-    <nav aria-label="Footer Navigation">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="index.html#layouts">Features</a>
-      <a href="index.html#pro">Pricing</a>
-      <a href="updates.html">Updates</a>
-      <a href="blog.html">Blog</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-      <a href="/blog" data-lang-switch>简体中文</a>
-    </nav>
-    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
-  </footer>
-  <script src="../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="Website analytics preferences" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">Allow Google Analytics to measure page visits and download clicks? You can decline and change your choice in the footer.</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">Allow analytics</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">Decline analytics</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/en/privacy#website-analytics">Privacy details</a></div></aside></body></html>

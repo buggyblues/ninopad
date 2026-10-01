@@ -1,0 +1,52 @@
+{
+  "nativeApp": true,
+  "data": "synthetic demonstration fixtures",
+  "scenes": [
+    {
+      "name": "control-studio",
+      "args": [
+        "--deck",
+        "studio"
+      ],
+      "fixtures": {},
+      "sha256": "da75eab7f6fcdd4a4eaf2e6f5ade4956c8e752b1075e89d5164fe4aaea219ef8"
+    },
+    {
+      "name": "control-presentation",
+      "args": [
+        "--deck",
+        "presentation"
+      ],
+      "fixtures": {},
+      "sha256": "07f41bbb8d8e197b7769ac200a9c2d17197686129c786a20c639ce37f5e4c5f0"
+    },
+    {
+      "name": "control-writing",
+      "args": [
+        "--deck",
+        "writing"
+      ],
+      "env": {
+        "VIBEKEYS_RESEARCH_STATE_FIXTURE": "writing.json"
+      },
+      "fixtures": {
+        "writing.json": "558d8e93973112ceba5988550d7f89a245ba5b8c59e85102f6b23a0ff05d8a8d"
+      },
+      "sha256": "e239d43781354b5e1a872a6f04360909d90a3007e281ad4f224f6fc8d5b40c1c"
+    },
+    {
+      "name": "control-research",
+      "args": [
+        "--deck",
+        "research"
+      ],
+      "env": {
+        "VIBEKEYS_RESEARCH_STATE_FIXTURE": "research.json"
+      },
+      "fixtures": {
+        "research.json": "ce32b794520cb7c994ea27a763ec60bbee0b8f9c0831bdc2bfa668242d6ffaa6"
+      },
+      "sha256": "e239d43781354b5e1a872a6f04360909d90a3007e281ad4f224f6fc8d5b40c1c"
+    }
+  ]
+}

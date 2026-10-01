@@ -1,520 +1,326 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。">
-  <meta name="keywords" content="奶猫妙控博客,Mac小键盘指南,DaVinci剪辑小键盘,Mac远程桌面,语音输入转文字,智能提词器,自定义副控">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="buggyblues">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="奶猫妙控">
-  <meta property="og:title" content="文章专栏｜奶猫妙控">
-  <meta property="og:description" content="精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/v1.2.0/control-studio.webp">
-  <meta property="og:url" content="https://ninopad.com/blog">
-  <meta property="og:locale" content="zh_CN">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="文章专栏｜奶猫妙控">
-  <meta name="twitter:description" content="精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/v1.2.0/control-studio.webp">
-  <link rel="canonical" href="https://ninopad.com/blog">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog">
-  <link rel="preload" as="image" href="assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="blog.css">
-  <title>文章专栏｜奶猫妙控</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "奶猫妙控专栏",
-  "description": "精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。",
-  "url": "https://ninopad.com/blog",
-  "blogPost": [
-    {
-      "@type": "BlogPosting",
-      "headline": "工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档",
-      "url": "https://ninopad.com/blog/layout-work"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "把高频短语做成实体按键：指尖轻触，一键输入到 Mac",
-      "url": "https://ninopad.com/blog/guide-text-button"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "把操作连成一条流：打造“记录并自动保存”的多步宏",
-      "url": "https://ninopad.com/blog/guide-automation-steps"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "告别记错函数参数：用手机可视化生成 SUMIFS 多条件公式",
-      "url": "https://ninopad.com/blog/guide-sumifs"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本",
-      "url": "https://ninopad.com/blog/guide-text-cleanup"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Mac 常用软件随身控：打造属于你的掌上应用启动器",
-      "url": "https://ninopad.com/blog/layout-launcher"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "网页浏览利器：在手机上直达网址、轻滑切换标签页",
-      "url": "https://ninopad.com/blog/layout-browser"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "数字与表格好帮手：快速算账，在手机上可视化构建函数公式",
-      "url": "https://ninopad.com/blog/layout-finance"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "先在手机上口述，再把文字输入到 Mac",
-      "url": "https://ninopad.com/blog/voice-text-input"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "在手机上查看并控制 Mac 桌面",
-      "url": "https://ninopad.com/blog/remote-control-mac"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "从一颗按键开始，定制你的 Mac 副控",
-      "url": "https://ninopad.com/blog/custom-keypad"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "多 Agent 并行调度：用 Codex 布局从容切换任务",
-      "url": "https://ninopad.com/blog/layout-codex"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "命令行随身监控：在手机上新建、切换与全屏管理终端会话",
-      "url": "https://ninopad.com/blog/layout-terminal"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "做好资料摘录：把原文、个人思考与出处链接分门别类",
-      "url": "https://ninopad.com/blog/guide-clipping-sources"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "精准整理与归档：按类型筛选剪藏，一键打包导出文件",
-      "url": "https://ninopad.com/blog/guide-clipping-export"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "专注文字创作：用写作布局随心跳段、文内查找与一键排版",
-      "url": "https://ninopad.com/blog/layout-writing"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档",
-      "url": "https://ninopad.com/blog/layout-research"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码",
-      "url": "https://ninopad.com/blog/layout-reading"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "三维建模掌上助手：从 Blender 视角漫游到快捷操作的自然协同",
-      "url": "https://ninopad.com/blog/layout-creative"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "演讲从容掌控：无线遥控翻页、画中画浮窗与精准分段计时",
-      "url": "https://ninopad.com/blog/layout-presentation"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "用手机辅助剪辑：从浏览时间线到分割与撤销",
-      "url": "https://ninopad.com/blog/editing-keypad"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "用手机辅助演讲：翻页、设置浮窗与分段计时",
-      "url": "https://ninopad.com/blog/presentation-tools"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "合成器入门：弹奏动听和弦，为灵感加入鼓点节拍",
-      "url": "https://ninopad.com/blog/guide-synthesizer"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "吉他入门：扫响六根弦，跟着提示练一段和弦",
-      "url": "https://ninopad.com/blog/guide-guitar"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "经典点击轮回归：用手机优雅掌控 Mac 音乐与播放进度",
-      "url": "https://ninopad.com/blog/layout-media"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法",
-      "url": "https://ninopad.com/blog/layout-sampler"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "如何用手机作为手柄畅玩妙控游戏大厅",
-      "url": "https://ninopad.com/blog/layout-arcade"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感",
-      "url": "https://ninopad.com/blog/layout-smart-home"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "换一张会动的壁纸：从内置动物到自己的视频",
-      "url": "https://ninopad.com/blog/guide-dynamic-wallpaper"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "第一次连接 Mac：配对、权限设置与常见问题",
-      "url": "https://ninopad.com/blog/mac-settings"
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_000&quot;}" name="description">
+<meta content="奶猫妙控博客,Mac小键盘指南,DaVinci剪辑小键盘,Mac远程桌面,语音输入转文字,智能提词器,自定义副控" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_001&quot;}" name="keywords">
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<meta content="buggyblues" name="author">
+<meta content="website" property="og:type">
+<meta content="奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_002&quot;}" property="og:site_name">
+<meta content="文章专栏｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_003&quot;}" property="og:title">
+<meta content="精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_004&quot;}" property="og:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/work-01.webp" property="og:image" data-localized-social="tutorials-1.2.0-r1/work-01.webp">
+<meta content="https://ninopad.com/blog" property="og:url">
+<meta content="zh_CN" property="og:locale">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="文章专栏｜奶猫妙控" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_005&quot;}" name="twitter:title">
+<meta content="精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。" data-i18n-attrs="{&quot;content&quot;:&quot;blog.attr_006&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/zh-CN/tutorials-1.2.0-r1/work-01.webp" name="twitter:image" data-localized-social="tutorials-1.2.0-r1/work-01.webp">
+<link href="https://ninopad.com/blog" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog.text_007&quot;}">文章专栏｜奶猫妙控</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-zh-blog-banner&amp;mt=8"><meta property="og:image:alt" content="工作桌面：使用示例连接；练习时先在 Mac 文档中放好光标。" data-i18n-attrs="{&quot;content&quot;:&quot;blog.social_image_alt&quot;}"><meta name="twitter:image:alt" content="工作桌面：使用示例连接；练习时先在 Mac 文档中放好光标。" data-i18n-attrs="{&quot;content&quot;:&quot;blog.social_image_alt&quot;}"><meta property="og:locale:alternate" content="en_US"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/blog#page","url":"https://ninopad.com/blog","name":"文章专栏｜奶猫妙控","description":"精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。","inLanguage":"zh-CN","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}}]}</script></head>
 <body class="content-page">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="奶猫妙控首页">
-      <img src="assets/app-icon.webp" alt="" width="42" height="42">
-      <span>奶猫妙控</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="index.html#layouts">功能</a>
-      <a href="index.html#pro">价格</a>
-      <a href="blog.html" aria-current="page">博客</a>
-      <a href="index.html#faq">常见问题</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/en/blog" aria-label="Switch to English" data-lang-switch>EN</a>
-      <a class="header-download" href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="index.html#layouts" data-mobile-nav-link>功能</a></li>
-      <li><a href="index.html#pro" data-mobile-nav-link>价格</a></li>
-      <li><a href="blog.html" data-mobile-nav-link>博客</a></li>
-      <li><a href="index.html#faq" data-mobile-nav-link>常见问题</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>游戏大厅</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/#download" aria-label="选择设备并下载奶猫妙控">免费下载</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog" class="is-active">简体中文</a>
-      <a href="/en/blog" data-lang-switch>English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog.text_008&quot;}" href="#main">跳到正文</a>
+<header class="site-header">
+<a aria-label="奶猫妙控首页" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_009&quot;}" href="/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog.text_010&quot;}">奶猫妙控</span>
+</a>
+<nav aria-label="主导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_012&quot;}" href="/#layouts">功能</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_013&quot;}" href="/#pro">价格</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog.text_014&quot;}" href="/blog">博客</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_015&quot;}" href="/#faq">常见问题</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+</nav>
+<div class="header-actions">
+<a aria-label="Switch to English" class="header-lang" data-lang-switch="" href="/en/blog?lng=en">English</a>
+<a aria-label="选择设备并下载奶猫妙控" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog.text_019&quot;}" href="/#download">免费下载</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_022&quot;}" data-mobile-nav-link="" href="/#layouts">功能</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_023&quot;}" data-mobile-nav-link="" href="/#pro">价格</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_024&quot;}" data-mobile-nav-link="" href="/blog">博客</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_025&quot;}" data-mobile-nav-link="" href="/#faq">常见问题</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a></li>
+</ul>
+<a aria-label="选择设备并下载奶猫妙控" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog.text_027&quot;}" data-mobile-nav-link="" href="/#download">免费下载</a>
+<div class="mobile-drawer-lang">
+<a class="is-active" href="/blog?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog?lng=en" data-language="en" aria-label="Switch to English" class="">English</a>
+</div>
+</div>
+<main id="main">
+<section class="content-hero content-hero-blog">
+<p class="eyebrow" data-i18n-text="{&quot;0&quot;:&quot;blog.text_030&quot;}">&gt;w&lt; 深度专栏与使用指南</p>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog.text_031&quot;}">文章专栏</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_032&quot;}">精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。</p>
+</section>
+<div class="blog-shell">
+<nav aria-label="文章分类" class="blog-categories" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_033&quot;}">
+<button aria-pressed="true" class="blog-category-tag is-active" data-blog-filter="all" data-i18n-text="{&quot;0&quot;:&quot;blog.text_034&quot;}" type="button">全部文章</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="daily" data-i18n-text="{&quot;0&quot;:&quot;blog.text_035&quot;}" type="button">日常效率</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="development" data-i18n-text="{&quot;0&quot;:&quot;blog.text_036&quot;}" type="button">开发工具</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="reading" data-i18n-text="{&quot;0&quot;:&quot;blog.text_037&quot;}" type="button">阅读与写作</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="creative" data-i18n-text="{&quot;0&quot;:&quot;blog.text_038&quot;}" type="button">创作与演示</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="audio" data-i18n-text="{&quot;0&quot;:&quot;blog.text_039&quot;}" type="button">声音与娱乐</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="home" data-i18n-text="{&quot;0&quot;:&quot;blog.text_040&quot;}" type="button">智能家居</button>
+<button aria-pressed="false" class="blog-category-tag" data-blog-filter="settings" data-i18n-text="{&quot;0&quot;:&quot;blog.text_041&quot;}" type="button">连接与设置</button>
+</nav>
+<!-- Featured Article -->
+<a class="blog-featured" data-blog-cat="daily" data-blog-item="" href="/blog/layout-work">
+<figure class="blog-featured-img"><img alt="工作桌面：使用示例连接；练习时先在 Mac 文档中放好光标。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_042&quot;}" height="2622" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/work-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/work-01.webp"></figure>
+<div class="blog-featured-content">
+<span class="blog-featured-badge" data-i18n-text="{&quot;0&quot;:&quot;blog.text_043&quot;}">⭐ 从这里开始 · 日常效率</span>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog.text_044&quot;}">工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_045&quot;}">快速上手多功能工作桌面：用触控板随心导航、用实时键盘流畅打字，配合撤销、重做与一键剪贴，全面提速桌面日常。</p>
+<div class="blog-meta"><time datetime="2026-09-10">2026-09-10</time><span>·</span><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_046&quot;}">阅读约 5 分钟</span></div>
+<span class="blog-read-btn" data-i18n-text="{&quot;0&quot;:&quot;blog.text_047&quot;}">阅读全文 →</span>
+</div>
+</a>
+<!-- Article Grid -->
+<div aria-label="更多文章" class="blog-grid" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_048&quot;}">
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/guide-text-button">
+<figure class="blog-card-thumb"><img alt="已填写常用回复和保存名称的原生文字编辑器。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_049&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/text-button-01-content.webp" width="1206" data-screen="guides-1.2.0-r1/text-button-01-content.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_050&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_051&quot;}">把高频短语做成实体按键：指尖轻触，一键输入到 Mac</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_052&quot;}">在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_053&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/guide-automation-steps">
+<figure class="blog-card-thumb"><img alt="“记录并保存”的原生内容预览，三个步骤均有实际配置。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_054&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/macro-04-preview.webp" width="1206" data-screen="guides-1.2.0-r1/macro-04-preview.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_055&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_056&quot;}">把操作连成一条流：打造“记录并自动保存”的多步宏</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_057&quot;}">将基础文字按键扩展为自动化流程，串联文本输入、防冲突延时与 ⌘S 快捷键，并用实测与预览确保每步稳定执行。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_058&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/guide-sumifs">
+<figure class="blog-card-thumb"><img alt="用项目和状态两组条件生成 SUMIFS，所有参数均已实际填写。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_059&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/sumifs-02-conditions.webp" width="1206" data-screen="guides-1.2.0-r1/sumifs-02-conditions.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_060&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_061&quot;}">告别记错函数参数：用手机可视化生成 SUMIFS 多条件公式</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_062&quot;}">长按 SUMIFS 唤起可视化编辑面板，直观配置多组求和与筛选条件，即时生成标准公式并一键注入 Excel 表格。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_063&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/guide-text-cleanup">
+<figure class="blog-card-thumb"><img alt="实际生成删除 SKU- 的 SUBSTITUTE 公式，保留有效的空字符串参数。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_064&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/clean-text-01-remove.webp" width="1206" data-screen="guides-1.2.0-r1/clean-text-01-remove.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_065&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_066&quot;}">规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_067&quot;}">在手机上可视化配置文本替换与去空格函数，区分全局替换与指定首处匹配，配合对照列安全清洗表格数据。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_068&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/layout-launcher">
+<figure class="blog-card-thumb"><img alt="启动器中的系统应用演示目录；用户设备会同步自己的应用列表。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_069&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/launcher-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_070&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_071&quot;}">Mac 常用软件随身控：打造属于你的掌上应用启动器</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_072&quot;}">自动同步 Mac 常用软件列表，以醒目大图标排布桌面，支持长按编辑与随心更换，体验一触即达的窗口切换。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_073&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/layout-browser">
+<figure class="blog-card-thumb"><img alt="浏览器桌面包含网址输入、新建标签页、页内搜索和标签页控制。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_074&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/browser-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/browser-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_075&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_076&quot;}">网页浏览利器：在手机上直达网址、轻滑切换标签页</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_077&quot;}">通过手机端快速输入并直达目标 URL，利用滑块控件自如切换标签页，结合页内搜索与自动化联动打造流畅冲浪流。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_078&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/layout-finance">
+<figure class="blog-card-thumb"><img alt="依次输入 0.1＋0.2＝，小屏显示 0.3；复制后可在手机其他 App 中使用。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_079&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/finance-01-calculator.webp" width="1206" data-screen="tutorials-1.2.0-r1/finance-01-calculator.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_080&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_081&quot;}">数字与表格好帮手：快速算账，在手机上可视化构建函数公式</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_082&quot;}">内置独立好用的本地计算器，支持长按 SUMIFS 逐项填充参数并生成规范公式，轻松搞定数据汇总与录入。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_083&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/voice-text-input">
+<figure class="blog-card-thumb"><img alt="奶猫妙控文本键盘与语音输入界面" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_084&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/remote-text-voice.webp" width="1206" data-screen="v1.2.0/remote-text-voice.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_085&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_086&quot;}">先在手机上口述，再把文字输入到 Mac</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_087&quot;}">切到文本模式，在手机上听写、修改错别字，再用上屏按钮输入到 Mac。了解文本模式与实时模式的区别。</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_088&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/remote-control-mac">
+<figure class="blog-card-thumb"><img alt="奶猫妙控显示 Mac 画面、触控板和滚动控件" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_089&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/control-studio.webp" width="1206" data-screen="v1.2.0/control-studio.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_090&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_091&quot;}">在手机上查看并控制 Mac 桌面</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_092&quot;}">完成局域网配对后，用手机移动 Mac 光标、查看画面，并按场景选择文本草稿或实时输入。</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_093&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="daily" data-blog-item="" href="/blog/custom-keypad">
+<figure class="blog-card-thumb"><img alt="奶猫妙控小键盘编辑器" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_094&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/layout-editor.webp" width="1206" data-screen="v1.2.0/layout-editor.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_095&quot;}">日常效率</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_096&quot;}">从一颗按键开始，定制你的 Mac 副控</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_097&quot;}">从工作布局进入编辑器，添加按键、绑定操作、调整尺寸与外观，再连接 Mac 试用，逐步做出适合自己的桌面。</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_098&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="development" data-blog-item="" href="/blog/layout-codex">
+<figure class="blog-card-thumb"><img alt="氛围编程桌面，任务名称、状态与额度均为演示数据。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_099&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/codex-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/codex-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_100&quot;}">开发工具</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_101&quot;}">多 Agent 并行调度：用 Codex 布局从容切换任务</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_102&quot;}">掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_103&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="development" data-blog-item="" href="/blog/layout-terminal">
+<figure class="blog-card-thumb"><img alt="终端紧凑界面：会话与输出均为明确的预览数据。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_104&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/terminal-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/terminal-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_105&quot;}">开发工具</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_106&quot;}">命令行随身监控：在手机上新建、切换与全屏管理终端会话</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_107&quot;}">掌上管理 Mac 终端会话标签，运行只读命令验证链路，全屏展开沉浸输入，随时掌握后台编译与运维状态。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_108&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/blog/guide-clipping-sources">
+<figure class="blog-card-thumb"><img alt="原文、笔记和出处分开保存的原生剪藏详情。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_109&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/clip-source-02-detail.webp" width="1206" data-screen="guides-1.2.0-r1/clip-source-02-detail.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_110&quot;}">阅读与写作</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_111&quot;}">做好资料摘录：把原文、个人思考与出处链接分门别类</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_112&quot;}">在剪藏夹中建立结构化摘录条目，清晰拆分正文、笔记备忘与出处 URL，日后仅凭零碎记忆词即可精准检索。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_113&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/blog/guide-clipping-export">
+<figure class="blog-card-thumb"><img alt="两条实际选中的练习剪藏，导出按钮显示明确数量。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_114&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/guides-1.2.0-r1/clip-export-03-selection.webp" width="1206" data-screen="guides-1.2.0-r1/clip-export-03-selection.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_115&quot;}">阅读与写作</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_116&quot;}">精准整理与归档：按类型筛选剪藏，一键打包导出文件</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_117&quot;}">利用关键词与媒体类型多重过滤资料，跨条件自由多选，通过 iOS 原生分享面板轻松导出文本与附件。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_118&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/blog/layout-writing">
+<figure class="blog-card-thumb"><img alt="写作桌面，文本统计来自演示状态。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_119&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/writing-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/writing-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_120&quot;}">阅读与写作</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_121&quot;}">专注文字创作：用写作布局随心跳段、文内查找与一键排版</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_122&quot;}">利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_123&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/blog/layout-research">
+<figure class="blog-card-thumb"><img alt="调研桌面的选区和来源预览；图中为明确的演示内容。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_124&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/research-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/research-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_125&quot;}">阅读与写作</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_126&quot;}">知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_127&quot;}">无缝读取 Mac 选区或手动录入资料，为摘录补充专属思考与来源链接，在手机剪藏夹中建立条理分明的素材库。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_128&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="reading" data-blog-item="" href="/blog/layout-reading">
+<figure class="blog-card-thumb"><img alt="阅读桌面显示预览 App 的演示 PDF 与当前位置。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_129&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/reading-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/reading-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_130&quot;}">阅读与写作</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_131&quot;}">深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_132&quot;}">同步读取文档书签与层级目录，支持关键词筛选章节、绝对页码跳转与正文查找，让大部头文献阅读更轻松。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_133&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/blog/layout-creative">
+<figure class="blog-card-thumb"><img alt="Blender 演示状态下的应用创作台，控制名称对应建模场景。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_134&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/creative-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/creative-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_135&quot;}">创作与演示</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_136&quot;}">三维建模掌上助手：从 Blender 视角漫游到快捷操作的自然协同</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_137&quot;}">随前台软件自动切换专用按键，配合 Blender 默认键位轻松完成物体全选、聚焦与视口环绕，支持横屏双手操控。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_138&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/blog/layout-presentation">
+<figure class="blog-card-thumb"><img alt="演讲辅助桌面，摄像头与手机投屏按钮相邻。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_139&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/presentation-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/presentation-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_140&quot;}">创作与演示</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_141&quot;}">演讲从容掌控：无线遥控翻页、画中画浮窗与精准分段计时</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_142&quot;}">配置前后翻页与画中画摄像头/投屏浮窗，利用分段计时器精准把控排练与演说节奏，从容驾驭每个演讲台。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_143&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/blog/editing-keypad">
+<figure class="blog-card-thumb"><img alt="奶猫妙控的 DaVinci Resolve 剪辑小键盘" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_144&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/control-davinci.webp" width="1206" data-screen="v1.2.0/control-davinci.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_145&quot;}">创作与演示</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_146&quot;}">用手机辅助剪辑：从浏览时间线到分割与撤销</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_147&quot;}">在应用创作台确认剪辑软件，用练习项目尝试逐帧浏览、播放暂停、分割与撤销，了解不同工作区的操作方式。</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_148&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="creative" data-blog-item="" href="/blog/presentation-tools">
+<figure class="blog-card-thumb"><img alt="奶猫妙控演讲辅助桌面" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_149&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/v1.2.0/control-presentation-assist.webp" width="1206" data-screen="v1.2.0/control-presentation-assist.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_150&quot;}">创作与演示</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_151&quot;}">用手机辅助演讲：翻页、设置浮窗与分段计时</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_152&quot;}">在演示布局练习翻页，设置摄像头与手机投屏浮窗，再用演讲计时器记录每一部分的用时。</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_153&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/blog/guide-synthesizer">
+<figure class="blog-card-thumb"><img alt="合成器的和弦桌面：延音已开启，当前和弦显示在上方小屏。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_154&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/release-1.3.0/synth-01-chord.webp" width="1206" data-screen="release-1.3.0/synth-01-chord.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_155&quot;}">声音与娱乐</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_156&quot;}">合成器入门：弹奏动听和弦，为灵感加入鼓点节拍</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_157&quot;}">从七级和弦键轻松起步，掌握延音技巧、开启音色编辑、生成丰富鼓点变体并随时掌控播放，带你全面认识合成器的四大功能桌面。</p>
+<div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_158&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/blog/guide-guitar">
+<figure class="blog-card-thumb"><img alt="吉他桌面：上方选择和弦，中间拨弦，下方提供闷音、推弦与控制台入口。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_159&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/release-1.3.0/guitar-01-play.webp" width="1206" data-screen="release-1.3.0/guitar-01-play.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_160&quot;}">声音与娱乐</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_161&quot;}">吉他入门：扫响六根弦，跟着提示练一段和弦</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_162&quot;}">认识吉他桌面的琴弦、和弦与控制台，再进入学习桌面选曲、听示范和逐步跟练。</p>
+<div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_163&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/blog/layout-media">
+<figure class="blog-card-thumb"><img alt="媒体桌面显示演示曲目“午后练习”，本次没有连接真实播放器。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_164&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/media-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/media-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_165&quot;}">声音与娱乐</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_166&quot;}">经典点击轮回归：用手机优雅掌控 Mac 音乐与播放进度</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_167&quot;}">重现经典点击轮与层级菜单手感，随时查看当前曲目与封面，平滑微调播放进度与切换播放模式。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_168&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/blog/layout-sampler">
+<figure class="blog-card-thumb"><img alt="奶猫妙控 1.2.0 的采样操作界面；截图来自 App 的本机采样器，使用可播放的合成示例鼓声。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_169&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/sampler-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/sampler-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_170&quot;}">声音与娱乐</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_171&quot;}">掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_172&quot;}">在手机上敲击触控鼓垫、探索采样菜单与响度整理，分清声音叠放与接力切断规则，开启随时随地的律动创作。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_173&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="audio" data-blog-item="" href="/blog/layout-arcade">
+<figure class="blog-card-thumb"><img alt="足球演示会话中的 P1 原生手柄与动作标签。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_174&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/arcade-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/arcade-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_175&quot;}">声音与娱乐</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_176&quot;}">如何用手机作为手柄畅玩妙控游戏大厅</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_177&quot;}">带你快速上手妙控游戏大厅。将已配对的手机作为触屏手柄，选择喜欢的派对或单人游戏，与朋友同屏开启趣味对战。</p>
+<div class="blog-card-footer"><time data-i18n-text="{&quot;0&quot;:&quot;blog.text_178&quot;}" datetime="2026-09-16">2026-09-16</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_179&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="home" data-blog-item="" href="/blog/layout-smart-home">
+<figure class="blog-card-thumb"><img alt="奶猫妙控 1.2.0 的智能家居操作界面；截图中的书桌灯、窗帘等由本地交互式演示服务提供。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_180&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/tutorials-1.2.0-r1/smart-home-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/smart-home-01.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_181&quot;}">智能家居</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_182&quot;}">全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_183&quot;}">通过服务地址与访问令牌接入 Home Assistant，在手机桌面上添加智能灯具，体验顺滑的开关与无级明暗调光。</p>
+<div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_184&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="settings" data-blog-item="" href="/blog/guide-dynamic-wallpaper">
+<figure class="blog-card-thumb"><img alt="已选择「橘汤暖日」动态壁纸，下面可调整显示方式与播放选项。" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_185&quot;}" height="2622" loading="lazy" src="/assets/screens/zh-CN/release-1.3.0/wallpaper-03-selected.webp" width="1206" data-screen="release-1.3.0/wallpaper-03-selected.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_186&quot;}">连接与设置</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_187&quot;}">换一张会动的壁纸：从内置动物到自己的视频</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_188&quot;}">在主题与壁纸中搜索动物、应用动态壁纸，调整显示方式，并了解多选导入、保存与布局单独设置。</p>
+<div class="blog-card-footer"><time data-i18n-text="{&quot;0&quot;:&quot;blog.text_189&quot;}" datetime="2026-09-11">2026-09-11</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_190&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+<a class="blog-card" data-blog-cat="settings" data-blog-item="" href="/blog/mac-settings">
+<figure class="blog-card-thumb"><img alt="奶猫妙控 Mac 端显示配对二维码和连接状态" data-i18n-attrs="{&quot;alt&quot;:&quot;blog.attr_191&quot;}" height="1196" loading="lazy" src="/assets/screens/zh-CN/macos-adapter.webp" width="944" data-screen="macos-adapter.webp"></figure>
+<span class="blog-card-tag" data-i18n-text="{&quot;0&quot;:&quot;blog.text_192&quot;}">连接与设置</span>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog.text_193&quot;}">第一次连接 Mac：配对、权限设置与常见问题</h3>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_194&quot;}">了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。</p>
+<div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_195&quot;}">阅读约 5 分钟 →</span></div>
+</a>
+</div>
+</div>
+</main>
+<footer>
+<a class="brand" href="/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog.text_196&quot;}">奶猫妙控</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog.text_197&quot;}">&gt;w&lt; 随心全能小键盘，跃然掌上</p>
+<nav aria-label="页脚导航" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog.attr_198&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-zh-blog-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_199&quot;}" href="/#layouts">功能特性</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_200&quot;}" href="/#pro">PRO 会员</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_201&quot;}" href="/updates">更新日志</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_202&quot;}" href="/blog">文章专栏</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_203&quot;}" href="/support">支持指南</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_204&quot;}" href="/privacy">隐私政策</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog.text_205&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">游戏大厅</a>
+<a data-lang-switch="" href="/en/blog?lng=en" aria-label="Switch to English" class="">English</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog.text_207&quot;}">© <span data-year=""></span> 奶猫妙控 · 自由副控与远程控制工作台</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">网站统计设置</button></footer>
 
-  <main id="main">
-    <section class="content-hero content-hero-blog">
-      <p class="eyebrow">&gt;w&lt; 深度专栏与使用指南</p>
-      <h1>文章专栏</h1>
-      <p>精选 17 套开箱即用的预设布局与手把手实操教程。从连接 Mac、日常高效办公，到掌上合成器、吉他练习与动态壁纸定制，带你轻松玩转奶猫妙控。</p>
-    </section>
+<script src="/src/main.js" type="module"></script>
 
-    <div class="blog-shell">
-      <nav class="blog-categories" aria-label="文章分类">
-        <button class="blog-category-tag is-active" type="button" data-blog-filter="all" aria-pressed="true">全部文章</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="daily" aria-pressed="false">日常效率</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="development" aria-pressed="false">开发工具</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="reading" aria-pressed="false">阅读与写作</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="creative" aria-pressed="false">创作与演示</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="audio" aria-pressed="false">声音与娱乐</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="home" aria-pressed="false">智能家居</button>
-        <button class="blog-category-tag" type="button" data-blog-filter="settings" aria-pressed="false">连接与设置</button>
-      </nav>
-
-      <!-- Featured Article -->
-      <a class="blog-featured" href="blog/layout-work.html" data-blog-item data-blog-cat="daily">
-        <figure class="blog-featured-img"><img src="assets/screens/tutorials-1.2.0-r1/work-01.webp" alt="工作桌面：使用示例连接；练习时先在 Mac 文档中放好光标。" width="1206" height="2622"></figure>
-        <div class="blog-featured-content">
-          <span class="blog-featured-badge">⭐ 从这里开始 · 日常效率</span>
-          <h2>工作台副控入门：让 iPhone 成为 Mac 键盘旁的得力搭档</h2>
-          <p>快速上手多功能工作桌面：用触控板随心导航、用实时键盘流畅打字，配合撤销、重做与一键剪贴，全面提速桌面日常。</p>
-          <div class="blog-meta"><time datetime="2026-09-10">2026-09-10</time><span>·</span><span>阅读约 5 分钟</span></div>
-          <span class="blog-read-btn">阅读全文 →</span>
-        </div>
-      </a>
-
-      <!-- Article Grid -->
-      <div class="blog-grid" aria-label="更多文章">
-        <a class="blog-card" href="blog/guide-text-button.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/guides-1.2.0-r1/text-button-01-content.webp" alt="已填写常用回复和保存名称的原生文字编辑器。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>把高频短语做成实体按键：指尖轻触，一键输入到 Mac</h3>
-          <p>在手机上配置常用语快捷按钮，设置追加回车或按键，通过内置预览核对文字，彻底告别重复敲键盘。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-automation-steps.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/guides-1.2.0-r1/macro-04-preview.webp" alt="“记录并保存”的原生内容预览，三个步骤均有实际配置。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>把操作连成一条流：打造“记录并自动保存”的多步宏</h3>
-          <p>将基础文字按键扩展为自动化流程，串联文本输入、防冲突延时与 ⌘S 快捷键，并用实测与预览确保每步稳定执行。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-sumifs.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/guides-1.2.0-r1/sumifs-02-conditions.webp" alt="用项目和状态两组条件生成 SUMIFS，所有参数均已实际填写。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>告别记错函数参数：用手机可视化生成 SUMIFS 多条件公式</h3>
-          <p>长按 SUMIFS 唤起可视化编辑面板，直观配置多组求和与筛选条件，即时生成标准公式并一键注入 Excel 表格。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-text-cleanup.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/guides-1.2.0-r1/clean-text-01-remove.webp" alt="实际生成删除 SKU- 的 SUBSTITUTE 公式，保留有效的空字符串参数。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>规范杂乱商品数据：用 SUBSTITUTE 与 TRIM 轻松清洗文本</h3>
-          <p>在手机上可视化配置文本替换与去空格函数，区分全局替换与指定首处匹配，配合对照列安全清洗表格数据。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-launcher.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="启动器中的系统应用演示目录；用户设备会同步自己的应用列表。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>Mac 常用软件随身控：打造属于你的掌上应用启动器</h3>
-          <p>自动同步 Mac 常用软件列表，以醒目大图标排布桌面，支持长按编辑与随心更换，体验一触即达的窗口切换。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-browser.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/browser-01.webp" alt="浏览器桌面包含网址输入、新建标签页、页内搜索和标签页控制。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>网页浏览利器：在手机上直达网址、轻滑切换标签页</h3>
-          <p>通过手机端快速输入并直达目标 URL，利用滑块控件自如切换标签页，结合页内搜索与自动化联动打造流畅冲浪流。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-finance.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/finance-01-calculator.webp" alt="依次输入 0.1＋0.2＝，小屏显示 0.3；复制后可在手机其他 App 中使用。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>数字与表格好帮手：快速算账，在手机上可视化构建函数公式</h3>
-          <p>内置独立好用的本地计算器，支持长按 SUMIFS 逐项填充参数并生成规范公式，轻松搞定数据汇总与录入。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/voice-text-input.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/v1.2.0/remote-text-voice.webp" alt="奶猫妙控文本键盘与语音输入界面" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>先在手机上口述，再把文字输入到 Mac</h3>
-          <p>切到文本模式，在手机上听写、修改错别字，再用上屏按钮输入到 Mac。了解文本模式与实时模式的区别。</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/remote-control-mac.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/v1.2.0/control-studio.webp" alt="奶猫妙控显示 Mac 画面、触控板和滚动控件" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>在手机上查看并控制 Mac 桌面</h3>
-          <p>完成局域网配对后，用手机移动 Mac 光标、查看画面，并按场景选择文本草稿或实时输入。</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/custom-keypad.html" data-blog-item data-blog-cat="daily">
-          <figure class="blog-card-thumb"><img src="assets/screens/v1.2.0/layout-editor.webp" alt="奶猫妙控小键盘编辑器" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">日常效率</span>
-          <h3>从一颗按键开始，定制你的 Mac 副控</h3>
-          <p>从工作布局进入编辑器，添加按键、绑定操作、调整尺寸与外观，再连接 Mac 试用，逐步做出适合自己的桌面。</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-codex.html" data-blog-item data-blog-cat="development">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/codex-01.webp" alt="氛围编程桌面，任务名称、状态与额度均为演示数据。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">开发工具</span>
-          <h3>多 Agent 并行调度：用 Codex 布局从容切换任务</h3>
-          <p>掌握任务槽位的单击查看与双击前台聚焦，实时调节模型推理强度与用量回读，安全审批代码操作。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-terminal.html" data-blog-item data-blog-cat="development">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/terminal-01.webp" alt="终端紧凑界面：会话与输出均为明确的预览数据。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">开发工具</span>
-          <h3>命令行随身监控：在手机上新建、切换与全屏管理终端会话</h3>
-          <p>掌上管理 Mac 终端会话标签，运行只读命令验证链路，全屏展开沉浸输入，随时掌握后台编译与运维状态。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-clipping-sources.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="assets/screens/guides-1.2.0-r1/clip-source-02-detail.webp" alt="原文、笔记和出处分开保存的原生剪藏详情。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">阅读与写作</span>
-          <h3>做好资料摘录：把原文、个人思考与出处链接分门别类</h3>
-          <p>在剪藏夹中建立结构化摘录条目，清晰拆分正文、笔记备忘与出处 URL，日后仅凭零碎记忆词即可精准检索。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-clipping-export.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="assets/screens/guides-1.2.0-r1/clip-export-03-selection.webp" alt="两条实际选中的练习剪藏，导出按钮显示明确数量。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">阅读与写作</span>
-          <h3>精准整理与归档：按类型筛选剪藏，一键打包导出文件</h3>
-          <p>利用关键词与媒体类型多重过滤资料，跨条件自由多选，通过 iOS 原生分享面板轻松导出文本与附件。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-writing.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/writing-01.webp" alt="写作桌面，文本统计来自演示状态。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">阅读与写作</span>
-          <h3>专注文字创作：用写作布局随心跳段、文内查找与一键排版</h3>
-          <p>利用字/词/句/段四级范围精准游走光标，配合文内查找与 Markdown 格式面板，大幅减少键盘快捷键记忆负担。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-research.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/research-01.webp" alt="调研桌面的选区和来源预览；图中为明确的演示内容。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">阅读与写作</span>
-          <h3>知识摘录工作流：捕捉灵感碎片，将原文、个人笔记与出处沉淀归档</h3>
-          <p>无缝读取 Mac 选区或手动录入资料，为摘录补充专属思考与来源链接，在手机剪藏夹中建立条理分明的素材库。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-reading.html" data-blog-item data-blog-cat="reading">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/reading-01.webp" alt="阅读桌面显示预览 App 的演示 PDF 与当前位置。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">阅读与写作</span>
-          <h3>深度阅读辅助：用手机翻阅 PDF、直达章节与精准跳转页码</h3>
-          <p>同步读取文档书签与层级目录，支持关键词筛选章节、绝对页码跳转与正文查找，让大部头文献阅读更轻松。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-creative.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/creative-01.webp" alt="Blender 演示状态下的应用创作台，控制名称对应建模场景。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">创作与演示</span>
-          <h3>三维建模掌上助手：从 Blender 视角漫游到快捷操作的自然协同</h3>
-          <p>随前台软件自动切换专用按键，配合 Blender 默认键位轻松完成物体全选、聚焦与视口环绕，支持横屏双手操控。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-presentation.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/presentation-01.webp" alt="演讲辅助桌面，摄像头与手机投屏按钮相邻。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">创作与演示</span>
-          <h3>演讲从容掌控：无线遥控翻页、画中画浮窗与精准分段计时</h3>
-          <p>配置前后翻页与画中画摄像头/投屏浮窗，利用分段计时器精准把控排练与演说节奏，从容驾驭每个演讲台。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/editing-keypad.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="assets/screens/v1.2.0/control-davinci.webp" alt="奶猫妙控的 DaVinci Resolve 剪辑小键盘" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">创作与演示</span>
-          <h3>用手机辅助剪辑：从浏览时间线到分割与撤销</h3>
-          <p>在应用创作台确认剪辑软件，用练习项目尝试逐帧浏览、播放暂停、分割与撤销，了解不同工作区的操作方式。</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/presentation-tools.html" data-blog-item data-blog-cat="creative">
-          <figure class="blog-card-thumb"><img src="assets/screens/v1.2.0/control-presentation-assist.webp" alt="奶猫妙控演讲辅助桌面" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">创作与演示</span>
-          <h3>用手机辅助演讲：翻页、设置浮窗与分段计时</h3>
-          <p>在演示布局练习翻页，设置摄像头与手机投屏浮窗，再用演讲计时器记录每一部分的用时。</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-synthesizer.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="assets/screens/release-1.3.0/synth-01-chord.webp" alt="合成器的和弦桌面：延音已开启，当前和弦显示在上方小屏。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">声音与娱乐</span>
-          <h3>合成器入门：弹奏动听和弦，为灵感加入鼓点节拍</h3>
-          <p>从七级和弦键轻松起步，掌握延音技巧、开启音色编辑、生成丰富鼓点变体并随时掌控播放，带你全面认识合成器的四大功能桌面。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-guitar.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="assets/screens/release-1.3.0/guitar-01-play.webp" alt="吉他桌面：上方选择和弦，中间拨弦，下方提供闷音、推弦与控制台入口。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">声音与娱乐</span>
-          <h3>吉他入门：扫响六根弦，跟着提示练一段和弦</h3>
-          <p>认识吉他桌面的琴弦、和弦与控制台，再进入学习桌面选曲、听示范和逐步跟练。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-media.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/media-01.webp" alt="媒体桌面显示演示曲目“午后练习”，本次没有连接真实播放器。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">声音与娱乐</span>
-          <h3>经典点击轮回归：用手机优雅掌控 Mac 音乐与播放进度</h3>
-          <p>重现经典点击轮与层级菜单手感，随时查看当前曲目与封面，平滑微调播放进度与切换播放模式。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-sampler.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/sampler-01.webp" alt="奶猫妙控 1.2.0 的采样操作界面；截图来自 App 的本机采样器，使用可播放的合成示例鼓声。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">声音与娱乐</span>
-          <h3>掌上节奏工作站：载入示例鼓点，微调音色与探索切片玩法</h3>
-          <p>在手机上敲击触控鼓垫、探索采样菜单与响度整理，分清声音叠放与接力切断规则，开启随时随地的律动创作。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-arcade.html" data-blog-item data-blog-cat="audio">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/arcade-01.webp" alt="足球演示会话中的 P1 原生手柄与动作标签。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">声音与娱乐</span>
-          <h3>如何用手机作为手柄畅玩妙控游戏大厅</h3>
-          <p>带你快速上手妙控游戏大厅。将已配对的手机作为触屏手柄，选择喜欢的派对或单人游戏，与朋友同屏开启趣味对战。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-16">2026-09-16</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/layout-smart-home.html" data-blog-item data-blog-cat="home">
-          <figure class="blog-card-thumb"><img src="assets/screens/tutorials-1.2.0-r1/smart-home-01.webp" alt="奶猫妙控 1.2.0 的智能家居操作界面；截图中的书桌灯、窗帘等由本地交互式演示服务提供。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">智能家居</span>
-          <h3>全屋设备触手可及：接入 Home Assistant，用实体旋钮点亮灵感</h3>
-          <p>通过服务地址与访问令牌接入 Home Assistant，在手机桌面上添加智能灯具，体验顺滑的开关与无级明暗调光。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-10">2026-09-10</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/guide-dynamic-wallpaper.html" data-blog-item data-blog-cat="settings">
-          <figure class="blog-card-thumb"><img src="assets/screens/release-1.3.0/wallpaper-03-selected.webp" alt="已选择「橘汤暖日」动态壁纸，下面可调整显示方式与播放选项。" width="1206" height="2622" loading="lazy"></figure>
-          <span class="blog-card-tag">连接与设置</span>
-          <h3>换一张会动的壁纸：从内置动物到自己的视频</h3>
-          <p>在主题与壁纸中搜索动物、应用动态壁纸，调整显示方式，并了解多选导入、保存与布局单独设置。</p>
-          <div class="blog-card-footer"><time datetime="2026-09-11">2026-09-11</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-
-        <a class="blog-card" href="blog/mac-settings.html" data-blog-item data-blog-cat="settings">
-          <figure class="blog-card-thumb"><img src="assets/screens/macos-adapter.webp?v=20260831d" alt="奶猫妙控 Mac 端显示配对二维码和连接状态" width="944" height="1196" loading="lazy"></figure>
-          <span class="blog-card-tag">连接与设置</span>
-          <h3>第一次连接 Mac：配对、权限设置与常见问题</h3>
-          <p>了解辅助功能、屏幕录制和本地网络的用途，按步骤检查 Mac 授权，并排查配对超时、按键无响应与黑屏。</p>
-          <div class="blog-card-footer"><time datetime="2026-08-31">2026-08-31</time><span>阅读约 5 分钟 →</span></div>
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <a class="brand" href="index.html"><img src="assets/app-icon.webp" alt="" width="40" height="40"><span>奶猫妙控</span></a>
-    <p>&gt;w&lt; 随心全能小键盘，跃然掌上</p>
-    <nav aria-label="页脚导航">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="index.html#layouts">功能特性</a>
-      <a href="index.html#pro">PRO 会员</a>
-      <a href="updates.html">更新日志</a>
-      <a href="blog.html">文章专栏</a>
-      <a href="support.html">支持指南</a>
-      <a href="privacy.html">隐私政策</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">游戏大厅</a>
-      <a href="/en/blog" data-lang-switch>English</a>
-    </nav>
-    <small>© <span data-year></span> 奶猫妙控 · 自由副控与远程控制工作台</small>
-  </footer>
-  <script src="script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="网站统计设置" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">允许使用 Google Analytics 了解页面访问和下载点击？你可以拒绝，并随时在页脚修改选择。</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">允许统计</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">拒绝统计</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/privacy#website-analytics">隐私说明</a></div></aside></body></html>

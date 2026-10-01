@@ -1,209 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee9fb">
-  <meta name="description" content="Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="NinoPad">
-  <meta property="og:title" content="Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher | NinoPad">
-  <meta property="og:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/launcher-01.webp">
-  <meta property="og:url" content="https://ninopad.com/en/blog/layout-launcher">
-  <meta property="og:locale" content="en_US">
-  <meta property="article:published_time" content="2026-09-10">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher | NinoPad">
-  <meta name="twitter:description" content="Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.">
-  <meta name="twitter:image" content="https://ninopad.com/assets/screens/tutorials-1.2.0-r1/launcher-01.webp">
-  <meta property="og:description" content="Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.">
-  <meta name="keywords" content="NinoPad launcher layout, Mac touch dock, iPhone app launcher for Mac, fast app switcher">
-  <link rel="canonical" href="https://ninopad.com/en/blog/layout-launcher">
-  <link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-launcher">
-  <link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-launcher">
-  <link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-launcher">
-  <link rel="preload" as="image" href="../../assets/app-icon.webp" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../../assets/app-icon.png">
-  <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../blog.css">
-  <title>Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher | NinoPad</title>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher",
-      "description": "Automatically sync installed Mac applications with bold touch icons. Long-press to edit, rearrange, and switch apps instantly.",
-      "datePublished": "2026-09-10",
-      "dateModified": "2026-09-10",
-      "inLanguage": "en",
-      "author": {
-        "@type": "Organization",
-        "name": "NinoPad"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "NinoPad"
-      },
-      "image": [
-        "https://ninopad.com/assets/screens/tutorials-1.2.0-r1/launcher-01.webp"
-      ],
-      "mainEntityOfPage": "https://ninopad.com/en/blog/layout-launcher"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://ninopad.com/en/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://ninopad.com/en/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher",
-          "item": "https://ninopad.com/en/blog/layout-launcher"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why is an app icon showing a default placeholder?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "NinoPad extracts high-resolution app icons from macOS. If an icon is missing, open the desktop editor and re-select the app from the synced list."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I group apps into custom folders or pages?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. NinoPad supports multi-page launcher grids and categorized sections (Work, Dev, Media, Utility)."
-          }
-        }
-      ]
-    }
-  ]
-}
-  </script>
-</head>
+<!DOCTYPE html><html data-page="blog_layout-launcher" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<meta content="#eee9fb" name="theme-color">
+<meta content="Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_000&quot;}" name="description">
+<meta content="index, follow, max-image-preview:large" name="robots">
+<meta content="article" property="og:type">
+<meta content="NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_001&quot;}" property="og:site_name">
+<meta content="Mac commonly used software portable control: create your own handheld application launcher｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_002&quot;}" property="og:title">
+<meta content="https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/launcher-01.webp" property="og:image" data-localized-social="tutorials-1.2.0-r1/launcher-01.webp">
+<meta content="https://ninopad.com/en/blog/layout-launcher" property="og:url">
+<meta content="en_US" property="og:locale">
+<meta content="2026-09-10" property="article:published_time">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Mac commonly used software portable control: create your own handheld application launcher｜NinoPad" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_003&quot;}" name="twitter:title">
+<meta content="Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_004&quot;}" name="twitter:description">
+<meta content="https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/launcher-01.webp" name="twitter:image" data-localized-social="tutorials-1.2.0-r1/launcher-01.webp">
+<meta content="Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_005&quot;}" property="og:description">
+<meta content="NinoPad, NinoPad, launcher layout tutorial, steps" data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.attr_006&quot;}" name="keywords">
+<link href="https://ninopad.com/en/blog/layout-launcher" rel="canonical">
+
+
+
+<link as="image" href="/assets/app-icon.webp" rel="preload" type="image/webp">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;family=ZCOOL+KuaiLe&amp;display=swap" rel="stylesheet">
+<link href="/assets/app-icon.png" rel="icon" type="image/png">
+<link href="/src/styles.css" rel="stylesheet">
+<link href="/src/blog.css" rel="stylesheet">
+<title data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_007&quot;}">Mac commonly used software portable control: create your own handheld application launcher｜NinoPad</title>
+
+<link rel="alternate" hreflang="zh-CN" href="https://ninopad.com/blog/layout-launcher"><link rel="alternate" hreflang="en" href="https://ninopad.com/en/blog/layout-launcher"><link rel="alternate" hreflang="x-default" href="https://ninopad.com/blog/layout-launcher"><meta name="apple-itunes-app" content="app-id=6805378609, affiliate-data=pt=128660955&amp;ct=web-en-layout-launc-banner&amp;mt=8"><meta property="og:image:alt" content="System application demo directory in the launcher; user devices synchronize their own application list." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.social_image_alt&quot;}"><meta name="twitter:image:alt" content="System application demo directory in the launcher; user devices synchronize their own application list." data-i18n-attrs="{&quot;content&quot;:&quot;blog_layout-launcher.social_image_alt&quot;}"><meta property="og:locale:alternate" content="zh_CN"><script type="application/ld+json" data-seo-graph="" data-i18n-schema="blog_layout-launcher.visible_schema">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://ninopad.com/en/blog/layout-launcher#page","url":"https://ninopad.com/en/blog/layout-launcher","name":"Mac commonly used software portable control: create your own handheld application launcher｜NinoPad","description":"Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch.","inLanguage":"en","isPartOf":{"@id":"https://ninopad.com/#website"},"publisher":{"@id":"https://ninopad.com/#organization"}},{"@type":"BlogPosting","headline":"Mac commonly used software portable control: create your own handheld application launcher","description":"Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch.","inLanguage":"en","datePublished":"2026-09-10","author":{"@type":"Organization","name":"NinoPad","url":"https://ninopad.com/"},"publisher":{"@type":"Organization","@id":"https://ninopad.com/#organization","name":"NinoPad","alternateName":"奶猫妙控","url":"https://ninopad.com/","logo":"https://ninopad.com/assets/app-icon.png","sameAs":["https://github.com/buggyblues/ninopad","https://apps.apple.com/app/id6805378609"]},"mainEntityOfPage":"https://ninopad.com/en/blog/layout-launcher","image":["https://ninopad.com/assets/screens/en/tutorials-1.2.0-r1/launcher-01.webp"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ninopad.com/en/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ninopad.com/en/blog"},{"@type":"ListItem","position":3,"name":"Mac commonly used software portable control: create your own handheld application launcher","item":"https://ninopad.com/en/blog/layout-launcher"}]}]}</script></head>
 <body class="content-page article-page">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="NinoPad Homepage">
-      <img src="../../assets/app-icon.webp" alt="" width="42" height="42">
-      <span>NinoPad</span>
-    </a>
-    <nav aria-label="Main Navigation">
-      <a href="../index.html#layouts">Features</a>
-      <a href="../index.html#pro">Pricing</a>
-      <a href="../blog.html" aria-current="page">Blog</a>
-      <a href="../index.html#faq">FAQ</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-    </nav>
-    <div class="header-actions">
-      <a class="header-lang" href="/blog/layout-launcher" aria-label="切换至中文" data-lang-switch>中文</a>
-      <a class="header-download" href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false" data-mobile-nav-toggle>
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
-      </button>
-    </div>
-  </header>
-  <div class="mobile-drawer" data-mobile-drawer aria-hidden="true">
-    <ul>
-      <li><a href="../index.html#layouts" data-mobile-nav-link>Features</a></li>
-      <li><a href="../index.html#pro" data-mobile-nav-link>Pricing</a></li>
-      <li><a href="../blog.html" data-mobile-nav-link>Blog</a></li>
-      <li><a href="../index.html#faq" data-mobile-nav-link>FAQ</a></li>
-      <li><a href="https://arcade.ninopad.com/" target="_blank" rel="noopener" data-mobile-nav-link>Arcade</a></li>
-    </ul>
-    <a class="mobile-drawer-download" data-mobile-nav-link href="/en/#download" aria-label="Choose device and download NinoPad">Free Download</a>
-    <div class="mobile-drawer-lang">
-      <a href="/blog/layout-launcher" data-lang-switch>简体中文</a>
-      <a href="/en/blog/layout-launcher" class="is-active">English</a>
-    </div>
-  </div>
+<a class="skip-link" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_008&quot;}" href="#main">Skip to text</a>
+<header class="site-header">
+<a aria-label="NinoPad Home Page" class="brand" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_009&quot;}" href="/en/">
+<img alt="" height="42" src="/assets/app-icon.webp" width="42">
+<span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_010&quot;}">NinoPad</span>
+</a>
+<nav aria-label="Main navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_011&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_012&quot;}" href="/en/#layouts">Function</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_013&quot;}" href="/en/#pro">Price</a>
+<a aria-current="page" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_014&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_015&quot;}" href="/en/#faq">FAQ</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_016&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+</nav>
+<div class="header-actions">
+<a aria-label="切换至中文" class="header-lang" data-lang-switch="" href="/blog/layout-launcher?lng=zh-CN">简体中文</a>
+<a aria-label="Select device and download NinoPad" class="header-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_020&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_019&quot;}" href="/en/#download">free download</a>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-nav-toggle" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_021&quot;}" data-mobile-nav-toggle="" type="button">
+<svg class="icon-menu" fill="none" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+<svg class="icon-close" fill="none" viewBox="0 0 24 24"><line x1="6" x2="18" y1="6" y2="18"></line><line x1="6" x2="18" y1="18" y2="6"></line></svg>
+</button>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer" data-mobile-drawer="">
+<ul>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_022&quot;}" data-mobile-nav-link="" href="/en/#layouts">Function</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_023&quot;}" data-mobile-nav-link="" href="/en/#pro">Price</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_024&quot;}" data-mobile-nav-link="" href="/en/blog">Blog</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_025&quot;}" data-mobile-nav-link="" href="/en/#faq">FAQ</a></li>
+<li><a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_026&quot;}" data-mobile-nav-link="" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a></li>
+</ul>
+<a aria-label="Select device and download NinoPad" class="mobile-drawer-download" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_028&quot;}" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_027&quot;}" data-mobile-nav-link="" href="/en/#download">free download</a>
+<div class="mobile-drawer-lang">
+<a class="" href="/blog/layout-launcher?lng=zh-CN" data-lang-switch="" data-language="zh-CN" aria-label="切换至中文">简体中文</a>
+<a data-lang-switch="" href="/en/blog/layout-launcher?lng=en" data-language="en" aria-label="Switch to English" class="is-active">English</a>
+</div>
+</div>
+<main class="article-shell" id="main">
+<header class="article-header"><nav class="breadcrumbs" aria-label="Breadcrumbs" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.breadcrumbs&quot;}"><ol><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.home&quot;}" href="/en/">Home</a></li><li><a data-i18n-text="{&quot;0&quot;:&quot;ui.guides&quot;}" href="/en/blog">Guides</a></li><li aria-current="page"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.growth_breadcrumb&quot;}">Mac commonly used software portable control: create your own handheld application launcher</span></li></ol></nav>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_030&quot;}" href="/en/blog">← Blog Column / Launcher</a>
+<h1 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_031&quot;}">Mac commonly used software portable control: create your own handheld application launcher</h1>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_032&quot;}">Automatically synchronize the list of commonly used Mac software, arrange the desktop with eye-catching large icons, support long-press editing and random replacement, and experience window switching with one touch.</p>
+<p class="article-meta"><time data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_033&quot;}" datetime="2026-09-10">September 10, 2026</time></p>
+</header>
+<figure class="article-cover article-cover-phone">
+<img alt="System application demo directory in the launcher; user devices synchronize their own application list." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-launcher.attr_034&quot;}" height="2622" src="/assets/screens/en/tutorials-1.2.0-r1/launcher-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-01.webp">
+<figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_035&quot;}">System application demo directory in the launcher; user devices synchronize their own application list.</figcaption>
+</figure>
+<article class="article-body">
+<p class="article-lead" data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_036&quot;}">No need to rummage through the crowded Dock or Launchpad. The launcher layout turns high-frequency apps on the computer into clear and easy-to-recognize solid blocks on the phone, and you can go directly to the front desk with a tap of your fingertips. This article will help you start by adding Safari and master the layout and management skills of the handheld launcher.</p>
+<aside class="article-highlight" data-i18n-text="{&quot;1&quot;:&quot;blog_layout-launcher.text_037&quot;}"><strong data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_038&quot;}">Picture description:</strong>The system application icon and sample application directory are used for illustrations, and the process of adding buttons is completed within the app. When your Mac is connected, the list of apps is based on what's available on that computer.</aside>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_039&quot;}">Before starting</h2><ul><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_040&quot;}">Install Naimao Control 1.2.0 on iPhone/iPad, and install the companion version of the same version on Mac; complete the pairing, and allow accessibility permissions on the Mac side. When you need the computer screen, turn on the screen recording permission.</li><li data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_041&quot;}">Leave the Mac companion running and wait for your app list to sync. The screenshots only use the demo directories of system applications such as Finder, Safari, Notes, etc.; your list is subject to the actual installed software.</li></ul>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_042&quot;}">1. Enter the launcher and check the application name first</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_043&quot;}">Click "Layout" at the bottom of the app and find "Launcher" in the list. When there are many layouts, use the search box to search for the name; if there are multiple desktops, click the arrow on the right to expand it, and then click the desktop name; you can also find it by searching for the specific desktop name.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_044&quot;}">Each big button represents a Mac App. The icons in the screenshot are from system applications and are not blank placeholders. First select an app that you can confirm directly on your Mac, such as Safari; short-press to send a request to open or activate the app, and then observe the Mac front window.</p>
+<figure class="article-figure article-figure-phone"><img alt="System application demo directory in the launcher; user devices synchronize their own application list." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-launcher.attr_045&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/launcher-01.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-01.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_046&quot;}">System application demo directory in the launcher; user devices synchronize their own application list.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_047&quot;}">2. Long press a button to enter editing</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_048&quot;}">Press and hold the existing application button in the launcher for about one second. After letting go, you will enter the editor and select the button. Confirm that the "Change App" and Add App entries appear on the page before proceeding to the next step.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_049&quot;}">Short press to start, long press to edit. If the app is just opened, it means that the operation is recognized as a short press; just go back to the button and press it again.</p>
+<figure class="article-figure article-figure-phone"><img alt="After long-pressing the existing app button, the editor displays the current selection and &quot;Change App&quot;." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-launcher.attr_050&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/launcher-02-edit.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-02-edit.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_051&quot;}">After long-pressing the existing app button, the editor displays the current selection and "Change App".</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_052&quot;}">3. Open the App list and search for the software you want to add.</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_053&quot;}">Click "Add App" in the upper left corner of the editor and find "Search App" in the operation panel. Enter the software name and click the required App from the application list connected to Mac; check the name after selecting it, and then click "Finish" in the upper right corner of the panel.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_054&quot;}">Shown here is the app catalog provided by the connected Mac, not the App Store. If the search fails, first confirm that the software is indeed installed on that Mac, and then check whether the directory has been synchronized; do not just fill in a guessed application ID.</p>
+<figure class="article-figure article-figure-phone"><img alt="The actual app picker that opens when adding an app to search for apps on your connected Mac." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-launcher.attr_055&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/launcher-03-picker.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-03-picker.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_056&quot;}">The actual app picker that opens when adding an app to search for apps on your connected Mac.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_057&quot;}">4. Finish editing and verify the new button on your Mac</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_058&quot;}">After returning to the editor from the app selector, check the new button's name and icon, then click Done to exit the editor. Short-press the new button to confirm that your Mac opens the selected software.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_059&quot;}">If the button is outside the current screen, check other desktops under Scheme. Launcher defaults are grouped by up to eight app buttons per desktop; custom arrangements of existing desktops will also affect where you see them.</p>
+<figure class="article-figure article-figure-phone"><img alt="Return to the launcher after actually selecting Safari and completing two levels of editing; Mac launch results still need to be checked on a real connection." data-i18n-attrs="{&quot;alt&quot;:&quot;blog_layout-launcher.attr_060&quot;}" height="2622" loading="lazy" src="/assets/screens/en/tutorials-1.2.0-r1/launcher-06-added.webp" width="1206" data-screen="tutorials-1.2.0-r1/launcher-06-added.webp"><figcaption data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_061&quot;}">Return to the launcher after actually selecting Safari and completing two levels of editing; Mac launch results still need to be checked on a real connection.</figcaption></figure>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_062&quot;}">5. When replacement is needed, use “Replace App”</h2>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_063&quot;}">Press and hold the existing button again, click "Change App", and then select another software from the list. This is editing the target of the button, and adding a new button is two different operations.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_064&quot;}">"Manually specify app" is used when the exact Bundle ID is known, such as com.apple.finder. After filling in, you still need to short press to verify. Similar application names do not prove that the binding is correct.</p>
+<h2 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_065&quot;}">FAQ</h2>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_066&quot;}">Why is my launcher different from the app in the screenshot?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_067&quot;}">The first synchronization will use the Dock application information connected to the Mac, and you can edit it later. The demo directory is only used for screenshots and will not replace your real application directory.</p>
+<h3 data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_068&quot;}">I clicked the button but no new window appeared on my Mac?</h3><p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_069&quot;}">Existing applications may only be activated, not necessarily create new windows. First check whether the Mac menu bar is switched to the application, and then check the installation status, connection status and button binding.</p>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_070&quot;}">This article is written based on the interface and operation of Naimao Magic Control 1.2.0, and was updated on September 10, 2026.<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_071&quot;}" href="/en/updates">View changelog</a> · <a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_072&quot;}" href="/en/support">Connection and permissions help</a>。</p>
+</article>
+<nav aria-label="Continue reading" class="article-next" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_073&quot;}">
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_074&quot;}" href="/en/blog/layout-work">← Getting Started with Workbench Assistant: Make your iPhone a powerful partner next to your Mac keyboard</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_075&quot;}" href="/en/blog/layout-creative">3D modeling handheld assistant: from Blender perspective roaming to natural collaboration of quick operations →</a>
+</nav>
+<aside class="article-download-cta" data-cta-placement="article"><h2 data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_title&quot;}">Try this workflow on your iPhone or iPad</h2><p data-i18n-text="{&quot;0&quot;:&quot;ui.article_download_body&quot;}">Basic controls are free. Mac control requires both apps on the same local network. Pro unlocks advanced decks and standalone instruments.</p><div class="article-download-actions"><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_ios&quot;}" href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-layout-launc-article&amp;mt=8">Get the iPhone / iPad app</a><a data-i18n-text="{&quot;0&quot;:&quot;ui.get_mac&quot;}" href="https://github.com/buggyblues/ninopad/releases/latest" data-release-link="">Get the free Mac companion</a></div><a data-i18n-text="{&quot;0&quot;:&quot;ui.setup_guide&quot;}" href="/en/blog/mac-settings">Read the pairing and permissions guide →</a></aside></main>
+<footer>
+<a class="brand" href="/en/"><img alt="" height="40" src="/assets/app-icon.webp" width="40"><span data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_076&quot;}">NinoPad</span></a>
+<p data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_077&quot;}">&gt;w&lt; All-purpose small keyboard, right in the palm of your hand</p>
+<nav aria-label="Footer navigation" data-i18n-attrs="{&quot;aria-label&quot;:&quot;blog_layout-launcher.attr_078&quot;}">
+<a href="https://apps.apple.com/app/apple-store/id6805378609?pt=128660955&amp;ct=web-en-layout-launc-footer&amp;mt=8">App Store</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_079&quot;}" href="https://github.com/buggyblues/ninopad/releases">Download</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_080&quot;}" href="/en/updates">update</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_081&quot;}" href="/en/blog">Blog</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_082&quot;}" href="/en/support">support</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_083&quot;}" href="/en/privacy">Privacy</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_084&quot;}" href="/en/terms">Terms</a>
+<a data-i18n-text="{&quot;0&quot;:&quot;blog_layout-launcher.text_085&quot;}" href="https://arcade.ninopad.com/" rel="noopener" target="_blank">Game lobby</a>
+<a data-lang-switch="" href="/blog/layout-launcher?lng=zh-CN" aria-label="切换至中文" class="">简体中文</a>
+</nav>
+<small data-i18n-text="{&quot;2&quot;:&quot;blog_layout-launcher.text_087&quot;}">© <span data-year=""></span> NinoPad</small>
+<button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_settings&quot;}" class="analytics-settings" type="button" data-analytics-settings="" hidden="">Analytics preferences</button></footer>
 
-  <main id="main" class="article-shell">
-    <header class="article-header">
-      <a href="../blog.html">← Blog / Launcher</a>
-      <h1>Mac App Launcher in Your Palm: Custom Touch Dock & Fast Switcher</h1>
-      <p>Sync Mac applications into bold touch icons for instant one-touch window switching · ~5 min read</p>
-    </header>
+<script src="/src/main.js" type="module"></script>
 
-    <figure class="article-cover article-cover-phone">
-      <img src="../../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="NinoPad Launcher layout interface" width="1206" height="2622">
-    </figure>
-
-    <article class="article-body">
-      <p class="article-lead">Cluttered Mac Docks and small menu bar icons make finding the right window frustrating. NinoPad's Launcher layout creates a dedicated physical touch dock on your desk with large, colorful app icons.</p>
-
-      <aside class="article-highlight"><strong>Customization Tip:</strong> Long-press any app icon on the deck to replace it with another installed Mac tool or rearrange your grid.</aside>
-
-      <h2>1. Automatic Mac Application Sync</h2>
-      <p>NinoPad reads your Mac's <code>/Applications</code> directory automatically and presents your frequently used software with crisp icons.</p>
-
-      <h2>2. One-Touch Window Focusing</h2>
-      <p>Tap any app icon to launch or bring that application to the frontmost Mac window instantly, bypassing Dock hover delays.</p>
-
-      <h2>3. Customize Your Personal Touch Dock</h2>
-      <p>Rearrange apps into customized functional groups (e.g., Code Editors, Communication, Graphic Suites, Utilities).</p>
-
-      <figure class="article-figure article-figure-phone">
-        <img src="../../assets/screens/tutorials-1.2.0-r1/launcher-01.webp" alt="NinoPad app launcher grid" width="1206" height="2622" loading="lazy">
-        <figcaption>Customizable Mac app launcher grid with clean icons and one-tap window activation.</figcaption>
-      </figure>
-
-      <h2>4. Add Custom Shell Script Triggers</h2>
-      <p>Beyond standard apps, bind terminal scripts, automator workflows, or Raycast shortcuts to launcher buttons for advanced automation.</p>
-
-      <section class="faq-section" id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>Why is an app icon showing a default placeholder?</summary>
-          <p>NinoPad extracts high-resolution app icons from macOS. If an icon is missing, open the desktop editor and re-select the app from the synced list.</p>
-        </details>
-        <details>
-          <summary>Can I group apps into custom folders or pages?</summary>
-          <p>Yes. NinoPad supports multi-page launcher grids and categorized sections (Work, Dev, Media, Utility).</p>
-        </details>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-    <a class="brand" href="../index.html"><img src="../../assets/app-icon.webp" alt="" width="40" height="40"><span>NinoPad</span></a>
-    <p>&gt;w&lt; Customizable Mac control deck in your palm</p>
-    <nav aria-label="Footer Navigation">
-      <a href="https://apps.apple.com/app/id6805378609">App Store</a>
-      <a href="https://github.com/buggyblues/ninopad/releases">Download</a>
-      <a href="../updates.html">Updates</a>
-      <a href="../blog.html">Blog</a>
-      <a href="../support.html">Support</a>
-      <a href="../privacy.html">Privacy</a>
-      <a href="../terms.html">Terms</a>
-      <a href="https://arcade.ninopad.com/" target="_blank" rel="noopener">Arcade</a>
-      <a href="/blog/layout-launcher" data-lang-switch>简体中文</a>
-    </nav>
-    <small>© <span data-year></span> NinoPad · Customizable Mac Control Deck</small>
-  </footer>
-  <script src="../../script.js" defer></script>
-</body>
-</html>
+<aside class="analytics-consent" data-analytics-consent="" hidden="" role="region" aria-label="Website analytics preferences" data-i18n-attrs="{&quot;aria-label&quot;:&quot;ui.analytics_title&quot;}"><p data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_body&quot;}">Allow Google Analytics to measure page visits and download clicks? You can decline and change your choice in the footer.</p><div class="analytics-consent-actions"><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_accept&quot;}" type="button" data-consent-accept="">Allow analytics</button><button data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_reject&quot;}" type="button" data-consent-reject="">Decline analytics</button><a data-i18n-text="{&quot;0&quot;:&quot;ui.analytics_privacy&quot;}" href="/en/privacy#website-analytics">Privacy details</a></div></aside></body></html>
