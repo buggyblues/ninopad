@@ -5903,5 +5903,13 @@
   "blog_mac-settings.growth_breadcrumb": "Connect iPhone to Mac: Pairing & Permissions",
   "blog_presentation-tools.growth_breadcrumb": "Control Mac Presentations from iPhone",
   "blog_remote-control-mac.growth_breadcrumb": "Control Your Mac from iPhone or iPad",
-  "blog_voice-text-input.growth_breadcrumb": "Dictate on iPhone and Send Text to Mac"
+  "blog_voice-text-input.growth_breadcrumb": "Dictate on iPhone and Send Text to Mac",
+  "updates.v1311.title": "NinoPad 1.3.11: Stronger Connectivity & Smoother Controls",
+  "updates.v1311.summary": "NinoPad 1.3.11 improves local reconnection and QR refresh, refines trackpad and presentation sync, enhances whiteboard and arcade controls, and updates the brand app icon.",
+  "updates.v1311.status": "Mac companion 1.3.11 is now available for direct download; iOS 1.3.11 has been submitted to the App Store and will release automatically upon approval.",
+  "updates.v1311.note_0": "Enhanced network reconnection and recovery: improved handling of network changes and port conflicts, with automatic QR code refresh when connection addresses change.",
+  "updates.v1311.note_1": "Refined trackpad and presentation controls: improved virtual trackpad responsiveness, screen mirroring fluidity, and presentation sync.",
+  "updates.v1311.note_2": "Polished whiteboard and arcade features: improved whiteboard coordinates and handwriting sync, along with optimized arcade controls and two-player gameplay.",
+  "updates.v1311.note_3": "Audio and brand refresh: optimized audio response in guitar practice and updated the brand app icon.",
+  "updates.v1311.note_4": "We recommend updating both your Mac companion app and iPhone / iPad app to 1.3.11 for the best pairing and control experience."
 }

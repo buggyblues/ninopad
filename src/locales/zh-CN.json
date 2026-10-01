@@ -6058,5 +6058,13 @@
   "blog_mac-settings.growth_breadcrumb": "iPhone 连接 Mac 教程：扫码配对与权限设置",
   "blog_presentation-tools.growth_breadcrumb": "用 iPhone 控制 Mac 演示：翻页、提词与计时",
   "blog_remote-control-mac.growth_breadcrumb": "用 iPhone / iPad 遥控 Mac：触控板、键盘与镜像",
-  "blog_voice-text-input.growth_breadcrumb": "iPhone 语音转文字到 Mac：听写与一键输入"
+  "blog_voice-text-input.growth_breadcrumb": "iPhone 语音转文字到 Mac：听写与一键输入",
+  "updates.v1311.title": "奶猫妙控 1.3.11 发布：连接更稳固，控制与协作体验全面优化",
+  "updates.v1311.summary": "奶猫妙控 1.3.11 增强了局域网自动重连与二维码刷新机制，优化了触控板、屏幕预览与演示同步，完善了白板协作、街机控制与吉他练习音频体验，并更新了全新应用图标。建议移动端与 Mac 配套端同步更新。",
+  "updates.v1311.status": "Mac 1.3.11 配套端现已正式发布并开放下载；iOS 1.3.11 已提交 App Store 审核，通过后将自动发布更新。",
+  "updates.v1311.note_0": "增强网络重连与恢复能力：优化网络环境变化与端口冲突处理，连接地址变化时自动刷新配对二维码。",
+  "updates.v1311.note_1": "改善触控与演示交互：优化虚拟触控板响应、屏幕预览流畅度及演示控制同步。",
+  "updates.v1311.note_2": "完善白板与街机体验：修复白板坐标与手写演示同步，优化街机独立控制与双人对战操作。",
+  "updates.v1311.note_3": "音频与视觉优化：调优吉他练习音频响应与交互体验，同步更新奶猫品牌应用图标。",
+  "updates.v1311.note_4": "建议将 Mac 配套端与 iPhone / iPad 移动端同时升级至 1.3.11，以获得最佳配对与控制体验。"
 }
