@@ -4,7 +4,7 @@ Vite multipage website for **https://ninopad.com**, using **i18next** and **i18n
 
 ## Develop and verify
 
-Use Node 22.12+ (or Node 24) and npm. A pinned Node 22.22 build dependency also supplies the npm-script runtime on EdgeOne, whose documented preinstalled version is 22.11.
+Use Node 22.12+ (or Node 24) and npm. EdgeOne starts on its documented preinstalled Node 22.11, so its install command bootstraps pinned Node 22.22 and npm 10.9 before running `npm ci --include=optional`. This ensures Vite's platform bindings are installed under a compatible runtime. The pinned Node build dependency also supplies the npm-script runtime.
 
 ```sh
 npm ci
@@ -13,7 +13,7 @@ npm run check
 npm run preview
 ```
 
-Production output is `dist/`. The existing EdgeOne Makers project (`ninopad-website`, `makers-smtejewta4a4`) uses `npm ci`, `npm run build`, and output directory `dist`. `edgeone.json` overrides the console build settings; the fallback `vercel.json` has equivalent settings. Publishing follows the existing Git workflow.
+Production output is `dist/`. The existing EdgeOne Makers project (`ninopad-website`, `makers-smtejewta4a4`) uses the pinned-runtime install command, `npm run build`, and output directory `dist`. `edgeone.json` overrides the console build settings; the fallback `vercel.json` uses `npm ci` on a compatible Node runtime. Publishing follows the existing Git workflow.
 
 ## Edit content
 

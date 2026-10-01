@@ -167,6 +167,6 @@
     }
   ],
   "buildCommand": "npm run build",
-  "installCommand": "npm ci",
+  "installCommand": "npx --yes --package=node@22.22.0 --package=npm@10.9.0 --call \"node --version && npm ci --include=optional\"",
   "nodeVersion": "22.11.0"
 }
