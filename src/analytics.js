@@ -8,6 +8,9 @@ export function initializeAnalytics(i18next, page) {
   const preferenceKey = 'ninopad_analytics';
   let consent;
   let initialized = false;
+  let pricingVisible = false;
+  let pricingTracked = false;
+  let pricingObserver;
   try { consent = localStorage.getItem(preferenceKey); } catch {}
   const privacySignal = navigator.doNotTrack === '1' || navigator.globalPrivacyControl;
   const production = location.hostname === config.productionHostname && page !== '404';
@@ -29,6 +32,12 @@ export function initializeAnalytics(i18next, page) {
       ...parameters
     });
   }
+  function trackPricing() {
+    if (!initialized || consent !== 'granted' || !pricingVisible || pricingTracked) return;
+    event('pricing_view');
+    pricingTracked = true;
+    pricingObserver?.disconnect();
+  }
   function start() {
     if (!production || initialized || !analyticsAllowed({ hostname: location.hostname,
       productionHostname: config.productionHostname, consent,
@@ -49,6 +58,7 @@ export function initializeAnalytics(i18next, page) {
     document.head.append(script);
     event('page_view', { page_title: document.title,
       page_location: analyticsLocation(location.href), page_referrer: analyticsReferrer(document.referrer) });
+    trackPricing();
   }
   function choose(value) {
     consent = value;
@@ -88,11 +98,10 @@ export function initializeAnalytics(i18next, page) {
   }, { capture: true });
   const pricing = document.querySelector('#pro');
   if (pricing && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      if (entries.some(entry => entry.isIntersecting) && initialized && consent === 'granted') {
-        event('pricing_view'); observer.disconnect();
-      }
+    pricingObserver = new IntersectionObserver(entries => {
+      pricingVisible = entries.some(entry => entry.isIntersecting);
+      trackPricing();
     }, { threshold: 0.2 });
-    observer.observe(pricing);
+    pricingObserver.observe(pricing);
   }
 }
