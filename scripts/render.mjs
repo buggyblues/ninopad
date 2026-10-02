@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { load } from 'cheerio';
 import i18next from 'i18next';
 import { options, localeURL } from '../src/language.js';
+import { renderRobots } from '../src/crawlers.js';
 import { addGrowthContent } from './growth-content.mjs';
 import { appStoreURL, appStoreProductURL, campaignToken } from '../src/growth.js';
 import growthConfig from '../src/growth-config.json' with { type: 'json' };
@@ -148,7 +149,7 @@ for (const language of languages) {
   writeFileSync(`public/sitemap-${language}.xml`,`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>\n`);
 }
 writeFileSync('public/sitemap-index.xml',`<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${languages.map(l=>`<sitemap><loc>${origin}/sitemap-${l}.xml</loc></sitemap>`).join('')}</sitemapindex>\n`);
-writeFileSync('public/robots.txt', `User-agent: *\nAllow: /\nDisallow: /src/\nDisallow: /scripts/\nDisallow: /test/\nSitemap: ${origin}/sitemap-index.xml\n`);
+writeFileSync('public/robots.txt', renderRobots(origin));
 const facts = `# NinoPad
 
 NinoPad is an iPhone and iPad keypad and control deck for Mac.

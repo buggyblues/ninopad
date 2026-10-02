@@ -1,3 +1,4 @@
+import { isKnownCrawler } from './crawlers.js';
 export const supportedLanguages = ['zh-CN', 'en'];
 export const detection = {
   order: ['querystring', 'localStorage', 'navigator'],
@@ -18,7 +19,7 @@ export const options = {
 // Crawlers must retain each prerendered document's language to index both
 // catalogs. Human visitors always use the standard browser detector above.
 export function crawlerLanguage(userAgent, documentLanguage) {
-  return /Googlebot|Bingbot|DuckDuckBot|Baiduspider|YandexBot|Applebot|Slurp|GPTBot|OAI-SearchBot|ChatGPT-User|PerplexityBot|ClaudeBot/i.test(userAgent)
+  return isKnownCrawler(userAgent)
     && supportedLanguages.includes(documentLanguage) ? documentLanguage : undefined;
 }
 export function localeURL(page, language) {

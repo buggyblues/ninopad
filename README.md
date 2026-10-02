@@ -35,6 +35,8 @@ App Store links use Apple's actual product URLs. A Simplified Chinese browser op
 
 Known search and answer-engine crawlers retain the prerendered document language so both catalogs remain indexable after JavaScript rendering. Visitor detection is independent of these crawl entries.
 
+`src/crawlers.js` is the shared registry for crawler language preservation and generated `robots.txt`. All public pages, bilingual guides, images, CSS, JavaScript, sitemaps and AI text files allow every crawler, including unnamed clients through `User-agent: *`. Named search, AI retrieval, advertising and training agents use the same policy. See [crawler maintenance](docs/crawlers.md) for sources and verification limits.
+
 ## Native screenshots
 
 The app repository beside this website owns the native capture runners:
