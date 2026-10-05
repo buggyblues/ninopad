@@ -89,7 +89,7 @@ export function applyEditorialContent($, page, language, values) {
     for (const point of copy.answerPoints) points.append($('<li>').append(bind('strong',point.title),bind('p',point.text)));
     answer.append(points); overview.append(answer, figure('ipad-controls',true)); body.append(overview);
     body.append(bind('p',copy.requirements,'editorial-requirements'));
-    body.append(bind('p',language === 'en' ? 'Native App captures · October 2, 2026 · Local Debug build 20260913011654 · Chinese interface shown · Demonstration data, not a live connection test.' : '原生 App 截图 · 2026 年 10 月 2 日拍摄 · 本地 Debug 构建 20260913011654 · 演示数据，不代表真机联机测试。','editorial-source-note'));
+    body.append(bind('p',language === 'en' ? 'Native Chinese interface · October 2, 2026 development build · Device status and previews use demonstration data.' : '配图为 2026 年 10 月 2 日开发构建的中文原生界面；设备状态与预览画面为演示数据。','editorial-source-note'));
     const toc = $('<nav class="article-toc">');
     attribute(toc, 'aria-label', copy.tocTitle);
     toc.append(bind('h2', copy.tocTitle));
