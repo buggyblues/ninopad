@@ -24,7 +24,7 @@ export function addGrowthContent($, page, language, catalog) {
     list.append($('<li>').append(link('/','ui.home')), $('<li>').append(link('/blog','ui.guides')));
     list.append($('<li aria-current="page">').append(text('span', `${page}.growth_breadcrumb`)));
     breadcrumbs.append(list); $('.article-header').prepend(breadcrumbs);
-    const cta = $('<aside class="article-download-cta" data-cta-placement="article">');
+    const cta = $('<aside class="article-download-cta" id="article-downloads" data-cta-placement="article">');
     cta.append(text('h2','ui.article_download_title'),text('p','ui.article_download_body'));
     const actions = $('<div class="article-download-actions">');
     actions.append(link(store,'ui.get_ios'),link(mac,'ui.get_mac').attr('data-release-link',''));

@@ -19,7 +19,7 @@ Production output is `dist/`. The existing EdgeOne Makers project (`ninopad-webs
 
 - `src/pages/`: one HTML template per page, including the blog.
 - `src/locales/zh-CN.json` and `en.json`: i18next resources for text, attributes and interaction messages.
-- `src/content/remote-control-mac.json`: the complete bilingual setup guide, drafted by Codex, edited with agy Gemini 3.8 Flash and checked against current implementation facts. `scripts/editorial-content.mjs` renders its contents, table of contents, permission and troubleshooting tables, FAQ and related links into the same translation resources.
+- `src/content/remote-control-mac.json`: the bilingual setup guide. Codex provides the factual outline and answer-first structure; agy Gemini 3.7 Flash rewrites the prose; Codex checks facts before publication. `scripts/editorial-content.mjs` renders the opening conclusions, four steps, screenshots, permissions, expandable troubleshooting and FAQ into the same translation resources.
 - `src/main.js`: language detection and DOM bindings.
 - `src/interactions.js`, `src/*.css`: shared presentation and interactions.
 - `public/assets/`: static images, icons and verified native captures.
@@ -55,7 +55,7 @@ Run these commands from the app repository. Captures go to `public/assets/screen
 
 To run the complete pipeline with one command, use `SIMULATOR_UDID=<dedicated-website-simulator> bash Scripts/WebsiteScreenshots/generate.sh` from the app repository. Set `WEBSITE_LANGUAGES=en` to refresh English only, or `NINOPAD_WEBSITE_DIR` to target a different website checkout. The dedicated simulator is restarted to localize native Photos and share sheets.
 
-English images require native Vision OCR without Chinese text, visible-content checks and SHA-256 provenance. `npm run build` rejects missing images, wrong language paths, unverified English captures, Chinese bound text, metadata omissions and differences between Chinese/English DOM structure. It also builds the sitemap, robots and factual `llms.txt` / `llms-full.txt` guides.
+English capture-only images require native Vision OCR without Chinese text, visible-content checks and SHA-256 provenance. New editorial App images come only from the app repository's `Screenshots/current/`, after its audit and a review of source changes affecting the selected views. The setup guide deliberately shows the same Chinese native interface in both languages and labels it as such; `public/assets/editorial/mac-control/capture-manifest.json` records device, capture date, Debug build, SHA-256, original source and the review scope. This does not certify real-device connectivity or release status. `npm run build` rejects missing images, altered captures, missing provenance, Chinese bound text, metadata omissions and differences between Chinese/English DOM structure.
 
 ## SEO, GEO and ASO
 
@@ -73,4 +73,4 @@ App Store links carry `pt=128660955`, `mt=8`, and a bounded `ct` campaign token 
 
 Submit `https://ninopad.com/sitemap-index.xml` in Search Console. It references separate Chinese and English sitemaps, each with 36 indexable URLs; the original `sitemap.xml` remains available. Canonicals stay tied to the prerendered crawl entry when a visitor switches language. `llms-full.txt` includes product facts and the visible bilingual guides with their source URLs; it does not guarantee search or AI inclusion.
 
-The setup guide is featured on the blog and linked from the homepage and other guides. Only substantively revised homepage, blog and setup-guide entries receive the 2026-10-05 sitemap `lastmod`; builds do not mark every page as newly updated. The guide's visible update date and BlogPosting `dateModified` agree. FAQ structured data is derived from visible answers and does not imply eligibility for a rich result. The revised guide uses a brand icon for social previews and no unverified App screenshot.
+The setup guide is featured on the blog and linked from the homepage and other guides. Only substantively revised homepage, blog and setup-guide entries receive the 2026-10-05 sitemap `lastmod`; builds do not mark every page as newly updated. The guide's visible update date and BlogPosting `dateModified` agree. FAQ structured data follows the visible questions and answers, including expandable troubleshooting, and does not imply eligibility for a rich result. Social previews use the same verified iPad capture shown in the opening overview.

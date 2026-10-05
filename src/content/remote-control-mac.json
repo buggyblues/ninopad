@@ -1,621 +1,471 @@
 {
   "zh-CN": {
-    "title": "如何用 iPhone 或 iPad 控制 Mac：安装、局域网配对与排障指南",
-    "seoTitle": "用 iPhone 或 iPad 控制 Mac：触控板、键盘与连接排障指南 | NinoPad",
-    "description": "通过 iPhone 或 iPad 控制 Mac 光标、输入文字并查看屏幕画面。了解 NinoPad 的局域网连接、必要系统权限设置，以及搜不到设备、输入无响应或黑屏的逐步排查方法。",
+    "title": "用 iPhone 或 iPad 控制 Mac：四步连接与排障",
+    "seoTitle": "用 iPhone / iPad 控制 Mac：连接、权限与排障 | NinoPad",
+    "description": "在局域网内把 iPhone 或 iPad 连到 Mac，作为触控板和快捷键面板使用。四步完成扫码配对，配置辅助功能与屏幕录制权限，并按症状排查连接问题。",
     "intro": [
-      "无论是靠在沙发上看视频时想随手暂停，演讲走动时需要翻页，还是希望在工作台旁给 Mac 添一块触控板和快捷键面板，手边的 iPhone 或 iPad 都能直接派上用场。",
-      "奶猫妙控 NinoPad 可以通过局域网将 iOS 或 iPadOS 设备化为 Mac 的触控板、键盘与屏幕查看器。本指南从准备工作讲起，带你一步步完成 Mac 端安装、扫码配对与初次输入验证，并按具体症状定位常见连接与权限问题。需要说明的是，这套控制方案依赖同一局域网设备互通，不支持离开本地网络后的远程控制或云端中转。"
+      "在同一局域网下，NinoPad 可将 iPhone 或 iPad 变成 Mac 的触控板、键盘和快捷键面板。完成配对后先验证光标移动；需要查看电脑屏幕时，再开启屏幕镜像。"
     ],
-    "tocTitle": "本指南内容概览",
+    "answerTitle": "连接前确认三项准备",
+    "answerPoints": [
+      {
+        "title": "两端安装",
+        "text": "手机安装 App，Mac 安装免费配套端。"
+      },
+      {
+        "title": "局域网互通",
+        "text": "首次连接用同一普通 Wi-Fi；不支持外网远程。"
+      },
+      {
+        "title": "分步授权",
+        "text": "控制输入开启辅助功能，查看画面开启屏幕录制。"
+      }
+    ],
+    "requirements": "iOS / iPadOS 17+ · macOS 13+ · Apple Silicon / Intel",
+    "tocTitle": "快速导航",
     "updatedLabel": "更新于",
     "sections": [
       {
-        "id": "choose",
-        "title": "明确需求：你需要哪类 Mac 控制功能？",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "在开始安装前，先厘清自己的核心使用场景，能帮你省去不少权限调试的时间。移动光标与发送按键属于输入控制，而把 Mac 桌面实时投到移动端属于屏幕镜像。两者的系统授权完全独立，如果你只是想把手机当成便携触控板，完全无需开启屏幕录制权限。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "使用场景",
-              "开始步骤",
-              "核心注意事项"
-            ],
-            "rows": [
-              [
-                "将 iPhone 用作无线触控板或鼠标",
-                "配对成功后打开带触控板的工作台，先滑动测试光标与点击",
-                "Mac 必须授予辅助功能权限"
-              ],
-              [
-                "在 iPad 上集中放置常用快捷键",
-                "挑选合适的工作台面板，根据习惯微调快捷键键位",
-                "按键指令直接发送给 Mac，请先确保目标软件处于活动窗口"
-              ],
-              [
-                "在手机上实时查看 Mac 屏幕画面",
-                "建立连接后开启画面预览，需要更宽视野时切换全屏",
-                "Mac 额外需要授予屏幕录制权限"
-              ],
-              [
-                "在外网远程访问家里的 Mac",
-                "暂不支持该场景",
-                "NinoPad 仅限局域网互通，未提供公网远程桌面或云端中转服务"
-              ]
-            ]
-          },
-          {
-            "type": "p",
-            "text": "如果你的主要目的只是在键盘边多一个顺手的触控或快捷键入口，建议先验证基础输入。等输入流畅稳定后，再视实际需要决定是否开启画面镜像或配置更复杂的自定义工作台，不必在首次上手时把所有开关一次性全开。"
-          }
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "环境检查：设备系统版本与网络要求",
-        "blocks": [
-          {
-            "type": "table",
-            "headers": [
-              "项目",
-              "具体要求"
-            ],
-            "rows": [
-              [
-                "iPhone / iPad",
-                "需要 iOS 17 / iPadOS 17 或更高版本，并在 App Store 安装 NinoPad"
-              ],
-              [
-                "Mac 电脑",
-                "macOS 13 或更高版本（兼容 Apple Silicon 与 Intel 芯片），需安装免费的 Mac 配套端"
-              ],
-              [
-                "网络环境",
-                "两台设备必须连接在能够互相通信的同一局域网内；首次设置建议连接同一个普通 Wi-Fi"
-              ],
-              [
-                "Mac 运行状态",
-                "Mac 配套端保持运行且系统处于唤醒状态；初次调试建议停留在可交互的桌面"
-              ],
-              [
-                "必要权限",
-                "移动端需允许本地网络权限，扫码需允许相机；Mac 端输入需要辅助功能，镜像需要屏幕录制"
-              ]
-            ]
-          },
-          {
-            "type": "p",
-            "text": "需要特别提醒的是，连接到同一个 Wi-Fi 名称并不等于设备之间可以互相访问。酒店、学校、企业网络或部分路由器的访客 Wi-Fi 可能开启客户端隔离功能，这会直接阻断设备搜寻。如果在配对时搜索不到 Mac，建议优先排查局域网隔离策略，而不是反复重复扫码动作。"
-          },
-          {
-            "type": "p",
-            "text": "NinoPad 需要移动端 App 与 Mac 配套端配合使用，两端均需安装。Mac 配套端请前往官方 GitHub Releases 页面下载安装包，而非 Mac App Store。两端的版本迭代由各自官方渠道发布，请分别使用各自官方渠道提供的版本。"
-          }
-        ]
-      },
-      {
         "id": "pair",
-        "title": "分步连接：四步完成配对与基础验证",
+        "title": "四步完成连接并验证光标",
         "blocks": [
           {
-            "type": "ol",
+            "type": "steps",
             "items": [
-              "在 iPhone 或 iPad 的 App Store 中下载并打开 NinoPad。在 Mac 端访问官方下载渠道，获取最新版本的 .dmg 安装包，将奶猫妙控拖移至“应用程序”文件夹，随后在“应用程序”中双击启动。",
-              "启动后，点击 Mac 菜单栏上的奶猫图标，弹出配对二维码窗口。此时请确认手机与 Mac 已处于同一个可互通的局域网，且 Mac 端应用处于正常运行状态。",
-              "在移动端切换至“设备”标签页，轻点“扫描二维码连接”并对准 Mac 屏幕上的二维码。若附近设备列表中已出现这台 Mac，也可以直接点击设备名，并手动输入 Mac 端显示的 6 位配对码。",
-              "按照 Mac 配套端的弹窗引导授予相应系统权限，并在手机上确认已显示连接成功。此时建议在 Mac 上新建一份空白文本，尝试用手机滑动光标并在文本区域点击，确认输入已准确发送至当前 Mac。"
+              {
+                "title": "安装双端软件",
+                "text": "在 App Store 下载 NinoPad。Mac 从官方 GitHub Releases 下载并打开 .dmg，将 App 拖入“应用程序”后启动。",
+                "link": "downloads"
+              },
+              {
+                "title": "展示 Mac 配对码",
+                "text": "确保两端连接同一 Wi-Fi。点击 Mac 菜单栏猫咪图标，打开配对二维码窗口。"
+              },
+              {
+                "title": "手机扫码配对",
+                "text": "在 App“设备”页面点击“扫描二维码连接”，或在附近设备中选择 Mac 并输入 6 位配对码。"
+              },
+              {
+                "title": "授予权限并测试",
+                "text": "根据 Mac 端指引开启辅助功能权限。在手机触控板区域滑动并轻点，确认 Mac 光标正常响应。"
+              }
             ]
           },
           {
-            "type": "p",
-            "text": "建立连接后，先通过简单的光标移动做一次基准测试，能帮助你快速理清链路。只要光标能随手指移动，就说明局域网链路与基础输入权限均已畅通；如果此时手机没有出现电脑画面，直接针对屏幕录制权限与镜像开关进行排查即可，完全不必推倒重配整个连接流程。"
+            "type": "gallery",
+            "images": [
+              "mac-pairing",
+              "phone-devices"
+            ]
           },
           {
-            "type": "p",
-            "text": "下载请认准官方入口：iOS / iPadOS 端通过 App Store 获取，Mac 配套端通过官方 GitHub Releases 下载。文末附有两端的快速跳转链接；有关系统授权的细节说明，请参阅后文的“Mac 配对与权限设置”。"
+            "type": "callout",
+            "label": "如何确认连接成功？",
+            "text": "手指在手机上滑动时 Mac 光标同步移动，即表示基础输入已接通。若画面黑屏，先检查屏幕录制权限，无需重新配对。"
           }
         ]
       },
       {
         "id": "permissions",
-        "title": "权限配置：输入控制与屏幕镜像独立授权",
+        "title": "输入与画面权限彼此独立",
         "blocks": [
           {
             "type": "p",
-            "text": "在 Mac 上开启“系统设置 → 隐私与安全性”，找到并核对奶猫妙控的授权项。因 macOS 版本差异，屏幕捕获项的名称可能显示为“屏幕录制”或“屏幕与系统音频录制”，配置时请以系统界面提示与 Mac 配套端的指引为准。"
+            "text": "Mac：系统设置 → 隐私与安全性。iPhone / iPad：在系统设置里找到 NinoPad，检查对应权限。"
           },
           {
             "type": "table",
             "headers": [
-              "权限项",
-              "对应作用",
-              "启用时机"
+              "权限名称",
+              "适用场景"
             ],
             "rows": [
               [
                 "Mac 辅助功能",
-                "允许移动端控制鼠标光标、模拟按键点击以及发送键盘快捷键",
-                "需要通过手机或平板操作 Mac 时必须开启"
+                "控制光标移动、鼠标点击、键盘输入与快捷键触发。"
               ],
               [
                 "Mac 屏幕录制",
-                "允许将 Mac 桌面画面编码并实时传输给移动端显示",
-                "仅在需要使用屏幕镜像功能时开启；纯触控与输入无需此项"
+                "仅用于向移动端传输 Mac 画面。在部分系统版本中显示为“屏幕与系统音频录制”。"
               ],
               [
-                "iPhone / iPad 本地网络",
-                "用于在当前 Wi-Fi 下发现 Mac 并建立局域网直连通道",
-                "初次启动配对时允许；若之前误点拒绝，可在 iOS 系统设置中重新开启"
+                "移动端本地网络",
+                "用于在局域网内发现 Mac 并建立通信连接。"
               ],
               [
-                "iPhone / iPad 相机",
-                "用于扫描 Mac 菜单栏弹出的配对二维码",
-                "仅在使用扫码配对方式时需要允许"
+                "移动端相机",
+                "扫描配对二维码时需要。手动输入 6 位配对码无需相机权限。"
               ]
             ]
           },
           {
-            "type": "p",
-            "text": "更改权限后，若 Mac 端提示需要退出并重新打开应用，请依提示重启以确保新权限生效。若后续更新了软件或移动了应用所在目录，建议在系统设置中确认勾选的是当前正在运行的应用程序，避免系统一直将权限赋予失效的旧副本。此外，排查连接问题时请勿随意关闭系统防火墙或安全防护机制。"
+            "type": "callout",
+            "label": "优先调通输入权限",
+            "text": "仅使用触控板或快捷键时无需开启屏幕录制。若 macOS 提示重启配套端，按提示退出后重新打开，让新权限生效。"
           }
         ]
       },
       {
         "id": "controls",
-        "title": "上手操作：触控板手势、按键输入与镜像预览",
+        "title": "功能使用：触控板、快捷键与画面镜像",
         "blocks": [
           {
-            "type": "h3",
-            "text": "用 iPhone 充当无线触控板"
+            "type": "figure",
+            "image": "ipad-controls"
           },
           {
-            "type": "p",
-            "text": "进入包含触控板的工作台面板，先尝试单指在屏幕上滑动以移动 Mac 光标，单指轻点对应鼠标左键点击；在长页面中，可使用双指同步上下滑动以模拟滚轮滚动。操作时请留意 Mac 屏幕上的实际光标轨迹。如果桌面并排打开了多个软件，建议先点击目标应用窗口，确保其处于焦点状态后再进行后续操作。"
-          },
-          {
-            "type": "h3",
-            "text": "准确发送文字输入与快捷键"
-          },
-          {
-            "type": "p",
-            "text": "在尝试发送大段文字前，建议先在 Mac 上的文本编辑器中定位光标，在移动端输入简短文字测试发送，确认文字能准确落在预期位置。快捷键指令会直接作用于 Mac 当前处于最前台的软件，相同的快捷键组合在不同软件中往往对应不同功能。初次测试快捷键时，推荐先挑选一个熟悉且易于撤销的命令，以免误触发其他操作。"
-          },
-          {
-            "type": "p",
-            "text": "若有日常高频使用的按键组合，可以借助自定义功能将它们固定在快捷面板上。建议先从两三个每日必用的核心动作做起，逐项在电脑上验证其实际响应效果，再逐步丰富整个工作台。有关按键绑定的具体规则，可以参考文末的相关指南。"
-          },
-          {
-            "type": "h3",
-            "text": "视场景开启屏幕镜像查看"
-          },
-          {
-            "type": "p",
-            "text": "在确认 Mac 端已授予屏幕录制权限后，可在移动端展开画面预览窗口，根据需要缩放或展开至全屏查看。测试时，可以尝试在 Mac 上切换到一个视觉特征明显的应用窗口，观察移动端预览是否同步刷新。请牢记，画面显示与输入响应需要分别检查，若遇到其中一项异常，仅需按对应权限和模块逐项排查。"
-          },
-          {
-            "type": "p",
-            "text": "屏幕画面的传输表现取决于当前局域网质量、设备负载以及画面动态程度，本指南不承诺固定的延迟数字或帧率水平，亦不适用于跨网络访问场景。若你的日常需求以按键与光标操作为主，建议优先确保输入控制稳定响应，再视实际情况决定是否常驻开启画面预览。"
+            "type": "cards",
+            "items": [
+              {
+                "title": "触控板操作",
+                "text": "支持单指移动光标、单指轻点点击、双指滑动滚轮。初次使用请对照 Mac 屏幕测试。"
+              },
+              {
+                "title": "文字与快捷键",
+                "text": "先点击激活 Mac 目标窗口再发送文本。自定义快捷键面板建议先添加常用按键。"
+              },
+              {
+                "title": "屏幕镜像",
+                "text": "开启屏幕录制权限后在设备连接页启动共享，支持切换全屏。输入与画面建议分开验证。"
+              }
+            ]
           }
         ]
       },
       {
         "id": "troubleshooting",
-        "title": "按症状排障：搜索不到、无响应与黑屏排查",
+        "title": "常见问题排查与解决方法",
         "blocks": [
           {
-            "type": "p",
-            "text": "遇到异常时，无需把每次失联都归结为“配对故障”。更有效的方法是按照“设备发现 → 链路建立 → 输入响应 → 画面捕获”的顺序分层排查。对照下表中的具体现象，可以快速定位症结所在："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "异常现象",
-              "首要检查项目",
-              "建议采取的步骤"
-            ],
-            "rows": [
-              [
-                "移动端设备列表搜不到 Mac",
-                "Mac 端应用是否正常运行；两端是否在同一可互通局域网；iOS 本地网络权限是否开启",
-                "在 Mac 菜单栏重新呼出配对二维码并尝试扫码连接；若仍搜不到，请切换至允许局域网设备互通的普通 Wi-Fi 再试"
-              ],
-              [
-                "扫码连接提示超时或无法建立连接",
-                "局域网是否存在客户端隔离（如访客/企业网络）；Mac 是否休眠；二维码是否来自最新运行的配套端",
-                "唤醒 Mac 并重新打开配对二维码。若处于公司或机构管控网络，请向网络管理员确认局域网内部通信策略"
-              ],
-              [
-                "界面显示已连接，但移动光标或按键毫无反应",
-                "Mac 系统辅助功能权限是否勾选；当前运行的应用路径是否正确；目标窗口是否处于活动状态",
-                "依配套端提示彻底重启 Mac 端应用；在 Mac 上打开空白文本，重新测试光标移动、鼠标轻点与短文本输入"
-              ],
-              [
-                "光标控制正常，但屏幕预览显示黑屏或不刷新",
-                "Mac 系统屏幕录制权限是否生效；移动端是否主动开启了预览视图；Mac 桌面是否正常渲染",
-                "在系统设置中重新授权屏幕录制并重启 Mac 端应用；随后在 Mac 上切换活动窗口，观察手机预览是否同步变化"
-              ],
-              [
-                "发送的文字输入到了其他无关窗口",
-                "Mac 当前获得焦点的前台应用程序及文本插入光标位置",
-                "先用鼠标或轻点把输入光标落在目标文档内，再发送简短测试文字确认；切忌在未确认焦点时直接重发整段内容"
-              ],
-              [
-                "使用一段时间后连接突然断开",
-                "Mac 是否触发了系统睡眠；设备是否切换了网络；Mac 端进程是否意外退出",
-                "使 Mac 保持唤醒状态，确认两端仍在同一局域网并尝试重新连接；若频繁断连，请记录下具体发生时的操作与状态并联系支持"
-              ]
+            "type": "checks",
+            "items": [
+              {
+                "question": "搜不到 Mac 设备",
+                "items": [
+                  "确认 Mac 配套端正在运行，且手机已开启“本地网络”权限。",
+                  "尝试直接扫描 Mac 端二维码。公共网络或访客 Wi-Fi 可能隔离设备，换普通家庭 Wi-Fi 验证。"
+                ]
+              },
+              {
+                "question": "扫码后连接超时",
+                "items": [
+                  "唤醒 Mac 屏幕，重新打开配套端的配对二维码窗口。",
+                  "确认两台设备在局域网内能互相通信；公司网络可能限制设备互访。"
+                ]
+              },
+              {
+                "question": "显示已连接，但光标和按键无反应",
+                "items": [
+                  "进入 Mac 系统设置，确认“辅助功能”列表已勾选当前运行的配套端应用。",
+                  "退出并重新打开配套端，在空白文本文档中测试光标移动、点击和文字输入。"
+                ]
+              },
+              {
+                "question": "可以正常控制，但画面黑屏或卡住",
+                "items": [
+                  "检查 Mac 端的“屏幕录制”权限已开启，并在 App 内打开屏幕共享开关。",
+                  "重启 Mac 配套端，切换电脑当前窗口，观察移动端画面是否恢复刷新。"
+                ]
+              },
+              {
+                "question": "文字输入发送到了错误窗口",
+                "items": [
+                  "在 Mac 上用鼠标直接点击目标文档或输入框以聚焦光标。",
+                  "先发送 1 到 2 个字符确认焦点正确，再发送长段文字。"
+                ]
+              },
+              {
+                "question": "连接在使用过程中意外中断",
+                "items": [
+                  "检查 Mac 是否进入睡眠状态、配套端是否意外退出，或 Wi-Fi 网络是否发生切换。",
+                  "确保网络连通后重新连接。若频繁断连，请记录两端系统版本、App 版本及断开时的具体操作。"
+                ]
+              }
             ]
-          },
-          {
-            "type": "p",
-            "text": "如需向技术支持反馈问题，建议附上两端设备的系统版本、NinoPad 版本、当前所处的网络类型，以及问题具体发生在“设备发现、配对建立、指令输入还是屏幕镜像”环节。出于安全考虑，切勿在公开讨论区提供 6 位配对码、包含隐私的文档或全屏截图。单凭网络超时并不能直接证明是路由器、网关或防火墙损坏，客观详实地描述故障现象远比猜测底层原因更有利于解决问题。"
           }
         ]
       },
       {
         "id": "free-pro",
-        "title": "功能范围：免费功能与 Pro 解锁说明",
+        "title": "基础功能免费，按需升级 Pro",
         "blocks": [
           {
             "type": "p",
-            "text": "NinoPad 的基础小键盘、基础系统控制模块以及 Mac 配套端均可免费使用。建议在首次使用时先完成基础连接，充分验证光标与快捷键等基础体验，再根据工作流决定是否需要升级。高级专业工作台、自定义动态壁纸以及部分独立乐器等特性属于 Pro 权益，具体功能的归属状态请以应用内的功能解锁提示为准。"
-          },
-          {
-            "type": "p",
-            "text": "Pro 版本目前提供包周、包年与终身买断三种购买方案，三者所包含的 Pro 功能范围完全一致。实际订阅价格、扣费周期及支持的货币种类均以 App Store 购买确认页面的即时展示为准。本指南不提供预设价格，同时需要提醒的是，升级 Pro 并不能用来解决底层的局域网连接或系统权限配置问题。"
+            "text": "基础键盘、核心系统控制和 Mac 配套端完全免费。Pro 用于解锁专业工作台、动态壁纸与独立乐器等高级模块，具体以 App 内说明为准。升级 Pro 并不能解决网络配对或系统权限配置问题。"
           }
         ]
       }
     ],
-    "faqTitle": "常见问题",
+    "faqTitle": "常见问题解答",
     "faq": [
       {
-        "question": "可以使用手机蜂窝移动网络，在户外远程控制家里的 Mac 吗？",
-        "answer": "不可以。本指南介绍的 NinoPad Mac 控制功能严格基于同一局域网内的设备互通，软件本身不提供公网远程桌面接入或云端中转服务器。即使两端设备均安装了软件，在没有局域网互通条件的外网环境下也无法直接连接家中的 Mac。"
+        "question": "外出时可以用蜂窝网络远程控制家里的 Mac 吗？",
+        "answer": "不支持。本应用基于局域网直连设计，两台设备必须处于同一可互通的本地网络，不提供公网远程中转服务。"
       },
       {
-        "question": "Mac 连接网线、iPhone 连接 Wi-Fi，两者可以正常配对连接吗？",
-        "answer": "可以，关键在于两者是否处于同一能够互相访问的局域网内，而非必须全采用无线连接。不过需要注意，部分路由器配置可能会隔离有线与无线局域网；首次配置时，仍建议两端先连入同一个普通的无线网络进行排查验证。"
+        "question": "Mac 连接有线网线、手机连接 Wi-Fi 可以正常使用吗？",
+        "answer": "可以，只要有线与无线网络属于同一可互通的局域网。若首次连接失败，建议将两端都连至同一 Wi-Fi 进行测试。"
       },
       {
-        "question": "如果只需要把 iPhone 当作触控板，也必须开启屏幕录制权限吗？",
-        "answer": "不需要。移动光标与模拟按键只需要在 Mac 端开启辅助功能权限即可；屏幕录制仅在需要将 Mac 桌面画面投射到移动端预览时才需开启。建议先测试触控板功能，后续有投屏需要时再单独开启。"
+        "question": "仅使用触控板和按键控制，需要开启屏幕录制权限吗？",
+        "answer": "不需要。光标和按键控制仅需“辅助功能”权限。“屏幕录制”权限仅在需要将 Mac 画面实时同步到手机或平板时才需要开启。"
       },
       {
-        "question": "iPad 端可以直接代替 Mac 配套端，在平板上独立运行电脑软件吗？",
-        "answer": "不能。NinoPad 移动端工作台的核心作用是向已配对的 Mac 发送控制指令并接收状态反馈，所有 Mac 应用程序依然在 Mac 本机运行。应用内置的本地计算器以及部分独立乐器属于离线本地工具，这类功能的存在并不代表其他 Mac 遥控工作台也能脱离电脑独立运作。"
+        "question": "iPad 会在本地直接运行 Mac 软件吗？",
+        "answer": "不会。所有 Mac 软件均在 Mac 本地计算运行，iPad 仅负责发送操作指令和显示同步画面。"
       }
     ],
-    "relatedTitle": "接下来，按你的用途继续设置",
+    "relatedTitle": "后续配置指引",
     "related": [
       {
         "slug": "mac-settings",
-        "title": "Mac 配对与权限设置",
-        "text": "进一步检查安装、配对和系统授权。"
+        "title": "Mac 配对与系统权限详解",
+        "text": "详细了解配套端安装步骤、配对机制及系统隐私权限设置。"
       },
       {
         "slug": "custom-keypad",
-        "title": "为 Mac 配置自定义快捷键面板",
-        "text": "把已经验证的常用动作放到手机或平板上。"
+        "title": "配置 Mac 自定义快捷键面板",
+        "text": "将高频使用的快捷键和操作指令整理至移动端面板。"
       },
       {
         "slug": "voice-text-input",
-        "title": "在手机整理文字，再发送到 Mac",
-        "text": "了解文字输入时的目标窗口和操作流程。"
+        "title": "手机端文字编辑与跨端发送流程",
+        "text": "掌握文本预编辑、窗口焦点确认与高效发送技巧。"
       }
     ]
   },
   "en": {
-    "title": "How to Control Your Mac from an iPhone or iPad: Setup, Pairing, and Troubleshooting",
-    "seoTitle": "Control Mac from iPhone or iPad: Trackpad, Keyboard & Setup Guide | NinoPad",
-    "description": "Use your iPhone or iPad to move the cursor, enter text, and view your Mac screen over local Wi-Fi. Learn how to install NinoPad, configure permissions, and troubleshoot connection issues.",
+    "title": "Control Your Mac from iPhone or iPad: Four-Step Setup and Troubleshooting",
+    "seoTitle": "Control Mac from iPhone or iPad: Setup, Permissions & Troubleshooting | NinoPad",
+    "description": "Turn your iPhone or iPad into a Mac trackpad and shortcut keypad in four steps. Pair via QR code, configure Accessibility and Screen Recording permissions, and resolve connection issues.",
     "intro": [
-      "Whether you want to pause media from across the room, advance slides during a presentation, or simply keep a dedicated trackpad and shortcut deck beside your computer, your iPhone or iPad can serve as a natural extension of your Mac.",
-      "NinoPad turns your iOS or iPadOS device into a wireless trackpad, keyboard, and screen viewer over your local network. This guide walks you through downloading the companion app, pairing over Wi-Fi, and confirming your first inputs, followed by a step-by-step troubleshooting checklist. Keep in mind that NinoPad operates over your local area network—it does not provide internet-based remote desktop access or cloud relay services."
+      "NinoPad turns your iPhone or iPad into a trackpad, keyboard, and shortcut keypad for your Mac over a shared local network. Connect and verify cursor movement first, then enable screen mirroring when you need to view the Mac display."
     ],
-    "tocTitle": "In this guide",
+    "answerTitle": "Three Things to Check Before Connecting",
+    "answerPoints": [
+      {
+        "title": "Install Both Apps",
+        "text": "Get the mobile app and the free Mac companion."
+      },
+      {
+        "title": "Use the Same Network",
+        "text": "Connect both devices to regular Wi-Fi. Internet remote access is not supported."
+      },
+      {
+        "title": "Grant Permissions in Order",
+        "text": "Accessibility controls input; Screen Recording streams the display."
+      }
+    ],
+    "requirements": "iOS / iPadOS 17+ · macOS 13+ · Apple Silicon / Intel",
+    "tocTitle": "Jump to Section",
     "updatedLabel": "Updated",
     "sections": [
       {
-        "id": "choose",
-        "title": "Clarify your goals: Which Mac controls do you need?",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "Before adjusting settings, take a moment to identify how you plan to use NinoPad. Moving the cursor and triggering key combinations are input controls, whereas seeing your Mac desktop on a mobile device is screen mirroring. macOS handles these permissions separately, so if you only need a trackpad, you never have to grant Screen Recording access."
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Intended task",
-              "Starting point",
-              "Key considerations"
-            ],
-            "rows": [
-              [
-                "Use an iPhone as a wireless mouse or trackpad",
-                "Pair devices, select a trackpad workspace, and test gestures",
-                "Requires macOS Accessibility permission"
-              ],
-              [
-                "Put frequent Mac shortcuts on an iPad",
-                "Choose a workspace and map buttons to your daily workflows",
-                "Commands execute on the Mac; make sure the target window is active"
-              ],
-              [
-                "View the Mac desktop on your phone or tablet",
-                "Open screen preview after pairing and expand to full screen as needed",
-                "Also requires macOS Screen Recording permission"
-              ],
-              [
-                "Control a home Mac remotely over the internet",
-                "Not supported by this setup",
-                "NinoPad requires a shared local network and does not offer cloud relay or public remote desktop"
-              ]
-            ]
-          },
-          {
-            "type": "p",
-            "text": "If you simply want extra controls next to your keyboard, start by verifying cursor movement and clicks. You can always enable screen mirroring or build personalized shortcut layouts later once the basic connection is running smoothly."
-          }
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Prerequisites: Devices, system versions, and network",
-        "blocks": [
-          {
-            "type": "table",
-            "headers": [
-              "Component",
-              "Requirement"
-            ],
-            "rows": [
-              [
-                "iPhone or iPad",
-                "iOS 17 or iPadOS 17 or later, with NinoPad installed from the App Store"
-              ],
-              [
-                "Mac",
-                "macOS 13 or later (Apple Silicon or Intel), with the free Mac companion installed"
-              ],
-              [
-                "Local network",
-                "Both devices must be on the same local network with client-to-client traffic allowed; a standard home Wi-Fi is recommended"
-              ],
-              [
-                "Mac status",
-                "The companion app must be running, the Mac kept awake, and the desktop ready for interaction"
-              ],
-              [
-                "Required permissions",
-                "Mobile requires Local Network access (plus Camera for QR codes); Mac requires Accessibility for input, and Screen Recording for mirroring"
-              ]
-            ]
-          },
-          {
-            "type": "p",
-            "text": "Keep in mind that connecting to the same Wi-Fi network name does not guarantee that devices can see one another. Public hotspots, university networks, corporate environments, and router guest modes often enable client isolation, which prevents devices from discovering each other. If pairing fails, check your network environment before repeatedly scanning the same QR code."
-          },
-          {
-            "type": "p",
-            "text": "NinoPad consists of two distinct components: the mobile app and the desktop companion. The Mac companion is distributed through the official GitHub Releases page rather than the Mac App Store. Make sure you download both components from their respective official sources."
-          }
-        ]
-      },
-      {
         "id": "pair",
-        "title": "Four steps to connect: Install, pair, and test",
+        "title": "Connect in Four Steps and Test the Cursor",
         "blocks": [
           {
-            "type": "ol",
+            "type": "steps",
             "items": [
-              "Install and launch NinoPad from the App Store on your iPhone or iPad. On your Mac, visit the official download page on GitHub Releases, grab the latest .dmg installer, drag NinoPad into your Applications folder, and launch it.",
-              "Click the NinoPad cat icon in your Mac menu bar to bring up the pairing QR code. Ensure your Mac companion is running and that both devices are connected to the same local Wi-Fi.",
-              "Open NinoPad on your mobile device, head to the Devices tab, and tap the QR code connection option. Point your camera at the Mac screen. Alternatively, if your Mac appears in the nearby devices list, tap its name and enter the 6-digit pairing code shown on your Mac.",
-              "Follow the system prompts on your Mac to grant the necessary permissions, then verify the connection status on your phone. Open a blank document on your Mac, glide your finger across the mobile screen, and tap to confirm that cursor inputs register correctly on your computer."
+              {
+                "title": "Install both apps",
+                "text": "Install NinoPad from the App Store. On Mac, open the .dmg from official GitHub Releases, drag NinoPad into Applications, then launch it.",
+                "link": "downloads"
+              },
+              {
+                "title": "Display the pairing code",
+                "text": "Connect both devices to the same Wi-Fi. Click the cat icon in the Mac menu bar to open the QR code window."
+              },
+              {
+                "title": "Scan with your phone",
+                "text": "Open the mobile Devices view and choose QR code pairing, or select your Mac from nearby devices and enter its six-digit code."
+              },
+              {
+                "title": "Grant access and test",
+                "text": "Follow the Mac prompts to grant Accessibility permission. Open a trackpad workspace on your phone, swipe and tap to test cursor response."
+              }
             ]
           },
           {
-            "type": "p",
-            "text": "Running this quick input test right away gives you a clear baseline. If the cursor moves, your local connection and Accessibility permissions are working properly. If the screen preview remains blank afterward, you can focus specifically on Screen Recording permissions without having to repeat the initial pairing setup."
+            "type": "gallery",
+            "images": [
+              "mac-pairing",
+              "phone-devices"
+            ]
           },
           {
-            "type": "p",
-            "text": "Always use official distribution channels: the App Store for iOS/iPadOS and the official GitHub Releases repository for macOS. Quick links are provided at the end of this guide, and you can find further permission details in our companion configuration guide."
+            "type": "callout",
+            "label": "How do you know it worked?",
+            "text": "If the Mac cursor follows your finger, input is working. If the screen preview is black, check Screen Recording permission instead of pairing again."
           }
         ]
       },
       {
         "id": "permissions",
-        "title": "Permissions guide: Managing input and screen recording",
+        "title": "Input and Screen Viewing Use Separate Permissions",
         "blocks": [
           {
             "type": "p",
-            "text": "On your Mac, open System Settings → Privacy & Security to verify NinoPad's authorizations. Depending on your macOS version, the screen capture permission may appear as “Screen Recording” or “Screen & System Audio Recording.” Follow the labels in your operating system alongside the companion's on-screen prompts."
+            "text": "On Mac, open System Settings → Privacy & Security. On iPhone or iPad, find NinoPad in Settings and check the required permissions."
           },
           {
             "type": "table",
             "headers": [
               "Permission",
-              "Function",
-              "When required"
+              "When Needed"
             ],
             "rows": [
               [
                 "Mac Accessibility",
-                "Enables cursor movement, mouse clicks, and keyboard shortcut delivery",
-                "Required whenever controlling Mac input"
+                "Required for cursor navigation, mouse clicks, keyboard entry, and keyboard shortcuts."
               ],
               [
                 "Mac Screen Recording",
-                "Allows desktop display capture to be streamed to your mobile device",
-                "Required only for screen mirroring; not needed for trackpad or keyboard input alone"
+                "Required only to stream the Mac screen to your mobile device. Named Screen & System Audio Recording on some macOS versions."
               ],
               [
-                "iPhone / iPad Local Network",
-                "Allows the mobile app to discover and connect to your Mac over Wi-Fi",
-                "Allow it during setup; check NinoPad in iOS Settings if previously denied"
+                "Mobile Local Network",
+                "Required to discover the Mac and establish local network communication."
               ],
               [
-                "iPhone / iPad Camera",
-                "Scans the pairing QR code displayed on your Mac",
-                "Prompted when using the QR code pairing method"
+                "Mobile Camera",
+                "Required to scan the pairing QR code. Manual 6-digit code entry does not require camera access."
               ]
             ]
           },
           {
-            "type": "p",
-            "text": "If the Mac companion prompts you to quit and reopen after granting permissions, do so to apply the new settings. If you move the application bundle or update the app later, make sure System Settings reflects the active binary rather than an older, inactive copy. Never disable your firewall or disable core system security protections to troubleshoot connectivity."
+            "type": "callout",
+            "label": "Verify input first",
+            "text": "Trackpad and keypad features do not require Screen Recording. If macOS prompts you to restart the companion app, quit and reopen it for changes to take effect."
           }
         ]
       },
       {
         "id": "controls",
-        "title": "Hands-on: Trackpad gestures, typing, and mirroring",
+        "title": "Using Trackpad, Shortcuts, and Screen Mirroring",
         "blocks": [
           {
-            "type": "h3",
-            "text": "Using your iPhone as a trackpad"
+            "type": "figure",
+            "image": "ipad-controls"
           },
           {
-            "type": "p",
-            "text": "Select a workspace that features a trackpad surface. Move the pointer across the screen with a single finger, tap to click, and slide two fingers up and down to scroll through long documents or web pages. Watch the Mac display to confirm your movements. When multiple windows are open, click the intended window first to bring it to the foreground before performing further actions."
-          },
-          {
-            "type": "h3",
-            "text": "Sending text and shortcuts reliably"
-          },
-          {
-            "type": "p",
-            "text": "Before sending large amounts of text, open a blank document on your Mac, position your cursor inside, and send a short test phrase from your phone. Make sure your input lands where expected before sending longer text blocks or triggering key combinations. Shortcuts apply directly to whichever Mac app currently has focus, and the same combination can trigger different commands across different apps. Start with a familiar, reversible shortcut to verify behavior safely."
-          },
-          {
-            "type": "p",
-            "text": "Once basic keystrokes respond consistently, you can bind your most frequent key combinations to custom buttons. We recommend starting with two or three essential everyday actions, confirming their responsiveness on your Mac, and then expanding your custom panel. Refer to the custom keypad guide linked below for step-by-step layout advice."
-          },
-          {
-            "type": "h3",
-            "text": "Enabling screen mirroring when needed"
-          },
-          {
-            "type": "p",
-            "text": "Once Screen Recording permission is active on your Mac, open the screen preview in NinoPad and switch to full-screen view if you need a larger display. Bring up a distinct, recognizable window on your Mac to confirm that the mobile preview updates in real time. Remember that the screen preview and input response need to be checked separately; if one works while the other fails, focus solely on the troubleshooting steps for that specific feature."
-          },
-          {
-            "type": "p",
-            "text": "Streaming quality depends on local network bandwidth, system workload, and display content. This guide does not guarantee specific latency numbers or frame rates, nor does it support connections outside your local network. If your primary goal is clicking and triggering shortcuts, confirm that input works reliably before keeping an active screen stream open."
+            "type": "cards",
+            "items": [
+              {
+                "title": "Trackpad",
+                "text": "Move with one finger, tap to click, and scroll with two fingers. Test while watching your Mac screen."
+              },
+              {
+                "title": "Text & Shortcuts",
+                "text": "Click into the target Mac window before sending text. Start your custom keypad with two or three frequent shortcuts."
+              },
+              {
+                "title": "Screen Mirroring",
+                "text": "Enable Screen Recording, then toggle screen sharing in the device tab. Verify input control and display streaming separately."
+              }
+            ]
           }
         ]
       },
       {
         "id": "troubleshooting",
-        "title": "Troubleshooting by symptom: Discovery, input, and display",
+        "title": "Troubleshooting by Symptom",
         "blocks": [
           {
-            "type": "p",
-            "text": "When encountering an issue, avoid treating every failure as a generic pairing error. Instead, diagnose your setup in logical layers: device discovery, connection establishment, input delivery, and screen streaming. Use the reference table below to pinpoint the problem quickly:"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Symptom",
-              "What to check first",
-              "Recommended action"
-            ],
-            "rows": [
-              [
-                "The Mac is missing from nearby devices",
-                "Whether the Mac companion is running, devices share a reachable network, and Local Network permission is enabled on iOS",
-                "Click the menu bar icon to show the pairing QR code and scan it manually. If discovery still fails, switch to a standard Wi-Fi network without client isolation"
-              ],
-              [
-                "QR pairing times out",
-                "Whether router isolation blocks communication, the Mac has gone to sleep, or the QR code belongs to an outdated session",
-                "Wake your Mac and bring up a fresh QR code from the running companion. On corporate networks, verify local communication rules with your network administrator"
-              ],
-              [
-                "Connected, but pointer or keys do nothing",
-                "macOS Accessibility permission, whether the active app path matches permissions, and whether the target window is interactive",
-                "Restart the companion app if prompted by macOS. Open a blank text document and retest basic cursor movement, clicks, and a short text phrase"
-              ],
-              [
-                "Input works, but the picture is black or frozen",
-                "macOS Screen Recording permission, whether preview is toggled on, and whether the Mac desktop is rendering normally",
-                "Grant Screen Recording in System Settings, restart the companion, and switch between open windows on the Mac to check for preview updates"
-              ],
-              [
-                "Text reaches the wrong application",
-                "The currently active foreground application on your Mac and the exact cursor focus",
-                "Click directly inside the intended document before sending text. Always confirm with a short test phrase before transmitting full paragraphs"
-              ],
-              [
-                "The connection drops later",
-                "Whether the Mac went to sleep, Wi-Fi networks changed, or the companion process terminated",
-                "Keep the Mac awake, ensure both devices remain on the same reachable local network, and reconnect. If disconnects persist, document the exact symptoms before contacting support"
-              ]
+            "type": "checks",
+            "items": [
+              {
+                "question": "Mac does not appear in device list",
+                "items": [
+                  "Verify the Mac companion app is active and mobile Local Network permission is enabled.",
+                  "Scan the Mac QR code directly. Guest Wi-Fi and public networks may isolate devices; test on a regular home Wi-Fi network."
+                ]
+              },
+              {
+                "question": "QR code pairing times out",
+                "items": [
+                  "Wake your Mac and reopen the QR code window from the running companion app.",
+                  "Confirm the devices can reach one another on the local network. Enterprise policies may restrict device-to-device traffic."
+                ]
+              },
+              {
+                "question": "Connected, but cursor and keys do not respond",
+                "items": [
+                  "Verify Accessibility permission is granted to the currently running companion application in Mac System Settings.",
+                  "Restart the companion app if prompted, then test cursor movement, clicks, and a short test phrase in a blank document."
+                ]
+              },
+              {
+                "question": "Control works, but the screen is black or frozen",
+                "items": [
+                  "Check that Mac Screen Recording permission is enabled and screen sharing is turned on in the mobile app.",
+                  "Restart the Mac companion app, switch active windows on the Mac, and check if the mobile stream updates."
+                ]
+              },
+              {
+                "question": "Text appears in the wrong window",
+                "items": [
+                  "Click the target document or input field on your Mac to place cursor focus.",
+                  "Send a short test word to confirm active focus before transmitting longer text."
+                ]
+              },
+              {
+                "question": "Connection drops intermittently",
+                "items": [
+                  "Check whether your Mac entered sleep mode, the companion app closed, or your Wi-Fi network changed.",
+                  "Reconnect on the shared network. If drops persist, note your OS versions, app versions, and the exact step where failure occurs."
+                ]
+              }
             ]
-          },
-          {
-            "type": "p",
-            "text": "When reaching out to technical support, include the operating system versions on both devices, the NinoPad app versions, your connection method, and the exact step that failed: discovery, pairing, input, or display mirroring. For your security, never share pairing codes, sensitive documents, or unredacted screen captures publicly. A network timeout alone does not prove a faulty router, firewall, or gateway; sharing precise symptoms is far more helpful than guessing the underlying cause."
           }
         ]
       },
       {
         "id": "free-pro",
-        "title": "What is free, and when do you need Pro?",
+        "title": "Start with Free Features Before Upgrading to Pro",
         "blocks": [
           {
             "type": "p",
-            "text": "The basic keypad, core system controls, and the Mac companion app are completely free to use. We encourage you to pair your devices and verify mouse and keyboard responsiveness before considering an upgrade. Pro unlocks specialized professional workspaces, custom dynamic wallpapers, and standalone musical instruments; individual feature availability is indicated by the in-app unlock prompts."
-          },
-          {
-            "type": "p",
-            "text": "Weekly, annual and lifetime options provide the same Pro feature access. Your App Store purchase confirmation shows the applicable local price and terms. Paying for Pro is not a fix for pairing or permission problems."
+            "text": "The basic keypad, core system controls, and the Mac companion app are completely free. Pro unlocks advanced workspaces, dynamic wallpapers, and standalone instruments, as indicated in the app. Upgrading to Pro will not resolve local network or permission configuration issues."
           }
         ]
       }
     ],
-    "faqTitle": "Frequently asked questions",
+    "faqTitle": "Frequently Asked Questions",
     "faq": [
       {
-        "question": "Can I use mobile data to control my Mac at home while I am away?",
-        "answer": "No. The NinoPad Mac control features described in this guide require both devices to be reachable on the same local area network. The app does not provide public remote desktop routing or cloud-based relay infrastructure. Having the software installed on both devices will not bridge a mobile data connection to a remote home Mac."
+        "question": "Can I control my Mac remotely over cellular data while away from home?",
+        "answer": "No. NinoPad operates over a direct local network connection. Both devices must be on the same local network; cloud relay and internet remote desktop are not supported."
       },
       {
-        "question": "Can the Mac use Ethernet while my iPhone uses Wi-Fi?",
-        "answer": "Yes, provided both connections reside on the same local network where inter-device traffic is permitted. However, router or administrator policies can isolate wired and wireless network segments. For your initial setup, we recommend connecting both devices to the same standard Wi-Fi network to verify communication."
+        "question": "Can the Mac use Ethernet while the phone is on Wi-Fi?",
+        "answer": "Yes, as long as the wired and wireless connections can reach each other on the same local network. If pairing fails initially, connect both devices to the same Wi-Fi to test."
       },
       {
-        "question": "Do I need Screen Recording just to use my iPhone as a trackpad?",
-        "answer": "No. Moving the cursor, clicking, and sending keystrokes only require macOS Accessibility permission. Screen Recording is solely used to stream your Mac desktop back to your mobile screen. You can use input controls without ever turning on screen capture."
+        "question": "Does trackpad and keypad control require Screen Recording permission?",
+        "answer": "No. Input control requires only Accessibility permission. Screen Recording is used exclusively when streaming the Mac display to your mobile device."
       },
       {
-        "question": "Does the iPad replace the Mac companion or run Mac apps itself?",
-        "answer": "No. The mobile workspaces function as remote control interfaces that send commands to a paired Mac and display status updates; Mac software continues to run natively on the Mac hardware. Built-in offline tools like the local calculator or standalone instruments operate locally on iOS, but their offline capability does not extend to Mac control workspaces."
+        "question": "Does the iPad run Mac software locally?",
+        "answer": "No. All Mac software runs entirely on the Mac. The iPad only transmits input commands and displays the mirrored screen."
       }
     ],
-    "relatedTitle": "Continue with your own workflow",
+    "relatedTitle": "Next Steps",
     "related": [
       {
         "slug": "mac-settings",
-        "title": "Mac pairing and permissions",
-        "text": "A deeper look at companion installation, initial pairing, and macOS system privacy permissions."
+        "title": "Mac Pairing & Permission Guide",
+        "text": "A comprehensive walkthrough for companion installation, initial pairing, and macOS privacy permissions."
       },
       {
         "slug": "custom-keypad",
-        "title": "Build a custom Mac shortcut keypad",
-        "text": "Organize your verified shortcuts and everyday application commands onto your phone or tablet."
+        "title": "Build a Custom Mac Shortcut Keypad",
+        "text": "Organize your essential keyboard shortcuts and frequent commands onto your mobile device."
       },
       {
         "slug": "voice-text-input",
-        "title": "Prepare text on your phone and send it to Mac",
-        "text": "Master text dispatch workflows and window focus verification across devices."
+        "title": "Prepare Text on Mobile and Send to Mac",
+        "text": "Master text drafting workflows, window focus verification, and fast cross-device input."
       }
     ]
   }

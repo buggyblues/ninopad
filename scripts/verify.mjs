@@ -20,6 +20,7 @@ function manifests(dir) {
   }
 }
 manifests('dist/assets/screens');
+manifests('dist/assets/editorial');
 for (const file of pages) {
   let shape;
   for (const language of ['zh-CN','en']) {
@@ -45,9 +46,9 @@ for (const file of pages) {
       const graph = JSON.parse($('[data-seo-graph]').text())['@graph'];
       assert.equal(graph.find(node=>node['@type']==='BlogPosting').dateModified, '2026-10-05');
       const faq = graph.find(node=>node['@type']==='FAQPage');
-      assert.equal(faq.mainEntity.length, 4);
+      assert.equal(faq.mainEntity.length, 10);
       assert.deepEqual(faq.mainEntity.map(q=>q.name), $('main details summary').toArray().map(n=>$(n).text().trim()));
-      assert.equal($('article.article-body img').length, 0);
+      assert.equal($('article.article-body img').length, 3);
       for (const node of $('.article-toc a').toArray()) assert.equal($($(node).attr('href')).length, 1);
     }
     for (const n of $('a[href*="apps.apple.com/"]').toArray()) {
@@ -75,6 +76,14 @@ for (const file of pages) {
       const src=$(n).attr(attr); if (!src || !src.startsWith('/assets/')) continue;
       const target = 'dist'+src;
       assert(existsSync(target),`Missing asset: ${target}`);
+      if (src.includes('/editorial/')) {
+        const shot = screenshotHashes.get(target);
+        assert(shot,`Missing editorial capture provenance ${target}`);
+        assert(shot.sourceFile.startsWith('Screenshots/current/'));
+        assert(shot.capturedAt && shot.appBinarySHA256);
+        assert.equal(createHash('sha256').update(readFileSync(target)).digest('hex'),shot.sha256,`Capture changed ${target}`);
+        assert($(n).attr('alt')?.trim(),`Missing editorial image description ${target}`);
+      }
       if (src.includes('/screens/')) {
         assert(src.includes(`/screens/${language}/`), `Screenshot locale mismatch ${src}`);
         if (language === 'en') {

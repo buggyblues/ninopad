@@ -40,7 +40,7 @@ for (const language of languages) {
     });
     $('[data-i18n-schema]').each((_, node) => $(node).text(JSON.stringify(instance.t($(node).attr('data-i18n-schema'), { returnObjects: true })).replaceAll('<', '\\u003c')));
     applyEditorialContent($, page, language, values);
-    addGrowthContent($, page, language, catalogs[language]);
+    addGrowthContent($, page, language, { ...catalogs[language], ...values });
     $('.brand[href=""], .legal-back[href=""]').attr('href','/');
     const canonical = localeURL(page, language);
     if (!$('link[rel="canonical"]').length) $('head').append('<link rel="canonical">');
@@ -106,10 +106,15 @@ for (const language of languages) {
     });
     $('img[src*="app-store-zh-cn-black"]').attr('data-store-badge','').attr('src', `/assets/badges/app-store-${language === 'en' ? 'en' : 'zh-cn'}-black.svg`);
     // Social cards use exactly the same localized capture as visible content.
-    const image = ['blog', 'blog_remote-control-mac'].includes(page) ? undefined : $('main img[data-screen]').first().attr('src');
-    if (image) for (const selector of ['meta[property="og:image"]','meta[name="twitter:image"]']) $(selector).attr('content', origin + image).attr('data-localized-social', image.split('/assets/screens/')[1].split('/').slice(1).join('/'));
+    const imageNode = ['blog', 'blog_remote-control-mac'].includes(page) ? $('main img[src*="/assets/editorial/"]').first() : $('main img[data-screen]').first();
+    const image = imageNode.attr('src');
+    if (image) for (const selector of ['meta[property="og:image"]','meta[name="twitter:image"]']) {
+      const node = $(selector).attr('content', origin + image);
+      if (image.includes('/assets/screens/')) node.attr('data-localized-social', image.split('/assets/screens/')[1].split('/').slice(1).join('/'));
+      else node.removeAttr('data-localized-social');
+    }
     if (image) {
-      const caption = $('main img[data-screen]').first().attr('alt') || $('h1').text().trim();
+      const caption = imageNode.attr('alt') || $('h1').text().trim();
       values[page + '.social_image_alt'] = caption;
       for (const [attribute, name] of [['property','og:image:alt'],['name','twitter:image:alt']]) {
         const selector = `meta[${attribute}="${name}"]`;
@@ -125,7 +130,7 @@ for (const language of languages) {
     if (page === 'index') graph.push(organization, { '@type':'WebSite', '@id':origin+'/#website', url:origin+'/', name:'NinoPad', alternateName:'奶猫妙控', inLanguage:['zh-CN','en'], publisher:{'@id':organization['@id']} });
     graph.push({ '@type':'WebPage', '@id':canonical+'#page', url:canonical, name:$('title').text(), description:$('meta[name="description"]').attr('content'), inLanguage:language, isPartOf:{'@id':origin+'/#website'}, publisher:{'@id':organization['@id']} });
     if (page === 'index') graph.push({ '@type':'SoftwareApplication', '@id':origin+'/#software', name:'NinoPad', alternateName:'奶猫妙控', applicationCategory:'UtilitiesApplication', operatingSystem:'iOS 17+, iPadOS 17+, macOS 13+', installUrl:productURL, downloadUrl:[productURL,'https://github.com/buggyblues/ninopad/releases/latest'], offers:{ '@type':'Offer', price:'0', priceCurrency:'USD' }, inLanguage:language, description:$('meta[name="description"]').attr('content') });
-    const faqs = $('main details').toArray().map(n => ({ '@type':'Question', name:$(n).find('summary').text().trim(), acceptedAnswer:{ '@type':'Answer', text:$(n).find('p').text().trim() } })).filter(q=>q.name && q.acceptedAnswer.text);
+    const faqs = $('main details').toArray().map(n => ({ '@type':'Question', name:$(n).find('summary').text().trim(), acceptedAnswer:{ '@type':'Answer', text:$(n).find('p,li').toArray().map(answer=>$(answer).text().trim()).join(' ') } })).filter(q=>q.name && q.acceptedAnswer.text);
     if (faqs.length) graph.push({ '@type':'FAQPage', inLanguage:language, mainEntity:faqs });
     if (page.startsWith('blog_')) {
       graph.push({ '@type':'BlogPosting', headline:$('h1').text().trim(), description:$('meta[name="description"]').attr('content'), inLanguage:language, datePublished:$('meta[property="article:published_time"]').attr('content'), ...(editorialDates[page] ? { dateModified: editorialDates[page] } : {}), author:{'@type':'Organization',name:'NinoPad',url:origin+'/'}, publisher:organization, mainEntityOfPage:canonical, image:image ? [origin+image] : [origin+'/assets/app-icon.png'] });
