@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import { detection, options, crawlerLanguage } from './language.js';
+import { detection, options, crawlerLanguage, languageSwitchURL } from './language.js';
 import { initializeAnalytics } from './analytics.js';
 import './growth.css';
 import { gsap } from 'gsap';
@@ -37,10 +37,12 @@ for (const node of document.querySelectorAll('[data-lang-switch]')) {
   const target = node.dataset.language || (language === 'en' ? 'zh-CN' : 'en');
   node.textContent = target === 'en' ? 'English' : '简体中文';
   node.setAttribute('aria-label', target === 'en' ? 'Switch to English' : '切换至中文');
-  const url = new URL(location.href); url.searchParams.set('lng', target);
-  node.href = url.pathname + url.search + url.hash;
+  const updateLanguageLink = () => { node.href = languageSwitchURL(page, target, location.href); };
+  updateLanguageLink();
+  window.addEventListener('hashchange', updateLanguageLink);
   node.classList.toggle('is-active', target === language);
   node.addEventListener('click', () => {
+    updateLanguageLink();
     try { localStorage.setItem('ninopad_lang', target); } catch {}
   });
 }

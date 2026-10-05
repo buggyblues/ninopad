@@ -26,3 +26,13 @@ export function localeURL(page, language) {
   const route = page === 'index' ? '/' : '/' + page.replace(/^blog_/, 'blog/');
   return `https://ninopad.com${language === 'en' ? '/en' : ''}${route}`;
 }
+// Manual switches should reach the counterpart's canonical URL, with the
+// visitor's query and reading position preserved.
+export function languageSwitchURL(page, language, currentURL) {
+  const current = new URL(currentURL);
+  const target = new URL(localeURL(page, language));
+  target.search = current.search;
+  target.searchParams.set('lng', language);
+  target.hash = current.hash;
+  return target.pathname + target.search + target.hash;
+}

@@ -41,6 +41,15 @@ for (const file of pages) {
       assert.equal(crumbs.itemListElement.at(-1).item,$('link[rel="canonical"]').attr('href'));
       assert($('main a[href*="apps.apple.com/"]').length,`Missing article download CTA: ${output}`);
     }
+    if (file === 'blog/remote-control-mac.html') {
+      const graph = JSON.parse($('[data-seo-graph]').text())['@graph'];
+      assert.equal(graph.find(node=>node['@type']==='BlogPosting').dateModified, '2026-10-05');
+      const faq = graph.find(node=>node['@type']==='FAQPage');
+      assert.equal(faq.mainEntity.length, 4);
+      assert.deepEqual(faq.mainEntity.map(q=>q.name), $('main details summary').toArray().map(n=>$(n).text().trim()));
+      assert.equal($('article.article-body img').length, 0);
+      for (const node of $('.article-toc a').toArray()) assert.equal($($(node).attr('href')).length, 1);
+    }
     for (const n of $('a[href*="apps.apple.com/"]').toArray()) {
       const url = new URL($(n).attr('href'));
       assert.equal(url.searchParams.get('pt'),growthConfig.appStoreProviderToken);
@@ -87,6 +96,7 @@ assert.equal(sitemap('sitemap').length,2);
 for (const language of ['zh-CN','en']) {
   const map = load(readFileSync(`dist/sitemap-${language}.xml`,'utf8'),{xmlMode:true});
   assert.equal(map('url').length,pages.length-1);
+  assert.equal(map('lastmod').length,3, 'Only substantively revised pages get an editorial modification date');
   for (const n of map('loc').toArray()) {
     const url = new URL(map(n).text());
     assert.equal(url.origin,'https://ninopad.com');

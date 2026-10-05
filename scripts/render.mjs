@@ -4,6 +4,7 @@ import i18next from 'i18next';
 import { options, localeURL } from '../src/language.js';
 import { renderRobots } from '../src/crawlers.js';
 import { addGrowthContent } from './growth-content.mjs';
+import { applyEditorialContent, editorialDates } from './editorial-content.mjs';
 import { appStoreURL, appStoreProductURL, campaignToken } from '../src/growth.js';
 import growthConfig from '../src/growth-config.json' with { type: 'json' };
 const origin = 'https://ninopad.com';
@@ -38,6 +39,7 @@ for (const language of languages) {
       for (const [attr, key] of Object.entries(JSON.parse($(node).attr('data-i18n-attrs')))) $(node).attr(attr, instance.t(key));
     });
     $('[data-i18n-schema]').each((_, node) => $(node).text(JSON.stringify(instance.t($(node).attr('data-i18n-schema'), { returnObjects: true })).replaceAll('<', '\\u003c')));
+    applyEditorialContent($, page, language, values);
     addGrowthContent($, page, language, catalogs[language]);
     $('.brand[href=""], .legal-back[href=""]').attr('href','/');
     const canonical = localeURL(page, language);
@@ -104,7 +106,7 @@ for (const language of languages) {
     });
     $('img[src*="app-store-zh-cn-black"]').attr('data-store-badge','').attr('src', `/assets/badges/app-store-${language === 'en' ? 'en' : 'zh-cn'}-black.svg`);
     // Social cards use exactly the same localized capture as visible content.
-    const image = $('main img[data-screen]').first().attr('src');
+    const image = ['blog', 'blog_remote-control-mac'].includes(page) ? undefined : $('main img[data-screen]').first().attr('src');
     if (image) for (const selector of ['meta[property="og:image"]','meta[name="twitter:image"]']) $(selector).attr('content', origin + image).attr('data-localized-social', image.split('/assets/screens/')[1].split('/').slice(1).join('/'));
     if (image) {
       const caption = $('main img[data-screen]').first().attr('alt') || $('h1').text().trim();
@@ -126,7 +128,7 @@ for (const language of languages) {
     const faqs = $('main details').toArray().map(n => ({ '@type':'Question', name:$(n).find('summary').text().trim(), acceptedAnswer:{ '@type':'Answer', text:$(n).find('p').text().trim() } })).filter(q=>q.name && q.acceptedAnswer.text);
     if (faqs.length) graph.push({ '@type':'FAQPage', inLanguage:language, mainEntity:faqs });
     if (page.startsWith('blog_')) {
-      graph.push({ '@type':'BlogPosting', headline:$('h1').text().trim(), description:$('meta[name="description"]').attr('content'), inLanguage:language, datePublished:$('meta[property="article:published_time"]').attr('content'), author:{'@type':'Organization',name:'NinoPad',url:origin+'/'}, publisher:organization, mainEntityOfPage:canonical, image:image ? [origin+image] : [] });
+      graph.push({ '@type':'BlogPosting', headline:$('h1').text().trim(), description:$('meta[name="description"]').attr('content'), inLanguage:language, datePublished:$('meta[property="article:published_time"]').attr('content'), ...(editorialDates[page] ? { dateModified: editorialDates[page] } : {}), author:{'@type':'Organization',name:'NinoPad',url:origin+'/'}, publisher:organization, mainEntityOfPage:canonical, image:image ? [origin+image] : [origin+'/assets/app-icon.png'] });
       graph.push({ '@type':'BreadcrumbList', itemListElement:[{ '@type':'ListItem', position:1, name:catalogs[language]['ui.home'], item:localeURL('index',language) },{ '@type':'ListItem', position:2, name:catalogs[language]['ui.guides'], item:localeURL('blog',language) },{ '@type':'ListItem', position:3, name:$('h1').text().trim(), item:canonical }] });
     }
     // Existing schemas are translated resources; fresh visible-content schemas
@@ -138,14 +140,14 @@ for (const language of languages) {
     const output = (language === 'en' ? 'en/' : '') + file;
     mkdirSync(output.slice(0,output.lastIndexOf('/')+1) || '.', { recursive:true });
     writeFileSync(output, $.html());
-    if (page !== '404') routes.push({ page, language, url:canonical });
+    if (page !== '404') routes.push({ page, language, url:canonical, lastmod:editorialDates[page] });
   }
 }
 const escape = s => s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
-const xml = routes.map(({page,url}) => `<url><loc>${escape(url)}</loc>${languages.map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${escape(localeURL(page,l))}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${escape(localeURL(page,'zh-CN'))}"/></url>`).join('\n');
+const xml = routes.map(({page,url,lastmod}) => `<url><loc>${escape(url)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}${languages.map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${escape(localeURL(page,l))}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${escape(localeURL(page,'zh-CN'))}"/></url>`).join('\n');
 writeFileSync('public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${xml}</urlset>\n`);
 for (const language of languages) {
-  const urls = routes.filter(route=>route.language===language).map(({url})=>`<url><loc>${escape(url)}</loc></url>`).join('\n');
+  const urls = routes.filter(route=>route.language===language).map(({url,lastmod})=>`<url><loc>${escape(url)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`).join('\n');
   writeFileSync(`public/sitemap-${language}.xml`,`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>\n`);
 }
 writeFileSync('public/sitemap-index.xml',`<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${languages.map(l=>`<sitemap><loc>${origin}/sitemap-${l}.xml</loc></sitemap>`).join('')}</sitemapindex>\n`);

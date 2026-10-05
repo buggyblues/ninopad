@@ -19,6 +19,7 @@ Production output is `dist/`. The existing EdgeOne Makers project (`ninopad-webs
 
 - `src/pages/`: one HTML template per page, including the blog.
 - `src/locales/zh-CN.json` and `en.json`: i18next resources for text, attributes and interaction messages.
+- `src/content/remote-control-mac.json`: the complete bilingual setup guide, drafted by Codex, edited with agy Gemini 3.8 Flash and checked against current implementation facts. `scripts/editorial-content.mjs` renders its contents, table of contents, permission and troubleshooting tables, FAQ and related links into the same translation resources.
 - `src/main.js`: language detection and DOM bindings.
 - `src/interactions.js`, `src/*.css`: shared presentation and interactions.
 - `public/assets/`: static images, icons and verified native captures.
@@ -29,7 +30,7 @@ Production output is `dist/`. The existing EdgeOne Makers project (`ninopad-webs
 
 Detection priority is an explicit `?lng=en` / `?lng=zh-CN`, a saved manual choice, then `navigator.languages`. Regional Chinese variants use `zh-CN`; supported English variants use `en`; unsupported languages fall back to English. Automatic detection is not persisted. A manual choice is saved under `ninopad_lang` and applies to all pages.
 
-Paths are never used by the language detector. `/en/` remains a prerendered crawl and legacy link entry, with reciprocal `hreflang` and canonical URLs. A visitor using Chinese can see Chinese on `/en/`; an English visitor can see English on `/`. Manual switches preserve the page and hash.
+Paths are never used by the language detector. `/en/` remains a prerendered crawl and legacy link entry, with reciprocal `hreflang` and canonical URLs. A visitor using Chinese can see Chinese on `/en/`; an English visitor can see English on `/`. Manual switches navigate to the reciprocal language URL and preserve query parameters and the current section, including when a reader has just used the table of contents.
 
 App Store links use Apple's actual product URLs. A Simplified Chinese browser opens the China storefront even after selecting English on the website; other browser locales use the international product URL. Campaign language remains the website language. The customer's Apple Account ultimately determines the storefront where installation and payment occur.
 
@@ -71,3 +72,5 @@ GA enhanced measurement is disabled. Explicit events are `page_view`, `app_store
 App Store links carry `pt=128660955`, `mt=8`, and a bounded `ct` campaign token identifying language, page and placement. They work even when analytics is declined. GA receives page paths and validated standard UTM tags; other query parameters and hashes are removed, and referrers contain only the origin.
 
 Submit `https://ninopad.com/sitemap-index.xml` in Search Console. It references separate Chinese and English sitemaps, each with 36 indexable URLs; the original `sitemap.xml` remains available. Canonicals stay tied to the prerendered crawl entry when a visitor switches language. `llms-full.txt` includes product facts and the visible bilingual guides with their source URLs; it does not guarantee search or AI inclusion.
+
+The setup guide is featured on the blog and linked from the homepage and other guides. Only substantively revised homepage, blog and setup-guide entries receive the 2026-10-05 sitemap `lastmod`; builds do not mark every page as newly updated. The guide's visible update date and BlogPosting `dateModified` agree. FAQ structured data is derived from visible answers and does not imply eligibility for a rich result. The revised guide uses a brand icon for social previews and no unverified App screenshot.

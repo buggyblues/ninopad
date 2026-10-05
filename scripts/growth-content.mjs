@@ -30,7 +30,7 @@ export function addGrowthContent($, page, language, catalog) {
     actions.append(link(store,'ui.get_ios'),link(mac,'ui.get_mac').attr('data-release-link',''));
     cta.append(actions,link('/blog/mac-settings','ui.setup_guide'));
     $('main').append(cta);
-    if (page === 'blog_remote-control-mac' || page === 'blog_custom-keypad') {
+    if (page === 'blog_custom-keypad') {
       const faq = $('<section class="article-search-faq">');
       faq.append(text('h2','ui.quick_answers'));
       for (const key of ['network','requirements','free']) {

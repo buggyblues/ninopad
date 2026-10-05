@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import i18next from 'i18next';
 import Detector from 'i18next-browser-languagedetector';
-import { options, detection, crawlerLanguage } from '../src/language.js';
+import { options, detection, crawlerLanguage, languageSwitchURL } from '../src/language.js';
 function resolve({query, saved, browser}) {
   const detector = new Detector();
   for (const [name,value] of [['querystring',query],['localStorage',saved],['navigator',browser]]) detector.addDetector({ name: "mock_"+name, lookup:()=>value });
@@ -32,4 +32,9 @@ test('search crawlers retain each prerendered language while browsers detect nor
   assert.equal(crawlerLanguage('Googlebot/2.1','zh-CN'),'zh-CN');
   assert.equal(crawlerLanguage('OAI-SearchBot/1.0','en'),'en');
   assert.equal(crawlerLanguage('Bingbot/2.0','fr'),undefined);
+});
+test('language switches reach reciprocal URLs without losing query or section', () => {
+  assert.equal(languageSwitchURL('blog_remote-control-mac','en','https://ninopad.com/blog/remote-control-mac?utm_source=guide#permissions'), '/en/blog/remote-control-mac?utm_source=guide&lng=en#permissions');
+  assert.equal(languageSwitchURL('blog_remote-control-mac','zh-CN','https://ninopad.com/en/blog/remote-control-mac?lng=en#pair'), '/blog/remote-control-mac?lng=zh-CN#pair');
+  assert.equal(languageSwitchURL('index','en','https://ninopad.com/?lng=zh-CN#download'), '/en/?lng=en#download');
 });
