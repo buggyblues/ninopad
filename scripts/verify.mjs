@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { load } from 'cheerio';
 import assert from 'node:assert/strict';
 import growthConfig from '../src/growth-config.json' with { type:'json' };
+import { editorialDates } from './editorial-content.mjs';
 assert(/^G-[A-Z0-9]+$/.test(growthConfig.ga4MeasurementId));
 const pages = readdirSync('src/pages', { recursive:true }).filter(f=>f.endsWith('.html'));
 const screenshotHashes = new Map();
@@ -105,7 +106,12 @@ assert.equal(sitemap('sitemap').length,2);
 for (const language of ['zh-CN','en']) {
   const map = load(readFileSync(`dist/sitemap-${language}.xml`,'utf8'),{xmlMode:true});
   assert.equal(map('url').length,pages.length-1);
-  assert.equal(map('lastmod').length,3, 'Only substantively revised pages get an editorial modification date');
+  assert.equal(map('lastmod').length,Object.keys(editorialDates).length, 'Only explicitly dated pages get an editorial modification date');
+  for (const entry of map('url').toArray()) {
+    const path = new URL(map(entry).find('loc').text()).pathname.replace(/^\/en(?=\/)/,'');
+    const page = path === '/' ? 'index' : path.slice(1).replaceAll('/','_');
+    assert.equal(map(entry).find('lastmod').text(),editorialDates[page] || '');
+  }
   for (const n of map('loc').toArray()) {
     const url = new URL(map(n).text());
     assert.equal(url.origin,'https://ninopad.com');

@@ -1,6 +1,7 @@
 import article from '../src/content/remote-control-mac.json' with { type: 'json' };
 
 export const editorialDates = {
+  "blog_release-1-3-12": "2026-10-24",
   index: '2026-10-05',
   blog: '2026-10-05',
   'blog_remote-control-mac': '2026-10-05'
