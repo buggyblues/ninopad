@@ -5989,7 +5989,7 @@
   "blog_release-1-3-12.appstore": "Open the App Store",
   "updates.v1312.latest": "Latest version",
   "updates.v1312.title": "NinoPad 1.3.12: on-demand features and TV controls within reach",
-  "updates.v1312.status": "Mac 1.3.12 is available. iOS 1.3.12 has been submitted for review and will be released after approval.",
+  "updates.v1312.status": "Mac 1.3.12 is available. iOS updates appear after Apple review; check the App Store for availability.",
   "updates.v1312.note0": "Added a Clipper TV Remote desktop with navigation, confirmation, search, playback and volume controls.",
   "updates.v1312.note1": "Pages and tasks acquire resources on demand and release state subscriptions when finished; recording and playback retain separate sessions.",
   "updates.v1312.note2": "State changes reach the controls that need them, reducing unrelated refresh interference.",
